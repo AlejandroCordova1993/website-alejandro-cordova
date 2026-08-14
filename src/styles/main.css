@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap');
 
 :root {
-  /* Color Palette - Master Brief & 2nd Iteration Spec */
+  /* Color Palette - Master Brief & Exact Corrections Spec */
   --paper-warm: #F3F1EA;
   --charcoal: #101820;
   --deep-blue: #071B33;
@@ -292,7 +292,7 @@ section {
   margin-top: 8px;
 }
 
-/* Hero Section (2da Iteración) */
+/* Hero Section */
 .hero-section {
   padding-top: calc(var(--header-height) + 64px);
   padding-bottom: 80px;
@@ -329,6 +329,13 @@ section {
   margin-bottom: 32px;
 }
 
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
 .hero-image-wrapper {
   grid-column: span 5;
   position: relative;
@@ -358,9 +365,16 @@ section {
   gap: 16px;
 }
 
-/* Servicios Section (4 Pilares) */
+/* Servicios Section (01 / SERVICIOS) */
 .services-section {
   background-color: var(--paper-warm);
+}
+
+.services-intro-text {
+  font-size: 1.05rem;
+  color: var(--grey-mineral);
+  max-width: 720px;
+  margin-bottom: 32px;
 }
 
 .service-row {
@@ -397,7 +411,7 @@ section {
   line-height: 1.5;
 }
 
-/* Especialidad Transversal Section */
+/* Especialidad Transversal (02 / ESPECIALIDAD) */
 .specialty-section {
   background-color: #EAE7DC;
   border-top: 1px solid var(--grey-line);
@@ -415,26 +429,50 @@ section {
   grid-column: span 7;
 }
 
-.tag-list {
+.specialty-text-serif {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--charcoal);
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.keywords-horizontal-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 24px;
-}
-
-.tag-item {
+  gap: 16px;
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  background-color: var(--paper-warm);
-  border: 1px solid var(--grey-line);
-  padding: 6px 12px;
-  border-radius: var(--radius-sm);
-  color: var(--charcoal);
+  font-size: 0.8125rem;
+  color: var(--deep-blue);
+  letter-spacing: 0.05em;
+  padding-top: 16px;
+  border-top: 1px solid var(--grey-line);
 }
 
-/* A Quiénes Acompaño (Filas Editoriales - Sin Tarjetas) */
+.keywords-horizontal-list span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.keywords-horizontal-list span::after {
+  content: '·';
+  color: var(--signal-red);
+}
+
+.keywords-horizontal-list span:last-child::after {
+  content: '';
+}
+
+/* A Quiénes Acompaño (03 / A QUIÉNES ACOMPAÑO) */
 .audiences-section {
   background-color: var(--paper-warm);
+}
+
+.audiences-intro {
+  font-size: 1rem;
+  color: var(--grey-mineral);
+  margin-bottom: 32px;
 }
 
 .audience-list {
@@ -476,16 +514,23 @@ section {
   line-height: 1.5;
 }
 
-/* Metodología (Recorrido Secuencial Vectorial) */
+/* Metodología (04 / METODOLOGÍA) */
 .methodology-section {
   background-color: var(--paper-warm);
+}
+
+.methodology-intro {
+  font-size: 1rem;
+  color: var(--grey-mineral);
+  max-width: 720px;
+  margin-bottom: 36px;
 }
 
 .methodology-vector-flow {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 16px;
-  margin-top: 40px;
+  margin-top: 24px;
   position: relative;
 }
 
@@ -511,8 +556,16 @@ section {
   font-family: var(--font-sans);
   font-size: 1.1rem;
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   color: var(--charcoal);
+}
+
+.method-step-v2 .step-subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--inst-blue);
+  margin-bottom: 8px;
+  text-transform: uppercase;
 }
 
 .method-step-v2 p {
@@ -521,7 +574,7 @@ section {
   line-height: 1.45;
 }
 
-/* Proyecto Destacado Section */
+/* Proyecto Destacado (05 / PROYECTO) */
 .project-featured-section {
   background-color: var(--paper-warm);
 }
@@ -550,6 +603,24 @@ section {
 .project-meta-item span:last-child {
   color: var(--charcoal);
   font-weight: 500;
+}
+
+.project-detail-block {
+  margin-bottom: 12px;
+}
+
+.project-detail-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--signal-red);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.project-detail-text {
+  font-size: 0.875rem;
+  color: var(--charcoal);
+  line-height: 1.45;
 }
 
 /* Bloque Oscuro de Impacto (HUMAN / SYSTEM) */
@@ -595,7 +666,7 @@ section {
   text-transform: uppercase;
 }
 
-/* Trayectoria: Del Aula a la Innovación Educativa (06) */
+/* Trayectoria: Del Aula a la Innovación Educativa (06 / TRAYECTORIA) */
 .trayectoria-section {
   background-color: var(--paper-warm);
 }
@@ -615,79 +686,55 @@ section {
   margin-bottom: 20px;
 }
 
-.trayectoria-stats {
+.trayectoria-column-right {
   grid-column: span 5;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
 
-.stat-box-mono {
-  border: 1px solid var(--grey-line);
-  padding: 20px;
-  background-color: #FFFFFF;
-  border-left: 3px solid var(--signal-red);
+/* 3 Bloques Tipográficos Separados por Líneas Finas (Sin Cajas Blancas) */
+.trayectoria-blocks-list {
+  display: flex;
+  flex-direction: column;
 }
 
-.stat-box-mono .stat-tag {
+.trayectoria-block-item {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--grey-line);
+}
+
+.trayectoria-block-item:first-child {
+  padding-top: 0;
+}
+
+.trayectoria-block-item:last-child {
+  border-bottom: none;
+}
+
+.trayectoria-block-tag {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--signal-red);
+  letter-spacing: 0.06em;
   margin-bottom: 4px;
 }
 
-.stat-box-mono .stat-title {
+.trayectoria-block-title {
   font-family: var(--font-sans);
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--deep-blue);
 }
 
-.stat-box-mono .stat-desc {
-  font-size: 0.8125rem;
+.trayectoria-block-desc {
+  font-size: 0.84375rem;
   color: var(--grey-mineral);
   margin-top: 2px;
+  line-height: 1.45;
 }
 
-/* Formación & Capacitación Catalog Section */
-.formacion-section {
-  background-color: var(--paper-warm);
-}
-
-.formacion-intro-box {
-  border: 1px solid var(--grey-line);
-  padding: 32px;
-  background-color: #FFFFFF;
-  margin-top: 24px;
-}
-
-.formacion-pillar-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 24px;
-}
-
-.formacion-pillar-item {
-  border-left: 2px solid var(--signal-red);
-  padding-left: 16px;
-}
-
-.formacion-pillar-item h4 {
-  font-family: var(--font-sans);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--deep-blue);
-  margin-bottom: 8px;
-}
-
-.formacion-pillar-item p {
-  font-size: 0.875rem;
-  color: var(--grey-mineral);
-  line-height: 1.5;
-}
-
-/* Recursos Section */
+/* Recursos Section (07 / RECURSOS) */
 .recursos-section {
   background-color: var(--paper-warm);
 }
@@ -700,7 +747,7 @@ section {
   max-width: 720px;
 }
 
-/* Contacto Section */
+/* Contacto Section (08 / CONTACTO) */
 .contact-section {
   background-color: var(--paper-warm);
 }
@@ -726,7 +773,7 @@ section {
 
 .contact-detail-list li {
   font-family: var(--font-mono);
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   padding: 10px 0;
   border-bottom: 1px solid var(--grey-line);
   display: flex;
@@ -783,11 +830,12 @@ textarea.form-control {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--grey-mineral);
-  margin-top: 12px;
-  text-align: center;
+  margin-top: 14px;
+  line-height: 1.4;
+  text-align: left;
 }
 
-/* Footer (Master Brief Spec) */
+/* Footer */
 .site-footer {
   background-color: var(--deep-blue);
   color: #FFFFFF;
@@ -807,6 +855,13 @@ textarea.form-control {
   font-weight: 400;
   line-height: 1;
   color: #FFFFFF;
+}
+
+.footer-sub {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  color: #A0AEC0;
+  margin-top: 12px;
 }
 
 .footer-nav ul {
@@ -870,7 +925,6 @@ textarea.form-control {
   .service-row .btn-secondary { grid-column: span 3; justify-self: start; }
   .audience-row { grid-template-columns: 1fr; gap: 8px; }
   .methodology-vector-flow { grid-template-columns: repeat(3, 1fr); }
-  .formacion-pillar-list { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
@@ -890,7 +944,7 @@ textarea.form-control {
   .mobile-toggle { display: block; }
   
   .hero-content, .hero-image-wrapper, .specialty-left, .specialty-right,
-  .trayectoria-narrative, .trayectoria-stats, .contact-info, .contact-form-wrapper {
+  .trayectoria-narrative, .trayectoria-column-right, .contact-info, .contact-form-wrapper {
     grid-column: span 12 !important;
   }
   
