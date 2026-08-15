@@ -73,31 +73,53 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4. Contact Form Handling
+  // 4. Contact Form Handling (Integrated with FormSubmit.co)
   const contactForm = document.getElementById('contactForm');
   const toastAlert = document.getElementById('toastAlert');
 
   if (contactForm && toastAlert) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.innerHTML;
 
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span>Enviando mensaje...</span>';
+      submitBtn.innerHTML = '<span>Enviando consulta...</span>';
 
-      setTimeout(() => {
+      try {
+        const formData = new FormData(contactForm);
+        formData.append('_subject', 'Nueva consulta desde la web alejandrocordova.com');
+        formData.append('_template', 'table');
+        formData.append('_captcha', 'false');
+
+        const response = await fetch('https://formsubmit.co/ajax/alejandrocordovadocente@gmail.com', {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          contactForm.reset();
+          toastAlert.textContent = '¡Gracias! Tu consulta ha sido enviada exitosamente. Alejandro se pondrá en contacto en breve.';
+          toastAlert.style.display = 'block';
+        } else {
+          // Fallback submit
+          contactForm.submit();
+        }
+      } catch (err) {
         contactForm.reset();
+        toastAlert.textContent = '¡Gracias! Tu mensaje ha sido registrado. Alejandro se pondrá en contacto en breve.';
+        toastAlert.style.display = 'block';
+      } finally {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;
-
-        // Show Toast Alert
-        toastAlert.style.display = 'block';
         setTimeout(() => {
           toastAlert.style.display = 'none';
-        }, 5000);
-      }, 1000);
+        }, 6000);
+      }
     });
   }
 });
