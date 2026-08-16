@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia de la Literatura Ecuatoriana - Línea de Tiempo Interactiva</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>Historia de la Literatura Ecuatoriana</h1>
+            <p class="subtitle">Una línea de tiempo interactiva con contexto histórico-social</p>
+        </div>
+    </header>
+
+    <div class="intro-panel" id="introPanel">
+        <div class="intro-content">
+            <h2>Bienvenido</h2>
+            <p>Esta línea de tiempo interactiva te permitirá explorar la rica historia de la literatura ecuatoriana en su contexto histórico-social.</p>
+            <div class="instructions">
+                <h3>Cómo usar esta herramienta:</h3>
+                <ul>
+                    <li><strong>Navega</strong> horizontalmente con el mouse o usando las flechas del teclado</li>
+                    <li><strong>Haz clic</strong> en cualquier evento para ver detalles completos</li>
+                    <li><strong>Filtra</strong> por períodos usando los botones superiores</li>
+                    <li><strong>Zoom</strong> para acercar o alejar la vista de la línea de tiempo</li>
+                    <li><strong>Observa las conexiones</strong> visuales entre eventos literarios e históricos relacionados</li>
+                </ul>
+            </div>
+            <button class="btn btn--primary" onclick="closeIntro()">Comenzar Exploración</button>
+        </div>
+    </div>
+
+    <!-- Loading screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h2>Cargando Historia de la Literatura Ecuatoriana</h2>
+            <p>Preparando tu viaje por 500 años de cultura...</p>
+        </div>
+    </div>
+
+    <!-- Mini-map and century navigation -->
+    <div class="minimap-container">
+        <div class="minimap-header">
+            <h3>Vista General de la Línea de Tiempo</h3>
+            <div class="minimap-controls">
+                <button class="btn btn--sm theme-toggle" onclick="toggleTheme()" title="Cambiar tema" aria-label="Cambiar tema">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="btn btn--sm" onclick="showKeyboardHelp()" title="Ayuda de teclado">⌨️ Atajos</button>
+            </div>
+        </div>
+        <div class="minimap-wrapper">
+            <div class="minimap-timeline" id="minimapTimeline">
+                <div class="minimap-viewport" id="minimapViewport"></div>
+            </div>
+            <div class="century-jumps">
+                <button class="century-btn" onclick="jumpToCentury(1500)" title="Saltar al siglo XVI">XVI</button>
+                <button class="century-btn" onclick="jumpToCentury(1600)" title="Saltar al siglo XVII">XVII</button>
+                <button class="century-btn" onclick="jumpToCentury(1700)" title="Saltar al siglo XVIII">XVIII</button>
+                <button class="century-btn" onclick="jumpToCentury(1800)" title="Saltar al siglo XIX">XIX</button>
+                <button class="century-btn" onclick="jumpToCentury(1900)" title="Saltar al siglo XX">XX</button>
+                <button class="century-btn" onclick="jumpToCentury(2000)" title="Saltar al siglo XXI">XXI</button>
+            </div>
+        </div>
+        <div class="current-position" id="currentPosition">Posición: Inicio de la línea de tiempo</div>
+    </div>
+
+    <div class="controls">
+        <div class="control-group">
+            <h3>Períodos Literarios</h3>
+            <div class="filter-buttons" id="literaryFilters">
+                <button class="filter-btn active" data-filter="all" data-start-year="" data-end-year="">Todos <span class="event-count" data-count="all"></span></button>
+                <button class="filter-btn" data-filter="colonial" data-start-year="1534" data-end-year="1809">Colonial (1534-1809) <span class="event-count" data-count="colonial"></span></button>
+                <button class="filter-btn" data-filter="romanticismo" data-start-year="1809" data-end-year="1895">Romanticismo (1809-1895) <span class="event-count" data-count="romanticismo"></span></button>
+                <button class="filter-btn" data-filter="modernismo" data-start-year="1890" data-end-year="1920">Modernismo (1890-1920) <span class="event-count" data-count="modernismo"></span></button>
+                <button class="filter-btn" data-filter="vanguardia" data-start-year="1920" data-end-year="1940">Vanguardia (1920-1940) <span class="event-count" data-count="vanguardia"></span></button>
+                <button class="filter-btn" data-filter="realismo" data-start-year="1930" data-end-year="1950">Realismo Social (1930-1950) <span class="event-count" data-count="realismo"></span></button>
+                <button class="filter-btn" data-filter="sigloxx" data-start-year="1950" data-end-year="1980">Mediados S. XX (1950-1980) <span class="event-count" data-count="sigloxx"></span></button>
+                <button class="filter-btn" data-filter="contemporaneo" data-start-year="1980" data-end-year="2025">Contemporáneo (1980-2025) <span class="event-count" data-count="contemporaneo"></span></button>
+            </div>
+        </div>
+        
+        <div class="control-group zoom-controls">
+            <h3>Zoom</h3>
+            <button class="btn btn--secondary" onclick="zoomOut()">−</button>
+            <span id="zoomLevel">100%</span>
+            <button class="btn btn--secondary" onclick="zoomIn()">+</button>
+            <button class="btn btn--secondary" onclick="resetZoom()">Reset</button>
+        </div>
+    </div>
+
+    <div class="legend">
+        <div class="legend-item">
+            <span class="legend-color" style="background: #8B4513"></span>
+            <span>Literatura Colonial</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-color" style="background: #C41E3A"></span>
+            <span>Romanticismo</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-color" style="background: #9370DB"></span>
+            <span>Modernismo</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-color" style="background: #FF6347"></span>
+            <span>Vanguardia</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-color" style="background: #CD5C5C"></span>
+            <span>Realismo Social</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-color" style="background: #4682B4"></span>
+            <span>Mediados S. XX</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-color" style="background: #2E8B57"></span>
+            <span>Contemporáneo</span>
+        </div>
+        <div class="legend-divider"></div>
+        <div class="legend-item">
+            <span class="legend-color" style="background: #4169E1"></span>
+            <span>Historia Social</span>
+        </div>
+    </div>
+
+    <div class="timeline-container" id="timelineContainer">
+        <div class="timeline-wrapper" id="timelineWrapper">
+            <!-- Literatura Track -->
+            <div class="timeline-track literature-track">
+                <div class="track-label">LITERATURA</div>
+                <div class="timeline-line"></div>
+                <div class="events-container" id="literatureEvents"></div>
+            </div>
+
+            <!-- History Track -->
+            <div class="timeline-track history-track">
+                <div class="track-label">HISTORIA SOCIAL</div>
+                <div class="timeline-line"></div>
+                <div class="events-container" id="historyEvents"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Keyboard shortcuts help modal -->
+    <div class="modal" id="keyboardHelpModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeKeyboardHelp()">&times;</button>
+            <div class="keyboard-help">
+                <h2>⌨️ Atajos de Teclado</h2>
+                <div class="keyboard-shortcuts">
+                    <div class="shortcut-item">
+                        <kbd>←</kbd> <kbd>→</kbd>
+                        <span>Desplazar línea de tiempo</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>+</kbd> <kbd>-</kbd>
+                        <span>Zoom in/out</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>ESC</kbd>
+                        <span>Cerrar modal</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>?</kbd>
+                        <span>Mostrar/ocultar esta ayuda</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>H</kbd>
+                        <span>Volver al inicio</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>T</kbd>
+                        <span>Cambiar tema claro/oscuro</span>
+                    </div>
+                </div>
+                <h3>💡 Consejos de Navegación</h3>
+                <ul>
+                    <li>Haz clic en cualquier evento para ver detalles completos</li>
+                    <li>Usa el mini-mapa superior para ver tu posición</li>
+                    <li>Los botones de siglos (XVI-XXI) te llevan rápidamente a cada período</li>
+                    <li>Filtra por período literario para enfocarte en una época específica</li>
+                    <li>Las líneas verticales conectan eventos simultáneos de literatura e historia</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for event details -->
+    <div class="modal" id="eventModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Navigation arrows -->
+    <button class="nav-arrow nav-arrow-left" onclick="scrollTimeline(-300)" aria-label="Scroll izquierda">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+    </button>
+    <button class="nav-arrow nav-arrow-right" onclick="scrollTimeline(300)" aria-label="Scroll derecha">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+    </button>
+
+    <script src="app.js"></script>
+</body>
+</html>

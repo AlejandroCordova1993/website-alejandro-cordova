@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Juego interactivo para aprender a identificar los 6 tipos de falacias lógicas mediante cartas con ejemplos.">
+  <title>Adivina el tipo de Falacia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Public+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../course-shell/course-shell.css">
+</head>
+<body>
+  <div class="background-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="shape shape-4"></div>
+    <div class="shape shape-5"></div>
+    <div class="shape shape-6"></div>
+  </div>
+
+  <header>
+    <h1>Adivina el tipo de Falacia</h1>
+    <p class="instructions">
+      Cada carta contiene un ejemplo de argumento falaz. <strong>Haz clic en la carta</strong> para descubrir 
+      qué tipo de falacia es y por qué. Las 6 falacias son:
+    </p>
+    <div class="fallacy-tags">
+      <span class="tag tag-hominem">Ad hominem</span>
+      <span class="tag tag-verecundiam">Ad verecundiam</span>
+      <span class="tag tag-populum">Ad populum</span>
+      <span class="tag tag-ignorantiam">Ad ignorantiam</span>
+      <span class="tag tag-generalizacion">Generalización apresurada</span>
+      <span class="tag tag-misericordiam">Ad misericordiam</span>
+    </div>
+    <div class="cycle-tracker">
+      <span id="cycleInfo">Ciclo 1 de 10</span>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+  </header>
+
+  <section id="conceptos" style="max-width: 1180px; margin: 0 auto 28px; padding: 28px; background: rgba(255,255,255,0.94); border: 1px solid rgba(7,27,51,0.12); border-radius: 18px; box-shadow: 0 10px 30px rgba(7,27,51,0.08);">
+    <p style="margin: 0 0 8px; color: #C6426E; font: 600 0.78rem/1.2 'DM Mono', monospace; letter-spacing: 0.12em; text-transform: uppercase;">Marco de análisis</p>
+    <h2 style="margin: 0 0 12px; color: #071B33; font: 600 1.8rem/1.2 'Source Serif 4', serif;">Una falacia no es solo una idea falsa</h2>
+    <p style="margin: 0 0 18px; color: #334155; line-height: 1.7; max-width: 920px;">Una falacia es un razonamiento que parece respaldar una conclusión, pero falla en la relación entre sus razones y esa conclusión. Por eso no basta con reconocer una etiqueta: hay que revisar si la razón es <strong>relevante</strong>, si ofrece apoyo <strong>suficiente</strong> y si sus premisas son aceptables o verificables.</p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
+      <div style="padding: 16px; border-radius: 12px; background: #F4F7FB; border-left: 4px solid #C6426E;"><strong style="color: #071B33;">1. Reconoce la conclusión</strong><p style="margin: 8px 0 0; color: #475569; line-height: 1.55;">¿Qué quiere que aceptemos la persona que argumenta?</p></div>
+      <div style="padding: 16px; border-radius: 12px; background: #F4F7FB; border-left: 4px solid #C6426E;"><strong style="color: #071B33;">2. Separa razón y emoción</strong><p style="margin: 8px 0 0; color: #475569; line-height: 1.55;">¿La razón aporta evidencia o intenta presionar, distraer o desacreditar?</p></div>
+      <div style="padding: 16px; border-radius: 12px; background: #F4F7FB; border-left: 4px solid #C6426E;"><strong style="color: #071B33;">3. Formula una respuesta</strong><p style="margin: 8px 0 0; color: #475569; line-height: 1.55;">Nombra el problema, explica por qué debilita el argumento y pide la evidencia que falta.</p></div>
+    </div>
+    <p style="margin: 18px 0 0; color: #475569; line-height: 1.65;"><strong>Importante:</strong> una apelación a una autoridad no es automáticamente falaz si la autoridad es pertinente, la afirmación está dentro de su campo y existe evidencia independiente. Del mismo modo, una emoción puede formar parte de una argumentación legítima; el problema aparece cuando sustituye las razones que la conclusión necesita.</p>
+  </section>
+
+  <!-- View Controls -->
+  <div class="view-controls" id="viewControls">
+    <div class="controls-inner">
+      <div class="control-group">
+        <span class="control-label">Vista:</span>
+        <div class="pill-group" id="viewModeGroup">
+          <button class="pill active" data-mode="grid" id="btnGrid">Grilla</button>
+          <button class="pill" data-mode="focus" id="btnFocus">Enfoque</button>
+        </div>
+      </div>
+      <div class="control-group" id="columnControl">
+        <span class="control-label">Columnas:</span>
+        <div class="pill-group" id="columnGroup">
+          <button class="pill" data-cols="1">1</button>
+          <button class="pill" data-cols="2">2</button>
+          <button class="pill" data-cols="3">3</button>
+          <button class="pill active" data-cols="4">4</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Focus Mode Navigation -->
+    <div class="focus-nav" id="focusNav">
+      <button class="focus-btn" id="btnPrev" aria-label="Carta anterior">‹</button>
+      <span class="focus-counter" id="focusCounter">1 / 60</span>
+      <button class="focus-btn" id="btnNext" aria-label="Carta siguiente">›</button>
+    </div>
+
+    <div class="cards-grid" id="cardsGrid">
+      <!-- Cards will be injected by JS -->
+    </div>
+  </main>
+
+  <footer>
+    <p>Falacias lógicas explicadas gráficamente · Recurso educativo</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="../course-shell/course-shell.js"></script>
+</body>
+</html>

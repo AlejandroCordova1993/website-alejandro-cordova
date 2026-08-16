@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Guía interactiva sobre los elementos de la narración: narrador, personajes, tiempo, espacio, conflicto y trama. Diseñada para estudiantes.">
+    <title>El Arte de Narrar | Guía Interactiva</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Public+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #F3F1EA;
+            --sidebar-bg: #071B33;
+            --card-bg: #FAF9F5;
+            --accent-narrador: #123C69;
+            --accent-personajes: #2367D1;
+            --accent-tiempo: #071B33;
+            --accent-espacio: #1E6B38;
+            --accent-conflicto: #D83A32;
+            --accent-trama: #123C69;
+            --text-main: #101820;
+            --text-soft: #727983;
+            --border-soft: #D7D9D6;
+
+            --shadow-premium: 0 4px 16px rgba(16, 24, 32, 0.06);
+            --radius-lg: 4px;
+            --transition: all 0.25s ease;
+
+            --font-title: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-body: 'Source Serif 4', Georgia, serif;
+            --font-ui: 'Public Sans', sans-serif;
+            --font-mono: 'DM Mono', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            display: flex;
+            /* Para permitir sidebar y contenido principal al lado */
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* --- Sidebar Navigation --- */
+        nav {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            min-width: 290px;
+            width: 290px;
+            background: var(--deep-blue, #071B33);
+            border-right: 1px solid var(--border-soft, #D7D9D6);
+            display: flex;
+            align-items: flex-start;
+            z-index: 100;
+            box-shadow: 2px 0 16px rgba(7, 27, 51, 0.15);
+            overflow-y: auto;
+        }
+
+        .nav-inner {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+            padding: 2rem 1.5rem;
+        }
+
+        .nav-header {
+            margin-bottom: 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            padding-bottom: 1rem;
+        }
+
+        .nav-header h2 {
+            font-family: 'Public Sans', sans-serif;
+            color: #FFFFFF;
+            font-size: 1.3rem;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .nav-header p {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #CBD5E1;
+            margin-top: 0.5rem;
+        }
+
+        .nav-link {
+            font-family: 'Public Sans', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 500;
+            text-decoration: none;
+            color: #F3F1EA;
+            padding: 0.65rem 1rem;
+            border-radius: 4px;
+            transition: var(--transition, 0.2s ease);
+            display: block;
+            border-left: 3px solid transparent;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #FFFFFF;
+        }
+
+        .nav-link.active {
+            background: rgba(255, 255, 255, 0.16);
+            color: #FFFFFF;
+            font-weight: 700;
+            border-left-color: var(--signal-red, #D83A32);
+        }
+
+        /* --- Contenedor Principal --- */
+        .content-wrapper {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            width: 100%;
+        }
+
+        /* --- Hero --- */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero-label {
+            font-family: var(--font-ui);
+            text-transform: uppercase;
+            letter-spacing: 0.2rem;
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: var(--accent-narrador);
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-family: var(--font-title);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            max-width: 700px;
+            color: var(--text-soft);
+            font-style: italic;
+        }
+
+        /* --- Chapters --- */
+        .chapter {
+            margin-bottom: 8rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .chapter.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .chapter-header {
+            margin-bottom: 2rem;
+        }
+
+        .chapter-title {
+            font-family: var(--font-title);
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 0.5rem;
+        }
+
+        .chapter-title span {
+            font-family: var(--font-ui);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            color: #fff;
+            padding: 0.2rem 0.7rem;
+            border-radius: 4px;
+            vertical-align: middle;
+            margin-right: 0.5rem;
+        }
+
+        .chapter-content {
+            background: var(--card-bg);
+            padding: 4rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-premium);
+            border: 1px solid var(--border-soft);
+        }
+
+        /* --- Interactive Components --- */
+        .type-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .type-card {
+            padding: 2rem;
+            border: 1px solid var(--border-soft);
+            border-radius: var(--radius-lg);
+            transition: var(--transition);
+            background: #fff;
+        }
+
+        .type-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-premium);
+        }
+
+        .type-card h4 {
+            font-family: var(--font-title);
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--chapter-color);
+        }
+
+        .interactive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .interactive-box {
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.02);
+            border-left: 6px solid var(--chapter-color);
+            border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .interactive-box h3 {
+            margin-bottom: 1rem;
+            font-family: var(--font-title);
+            font-size: 1.2rem;
+        }
+
+        .btn-reveal {
+            background: var(--text-main);
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-family: var(--font-ui);
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 1.5rem;
+            align-self: flex-start;
+        }
+
+        .btn-reveal:hover {
+            background: var(--chapter-color);
+            transform: scale(1.03);
+        }
+
+        .reveal-content {
+            display: none;
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #fff;
+            border: 1px solid var(--border-soft);
+            border-radius: 8px;
+            animation: fadeInReveal 0.5s forwards;
+            font-size: 0.95rem;
+        }
+
+        @keyframes fadeInReveal {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .mini-quiz {
+            margin-top: 4rem;
+            padding: 3rem;
+            border: 1px solid var(--border-soft);
+            border-radius: var(--radius-lg);
+            background: #fff;
+        }
+
+        .quiz-option {
+            display: block;
+            width: 100%;
+            padding: 1.2rem;
+            margin: 0.8rem 0;
+            background-color: #fff !important;
+            color: #3a3330 !important;
+            border: 1px solid var(--border-soft);
+            border-radius: 12px;
+            cursor: pointer;
+            font-family: var(--font-ui);
+            transition: var(--transition);
+            text-align: left;
+            font-size: 0.95rem;
+            -webkit-appearance: none;
+            appearance: none;
+            opacity: 1 !important;
+        }
+
+        .quiz-option:hover {
+            background: rgba(0, 0, 0, 0.02);
+            border-color: var(--chapter-color);
+        }
+
+        .quiz-option.correct {
+            background: #c8e6c9 !important;
+            border: 3px solid #388e3c !important;
+            color: #1b5e20 !important;
+            font-weight: 700 !important;
+        }
+
+        .quiz-option.incorrect {
+            background: #ffcdd2 !important;
+            border: 3px solid #c62828 !important;
+            color: #7f0000 !important;
+            font-weight: 700 !important;
+        }
+
+        .feedback {
+            margin-top: 1.5rem;
+            font-weight: 600;
+            display: none;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        /* --- Tension Curve --- */
+        .tension-curve {
+            width: 100%;
+            position: relative;
+            margin-top: 3rem;
+        }
+
+        .tension-curve img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-premium);
+            border: 1px solid var(--border-soft);
+            display: block;
+        }
+
+        .tension-point {
+            width: 24px;
+            height: 24px;
+            background: var(--accent-trama);
+            border-radius: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            transition: 0.3s;
+            z-index: 10;
+            border: 3px solid #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .tension-point::after {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: -6px;
+            right: -6px;
+            bottom: -6px;
+            border-radius: 50%;
+            border: 2px solid var(--accent-trama);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1.4);
+                opacity: 0;
+            }
+        }
+
+        .tension-point:hover {
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+
+        /* .tension-label removed — labels now handled via data-info on click */
+
+        /* Colors per Chapter */
+        #narrador {
+            --chapter-color: var(--accent-narrador);
+        }
+
+        #personajes {
+            --chapter-color: var(--accent-personajes);
+        }
+
+        #tiempo {
+            --chapter-color: var(--accent-tiempo);
+        }
+
+        #espacio {
+            --chapter-color: var(--accent-espacio);
+        }
+
+        #conflicto {
+            --chapter-color: var(--accent-conflicto);
+        }
+
+        #trama {
+            --chapter-color: var(--accent-trama);
+        }
+
+        #narrador .chapter-title span {
+            background: var(--accent-narrador);
+        }
+
+        #personajes .chapter-title span {
+            background: var(--accent-personajes);
+        }
+
+        #tiempo .chapter-title span {
+            background: var(--accent-tiempo);
+        }
+
+        #espacio .chapter-title span {
+            background: var(--accent-espacio);
+        }
+
+        #conflicto .chapter-title span {
+            background: var(--accent-conflicto);
+        }
+
+        #trama .chapter-title span {
+            background: var(--accent-trama);
+        }
+
+        /* --- Final Quiz --- */
+        .final-quiz-section {
+            background: #1c1918;
+            color: #fff;
+            padding: 5rem 2rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            margin: 4rem 3rem 10rem 3rem;
+            box-shadow: var(--shadow-premium);
+        }
+
+        .final-quiz-section h2 {
+            font-family: var(--font-title);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-start-quiz {
+            background: #fff;
+            color: #1c1918;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-family: var(--font-ui);
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-start-quiz:hover {
+            transform: translateY(-5px);
+            background: var(--accent-trama);
+            color: #fff;
+        }
+
+        #question-area h3 {
+            margin-bottom: 1.5rem;
+        }
+
+        .featured-image {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-lg);
+            margin: 3rem 0;
+            box-shadow: var(--shadow-premium);
+            border: 1px solid var(--border-soft);
+            display: block;
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 4rem 2rem;
+            text-align: center;
+            color: var(--text-soft);
+            font-family: var(--font-ui);
+            margin-top: auto;
+        }
+
+        @media (max-width: 900px) {
+            body {
+                flex-direction: column;
+            }
+
+            nav {
+                width: 100%;
+                height: auto;
+                position: sticky;
+                top: 0;
+                min-width: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--border-soft);
+                z-index: 1000;
+            }
+
+            .nav-inner {
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding: 1rem;
+                gap: 0.5rem;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .nav-header {
+                display: none;
+            }
+
+            .nav-link {
+                padding: 0.5rem 0.8rem;
+                font-size: 0.8rem;
+                white-space: nowrap;
+                flex: 0 0 auto;
+            }
+
+            .nav-link[style*="margin-top"] {
+                margin-top: 0 !important;
+            }
+
+            .nav-link.active {
+                transform: none;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .final-quiz-section {
+                margin: 4rem 1.5rem 8rem 1.5rem;
+            }
+
+            .chapter-content {
+                padding: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+
+        /* --- Student Modal --- */
+        .student-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(28, 25, 24, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .student-modal {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            padding: 3.5rem;
+            max-width: 480px;
+            width: 90%;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: fadeInReveal 0.6s forwards;
+        }
+
+        .student-modal h2 {
+            font-family: var(--font-title);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .student-modal p {
+            color: var(--text-soft);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .student-modal label {
+            display: block;
+            text-align: left;
+            font-family: var(--font-ui);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05rem;
+            color: var(--text-soft);
+            margin-bottom: 0.4rem;
+            margin-top: 1.2rem;
+        }
+
+        .student-modal input,
+        .student-modal select {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            border: 1px solid var(--border-soft);
+            border-radius: 12px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            background: #fff;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        .student-modal input:focus,
+        .student-modal select:focus {
+            outline: none;
+            border-color: var(--accent-narrador);
+            box-shadow: 0 0 0 3px rgba(201, 164, 178, 0.2);
+        }
+
+        .btn-enter {
+            margin-top: 2rem;
+            width: 100%;
+            padding: 1rem;
+            background: var(--text-main);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            font-family: var(--font-ui);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-enter:hover {
+            background: var(--accent-narrador);
+            transform: translateY(-2px);
+        }
+
+        .btn-enter:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .status-msg {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: var(--font-ui);
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .status-msg.success {
+            display: block;
+            background: #e8f5e9;
+            color: #2e7d32;
+            border: 1px solid #81c784;
+        }
+
+        .status-msg.error {
+            display: block;
+            background: #ffebee;
+            color: #c62828;
+            border: 1px solid #e57373;
+        }
+
+        .status-msg.sending {
+            display: block;
+            background: #e3f2fd;
+            color: #1565c0;
+            border: 1px solid #64b5f6;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 2000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+            backdrop-filter: blur(4px);
+        }
+        .lightbox.active {
+            display: flex;
+            animation: fadeInReveal 0.3s forwards;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.8);
+            cursor: default;
+        }
+        .chapter-content img, .tension-curve img {
+            cursor: zoom-in;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .chapter-content img:hover, .tension-curve img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2) !important;
+            z-index: 10;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav id="main-nav">
+        <div class="nav-inner">
+            <a href="../Página Alejandro/proyectos.html" class="nav-link" style="margin-bottom: 0.8rem; font-size: 0.8rem; opacity: 0.85; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 0.75rem;">← Volver a proyectos</a>
+            <div class="nav-header">
+                <h2>El Arte de Narrar</h2>
+                <p>Guía de Estudio</p>
+            </div>
+            <a href="#narrador" class="nav-link">Narrador</a>
+            <a href="#personajes" class="nav-link">Personajes</a>
+            <a href="#tiempo" class="nav-link">Tiempo</a>
+            <a href="#espacio" class="nav-link">Espacio</a>
+            <a href="#conflicto" class="nav-link">Conflicto</a>
+            <a href="#trama" class="nav-link">Estructura</a>
+            <a href="#quiz-final" class="nav-link"
+                style="margin-top: 1rem; text-align: center; border: 1px solid var(--border-soft);">Gran Reto</a>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="content-wrapper">
+        <section class="hero" id="inicio">
+            <div class="hero-label">Un viaje a través de las letras</div>
+            <h1>El Arte de Narrar</h1>
+            <p class="hero-subtitle">Explora los hilos que tejen cada historia y descubre cómo convertir tus ideas en
+                mundos inolvidables.</p>
+        </section>
+
+        <div class="container">
+            <!-- Capítulo 1: Narrador -->
+            <section class="chapter" id="narrador">
+                <div class="chapter-header">
+                    <h2 class="chapter-title"><span>Capítulo 1</span> El Narrador</h2>
+                    <p>La voz que nos guía. No es el autor; es una creación que elige qué decirnos, cómo decirlo y qué
+                        callar.</p>
+                </div>
+                <div class="chapter-content">
+                    <p>Existen cuatro tipos principales de narradores dependiendo de si participan en la historia
+                        (internos) o si la cuentan desde fuera (externos).</p>
+                    <div class="type-grid">
+                        <div class="type-card">
+                            <h4>Protagonista</h4>
+                            <p>Narra en 1.ª persona ("yo") y participa en los hechos. Su percepción es parcial: puede interpretar, ocultar o incluso equivocarse.</p>
+                        </div>
+                        <div class="type-card">
+                            <h4>Testigo</h4>
+                            <p>Narra lo que ve que le sucede a otro. Participa en la historia pero su rol es de
+                                observador activo.</p>
+                        </div>
+                        <div class="type-card">
+                            <h4>Omnisciente</h4>
+                            <p>Narra en 3ª persona. Lo sabe absolutamente todo: pensamientos, pasados y futuros de cada
+                                personaje.</p>
+                        </div>
+                        <div class="type-card">
+                            <h4>Observador (Objetivo)</h4>
+                            <p>Narra en 3ª persona. Es como una cámara de cine: solo cuenta lo que se ve y se oye, sin
+                                acceder a la mente de nadie.</p>
+                        </div>
+                    </div>
+
+                    <img src="imagenes/narradores.png" alt="Ilustración de los tipos de narrador"
+                        class="featured-image">
+
+                    <div class="interactive-box" style="margin-top: 2rem;">
+                        <h3 style="margin-bottom: 0.6rem; font-family:var(--font-title);">Voz y focalización no son lo mismo</h3>
+                        <p><strong>La voz</strong> responde a quién cuenta; <strong>la focalización</strong>, a través de qué conciencia percibimos la historia. Un narrador en tercera persona puede limitarse a lo que sabe un personaje (focalización interna), conocer varias conciencias o describir solo lo observable (focalización externa).</p>
+                        <p style="margin-top: 0.8rem;"><strong>Pista de lectura:</strong> pregunta qué información recibe el lector, qué queda fuera y si la voz merece confianza. Un narrador puede ser parcial o no fiable sin que eso sea un error: puede ser una estrategia literaria.</p>
+                    </div>
+
+                    <h3
+                        style="margin-top: 3rem; margin-bottom: -1rem; font-family: var(--font-title); font-size: 1.8rem; text-align:center;">
+                        Juego de Voces: ¿Quién habla?</h3>
+                    <div class="interactive-grid">
+                        <div class="interactive-box">
+                            <h3>Pregunta 1</h3>
+                            <p style="font-style: italic;">"Sentí un nudo en el estómago mientras abría la puerta. Mi
+                                perro me esperaba pacientemente."</p>
+                            <button class="btn-reveal" onclick="reveal(this)">Revelar</button>
+                            <div class="reveal-content">
+                                <p><strong>Narrador Protagonista:</strong> Habla desde sus propios sentimientos en
+                                    primera persona.</p>
+                            </div>
+                        </div>
+
+                        <div class="interactive-box">
+                            <h3>Pregunta 2</h3>
+                            <p style="font-style: italic;">"La vi cruzar la calle bajo la lluvia. Parecía buscar algo
+                                desesperadamente, pero nunca me acerqué a preguntarle."</p>
+                            <button class="btn-reveal" onclick="reveal(this)">Revelar</button>
+                            <div class="reveal-content">
+                                <p><strong>Narrador Testigo:</strong> Cuenta lo que le pasa a alguien más desde su
+                                    perspectiva periférica.</p>
+                            </div>
+                        </div>
+
+                        <div class="interactive-box">
+                            <h3>Pregunta 3</h3>
+                            <p style="font-style: italic;">"Carlos no sabía que esa sería su última noche en la ciudad.
+                                Mientras dormía, solo soñaba con escapar lejos de allí."</p>
+                            <button class="btn-reveal" onclick="reveal(this)">Revelar</button>
+                            <div class="reveal-content">
+                                <p><strong>Narrador Omnisciente:</strong> Se mete en los sueños y sabe el futuro del
+                                    personaje.</p>
+                            </div>
+                        </div>
+
+                        <div class="interactive-box">
+                            <h3>Pregunta 4</h3>
+                            <p style="font-style: italic;">"El hombre de sombrero negro entró a la cafetería, pidió un
+                                té, miró fijamente su reloj tres veces y salió."</p>
+                            <button class="btn-reveal" onclick="reveal(this)">Revelar</button>
+                            <div class="reveal-content">
+                                <p><strong>Narrador Observador:</strong> Nos da acciones puras, ignorando qué siente o
+                                    piensa el sujeto.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Capítulo 2: Personajes -->
+            <section class="chapter" id="personajes">
+                <div class="chapter-header">
+                    <h2 class="chapter-title"><span>Capítulo 2</span> Los Personajes</h2>
+                    <p>Los seres que habitan el relato y movilizan la trama generándonos empatía o rechazo.</p>
+                </div>
+                <div class="chapter-content">
+                    <div class="type-grid">
+                        <div class="type-card">
+                            <h4>Protagonista</h4>
+                            <p>El centro absoluto. Su búsqueda, sea física o emocional, empuja la historia hacia
+                                adelante.</p>
+                        </div>
+                        <div class="type-card">
+                            <h4>Antagonista</h4>
+                            <p>La fuerza opuesta. Sus intereses chocan de frente con los del protagonista, propiciando
+                                el conflicto.</p>
+                        </div>
+                        <div class="type-card">
+                            <h4>Secundarios</h4>
+                            <p>Acompañantes, ayudantes u oponentes menores. Añaden profundidad y realismo al mundo
+                                creado.</p>
+                        </div>
+                    </div>
+                    <img src="imagenes/personajes.png" alt="Ilustración de personajes literarios"
+                        class="featured-image">
+
+                    <h3
+                        style="margin-top: 5rem; margin-bottom: -1rem; font-family: var(--font-title); font-size: 1.8rem; text-align:center;">
+                        Mini-Desafíos Clásicos: ¿Quién es quién?</h3>
+                    <div class="interactive-grid">
+                        <div class="interactive-box">
+                            <h3>1. Caperucita Roja</h3>
+                            <p>El Lobo Feroz engaña a la niña y persigue un objetivo opuesto al de ella. ¿Qué rol tiene?
+                            </p>
+                            <button class="quiz-option"
+                                onclick="check(this, true, '¡Correcto! Es la fuerza opuesta principal.')">Antagonista</button>
+                            <button class="quiz-option"
+                                onclick="check(this, false, 'Recuerda que no es un simple ayudante.')">Secundario</button>
+                            <div class="feedback"></div>
+                        </div>
+                        <div class="interactive-box">
+                            <h3>2. El Principito</h3>
+                            <p>El zorro, que enseña al príncipe el valor de la amistad, juega el rol en la historia de
+                                un...</p>
+                            <button class="quiz-option"
+                                onclick="check(this, false, 'No está en contra del protagonista.')">Antagonista</button>
+                            <button class="quiz-option"
+                                onclick="check(this, true, '¡Correcto! Es un ayudante clave para su viaje.')">Secundario</button>
+                            <div class="feedback"></div>
+                        </div>
+                        <div class="interactive-box">
+                            <h3>3. Blancanieves</h3>
+                            <p>La historia se centra en una joven perseguida por su madrastra debido a su belleza.
+                                ¿Quién es Blancanieves?</p>
+                            <button class="quiz-option"
+                                onclick="check(this, true, '¡Correcto! La trama existe por ella.')">Protagonista</button>
+                            <button class="quiz-option"
+                                onclick="check(this, false, 'Es incorrecto pensarla solo como observadora.')">Testigo</button>
+                            <div class="feedback"></div>
+                        </div>
+                        <div class="interactive-box">
+                            <h3>4. El Minotauro</h3>
+                            <p>La bestia encerrada en el laberinto, que debe ser obligatoriamente derrotada por el héroe
+                                griego Teseo, es el...</p>
+                            <button class="quiz-option"
+                                onclick="check(this, true, '¡Correcto! Es el obstáculo de vida o muerte frente al héroe.')">Antagonista</button>
+                            <button class="quiz-option"
+                                onclick="check(this, false, 'Teseo es el héroe principal.')">Protagonista</button>
+                            <div class="feedback"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Capítulo 3: El Tiempo -->
+            <section class="chapter" id="tiempo">
+                <div class="chapter-header">
+                    <h2 class="chapter-title"><span>Capítulo 3</span> El Tiempo</h2>
+                    <p>En la literatura, el reloj es mágico; se puede congelar, retroceder y adelantar a gusto del
+                        autor.</p>
+                </div>
+                <div class="chapter-content">
+                    <p>En <strong>narratología</strong>, distinguimos entre el <strong>Tiempo de la historia</strong>
+                        (cuánto duraron los hechos en la realidad ficcional, ej. diez años) y el <strong>Tiempo del
+                        relato</strong> (cómo se organizan en las páginas del libro). Las desviaciones temporales de
+                        la línea recta se llaman "anacronías". También observamos el <strong>ritmo</strong>: una escena puede detenerse en unos segundos mediante diálogo y descripción, mientras un resumen condensa meses o años.</p>
+
+                    <div class="type-grid">
+                        <div class="type-card">
+                            <h4>Narración Lineal</h4>
+                            <p>Los eventos progresan en orden estricto de principio a final, sin distracciones.</p>
+                        </div>
+                        <div class="type-card">
+                            <h4>Analepsis (Flashback)</h4>
+                            <p>Ocurre una interrupción cronológica para dar un salto hacia atrás y recordar hechos
+                                pasados.</p>
+                        </div>
+                        <div class="type-card">
+                            <h4>Prolepsis (Flashforward)</h4>
+                            <p>Ocurre un salto hacia el futuro, revelando cosas que aún no tocan cronológicamente, para
+                                generar tensión.</p>
+                        </div>
+                        <div class="type-card">
+                            <h4>Elipsis</h4>
+                            <p>Un truco de velocidad: el narrador omite un trozo aburrido del relato. ("Diez años
+                                después...").</p>
+                        </div>
+                        <div class="type-card">
+                            <h4>Escena y resumen</h4>
+                            <p>La escena acerca el tiempo del relato al de la acción; el resumen acelera muchos hechos en pocas líneas. Ambos regulan la atención.</p>
+                        </div>
+                    </div>
+                    <img src="imagenes/tiempo.png" alt="Ilustración sobre el tiempo en la narrativa"
+                        class="featured-image">
+                </div>
+            </section>
+
+            <!-- Capítulo 4: El Espacio -->
+            <section class="chapter" id="espacio">
+                <div class="chapter-header">
+                    <h2 class="chapter-title"><span>Capítulo 4</span> El Espacio</h2>
+                    <p>Mucho más que un decorado; a veces, un castillo oscuro puede ser tan importante como su dueño.
+                    </p>
+                </div>
+                <div class="chapter-content">
+                    <div class="type-grid">
+                        <div class="type-card">
+                            <h4>Físico o Geográfico</h4>
+                            <p>El escenario concreto y tangible: un parque, una habitación, una nave espacial.</p>
+                        </div>
+                        <div class="type-card">
+                            <h4>Psicológico</h4>
+                            <p>La atmósfera anímica que se respira: una sensación de paz envolvente o un ahogo
+                                claustrofóbico.</p>
+                        </div>
+                        <div class="type-card">
+                            <h4>Sociocultural</h4>
+                            <p>El estrato social y costumbres que envuelven a los actantes, dictando cómo hablan o
+                                piensan.</p>
+                        </div>
+                    </div>
+                    <p style="margin-top: 1.5rem;"><strong>El espacio también produce significado:</strong> puede abrir o cerrar posibilidades, marcar pertenencia, mostrar desigualdad o funcionar como símbolo. Para analizarlo, relaciona sus rasgos físicos con las acciones, el estado emocional y las relaciones de poder.</p>
+                    <img src="imagenes/espacio.png" alt="Ilustración sobre el espacio o ambiente"
+                        class="featured-image">
+                </div>
+            </section>
+
+            <!-- Capítulo 5: El Conflicto -->
+            <section class="chapter" id="conflicto">
+                <div class="chapter-header">
+                    <h2 class="chapter-title"><span>Capítulo 5</span> El Conflicto</h2>
+                    <p>La gasolina y motor de cualquier cuento. Si todo está perfecto, no hay historia o hay
+                        aburrimiento.</p>
+                </div>
+                <div class="chapter-content">
+                    <p>Consiste en una fuerza que se interpone entre el protagonista y un deseo, necesidad o valor. Para que el conflicto tenga sentido, identifica qué quiere el personaje, qué se lo impide y qué está en juego si fracasa.</p>
+                    <div class="type-grid">
+                        <div class="type-card">
+                            <h4>Conflicto Interno</h4>
+                            <p>La mente como campo de batalla: un dilema moral, un miedo tremendo, una crisis de
+                                identidad.</p>
+                        </div>
+                        <div class="type-card">
+                            <h4>Conflicto Externo</h4>
+                            <p>El choque contra algo físico: otro ser humano (antagonista), la ferocidad de la
+                                Naturaleza o de la Sociedad.</p>
+                        </div>
+                    </div>
+
+                    <div class="interactive-box" style="margin-top:2rem;">
+                        <h3 style="margin-bottom:0.5rem; font-family:var(--font-title);">Reflexión Rápida</h3>
+                        <p>En el relato clásico del <em>Patito Feo</em>, el conflicto principal es...</p>
+                        <button class="btn-reveal" onclick="reveal(this)">Comprobar</button>
+                        <div class="reveal-content">
+                            <p><strong>Doble o Mixto:</strong> Es Externo porque la sociedad (los demás animales) lo
+                                rechaza, lo que desencadena el conflicto Interno de su propia autoestima y sentimiento
+                                de abandono.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Capítulo 6: Estructura Narrativa / Trama -->
+            <section class="chapter" id="trama">
+                <div class="chapter-header">
+                    <h2 class="chapter-title"><span>Capítulo 6</span> La Estructura de la Trama</h2>
+                    <p>La gran arquitectura de los cuentos tradicionales para atrapar la mente del espectador.</p>
+                </div>
+                <div class="chapter-content">
+                    <p>El modelo de inicio, desarrollo, clímax y desenlace es una herramienta útil para visualizar la progresión de muchas tramas, pero no es una ley universal. Algunas obras comienzan por el final, mantienen una tensión baja o fragmentan la resolución; por eso conviene usar el esquema como hipótesis y comprobarlo en el texto.</p>
+
+                    <div class="type-grid">
+                        <div class="type-card">
+                            <h4>1. Planteamiento / Inicio</h4>
+                            <p>Nos sitúan en el espacio, presentan a los protagonistas y describen una situación de
+                                equilibrio inicial.</p>
+                        </div>
+                        <div class="type-card">
+                            <h4>2. Nudo / Desarrollo</h4>
+                            <p>Un evento irrumpe alterando la calma (Incidente incitador). Los conflictos y obstáculos
+                                escalan sin parar.</p>
+                        </div>
+                        <div class="type-card">
+                            <h4>3. Clímax</h4>
+                            <p>El pináculo de la acción. El momento crítico y el gran enfrentamiento decisivo. No hay
+                                marcha atrás.</p>
+                        </div>
+                        <div class="type-card">
+                            <h4>4. Desenlace / Final</h4>
+                            <p>Consecuencia del clímax; la tempestad acaba. Se conforma un nuevo estado de equilibrio
+                                (mejor o peor que el inicial).</p>
+                        </div>
+                    </div>
+
+                    <div class="tension-curve" id="tension-curve">
+                        <img src="imagenes/trama.png" alt="Ilustración de la estructura y curva de tensión">
+
+                        <!-- Puntos interactivos superpuestos en CSS dinámico con % adaptables -->
+                        <div class="tension-point" style="left: 15%; top: 75%;"
+                            data-info="Planteamiento: Situación inicial de equilibrio e introducción del mundo."></div>
+
+                        <div class="tension-point" style="left: 35%; top: 50%;"
+                            data-info="Nudo / Desarrollo: Aumentan las complicaciones y crece toda la tensión emocional.">
+                        </div>
+
+                        <div class="tension-point" style="left: 77%; top: 20%;"
+                            data-info="Clímax: Choque definitivo o la cima absoluta de la intriga."></div>
+
+                        <div class="tension-point" style="left: 92%; top: 70%;"
+                            data-info="Desenlace: Resolución de la trama dando paso a un equilibrio diferente."></div>
+                    </div>
+                    <div id="tension-info"
+                        style="margin-top: 1.5rem; font-style: italic; color: var(--text-soft); min-height: 2em; text-align: center;">
+                        Haz clic en los puntos circulares superpuestos en la imagen para repasar las etapas.</div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Final Quiz Section -->
+        <section class="final-quiz-section" id="quiz-final">
+            <h2>El Gran Reto Narrativo</h2>
+            <p style="margin-bottom:2rem; font-size:1.1rem; color: #ddd;">Demuestra tus conocimientos tras haber
+                atravesado los senderos de estas lecturas.</p>
+            <button class="btn-start-quiz" onclick="startFinalQuiz()">Comenzar Quiz</button>
+
+            <div id="final-quiz-container"
+                style="display:none; text-align: left; max-width: 650px; margin: 0 auto; background: rgba(255,255,255,0.1); padding: 2.5rem; border-radius: 16px;">
+                <div id="question-area"></div>
+                <div id="result-area" style="display:none; text-align: center;"></div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 El Arte de Narrar | Creado para el aprendizaje literario interactivo</p>
+            <p style="margin-top: 0.8rem; opacity: 0.6; font-size: 0.85rem;"> Literatura viva, historias que duran 
+            </p>
+        </footer>
+    </main>
+
+    <script>
+        // ===== CONFIG =====
+        // URL de Google Apps Script Web App:
+        const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzzyWnSxibdZzLLzqQGCHvE5wDxMUsdMykSykOp1DspFTqionKtBiCxkUOnZYWRrRHt/exec';
+
+        // ===== Student Data =====
+        let studentName = 'Estudiante';
+        let studentCourse = 'General';
+
+        // Intersection Observer for animations and active link updating
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    const id = e.target.id;
+                    if (id !== "inicio") {
+                        document.querySelectorAll('.nav-link').forEach(l => {
+                            l.classList.toggle('active', l.getAttribute('href') === `#${id}`);
+                        });
+                    }
+                }
+            });
+        }, { threshold: 0.15, rootMargin: "-100px 0px 0px 0px" });
+
+        document.querySelectorAll('.chapter, .final-quiz-section, .hero').forEach(c => obs.observe(c));
+
+        // Interaction logic reveal cards
+        function reveal(btn) {
+            const content = btn.nextElementSibling;
+            const isVisible = content.style.display === 'block';
+            content.style.display = isVisible ? 'none' : 'block';
+            btn.textContent = isVisible ? 'Revelar' : 'Ocultar';
+        }
+
+        // Mini-quiz interaction function
+        function check(btn, correct, feedbackText) {
+            const parent = btn.parentElement;
+            const feedback = parent.querySelector('.feedback');
+            parent.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('correct', 'incorrect'));
+
+            if (correct) {
+                btn.classList.add('correct');
+            } else {
+                btn.classList.add('incorrect');
+            }
+            feedback.innerHTML = feedbackText;
+            feedback.style.display = 'block';
+        }
+
+        // Tension Curve Logic Tooltips
+        document.querySelectorAll('.tension-point').forEach(p => {
+            p.addEventListener('click', () => {
+                document.getElementById('tension-info').textContent = p.getAttribute('data-info');
+            });
+        });
+
+        // Final Quiz Logic with Advanced Questions
+        const questions = [
+            { q: "Lee este texto: <em>«María sonrió al verlo llegar, aunque en el fondo de su corazón sentía un profundo terror inexplicable. Él, ajeno a ese temor, planeaba invitarla a cenar ese mismo día.»</em><br><br>¿Qué tipo de narrador es?", o: ["Omnisciente", "Testigo", "Observador (Objetivo)"], a: 0, e: "el narrador omnisciente conoce los pensamientos internos de <em>ambos</em> personajes al mismo tiempo, algo imposible para un testigo o un observador externo." },
+            { q: "Lee este texto: <em>«No supe qué hacer cuando me entregaron la carta. Me temblaban las manos y el mundo pareció detenerse por completo.»</em><br><br>El narrador de este fragmento es...", o: ["Observador", "Protagonista", "Testigo"], a: 1, e: "la voz en primera persona ('no supe', 'me temblaban') que vive directamente los hechos es el narrador protagonista." },
+            { q: "A nivel teórico, ¿qué narrador actúa como una cámara de cine, porque narra incidentes observables sin acceder jamás a la mente de los personajes?", o: ["Observador (Objetivo)", "Protagonista", "Omnisciente"], a: 0, e: "el narrador observador u objetivo solo relata lo que cualquiera podría ver desde fuera; nunca revela pensamientos ni emociones internas." },
+            { q: "En un cuento, si el objetivo central del caballero es salvar el reino, y un dragón busca detenerlo a toda costa, el dragón cumple obligatoriamente el rol de:", o: ["Secundario", "Antagonista", "Protagonista"], a: 1, e: "el antagonista es la fuerza que se opone directamente al deseo del protagonista; no tiene que ser un villano, puede ser una persona, un animal o incluso la naturaleza." },
+            { q: "La historia transcurre en 2026, pero de repente el texto relata: <em>«Él recordó la lluviosa tarde de 1999 cuando conoció a su amigo. Ese día fue inolvidable...»</em><br><br>¿Qué salto temporal acaba de ocurrir?", o: ["Elipsis temporal", "Prolepsis (Flashforward)", "Analepsis (Flashback)"], a: 2, e: "la analepsis (o flashback) lleva la narración hacia el pasado. La prolepsis sería un salto al futuro, y la elipsis es una omisión de tiempo." },
+            { q: "En medio de la lectura, encuentras esta frase: <em>«Y así transcurrieron cinco largos y aburridos años en el palacio real.»</em><br><br>A esta omisión acelerada de tiempo se le conoce en narratología como...", o: ["Elipsis", "Analepsis", "Prolepsis"], a: 0, e: "la elipsis condensa o suprime un período de tiempo en pocas palabras. Así el narrador acelera el ritmo de la historia sin detenerse en esos años." },
+            { q: "Analiza esta descripción: <em>«La lluvia no daba tregua; los callejones oscuros y el sonido constante de sirenas a lo lejos sumergían a la ciudad en una inmensa tristeza gris.»</em><br><br>¿A qué tipo de espacio narrativo alude principalmente?", o: ["Psicológico (Atmósfera)", "Sociocultural (Costumbres)", "Físico / Geográfico"], a: 0, e: "aunque hay elementos físicos (lluvia, callejones), el objetivo del texto es construir una <em>atmósfera emocional</em> de tristeza, lo que define al espacio psicológico." },
+            { q: "Un grupo de astronautas lucha a diario contra las fallas mecánicas de su nave para no perder oxígeno y sobrevivir. Esto es un claro ejemplo de un conflicto:", o: ["Interno", "Externo", "Mixto (interno y externo)"], a: 1, e: "el conflicto externo enfrenta al personaje contra una fuerza fuera de sí mismo: en este caso, la naturaleza hostil del espacio y las fallas tecnológicas." },
+            { q: "Es el momento dentro de la trama donde la calma inicial se rompe porque ocurre el incidente incitador, el problema principal arranca y comienzan a surgir obstáculos y tensiones progresivas. Nos referimos a:", o: ["Desenlace", "Clímax", "Nudo / Desarrollo"], a: 2, e: "el nudo o desarrollo es la etapa de tensión creciente tras el planteamiento. El clímax es el punto más alto de esa tensión, y el desenlace es la resolución final." },
+            { q: "El punto de mayor choque de conflictos, donde se produce la inflexión definitiva y no hay ninguna posibilidad de marcha atrás en la trama, se denomina...", o: ["Planteamiento", "Clímax", "Desenlace"], a: 1, e: "el clímax es la cima de la tensión narrativa, el momento de quiebre irreversible. Después de él, la historia solo puede avanzar hacia su resolución en el desenlace." }
+        ];
+
+        let currentQ = 0;
+        let score = 0;
+
+        function startFinalQuiz() {
+            document.querySelector('.btn-start-quiz').style.display = 'none';
+            document.getElementById('final-quiz-container').style.display = 'block';
+            showQuestion();
+        }
+
+        function showQuestion() {
+            if (currentQ >= questions.length) { showResult(); return; }
+            const q = questions[currentQ];
+            let html = `<h4 style="color:var(--accent-narrador); margin-bottom:0.5rem; text-transform:uppercase; font-size:0.8rem; letter-spacing:0.1em;">Pregunta ${currentQ + 1} de ${questions.length}</h4><h3 style="font-family:var(--font-title); font-size:1.4rem; font-weight:normal; line-height:1.4;">${q.q}</h3>`;
+
+            html += `<div style="margin-top: 1.5rem;">`;
+            q.o.forEach((opt, i) => {
+                html += `<button class="quiz-option" style="color:var(--text-main); font-weight:600;" onclick="answer(${i})">${opt}</button>`;
+            });
+            html += `</div>`;
+            document.getElementById('question-area').innerHTML = html;
+        }
+
+        function answer(idx) {
+            const btns = document.querySelectorAll('#question-area .quiz-option');
+            const correct = questions[currentQ].a;
+            const explanation = questions[currentQ].e;
+            const isCorrect = idx === correct;
+            btns.forEach((b, i) => {
+                b.disabled = true;
+                if (i === correct) b.classList.add('correct');
+                else if (i === idx && idx !== correct) b.classList.add('incorrect');
+            });
+            if (isCorrect) { score++; }
+
+            // Mostrar explicación
+            const expBox = document.createElement('div');
+            expBox.style.cssText = `margin-top:1rem; padding:0.9rem 1.2rem; border-radius:10px; font-family:var(--font-ui); font-size:0.88rem; line-height:1.6; animation: fadeInReveal 0.3s forwards; ${isCorrect
+                    ? 'background:#c8e6c9; border-left:4px solid #388e3c; color:#1b5e20;'
+                    : 'background:#ffcdd2; border-left:4px solid #c62828; color:#7f0000;'
+                }`;
+            expBox.innerHTML = (isCorrect ? ' Correcto: ' : ' La respuesta correcta era: ') + explanation;
+            document.getElementById('question-area').appendChild(expBox);
+
+            // Botón de siguiente — el estudiante avanza cuando quiera
+            const isLast = currentQ >= questions.length - 1;
+            const nextBtn = document.createElement('button');
+            nextBtn.textContent = isLast ? 'Ver mi resultado →' : 'Siguiente pregunta →';
+            nextBtn.style.cssText = `
+                margin-top: 1.2rem; padding: 0.75rem 1.8rem;
+                background: var(--text-main); color: #fff; border: none;
+                border-radius: 50px; font-family: var(--font-ui); font-weight: 600;
+                font-size: 0.9rem; cursor: pointer; display: block;
+                transition: var(--transition); animation: fadeInReveal 0.4s forwards;
+            `;
+            nextBtn.onmouseover = () => nextBtn.style.background = 'var(--accent-narrador)';
+            nextBtn.onmouseout = () => nextBtn.style.background = 'var(--text-main)';
+            nextBtn.onclick = () => { currentQ++; showQuestion(); };
+            document.getElementById('question-area').appendChild(nextBtn);
+        }
+
+        function showResult() {
+            document.getElementById('question-area').style.display = 'none';
+            const res = document.getElementById('result-area');
+            res.style.display = 'block';
+
+            const nota = score; // Cada pregunta vale 1 punto, total = 10
+            let feedback = score === questions.length
+                ? "¡Magistral! Eres un auténtico experto narratológico."
+                : score >= 7
+                    ? "¡Muy bien! Dominas la mayoría de los conceptos."
+                    : "¡Buen esfuerzo! Repasa un poco y dominarás las letras.";
+
+            res.innerHTML = `
+                <h3 style="font-family:var(--font-title); font-size:2rem; margin-bottom:1rem;">¡Prueba Finalizada!</h3>
+                <p style="font-size:0.9rem; color:#ccc; margin-bottom:0.5rem;">${studentName} — ${studentCourse}</p>
+                <p style="font-size:1.5rem; font-weight:600; color:var(--accent-tiempo); margin-bottom:1rem;">Nota: ${nota} / 10</p>
+                <p style="font-size:1.1rem; font-style:italic;">${feedback}</p>
+                <div id="send-status" class="status-msg sending">Enviando tu nota al registro...</div>
+                <button id="btn-restart" class="btn-start-quiz" style="display:none; margin-top: 2rem;" onclick="location.reload()">Empezar Nuevo Viaje</button>
+            `;
+
+            // Send to Google Sheets
+            if (SHEETS_URL && SHEETS_URL !== 'PEGAR_URL_AQUI') {
+                fetch(SHEETS_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify({
+                        nombre: studentName,
+                        curso: studentCourse,
+                        nota: nota
+                    })
+                })
+                    .then(() => {
+                        const el = document.getElementById('send-status');
+                        el.className = 'status-msg success';
+                        el.textContent = ' Tu nota ha sido registrada exitosamente.';
+                        const btn = document.getElementById('btn-restart');
+                        if (btn) btn.style.display = 'inline-block';
+                    })
+                    .catch(() => {
+                        const el = document.getElementById('send-status');
+                        el.className = 'status-msg error';
+                        el.textContent = ' No se pudo enviar. Avisa a tu profesor.';
+                        const btn = document.getElementById('btn-restart');
+                        if (btn) btn.style.display = 'inline-block';
+                    });
+            } else {
+                const el = document.getElementById('send-status');
+                el.className = 'status-msg error';
+                el.textContent = 'El registro aún no está configurado.';
+            }
+        }
+
+        // ===== Image Lightbox (Zoom) =====
+        document.addEventListener('DOMContentLoaded', () => {
+            // Create lightbox container
+            const lightbox = document.createElement('div');
+            lightbox.id = 'lightbox';
+            lightbox.className = 'lightbox';
+            document.body.appendChild(lightbox);
+
+            // Add click events to all content images
+            const images = document.querySelectorAll('.chapter-content img, .tension-curve img');
+            images.forEach(img => {
+                img.addEventListener('click', () => {
+                    lightbox.innerHTML = `<img src="${img.src}" alt="${img.alt || 'Imagen ampliada'}">`;
+                    lightbox.classList.add('active');
+                });
+            });
+
+            // Close lightbox on click
+            lightbox.addEventListener('click', () => {
+                lightbox.classList.remove('active');
+                lightbox.innerHTML = '';
+            });
+        });
+    </script>
+</body>
+
+</html>
