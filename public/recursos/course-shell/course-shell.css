@@ -1,0 +1,154 @@
+:root {
+  --course-sidebar-width: 280px;
+  --course-sidebar-bg: #071B33;
+  --course-sidebar-text: #F3F1EA;
+  --course-sidebar-muted: #CBD5E1;
+  --course-sidebar-active: #F3A39D;
+  --course-shell-offset: 28px;
+}
+
+body.course-shell {
+  padding-left: var(--course-sidebar-width) !important;
+}
+
+.course-sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 2000;
+  width: var(--course-sidebar-width);
+  min-height: 100vh;
+  padding: 24px 18px;
+  overflow-y: auto;
+  background: var(--course-sidebar-bg);
+  color: var(--course-sidebar-text);
+  border-right: 1px solid rgba(243, 241, 234, 0.18);
+  box-shadow: 4px 0 18px rgba(7, 27, 51, 0.18);
+  font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.course-sidebar__back {
+  display: inline-block;
+  margin-bottom: 22px;
+  color: var(--course-sidebar-muted) !important;
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.course-sidebar__back:hover,
+.course-sidebar__back:focus-visible {
+  color: #FFFFFF !important;
+}
+
+.course-sidebar__title {
+  margin: 0;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(243, 241, 234, 0.18);
+  color: #FFFFFF !important;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.course-sidebar__nav {
+  display: grid;
+  gap: 4px;
+  margin-top: 18px;
+}
+
+.course-sidebar__link {
+  display: block;
+  width: 100%;
+  padding: 9px 10px;
+  border: 0;
+  border-left: 2px solid transparent;
+  background: transparent;
+  color: var(--course-sidebar-text) !important;
+  font: inherit;
+  font-size: 12px;
+  line-height: 1.35;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.course-sidebar__link:hover,
+.course-sidebar__link:focus-visible {
+  background: rgba(243, 241, 234, 0.1);
+  color: #FFFFFF !important;
+}
+
+.course-sidebar__link.is-active {
+  border-left-color: var(--course-sidebar-active);
+  background: rgba(243, 241, 234, 0.14);
+  color: #FFFFFF !important;
+  font-weight: 700;
+}
+
+.course-sidebar__link:focus-visible {
+  outline: 2px solid var(--course-sidebar-active);
+  outline-offset: 2px;
+}
+
+body.course-shell > header,
+body.course-shell > .hero {
+  margin-top: 0;
+}
+
+body.course-shell main,
+body.course-shell > .container,
+body.course-shell > .content-wrapper,
+body.course-shell > .app-container {
+  min-width: 0;
+}
+
+body.course-shell .course-shell__section-anchor {
+  scroll-margin-top: var(--course-shell-offset);
+}
+
+body.course-shell .course-shell__section-anchor :is(p, li, td, th, label, input, textarea, select) {
+  color: inherit;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --course-sidebar-width: 228px;
+  }
+
+  .course-sidebar {
+    padding: 20px 12px;
+  }
+
+  .course-sidebar__title {
+    font-size: 17px;
+  }
+
+  .course-sidebar__link {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --course-sidebar-width: 196px;
+  }
+
+  .course-sidebar__back {
+    margin-bottom: 14px;
+    font-size: 10px;
+  }
+
+  .course-sidebar__title {
+    font-size: 15px;
+  }
+
+  .course-sidebar__link {
+    padding: 8px 7px;
+    font-size: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .course-sidebar__link {
+    transition: none !important;
+  }
+}

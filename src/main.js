@@ -22,32 +22,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 2. Formación Catalog Tab Filtering
-  const tabBtns = document.querySelectorAll('.tab-btn');
-  const courseCards = document.querySelectorAll('.course-card');
+  // 2. Recursos Thematic Filter
+  const recursoFilters = document.querySelectorAll('.recurso-filter-btn');
+  const recursoCards = document.querySelectorAll('.recurso-card');
 
-  tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // Remove active from all tabs
-      tabBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+  if (recursoFilters.length > 0 && recursoCards.length > 0) {
+    recursoFilters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        recursoFilters.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
 
-      const category = btn.getAttribute('data-category');
+        const category = btn.getAttribute('data-filter');
 
-      courseCards.forEach(card => {
-        if (category === 'all') {
-          card.style.display = 'flex';
-        } else {
-          const cardCat = card.getAttribute('data-cat');
-          if (cardCat === category) {
+        recursoCards.forEach(card => {
+          if (category === 'all') {
             card.style.display = 'flex';
           } else {
-            card.style.display = 'none';
+            const cardCat = card.getAttribute('data-cat');
+            if (cardCat && cardCat.includes(category)) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
           }
-        }
+        });
       });
     });
-  });
+  }
 
   // 3. Scroll Spy for Active Navigation Links
   const sections = document.querySelectorAll('section[id]');

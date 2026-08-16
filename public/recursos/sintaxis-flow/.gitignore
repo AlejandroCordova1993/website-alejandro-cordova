@@ -1,0 +1,34 @@
+# Ignorar archivos del sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Ignorar archivos de configuración del editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignorar archivos de respaldo
+*~
+*.bak
+*.swp
+*.swo
+
+# Ignorar carpetas de node_modules (si en el futuro agregas dependencias)
+node_modules/
+
+# Ignorar archivos de logs
+*.log
+npm-debug.log*
+
+# Ignorar archivos de configuración local
+.env
+.env.local
+config.local.js
+
+# No ignorar estos archivos importantes
+!README.md
+!GUÍA_ESTUDIANTES.md
+!INSTRUCCIONES_GOOGLE_SHEETS.md
+!ANÁLISIS_Y_MEJORAS.md
