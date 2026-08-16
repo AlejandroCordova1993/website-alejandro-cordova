@@ -11,6 +11,21 @@ body.course-shell {
   padding-left: var(--course-sidebar-width) !important;
 }
 
+body.course-shell.modal-open,
+body.course-shell.lightbox-open,
+body.modal-open,
+body.lightbox-open {
+  padding-left: 0 !important;
+}
+
+body.modal-open .course-sidebar,
+body.lightbox-open .course-sidebar {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
 .course-sidebar {
   position: fixed;
   inset: 0 auto 0 0;

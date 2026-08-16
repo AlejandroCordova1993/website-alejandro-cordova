@@ -4055,24 +4055,43 @@ a { color: inherit; text-decoration: none; }
     box-shadow: 0 4px 15px rgba(226, 114, 91, 0.4);
 }
 
+body.modal-open,
+body.lightbox-open {
+    padding-left: 0 !important;
+    overflow: hidden !important;
+}
+
+body.modal-open .course-sidebar,
+body.lightbox-open .course-sidebar,
+body.modal-open #course-sidebar,
+body.lightbox-open #course-sidebar {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
 .modal {
     display: none;
     position: fixed;
-    z-index: 100;
-    padding-top: 100px;
+    z-index: 999999 !important;
+    padding-top: 60px;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw !important;
+    height: 100vh !important;
     overflow: auto;
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0,0,0,0.95);
 }
 
 .modal-content {
     margin: auto;
     display: block;
-    width: 80%;
-    max-width: 1200px;
+    max-width: 90vw;
+    max-height: 88vh;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
 }
 
 .close-btn {
