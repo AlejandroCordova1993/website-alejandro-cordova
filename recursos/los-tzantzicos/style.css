@@ -326,6 +326,84 @@ body {
 }
 
 /* ==========================================================================
+   ESPACIOS PARA IMÁGENES (SLOTS EDITORIALES)
+   ========================================================================== */
+
+.image-slot-container {
+  margin: 24px 0;
+  border-radius: var(--radius-md);
+  border: 2px dashed var(--color-border);
+  background-color: #FFFFFF;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.image-slot-container:hover {
+  border-color: var(--color-red);
+  background-color: #FAF9F5;
+}
+
+.image-slot-empty {
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.image-slot-icon {
+  font-size: 1.8rem;
+  margin-bottom: 4px;
+}
+
+.image-slot-badge {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--color-red);
+  background-color: #FEF2F2;
+  border: 1px solid #FECACA;
+  padding: 3px 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.image-slot-title {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-blue);
+  max-width: 650px;
+}
+
+.image-slot-desc {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-slate-muted);
+  max-width: 500px;
+}
+
+/* Imagen real dentro del slot */
+.image-slot-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.image-slot-caption {
+  padding: 10px 16px;
+  background-color: var(--color-paper);
+  border-top: 1px solid var(--color-border);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-slate-muted);
+}
+
+/* ==========================================================================
    GALERÍA DE AUTORES & CARDS (SECCIÓN 05)
    ========================================================================== */
 
@@ -399,21 +477,35 @@ body {
   margin-bottom: 14px;
 }
 
-.author-monogram-badge {
-  width: 48px;
-  height: 48px;
+.author-avatar-slot {
+  width: 52px;
+  height: 52px;
   border-radius: var(--radius-sm);
-  background-color: var(--color-blue);
-  color: #FFFFFF;
+  background-color: var(--color-paper);
+  border: 2px dashed var(--color-border);
+  color: var(--color-blue);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-mono);
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.05em;
-  border: 2px solid var(--color-red);
   flex-shrink: 0;
+  overflow: hidden;
+  position: relative;
+  transition: var(--transition);
+}
+
+.author-avatar-slot:hover {
+  border-color: var(--color-red);
+  background-color: #FFFFFF;
+}
+
+.author-avatar-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .author-meta-info {
