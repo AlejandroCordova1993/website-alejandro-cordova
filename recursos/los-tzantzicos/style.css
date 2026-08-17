@@ -1,7 +1,7 @@
 /* ==========================================================================
    SISTEMA DE DISEÑO — LOS TZÁNTZICOS (1962–1969)
    Vanguardia, Ruptura y Poética de la Indignación
-   Diseño de Marca Alejandro Córdova
+   Diseño de Marca Alejandro Córdova — Consultoría e Innovación Educativa
    ========================================================================== */
 
 :root {
@@ -40,6 +40,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -48,10 +49,11 @@ body {
   color: var(--color-charcoal);
   line-height: 1.65;
   overflow-x: hidden;
+  position: relative;
 }
 
 /* ==========================================================================
-   SIDEBAR FIJA
+   SIDEBAR FIJA & NAVEGACIÓN
    ========================================================================== */
 
 .sidebar {
@@ -66,8 +68,9 @@ body {
   flex-direction: column;
   z-index: 1000;
   box-shadow: 4px 0 24px rgba(7, 27, 51, 0.2);
-  transition: var(--transition);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .sidebar-header {
@@ -222,6 +225,7 @@ body {
   font-size: 0.8125rem;
   box-shadow: var(--shadow-lg);
   cursor: pointer;
+  touch-action: manipulation;
 }
 
 /* ==========================================================================
@@ -254,6 +258,7 @@ body {
   border-radius: 50%;
   background-color: var(--color-red);
   display: inline-block;
+  flex-shrink: 0;
 }
 
 .module-header {
@@ -264,17 +269,18 @@ body {
 
 .module-title {
   font-family: var(--font-sans);
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 800;
   color: var(--color-blue);
   line-height: 1.15;
   letter-spacing: -0.02em;
   margin-bottom: 14px;
+  word-break: break-word;
 }
 
 .module-lead {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
   line-height: 1.6;
   color: var(--color-charcoal);
   max-width: 900px;
@@ -304,12 +310,13 @@ body {
 }
 
 .section-heading {
-  font-size: 1.65rem;
+  font-size: clamp(1.35rem, 3vw, 1.65rem);
   font-weight: 700;
   color: var(--color-blue);
   line-height: 1.25;
   margin-bottom: 18px;
   letter-spacing: -0.01em;
+  word-break: break-word;
 }
 
 .editorial-text {
@@ -449,6 +456,7 @@ body {
   color: var(--color-charcoal);
   cursor: pointer;
   transition: var(--transition);
+  touch-action: manipulation;
 }
 
 .author-filter-btn:hover {
@@ -465,7 +473,7 @@ body {
 
 .authors-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   gap: 24px;
   margin-top: 10px;
 }
@@ -537,6 +545,7 @@ body {
 
 .author-meta-info {
   flex: 1;
+  min-width: 0;
 }
 
 .author-role-tag {
@@ -574,6 +583,7 @@ body {
   border-radius: 3px;
   margin-bottom: 12px;
   border: 1px solid var(--color-border);
+  max-width: 100%;
 }
 
 .author-bio-text {
@@ -664,8 +674,8 @@ body {
   top: 14px;
   right: 14px;
   z-index: 10;
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: var(--color-blue);
   color: #FFFFFF;
@@ -677,6 +687,7 @@ body {
   align-items: center;
   justify-content: center;
   transition: var(--transition);
+  touch-action: manipulation;
 }
 
 .image-modal-close:hover {
@@ -692,6 +703,7 @@ body {
   overflow-y: auto;
   max-height: calc(90vh - 2px);
   background-color: #0E1726;
+  -webkit-overflow-scrolling: touch;
 }
 
 .image-modal-picture {
@@ -903,6 +915,7 @@ body {
 
 .table-responsive {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   margin: 24px 0;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
@@ -911,6 +924,7 @@ body {
 
 .comparison-table {
   width: 100%;
+  min-width: 600px;
   border-collapse: collapse;
   text-align: left;
   font-size: 0.9rem;
@@ -1075,6 +1089,7 @@ body {
   color: var(--color-charcoal);
   cursor: pointer;
   transition: var(--transition);
+  touch-action: manipulation;
 }
 
 .quiz-option-btn:hover {
@@ -1121,9 +1136,10 @@ body {
 }
 
 /* ==========================================================================
-   RESPONSIVE
+   RESPONSIVE BREAKPOINTS
    ========================================================================== */
 
+/* Tablet & Mobile Landscape (<= 960px) */
 @media (max-width: 960px) {
   .sidebar {
     transform: translateX(-100%);
@@ -1139,11 +1155,7 @@ body {
 
   .main-wrapper {
     margin-left: 0;
-    padding: 30px 20px 80px;
-  }
-
-  .module-title {
-    font-size: 2rem;
+    padding: 30px 24px 90px;
   }
 
   .grid-2, .grid-3 {
@@ -1155,14 +1167,104 @@ body {
   }
 
   .content-section {
+    padding: 28px 24px;
+    margin-bottom: 28px;
+  }
+
+  .manifesto-box {
+    padding: 22px 24px;
+  }
+
+  .quiz-container {
     padding: 24px 20px;
+  }
+}
+
+/* Mobile Portrait (<= 640px) */
+@media (max-width: 640px) {
+  .main-wrapper {
+    padding: 20px 16px 80px;
+  }
+
+  .content-section {
+    padding: 20px 16px;
+    border-radius: var(--radius-sm);
+  }
+
+  .module-header {
+    margin-bottom: 28px;
+  }
+
+  .author-card-top {
+    padding: 18px 16px 14px;
+  }
+
+  .author-quote-box {
+    padding: 12px 16px;
+  }
+
+  .editorial-image-card {
+    margin: 20px 0;
+  }
+
+  .image-caption-bar {
+    padding: 12px 14px;
+  }
+
+  .interactive-timeline {
+    padding-left: 24px;
+    margin: 24px 0;
+  }
+
+  .interactive-timeline::before {
+    left: 7px;
+  }
+
+  .timeline-milestone::before {
+    left: -24px;
+    width: 16px;
+    height: 16px;
+    border-width: 3px;
   }
 
   .image-modal-backdrop {
-    padding: 12px;
+    padding: 10px;
   }
 
   .image-modal-picture {
-    max-height: 50vh;
+    max-height: 48vh;
+  }
+
+  .image-modal-caption {
+    padding: 14px 16px;
+  }
+
+  .image-modal-close {
+    top: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .author-filters {
+    gap: 6px;
+  }
+
+  .author-filter-btn {
+    padding: 6px 12px;
+    font-size: 0.78rem;
+  }
+}
+
+/* Small Mobiles (<= 380px) */
+@media (max-width: 380px) {
+  .author-header-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .authors-grid {
+    grid-template-columns: 1fr;
   }
 }
