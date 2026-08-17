@@ -326,23 +326,25 @@ body {
 }
 
 /* ==========================================================================
-   DIRECTORIO CRÍTICO MASTER-DETAIL DE AUTORES (SECCIÓN 05)
+   GALERÍA DE AUTORES & CARDS (SECCIÓN 05)
    ========================================================================== */
 
 .author-filters {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .author-filter-btn {
-  padding: 7px 15px;
+  padding: 8px 16px;
   background-color: var(--color-surface-pure);
   border: 1px solid var(--color-border);
   border-radius: 20px;
   font-family: var(--font-sans);
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   font-weight: 600;
   color: var(--color-charcoal);
   cursor: pointer;
@@ -361,219 +363,133 @@ body {
   border-color: var(--color-blue);
 }
 
-.author-dossier-layout {
+.authors-grid {
   display: grid;
-  grid-template-columns: 310px 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 24px;
+  margin-top: 10px;
+}
+
+.author-card {
   background-color: var(--color-surface-pure);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  padding: 24px;
-  box-shadow: var(--shadow-sm);
-  min-height: 480px;
-}
-
-.author-directory-nav {
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  max-height: 520px;
-  overflow-y: auto;
-  padding-right: 8px;
-  border-right: 1px solid var(--color-border);
-}
-
-/* Custom Scrollbar */
-.author-directory-nav::-webkit-scrollbar {
-  width: 5px;
-}
-.author-directory-nav::-webkit-scrollbar-thumb {
-  background-color: var(--color-border);
-  border-radius: 3px;
-}
-
-.author-nav-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 12px;
-  border-radius: var(--radius-sm);
-  background-color: transparent;
-  border: 1px solid transparent;
-  text-align: left;
-  cursor: pointer;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
   transition: var(--transition);
-  font-family: var(--font-sans);
 }
 
-.author-nav-item:hover {
-  background-color: var(--color-paper);
-  border-color: var(--color-border);
+.author-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-red);
+  box-shadow: var(--shadow-md);
 }
 
-.author-nav-item.active {
+.author-card-top {
+  padding: 24px 24px 16px;
+}
+
+.author-header-group {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.author-monogram-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
   background-color: var(--color-blue);
-  border-color: var(--color-blue);
-}
-
-.author-nav-monogram {
-  width: 36px;
-  height: 36px;
-  border-radius: 4px;
-  background-color: var(--color-paper);
-  color: var(--color-blue);
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  font-weight: 700;
+  color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  border: 1px solid var(--color-border);
-  transition: var(--transition);
-}
-
-.author-nav-item.active .author-nav-monogram {
-  background-color: var(--color-red);
-  color: #FFFFFF;
-  border-color: var(--color-red);
-}
-
-.author-nav-info {
-  flex: 1;
-  min-width: 0;
-}
-
-.author-nav-name {
-  font-size: 0.92rem;
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
   font-weight: 700;
-  color: var(--color-blue);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-bottom: 2px;
+  letter-spacing: 0.05em;
+  border: 2px solid var(--color-red);
+  flex-shrink: 0;
 }
 
-.author-nav-item.active .author-nav-name {
-  color: #FFFFFF !important;
+.author-meta-info {
+  flex: 1;
 }
 
-.author-nav-role {
+.author-role-tag {
   font-family: var(--font-mono);
   font-size: 0.6875rem;
-  color: var(--color-slate-muted);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.author-nav-item.active .author-nav-role {
-  color: var(--color-slate-light) !important;
-}
-
-/* Panel de Detalle Crítico (Dossier) */
-.author-dossier-stage {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 6px 12px 6px 8px;
-  animation: fadeInDossier 0.25s ease-in-out;
-}
-
-@keyframes fadeInDossier {
-  from { opacity: 0; transform: translateY(4px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.dossier-header {
-  border-bottom: 1px solid var(--color-border);
-  padding-bottom: 16px;
-  margin-bottom: 18px;
-}
-
-.dossier-meta-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.dossier-role-badge {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
   font-weight: 600;
   color: var(--color-red);
   text-transform: uppercase;
   letter-spacing: 0.06em;
+  margin-bottom: 2px;
 }
 
-.dossier-dates {
+.author-name {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-blue);
+  line-height: 1.25;
+}
+
+.author-dates {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: var(--color-slate-muted);
 }
 
-.dossier-name {
-  font-size: 1.85rem;
-  font-weight: 800;
-  color: var(--color-blue);
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  margin-bottom: 10px;
-}
-
-.dossier-concept-pill {
+.author-concept-pill {
   display: inline-block;
   background-color: var(--color-paper);
   color: var(--color-blue);
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 600;
-  padding: 5px 12px;
-  border-radius: 4px;
-  border-left: 3px solid var(--color-red);
-}
-
-.dossier-body {
-  font-family: var(--font-serif);
-  font-size: 1.02rem;
-  line-height: 1.75;
-  color: var(--color-slate-text);
-  margin-bottom: 18px;
-}
-
-.dossier-works-box {
-  background-color: var(--color-paper);
+  padding: 4px 10px;
+  border-radius: 3px;
+  margin-bottom: 12px;
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  padding: 12px 16px;
-  margin-bottom: 18px;
-  font-size: 0.88rem;
-  color: var(--color-charcoal);
-  line-height: 1.55;
 }
 
-.dossier-works-title {
+.author-bio-text {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--color-slate-text);
+  margin-bottom: 14px;
+}
+
+.author-works-list {
+  font-size: 0.84rem;
+  color: var(--color-charcoal);
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+.author-works-list strong {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 600;
+  font-size: 0.72rem;
   color: var(--color-blue);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 4px;
   display: block;
+  margin-bottom: 4px;
 }
 
-.dossier-quote-box {
+.author-quote-box {
   background-color: #F8FAFC;
-  border-left: 3px solid var(--color-blue);
-  padding: 14px 18px;
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  border-top: 1px solid var(--color-border);
+  padding: 14px 20px;
   font-family: var(--font-serif);
-  font-size: 0.98rem;
+  font-size: 0.88rem;
   font-style: italic;
-  color: #1E293B;
-  line-height: 1.6;
+  color: #475569;
+  line-height: 1.55;
 }
 
 /* ==========================================================================
@@ -968,15 +884,8 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .author-dossier-layout {
+  .authors-grid {
     grid-template-columns: 1fr;
-  }
-
-  .author-directory-nav {
-    border-right: none;
-    border-bottom: 1px solid var(--color-border);
-    max-height: 220px;
-    padding-bottom: 12px;
   }
 
   .content-section {
