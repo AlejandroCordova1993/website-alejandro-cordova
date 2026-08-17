@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileToggle();
   initAuthorFilters();
   initQuiz();
+  initImageModal();
 });
 
 /* ==========================================================================
@@ -63,7 +64,7 @@ function initProgressBar() {
 }
 
 /* ==========================================================================
-   3. MENU MÓVIL TOGGLE
+   3. MENÚ MÓVIL TOGGLE
    ========================================================================== */
 
 function initMobileToggle() {
@@ -117,7 +118,118 @@ function initAuthorFilters() {
 }
 
 /* ==========================================================================
-   5. SIMULADOR Y EVALUACIÓN FORMATIVA CRÍTICA
+   5. MODAL / LIGHTBOX DE IMÁGENES AMPLIADAS (ZOOM)
+   ========================================================================== */
+
+function initImageModal() {
+  // Crear el elemento modal si no existe en el DOM
+  let modal = document.getElementById('imageModal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'imageModal';
+    modal.className = 'image-modal-backdrop';
+    modal.setAttribute('aria-hidden', 'true');
+    modal.setAttribute('role', 'dialog');
+    modal.innerHTML = `
+      <div class="image-modal-container">
+        <button class="image-modal-close" id="modalCloseBtn" aria-label="Cerrar imagen ampliada">✕</button>
+        <div class="image-modal-body">
+          <img src="" alt="" id="modalImg" class="image-modal-picture">
+          <div class="image-modal-caption" id="modalCaption"></div>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+  }
+
+  const modalImg = document.getElementById('modalImg');
+  const modalCaption = document.getElementById('modalCaption');
+  const modalCloseBtn = document.getElementById('modalCloseBtn');
+
+  function openModal(src, alt, captionHtml) {
+    modalImg.src = src;
+    modalImg.alt = alt || 'Imagen ampliada';
+    modalCaption.innerHTML = captionHtml || '';
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    setTimeout(() => {
+      modalImg.src = '';
+    }, 250);
+  }
+
+  if (modalCloseBtn) {
+    modalCloseBtn.addEventListener('click', closeModal);
+  }
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal || e.target.classList.contains('image-modal-container')) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+
+  // 1. Fotografías temáticas de las secciones (.editorial-image-card)
+  document.querySelectorAll('.editorial-image-card').forEach(card => {
+    const img = card.querySelector('img');
+    if (!img) return;
+
+    img.style.cursor = 'zoom-in';
+    card.addEventListener('click', () => {
+      const captionTitle = card.querySelector('.image-caption-title')?.innerHTML || '';
+      const captionCredit = card.querySelector('.image-caption-credit')?.innerHTML || '';
+      const captionHtml = `
+        <div class="modal-caption-heading">${captionTitle}</div>
+        <div class="modal-caption-sub">${captionCredit}</div>
+      `;
+      openModal(img.src, img.alt, captionHtml);
+    });
+  });
+
+  // 2. Retratos de autores en la Sección 05 (.author-avatar-slot img)
+  document.querySelectorAll('.author-card').forEach(card => {
+    const avatarSlot = card.querySelector('.author-avatar-slot');
+    if (!avatarSlot) return;
+
+    const img = avatarSlot.querySelector('img');
+    if (!img) return;
+
+    avatarSlot.style.cursor = 'zoom-in';
+    avatarSlot.setAttribute('title', 'Clic para ampliar fotografía');
+
+    avatarSlot.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const authorName = card.querySelector('.author-name')?.textContent || '';
+      const authorRole = card.querySelector('.author-role-tag')?.textContent || '';
+      const authorDates = card.querySelector('.author-dates')?.textContent || '';
+      const conceptPill = card.querySelector('.author-concept-pill')?.textContent || '';
+
+      const captionHtml = `
+        <div class="modal-caption-heading">
+          <span class="red-dot"></span>
+          <span>${authorName}</span>
+        </div>
+        <div class="modal-caption-role">${authorRole} · <span style="color: var(--color-slate-light);">${authorDates}</span></div>
+        <div class="modal-caption-concept">${conceptPill}</div>
+      `;
+      openModal(img.src, `Fotografía histórica de ${authorName}`, captionHtml);
+    });
+  });
+}
+
+/* ==========================================================================
+   6. SIMULADOR Y EVALUACIÓN FORMATIVA CRÍTICA
    ========================================================================== */
 
 const quizData = [
