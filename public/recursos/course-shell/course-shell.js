@@ -56,7 +56,7 @@
 
     const back = document.createElement('a');
     back.className = 'course-sidebar__back';
-    back.href = '../Página Alejandro/proyectos.html';
+    back.href = '../../recursos.html';
     back.textContent = '← Volver a recursos';
     aside.appendChild(back);
 
