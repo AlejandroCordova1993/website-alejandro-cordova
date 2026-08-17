@@ -50,19 +50,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Ocultar barra lateral en pantalla completa de Lightbox */
-body.lightbox-open .sidebar {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-}
-
-body.lightbox-open .main-wrapper {
-  margin-left: 0 !important;
-  padding: 0 !important;
-}
-
 /* ==========================================================================
    SIDEBAR FIJA
    ========================================================================== */
@@ -339,69 +326,7 @@ body.lightbox-open .main-wrapper {
 }
 
 /* ==========================================================================
-   ILUSTRACIONES, FOTOGRAFÍAS & ATRIBUCIONES
-   ========================================================================== */
-
-.historical-image-wrapper {
-  margin: 24px 0;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  border: 1px solid var(--color-border);
-  background-color: var(--color-surface-pure);
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition);
-  cursor: pointer;
-}
-
-.historical-image-wrapper:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--color-blue);
-}
-
-.historical-image-wrapper img {
-  width: 100%;
-  max-height: 380px;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.historical-image-wrapper:hover img {
-  transform: scale(1.01);
-}
-
-.image-caption-bar {
-  padding: 12px 18px;
-  background-color: #FAF9F5;
-  border-top: 1px solid var(--color-border);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.image-caption-text {
-  font-family: var(--font-sans);
-  font-size: 0.84rem;
-  font-weight: 600;
-  color: var(--color-blue);
-}
-
-.image-source-tag {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--color-slate-muted);
-  letter-spacing: 0.04em;
-  background-color: #EDEAE1;
-  padding: 3px 8px;
-  border-radius: 3px;
-}
-
-/* ==========================================================================
-   GALERÍA CRÍTICA DE AUTORES
+   GALERÍA CRÍTICA DE AUTORES & MONOGRAMAS
    ========================================================================== */
 
 .author-filters {
@@ -469,26 +394,26 @@ body.lightbox-open .main-wrapper {
 
 .author-header-group {
   display: flex;
-  gap: 16px;
+  gap: 14px;
   align-items: center;
   margin-bottom: 14px;
 }
 
-.author-avatar-wrapper {
-  width: 68px;
-  height: 68px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 2px solid var(--color-border);
+.author-monogram-badge {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-blue);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border: 2px solid var(--color-red);
   flex-shrink: 0;
-  background-color: var(--color-paper);
-  cursor: pointer;
-}
-
-.author-avatar-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .author-meta-info {
@@ -565,14 +490,6 @@ body.lightbox-open .main-wrapper {
   font-style: italic;
   color: #475569;
   line-height: 1.55;
-}
-
-.author-source-cite {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  color: var(--color-slate-muted);
-  display: block;
-  margin-top: 6px;
 }
 
 /* ==========================================================================
@@ -935,76 +852,6 @@ body.lightbox-open .main-wrapper {
   background-color: #FEF2F2;
   border: 1px solid #EF4444;
   color: #991B1B;
-}
-
-/* ==========================================================================
-   LIGHTBOX MODAL PANTALLA COMPLETA
-   ========================================================================== */
-
-.lightbox-modal {
-  display: none;
-  position: fixed;
-  z-index: 999999 !important;
-  inset: 0;
-  width: 100vw !important;
-  height: 100vh !important;
-  background-color: rgba(7, 27, 51, 0.97);
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 30px;
-}
-
-.lightbox-modal.active {
-  display: flex !important;
-}
-
-.lightbox-close-btn {
-  position: absolute;
-  top: 24px;
-  right: 28px;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #FFFFFF;
-  font-family: var(--font-mono);
-  font-size: 1.2rem;
-  padding: 8px 14px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.lightbox-close-btn:hover {
-  background-color: var(--color-red);
-  border-color: var(--color-red);
-}
-
-.lightbox-image {
-  max-width: 90vw;
-  max-height: 75vh;
-  object-fit: contain;
-  border-radius: 4px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-}
-
-.lightbox-caption {
-  color: #FFFFFF;
-  margin-top: 18px;
-  text-align: center;
-  max-width: 800px;
-}
-
-.lightbox-caption-title {
-  font-family: var(--font-sans);
-  font-size: 1.15rem;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
-.lightbox-caption-source {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--color-slate-light);
 }
 
 /* ==========================================================================

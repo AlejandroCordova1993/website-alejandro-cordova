@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initProgressBar();
   initMobileToggle();
   initAuthorFilters();
-  initLightbox();
   initQuiz();
 });
 
@@ -116,60 +115,7 @@ function initAuthorFilters() {
 }
 
 /* ==========================================================================
-   5. LIGHTBOX MODAL Y OCULTAMIENTO AUTOMÁTICO DE SIDEBAR
-   ========================================================================== */
-
-function initLightbox() {
-  const modal = document.getElementById('lightboxModal');
-  const modalImg = document.getElementById('lightboxImage');
-  const modalTitle = document.getElementById('lightboxTitle');
-  const modalSource = document.getElementById('lightboxSource');
-  const closeBtn = document.getElementById('lightboxClose');
-
-  if (!modal || !modalImg) return;
-
-  function openLightbox(src, title, source) {
-    modalImg.src = src;
-    modalImg.alt = title || 'Fotografía histórica';
-    if (modalTitle) modalTitle.textContent = title || '';
-    if (modalSource) modalSource.textContent = source || '';
-    modal.classList.add('active');
-    document.body.classList.add('lightbox-open');
-  }
-
-  function closeLightbox() {
-    modal.classList.remove('active');
-    document.body.classList.remove('lightbox-open');
-    modalImg.src = '';
-  }
-
-  document.querySelectorAll('.lightbox-trigger, .historical-image-wrapper, .author-avatar-wrapper').forEach(item => {
-    item.addEventListener('click', () => {
-      const img = item.querySelector('img') || item;
-      const src = img.getAttribute('src') || img.dataset.src;
-      const title = item.dataset.caption || img.getAttribute('alt') || 'Registro Histórico';
-      const source = item.dataset.source || 'Archivo Histórico Documental';
-      openLightbox(src, title, source);
-    });
-  });
-
-  if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
-
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal || e.target === modalImg) {
-      closeLightbox();
-    }
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
-      closeLightbox();
-    }
-  });
-}
-
-/* ==========================================================================
-   6. SIMULADOR Y EVALUACIÓN FORMATIVA CRÍTICA
+   5. SIMULADOR Y EVALUACIÓN FORMATIVA CRÍTICA
    ========================================================================== */
 
 const quizData = [
