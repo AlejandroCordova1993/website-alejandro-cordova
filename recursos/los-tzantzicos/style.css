@@ -393,6 +393,38 @@ body {
 }
 
 /* ==========================================================================
+   NOTA HISTORIOGRÁFICA EDITORIAL (SECCIÓN 05)
+   ========================================================================== */
+
+.editorial-clarification-box {
+  background-color: #FAF8F2;
+  border: 1px solid #E4DFD3;
+  border-left: 4px solid var(--color-blue);
+  border-radius: var(--radius-sm);
+  padding: 18px 22px;
+  margin-bottom: 24px;
+}
+
+.clarification-header {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-blue);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.editorial-clarification-box p {
+  font-family: var(--font-serif);
+  font-size: 0.93rem;
+  line-height: 1.6;
+  color: var(--color-slate-text);
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
    GALERÍA DE AUTORES & CARDS (SECCIÓN 05)
    ========================================================================== */
 
@@ -467,9 +499,9 @@ body {
 }
 
 .author-avatar-slot {
-  width: 52px;
-  height: 52px;
-  border-radius: var(--radius-sm);
+  width: 58px;
+  height: 58px;
+  border-radius: 6px;
   background-color: var(--color-blue);
   color: #FFFFFF;
   border: 2px solid var(--color-red);
@@ -477,12 +509,13 @@ body {
   align-items: center;
   justify-content: center;
   font-family: var(--font-mono);
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 0.05em;
   flex-shrink: 0;
   overflow: hidden;
   position: relative;
+  box-shadow: 0 2px 8px rgba(7, 27, 51, 0.12);
   transition: var(--transition);
 }
 
@@ -490,6 +523,8 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
+  display: block;
 }
 
 .author-meta-info {
