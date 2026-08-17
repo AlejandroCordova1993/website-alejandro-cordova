@@ -308,329 +308,37 @@
       </div>
     </section>
 
-    <!-- SECCIÓN 05: GALERÍA CRÍTICA DE AUTORES & RED INTELECTUAL -->
+    <!-- SECCIÓN 05: DIRECTORIO CRÍTICO DE AUTORES & RED INTELECTUAL -->
     <section class="content-section" id="autores">
       <div class="section-kicker">
         <span class="red-dot"></span>
-        <span>05 / GALERÍA CRÍTICA DE AUTORES</span>
+        <span>05 / DIRECTORIO CRÍTICO DE AUTORES</span>
       </div>
       <h2 class="section-heading">Nómina fundamental: voces, teóricos y dramaturgos.</h2>
       
       <p class="editorial-text">
-        El Tzantzismo congregó a una constelación heterogénea de poetas, sociólogos, dramaturgos y narradores nacidos entre 1929 y 1946 que redefinieron el rol del intelectual en el Ecuador. Explora sus perfiles, conceptos estéticos y obras capitales:
+        El Tzantzismo congregó a una constelación heterogénea de poetas, sociólogos, dramaturgos y narradores que redefinieron el rol del intelectual en el Ecuador. Selecciona a cualquier integrante en el catálogo para consultar su ficha bio-bibliográfica y conceptual:
       </p>
 
-      <!-- FILTROS DE AUTORES -->
+      <!-- FILTROS DE CATEGORÍA -->
       <div class="author-filters">
-        <button class="author-filter-btn active" data-filter="all">Todos los Autores (12)</button>
+        <button class="author-filter-btn active" data-filter="all">Todos los Integrantes (12)</button>
         <button class="author-filter-btn" data-filter="poetas">Poetas Fundadores</button>
         <button class="author-filter-btn" data-filter="teoricos">Teóricos & Ensayistas</button>
         <button class="author-filter-btn" data-filter="narrativa-teatro">Dramaturgia & Narrativa</button>
       </div>
 
-      <!-- GRID DE AUTORES -->
-      <div class="authors-grid">
-
-        <!-- 01: Ulises Estrella -->
-        <div class="author-card" data-category="poetas">
-          <div class="author-card-top">
-            <div class="author-header-group">
-              <div class="author-monogram-badge">UE</div>
-              <div class="author-meta-info">
-                <div class="author-role-tag">Fundador & Gestor Central</div>
-                <h3 class="author-name">Ulises Estrella</h3>
-                <div class="author-dates">1939 – 2014 · Quito</div>
-              </div>
-            </div>
-            <div class="author-concept-pill">Existencialismo Urbano & Desarraigo</div>
-            <p class="author-bio-text">
-              Líder indiscutible y dinamizador del grupo. Articuló los recitales callejeros, cofundó las revistas <em>Pucuna</em> y <em>La Bufanda del Sol</em>, y expandió la vanguardia en Centroamérica (revista <em>Quetzal</em>). Más tarde fundó la Cinemateca Nacional del Ecuador.
-            </p>
-            <div class="author-works-list">
-              <strong>Obras Fundamentales:</strong>
-              <em>Clamor</em> (1962), <em>Peatón de manzana</em> (1965), <em>Ombligo del mundo</em> (1966), <em>Memoria incandescente</em> (2003).
-            </div>
-          </div>
-          <div class="author-quote-box">
-            «Caminar por estas calles de piedra es morder la sombra de los siglos hasta que brote la luz.»
-          </div>
+      <!-- MASTER-DETAIL WRAPPER -->
+      <div class="author-dossier-layout">
+        <!-- Columna Izquierda: Directorio de Nombres -->
+        <div class="author-directory-nav" id="authorDirectoryNav">
+          <!-- Inyectado dinámicamente por app.js -->
         </div>
 
-        <!-- 02: Agustín Cueva -->
-        <div class="author-card" data-category="teoricos">
-          <div class="author-card-top">
-            <div class="author-header-group">
-              <div class="author-monogram-badge">AC</div>
-              <div class="author-meta-info">
-                <div class="author-role-tag">Teórico Central & Sociólogo</div>
-                <h3 class="author-name">Agustín Cueva</h3>
-                <div class="author-dates">1937 – 1992 · Ibarra</div>
-              </div>
-            </div>
-            <div class="author-concept-pill">Crítica a la Miseria de la Literatura</div>
-            <p class="author-bio-text">
-              Máxima figura de la sociología crítica ecuatoriana. Fundó la Escuela de Sociología de la UCE y codirigió <em>Indoamérica</em>. Su análisis desnudó la condición dependiente de las élites criollas y la necesidad de una literatura de liberación.
-            </p>
-            <div class="author-works-list">
-              <strong>Obras Fundamentales:</strong>
-              <em>Entre la ira y la esperanza</em> (1967), <em>El proceso de dominación política</em> (1972), <em>El desarrollo del capitalismo en América Latina</em> (1977).
-            </div>
-          </div>
-          <div class="author-quote-box">
-            «Pasamos de la literatura de la miseria a la miseria de la literatura... No hay arte revolucionario sin rigor teórico.»
-          </div>
+        <!-- Columna Derecha: Panel de Detalle Crítico -->
+        <div class="author-dossier-stage" id="authorDossierStage">
+          <!-- Inyectado dinámicamente por app.js -->
         </div>
-
-        <!-- 03: Humberto Vinueza -->
-        <div class="author-card" data-category="poetas">
-          <div class="author-card-top">
-            <div class="author-header-group">
-              <div class="author-monogram-badge">HV</div>
-              <div class="author-meta-info">
-                <div class="author-role-tag">Cumbre Lírica del Grupo</div>
-                <h3 class="author-name">Humberto Vinueza</h3>
-                <div class="author-dates">1942 – 2017 · Guayaquil</div>
-              </div>
-            </div>
-            <div class="author-concept-pill">Sintaxis Rota & Fuerza Grotesca</div>
-            <p class="author-bio-text">
-              Considerado por la crítica continental como la voz poética más potente del tzantzismo. Su verso rompió la métrica para construir imágenes viscerales que denunciaban la violencia institucionalizada y la farsa histórica. Premio Eugenio Espejo 2012.
-            </p>
-            <div class="author-works-list">
-              <strong>Obras Fundamentales:</strong>
-              <em>Un gallinazo cantor bajo un sol de a perro</em> (1968), <em>Poetrelio</em> (1970), <em>Constatación de la huella</em> (2012).
-            </div>
-          </div>
-          <div class="author-quote-box">
-            «Bajo este cielo de plomo cantan los gallinazos la misa negra de la historia oficial.»
-          </div>
-        </div>
-
-        <!-- 04: Alfonso Murriagui -->
-        <div class="author-card" data-category="poetas">
-          <div class="author-card-top">
-            <div class="author-header-group">
-              <div class="author-monogram-badge">AM</div>
-              <div class="author-meta-info">
-                <div class="author-role-tag">Poeta de Trinchera & Coautor</div>
-                <h3 class="author-name">Alfonso Murriagui</h3>
-                <div class="author-dates">1929 – 2017 · Quito</div>
-              </div>
-            </div>
-            <div class="author-concept-pill">El Dardo Panfletario & Voz Colectiva</div>
-            <p class="author-bio-text">
-              Periodista, fotógrafo y combatiente cultural. Firmante del Manifiesto de 1962 y redactor permanente en <em>Pucuna</em>. Su poesía despoja al verso de artificios para erigirse en el portavoz directo del proletariado.
-            </p>
-            <div class="author-works-list">
-              <strong>Obras Fundamentales:</strong>
-              <em>33 abajo</em> (1968), <em>Voz descalza</em>, poemas y proclamas en <em>Pucuna</em> (1962–1968).
-            </div>
-          </div>
-          <div class="author-quote-box">
-            «Nuestra voz no es perfume de alcoba: es el grito del minero y la pólvora del pueblo que despierta.»
-          </div>
-        </div>
-
-        <!-- 05: Rafael Larrea -->
-        <div class="author-card" data-category="poetas">
-          <div class="author-card-top">
-            <div class="author-header-group">
-              <div class="author-monogram-badge">RL</div>
-              <div class="author-meta-info">
-                <div class="author-role-tag">Poeta de la Ternura Rebelde</div>
-                <h3 class="author-name">Rafael Larrea</h3>
-                <div class="author-dates">1942 – 2011 · Quito</div>
-              </div>
-            </div>
-            <div class="author-concept-pill">Cotidianeidad & Humanismo Combatiente</div>
-            <p class="author-bio-text">
-              Militante histórico que articuló la transición hacia el Frente Cultural. Su poética reconcilió la disciplina revolucionaria con la calidez del amor cotidiano, desmitificando la frialdad dogmática.
-            </p>
-            <div class="author-works-list">
-              <strong>Obras Fundamentales:</strong>
-              <em>Levantapolvos</em> (1969), <em>Bajo el sombrero</em>, <em>Nosotros la vida</em>.
-            </div>
-          </div>
-          <div class="author-quote-box">
-            «El amor en tiempo de combate es el pan compartido bajo la lluvia de las balas.»
-          </div>
-        </div>
-
-        <!-- 06: Raúl Arias -->
-        <div class="author-card" data-category="poetas narrativa-teatro">
-          <div class="author-card-top">
-            <div class="author-header-group">
-              <div class="author-monogram-badge">RA</div>
-              <div class="author-meta-info">
-                <div class="author-role-tag">Poeta & Dramaturgo</div>
-                <h3 class="author-name">Raúl Arias</h3>
-                <div class="author-dates">1944 · Quito</div>
-              </div>
-            </div>
-            <div class="author-concept-pill">Velocidad Urbana & Agilismo Moderno</div>
-            <p class="author-bio-text">
-              Poeta, traductor y pilar en la dramaturgia del Teatro Ensayo. Utilizó el humor, el absurdo y la ironía para despojar al verso de la pesadez académica y conectar con el ritmo frenético de la modernidad.
-            </p>
-            <div class="author-works-list">
-              <strong>Obras Fundamentales:</strong>
-              <em>Poesía en bicicleta</em> (1975), <em>Gente de la tierra</em>, textos escénicos para Teatro Ensayo.
-            </div>
-          </div>
-          <div class="author-quote-box">
-            «Pedalear contra el viento de las academias es la única forma de no congelarse en sus estatuas.»
-          </div>
-        </div>
-
-        <!-- 07: Fernando Tinajero -->
-        <div class="author-card" data-category="teoricos narrativa-teatro">
-          <div class="author-card-top">
-            <div class="author-header-group">
-              <div class="author-monogram-badge">FT</div>
-              <div class="author-meta-info">
-                <div class="author-role-tag">Filósofo & Novelista</div>
-                <h3 class="author-name">Fernando Tinajero</h3>
-                <div class="author-dates">1940 · Quito</div>
-              </div>
-            </div>
-            <div class="author-concept-pill">Cultura Nacional-Popular & Desencanto</div>
-            <p class="author-bio-text">
-              Pensador existencialista y marxista. Teorizó sobre el Tzantzismo como el "segundo gran momento de la cultura nacional-popular" en Ecuador y plasmó la crisis ética de su generación en su célebre novela <em>El desencanto</em>.
-            </p>
-            <div class="author-works-list">
-              <strong>Obras Fundamentales:</strong>
-              <em>El desencanto</em> (1975), <em>De la evasión al desencanto</em> (1976), ensayos en <em>Pucuna</em> e <em>Indoamérica</em>.
-            </div>
-          </div>
-          <div class="author-quote-box">
-            «El tzantzismo no fue una moda de bohemios: fue la reconstrucción ética del lazo entre el escritor y su pueblo.»
-          </div>
-        </div>
-
-        <!-- 08: Alejandro Moreano -->
-        <div class="author-card" data-category="teoricos">
-          <div class="author-card-top">
-            <div class="author-header-group">
-              <div class="author-monogram-badge">AM</div>
-              <div class="author-meta-info">
-                <div class="author-role-tag">Crítico & Director de Revistas</div>
-                <h3 class="author-name">Alejandro Moreano</h3>
-                <div class="author-dates">1945 · Quito</div>
-              </div>
-            </div>
-            <div class="author-concept-pill">Ética del Creador & Neovanguardia</div>
-            <p class="author-bio-text">
-              Cofundador de <em>La Bufanda del Sol</em> y referente central de la crítica literaria latinoamericana. Profundizó en la dimensión ética del arte frente al poder y en la descolonización epistémica.
-            </p>
-            <div class="author-works-list">
-              <strong>Obras Fundamentales:</strong>
-              <em>El escritor, la sociedad y el poder</em> (1983), <em>El apocalipsis perpetuo</em>, <em>Ecuador: pasado y presente</em>.
-            </div>
-          </div>
-          <div class="author-quote-box">
-            «El arte es un acto de soberanía ética que no transige con las trampas del poder establecido.»
-          </div>
-        </div>
-
-        <!-- 09: Antonio Ordóñez -->
-        <div class="author-card" data-category="narrativa-teatro">
-          <div class="author-card-top">
-            <div class="author-header-group">
-              <div class="author-monogram-badge">AO</div>
-              <div class="author-meta-info">
-                <div class="author-role-tag">Director del Teatro Ensayo</div>
-                <h3 class="author-name">Antonio Ordóñez</h3>
-                <div class="author-dates">1944 · Cuenca</div>
-              </div>
-            </div>
-            <div class="author-concept-pill">Distanciamiento Brechtiano & Teatro Épico</div>
-            <p class="author-bio-text">
-              Dramaturgo y director que refundó las tablas ecuatorianas. Con Fabio Pacchioni introdujo el teatro brechtiano y dirigió la mítica adaptación de <em>Huasipungo</em> (1970) en el Teatro Nacional Sucre.
-            </p>
-            <div class="author-works-list">
-              <strong>Obras Fundamentales:</strong>
-              Dirección de <em>Huasipungo</em> (1970), <em>Boletín y elegía de las mitas</em> (1968), <em>El éxodo de Yangana</em>.
-            </div>
-          </div>
-          <div class="author-quote-box">
-            «El teatro no es un espejo complaciente: es un martillo para transformar la conciencia del espectador.»
-          </div>
-        </div>
-
-        <!-- 10: Euler Granda -->
-        <div class="author-card" data-category="poetas">
-          <div class="author-card-top">
-            <div class="author-header-group">
-              <div class="author-monogram-badge">EG</div>
-              <div class="author-meta-info">
-                <div class="author-role-tag">Poeta & Cofirmante</div>
-                <h3 class="author-name">Euler Granda</h3>
-                <div class="author-dates">1935 – 2018 · Riobamba</div>
-              </div>
-            </div>
-            <div class="author-concept-pill">Lírica Desengañada & Marginalidad</div>
-            <p class="author-bio-text">
-              Médico siquiatra y poeta. Firmante del Manifiesto de 1962 y cofundador del programa radial <em>Ojo del pozo</em>. Su obra destaca por un tono desgarrador, amargo y cotidiano sobre la desolación en la urbe.
-            </p>
-            <div class="author-works-list">
-              <strong>Obras Fundamentales:</strong>
-              <em>El rostro de los días</em> (1963), <em>Etcétera</em> (1965), <em>Un perro tocando la trompeta</em>.
-            </div>
-          </div>
-          <div class="author-quote-box">
-            «Escribir con la herida abierta en medio de una ciudad que finge no ver su propia sangre.»
-          </div>
-        </div>
-
-        <!-- 11: Simón Corral & Marco Muñoz -->
-        <div class="author-card" data-category="poetas narrativa-teatro">
-          <div class="author-card-top">
-            <div class="author-header-group">
-              <div class="author-monogram-badge">SC</div>
-              <div class="author-meta-info">
-                <div class="author-role-tag">Pioneros del Acto Recitante</div>
-                <h3 class="author-name">Simón Corral & Marco Muñoz</h3>
-                <div class="author-dates">Generación del 62 · Quito</div>
-              </div>
-            </div>
-            <div class="author-concept-pill">Agitación Escénica & Provocación</div>
-            <p class="author-bio-text">
-              Junto a Ulises Estrella y Leandro Katz protagonizaron el recital de choque <em>Cuatro gritos en la oscuridad</em> en 1962. Corral desarrolló una dramaturgia de concientización ideológica y Muñoz redactó proclamas liminares.
-            </p>
-            <div class="author-works-list">
-              <strong>Obras Fundamentales:</strong>
-              <em>Cuatro gritos en la oscuridad</em> (1962), <em>Primer Manifiesto Tzántzico</em>, piezas de teatro popular.
-            </div>
-          </div>
-          <div class="author-quote-box">
-            «Aquí está su patria; tráguensela... La poesía empieza donde termina la hipocresía de los salones.»
-          </div>
-        </div>
-
-        <!-- 12: Abdón Ubidia -->
-        <div class="author-card" data-category="narrativa-teatro teoricos">
-          <div class="author-card-top">
-            <div class="author-header-group">
-              <div class="author-monogram-badge">AU</div>
-              <div class="author-meta-info">
-                <div class="author-role-tag">Narrador & Ensayista</div>
-                <h3 class="author-name">Abdón Ubidia</h3>
-                <div class="author-dates">1944 · Quito</div>
-              </div>
-            </div>
-            <div class="author-concept-pill">Polifonía Urbana & Transición de los 70</div>
-            <p class="author-bio-text">
-              Defensor del rigor estético tzántzico y redactor de <em>La Bufanda del Sol</em> (2.ª época). Articuló el paso de la efervescencia lírica de los sesenta a la gran renovación de la novela urbana en los setenta y ochenta. Premio Eugenio Espejo 2014.
-            </p>
-            <div class="author-works-list">
-              <strong>Obras Fundamentales:</strong>
-              <em>Ciudad de invierno</em> (1979), <em>Sueño de lobos</em> (1986), <em>El palacio de los espejos</em> (ensayos).
-            </div>
-          </div>
-          <div class="author-quote-box">
-            «Los tzántzicos no fuimos meros propagandistas: fuimos portadores de una propuesta de vida total donde palabra y revolución eran inseparables.»
-          </div>
-        </div>
-
       </div>
     </section>
 
