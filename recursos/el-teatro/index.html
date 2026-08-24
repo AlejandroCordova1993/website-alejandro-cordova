@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos del Teatro — Alejandro Córdova</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Public+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Botón Toggle para Móviles -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" onclick="toggleSidebar()">
+        <span>☰</span> Menú
+    </button>
+
+    <!-- ==================== SIDEBAR FIJA A LA IZQUIERDA ==================== -->
+    <aside class="sidebar" id="mainSidebar">
+        <div class="sidebar-header">
+        <a href="../../recursos.html" class="sidebar-back-link" style="display:inline-block; margin-bottom: 1rem; color: #CBD5E1; text-decoration: none; font-size: 0.8rem; font-family: var(--font-mono, monospace); letter-spacing: 0.04em;">← Volver a recursos</a>
+            <div class="sidebar-tag">10MO EGB · LENGUA Y LITERATURA</div>
+            <h1 class="sidebar-title">Elementos del Teatro</h1>
+            <div class="sidebar-author">Msc. Alejandro Córdova</div>
+
+            <!-- Score Badge en la Sidebar -->
+            <div class="sidebar-score-card">
+                <span class="sidebar-score-label">Tu Calificación:</span>
+                <span class="sidebar-score-value"><span id="sidebarScoreDisplay">0.0</span> / 10</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <!-- Bloque 1 -->
+            <div>
+                <div class="sidebar-group-title">01 / Introducción</div>
+                <ul class="sidebar-menu-list">
+                    <li><a class="sidebar-link active" onclick="goToSlide(1)"><span>Portada</span><span class="sidebar-link-num">01</span></a></li>
+                    <li><a class="sidebar-link" onclick="goToSlide(2)"><span>¿Qué es el Texto Teatral?</span><span class="sidebar-link-num">02</span></a></li>
+                    <li><a class="sidebar-link" onclick="goToSlide(3)"><span>Reto 1: Naturaleza</span><span class="sidebar-link-num">03</span></a></li>
+                </ul>
+            </div>
+
+            <!-- Bloque 2 -->
+            <div>
+                <div class="sidebar-group-title">02 / Estructura Externa</div>
+                <ul class="sidebar-menu-list">
+                    <li><a class="sidebar-link" onclick="goToSlide(4)"><span>El Escenario Teatral</span><span class="sidebar-link-num">04</span></a></li>
+                    <li><a class="sidebar-link" onclick="goToSlide(5)"><span>Actos y Escenas</span><span class="sidebar-link-num">05</span></a></li>
+                    <li><a class="sidebar-link" onclick="goToSlide(6)"><span>Acotaciones (Didascalias)</span><span class="sidebar-link-num">06</span></a></li>
+                    <li><a class="sidebar-link" onclick="goToSlide(7)"><span>Los Cuadros</span><span class="sidebar-link-num">07</span></a></li>
+                    <li><a class="sidebar-link" onclick="goToSlide(8)"><span>Reto 2: Estructura Externa</span><span class="sidebar-link-num">08</span></a></li>
+                </ul>
+            </div>
+
+            <!-- Bloque 3 -->
+            <div>
+                <div class="sidebar-group-title">03 / Parlamentos</div>
+                <ul class="sidebar-menu-list">
+                    <li><a class="sidebar-link" onclick="goToSlide(9)"><span>Formas de Expresión</span><span class="sidebar-link-num">09</span></a></li>
+                    <li><a class="sidebar-link" onclick="goToSlide(10)"><span>Diálogo y Monólogo</span><span class="sidebar-link-num">10</span></a></li>
+                    <li><a class="sidebar-link" onclick="goToSlide(11)"><span>El Aparte</span><span class="sidebar-link-num">11</span></a></li>
+                    <li><a class="sidebar-link" onclick="goToSlide(12)"><span>Reto 3: Parlamentos</span><span class="sidebar-link-num">12</span></a></li>
+                </ul>
+            </div>
+
+            <!-- Bloque 4 -->
+            <div>
+                <div class="sidebar-group-title">04 / Estructura Interna</div>
+                <ul class="sidebar-menu-list">
+                    <li><a class="sidebar-link" onclick="goToSlide(13)"><span>Pirámide de Freytag</span><span class="sidebar-link-num">13</span></a></li>
+                    <li><a class="sidebar-link" onclick="goToSlide(14)"><span>Planteamiento y Nudo</span><span class="sidebar-link-num">14</span></a></li>
+                    <li><a class="sidebar-link" onclick="goToSlide(15)"><span>Clímax y Desenlace</span><span class="sidebar-link-num">15</span></a></li>
+                    <li><a class="sidebar-link" onclick="goToSlide(16)"><span>Reto 4: Tensión Dramática</span><span class="sidebar-link-num">16</span></a></li>
+                </ul>
+            </div>
+
+            <!-- Bloque 5 -->
+            <div>
+                <div class="sidebar-group-title">05 / Síntesis y Evaluación</div>
+                <ul class="sidebar-menu-list">
+                    <li><a class="sidebar-link" onclick="goToSlide(17)"><span>Doble Emisor y Receptor</span><span class="sidebar-link-num">17</span></a></li>
+                    <li><a class="sidebar-link" onclick="goToSlide(18)"><span>Reporte de Calificación</span><span class="sidebar-link-num">18</span></a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="sidebar-footer">
+            <span class="sidebar-slide-count">Diapositiva <strong id="currentSlideNum">1</strong> de <strong>18</strong></span>
+            <button class="fact-btn" onclick="resetPresentation()" style="padding: 4px 10px; font-size: 0.75rem;">Reiniciar</button>
+        </div>
+    </aside>
+
+    <!-- ==================== CONTENIDO PRINCIPAL A LA DERECHA ==================== -->
+    <div class="main-layout">
+        <!-- Barra de progreso superior -->
+        <div class="content-progress-bar">
+            <div class="content-progress-fill" id="progressFill"></div>
+        </div>
+
+        <main class="main-stage">
+
+            <!-- ==================== BLOQUE 1: INTRODUCCIÓN ==================== -->
+
+            <!-- Slide 1: Portada -->
+            <section class="slide active" data-slide="1">
+                <div class="slide-card hero-slide">
+                    <span class="mono-tag">LENGUA Y LITERATURA · 10MO EGB</span>
+                    <h1>ELEMENTOS DEL TEATRO</h1>
+                    <p class="hero-author">Msc. Alejandro Córdova</p>
+                    <div class="hero-divider"></div>
+
+                    <div class="hero-image-wrapper">
+                        <img src="Imágenes/Portada.png" alt="Elementos del Teatro">
+                    </div>
+
+                    <div class="fun-facts-row">
+                        <button class="fact-btn" onclick="showFunFact(1)">Teatro Antiguo</button>
+                        <button class="fact-btn" onclick="showFunFact(2)">Shakespeare</button>
+                        <button class="fact-btn" onclick="showFunFact(3)">Escenografía</button>
+                        <button class="fact-btn" onclick="showFunFact(4)">Datos Curiosos</button>
+                    </div>
+
+                    <button class="btn-nav-action btn-nav-primary" onclick="nextSlide()" style="font-size: 1rem; padding: 12px 32px;">
+                        Comenzar la Sesión Interactiva →
+                    </button>
+                </div>
+            </section>
+
+            <!-- Slide 2: ¿Qué es el Texto Teatral? -->
+            <section class="slide" data-slide="2">
+                <div class="slide-card">
+                    <div class="slide-header">
+                        <div class="slide-title-group">
+                            <span class="mono-tag">01 / CONCEPTOS FUNDAMENTALES</span>
+                            <h2>¿Qué es el Texto Teatral?</h2>
+                        </div>
+                    </div>
+                    <p class="concept-definition">
+                        A diferencia de la narrativa, el texto teatral <strong>no está concebido únicamente para la lectura silenciosa</strong>, sino para ser materializado en un escenario frente a un público espectador.
+                    </p>
+                    <ul class="concept-points">
+                        <li><strong>Guion y partitura de acción:</strong> Contiene tanto la palabra dicha por los actores como las instrucciones para el montaje escénico.</li>
+                        <li><strong>Doble dimensión:</strong> Se compone de la <em>Estructura Externa</em> (forma y división) y la <em>Estructura Interna</em> (conflicto y progresión dramática).</li>
+                    </ul>
+                    <div style="margin-top: 18px; padding: 18px; background: #F4F7FB; border-left: 4px solid var(--inst-blue); border-radius: 4px;">
+                        <h3 style="color: var(--deep-blue); margin-bottom: 8px;">Texto, representación y lectura</h3>
+                        <p style="line-height: 1.65; color: #101820;">El texto teatral ofrece posibilidades, no una representación única. La dirección, la actuación, el espacio, la iluminación, el sonido y el público producen sentidos que pueden ampliar o tensionar lo escrito. Por eso conviene analizar qué dice el diálogo y también qué comunica la puesta en escena.</p>
+                    </div>
+
+                    <div class="didactic-img-wrapper">
+                        <img src="Imágenes/mascaras_teatro_griego.jpg" alt="Máscaras del Teatro Griego">
+                        <div class="didactic-img-caption">Figura 1 · Origen del texto y representación dramática: Tragedia y Comedia</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 3: RETO 1 INTERCALADO -->
+            <section class="slide" data-slide="3">
+                <div class="slide-card">
+                    <div class="slide-header">
+                        <div class="slide-title-group">
+                            <span class="mono-tag">ACTIVIDAD PRÁCTICA 1 · 2.5 PUNTOS</span>
+                            <h2>Reto 1: Naturaleza del Texto Teatral</h2>
+                            <p class="slide-subtitle">Resuelve el reto para registrar tus primeros puntos en la barra lateral</p>
+                        </div>
+                    </div>
+
+                    <div class="quiz-wrapper">
+                        <div class="quiz-question-box" id="q1">
+                            <div class="quiz-q-title">1. ¿Cuál es el rasgo definitorio que distingue al texto dramático frente a una novela o cuento?</div>
+                            <div class="quiz-options-list">
+                                <div class="quiz-opt" onclick="selectAnswer(1, 'A')" data-answer="A">A) Debe estar redactado siempre en verso con rima consonante</div>
+                                <div class="quiz-opt" onclick="selectAnswer(1, 'B')" data-answer="B">B) Está escrito primordialmente para ser representado por actores en un escenario</div>
+                                <div class="quiz-opt" onclick="selectAnswer(1, 'C')" data-answer="C">C) No posee personajes ni diálogos directos</div>
+                            </div>
+                            <div class="quiz-feedback-box" id="fb1"></div>
+                        </div>
+
+                        <div class="quiz-question-box" id="q2">
+                            <div class="quiz-q-title">2. En la Grecia clásica, ¿qué funciones cumplían las grandes máscaras teatrales con bocas cónicas?</div>
+                            <div class="quiz-options-list">
+                                <div class="quiz-opt" onclick="selectAnswer(2, 'A')" data-answer="A">A) Ocultar la identidad del autor</div>
+                                <div class="quiz-opt" onclick="selectAnswer(2, 'B')" data-answer="B">B) Amplificar la voz acústicamente y caracterizar a los personajes (Tragedia/Comedia)</div>
+                                <div class="quiz-opt" onclick="selectAnswer(2, 'C')" data-answer="C">C) Asustar a los enemigos en el público</div>
+                            </div>
+                            <div class="quiz-feedback-box" id="fb2"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== BLOQUE 2: ESTRUCTURA EXTERNA ==================== -->
+
+            <!-- Slide 4: El Escenario Teatral -->
+            <section class="slide" data-slide="4">
+                <div class="slide-card">
+                    <div class="slide-header">
+                        <div class="slide-title-group">
+                            <span class="mono-tag">02 / ARQUITECTURA FORMAL</span>
+                            <h2>Estructura Externa: El Escenario</h2>
+                            <p class="slide-subtitle">Elementos que configuran la división visible y organizativa del espacio escénico</p>
+                        </div>
+                    </div>
+
+                    <div class="didactic-img-wrapper">
+                        <img src="Imágenes/escenario_teatral.jpg" alt="El Escenario Teatral y su Arquitectura">
+                        <div class="didactic-img-caption">Figura 2 · Elementos constitutivos del espacio escénico: Telón, Proscenio, Bambalinas y Candilejas</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 5: Actos y Escenas -->
+            <section class="slide" data-slide="5">
+                <div class="slide-card">
+                    <div class="slide-header">
+                        <div class="slide-title-group">
+                            <span class="mono-tag">ESTRUCTURA EXTERNA · 01 Y 02</span>
+                            <h2>Actos y Escenas</h2>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                        <div style="background: var(--paper-pure); border: 1px solid var(--grey-line); padding: 22px; border-radius: var(--radius-md);">
+                            <h3 style="color: var(--deep-blue); margin-bottom: 8px;">Los Actos</h3>
+                            <p style="font-size: 0.95rem; line-height: 1.6; color: #101820;">
+                                Son unidades mayores de la obra. Pueden marcar un cambio importante en la acción y, según la tradición o la puesta en escena, coincidir con una pausa, un apagón o la caída del telón.
+                            </p>
+                        </div>
+                        <div style="background: var(--paper-pure); border: 1px solid var(--grey-line); padding: 22px; border-radius: var(--radius-md);">
+                            <h3 style="color: var(--deep-blue); margin-bottom: 8px;">Las Escenas</h3>
+                            <p style="font-size: 0.95rem; line-height: 1.6; color: #101820;">
+                                Son subdivisiones internas de un acto. En algunas tradiciones se señalan por la entrada o salida de personajes; en otras, por cambios de acción, espacio o convención editorial.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 6: Acotaciones (Didascalias) -->
+            <section class="slide" data-slide="6">
+                <div class="slide-card">
+                    <div class="slide-header">
+                        <div class="slide-title-group">
+                            <span class="mono-tag">ESTRUCTURA EXTERNA · 03</span>
+                            <h2>Las Acotaciones (Didascalias)</h2>
+                        </div>
+                    </div>
+                    <p class="concept-definition">
+                        Son las indicaciones escritas por el dramaturgo para orientar la actuación de los actores (gestualidad, tono) y la ambientación técnica (iluminación, sonido, decorados).
+                    </p>
+                    <ul class="concept-points">
+                        <li>Suelen diferenciarse tipográficamente del parlamento —con cursiva, paréntesis o sangría—, pero la convención cambia según la edición.</li>
+                        <li>Orientan la representación; no siempre se pronuncian, aunque algunas puestas pueden convertir una indicación en acción, voz o proyección.</li>
+                    </ul>
+
+                    <div class="didactic-img-wrapper">
+                        <img src="Imágenes/guion_y_acotaciones.jpg" alt="El Texto Dramático y las Acotaciones">
+                        <div class="didactic-img-caption">Figura 3 · Disposición de las acotaciones en cursiva y movimiento escénico</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 7: Los Cuadros -->
+            <section class="slide" data-slide="7">
+                <div class="slide-card">
+                    <div class="slide-header">
+                        <div class="slide-title-group">
+                            <span class="mono-tag">ESTRUCTURA EXTERNA · 04</span>
+                            <h2>Los Cuadros</h2>
+                        </div>
+                    </div>
+                    <p class="concept-definition">
+                        Son las partes de la obra delimitadas por un <strong>cambio de ambientación o decorado espacial</strong> (por ejemplo: paso del salón de un palacio a una plaza pública o un bosque).
+                    </p>
+                    <ul class="concept-points">
+                        <li>Exigen ajustes escenográficos o de iluminación sin que necesariamente concluya el acto.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Slide 8: RETO 2 INTERCALADO -->
+            <section class="slide" data-slide="8">
+                <div class="slide-card">
+                    <div class="slide-header">
+                        <div class="slide-title-group">
+                            <span class="mono-tag">ACTIVIDAD PRÁCTICA 2 · 2.5 PUNTOS</span>
+                            <h2>Reto 2: Estructura Externa en Acción</h2>
+                            <p class="slide-subtitle">Aplica los conceptos de Actos, Escenas, Cuadros y Acotaciones</p>
+                        </div>
+                    </div>
+
+                    <div class="quiz-wrapper">
+                        <div class="quiz-question-box" id="q3">
+                            <div class="quiz-q-title">3. En un guion se lee: <em>"(Pausa prolongada. Mira al horizonte con profunda tristeza)"</em>. Este fragmento corresponde a:</div>
+                            <div class="quiz-options-list">
+                                <div class="quiz-opt" onclick="selectAnswer(3, 'A')" data-answer="A">A) Un diálogo coral</div>
+                                <div class="quiz-opt" onclick="selectAnswer(3, 'B')" data-answer="B">B) Una acotación (didascalia) del autor para el actor</div>
+                                <div class="quiz-opt" onclick="selectAnswer(3, 'C')" data-answer="C">C) La conclusión del tercer acto</div>
+                            </div>
+                            <div class="quiz-feedback-box" id="fb3"></div>
+                        </div>
+
+                        <div class="quiz-question-box" id="q4">
+                            <div class="quiz-q-title">4. Si el telón no cae, pero la iluminación cambia y el decorado pasa de una biblioteca a una calle lluviosa, ha ocurrido un cambio de:</div>
+                            <div class="quiz-options-list">
+                                <div class="quiz-opt" onclick="selectAnswer(4, 'A')" data-answer="A">A) Cuadro</div>
+                                <div class="quiz-opt" onclick="selectAnswer(4, 'B')" data-answer="B">B) Género literario</div>
+                                <div class="quiz-opt" onclick="selectAnswer(4, 'C')" data-answer="C">C) Acto mayor</div>
+                            </div>
+                            <div class="quiz-feedback-box" id="fb4"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== BLOQUE 3: LOS PARLAMENTOS ==================== -->
+
+            <!-- Slide 9: Parlamentos Overview -->
+            <section class="slide" data-slide="9">
+                <div class="slide-card">
+                    <div class="slide-header">
+                        <div class="slide-title-group">
+                            <span class="mono-tag">03 / FORMAS DE EXPRESIÓN VERBAL</span>
+                            <h2>Los Parlamentos</h2>
+                        </div>
+                    </div>
+                    <p class="concept-definition">
+                        Es la expresión verbal directa emitida por los personajes en el escenario. Se clasifica en tres tipologías fundamentales:
+                    </p>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 16px;">
+                        <div style="background: var(--paper-pure); border: 1px solid var(--grey-line); padding: 18px; border-radius: var(--radius-md); text-align: center;">
+                            <h3 style="color: var(--deep-blue); font-size: 1rem;">1. El Diálogo</h3>
+                            <p style="font-size: 0.85rem; color: var(--grey-mineral); margin-top: 4px;">Intercambio entre dos o más</p>
+                        </div>
+                        <div style="background: var(--paper-pure); border: 1px solid var(--grey-line); padding: 18px; border-radius: var(--radius-md); text-align: center;">
+                            <h3 style="color: var(--deep-blue); font-size: 1rem;">2. El Monólogo</h3>
+                            <p style="font-size: 0.85rem; color: var(--grey-mineral); margin-top: 4px;">Reflexión en voz alta a solas</p>
+                        </div>
+                        <div style="background: var(--paper-pure); border: 1px solid var(--grey-line); padding: 18px; border-radius: var(--radius-md); text-align: center;">
+                            <h3 style="color: var(--deep-blue); font-size: 1rem;">3. El Aparte</h3>
+                            <p style="font-size: 0.85rem; color: var(--grey-mineral); margin-top: 4px;">Complicidad con el público</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 10: Diálogo y Monólogo -->
+            <section class="slide" data-slide="10">
+                <div class="slide-card">
+                    <div class="slide-header">
+                        <div class="slide-title-group">
+                            <span class="mono-tag">PARLAMENTOS · 01 Y 02</span>
+                            <h2>Diálogo vs. Monólogo / Soliloquio</h2>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                        <div class="theatrical-quote" style="margin: 0;">
+                            <div class="quote-label">El Diálogo (Motor de la acción)</div>
+                            <div class="quote-text">
+                                <strong>ANTÍGONA:</strong> ¿Vas a ayudar a enterrar a nuestro hermano?<br>
+                                <strong>ISMENE:</strong> ¿A enterrarlo piensas, cuando está prohibido?
+                            </div>
+                        </div>
+
+                        <div class="theatrical-quote" style="margin: 0;">
+                            <div class="quote-label">El Monólogo (Intimidad psicológica)</div>
+                            <div class="quote-text">
+                                <strong>SEGISMUNDO:</strong> <em>¡Ay mísero de mí, y ay, infelice! Apurar, cielos, pretendo, ya que me tratáis así, qué delito cometí contra vosotros naciendo...</em>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 11: El Aparte -->
+            <section class="slide" data-slide="11">
+                <div class="slide-card">
+                    <div class="slide-header">
+                        <div class="slide-title-group">
+                            <span class="mono-tag">PARLAMENTOS · 03</span>
+                            <h2>El Aparte</h2>
+                        </div>
+                    </div>
+                    <p class="concept-definition">
+                        Comentario que un personaje dice en voz alta dirigido exclusivamente a los espectadores (o a otro personaje selecto), bajo la convención teatral de que los demás actores presentes <strong>fingen no escucharlo</strong>.
+                    </p>
+                    <div class="theatrical-quote">
+                        <div class="quote-label">Ejemplo de Convención Dramática</div>
+                        <div class="quote-text">
+                            <strong>DON JUAN:</strong> <em>(Aparte, sonriendo para el público)</em> ¡Qué fácil cae en mi trampa este noble caballero! <em>(En voz alta, con fingida reverencia)</em> ¡A vuestro servicio quedo, mi señor!
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 12: RETO 3 INTERCALADO -->
+            <section class="slide" data-slide="12">
+                <div class="slide-card">
+                    <div class="slide-header">
+                        <div class="slide-title-group">
+                            <span class="mono-tag">ACTIVIDAD PRÁCTICA 3 · 2.5 PUNTOS</span>
+                            <h2>Reto 3: Identificación de Parlamentos</h2>
+                            <p class="slide-subtitle">Reconoce qué tipo de parlamento dramático se está utilizando</p>
+                        </div>
+                    </div>
+
+                    <div class="quiz-wrapper">
+                        <div class="quiz-question-box" id="q5">
+                            <div class="quiz-q-title">5. Hamlet se encuentra solo en el escenario reflexionando sobre la vida y la muerte ("Ser o no ser..."). Este recurso es:</div>
+                            <div class="quiz-options-list">
+                                <div class="quiz-opt" onclick="selectAnswer(5, 'A')" data-answer="A">A) Un diálogo colectivo</div>
+                                <div class="quiz-opt" onclick="selectAnswer(5, 'B')" data-answer="B">B) Un monólogo o soliloquio</div>
+                                <div class="quiz-opt" onclick="selectAnswer(5, 'C')" data-answer="C">C) Una acotación de utilería</div>
+                            </div>
+                            <div class="quiz-feedback-box" id="fb5"></div>
+                        </div>
+
+                        <div class="quiz-question-box" id="q6">
+                            <div class="quiz-q-title">6. ¿Qué recurso se emplea cuando un criado revela un secreto al público tapándose la boca ante su amo?</div>
+                            <div class="quiz-options-list">
+                                <div class="quiz-opt" onclick="selectAnswer(6, 'A')" data-answer="A">A) El Aparte</div>
+                                <div class="quiz-opt" onclick="selectAnswer(6, 'B')" data-answer="B">B) El Cuadro segundo</div>
+                                <div class="quiz-opt" onclick="selectAnswer(6, 'C')" data-answer="C">C) La Acotación sonora</div>
+                            </div>
+                            <div class="quiz-feedback-box" id="fb6"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== BLOQUE 4: ESTRUCTURA INTERNA ==================== -->
+
+            <!-- Slide 13: Estructura Interna (Pirámide de Freytag) -->
+            <section class="slide" data-slide="13">
+                <div class="slide-card">
+                    <div class="slide-header">
+                        <div class="slide-title-group">
+                            <span class="mono-tag">04 / PROGRESIÓN DRAMÁTICA</span>
+                            <h2>Estructura Interna: Pirámide de Freytag</h2>
+                            <p class="slide-subtitle">La evolución de la tensión y el desarrollo del conflicto a través del tiempo</p>
+                        </div>
+                    </div>
+
+                    <div class="didactic-img-wrapper">
+                        <img src="Imágenes/piramide_dramatica.jpg" alt="Estructura Interna del Drama (Pirámide de Freytag)">
+                        <div class="didactic-img-caption">Figura 4 · Modelo de tensión dramática: planteamiento, ascenso, clímax, descenso y desenlace</div>
+                    </div>
+                    <p style="margin-top: 18px; color: #101820; line-height: 1.65;"><strong>Precisión teórica:</strong> la pirámide de Freytag es un modelo histórico útil para leer ciertas obras, no una plantilla obligatoria para todo teatro. Las dramaturgias contemporáneas pueden fragmentar el tiempo, eliminar la resolución o distribuir la tensión de otra manera.</p>
+                </div>
+            </section>
+
+            <!-- Slide 14: Planteamiento y Nudo -->
+            <section class="slide" data-slide="14">
+                <div class="slide-card">
+                    <div class="slide-header">
+                        <div class="slide-title-group">
+                            <span class="mono-tag">ESTRUCTURA INTERNA · 01 Y 02</span>
+                            <h2>1. Planteamiento y 2. Nudo</h2>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                        <div style="background: var(--paper-pure); border: 1px solid var(--grey-line); padding: 22px; border-radius: var(--radius-md);">
+                            <h3 style="color: var(--deep-blue); margin-bottom: 8px;">1. Planteamiento (Inicio)</h3>
+                            <p style="font-size: 0.95rem; line-height: 1.6; color: #101820;">
+                                Presentación de personajes, época, lugar y el estado de equilibrio inicial antes de que ocurra la ruptura.
+                            </p>
+                        </div>
+                        <div style="background: var(--paper-pure); border: 1px solid var(--grey-line); padding: 22px; border-radius: var(--radius-md);">
+                            <h3 style="color: var(--deep-blue); margin-bottom: 8px;">2. Nudo (Conflicto)</h3>
+                            <p style="font-size: 0.95rem; line-height: 1.6; color: #101820;">
+                                Aparición de fuerzas antagónicas u obstáculos que desatan la tensión dramática. <em>Sin conflicto no hay teatro.</em>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 15: Clímax y Desenlace -->
+            <section class="slide" data-slide="15">
+                <div class="slide-card">
+                    <div class="slide-header">
+                        <div class="slide-title-group">
+                            <span class="mono-tag">ESTRUCTURA INTERNA · 03 Y 04</span>
+                            <h2>3. Clímax y 4. Desenlace</h2>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                        <div style="background: var(--paper-pure); border: 1px solid var(--grey-line); padding: 22px; border-radius: var(--radius-md);">
+                            <h3 style="color: var(--deep-blue); margin-bottom: 8px;">3. El Clímax</h3>
+                            <p style="font-size: 0.95rem; line-height: 1.6; color: #101820;">
+                                Punto culminante de <strong>máxima tensión y emoción</strong>. Es el momento decisivo donde colisionan las fuerzas opuestas.
+                            </p>
+                        </div>
+                        <div style="background: var(--paper-pure); border: 1px solid var(--grey-line); padding: 22px; border-radius: var(--radius-md);">
+                            <h3 style="color: var(--deep-blue); margin-bottom: 8px;">4. El Desenlace</h3>
+                            <p style="font-size: 0.95rem; line-height: 1.6; color: #101820;">
+                                Resolución final de las tensiones tras el clímax, estableciendo un nuevo orden (trágico, feliz o reflexivo).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 16: RETO 4 INTERCALADO -->
+            <section class="slide" data-slide="16">
+                <div class="slide-card">
+                    <div class="slide-header">
+                        <div class="slide-title-group">
+                            <span class="mono-tag">ACTIVIDAD PRÁCTICA 4 · 2.5 PUNTOS</span>
+                            <h2>Reto 4: Curva y Tensión Dramática</h2>
+                            <p class="slide-subtitle">Evalúa la progresión interna del conflicto</p>
+                        </div>
+                    </div>
+
+                    <div class="quiz-wrapper">
+                        <div class="quiz-question-box" id="q7">
+                            <div class="quiz-q-title">7. El duelo a muerte entre los protagonistas o la revelación suprema de un secreto trágico representa en la curva dramática:</div>
+                            <div class="quiz-options-list">
+                                <div class="quiz-opt" onclick="selectAnswer(7, 'A')" data-answer="A">A) El Planteamiento inicial</div>
+                                <div class="quiz-opt" onclick="selectAnswer(7, 'B')" data-answer="B">B) El Clímax</div>
+                                <div class="quiz-opt" onclick="selectAnswer(7, 'C')" data-answer="C">C) La Acotación inicial</div>
+                            </div>
+                            <div class="quiz-feedback-box" id="fb7"></div>
+                        </div>
+
+                        <div class="quiz-question-box" id="q8">
+                            <div class="quiz-q-title">8. Tras resolverse el conflicto principal, la etapa que cierra la historia y muestra el destino final se llama:</div>
+                            <div class="quiz-options-list">
+                                <div class="quiz-opt" onclick="selectAnswer(8, 'A')" data-answer="A">A) Desenlace</div>
+                                <div class="quiz-opt" onclick="selectAnswer(8, 'B')" data-answer="B">B) Nudo secundario</div>
+                                <div class="quiz-opt" onclick="selectAnswer(8, 'C')" data-answer="C">C) Proscenio</div>
+                            </div>
+                            <div class="quiz-feedback-box" id="fb8"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== BLOQUE 5: SÍNTESIS Y EVALUACIÓN ==================== -->
+
+            <!-- Slide 17: Comunicación Teatral -->
+            <section class="slide" data-slide="17">
+                <div class="slide-card">
+                    <div class="slide-header">
+                        <div class="slide-title-group">
+                            <span class="mono-tag">05 / SÍNTESIS PEDAGÓGICA</span>
+                            <h2>Doble Emisor y Doble Receptor</h2>
+                        </div>
+                    </div>
+                    <p class="concept-definition">
+                        En el hecho teatral conviven dos niveles simultáneos de comunicación:
+                    </p>
+                    <ul class="concept-points">
+                        <li><strong>Nivel Ficcional (Interno):</strong> Los personajes dialogan entre sí dentro de la trama.</li>
+                        <li><strong>Nivel Real (Externo):</strong> El autor y el elenco de actores transmiten un mensaje directo a la comunidad de espectadores.</li>
+                    </ul>
+
+                    <div style="text-align: center; margin-top: 32px;">
+                        <button class="btn-nav-action btn-nav-primary" onclick="nextSlide()" style="padding: 12px 28px;">
+                            Ver Mi Reporte de Calificación Final →
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 18: Reporte Final de Calificación -->
+            <section class="slide" data-slide="18">
+                <div class="slide-card" style="text-align: center;">
+                    <span class="mono-tag">SESIÓN COMPLETADA</span>
+                    <h2 style="font-size: 2.2rem; color: var(--deep-blue); margin: 12px 0;">Reporte de Calificación</h2>
+                    <p style="color: var(--grey-mineral); max-width: 540px; margin: 0 auto 24px;">
+                        Has completado el estudio de los Elementos del Teatro y sus 4 Retos Formativos intercalados.
+                    </p>
+
+                    <div style="background-color: var(--paper-pure); border: 1px solid var(--grey-line); border-radius: var(--radius-md); padding: 28px; max-width: 480px; margin: 0 auto 28px;">
+                        <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--grey-mineral); margin-bottom: 8px;">CALIFICACIÓN FINAL OBTENIDA</div>
+                        <div style="font-size: 3.5rem; font-weight: 700; color: var(--deep-blue);"><span id="finalScoreDisplay">0.0</span> / 10</div>
+                        <div id="finalScoreFeedback" style="font-size: 0.95rem; color: var(--inst-blue); font-weight: 600; margin-top: 8px;"></div>
+
+                        <div style="margin-top: 20px; text-align: left; font-size: 0.85rem; border-top: 1px solid var(--grey-line); padding-top: 16px; display: flex; flex-direction: column; gap: 6px; font-family: var(--font-mono);">
+                            <div>• Reto 1 (Naturaleza Teatral): <span id="breakdownR1">0 / 2.5 pts</span></div>
+                            <div>• Reto 2 (Estructura Externa): <span id="breakdownR2">0 / 2.5 pts</span></div>
+                            <div>• Reto 3 (Parlamentos): <span id="breakdownR3">0 / 2.5 pts</span></div>
+                            <div>• Reto 4 (Estructura Interna): <span id="breakdownR4">0 / 2.5 pts</span></div>
+                        </div>
+                    </div>
+
+                    <button class="btn-nav-action btn-nav-secondary" onclick="resetPresentation()">
+                        ↺ Reiniciar Actividades y Repasar
+                    </button>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Barra de Navegación Inferior -->
+        <footer class="bottom-nav-bar">
+            <button class="btn-nav-action btn-nav-secondary" id="prevBtn" onclick="prevSlide()">
+                ← Anterior
+            </button>
+
+            <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--grey-mineral);">
+                ALEJANDRO CÓRDOVA · INNOVACIÓN EDUCATIVA
+            </div>
+
+            <button class="btn-nav-action btn-nav-primary" id="nextBtn" onclick="nextSlide()">
+                Siguiente →
+            </button>
+        </footer>
+    </div>
+
+    <!-- Modal para Datos Curiosos -->
+    <div class="brand-modal-overlay hidden" id="funFactModal">
+        <div class="brand-modal-card">
+            <div class="modal-head">
+                <h3 id="modalTitle">Dato Curioso</h3>
+                <button class="modal-close-btn" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-body" id="funFactContent"></div>
+            <button class="btn-nav-action btn-nav-primary" style="width: 100%;" onclick="closeModal()">Entendido</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

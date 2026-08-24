@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Brand palette (Sistema de Diseño Alejandro Córdova) */
+  --bg-color: #F3F1EA;
+  --text-main: #101820;
+  --text-muted: #727983;
+
+  --primary-soft: #E7EEF5;
+  --primary-strong: #2367D1;
+
+  --secondary-soft: #FEF7EC;
+  --secondary-strong: #945B0E;
+
+  --accent-soft: #EAF5EE;
+  --accent-strong: #1E6B38;
+
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(215, 217, 214, 0.6);
+
+  font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: var(--text-main);
+  background-color: var(--bg-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  overflow-x: hidden;
+  position: relative;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Utility */
+.glass-panel {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 6px -1px rgba(16, 24, 32, 0.06), 0 2px 4px -1px rgba(16, 24, 32, 0.04);
+  border-radius: 6px;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+button {
+  border-radius: 4px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.25s, transform 0.1s;
+}
+
+button:active {
+  transform: scale(0.98);
+}
