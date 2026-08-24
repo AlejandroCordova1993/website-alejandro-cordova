@@ -9,20 +9,21 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --color-blue: #071B33;
-            --color-green: #1E6B38;
-            --color-orange: #945B0E;
-            --color-red: #B52A25;
-            --color-yellow: #945B0E;
-            --color-cyan: #2367D1;
-            --color-slate-900: #101820;
-            --color-slate-800: #FAF9F5;
-            --color-slate-700: #727983;
-            --color-slate-600: #A0AEC0;
-            --color-slate-300: #727983;
-            --color-slate-200: #D7D9D6;
-            --color-white: #FAF9F5;
-        }
+        --color-blue: #2367D1;
+        --color-green: #1E6B38;
+        --color-orange: #C2410C;
+        --color-red: #B52A25;
+        --color-yellow: #B45309;
+        --color-cyan: #0284C7;
+        --color-slate-900: #101820;
+        --color-slate-800: #FAF9F5;
+        --color-slate-700: #4B5563;
+        --color-slate-600: #6B7280;
+        --color-slate-400: #9CA3AF;
+        --color-slate-300: #CBD5E1;
+        --color-slate-200: #555E68;
+        --color-white: #FFFFFF;
+    }
 
         * {
             box-sizing: border-box;
@@ -133,10 +134,11 @@
         }
 
         .login-subtitle {
-            font-size: 16px;
-            color: var(--color-slate-200);
+            font-size: 15px;
+            color: #555E68;
             text-align: center;
-            max-width: 500px;
+            max-width: 520px;
+            line-height: 1.55;
         }
 
         .login-form {
@@ -155,17 +157,17 @@
 
         .input-group label {
             font-size: 14px;
-            font-weight: 600;
-            color: var(--color-slate-200);
+            font-weight: 700;
+            color: #101820;
         }
 
         .input-group input,
         .input-group select {
             padding: 12px 16px;
-            border: 2px solid var(--color-slate-700);
+            border: 1.5px solid #CBD5E1;
             border-radius: 4px;
-            background-color: var(--color-slate-900);
-            color: var(--color-white);
+            background-color: #FFFFFF;
+            color: #101820;
             font-size: 14px;
             transition: border-color 0.3s;
         }
@@ -213,40 +215,43 @@
 
         .exercise-title {
             font-size: 24px;
-            font-weight: 700;
-            color: var(--color-white);
+            font-weight: 800;
+            color: #071B33;
         }
 
         .exercise-meta {
             display: flex;
             gap: 16px;
             font-size: 14px;
-            color: var(--color-slate-200);
+            color: #555E68;
+            font-weight: 600;
         }
 
         .sentence-container {
-            background-color: var(--color-slate-900);
-            border: 2px solid var(--color-blue);
-            border-radius: 4px;
-            padding: 28px;
+            background-color: #071B33;
+            border: 1px solid #071B33;
+            border-radius: 6px;
+            padding: 24px 28px;
             text-align: center;
+            box-shadow: 0 4px 14px rgba(7, 27, 51, 0.15);
         }
 
         .sentence-label {
             font-size: 12px;
             font-weight: 700;
-            color: var(--color-cyan);
+            color: #93C5FD;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .sentence-text {
             font-size: 22px;
             font-weight: 600;
-            color: var(--color-white);
+            color: #FFFFFF;
             line-height: 1.6;
             font-style: italic;
+            font-family: 'Source Serif 4', Georgia, serif;
         }
 
         .words-pool {
@@ -255,16 +260,16 @@
             gap: 12px;
             justify-content: center;
             padding: 20px;
-            background-color: var(--color-slate-900);
-            border: 2px dashed var(--color-slate-700);
-            border-radius: 4px;
+            background-color: #FFFFFF;
+            border: 2px dashed #CBD5E1;
+            border-radius: 6px;
             min-height: 80px;
         }
 
         .word-chip {
-            padding: 10px 16px;
-            background-color: var(--color-slate-700);
-            color: var(--color-white);
+            padding: 10px 18px;
+            background-color: #071B33;
+            color: #FFFFFF;
             border-radius: 4px;
             cursor: move;
             user-select: none;
@@ -272,12 +277,13 @@
             border: 2px solid transparent;
             font-weight: 600;
             font-size: 14px;
+            box-shadow: 0 2px 6px rgba(7, 27, 51, 0.15);
         }
 
         .word-chip:hover {
-            transform: scale(1.05);
-            border-color: var(--color-cyan);
-            background-color: var(--color-slate-600);
+            transform: translateY(-2px);
+            border-color: #2367D1;
+            background-color: #123C69;
         }
 
         .word-chip.dragging {
@@ -295,46 +301,47 @@
         }
 
         .category {
-            background-color: var(--color-slate-900);
-            border: 3px solid transparent;
-            border-radius: 4px;
-            padding: 20px;
-            min-height: 150px;
+            background-color: #FFFFFF;
+            border: 2px solid #D7D9D6;
+            border-radius: 6px;
+            padding: 18px;
+            min-height: 155px;
             display: flex;
             flex-direction: column;
             position: relative;
-            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(16, 24, 32, 0.04);
+            transition: all 0.25s ease;
         }
 
-        .category.sujeto { border-color: var(--color-blue); }
-        .category.predicado { border-color: var(--color-green); }
-        .category.ns { border-color: var(--color-cyan); }
-        .category.np { border-color: var(--color-yellow); }
-        .category.cd { border-color: var(--color-orange); }
-        .category.ci { border-color: var(--color-red); }
+        .category.sujeto { border-color: #2367D1; background-color: #F8FAFC; }
+        .category.predicado { border-color: #1E6B38; background-color: #F6FBF7; }
+        .category.ns { border-color: #0284C7; background-color: #F0F9FF; }
+        .category.np { border-color: #D97706; background-color: #FFFBEB; }
+        .category.cd { border-color: #EA580C; background-color: #FFF7ED; }
+        .category.ci { border-color: #DC2626; background-color: #FEF2F2; }
 
         .category:hover {
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-            transform: translateY(-4px);
+            box-shadow: 0 6px 18px rgba(16, 24, 32, 0.08);
+            transform: translateY(-2px);
         }
 
         .category-label {
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             margin-bottom: 12px;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        .category.sujeto .category-label { color: var(--color-blue); }
-        .category.predicado .category-label { color: var(--color-green); }
-        .category.ns .category-label { color: var(--color-cyan); }
-        .category.np .category-label { color: var(--color-yellow); }
-        .category.cd .category-label { color: var(--color-orange); }
-        .category.ci .category-label { color: var(--color-red); }
+        .category.sujeto .category-label { color: #1E40AF; }
+        .category.predicado .category-label { color: #166534; }
+        .category.ns .category-label { color: #0369A1; }
+        .category.np .category-label { color: #B45309; }
+        .category.cd .category-label { color: #C2410C; }
+        .category.ci .category-label { color: #B91C1C; }
 
         .category-dot {
             width: 12px;
@@ -343,17 +350,17 @@
             display: inline-block;
         }
 
-        .category.sujeto .category-dot { background-color: var(--color-blue); }
-        .category.predicado .category-dot { background-color: var(--color-green); }
-        .category.ns .category-dot { background-color: var(--color-cyan); }
-        .category.np .category-dot { background-color: var(--color-yellow); }
-        .category.cd .category-dot { background-color: var(--color-orange); }
-        .category.ci .category-dot { background-color: var(--color-red); }
+        .category.sujeto .category-dot { background-color: #2563EB; }
+        .category.predicado .category-dot { background-color: #16A34A; }
+        .category.ns .category-dot { background-color: #0284C7; }
+        .category.np .category-dot { background-color: #D97706; }
+        .category.cd .category-dot { background-color: #EA580C; }
+        .category.ci .category-dot { background-color: #DC2626; }
 
         .drop-zone {
             flex: 1;
-            background-color: var(--color-slate-800);
-            border: 2px dashed rgba(255, 255, 255, 0.2);
+            background-color: #FFFFFF;
+            border: 2px dashed #CBD5E1;
             border-radius: 4px;
             padding: 12px;
             min-height: 80px;
@@ -363,34 +370,36 @@
             flex-wrap: wrap;
             align-content: flex-start;
             gap: 8px;
-            transition: all 0.3s;
+            transition: all 0.2s ease;
             scroll-behavior: smooth;
         }
 
         .drop-zone.drag-over {
-            background-color: var(--color-slate-700);
-            border-color: rgba(255, 255, 255, 0.5);
-            box-shadow: inset 0 0 15px rgba(35, 103, 209, 0.3);
+            background-color: #EAF0FB;
+            border-color: #2367D1;
+            box-shadow: inset 0 0 10px rgba(35, 103, 209, 0.15);
         }
 
         .dropped-word {
-            padding: 8px 12px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 8px 14px;
+            background-color: #071B33;
+            border: 1px solid #071B33;
             border-radius: 4px;
             font-size: 13px;
-            color: var(--color-white);
+            font-weight: 600;
+            color: #FFFFFF;
             cursor: move;
-            transition: all 0.2s;
+            transition: all 0.2s ease;
             user-select: none;
             -webkit-user-select: none;
             touch-action: none;
+            box-shadow: 0 2px 4px rgba(7, 27, 51, 0.12);
         }
 
         .dropped-word:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.5);
-            transform: scale(1.05);
+            background-color: #123C69;
+            border-color: #2367D1;
+            transform: scale(1.03);
         }
         
         .dropped-word:active {
@@ -457,16 +466,16 @@
         }
 
         .feedback.success {
-            background-color: rgba(30, 107, 56, 0.2);
-            color: #A3D9B5;
-            border: 2px solid var(--color-green);
+            background-color: #EAF5EE;
+            color: #1E6B38;
+            border: 2px solid #1E6B38;
             display: block;
         }
 
         .feedback.error {
-            background-color: rgba(181, 42, 37, 0.2);
-            color: #F1A8A5;
-            border: 2px solid var(--color-red);
+            background-color: #FDF0EF;
+            color: #B52A25;
+            border: 2px solid #B52A25;
             display: block;
         }
 
@@ -725,9 +734,9 @@
             gap: 16px;
             justify-content: center;
             padding: 20px;
-            background-color: var(--color-slate-900);
-            border: 2px dashed var(--color-slate-700);
-            border-radius: 4px;
+            background-color: #FFFFFF;
+            border: 2px dashed #CBD5E1;
+            border-radius: 6px;
             min-height: 100px;
         }
 
@@ -736,35 +745,53 @@
             flex-direction: column;
             align-items: center;
             gap: 8px;
-            padding: 12px;
-            background-color: var(--color-slate-800);
-            border-radius: 4px;
-            border: 1px solid var(--color-slate-700);
+            padding: 12px 16px;
+            background-color: #F8FAFC;
+            border-radius: 6px;
+            border: 1px solid #D7D9D6;
         }
 
         .pronoun-label {
             font-size: 12px;
             font-weight: 700;
-            color: var(--color-slate-200);
+            color: #071B33;
             text-transform: uppercase;
             letter-spacing: 1px;
+        }
+
+        .pronoun-input {
+            background-color: #FFFFFF;
+            border: 1.5px solid #CBD5E1;
+            border-radius: 4px;
+            color: #101820;
+            font-weight: 600;
+            padding: 8px 12px;
+            text-align: center;
+        }
+
+        .pronoun-input:focus {
+            border-color: #2367D1;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(35, 103, 209, 0.15);
         }
 
         .replacement-section {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            padding: 20px;
-            background-color: var(--color-slate-900);
-            border-radius: 4px;
+            gap: 16px;
+            padding: 24px;
+            background-color: #FFFFFF;
+            border: 1px solid #D7D9D6;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(16, 24, 32, 0.04);
         }
 
         .replacement-title {
             font-size: 16px;
             font-weight: 700;
-            color: var(--color-cyan);
+            color: #071B33;
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .replacement-options {
@@ -775,54 +802,59 @@
         }
 
         .replacement-btn {
-            padding: 10px 20px;
-            background-color: var(--color-slate-700);
-            border: 2px solid var(--color-slate-600);
-            color: var(--color-white);
+            padding: 10px 22px;
+            background-color: #F8FAFC;
+            border: 1.5px solid #CBD5E1;
+            color: #071B33;
             border-radius: 4px;
             cursor: pointer;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 14px;
-            transition: all 0.3s;
+            transition: all 0.2s ease;
         }
 
         .replacement-btn:hover {
-            border-color: var(--color-cyan);
-            background-color: var(--color-slate-600);
-            transform: scale(1.05);
+            border-color: #2367D1;
+            background-color: #EAF0FB;
+            color: #2367D1;
+            transform: translateY(-2px);
         }
 
         .replacement-btn.active {
-            background-color: var(--color-cyan);
-            color: var(--color-slate-900);
-            border-color: var(--color-cyan);
+            background-color: #2367D1;
+            color: #FFFFFF;
+            border-color: #2367D1;
+            box-shadow: 0 4px 12px rgba(35, 103, 209, 0.3);
         }
 
         .replacement-result {
-            padding: 16px;
-            background-color: var(--color-slate-800);
-            border: 2px solid var(--color-slate-700);
-            border-radius: 4px;
+            padding: 16px 20px;
+            background-color: #F8FAFC;
+            border: 2px solid #D7D9D6;
+            border-radius: 6px;
             font-style: italic;
             font-size: 16px;
-            color: var(--color-white);
+            color: #101820;
             text-align: center;
-            min-height: 50px;
+            min-height: 54px;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-family: 'Source Serif 4', Georgia, serif;
         }
 
         .replacement-result.cd-active {
-            border-color: var(--color-orange);
-            background-color: rgba(148, 91, 14, 0.1);
-            color: var(--color-orange);
+            border-color: #EA580C;
+            background-color: #FFF7ED;
+            color: #C2410C;
+            font-weight: 600;
         }
 
         .replacement-result.ci-active {
-            border-color: var(--color-red);
-            background-color: rgba(181, 42, 37, 0.1);
-            color: var(--color-red);
+            border-color: #DC2626;
+            background-color: #FEF2F2;
+            color: #B91C1C;
+            font-weight: 600;
         }
 
         /* RESPONSIVE DESIGN - Tablets y móviles */
@@ -1359,11 +1391,11 @@
                     <div class="sentence-text" id="sentenceText"></div>
                 </div>
 
-                <div class="instructions-box" id="instructionsBox" style="background: #071B33; padding: 15px 20px; border-radius: 4px; margin: 15px 0; border-left: 4px solid var(--color-cyan); box-shadow: 0 2px 8px rgba(16,24,32,0.3);">
-                    <div style="color: var(--color-cyan); font-weight: 700; font-size: 14px; margin-bottom: 8px; display: flex; align-items: center;">
+                <div class="instructions-box" id="instructionsBox" style="background: #071B33; padding: 16px 22px; border-radius: 6px; margin: 16px 0; border-left: 4px solid #2367D1; box-shadow: 0 4px 14px rgba(7,27,51,0.18);">
+                    <div style="color: #60A5FA; font-weight: 800; font-size: 14px; margin-bottom: 8px; display: flex; align-items: center; letter-spacing: 0.5px;">
                         <span id="instructionsTitle">Pauta del Ejercicio</span>
                     </div>
-                    <div id="instructionsText" style="color: var(--color-slate-200); font-size: 13px; line-height: 1.6;"></div>
+                    <div id="instructionsText" style="color: #F3F1EA; font-size: 14px; line-height: 1.65;"></div>
                 </div>
 
                 <div class="words-pool" id="wordsPool"></div>
@@ -1640,14 +1672,14 @@
 
             if (ejercicio.tipo === 'analisis') {
                 instructionsBox.style.display = 'block';
-                const tipMovil = '<br><small style="color: var(--color-slate-400); font-size: 11px;">Pauta: Puedes mover palabras entre cajones o hacer doble clic sobre una palabra para devolverla al banco.</small>';
+                const tipMovil = '<span style="display:block; margin-top:8px; color: #94A3B8; font-size: 12px;">Pauta: Puedes mover palabras entre cajones o hacer doble clic sobre una palabra para devolverla al banco.</span>';
                 
                 if (ejercicio.nivel === 1) {
-                    mensaje = '<strong>Arrastra las palabras</strong> hacia las categorías correctas. Identifica qué parte es el <span style="color: var(--color-blue);">Sujeto</span> (concuerda en número y persona con el verbo) y qué parte es el <span style="color: var(--color-green);">Predicado</span> (todo lo que se dice del sujeto).' + tipMovil;
+                    mensaje = '<strong>Arrastra las palabras</strong> hacia las categorías correctas. Identifica qué parte es el <span style="color: #93C5FD; font-weight:700; background: rgba(35,103,209,0.3); padding: 2px 8px; border-radius: 3px;">Sujeto</span> (concuerda en número y persona con el verbo) y qué parte es el <span style="color: #86EFAC; font-weight:700; background: rgba(30,107,56,0.4); padding: 2px 8px; border-radius: 3px;">Predicado</span> (todo lo que se dice del sujeto).' + tipMovil;
                 } else if (ejercicio.nivel === 2) {
-                    mensaje = '<strong>Identifica los núcleos</strong> de la oración. Arrastra únicamente el <span style="color: var(--color-cyan);">Núcleo del Sujeto (NS)</span> y el <span style="color: var(--color-yellow);">Núcleo del Predicado (NP)</span> a sus cajones; las palabras secundarias o modificadores deben permanecer en el banco.' + tipMovil;
+                    mensaje = '<strong>Identifica los núcleos</strong> de la oración. Arrastra únicamente el <span style="color: #7DD3FC; font-weight:700; background: rgba(2,132,199,0.3); padding: 2px 8px; border-radius: 3px;">Núcleo del Sujeto (NS)</span> y el <span style="color: #FDE047; font-weight:700; background: rgba(217,119,6,0.35); padding: 2px 8px; border-radius: 3px;">Núcleo del Predicado (NP)</span> a sus cajones; las palabras secundarias o modificadores deben permanecer en el banco.' + tipMovil;
                 } else if (ejercicio.nivel === 3) {
-                    mensaje = '<strong>Identifica núcleos y complementos</strong>: Arrastra el <span style="color: var(--color-cyan);">NS</span>, el <span style="color: var(--color-yellow);">NP</span>, el <span style="color: var(--color-orange);">CD</span> (admite lo/la/los/las o paso a pasiva) y el <span style="color: var(--color-red);">CI</span> (destinatario con a/para, admite le/les).' + tipMovil;
+                    mensaje = '<strong>Identifica núcleos y complementos</strong>: Arrastra el <span style="color: #7DD3FC; font-weight:700; background: rgba(2,132,199,0.3); padding: 2px 8px; border-radius: 3px;">NS</span>, el <span style="color: #FDE047; font-weight:700; background: rgba(217,119,6,0.35); padding: 2px 8px; border-radius: 3px;">NP</span>, el <span style="color: #FDBA74; font-weight:700; background: rgba(234,88,12,0.35); padding: 2px 8px; border-radius: 3px;">CD</span> (admite lo/la/los/las o paso a pasiva) y el <span style="color: #FCA5A5; font-weight:700; background: rgba(220,38,38,0.35); padding: 2px 8px; border-radius: 3px;">CI</span> (destinatario con a/para, admite le/les).' + tipMovil;
                 }
             } else if (ejercicio.tipo === 'pronombre') {
                 instructionsBox.style.display = 'none';
@@ -2288,24 +2320,24 @@
             `;
 
             resultsDiv.innerHTML = `
-                <div style="background: var(--color-slate-800); padding: 40px; border-radius: 4px; text-align: center; border: 3px solid var(--color-cyan); max-width: 500px;">
-                    <h2 style="color: var(--color-cyan); font-size: 28px; margin-bottom: 20px;">Sesión Finalizada</h2>
-                    <p style="color: var(--color-white); font-size: 18px; margin-bottom: 10px;">
-                        Calificación: <span style="color: var(--color-yellow); font-weight: 800; font-size: 40px;">${scoreSobre10}/10</span>
+                <div style="background: #071B33; padding: 40px; border-radius: 8px; text-align: center; border: 2px solid #2367D1; max-width: 500px; box-shadow: 0 12px 36px rgba(0,0,0,0.5);">
+                    <h2 style="color: #60A5FA; font-size: 28px; font-weight: 800; margin-bottom: 16px;">Sesión Finalizada</h2>
+                    <p style="color: #FFFFFF; font-size: 18px; margin-bottom: 8px;">
+                        Calificación: <span style="color: #FBBF24; font-weight: 800; font-size: 42px; display: block; margin: 8px 0;">${scoreSobre10}/10</span>
                     </p>
-                    <p style="color: var(--color-slate-400); font-size: 14px; margin-bottom: 20px;">
-                        (${scorePercentage}%)
+                    <p style="color: #94A3B8; font-size: 15px; font-weight: 600; margin-bottom: 20px;">
+                        (${scorePercentage}% de aciertos)
                     </p>
-                    <p style="color: var(--color-slate-200); margin-bottom: 30px;">
-                        Respondiste correctamente <strong>${correctAnswers} de ${oraciones.length}</strong> oraciones.
+                    <p style="color: #E2E8F0; font-size: 15px; margin-bottom: 24px; line-height: 1.5;">
+                        Respondiste correctamente <strong style="color: #FFFFFF;">${correctAnswers} de ${oraciones.length}</strong> oraciones.
                     </p>
-                    <p id="review-plan" style="color: var(--color-cyan); font-size: 14px; line-height: 1.5; margin-bottom: 20px;">
+                    <p id="review-plan" style="color: #93C5FD; font-size: 14px; line-height: 1.5; margin-bottom: 20px; background: rgba(35,103,209,0.15); padding: 12px; border-radius: 4px; border: 1px solid rgba(35,103,209,0.3);">
                         ${reviewMessage}
                     </p>
-                    <p style="color: var(--color-green); font-size: 14px; margin-bottom: 20px;" id="sheets-status">
+                    <p style="color: #4ADE80; font-size: 14px; font-weight: 600; margin-bottom: 24px;" id="sheets-status">
                         Enviando resultados...
                     </p>
-                    <button id="reiniciarBtn" disabled onclick="location.reload()" style="padding: 12px 32px; background: #727983; color: white; border: none; border-radius: 4px; font-size: 16px; font-weight: 700; cursor: not-allowed; opacity: 0.5;">
+                    <button id="reiniciarBtn" disabled onclick="location.reload()" style="padding: 14px 36px; background: #2367D1; color: white; border: none; border-radius: 4px; font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.2s;">
                         Reiniciar
                     </button>
                 </div>
