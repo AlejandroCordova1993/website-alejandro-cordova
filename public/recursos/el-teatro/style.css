@@ -75,7 +75,7 @@ body {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 500;
-  color: #CBD5E1; /* Alto contraste contra el azul */
+  color: #A0AEC0; /* Alto contraste contra el azul */
   text-transform: uppercase;
   letter-spacing: 0.08em;
   display: inline-flex;
@@ -103,7 +103,7 @@ body {
 
 .sidebar-author {
   font-size: 0.85rem;
-  color: #CBD5E1; /* Gris claro de alto contraste */
+  color: #A0AEC0; /* Gris claro de alto contraste */
   font-style: normal;
   margin-bottom: 16px;
 }
@@ -122,7 +122,7 @@ body {
 .sidebar-score-label {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: #CBD5E1;
+  color: #A0AEC0;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -148,7 +148,7 @@ body {
   font-family: var(--font-mono);
   font-size: 0.68rem;
   font-weight: 600;
-  color: #CBD5E1; /* Alto contraste */
+  color: #A0AEC0; /* Alto contraste */
   text-transform: uppercase;
   letter-spacing: 0.08em;
   padding: 0 8px 4px;
@@ -190,13 +190,13 @@ body {
 }
 
 .sidebar-link.visited:not(.active) {
-  color: #CBD5E1;
+  color: #A0AEC0;
 }
 
 .sidebar-link-num {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: #CBD5E1;
+  color: #A0AEC0;
 }
 
 .sidebar-footer {
@@ -211,7 +211,7 @@ body {
 .sidebar-slide-count {
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  color: #CBD5E1;
+  color: #A0AEC0;
 }
 
 /* ==================== ÁREA DE CONTENIDO PRINCIPAL ==================== */
@@ -403,7 +403,7 @@ body {
   position: relative;
   padding-left: 24px;
   font-size: 1rem;
-  color: #2D3748;
+  color: #101820;
 }
 
 .concept-points li::before {
@@ -640,7 +640,7 @@ body {
 .modal-head h3 { font-size: 1.15rem; color: var(--deep-blue); }
 .modal-close-btn { background: none; border: none; font-size: 1.4rem; color: var(--grey-mineral); cursor: pointer; }
 
-.modal-body { font-size: 0.95rem; color: #2D3748; line-height: 1.6; margin-bottom: 24px; }
+.modal-body { font-size: 0.95rem; color: #101820; line-height: 1.6; margin-bottom: 24px; }
 
 /* Botón Hamburguesa Mobile */
 .mobile-menu-toggle {

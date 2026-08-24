@@ -49,12 +49,12 @@ export function ThesisGame() {
 
   return (
     <div className="flex flex-col items-center justify-center p-8 glass-panel max-w-4xl mx-auto my-8 border border-white/40 shadow-2xl relative overflow-hidden backdrop-blur-xl bg-white/30">
-      <h2 className="text-3xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600 drop-shadow-sm">
+      <h2 className="text-3xl font-extrabold mb-6 text-[#123C69] drop-shadow-sm">
         ¿Tesis o Hecho?
       </h2>
 
       {items.length > 0 && (
-        <p className="mb-8 text-slate-600 font-medium text-lg">
+        <p className="mb-8 text-[#727983] font-medium text-lg">
           Arrastra la tarjeta a su lugar correcto
         </p>
       )}
@@ -63,15 +63,15 @@ export function ThesisGame() {
         {/* Drop Zones - ONLY show if game is active */}
         {items.length > 0 && (
           <>
-            <div className="absolute left-0 top-0 bottom-0 w-5/12 bg-gradient-to-br from-blue-50/80 to-blue-100/50 rounded-2xl border-2 border-dashed border-blue-300 flex flex-col items-center justify-center p-4 transition-all hover:bg-blue-100/60">
+            <div className="absolute left-0 top-0 bottom-0 w-5/12 bg-[#E7EEF5]/80 rounded border-2 border-dashed border-[#A9C6EE] flex flex-col items-center justify-center p-4 transition-all hover:bg-[#E7EEF5]/60">
               <span className="text-4xl mb-2">🧠</span>
-              <span className="text-blue-700 font-bold text-lg tracking-wide">HECHO</span>
-              <span className="text-xs text-blue-500 uppercase tracking-widest mt-1">Verificable</span>
+              <span className="text-[#123C69] font-bold text-lg tracking-wide">HECHO</span>
+              <span className="text-xs text-[#2367D1] uppercase tracking-widest mt-1">Verificable</span>
             </div>
-            <div className="absolute right-0 top-0 bottom-0 w-5/12 bg-gradient-to-bl from-purple-50/80 to-purple-100/50 rounded-2xl border-2 border-dashed border-purple-300 flex flex-col items-center justify-center p-4 transition-all hover:bg-purple-100/60">
+            <div className="absolute right-0 top-0 bottom-0 w-5/12 bg-[#E7EEF5]/80 rounded border-2 border-dashed border-[#A9C6EE] flex flex-col items-center justify-center p-4 transition-all hover:bg-[#E7EEF5]/60">
               <span className="text-4xl mb-2">🗣️</span>
-              <span className="text-purple-700 font-bold text-lg tracking-wide">TESIS</span>
-              <span className="text-xs text-purple-500 uppercase tracking-widest mt-1">Opinión</span>
+              <span className="text-[#123C69] font-bold text-lg tracking-wide">TESIS</span>
+              <span className="text-xs text-[#2367D1] uppercase tracking-widest mt-1">Opinión</span>
             </div>
           </>
         )}
@@ -93,7 +93,7 @@ export function ThesisGame() {
                   : { scale: 1, opacity: 1, y: 0 }
               }
               exit={{ scale: 0.5, opacity: 0 }}
-              className="absolute z-10 w-72 h-48 bg-white/90 backdrop-blur-md shadow-[0_8px_30px_rgb(0,0,0,0.12)] rounded-3xl flex items-center justify-center p-8 text-center text-xl font-bold text-slate-800 border-2 border-white/50 cursor-grab active:cursor-grabbing hover:shadow-purple-200/50 transition-shadow"
+              className="absolute z-10 w-72 h-48 bg-white/90 backdrop-blur-md shadow-[0_8px_30px_rgb(0,0,0,0.12)] rounded flex items-center justify-center p-8 text-center text-xl font-bold text-[#101820] border-2 border-white/50 cursor-grab active:cursor-grabbing hover:shadow-[#A9C6EE]/50 transition-shadow"
               style={{ x: 0 }}
               whileDrag={{ scale: 1.05, rotate: 2, boxShadow: "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)" }}
             >
@@ -106,7 +106,7 @@ export function ThesisGame() {
                 {feedback === 'wrong' && (
                   <motion.div
                     initial={{ scale: 0 }} animate={{ scale: 1 }} exit={{ scale: 0 }}
-                    className="absolute top-4 right-4 bg-red-100 p-2 rounded-full text-red-500"
+                    className="absolute top-4 right-4 bg-[#FDF0EF] p-2 rounded-full text-[#B52A25]"
                   >
                     <X size={24} strokeWidth={3} />
                   </motion.div>
@@ -114,7 +114,7 @@ export function ThesisGame() {
                 {feedback === 'correct' && (
                   <motion.div
                     initial={{ scale: 0 }} animate={{ scale: 1 }} exit={{ scale: 0 }}
-                    className="absolute top-4 right-4 bg-green-100 p-2 rounded-full text-green-500"
+                    className="absolute top-4 right-4 bg-[#EAF5EE] p-2 rounded-full text-[#1E6B38]"
                   >
                     <Check size={24} strokeWidth={3} />
                   </motion.div>
@@ -125,16 +125,16 @@ export function ThesisGame() {
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="text-center bg-white/60 p-10 rounded-3xl shadow-lg backdrop-blur-sm border border-white"
+              className="text-center bg-white/60 p-10 rounded shadow-lg backdrop-blur-sm border border-white"
             >
               <div className="text-6xl mb-4">🎉</div>
-              <h3 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-emerald-600 mb-4">
+              <h3 className="text-3xl font-black text-[#1E6B38] mb-4">
                 ¡Excelente!
               </h3>
-              <p className="text-slate-600 mb-8 text-lg">Has clasificado todo correctamente.</p>
+              <p className="text-[#727983] mb-8 text-lg">Has clasificado todo correctamente.</p>
               <button
                 onClick={() => setItems(TASKS)}
-                className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl shadow-lg hover:shadow-purple-500/30 transform hover:-translate-y-1 transition-all font-bold text-lg"
+                className="px-8 py-3 bg-[#2367D1] text-white rounded shadow-lg hover:shadow-[#2367D1]/30 transform hover:-translate-y-1 transition-all font-bold text-lg"
               >
                 Jugar de nuevo
               </button>

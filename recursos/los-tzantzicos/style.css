@@ -220,7 +220,7 @@ body {
   color: #FFFFFF;
   border: 1px solid var(--color-red);
   padding: 12px 18px;
-  border-radius: 30px;
+  border-radius: 4px;
   font-family: var(--font-mono);
   font-size: 0.8125rem;
   box-shadow: var(--shadow-lg);
@@ -356,7 +356,7 @@ body {
   width: 100%;
   position: relative;
   overflow: hidden;
-  background-color: #0E1726;
+  background-color: #071B33;
 }
 
 .image-wrapper img {
@@ -449,7 +449,7 @@ body {
   padding: 8px 16px;
   background-color: var(--color-surface-pure);
   border: 1px solid var(--color-border);
-  border-radius: 20px;
+  border-radius: 4px;
   font-family: var(--font-sans);
   font-size: 0.84rem;
   font-weight: 600;
@@ -510,7 +510,7 @@ body {
 .author-avatar-slot {
   width: 58px;
   height: 58px;
-  border-radius: 6px;
+  border-radius: 4px;
   background-color: var(--color-blue);
   color: #FFFFFF;
   border: 2px solid var(--color-red);
@@ -580,7 +580,7 @@ body {
   font-size: 0.72rem;
   font-weight: 600;
   padding: 4px 10px;
-  border-radius: 3px;
+  border-radius: 4px;
   margin-bottom: 12px;
   border: 1px solid var(--color-border);
   max-width: 100%;
@@ -702,7 +702,7 @@ body {
   align-items: center;
   overflow-y: auto;
   max-height: calc(90vh - 2px);
-  background-color: #0E1726;
+  background-color: #071B33;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -714,7 +714,7 @@ body {
   object-fit: contain;
   display: block;
   margin: 0 auto;
-  background-color: #0E1726;
+  background-color: #071B33;
 }
 
 .image-modal-caption {
@@ -753,7 +753,7 @@ body {
   font-size: 0.72rem;
   font-weight: 600;
   padding: 3px 8px;
-  border-radius: 3px;
+  border-radius: 4px;
   border: 1px solid var(--color-border);
 }
 
@@ -957,7 +957,7 @@ body {
   padding: 3px 8px;
   background-color: var(--color-paper);
   border: 1px solid var(--color-border);
-  border-radius: 3px;
+  border-radius: 4px;
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 600;
@@ -1005,7 +1005,7 @@ body {
   background-color: var(--color-paper);
   color: var(--color-blue);
   padding: 4px 10px;
-  border-radius: 3px;
+  border-radius: 4px;
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 600;
@@ -1098,16 +1098,16 @@ body {
 }
 
 .quiz-option-btn.correct {
-  background-color: #ECFDF5 !important;
-  border-color: #10B981 !important;
-  color: #065F46 !important;
+  background-color: #EAF5EE !important;
+  border-color: #A3D9B5 !important;
+  color: #1E6B38 !important;
   font-weight: 600;
 }
 
 .quiz-option-btn.incorrect {
-  background-color: #FEF2F2 !important;
-  border-color: #EF4444 !important;
-  color: #991B1B !important;
+  background-color: #FDF0EF !important;
+  border-color: #F1A8A5 !important;
+  color: #B52A25 !important;
 }
 
 .quiz-feedback {
@@ -1124,15 +1124,15 @@ body {
 }
 
 .quiz-feedback.success {
-  background-color: #ECFDF5;
-  border: 1px solid #10B981;
-  color: #065F46;
+  background-color: #EAF5EE;
+  border: 1px solid #A3D9B5;
+  color: #1E6B38;
 }
 
 .quiz-feedback.error {
-  background-color: #FEF2F2;
-  border: 1px solid #EF4444;
-  color: #991B1B;
+  background-color: #FDF0EF;
+  border: 1px solid #F1A8A5;
+  color: #B52A25;
 }
 
 /* ==========================================================================

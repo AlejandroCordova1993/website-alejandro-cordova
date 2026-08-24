@@ -116,29 +116,20 @@ document.addEventListener("DOMContentLoaded", () => {
     if (nextBtn) nextBtn.addEventListener("click", nextSlide);
     if (prevBtn) prevBtn.addEventListener("click", prevSlide);
 
-    function openModal(src) {
-        if (!modal || !modalImg) return;
-        modal.style.display = "block";
-        modalImg.src = src;
-        document.body.classList.add('modal-open');
-    }
-
-    function closeModal() {
-        if (!modal) return;
-        modal.style.display = "none";
-        document.body.classList.remove('modal-open');
-    }
-
     // Full-screen image functionality
     clickableImages.forEach(img => {
         img.addEventListener("click", () => {
-            openModal(img.dataset.fullSrc || img.src);
+            if (!modal || !modalImg) return;
+            modal.style.display = "block";
+            modalImg.src = img.dataset.fullSrc || img.src;
         });
         // Allow keyboard activation
         img.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
-                openModal(img.dataset.fullSrc || img.src);
+                if (!modal || !modalImg) return;
+                modal.style.display = 'block';
+                modalImg.src = img.dataset.fullSrc || img.src;
             }
         });
     });
@@ -148,36 +139,36 @@ document.addEventListener("DOMContentLoaded", () => {
         const target = e.target;
         // Si se clickea una imagen con la clase clickable-img
         if (target && target.classList && target.classList.contains('clickable-img')) {
-            openModal(target.dataset.fullSrc || target.src || '');
+            if (!modal || !modalImg) return;
+            modal.style.display = 'block';
+            modalImg.src = target.dataset.fullSrc || target.src || '';
         }
         // Si se clickea un botón para ampliar imagen
         if (target && target.classList && target.classList.contains('btn-expand-image')) {
+            // Buscar la imagen previa en la misma .image-container
             const container = target.closest('.image-container');
             if (!container) return;
             const img = container.querySelector('.clickable-img');
-            if (img) {
-                openModal(img.dataset.fullSrc || img.src || '');
+            if (img && modal && modalImg) {
+                modal.style.display = 'block';
+                modalImg.src = img.dataset.fullSrc || img.src || '';
             }
         }
     });
 
     if (closeBtn) {
-        closeBtn.addEventListener("click", closeModal);
+        closeBtn.addEventListener("click", () => {
+            if (modal) modal.style.display = "none";
+        });
     }
 
     if (modal) {
         modal.addEventListener("click", (e) => {
             if (e.target === modal) {
-                closeModal();
+                modal.style.display = "none";
             }
         });
     }
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            closeModal();
-        }
-    });
 
     showSlide(currentSlide);
 });

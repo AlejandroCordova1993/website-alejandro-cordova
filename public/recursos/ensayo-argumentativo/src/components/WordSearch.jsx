@@ -133,22 +133,22 @@ export function WordSearch() {
         );
         const isSelected = selected.includes(key);
 
-        if (isFound) return 'bg-emerald-200 text-emerald-800';
-        if (isSelected) return 'bg-blue-200 text-blue-800';
-        return 'bg-white hover:bg-slate-100';
+        if (isFound) return 'bg-[#A3D9B5] text-[#17532B]';
+        if (isSelected) return 'bg-[#A9C6EE] text-[#071B33]';
+        return 'bg-white hover:bg-[#F3F1EA]';
     };
 
     return (
-        <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 md:p-8">
+        <div className="bg-white rounded shadow-lg border border-[#D7D9D6] p-6 md:p-8">
             <div className="flex justify-between items-start mb-4">
                 <div>
-                    <h3 className="text-xl font-bold text-blue-900">🔍 Sopa de Letras</h3>
-                    <p className="text-slate-600 text-sm">Encuentra las palabras clave del ensayo</p>
+                    <h3 className="text-xl font-bold text-[#071B33]">🔍 Sopa de Letras</h3>
+                    <p className="text-[#727983] text-sm">Encuentra las palabras clave del ensayo</p>
                 </div>
                 <div className="text-right">
-                    <p className="text-sm text-slate-500">Intentos restantes: <span className="font-bold text-blue-600">{attemptsLeft}</span></p>
+                    <p className="text-sm text-[#727983]">Intentos restantes: <span className="font-bold text-[#2367D1]">{attemptsLeft}</span></p>
                     {currentBestScore > 0 && (
-                        <p className="text-xs text-emerald-600">Mejor: {currentBestScore}/{WORDS.length}</p>
+                        <p className="text-xs text-[#1E6B38]">Mejor: {currentBestScore}/{WORDS.length}</p>
                     )}
                 </div>
             </div>
@@ -190,8 +190,8 @@ export function WordSearch() {
                         <span
                             key={word}
                             className={`px-3 py-1 rounded-full text-sm font-medium transition-all ${found.includes(word)
-                                ? 'bg-emerald-100 text-emerald-700 line-through'
-                                : 'bg-slate-100 text-slate-600'
+                                ? 'bg-[#EAF5EE] text-[#17532B] line-through'
+                                : 'bg-[#F3F1EA] text-[#727983]'
                                 }`}
                         >
                             {word}
@@ -201,12 +201,12 @@ export function WordSearch() {
             </div>
 
             {hasCompleted && (
-                <div className="mt-6 p-4 bg-emerald-50 rounded-xl text-center border border-emerald-200">
-                    <p className="text-emerald-700 font-bold mb-3">🎉 ¡Encontraste todas las palabras!</p>
+                <div className="mt-6 p-4 bg-[#EAF5EE] rounded text-center border border-[#A3D9B5]">
+                    <p className="text-[#17532B] font-bold mb-3">🎉 ¡Encontraste todas las palabras!</p>
                     {canAttempt('wordSearch') && (
                         <button
                             onClick={handleReset}
-                            className="px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700"
+                            className="px-4 py-2 bg-[#2367D1] text-white rounded font-medium hover:bg-[#123C69]"
                         >
                             Intentar de nuevo ({attemptsLeft} intentos)
                         </button>

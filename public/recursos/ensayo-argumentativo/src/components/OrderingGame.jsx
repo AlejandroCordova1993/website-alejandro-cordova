@@ -40,16 +40,16 @@ export function OrderingGame() {
     };
 
     return (
-        <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 md:p-8">
+        <div className="bg-white rounded shadow-lg border border-[#D7D9D6] p-6 md:p-8">
             <div className="flex justify-between items-start mb-4">
                 <div>
-                    <h3 className="text-xl font-bold text-blue-900">🔢 Ordenar la Estructura</h3>
-                    <p className="text-slate-600 text-sm">Arrastra las partes en el orden correcto</p>
+                    <h3 className="text-xl font-bold text-[#071B33]">🔢 Ordenar la Estructura</h3>
+                    <p className="text-[#727983] text-sm">Arrastra las partes en el orden correcto</p>
                 </div>
                 <div className="text-right">
-                    <p className="text-sm text-slate-500">Intentos restantes: <span className="font-bold text-blue-600">{attemptsLeft}</span></p>
+                    <p className="text-sm text-[#727983]">Intentos restantes: <span className="font-bold text-[#2367D1]">{attemptsLeft}</span></p>
                     {currentBestScore > 0 && (
-                        <p className="text-xs text-emerald-600">Mejor: {currentBestScore}/3</p>
+                        <p className="text-xs text-[#1E6B38]">Mejor: {currentBestScore}/3</p>
                     )}
                 </div>
             </div>
@@ -65,19 +65,19 @@ export function OrderingGame() {
                         key={id}
                         value={id}
                         disabled={checked}
-                        className={`flex items-center gap-4 px-5 py-4 rounded-xl border-2 cursor-grab active:cursor-grabbing transition-colors ${checked
+                        className={`flex items-center gap-4 px-5 py-4 rounded border-2 cursor-grab active:cursor-grabbing transition-colors ${checked
                                 ? id === CORRECT_ORDER[idx]
-                                    ? 'bg-emerald-50 border-emerald-300'
-                                    : 'bg-red-50 border-red-300'
-                                : 'bg-slate-50 border-slate-200 hover:border-blue-300'
+                                    ? 'bg-[#EAF5EE] border-[#A3D9B5]'
+                                    : 'bg-[#FDF0EF] border-[#F1A8A5]'
+                                : 'bg-[#FAF9F5] border-[#D7D9D6] hover:border-[#A9C6EE]'
                             }`}
                     >
-                        <GripVertical className="w-5 h-5 text-slate-400" />
+                        <GripVertical className="w-5 h-5 text-[#727983]" />
                         <div className="flex-1">
-                            <p className="font-bold text-slate-800">{PARTS[id].label}</p>
-                            <p className="text-sm text-slate-500">{PARTS[id].desc}</p>
+                            <p className="font-bold text-[#101820]">{PARTS[id].label}</p>
+                            <p className="text-sm text-[#727983]">{PARTS[id].desc}</p>
                         </div>
-                        <span className="text-lg font-bold text-slate-400">{idx + 1}</span>
+                        <span className="text-lg font-bold text-[#727983]">{idx + 1}</span>
                     </Reorder.Item>
                 ))}
             </Reorder.Group>
@@ -85,19 +85,19 @@ export function OrderingGame() {
             <div className="mt-6 flex justify-between items-center">
                 {checked ? (
                     <>
-                        <div className={`flex items-center gap-2 font-medium ${isCorrect ? 'text-emerald-600' : 'text-red-600'}`}>
+                        <div className={`flex items-center gap-2 font-medium ${isCorrect ? 'text-[#1E6B38]' : 'text-[#B52A25]'}`}>
                             {isCorrect ? <><Check className="w-5 h-5" /> ¡Orden correcto!</> : 'Orden incorrecto.'}
                         </div>
                         {canAttempt('ordering') ? (
-                            <button onClick={reset} className="px-5 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700">
+                            <button onClick={reset} className="px-5 py-2 bg-[#2367D1] text-white rounded font-medium hover:bg-[#123C69]">
                                 Intentar de nuevo ({attemptsLeft} intentos)
                             </button>
                         ) : (
-                            <p className="text-slate-500 text-sm">Has agotado tus intentos.</p>
+                            <p className="text-[#727983] text-sm">Has agotado tus intentos.</p>
                         )}
                     </>
                 ) : (
-                    <button onClick={handleCheck} className="ml-auto px-5 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700">
+                    <button onClick={handleCheck} className="ml-auto px-5 py-2 bg-[#2367D1] text-white rounded font-medium hover:bg-[#123C69]">
                         Comprobar
                     </button>
                 )}

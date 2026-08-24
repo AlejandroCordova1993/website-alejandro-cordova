@@ -93,13 +93,13 @@ export function QuizSection() {
 
     if (showResult) {
         return (
-            <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 md:p-8 text-center">
-                <h3 className="text-xl font-bold text-blue-900 mb-4">📝 Resultado del Quiz</h3>
+            <div className="bg-white rounded shadow-lg border border-[#D7D9D6] p-6 md:p-8 text-center">
+                <h3 className="text-xl font-bold text-[#071B33] mb-4">📝 Resultado del Quiz</h3>
                 <div className="text-5xl mb-4">{score === QUESTIONS.length ? '🎉' : score >= QUESTIONS.length / 2 ? '👍' : '📚'}</div>
-                <p className="text-2xl font-bold text-slate-800 mb-2">
+                <p className="text-2xl font-bold text-[#101820] mb-2">
                     {score} / {QUESTIONS.length}
                 </p>
-                <p className="text-slate-600 mb-6">
+                <p className="text-[#727983] mb-6">
                     {score === QUESTIONS.length
                         ? '¡Perfecto! Dominas el tema.'
                         : score >= QUESTIONS.length / 2
@@ -107,40 +107,40 @@ export function QuizSection() {
                             : 'Necesitas repasar la teoría.'}
                 </p>
                 {canAttempt('quiz') ? (
-                    <button onClick={reset} className="px-6 py-3 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700">
+                    <button onClick={reset} className="px-6 py-3 bg-[#2367D1] text-white rounded font-bold hover:bg-[#123C69]">
                         Intentar de nuevo ({attemptsLeft} intentos)
                     </button>
                 ) : (
-                    <p className="text-slate-500 text-sm">Has agotado tus intentos.</p>
+                    <p className="text-[#727983] text-sm">Has agotado tus intentos.</p>
                 )}
             </div>
         );
     }
 
     return (
-        <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 md:p-8">
+        <div className="bg-white rounded shadow-lg border border-[#D7D9D6] p-6 md:p-8">
             <div className="flex justify-between items-center mb-4">
-                <h3 className="text-xl font-bold text-blue-900">📝 Quiz</h3>
+                <h3 className="text-xl font-bold text-[#071B33]">📝 Quiz</h3>
                 <div className="text-right">
-                    <span className="text-sm text-slate-500">Pregunta {currentQ + 1}/{QUESTIONS.length}</span>
+                    <span className="text-sm text-[#727983]">Pregunta {currentQ + 1}/{QUESTIONS.length}</span>
                     {currentBestScore > 0 && (
-                        <p className="text-xs text-emerald-600">Mejor: {currentBestScore}/{QUESTIONS.length}</p>
+                        <p className="text-xs text-[#1E6B38]">Mejor: {currentBestScore}/{QUESTIONS.length}</p>
                     )}
                 </div>
             </div>
 
-            <p className="text-lg font-medium text-slate-800 mb-6">{question.q}</p>
+            <p className="text-lg font-medium text-[#101820] mb-6">{question.q}</p>
 
             <div className="space-y-3 mb-6">
                 {question.options.map((opt, idx) => {
-                    let btnClass = 'bg-slate-50 border-slate-200 hover:border-blue-300';
+                    let btnClass = 'bg-[#FAF9F5] border-[#D7D9D6] hover:border-[#A9C6EE]';
                     if (selected !== null) {
                         if (idx === question.correct) {
-                            btnClass = 'bg-emerald-100 border-emerald-400 text-emerald-800';
+                            btnClass = 'bg-[#EAF5EE] border-[#3D7A54] text-[#17532B]';
                         } else if (idx === selected) {
-                            btnClass = 'bg-red-100 border-red-400 text-red-800';
+                            btnClass = 'bg-[#FDF0EF] border-[#B52A25] text-[#8A1F1B]';
                         } else {
-                            btnClass = 'bg-slate-50 border-slate-200 opacity-50';
+                            btnClass = 'bg-[#FAF9F5] border-[#D7D9D6] opacity-50';
                         }
                     }
 
@@ -149,7 +149,7 @@ export function QuizSection() {
                             key={idx}
                             onClick={() => handleSelect(idx)}
                             disabled={selected !== null}
-                            className={`w-full text-left px-4 py-3 rounded-xl border-2 transition-all ${btnClass}`}
+                            className={`w-full text-left px-4 py-3 rounded border-2 transition-all ${btnClass}`}
                         >
                             <span className="font-medium mr-2">{String.fromCharCode(65 + idx)}.</span>
                             {opt}
@@ -164,13 +164,13 @@ export function QuizSection() {
                     animate={{ opacity: 1, y: 0 }}
                     className="flex justify-between items-center"
                 >
-                    <div className={`flex items-center gap-2 font-medium ${selected === question.correct ? 'text-emerald-600' : 'text-red-600'}`}>
+                    <div className={`flex items-center gap-2 font-medium ${selected === question.correct ? 'text-[#1E6B38]' : 'text-[#B52A25]'}`}>
                         {selected === question.correct ? <Check className="w-5 h-5" /> : <X className="w-5 h-5" />}
                         {selected === question.correct ? '¡Correcto!' : 'Incorrecto'}
                     </div>
                     <button
                         onClick={handleNext}
-                        className="px-5 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700"
+                        className="px-5 py-2 bg-[#2367D1] text-white rounded font-medium hover:bg-[#123C69]"
                     >
                         {isLast ? 'Ver resultado' : 'Siguiente'}
                     </button>

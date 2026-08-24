@@ -16,14 +16,14 @@ import { EssayExample } from './components/EssayExample';
 
 // ================== SECTION BACKGROUND COLORS (Soft Pastels) ==================
 const SECTION_COLORS = {
-  intro: 'bg-gradient-to-b from-blue-50 to-indigo-50/40',
-  propositos: 'bg-gradient-to-b from-amber-50/60 to-orange-50/40',
-  argumentativo: 'bg-gradient-to-b from-violet-50/50 to-purple-50/40',
-  estructura: 'bg-gradient-to-b from-cyan-50/60 to-teal-50/40',
-  planificacion: 'bg-gradient-to-b from-rose-50/50 to-pink-50/40',
-  tesis: 'bg-gradient-to-b from-emerald-50/50 to-green-50/40',
-  argumentos: 'bg-gradient-to-b from-sky-50/60 to-blue-50/40',
-  ejemplo: 'bg-gradient-to-b from-indigo-50/60 to-violet-50/40',
+  intro: 'bg-[#E7EEF5]',
+  propositos: 'bg-[#FEF7EC]/60',
+  argumentativo: 'bg-[#E7EEF5]/50',
+  estructura: 'bg-[#E7EEF5]/60',
+  planificacion: 'bg-[#FDF0EF]/50',
+  tesis: 'bg-[#EAF5EE]/50',
+  argumentos: 'bg-[#E7EEF5]/60',
+  ejemplo: 'bg-[#E7EEF5]/60',
 };
 
 // ================== DATA ==================
@@ -55,21 +55,21 @@ function Section({ children, className = '', id, bg }) {
 function SectionTitle({ children, subtitle }) {
   return (
     <div className="mb-8 md:mb-10">
-      <h2 className="text-3xl md:text-4xl font-black text-blue-900 mb-2">{children}</h2>
-      {subtitle && <p className="text-lg text-slate-600">{subtitle}</p>}
+      <h2 className="text-3xl md:text-4xl font-black text-[#071B33] mb-2">{children}</h2>
+      {subtitle && <p className="text-lg text-[#727983]">{subtitle}</p>}
     </div>
   );
 }
 
 function Card({ children, className = '', accent = 'blue' }) {
   const accents = {
-    blue: 'border-t-blue-500',
-    orange: 'border-t-orange-400',
-    green: 'border-t-emerald-500',
-    purple: 'border-t-purple-500',
+    blue: 'border-t-[#2367D1]',
+    orange: 'border-t-[#945B0E]',
+    green: 'border-t-[#1E6B38]',
+    purple: 'border-t-[#2367D1]',
   };
   return (
-    <div className={`bg-white rounded-2xl shadow-md border border-slate-100 p-6 border-t-4 ${accents[accent]} ${className}`}>
+    <div className={`bg-white rounded shadow-md border border-[#F3F1EA] p-6 border-t-4 ${accents[accent]} ${className}`}>
       {children}
     </div>
   );
@@ -77,7 +77,7 @@ function Card({ children, className = '', accent = 'blue' }) {
 
 function InfoBox({ children, className = '' }) {
   return (
-    <div className={`bg-blue-50 border-2 border-dashed border-blue-300 rounded-xl p-5 ${className}`}>
+    <div className={`bg-[#E7EEF5] border-2 border-dashed border-[#A9C6EE] rounded p-5 ${className}`}>
       {children}
     </div>
   );
@@ -96,20 +96,20 @@ function IntroSection() {
           Un <strong>ensayo</strong> es un tipo de texto, relativamente breve, que interpreta o explica un tema humanístico, político, social, cultural o deportivo, entre otros.
         </p>
         <p>
-          Un ensayo <strong>no es un resumen</strong> ni una simple descripción. Es un texto donde el autor (tú) defiende una <strong className="text-orange-500">opinión personal</strong> sobre un tema polémico, utilizando razones lógicas para convencer al lector.
+          Un ensayo <strong>no es un resumen</strong> ni una simple descripción. Es un texto donde el autor (tú) defiende una <strong className="text-[#945B0E]">opinión personal</strong> sobre un tema polémico, utilizando razones lógicas para convencer al lector.
         </p>
       </div>
 
       <InfoBox className="mb-8">
-        <p className="text-blue-800 font-bold text-xl text-center">Opinión + Razones = Ensayo</p>
+        <p className="text-[#071B33] font-bold text-xl text-center">Opinión + Razones = Ensayo</p>
       </InfoBox>
 
-      <p className="text-slate-700 mb-6">
+      <p className="text-[#101820] mb-6">
         Un ensayo tiene una <Tooltip term="tesis">tesis</Tooltip>, afirmación o <Tooltip term="hipótesis">hipótesis</Tooltip>, que es la esencia del escrito, alrededor de la cual se entretejen las demás ideas en un tono <Tooltip term="dialógico">dialógico</Tooltip>, para mantener la atención del lector.
       </p>
 
-      <div className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 mb-10">
-        <h3 className="text-xl font-bold text-blue-900 mb-4">Los ensayos pueden tener diferentes propósitos:</h3>
+      <div className="bg-white rounded p-6 shadow-md border border-[#F3F1EA] mb-10">
+        <h3 className="text-xl font-bold text-[#071B33] mb-4">Los ensayos pueden tener diferentes propósitos:</h3>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {[
             { name: 'Informar', desc: 'Dar datos' },
@@ -119,9 +119,9 @@ function IntroSection() {
             { name: 'Describir', desc: 'Contar cómo es algo' },
             { name: 'Narrar', desc: 'Contar qué ha sucedido' },
           ].map(p => (
-            <div key={p.name} className="bg-slate-50 rounded-xl p-4 text-center">
-              <p className="font-bold text-blue-800">{p.name}</p>
-              <p className="text-sm text-slate-500">{p.desc}</p>
+            <div key={p.name} className="bg-[#FAF9F5] rounded p-4 text-center">
+              <p className="font-bold text-[#071B33]">{p.name}</p>
+              <p className="text-sm text-[#727983]">{p.desc}</p>
             </div>
           ))}
         </div>
@@ -172,8 +172,8 @@ function ArgumentativeSection() {
       </div>
 
       <Card className="mb-10">
-        <h3 className="text-xl font-bold text-blue-900 mb-3">¿Qué es un <Tooltip term="argumento">argumento</Tooltip>?</h3>
-        <p className="text-slate-700">
+        <h3 className="text-xl font-bold text-[#071B33] mb-3">¿Qué es un <Tooltip term="argumento">argumento</Tooltip>?</h3>
+        <p className="text-[#101820]">
           Los argumentos son las ideas o razones que usa el autor para confirmar o demostrar su tesis, o rebatir la contraria. También se pueden usar <Tooltip term="contraargumento">contraargumentos</Tooltip> para refutar los argumentos opuestos a tu posición.
         </p>
       </Card>
@@ -191,35 +191,35 @@ function StructureSection() {
         Estructura del Ensayo Argumentativo
       </SectionTitle>
 
-      <p className="text-slate-700 text-lg mb-8">
+      <p className="text-[#101820] text-lg mb-8">
         El texto argumentativo suele organizar su contenido en tres partes: <strong>introducción</strong>, <strong>desarrollo</strong> y <strong>conclusión</strong>.
       </p>
 
       <div className="grid md:grid-cols-3 gap-6 mb-10">
         <Card accent="blue">
           <div className="flex items-center gap-3 mb-3">
-            <ChefHat className="w-8 h-8 text-blue-600" />
-            <h4 className="font-bold text-blue-900 text-lg">1. Introducción</h4>
+            <ChefHat className="w-8 h-8 text-[#2367D1]" />
+            <h4 className="font-bold text-[#071B33] text-lg">1. Introducción</h4>
           </div>
-          <p className="text-slate-600 text-sm">
+          <p className="text-[#727983] text-sm">
             Parte de una breve <Tooltip term="exposición">exposición</Tooltip> para captar la atención del lector y despertar una actitud favorable. A la introducción le sigue la <Tooltip term="tesis">tesis</Tooltip>, que es la afirmación que se quiere probar.
           </p>
         </Card>
         <Card accent="orange">
           <div className="flex items-center gap-3 mb-3">
-            <Sandwich className="w-8 h-8 text-orange-500" />
-            <h4 className="font-bold text-blue-900 text-lg">2. Desarrollo</h4>
+            <Sandwich className="w-8 h-8 text-[#945B0E]" />
+            <h4 className="font-bold text-[#071B33] text-lg">2. Desarrollo</h4>
           </div>
-          <p className="text-slate-600 text-sm">
+          <p className="text-[#727983] text-sm">
             Está compuesto por los elementos que forman el cuerpo argumentativo: los <Tooltip term="argumento">argumentos</Tooltip>. Sirven para apoyar la tesis o refutarla. Se desarrollan mediante exposiciones y réplicas sucesivas.
           </p>
         </Card>
         <Card accent="green">
           <div className="flex items-center gap-3 mb-3">
-            <UtensilsCrossed className="w-8 h-8 text-emerald-600" />
-            <h4 className="font-bold text-blue-900 text-lg">3. Conclusión</h4>
+            <UtensilsCrossed className="w-8 h-8 text-[#1E6B38]" />
+            <h4 className="font-bold text-[#071B33] text-lg">3. Conclusión</h4>
           </div>
-          <p className="text-slate-600 text-sm">
+          <p className="text-[#727983] text-sm">
             Es la parte final del ensayo. Contiene un resumen de lo expuesto y los principales argumentos. Reafirma la <Tooltip term="tesis">tesis</Tooltip> con otras palabras.
           </p>
         </Card>
@@ -238,47 +238,47 @@ function ThesisSection() {
 
       <div className="grid md:grid-cols-2 gap-10 items-start mb-10">
         <div>
-          <h3 className="text-2xl font-bold text-slate-800 mb-4">¿Qué ES una <Tooltip term="tesis">Tesis</Tooltip>?</h3>
-          <p className="text-slate-600 mb-6">
+          <h3 className="text-2xl font-bold text-[#101820] mb-4">¿Qué ES una <Tooltip term="tesis">Tesis</Tooltip>?</h3>
+          <p className="text-[#727983] mb-6">
             Es una afirmación discutible. Es tu postura ante el tema. No es un hecho que se pueda comprobar fácilmente; es una <strong>opinión que debes defender</strong>.
           </p>
           <ul className="space-y-3">
             {['Es una oración completa.', 'Es una opinión, no un hecho.', 'Debe poder defenderse con argumentos.'].map((item, i) => (
-              <li key={i} className="flex items-center gap-3 text-slate-700">
-                <Check className="w-5 h-5 text-emerald-500 flex-shrink-0" />
+              <li key={i} className="flex items-center gap-3 text-[#101820]">
+                <Check className="w-5 h-5 text-[#1E6B38] flex-shrink-0" />
                 <span>{item}</span>
               </li>
             ))}
           </ul>
         </div>
         <div className="space-y-4">
-          <Card className="border-l-4 border-l-red-400 !border-t-0">
-            <div className="flex items-center gap-2 text-red-600 font-bold mb-2">
+          <Card className="border-l-4 border-l-[#B52A25] !border-t-0">
+            <div className="flex items-center gap-2 text-[#B52A25] font-bold mb-2">
               <X className="w-5 h-5" /> Incorrecto (Hecho)
             </div>
-            <p className="text-slate-600 italic">"En los comerciales aparecen personas de diferentes géneros."</p>
+            <p className="text-[#727983] italic">"En los comerciales aparecen personas de diferentes géneros."</p>
           </Card>
-          <Card className="border-l-4 border-l-emerald-500 !border-t-0">
-            <div className="flex items-center gap-2 text-emerald-600 font-bold mb-2">
+          <Card className="border-l-4 border-l-[#1E6B38] !border-t-0">
+            <div className="flex items-center gap-2 text-[#1E6B38] font-bold mb-2">
               <Check className="w-5 h-5" /> Correcto (Tesis)
             </div>
-            <p className="text-slate-600 italic">"Los comerciales refuerzan <Tooltip term="estereotipo">estereotipos</Tooltip> de género que limitan el desarrollo de las personas."</p>
+            <p className="text-[#727983] italic">"Los comerciales refuerzan <Tooltip term="estereotipo">estereotipos</Tooltip> de género que limitan el desarrollo de las personas."</p>
           </Card>
         </div>
       </div>
 
-      <h3 className="text-2xl font-bold text-slate-800 mb-4">Construyendo la Tesis</h3>
-      <p className="text-slate-700 mb-6">Para formular una buena tesis, usa esta fórmula:</p>
+      <h3 className="text-2xl font-bold text-[#101820] mb-4">Construyendo la Tesis</h3>
+      <p className="text-[#101820] mb-6">Para formular una buena tesis, usa esta fórmula:</p>
 
       <InfoBox className="mb-8 text-center">
-        <p className="text-blue-800 font-bold text-xl">[TEMA] + [POSTURA] + [POR QUÉ]</p>
+        <p className="text-[#071B33] font-bold text-xl">[TEMA] + [POSTURA] + [POR QUÉ]</p>
       </InfoBox>
 
       <Card className="mb-10">
-        <p className="font-bold text-slate-800 mb-2">Ejemplo sobre <Tooltip term="estereotipo">estereotipos</Tooltip>:</p>
-        <p className="text-slate-600 italic text-lg leading-relaxed">
-          "La división de roles por género en la publicidad <span className="text-blue-600 font-medium">(Tema)</span> es
-          perjudicial <span className="text-orange-500 font-medium">(Postura)</span> porque limita las aspiraciones de niños y niñas <span className="text-emerald-600 font-medium">(Por qué)</span>."
+        <p className="font-bold text-[#101820] mb-2">Ejemplo sobre <Tooltip term="estereotipo">estereotipos</Tooltip>:</p>
+        <p className="text-[#727983] italic text-lg leading-relaxed">
+          "La división de roles por género en la publicidad <span className="text-[#2367D1] font-medium">(Tema)</span> es
+          perjudicial <span className="text-[#945B0E] font-medium">(Postura)</span> porque limita las aspiraciones de niños y niñas <span className="text-[#1E6B38] font-medium">(Por qué)</span>."
         </p>
       </Card>
 
@@ -335,16 +335,16 @@ function ThesisGame() {
   const currentItem = items[0];
 
   return (
-    <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 md:p-8">
+    <div className="bg-white rounded shadow-lg border border-[#D7D9D6] p-6 md:p-8">
       <div className="flex justify-between items-start mb-4">
         <div>
-          <h3 className="text-xl font-bold text-blue-900">🎮 ¿Tesis o Hecho?</h3>
-          <p className="text-slate-600 text-sm">Arrastra: izquierda = Hecho, derecha = Tesis</p>
+          <h3 className="text-xl font-bold text-[#071B33]">🎮 ¿Tesis o Hecho?</h3>
+          <p className="text-[#727983] text-sm">Arrastra: izquierda = Hecho, derecha = Tesis</p>
         </div>
         <div className="text-right">
-          <p className="text-sm text-slate-500">Intentos restantes: <span className="font-bold text-blue-600">{attemptsLeft}</span></p>
+          <p className="text-sm text-[#727983]">Intentos restantes: <span className="font-bold text-[#2367D1]">{attemptsLeft}</span></p>
           {currentBestScore > 0 && (
-            <p className="text-xs text-emerald-600">Mejor: {currentBestScore}/{THESIS_EXAMPLES.length}</p>
+            <p className="text-xs text-[#1E6B38]">Mejor: {currentBestScore}/{THESIS_EXAMPLES.length}</p>
           )}
         </div>
       </div>
@@ -352,13 +352,13 @@ function ThesisGame() {
       <div className="relative w-full min-h-[240px] sm:min-h-[280px] flex items-center justify-center">
         {items.length > 0 && (
           <>
-            <div className="absolute left-0 top-0 bottom-0 w-[32%] sm:w-[38%] bg-gradient-to-br from-red-50 to-red-100/50 rounded-xl sm:rounded-2xl border-2 border-dashed border-red-300 flex flex-col items-center justify-center p-2 sm:p-4">
-              <X className="w-6 h-6 sm:w-8 sm:h-8 text-red-400 mb-1 sm:mb-2" />
-              <span className="text-red-700 font-bold text-xs sm:text-base">HECHO</span>
+            <div className="absolute left-0 top-0 bottom-0 w-[32%] sm:w-[38%] bg-[#FDF0EF] rounded sm:rounded border-2 border-dashed border-[#F1A8A5] flex flex-col items-center justify-center p-2 sm:p-4">
+              <X className="w-6 h-6 sm:w-8 sm:h-8 text-[#B52A25] mb-1 sm:mb-2" />
+              <span className="text-[#8A1F1B] font-bold text-xs sm:text-base">HECHO</span>
             </div>
-            <div className="absolute right-0 top-0 bottom-0 w-[32%] sm:w-[38%] bg-gradient-to-bl from-emerald-50 to-emerald-100/50 rounded-xl sm:rounded-2xl border-2 border-dashed border-emerald-300 flex flex-col items-center justify-center p-2 sm:p-4">
-              <Check className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-400 mb-1 sm:mb-2" />
-              <span className="text-emerald-700 font-bold text-xs sm:text-base">TESIS</span>
+            <div className="absolute right-0 top-0 bottom-0 w-[32%] sm:w-[38%] bg-[#EAF5EE] rounded sm:rounded border-2 border-dashed border-[#A3D9B5] flex flex-col items-center justify-center p-2 sm:p-4">
+              <Check className="w-6 h-6 sm:w-8 sm:h-8 text-[#3D7A54] mb-1 sm:mb-2" />
+              <span className="text-[#17532B] font-bold text-xs sm:text-base">TESIS</span>
             </div>
           </>
         )}
@@ -371,8 +371,8 @@ function ThesisGame() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
               className={`absolute top-2 left-1/2 -translate-x-1/2 z-20 px-6 py-3 rounded-full font-bold text-lg shadow-lg ${feedback === 'correct'
-                ? 'bg-emerald-500 text-white'
-                : 'bg-red-500 text-white'
+                ? 'bg-[#1E6B38] text-white'
+                : 'bg-[#B52A25] text-white'
                 }`}
             >
               {feedback === 'correct' ? '✓ ¡Correcto!' : '✗ Incorrecto'}
@@ -395,26 +395,26 @@ function ThesisGame() {
                     { scale: 1, opacity: 1, y: 0 }
               }
               exit={{ scale: 0.5, opacity: 0 }}
-              className="absolute z-10 w-52 sm:w-64 md:w-80 bg-white shadow-2xl rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center cursor-grab active:cursor-grabbing border border-slate-200"
+              className="absolute z-10 w-52 sm:w-64 md:w-80 bg-white shadow-2xl rounded sm:rounded p-4 sm:p-6 text-center cursor-grab active:cursor-grabbing border border-[#D7D9D6]"
               style={{ touchAction: 'none' }}
               whileDrag={{ scale: 1.05, rotate: 3 }}
             >
-              <GripVertical className="w-4 h-4 sm:w-5 sm:h-5 text-slate-300 mx-auto mb-2 sm:mb-3" />
-              <p className="text-sm sm:text-base font-medium text-slate-800">{currentItem.text}</p>
+              <GripVertical className="w-4 h-4 sm:w-5 sm:h-5 text-[#D7D9D6] mx-auto mb-2 sm:mb-3" />
+              <p className="text-sm sm:text-base font-medium text-[#101820]">{currentItem.text}</p>
             </motion.div>
           ) : (
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="text-center bg-emerald-50 p-8 rounded-3xl border border-emerald-200"
+              className="text-center bg-[#EAF5EE] p-8 rounded border border-[#A3D9B5]"
             >
               <div className="text-5xl mb-4">🎉</div>
-              <h3 className="text-2xl font-bold text-emerald-700 mb-3">¡Excelente!</h3>
-              <p className="text-slate-600 mb-6">Has clasificado todo correctamente.</p>
+              <h3 className="text-2xl font-bold text-[#17532B] mb-3">¡Excelente!</h3>
+              <p className="text-[#727983] mb-6">Has clasificado todo correctamente.</p>
               {canAttempt('thesisGame') && (
                 <button
                   onClick={handleReset}
-                  className="px-6 py-3 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700"
+                  className="px-6 py-3 bg-[#2367D1] text-white rounded font-bold hover:bg-[#123C69]"
                 >
                   Intentar de nuevo ({attemptsLeft} intentos)
                 </button>
@@ -424,7 +424,7 @@ function ThesisGame() {
         </AnimatePresence>
       </div>
       {items.length > 0 && (
-        <p className="text-center text-sm text-slate-400 mt-4">Quedan {items.length} frases</p>
+        <p className="text-center text-sm text-[#727983] mt-4">Quedan {items.length} frases</p>
       )}
     </div>
   );
@@ -449,16 +449,16 @@ function ArgumentsSection() {
 
       <div className="prose prose-slate prose-lg max-w-none mb-8">
         <p>
-          Si la <Tooltip term="tesis">Tesis</Tooltip> es el "Qué", los <Tooltip term="argumento">Argumentos</Tooltip> son el <strong className="text-orange-500">"Por Qué"</strong>. Son las pruebas, razones o ejemplos que usas para convencer al lector de que tu Tesis es verdadera.
+          Si la <Tooltip term="tesis">Tesis</Tooltip> es el "Qué", los <Tooltip term="argumento">Argumentos</Tooltip> son el <strong className="text-[#945B0E]">"Por Qué"</strong>. Son las pruebas, razones o ejemplos que usas para convencer al lector de que tu Tesis es verdadera.
         </p>
       </div>
 
       <div className="grid md:grid-cols-2 gap-4 mb-10">
         {types.map((t, i) => (
           <Card key={i} className="!border-t-2">
-            <h4 className="font-bold text-blue-900 mb-1">{t.name}</h4>
-            <p className="text-sm text-slate-500 mb-3">{t.def}</p>
-            <div className="bg-slate-50 p-3 rounded-lg text-sm text-slate-700 italic">
+            <h4 className="font-bold text-[#071B33] mb-1">{t.name}</h4>
+            <p className="text-sm text-[#727983] mb-3">{t.def}</p>
+            <div className="bg-[#FAF9F5] p-3 rounded text-sm text-[#101820] italic">
               <strong>Ej:</strong> {t.example}
             </div>
           </Card>
@@ -478,26 +478,26 @@ function PlanningSection() {
         Planificación del Ensayo
       </SectionTitle>
 
-      <p className="text-slate-700 text-lg mb-8">
+      <p className="text-[#101820] text-lg mb-8">
         El proceso de producción de un texto escrito inicia con el momento de "planificación". En este momento respondemos a cuatro preguntas clave:
       </p>
 
       <div className="grid md:grid-cols-2 gap-6 mb-8">
         <Card accent="blue">
-          <h4 className="font-bold text-blue-900 text-lg mb-2">¿Qué se va a escribir?</h4>
-          <p className="text-slate-600"><Tooltip term="argumento">Argumentos</Tooltip> y <Tooltip term="contraargumento">contraargumentos</Tooltip> que prueben y demuestren una idea (<Tooltip term="tesis">tesis</Tooltip>) o refuten la contraria.</p>
+          <h4 className="font-bold text-[#071B33] text-lg mb-2">¿Qué se va a escribir?</h4>
+          <p className="text-[#727983]"><Tooltip term="argumento">Argumentos</Tooltip> y <Tooltip term="contraargumento">contraargumentos</Tooltip> que prueben y demuestren una idea (<Tooltip term="tesis">tesis</Tooltip>) o refuten la contraria.</p>
         </Card>
         <Card accent="orange">
-          <h4 className="font-bold text-blue-900 text-lg mb-2">¿Para qué?</h4>
-          <p className="text-slate-600">Influir en tus compañeros a favor o en contra de una idea u opinión.</p>
+          <h4 className="font-bold text-[#071B33] text-lg mb-2">¿Para qué?</h4>
+          <p className="text-[#727983]">Influir en tus compañeros a favor o en contra de una idea u opinión.</p>
         </Card>
         <Card accent="purple">
-          <h4 className="font-bold text-blue-900 text-lg mb-2">¿En qué tipo de texto?</h4>
-          <p className="text-slate-600">Un ensayo argumentativo que pruebe o demuestre una idea (tesis) y refute la contraria, para <Tooltip term="persuadir">persuadir</Tooltip> sobre determinados hechos, ideas o comportamientos.</p>
+          <h4 className="font-bold text-[#071B33] text-lg mb-2">¿En qué tipo de texto?</h4>
+          <p className="text-[#727983]">Un ensayo argumentativo que pruebe o demuestre una idea (tesis) y refute la contraria, para <Tooltip term="persuadir">persuadir</Tooltip> sobre determinados hechos, ideas o comportamientos.</p>
         </Card>
         <Card accent="green">
-          <h4 className="font-bold text-blue-900 text-lg mb-2">¿Para quién?</h4>
-          <p className="text-slate-600">Este texto está dirigido a todos los estudiantes del colegio y a otros lectores de la comunidad escolar.</p>
+          <h4 className="font-bold text-[#071B33] text-lg mb-2">¿Para quién?</h4>
+          <p className="text-[#727983]">Este texto está dirigido a todos los estudiantes del colegio y a otros lectores de la comunidad escolar.</p>
         </Card>
       </div>
     </Section>
@@ -535,23 +535,23 @@ function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#D7D9D6]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
-        <span className="font-black text-lg sm:text-xl text-blue-900">✍️ El Ensayo</span>
+        <span className="font-black text-lg sm:text-xl text-[#071B33]">✍️ El Ensayo</span>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-6">
-          <div className="flex gap-6 text-sm font-medium text-slate-600">
+          <div className="flex gap-6 text-sm font-medium text-[#727983]">
             {links.map(link => (
-              <a key={link.href} href={link.href} className="hover:text-blue-600 transition-colors">
+              <a key={link.href} href={link.href} className="hover:text-[#2367D1] transition-colors">
                 {link.label}
               </a>
             ))}
           </div>
           {student && (
-            <div className="text-right border-l border-slate-200 pl-4">
-              <p className="text-sm font-medium text-slate-700">{student.name} {student.lastName}</p>
-              <p className="text-xs text-slate-500">{student.course}</p>
+            <div className="text-right border-l border-[#D7D9D6] pl-4">
+              <p className="text-sm font-medium text-[#101820]">{student.name} {student.lastName}</p>
+              <p className="text-xs text-[#727983]">{student.course}</p>
             </div>
           )}
         </div>
@@ -559,7 +559,7 @@ function Navigation() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 rounded-lg bg-slate-100 text-slate-600"
+          className="md:hidden p-2 rounded bg-[#F3F1EA] text-[#727983]"
           aria-label="Menú"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -579,7 +579,7 @@ function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-slate-100 overflow-hidden"
+            className="md:hidden bg-white border-t border-[#F3F1EA] overflow-hidden"
           >
             <div className="px-4 py-3 space-y-2">
               {links.map(link => (
@@ -587,15 +587,15 @@ function Navigation() {
                   key={link.href}
                   href={link.href}
                   onClick={handleLinkClick}
-                  className="block py-2 px-3 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 font-medium"
+                  className="block py-2 px-3 rounded text-[#101820] hover:bg-[#E7EEF5] hover:text-[#2367D1] font-medium"
                 >
                   {link.label}
                 </a>
               ))}
               {student && (
-                <div className="pt-2 mt-2 border-t border-slate-100 text-center">
-                  <p className="text-sm font-medium text-slate-700">{student.name} {student.lastName}</p>
-                  <p className="text-xs text-slate-500">{student.course}</p>
+                <div className="pt-2 mt-2 border-t border-[#F3F1EA] text-center">
+                  <p className="text-sm font-medium text-[#101820]">{student.name} {student.lastName}</p>
+                  <p className="text-xs text-[#727983]">{student.course}</p>
                 </div>
               )}
             </div>
@@ -615,7 +615,7 @@ function MainContent() {
   }
 
   return (
-    <div className="pt-14 sm:pt-16 overflow-x-hidden bg-slate-50">
+    <div className="pt-14 sm:pt-16 overflow-x-hidden bg-[#FAF9F5]">
       <Navigation />
       <IntroSection />
       <PurposesSection />
@@ -626,7 +626,7 @@ function MainContent() {
       <EssayExampleSection />
       <PlanningSection />
       <ResultsSummary />
-      <footer className="py-10 text-center text-slate-500 text-sm bg-white border-t border-slate-200">
+      <footer className="py-10 text-center text-[#727983] text-sm bg-white border-t border-[#D7D9D6]">
         <p>Creado por Msc. Alejandro Córdova • 2026</p>
       </footer>
     </div>

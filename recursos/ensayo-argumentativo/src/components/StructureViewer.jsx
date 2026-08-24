@@ -5,21 +5,21 @@ const PARTS = [
     {
         id: 'intro',
         title: '1. Introducción',
-        color: 'bg-indigo-100 border-indigo-300 text-indigo-800',
+        color: 'bg-[#E7EEF5] border-[#A9C6EE] text-[#071B33]',
         desc: 'Engancha al lector + Presenta el tema + **Plantea la TESIS**.',
         icon: '🏗️'
     },
     {
         id: 'body',
         title: '2. Desarrollo (Cuerpo)',
-        color: 'bg-pink-100 border-pink-300 text-pink-800',
+        color: 'bg-[#FEF7EC] border-[#F5D399] text-[#7A4A0B]',
         desc: 'Presenta los **ARGUMENTOS** que defienden la tesis. Usa evidencias y ejemplos.',
         icon: '🧱'
     },
     {
         id: 'conclusion',
         title: '3. Conclusión',
-        color: 'bg-emerald-100 border-emerald-300 text-emerald-800',
+        color: 'bg-[#EAF5EE] border-[#A3D9B5] text-[#17532B]',
         desc: 'Sintetiza lo expuesto + Reafirma la tesis + Cierre memorable.',
         icon: '🏠'
     }
@@ -38,7 +38,7 @@ export function StructureViewer() {
                         onHoverStart={() => setActive(part.id)}
                         onClick={() => setActive(part.id)}
                         whileHover={{ scale: 1.05, x: 10 }}
-                        className={`cursor-pointer p-6 rounded-xl border-2 shadow-sm transition-colors ${part.color} ${active === part.id ? 'ring-2 ring-offset-2 ring-purple-400 font-bold' : ''}`}
+                        className={`cursor-pointer p-6 rounded border-2 shadow-sm transition-colors ${part.color} ${active === part.id ? 'ring-2 ring-offset-2 ring-[#5B7FA6] font-bold' : ''}`}
                     >
                         <div className="flex items-center gap-3">
                             <span className="text-2xl">{part.icon}</span>
@@ -56,15 +56,15 @@ export function StructureViewer() {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                     >
-                        <h3 className="text-2xl font-bold mb-4 color-primary-strong">
+                        <h3 className="text-2xl font-bold mb-4 text-[#123C69]">
                             {PARTS.find(p => p.id === active).title}
                         </h3>
-                        <p className="text-lg leading-relaxed text-gray-700">
+                        <p className="text-lg leading-relaxed text-[#101820]">
                             {PARTS.find(p => p.id === active).desc}
                         </p>
                     </motion.div>
                 ) : (
-                    <p className="text-center text-gray-400 italic">
+                    <p className="text-center text-[#727983] italic">
                         Pasa el mouse sobre las partes de la estructura para ver detalles.
                     </p>
                 )}

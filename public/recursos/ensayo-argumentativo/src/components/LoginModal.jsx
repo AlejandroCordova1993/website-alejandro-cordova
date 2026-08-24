@@ -28,59 +28,59 @@ export function LoginModal() {
     };
 
     return (
-        <div className="fixed inset-0 z-50 bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 bg-[#071B33] flex items-center justify-center p-4">
             <motion.div
                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
-                className="bg-white rounded-3xl shadow-2xl p-8 md:p-10 w-full max-w-md"
+                className="bg-white rounded shadow-2xl p-8 md:p-10 w-full max-w-md"
             >
                 <div className="text-center mb-8">
-                    <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <GraduationCap className="w-8 h-8 text-blue-600" />
+                    <div className="w-16 h-16 bg-[#E7EEF5] rounded-full flex items-center justify-center mx-auto mb-4">
+                        <GraduationCap className="w-8 h-8 text-[#2367D1]" />
                     </div>
-                    <h1 className="text-2xl md:text-3xl font-black text-blue-900 mb-2">
+                    <h1 className="text-2xl md:text-3xl font-black text-[#071B33] mb-2">
                         El Ensayo Argumentativo
                     </h1>
-                    <p className="text-slate-600">
+                    <p className="text-[#727983]">
                         Ingresa tus datos para comenzar
                     </p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-5">
                     <div>
-                        <label className="block text-sm font-medium text-slate-700 mb-1">
+                        <label className="block text-sm font-medium text-[#101820] mb-1">
                             Nombre
                         </label>
                         <div className="relative">
-                            <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+                            <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#727983]" />
                             <input
                                 type="text"
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                                 placeholder="Tu nombre"
-                                className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                                className="w-full pl-10 pr-4 py-3 border border-[#D7D9D6] rounded focus:ring-2 focus:ring-[#2367D1] focus:border-[#2367D1] outline-none transition-all"
                             />
                         </div>
                     </div>
 
                     <div>
-                        <label className="block text-sm font-medium text-slate-700 mb-1">
+                        <label className="block text-sm font-medium text-[#101820] mb-1">
                             Apellido
                         </label>
                         <div className="relative">
-                            <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+                            <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#727983]" />
                             <input
                                 type="text"
                                 value={lastName}
                                 onChange={(e) => setLastName(e.target.value)}
                                 placeholder="Tu apellido"
-                                className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                                className="w-full pl-10 pr-4 py-3 border border-[#D7D9D6] rounded focus:ring-2 focus:ring-[#2367D1] focus:border-[#2367D1] outline-none transition-all"
                             />
                         </div>
                     </div>
 
                     <div>
-                        <label className="block text-sm font-medium text-slate-700 mb-1">
+                        <label className="block text-sm font-medium text-[#101820] mb-1">
                             Curso
                         </label>
                         <div className="grid grid-cols-2 gap-3">
@@ -89,9 +89,9 @@ export function LoginModal() {
                                     key={c}
                                     type="button"
                                     onClick={() => setCourse(c)}
-                                    className={`py-3 px-4 rounded-xl border-2 font-medium transition-all ${course === c
-                                            ? 'bg-blue-600 border-blue-600 text-white'
-                                            : 'bg-white border-slate-200 text-slate-700 hover:border-blue-300'
+                                    className={`py-3 px-4 rounded border-2 font-medium transition-all ${course === c
+                                            ? 'bg-[#2367D1] border-[#2367D1] text-white'
+                                            : 'bg-white border-[#D7D9D6] text-[#101820] hover:border-[#A9C6EE]'
                                         }`}
                                 >
                                     {c}
@@ -101,20 +101,20 @@ export function LoginModal() {
                     </div>
 
                     {error && (
-                        <p className="text-red-500 text-sm text-center bg-red-50 p-3 rounded-lg">
+                        <p className="text-[#B52A25] text-sm text-center bg-[#FDF0EF] p-3 rounded">
                             {error}
                         </p>
                     )}
 
                     <button
                         type="submit"
-                        className="w-full py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-bold text-lg hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl"
+                        className="w-full py-4 bg-[#2367D1] text-white rounded font-bold text-lg hover:bg-[#123C69] transition-all shadow-lg hover:shadow-xl"
                     >
                         Comenzar
                     </button>
                 </form>
 
-                <p className="text-center text-xs text-slate-400 mt-6">
+                <p className="text-center text-xs text-[#727983] mt-6">
                     Creado por Msc. Alejandro Córdova
                 </p>
             </motion.div>

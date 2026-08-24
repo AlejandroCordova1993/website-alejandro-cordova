@@ -33,29 +33,29 @@ export function ResultsSummary() {
 
     const getGradeColor = (grade) => {
         const num = parseFloat(grade);
-        if (num >= 9) return 'text-emerald-600';
-        if (num >= 7) return 'text-blue-600';
-        if (num >= 5) return 'text-orange-500';
-        return 'text-red-500';
+        if (num >= 9) return 'text-[#1E6B38]';
+        if (num >= 7) return 'text-[#2367D1]';
+        if (num >= 5) return 'text-[#945B0E]';
+        return 'text-[#B52A25]';
     };
 
     return (
-        <div className="bg-gradient-to-b from-indigo-50 to-purple-50 py-16 px-6">
+        <div className="bg-[#E7EEF5] py-16 px-6">
             <div className="max-w-3xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="bg-white rounded-3xl shadow-xl p-8 md:p-10"
+                    className="bg-white rounded shadow-xl p-8 md:p-10"
                 >
                     <div className="text-center mb-8">
-                        <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <Trophy className="w-8 h-8 text-amber-600" />
+                        <div className="w-16 h-16 bg-[#FEF7EC] rounded-full flex items-center justify-center mx-auto mb-4">
+                            <Trophy className="w-8 h-8 text-[#945B0E]" />
                         </div>
-                        <h2 className="text-3xl font-black text-blue-900 mb-2">
+                        <h2 className="text-3xl font-black text-[#071B33] mb-2">
                             Resumen de Resultados
                         </h2>
-                        <p className="text-slate-600">
+                        <p className="text-[#727983]">
                             {student?.name} {student?.lastName} • {student?.course}
                         </p>
                     </div>
@@ -65,35 +65,35 @@ export function ResultsSummary() {
                         {activities.map((activity) => (
                             <div
                                 key={activity.id}
-                                className="flex items-center justify-between p-4 bg-slate-50 rounded-xl"
+                                className="flex items-center justify-between p-4 bg-[#FAF9F5] rounded"
                             >
                                 <div className="flex items-center gap-3">
                                     {activity.score === activity.maxScore ? (
-                                        <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center">
-                                            <Check className="w-5 h-5 text-emerald-600" />
+                                        <div className="w-8 h-8 bg-[#EAF5EE] rounded-full flex items-center justify-center">
+                                            <Check className="w-5 h-5 text-[#1E6B38]" />
                                         </div>
                                     ) : (
-                                        <div className="w-8 h-8 bg-slate-200 rounded-full flex items-center justify-center">
-                                            <span className="text-sm font-bold text-slate-500">{activity.attempts}</span>
+                                        <div className="w-8 h-8 bg-[#D7D9D6] rounded-full flex items-center justify-center">
+                                            <span className="text-sm font-bold text-[#727983]">{activity.attempts}</span>
                                         </div>
                                     )}
-                                    <span className="font-medium text-slate-700">{activity.name}</span>
+                                    <span className="font-medium text-[#101820]">{activity.name}</span>
                                 </div>
                                 <div className="text-right">
                                     <span className={`font-bold text-lg ${getGradeColor(activity.percentage)}`}>
                                         {activity.percentage}
                                     </span>
-                                    <span className="text-slate-400 text-sm"> / 10</span>
+                                    <span className="text-[#727983] text-sm"> / 10</span>
                                 </div>
                             </div>
                         ))}
                     </div>
 
                     {/* Final Grade */}
-                    <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-6 text-white text-center mb-8">
-                        <p className="text-blue-100 mb-1">Calificación Final</p>
+                    <div className="bg-[#2367D1] rounded p-6 text-white text-center mb-8">
+                        <p className="text-[#E7EEF5] mb-1">Calificación Final</p>
                         <p className="text-5xl font-black">{finalGrade}</p>
-                        <p className="text-blue-200 text-sm mt-1">sobre 10</p>
+                        <p className="text-[#A9C6EE] text-sm mt-1">sobre 10</p>
                     </div>
 
                     {/* Submit Button */}
@@ -102,7 +102,7 @@ export function ResultsSummary() {
                             <button
                                 onClick={handleSubmit}
                                 disabled={isSubmitting}
-                                className="w-full py-4 bg-emerald-600 text-white rounded-xl font-bold text-lg hover:bg-emerald-700 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                                className="w-full py-4 bg-[#1E6B38] text-white rounded font-bold text-lg hover:bg-[#17532B] transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                             >
                                 {isSubmitting ? (
                                     <>
@@ -117,16 +117,16 @@ export function ResultsSummary() {
                                 )}
                             </button>
                             {submitError && (
-                                <p className="text-red-500 text-sm text-center bg-red-50 p-3 rounded-lg">
+                                <p className="text-[#B52A25] text-sm text-center bg-[#FDF0EF] p-3 rounded">
                                     {submitError}
                                 </p>
                             )}
                         </div>
                     ) : (
-                        <div className="text-center p-6 bg-emerald-50 rounded-2xl border border-emerald-200">
-                            <Check className="w-12 h-12 text-emerald-600 mx-auto mb-3" />
-                            <p className="text-emerald-700 font-bold text-lg">¡Resultados Enviados!</p>
-                            <p className="text-emerald-600 text-sm">Tu profesor recibirá tu calificación.</p>
+                        <div className="text-center p-6 bg-[#EAF5EE] rounded border border-[#A3D9B5]">
+                            <Check className="w-12 h-12 text-[#1E6B38] mx-auto mb-3" />
+                            <p className="text-[#17532B] font-bold text-lg">¡Resultados Enviados!</p>
+                            <p className="text-[#1E6B38] text-sm">Tu profesor recibirá tu calificación.</p>
                         </div>
                     )}
                 </motion.div>

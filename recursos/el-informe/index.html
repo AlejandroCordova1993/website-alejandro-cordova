@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Public+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
     <style>
         /* Login Screen */
         .login-overlay {
@@ -26,7 +26,7 @@
             background: #FAF9F5;
             border: 1px solid #D7D9D6;
             padding: 48px;
-            border-radius: 6px;
+            border-radius: 4px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             max-width: 450px;
             width: 100%;
@@ -55,12 +55,12 @@
             font-weight: 700;
             text-align: center;
             margin-bottom: 12px;
-            color: #1f2937;
+            color: #101820;
         }
 
         .login-subtitle {
             text-align: center;
-            color: #6b7280;
+            color: #727983;
             margin-bottom: 32px;
         }
 
@@ -72,14 +72,14 @@
             display: block;
             font-weight: 600;
             margin-bottom: 8px;
-            color: #374151;
+            color: #101820;
         }
 
         .form-input, .form-select {
             width: 100%;
             padding: 14px 16px;
-            border: 2px solid #e5e7eb;
-            border-radius: 12px;
+            border: 2px solid #D7D9D6;
+            border-radius: 4px;
             font-size: 16px;
             transition: all 0.2s;
             font-family: inherit;
@@ -87,12 +87,12 @@
 
         .form-input:focus, .form-select:focus {
             outline: none;
-            border-color: #2563eb;
+            border-color: #2367D1;
             box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
 
         .form-input::placeholder {
-            color: #9ca3af;
+            color: #727983;
         }
 
         .btn-login {
@@ -131,7 +131,7 @@
             right: 20px;
             background: white;
             padding: 16px 24px;
-            border-radius: 16px;
+            border-radius: 4px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             z-index: 998;
             display: flex;
@@ -144,7 +144,7 @@
         .score-label {
             font-size: 12px;
             font-weight: 600;
-            color: #6b7280;
+            color: #727983;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -152,7 +152,7 @@
         .score-value {
             font-size: 32px;
             font-weight: 700;
-            background: linear-gradient(135deg, #2563eb, #14b8a6);
+            background: #2367D1;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -160,39 +160,39 @@
         .student-name {
             font-size: 14px;
             font-weight: 600;
-            color: #374151;
+            color: #101820;
             text-align: center;
         }
 
         .student-course {
             font-size: 12px;
-            color: #6b7280;
+            color: #727983;
         }
 
         /* Results Panel */
         .results-panel {
-            background: linear-gradient(135deg, #f0f9ff, #f0fdfa);
+            background: #FAF9F5;
             border: 3px solid;
-            border-radius: 20px;
+            border-radius: 4px;
             padding: 40px;
             margin: 48px 0;
             text-align: center;
         }
 
         .results-panel.excelente {
-            border-color: #14b8a6;
+            border-color: #1E6B38;
         }
 
         .results-panel.bueno {
-            border-color: #2563eb;
+            border-color: #2367D1;
         }
 
         .results-panel.regular {
-            border-color: #f59e0b;
+            border-color: #945B0E;
         }
 
         .results-panel.insuficiente {
-            border-color: #ef4444;
+            border-color: #B52A25;
         }
 
         .results-emoji {
@@ -210,7 +210,7 @@
             font-size: 64px;
             font-weight: 700;
             margin: 24px 0;
-            background: linear-gradient(135deg, #2563eb, #14b8a6);
+            background: #2367D1;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -225,20 +225,20 @@
         .breakdown-item {
             background: white;
             padding: 20px;
-            border-radius: 12px;
+            border-radius: 4px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .breakdown-label {
             font-size: 14px;
-            color: #6b7280;
+            color: #727983;
             margin-bottom: 8px;
         }
 
         .breakdown-value {
             font-size: 24px;
             font-weight: 700;
-            color: #1f2937;
+            color: #101820;
         }
 
         /* Design System - Paleta Human / System */
@@ -252,16 +252,16 @@
             --color-primary-700: #123C69;
             
             /* Estados */
-            --color-success-400: #2dd4bf;
+            --color-success-400: #A3D9B5;
             --color-success-500: #1E6B38;
             
             /* Ámbar */
-            --color-accent-400: #fbbf24;
+            --color-accent-400: #F5D399;
             --color-accent-500: #945B0E;
             
             /* Rojo Señal */
-            --color-error-400: #f87171;
-            --color-error-500: #D83A32;
+            --color-error-400: #F1A8A5;
+            --color-error-500: #B52A25;
             
             /* Índigo */
             --color-indigo-500: #123C69;
@@ -278,7 +278,7 @@
             --color-bg-blue: rgba(7, 27, 51, 0.05);
             --color-bg-green: rgba(30, 107, 56, 0.06);
             --color-bg-amber: rgba(148, 91, 14, 0.06);
-            --color-bg-red: rgba(216, 58, 50, 0.06);
+            --color-bg-red: rgba(181, 42, 37, 0.06);
             --color-bg-indigo: rgba(18, 60, 105, 0.06);
             
             /* Sistema de colores */
@@ -288,7 +288,7 @@
             --color-text-secondary: #727983;
             --color-primary: #071B33;
             --color-success: #1E6B38;
-            --color-error: #D83A32;
+            --color-error: #B52A25;
             --color-warning: #945B0E;
             
             /* Tipografía */
@@ -312,15 +312,15 @@
             --space-16: 64px;
             
             /* Bordes */
-            --radius-md: 10px;
-            --radius-lg: 14px;
-            --radius-xl: 20px;
+            --radius-md: 4px;
+            --radius-lg: 6px;
+            --radius-xl: 6px;
             
             /* Sombras */
-            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+            --shadow-sm: 0 1px 2px rgba(16, 24, 32, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(16, 24, 32, 0.08);
+            --shadow-lg: 0 10px 15px -3px rgba(16, 24, 32, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(16, 24, 32, 0.12);
         }
 
         * {
@@ -334,7 +334,7 @@
             font-size: var(--font-size-base);
             line-height: 1.6;
             color: var(--color-text);
-            background: linear-gradient(135deg, var(--color-bg-blue) 0%, var(--color-bg-green) 100%);
+            background: var(--color-surface);
             background-attachment: fixed;
         }
 
@@ -351,7 +351,7 @@
 
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, var(--color-primary), var(--color-success));
+            background: var(--color-primary);
             width: 0%;
             transition: width 0.2s;
         }
@@ -403,7 +403,7 @@
         }
 
         .nav-btn.activity:hover {
-            background: #d97706;
+            background: #7A4A0B;
             transform: translateY(-2px);
         }
 
@@ -439,7 +439,7 @@
         .hero h1 {
             font-size: var(--font-size-4xl);
             font-weight: 700;
-            background: linear-gradient(135deg, var(--color-primary), var(--color-success));
+            background: var(--color-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin: var(--space-4) 0;
@@ -518,7 +518,7 @@
 
         /* Key Concept */
         .key-concept {
-            background: linear-gradient(135deg, var(--color-bg-blue), var(--color-bg-green));
+            background: var(--color-surface);
             border-left: 5px solid var(--color-primary);
             padding: var(--space-6);
             border-radius: var(--radius-lg);
@@ -760,7 +760,7 @@
             top: 0;
             bottom: 0;
             width: 3px;
-            background: linear-gradient(180deg, var(--color-primary), var(--color-success));
+            background: var(--color-primary);
         }
 
         .timeline-item {
@@ -865,7 +865,7 @@
             width: 24px;
             height: 24px;
             border: 2px solid var(--color-gray-200);
-            border-radius: 6px;
+            border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -917,7 +917,7 @@
         .result-box {
             text-align: center;
             padding: var(--space-8);
-            background: linear-gradient(135deg, var(--color-bg-green), var(--color-bg-blue));
+            background: var(--color-surface);
             border-radius: var(--radius-xl);
             margin-top: var(--space-6);
         }
@@ -1060,7 +1060,7 @@
             width: 24px;
             height: 24px;
             border: 2px solid var(--color-gray-200);
-            border-radius: 6px;
+            border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1112,7 +1112,7 @@
         .result-box {
             text-align: center;
             padding: var(--space-8);
-            background: linear-gradient(135deg, var(--color-bg-green), var(--color-bg-blue));
+            background: var(--color-surface);
             border-radius: var(--radius-xl);
             margin-top: var(--space-6);
         }
@@ -1261,21 +1261,21 @@
                     <div class="grid-card-emoji"></div>
                     <h3 class="grid-card-title">Informe Expositivo</h3>
                     <p class="grid-card-description">Presenta información sobre un hecho o evento. Cuenta lo que sucedió de forma clara y ordenada.</p>
-                    <p style="margin-top: 12px; padding: 12px; background: var(--color-bg-blue); border-radius: 8px; font-size: 14px;"><strong>Ejemplo:</strong> Informe sobre una visita al museo</p>
+                    <p style="margin-top: 12px; padding: 12px; background: var(--color-bg-blue); border-radius: 4px; font-size: 14px;"><strong>Ejemplo:</strong> Informe sobre una visita al museo</p>
                 </div>
 
                 <div class="grid-card" style="border-top: 4px solid var(--color-success);">
                     <div class="grid-card-emoji"></div>
                     <h3 class="grid-card-title">Informe Descriptivo Analítico</h3>
                     <p class="grid-card-description">Describe y analiza un proceso o fenómeno. Explica cómo funciona algo y por qué.</p>
-                    <p style="margin-top: 12px; padding: 12px; background: var(--color-bg-green); border-radius: 8px; font-size: 14px;"><strong>Ejemplo:</strong> Informe de laboratorio sobre un experimento</p>
+                    <p style="margin-top: 12px; padding: 12px; background: var(--color-bg-green); border-radius: 4px; font-size: 14px;"><strong>Ejemplo:</strong> Informe de laboratorio sobre un experimento</p>
                 </div>
 
                 <div class="grid-card" style="border-top: 4px solid var(--color-warning);">
                     <div class="grid-card-emoji"></div>
                     <h3 class="grid-card-title">Informe Persuasivo</h3>
                     <p class="grid-card-description">Analiza un problema y propone soluciones. Busca convencer para tomar decisiones.</p>
-                    <p style="margin-top: 12px; padding: 12px; background: var(--color-bg-amber); border-radius: 8px; font-size: 14px;"><strong>Ejemplo:</strong> Propuesta para mejorar la biblioteca escolar</p>
+                    <p style="margin-top: 12px; padding: 12px; background: var(--color-bg-amber); border-radius: 4px; font-size: 14px;"><strong>Ejemplo:</strong> Propuesta para mejorar la biblioteca escolar</p>
                 </div>
             </div>
         </section>
@@ -1312,11 +1312,11 @@
                 <h2 class="section-title">Subjetividad vs. Objetividad</h2>
             </div>
 
-            <div class="card" style="background: linear-gradient(135deg, #ffccd5, #ffe0e8); border-left: 5px solid #ef4444;">
-                <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 16px; color: #ef4444;"> SUBJETIVIDAD (EVITAR en informes)</h3>
+            <div class="card" style="background: #FDF0EF; border-left: 5px solid #B52A25;">
+                <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 16px; color: #B52A25;"> SUBJETIVIDAD (EVITAR en informes)</h3>
                 <p><strong>Basada en sentimientos y opiniones personales.</strong> Es lo que YO pienso o siento.</p>
                 
-                <div style="margin-top: 20px; padding: 16px; background: white; border-radius: 10px;">
+                <div style="margin-top: 20px; padding: 16px; background: white; border-radius: 4px;">
                     <p style="font-weight: 600; margin-bottom: 12px;">Características:</p>
                     <ul style="padding-left: 24px; line-height: 1.8;">
                         <li>Varía de persona a persona</li>
@@ -1326,7 +1326,7 @@
                     </ul>
                 </div>
 
-                <div style="margin-top: 16px; padding: 16px; background: #ffe0e8; border-radius: 10px;">
+                <div style="margin-top: 16px; padding: 16px; background: #FDF0EF; border-radius: 4px;">
                     <p style="font-weight: 700; margin-bottom: 8px;"> Ejemplos SUBJETIVOS:</p>
                     <p>"La película fue aburrida y terrible"</p>
                     <p>"Creo que el cambio climático es malo"</p>
@@ -1334,11 +1334,11 @@
                 </div>
             </div>
 
-            <div class="card" style="background: linear-gradient(135deg, #c5e8d5, #d5f3e3); border-left: 5px solid #14b8a6; margin-top: 24px;">
-                <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 16px; color: #14b8a6;"> OBJETIVIDAD (USAR en informes)</h3>
+            <div class="card" style="background: #EAF5EE; border-left: 5px solid #1E6B38; margin-top: 24px;">
+                <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 16px; color: #1E6B38;"> OBJETIVIDAD (USAR en informes)</h3>
                 <p><strong>Basada en hechos, datos observables e información verificable.</strong> Existe independientemente de lo que yo piense.</p>
                 
-                <div style="margin-top: 20px; padding: 16px; background: white; border-radius: 10px;">
+                <div style="margin-top: 20px; padding: 16px; background: white; border-radius: 4px;">
                     <p style="font-weight: 600; margin-bottom: 12px;">Características:</p>
                     <ul style="padding-left: 24px; line-height: 1.8;">
                         <li>Es igual para todos</li>
@@ -1348,7 +1348,7 @@
                     </ul>
                 </div>
 
-                <div style="margin-top: 16px; padding: 16px; background: #d5f3e3; border-radius: 10px;">
+                <div style="margin-top: 16px; padding: 16px; background: #EAF5EE; border-radius: 4px;">
                     <p style="font-weight: 700; margin-bottom: 8px;"> Ejemplos OBJETIVOS:</p>
                     <p>"La película tiene una duración de 120 minutos y fue estrenada en 2024"</p>
                     <p>"La temperatura global ha aumentado 1.1°C en los últimos 100 años"</p>
@@ -1457,7 +1457,7 @@
                 <!-- Los conceptos se cargarán aquí dinámicamente -->
             </div>
 
-            <div style="background: var(--color-surface); padding: 24px; border-radius: 14px; box-shadow: var(--shadow-md); margin-bottom: 150px;">
+            <div style="background: var(--color-surface); padding: 24px; border-radius: 4px; box-shadow: var(--shadow-md); margin-bottom: 150px;">
                 <div style="margin-bottom: 16px;">
                     <div class="drop-label">1. Primera parte del informe (la "cara"):</div>
                     <div class="drop-zone" data-correct="Portada"></div>
@@ -1512,7 +1512,7 @@
                 <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=600&h=350&fit=crop" alt="Géneros" class="section-image">
             </div>
 
-            <div style="text-align: center; padding: 32px; background: var(--color-bg-blue); border-radius: 20px; margin-bottom: 32px;">
+            <div style="text-align: center; padding: 32px; background: var(--color-bg-blue); border-radius: 4px; margin-bottom: 32px;">
                 <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 12px;">Tema: "La Lluvia en la Ciudad"</h3>
                 <p style="color: var(--color-text-secondary);">El mismo evento, tres formas distintas de contarlo</p>
             </div>
@@ -1522,7 +1522,7 @@
                     <div class="grid-card-emoji"></div>
                     <h3 class="grid-card-title" style="color: var(--color-primary);">INFORME</h3>
                     <p style="font-size: 14px; color: var(--color-text-secondary); margin-bottom: 16px;"><em>Objetivo, factual, verificable</em></p>
-                    <div style="background: var(--color-bg-blue); padding: 16px; border-radius: 10px; border-left: 4px solid var(--color-primary); margin-bottom: 16px;">
+                    <div style="background: var(--color-bg-blue); padding: 16px; border-radius: 4px; border-left: 4px solid var(--color-primary); margin-bottom: 16px;">
                         <p style="font-size: 14px; line-height: 1.7;">Según el reporte meteorológico del 10 de noviembre, la ciudad experimentó una precipitación de 45mm durante 3 horas (8:00-11:00 AM). Se registró 85% de humedad y 16°C. El tráfico aumentó 30% durante las horas pico.</p>
                     </div>
                     <div style="font-size: 13px; color: var(--color-text-secondary);">
@@ -1532,11 +1532,11 @@
                     </div>
                 </div>
 
-                <div class="grid-card" style="border-top: 5px solid #ef4444;">
+                <div class="grid-card" style="border-top: 5px solid #B52A25;">
                     <div class="grid-card-emoji"></div>
-                    <h3 class="grid-card-title" style="color: #ef4444;">POEMA</h3>
+                    <h3 class="grid-card-title" style="color: #B52A25;">POEMA</h3>
                     <p style="font-size: 14px; color: var(--color-text-secondary); margin-bottom: 16px;"><em>Emocional, figurado, rítmico</em></p>
-                    <div style="background: var(--color-bg-red); padding: 16px; border-radius: 10px; border-left: 4px solid #ef4444; margin-bottom: 16px;">
+                    <div style="background: var(--color-bg-red); padding: 16px; border-radius: 4px; border-left: 4px solid #B52A25; margin-bottom: 16px;">
                         <p style="font-size: 14px; line-height: 1.7; font-style: italic;">La lluvia desciende como lágrimas del cielo,<br>golpeando las ventanas con ritmo suave.<br>Las calles grises se convierten en ríos de plata...</p>
                     </div>
                     <div style="font-size: 13px; color: var(--color-text-secondary);">
@@ -1546,11 +1546,11 @@
                     </div>
                 </div>
 
-                <div class="grid-card" style="border-top: 5px solid #14b8a6;">
+                <div class="grid-card" style="border-top: 5px solid #1E6B38;">
                     <div class="grid-card-emoji"></div>
-                    <h3 class="grid-card-title" style="color: #14b8a6;">CUENTO</h3>
+                    <h3 class="grid-card-title" style="color: #1E6B38;">CUENTO</h3>
                     <p style="font-size: 14px; color: var(--color-text-secondary); margin-bottom: 16px;"><em>Narrativo, con personajes</em></p>
-                    <div style="background: var(--color-bg-green); padding: 16px; border-radius: 10px; border-left: 4px solid #14b8a6; margin-bottom: 16px;">
+                    <div style="background: var(--color-bg-green); padding: 16px; border-radius: 4px; border-left: 4px solid #1E6B38; margin-bottom: 16px;">
                         <p style="font-size: 14px; line-height: 1.7;">Era un martes cuando María salió de la escuela. El cielo estaba gris. No había traído paraguas. Pronto comenzó a llover sin piedad...</p>
                     </div>
                     <div style="font-size: 13px; color: var(--color-text-secondary);">
@@ -1577,21 +1577,21 @@
             <div class="card">
                 <p style="font-size: 18px; margin-bottom: 24px;"><strong>Imagina esta situación:</strong> Tu curso organizó una feria de ciencias. Escribe un párrafo OBJETIVO describiendo el evento.</p>
                 
-                <div style="background: var(--color-bg-blue); padding: 20px; border-radius: 12px; margin: 24px 0; border-left: 5px solid var(--color-primary);">
+                <div style="background: var(--color-bg-blue); padding: 20px; border-radius: 4px; margin: 24px 0; border-left: 5px solid var(--color-primary);">
                     <p style="font-weight: 700; margin-bottom: 12px; color: var(--color-primary);"> Recuerda usar palabras OBJETIVAS:</p>
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 16px;">
-                        <div style="background: white; padding: 12px; border-radius: 8px;">
+                        <div style="background: white; padding: 12px; border-radius: 4px;">
                             <p style="font-weight: 600; margin-bottom: 6px; color: var(--color-success);"> Usa estas palabras:</p>
                             <p style="font-size: 14px; line-height: 1.6;">"se realizó", "participaron", "se presentaron", "asistieron", "tuvo lugar", "se registraron"</p>
                         </div>
-                        <div style="background: white; padding: 12px; border-radius: 8px;">
+                        <div style="background: white; padding: 12px; border-radius: 4px;">
                             <p style="font-weight: 600; margin-bottom: 6px; color: var(--color-error);"> Evita estas palabras:</p>
                             <p style="font-size: 14px; line-height: 1.6;">"creo", "pienso", "me parece", "bonito", "increíble", "aburrido", "interesante"</p>
                         </div>
                     </div>
                 </div>
                 
-                <div style="background: var(--color-bg-amber); padding: 20px; border-radius: 12px; margin: 24px 0; border-left: 5px solid var(--color-warning);">
+                <div style="background: var(--color-bg-amber); padding: 20px; border-radius: 4px; margin: 24px 0; border-left: 5px solid var(--color-warning);">
                     <p style="font-weight: 600; margin-bottom: 12px;"> Datos del evento que debes incluir:</p>
                     <ul style="line-height: 2;">
                         <li>Fecha: 10 de noviembre de 2025</li>
@@ -1606,7 +1606,7 @@
                 <textarea 
                     id="redaccionText" 
                     placeholder="Escribe tu párrafo aquí usando lenguaje objetivo. Ejemplo: 'El 10 de noviembre de 2025 se realizó una feria de ciencias en el auditorio del colegio...'"
-                    style="width: 100%; min-height: 200px; padding: 20px; border: 2px solid var(--color-gray-200); border-radius: 12px; font-size: 16px; font-family: inherit; line-height: 1.8; resize: vertical;"
+                    style="width: 100%; min-height: 200px; padding: 20px; border: 2px solid var(--color-gray-200); border-radius: 4px; font-size: 16px; font-family: inherit; line-height: 1.8; resize: vertical;"
                     oninput="checkRedaccionLength()"
                 ></textarea>
                 
@@ -1671,7 +1671,7 @@
             <div class="footer-emoji"></div>
             <h2 class="footer-title">¡Felicitaciones!</h2>
             <p style="font-size: 18px; color: var(--color-text-secondary); max-width: 600px; margin: 0 auto; line-height: 1.7;">Has completado la guía del Informe Académico. Ahora tienes todas las herramientas para crear informes excelentes. Recuerda: <strong>investiga, organiza, sé objetivo y revisa</strong>.</p>
-            <div style="margin-top: 24px; padding: 16px 32px; background: linear-gradient(135deg, var(--color-primary), var(--color-success)); color: white; border-radius: 20px; display: inline-block; font-weight: 700;">
+            <div style="margin-top: 24px; padding: 16px 32px; background: var(--color-primary); color: white; border-radius: 4px; display: inline-block; font-weight: 700;">
                  ¡Éxito en tus informes!
             </div>
         </footer>
@@ -1716,13 +1716,13 @@
             saveProgress();
             
             // Log Google Sheets setup instructions
-            console.log('%c CONFIGURACIÓN GOOGLE SHEETS', 'color: #2563eb; font-size: 16px; font-weight: bold;');
-            console.log('%cPara recibir los datos automáticamente en Google Sheets:', 'color: #374151; font-size: 14px;');
-            console.log('%c1. Abre Google Sheets y crea una nueva hoja', 'color: #6b7280;');
-            console.log('%c2. Ve a Extensiones > Apps Script', 'color: #6b7280;');
-            console.log('%c3. Copia el código que está en el comentario al final de este archivo', 'color: #6b7280;');
-            console.log('%c4. Despliega como Web App y copia la URL', 'color: #6b7280;');
-            console.log('%c5. Pega la URL en la variable GOOGLE_SCRIPT_URL', 'color: #6b7280;');
+            console.log('%c CONFIGURACIÓN GOOGLE SHEETS', 'color: #2367D1; font-size: 16px; font-weight: bold;');
+            console.log('%cPara recibir los datos automáticamente en Google Sheets:', 'color: #101820; font-size: 14px;');
+            console.log('%c1. Abre Google Sheets y crea una nueva hoja', 'color: #727983;');
+            console.log('%c2. Ve a Extensiones > Apps Script', 'color: #727983;');
+            console.log('%c3. Copia el código que está en el comentario al final de este archivo', 'color: #727983;');
+            console.log('%c4. Despliega como Web App y copia la URL', 'color: #727983;');
+            console.log('%c5. Pega la URL en la variable GOOGLE_SCRIPT_URL', 'color: #727983;');
             
             return false;
         }
@@ -1849,13 +1849,13 @@
                     <div class="results-emoji">${emoji}</div>
                     <div class="results-title">${title}</div>
                     <div class="results-score">${finalScore.toFixed(1)}/10</div>
-                    <p style="font-size: 18px; color: #6b7280; margin-bottom: 32px;">${message}</p>
+                    <p style="font-size: 18px; color: #727983; margin-bottom: 32px;">${message}</p>
                     
                     <div class="results-breakdown">
                         <div class="breakdown-item">
                             <div class="breakdown-label">Quiz Objetividad</div>
                             <div class="breakdown-value">${quiz1Score}/2.5</div>
-                            <div style="font-size: 12px; color: #6b7280; margin-top: 4px;">
+                            <div style="font-size: 12px; color: #727983; margin-top: 4px;">
                                 ${studentData.scores.quiz1.correct}/${studentData.scores.quiz1.total} correctas
                             </div>
                         </div>
@@ -1863,7 +1863,7 @@
                         <div class="breakdown-item">
                             <div class="breakdown-label">Quiz Tipos</div>
                             <div class="breakdown-value">${tiposScore}/2.5</div>
-                            <div style="font-size: 12px; color: #6b7280; margin-top: 4px;">
+                            <div style="font-size: 12px; color: #727983; margin-top: 4px;">
                                 ${studentData.scores.tiposQuiz.correct}/${studentData.scores.tiposQuiz.total} correctas
                             </div>
                         </div>
@@ -1871,7 +1871,7 @@
                         <div class="breakdown-item">
                             <div class="breakdown-label">Mapa Conceptual</div>
                             <div class="breakdown-value">${mapScore}/2.5</div>
-                            <div style="font-size: 12px; color: #6b7280; margin-top: 4px;">
+                            <div style="font-size: 12px; color: #727983; margin-top: 4px;">
                                 ${studentData.scores.conceptMap.correct}/${studentData.scores.conceptMap.total} correctas
                             </div>
                         </div>
@@ -1879,13 +1879,13 @@
                         <div class="breakdown-item">
                             <div class="breakdown-label">Actividad Redacción</div>
                             <div class="breakdown-value">${redaccionScore}/2.5</div>
-                            <div style="font-size: 12px; color: #6b7280; margin-top: 4px;">
+                            <div style="font-size: 12px; color: #727983; margin-top: 4px;">
                                 ${studentData.scores.redaccion.correct}/${studentData.scores.redaccion.total} criterios cumplidos
                             </div>
                         </div>
                     </div>
                     
-                    <div style="margin-top: 32px; padding: 20px; background: white; border-radius: 12px; text-align: left;">
+                    <div style="margin-top: 32px; padding: 20px; background: white; border-radius: 4px; text-align: left;">
                         <p style="margin-bottom: 8px;"><strong>Estudiante:</strong> ${studentData.name}</p>
                         <p style="margin-bottom: 8px;"><strong>Curso:</strong> ${studentData.course}</p>
                         <p style="margin-bottom: 8px;"><strong>Fecha:</strong> ${new Date().toLocaleDateString('es-EC')}</p>
@@ -2075,7 +2075,7 @@ Actividad Redacción: ${studentData.scores.redaccion.correct}/${studentData.scor
                 card.style.marginBottom = '24px';
                 card.innerHTML = `
                     <div class="quiz-question">
-                        <div style="background: var(--color-bg-indigo); padding: 16px; border-radius: 10px; margin-bottom: 16px;">
+                        <div style="background: var(--color-bg-indigo); padding: 16px; border-radius: 4px; margin-bottom: 16px;">
                             <strong>Situación ${index + 1}:</strong><br>
                             ${item.situation}
                         </div>
@@ -2447,7 +2447,7 @@ Actividad Redacción: ${studentData.scores.redaccion.correct}/${studentData.scor
                 div.innerHTML = `
                     <div class="checkbox"></div>
                     <div style="flex: 1;">${item.text}</div>
-                    <div style="padding: 4px 12px; background: var(--color-bg-blue); border-radius: 8px; font-size: 12px; font-weight: 600;">
+                    <div style="padding: 4px 12px; background: var(--color-bg-blue); border-radius: 4px; font-size: 12px; font-weight: 600;">
                         ${item.category}
                     </div>
                 `;
@@ -2563,13 +2563,13 @@ Actividad Redacción: ${studentData.scores.redaccion.correct}/${studentData.scor
                     <div style="text-align: left; margin-top: 24px;">
                         <p style="font-weight: 600; margin-bottom: 16px; font-size: 18px;">Evaluación de tu redacción:</p>
                         ${feedback.map(f => `
-                            <div style="padding: 12px; margin-bottom: 8px; border-radius: 8px; background: ${f.correct ? 'var(--color-bg-green)' : 'var(--color-bg-red)'}; border-left: 4px solid ${f.correct ? 'var(--color-success)' : 'var(--color-error)'};">
+                            <div style="padding: 12px; margin-bottom: 8px; border-radius: 4px; background: ${f.correct ? 'var(--color-bg-green)' : 'var(--color-bg-red)'}; border-left: 4px solid ${f.correct ? 'var(--color-success)' : 'var(--color-error)'};">
                                 ${f.text}
                             </div>
                         `).join('')}
                     </div>
                     
-                    <div style="margin-top: 24px; padding: 20px; background: white; border-radius: 12px; text-align: left;">
+                    <div style="margin-top: 24px; padding: 20px; background: white; border-radius: 4px; text-align: left;">
                         <p style="font-weight: 600; margin-bottom: 12px;"> Consejos para mejorar:</p>
                         <ul style="line-height: 2; padding-left: 20px;">
                             <li>Incluye todos los datos numéricos proporcionados</li>
@@ -2659,7 +2659,7 @@ Actividad Redacción: ${studentData.scores.redaccion.correct}/${studentData.scor
           
           // Formatear encabezados
           const headerRange = sheet.getRange(1, 1, 1, 18);
-          headerRange.setBackground('#2563eb');
+          headerRange.setBackground('#2367D1');
           headerRange.setFontColor('#ffffff');
           headerRange.setFontWeight('bold');
         }

@@ -65,16 +65,16 @@ export function MatchingGame() {
     };
 
     return (
-        <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 md:p-8">
+        <div className="bg-white rounded shadow-lg border border-[#D7D9D6] p-6 md:p-8">
             <div className="flex justify-between items-start mb-4">
                 <div>
-                    <h3 className="text-xl font-bold text-blue-900">🔗 Emparejar Conceptos</h3>
-                    <p className="text-slate-600 text-sm">Haz clic en un propósito y luego en su definición</p>
+                    <h3 className="text-xl font-bold text-[#071B33]">🔗 Emparejar Conceptos</h3>
+                    <p className="text-[#727983] text-sm">Haz clic en un propósito y luego en su definición</p>
                 </div>
                 <div className="text-right">
-                    <p className="text-sm text-slate-500">Intentos restantes: <span className="font-bold text-blue-600">{attemptsLeft}</span></p>
+                    <p className="text-sm text-[#727983]">Intentos restantes: <span className="font-bold text-[#2367D1]">{attemptsLeft}</span></p>
                     {currentBestScore > 0 && (
-                        <p className="text-xs text-emerald-600">Mejor: {currentBestScore}/{PURPOSES.length}</p>
+                        <p className="text-xs text-[#1E6B38]">Mejor: {currentBestScore}/{PURPOSES.length}</p>
                     )}
                 </div>
             </div>
@@ -83,7 +83,7 @@ export function MatchingGame() {
                 <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className={`mb-4 p-3 rounded-lg text-center font-medium ${feedback === 'correct' ? 'bg-emerald-100 text-emerald-700' : 'bg-red-100 text-red-700'
+                    className={`mb-4 p-3 rounded text-center font-medium ${feedback === 'correct' ? 'bg-[#EAF5EE] text-[#17532B]' : 'bg-[#FDF0EF] text-[#8A1F1B]'
                         }`}
                 >
                     {feedback === 'correct' ? <><Check className="inline w-5 h-5 mr-1" /> ¡Correcto!</> : <><X className="inline w-5 h-5 mr-1" /> Incorrecto</>}
@@ -92,17 +92,17 @@ export function MatchingGame() {
 
             <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                    <p className="text-sm font-medium text-slate-500 mb-2">Propósitos:</p>
+                    <p className="text-sm font-medium text-[#727983] mb-2">Propósitos:</p>
                     {PURPOSES.map(p => (
                         <button
                             key={p.id}
                             onClick={() => handleTermClick(p.id)}
                             disabled={!!matches[p.id]}
-                            className={`w-full text-left px-4 py-3 rounded-xl border-2 transition-all font-medium ${matches[p.id]
-                                    ? 'bg-emerald-50 border-emerald-300 text-emerald-700 cursor-default'
+                            className={`w-full text-left px-4 py-3 rounded border-2 transition-all font-medium ${matches[p.id]
+                                    ? 'bg-[#EAF5EE] border-[#A3D9B5] text-[#17532B] cursor-default'
                                     : selectedTerm === p.id
-                                        ? 'bg-blue-100 border-blue-400 text-blue-800'
-                                        : 'bg-slate-50 border-slate-200 hover:border-blue-300 cursor-pointer'
+                                        ? 'bg-[#E7EEF5] border-[#5B7FA6] text-[#071B33]'
+                                        : 'bg-[#FAF9F5] border-[#D7D9D6] hover:border-[#A9C6EE] cursor-pointer'
                                 }`}
                         >
                             {p.term}
@@ -111,17 +111,17 @@ export function MatchingGame() {
                 </div>
 
                 <div className="space-y-2">
-                    <p className="text-sm font-medium text-slate-500 mb-2">Definiciones:</p>
+                    <p className="text-sm font-medium text-[#727983] mb-2">Definiciones:</p>
                     {shuffledDefs.map(p => (
                         <button
                             key={p.id}
                             onClick={() => handleDefClick(p.id)}
                             disabled={Object.values(matches).includes(p.id)}
-                            className={`w-full text-left px-4 py-3 rounded-xl border-2 transition-all text-sm ${Object.values(matches).includes(p.id)
-                                    ? 'bg-emerald-50 border-emerald-300 text-emerald-700 cursor-default'
+                            className={`w-full text-left px-4 py-3 rounded border-2 transition-all text-sm ${Object.values(matches).includes(p.id)
+                                    ? 'bg-[#EAF5EE] border-[#A3D9B5] text-[#17532B] cursor-default'
                                     : selectedTerm
-                                        ? 'bg-white border-slate-200 hover:border-orange-300 cursor-pointer'
-                                        : 'bg-slate-50 border-slate-200 text-slate-500 cursor-not-allowed'
+                                        ? 'bg-white border-[#D7D9D6] hover:border-[#F5D399] cursor-pointer'
+                                        : 'bg-[#FAF9F5] border-[#D7D9D6] text-[#727983] cursor-not-allowed'
                                 }`}
                         >
                             {p.def}
@@ -131,10 +131,10 @@ export function MatchingGame() {
             </div>
 
             {isComplete && (
-                <div className="mt-6 p-4 bg-emerald-50 rounded-xl text-center border border-emerald-200">
-                    <p className="text-emerald-700 font-bold mb-3">🎉 ¡Emparejaste todos correctamente!</p>
+                <div className="mt-6 p-4 bg-[#EAF5EE] rounded text-center border border-[#A3D9B5]">
+                    <p className="text-[#17532B] font-bold mb-3">🎉 ¡Emparejaste todos correctamente!</p>
                     {canAttempt('matching') && (
-                        <button onClick={reset} className="px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700">
+                        <button onClick={reset} className="px-4 py-2 bg-[#2367D1] text-white rounded font-medium hover:bg-[#123C69]">
                             Intentar de nuevo ({attemptsLeft} intentos)
                         </button>
                     )}

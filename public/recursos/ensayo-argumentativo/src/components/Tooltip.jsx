@@ -29,14 +29,14 @@ export function Tooltip({ term, children }) {
             onMouseEnter={() => setIsVisible(true)}
             onMouseLeave={() => setIsVisible(false)}
         >
-            <span className="border-b-2 border-dotted border-orange-400 text-orange-600 cursor-help font-medium">
+            <span className="border-b-2 border-dotted border-[#945B0E] text-[#945B0E] cursor-help font-medium">
                 {children || term}
             </span>
             {isVisible && (
-                <span className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-slate-800 text-white text-sm rounded-lg shadow-xl">
-                    <span className="font-bold text-orange-300 block mb-1">{term}</span>
+                <span className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-[#101820] text-white text-sm rounded shadow-xl">
+                    <span className="font-bold text-[#F5D399] block mb-1">{term}</span>
                     {definition}
-                    <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-slate-800 rotate-45"></span>
+                    <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-[#101820] rotate-45"></span>
                 </span>
             )}
         </span>

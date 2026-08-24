@@ -116,29 +116,29 @@ function Accordion({ title, icon, color, children, defaultOpen = false }) {
 
     const colorClasses = {
         blue: {
-            border: 'border-l-blue-500',
-            bg: 'bg-blue-50',
-            text: 'text-blue-700',
-            iconBg: 'bg-blue-100',
+            border: 'border-l-[#2367D1]',
+            bg: 'bg-[#E7EEF5]',
+            text: 'text-[#123C69]',
+            iconBg: 'bg-[#E7EEF5]',
         },
         yellow: {
-            border: 'border-l-amber-500',
-            bg: 'bg-amber-50',
-            text: 'text-amber-700',
-            iconBg: 'bg-amber-100',
+            border: 'border-l-[#945B0E]',
+            bg: 'bg-[#FEF7EC]',
+            text: 'text-[#7A4A0B]',
+            iconBg: 'bg-[#FEF7EC]',
         },
         green: {
-            border: 'border-l-emerald-500',
-            bg: 'bg-emerald-50',
-            text: 'text-emerald-700',
-            iconBg: 'bg-emerald-100',
+            border: 'border-l-[#1E6B38]',
+            bg: 'bg-[#EAF5EE]',
+            text: 'text-[#17532B]',
+            iconBg: 'bg-[#EAF5EE]',
         },
     };
 
     const colors = colorClasses[color] || colorClasses.blue;
 
     return (
-        <div className={`bg-white rounded-xl shadow-md border-l-4 ${colors.border} overflow-hidden mb-4`}>
+        <div className={`bg-white rounded shadow-md border-l-4 ${colors.border} overflow-hidden mb-4`}>
             <button
                 onClick={() => setIsOpen(!isOpen)}
                 className={`w-full px-4 sm:px-6 py-4 flex items-center justify-between text-left hover:${colors.bg} transition-colors`}
@@ -151,7 +151,7 @@ function Accordion({ title, icon, color, children, defaultOpen = false }) {
                     animate={{ rotate: isOpen ? 180 : 0 }}
                     transition={{ duration: 0.2 }}
                 >
-                    <ChevronDown className="w-5 h-5 text-slate-400" />
+                    <ChevronDown className="w-5 h-5 text-[#727983]" />
                 </motion.div>
             </button>
 
@@ -177,21 +177,21 @@ function Accordion({ title, icon, color, children, defaultOpen = false }) {
 // Analysis Box component
 function AnalysisBox({ title, points, color = "blue" }) {
     const bgColors = {
-        blue: 'bg-blue-50 border-blue-200',
-        yellow: 'bg-amber-50 border-amber-200',
-        green: 'bg-emerald-50 border-emerald-200',
+        blue: 'bg-[#E7EEF5] border-[#A9C6EE]',
+        yellow: 'bg-[#FEF7EC] border-[#F5D399]',
+        green: 'bg-[#EAF5EE] border-[#A3D9B5]',
     };
 
     return (
-        <div className={`${bgColors[color]} border rounded-lg p-4 mt-4`}>
-            <h4 className="font-bold text-slate-800 mb-3 text-sm sm:text-base">{title}</h4>
+        <div className={`${bgColors[color]} border rounded p-4 mt-4`}>
+            <h4 className="font-bold text-[#101820] mb-3 text-sm sm:text-base">{title}</h4>
             <ul className="space-y-2">
                 {points.map((point, idx) => (
                     <li key={idx} className="flex items-start gap-2 text-sm">
-                        <CheckCircle className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="w-4 h-4 text-[#1E6B38] mt-0.5 flex-shrink-0" />
                         <span>
-                            <strong className="text-slate-700">{point.label}</strong>{' '}
-                            <span className="text-slate-600">{point.text}</span>
+                            <strong className="text-[#101820]">{point.label}</strong>{' '}
+                            <span className="text-[#727983]">{point.text}</span>
                         </span>
                     </li>
                 ))}
@@ -203,9 +203,9 @@ function AnalysisBox({ title, points, color = "blue" }) {
 // Argument Type Badge
 function ArgumentBadge({ type, color = "yellow" }) {
     const bgColors = {
-        blue: 'bg-blue-500',
-        yellow: 'bg-amber-500',
-        green: 'bg-emerald-500',
+        blue: 'bg-[#2367D1]',
+        yellow: 'bg-[#945B0E]',
+        green: 'bg-[#1E6B38]',
     };
 
     return (
@@ -233,26 +233,26 @@ export function EssayExample() {
         <div className="space-y-6">
             {/* Header */}
             <div className="text-center mb-8">
-                <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
+                <div className="inline-flex items-center gap-2 bg-[#E7EEF5] text-[#123C69] px-4 py-2 rounded-full text-sm font-medium mb-4">
                     <BookOpen className="w-4 h-4" />
                     Ejemplo Práctico
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-black text-blue-900 mb-2">
+                <h3 className="text-2xl sm:text-3xl font-black text-[#071B33] mb-2">
                     "La Cancha no Tiene Género"
                 </h3>
-                <p className="text-slate-600">
+                <p className="text-[#727983]">
                     {showAnalysis ? "Haz clic en cada sección para ver el análisis" : "Lee primero el ensayo completo"}
                 </p>
             </div>
 
             {/* Toggle between Reading and Analysis */}
             <div className="flex justify-center mb-6">
-                <div className="inline-flex bg-slate-100 rounded-full p-1">
+                <div className="inline-flex bg-[#F3F1EA] rounded-full p-1">
                     <button
                         onClick={() => setShowAnalysis(false)}
                         className={`px-4 sm:px-6 py-2 rounded-full text-sm font-medium transition-all ${!showAnalysis
-                            ? 'bg-white text-blue-700 shadow-sm'
-                            : 'text-slate-600 hover:text-slate-800'
+                            ? 'bg-white text-[#123C69] shadow-sm'
+                            : 'text-[#727983] hover:text-[#101820]'
                             }`}
                     >
                         📖 Lectura
@@ -260,8 +260,8 @@ export function EssayExample() {
                     <button
                         onClick={() => setShowAnalysis(true)}
                         className={`px-4 sm:px-6 py-2 rounded-full text-sm font-medium transition-all ${showAnalysis
-                            ? 'bg-white text-blue-700 shadow-sm'
-                            : 'text-slate-600 hover:text-slate-800'
+                            ? 'bg-white text-[#123C69] shadow-sm'
+                            : 'text-[#727983] hover:text-[#101820]'
                             }`}
                     >
                         🔍 Análisis
@@ -274,60 +274,60 @@ export function EssayExample() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 sm:p-8"
+                    className="bg-white rounded shadow-lg border border-[#D7D9D6] p-6 sm:p-8"
                 >
                     <div className="prose prose-slate max-w-none">
                         {/* Title */}
-                        <h4 className="text-xl sm:text-2xl font-bold text-center text-blue-900 mb-6 pb-4 border-b border-slate-200">
+                        <h4 className="text-xl sm:text-2xl font-bold text-center text-[#071B33] mb-6 pb-4 border-b border-[#D7D9D6]">
                             La Cancha no Tiene Género
                         </h4>
 
                         {/* Introduction */}
                         <div className="mb-6">
-                            <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded mb-2">
+                            <span className="inline-block bg-[#E7EEF5] text-[#123C69] text-xs font-bold px-2 py-1 rounded mb-2">
                                 INTRODUCCIÓN
                             </span>
-                            <p className="text-slate-700 leading-relaxed">
+                            <p className="text-[#101820] leading-relaxed">
                                 {fullEssayText.intro}
                             </p>
                         </div>
 
                         {/* Development */}
                         <div className="mb-6">
-                            <span className="inline-block bg-amber-100 text-amber-700 text-xs font-bold px-2 py-1 rounded mb-2">
+                            <span className="inline-block bg-[#FEF7EC] text-[#7A4A0B] text-xs font-bold px-2 py-1 rounded mb-2">
                                 DESARROLLO
                             </span>
-                            <p className="text-slate-700 leading-relaxed mb-4">
+                            <p className="text-[#101820] leading-relaxed mb-4">
                                 {fullEssayText.arg1}
                             </p>
-                            <p className="text-slate-700 leading-relaxed mb-4">
+                            <p className="text-[#101820] leading-relaxed mb-4">
                                 {fullEssayText.arg2}
                             </p>
-                            <p className="text-slate-700 leading-relaxed mb-4">
+                            <p className="text-[#101820] leading-relaxed mb-4">
                                 {fullEssayText.arg3}
                             </p>
-                            <p className="text-slate-700 leading-relaxed">
+                            <p className="text-[#101820] leading-relaxed">
                                 {fullEssayText.arg4}
                             </p>
                         </div>
 
                         {/* Conclusion */}
                         <div className="mb-6">
-                            <span className="inline-block bg-emerald-100 text-emerald-700 text-xs font-bold px-2 py-1 rounded mb-2">
+                            <span className="inline-block bg-[#EAF5EE] text-[#17532B] text-xs font-bold px-2 py-1 rounded mb-2">
                                 CONCLUSIÓN
                             </span>
-                            <p className="text-slate-700 leading-relaxed">
+                            <p className="text-[#101820] leading-relaxed">
                                 {fullEssayText.conclusion}
                             </p>
                         </div>
                     </div>
 
                     {/* Call to Action */}
-                    <div className="mt-8 pt-6 border-t border-slate-200 text-center">
-                        <p className="text-slate-600 mb-4">¿Ya lo leíste? Ahora analicemos cada parte.</p>
+                    <div className="mt-8 pt-6 border-t border-[#D7D9D6] text-center">
+                        <p className="text-[#727983] mb-4">¿Ya lo leíste? Ahora analicemos cada parte.</p>
                         <button
                             onClick={() => setShowAnalysis(true)}
-                            className="px-6 py-3 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-lg"
+                            className="px-6 py-3 bg-[#2367D1] text-white rounded font-bold hover:bg-[#123C69] transition-colors shadow-lg"
                         >
                             🔍 Ver Análisis Detallado
                         </button>
@@ -350,7 +350,7 @@ export function EssayExample() {
                         color="blue"
                         defaultOpen={true}
                     >
-                        <div className="bg-slate-50 border-l-4 border-blue-400 p-4 rounded-r-lg italic text-slate-700 text-sm sm:text-base">
+                        <div className="bg-[#FAF9F5] border-l-4 border-[#5B7FA6] p-4 rounded-r italic text-[#101820] text-sm sm:text-base">
                             {ESSAY_DATA.intro.text}
                         </div>
 
@@ -360,20 +360,20 @@ export function EssayExample() {
                             color="blue"
                         />
 
-                        <div className="mt-4 p-4 bg-gradient-to-r from-blue-50 to-blue-100 border-2 border-blue-300 rounded-lg">
+                        <div className="mt-4 p-4 bg-[#E7EEF5] border-2 border-[#A9C6EE] rounded">
                             <div className="flex items-center gap-2 mb-2">
-                                <Target className="w-5 h-5 text-blue-600" />
-                                <span className="font-bold text-blue-800">LA TESIS</span>
+                                <Target className="w-5 h-5 text-[#2367D1]" />
+                                <span className="font-bold text-[#071B33]">LA TESIS</span>
                             </div>
-                            <p className="text-blue-700 font-medium text-sm sm:text-base">{ESSAY_DATA.intro.thesis}</p>
+                            <p className="text-[#123C69] font-medium text-sm sm:text-base">{ESSAY_DATA.intro.thesis}</p>
                         </div>
 
-                        <div className="mt-3 text-xs sm:text-sm text-slate-600 bg-slate-100 p-3 rounded-lg">
+                        <div className="mt-3 text-xs sm:text-sm text-[#727983] bg-[#F3F1EA] p-3 rounded">
                             <strong>¿Por qué esta oración es la TESIS?</strong>
                             <ul className="mt-2 space-y-1">
                                 {ESSAY_DATA.intro.analysis.thesisExplanation.map((item, idx) => (
                                     <li key={idx} className="flex items-start gap-2">
-                                        <span className="text-blue-500">•</span>
+                                        <span className="text-[#2367D1]">•</span>
                                         {item}
                                     </li>
                                 ))}
@@ -382,12 +382,12 @@ export function EssayExample() {
                     </Accordion>
 
                     {/* Development - Arguments */}
-                    <div className="bg-amber-50/50 rounded-2xl p-4 sm:p-6 border border-amber-200">
+                    <div className="bg-[#FEF7EC]/50 rounded p-4 sm:p-6 border border-[#F5D399]">
                         <div className="flex items-center gap-3 mb-4">
                             <span className="text-2xl">📗</span>
-                            <h3 className="font-bold text-lg sm:text-xl text-amber-800">DESARROLLO - Los 4 Argumentos</h3>
+                            <h3 className="font-bold text-lg sm:text-xl text-[#7A4A0B]">DESARROLLO - Los 4 Argumentos</h3>
                         </div>
-                        <p className="text-slate-600 text-sm mb-4">
+                        <p className="text-[#727983] text-sm mb-4">
                             El desarrollo contiene 4 argumentos diferentes. Cada uno tiene un propósito específico.
                         </p>
 
@@ -398,7 +398,7 @@ export function EssayExample() {
                                 icon={arg.icon}
                                 color="yellow"
                             >
-                                <div className="bg-slate-50 border-l-4 border-amber-400 p-4 rounded-r-lg italic text-slate-700 text-sm sm:text-base">
+                                <div className="bg-[#FAF9F5] border-l-4 border-[#945B0E] p-4 rounded-r italic text-[#101820] text-sm sm:text-base">
                                     {arg.text}
                                 </div>
 
@@ -410,14 +410,14 @@ export function EssayExample() {
                                     color="yellow"
                                 />
 
-                                <div className="mt-3 p-3 bg-amber-100 rounded-lg text-sm">
-                                    <strong className="text-amber-800">¿Por qué es tipo {arg.type}?</strong>
-                                    <p className="text-amber-700 mt-1">{arg.analysis.why}</p>
+                                <div className="mt-3 p-3 bg-[#FEF7EC] rounded text-sm">
+                                    <strong className="text-[#7A4A0B]">¿Por qué es tipo {arg.type}?</strong>
+                                    <p className="text-[#7A4A0B] mt-1">{arg.analysis.why}</p>
                                 </div>
 
-                                <div className="mt-3 p-3 bg-slate-100 rounded-lg text-sm border-l-4 border-rose-300">
-                                    <strong className="text-slate-700">¿Cómo apoya la TESIS?</strong>
-                                    <p className="text-slate-600 mt-1">{arg.analysis.support}</p>
+                                <div className="mt-3 p-3 bg-[#F3F1EA] rounded text-sm border-l-4 border-[#F1A8A5]">
+                                    <strong className="text-[#101820]">¿Cómo apoya la TESIS?</strong>
+                                    <p className="text-[#727983] mt-1">{arg.analysis.support}</p>
                                 </div>
                             </Accordion>
                         ))}
@@ -429,7 +429,7 @@ export function EssayExample() {
                         icon={ESSAY_DATA.conclusion.icon}
                         color="green"
                     >
-                        <div className="bg-slate-50 border-l-4 border-emerald-400 p-4 rounded-r-lg italic text-slate-700 text-sm sm:text-base">
+                        <div className="bg-[#FAF9F5] border-l-4 border-[#3D7A54] p-4 rounded-r italic text-[#101820] text-sm sm:text-base">
                             {ESSAY_DATA.conclusion.text}
                         </div>
 
@@ -441,48 +441,48 @@ export function EssayExample() {
                             color="green"
                         />
 
-                        <div className="mt-3 p-3 bg-emerald-100 rounded-lg text-sm">
-                            <strong className="text-emerald-800">¿Por qué apela a VALORES?</strong>
-                            <p className="text-emerald-700 mt-1">{ESSAY_DATA.conclusion.analysis.why}</p>
+                        <div className="mt-3 p-3 bg-[#EAF5EE] rounded text-sm">
+                            <strong className="text-[#17532B]">¿Por qué apela a VALORES?</strong>
+                            <p className="text-[#17532B] mt-1">{ESSAY_DATA.conclusion.analysis.why}</p>
                         </div>
 
-                        <div className="mt-3 p-3 bg-slate-100 rounded-lg text-sm border-l-4 border-rose-300">
-                            <strong className="text-slate-700">¿Cómo cierra la TESIS?</strong>
-                            <p className="text-slate-600 mt-1">{ESSAY_DATA.conclusion.analysis.support}</p>
+                        <div className="mt-3 p-3 bg-[#F3F1EA] rounded text-sm border-l-4 border-[#F1A8A5]">
+                            <strong className="text-[#101820]">¿Cómo cierra la TESIS?</strong>
+                            <p className="text-[#727983] mt-1">{ESSAY_DATA.conclusion.analysis.support}</p>
                         </div>
                     </Accordion>
 
                     {/* Summary Table */}
-                    <div className="bg-white rounded-xl shadow-md p-4 sm:p-6 mt-6">
+                    <div className="bg-white rounded shadow-md p-4 sm:p-6 mt-6">
                         <div className="flex items-center gap-3 mb-4">
                             <span className="text-2xl">🎯</span>
-                            <h3 className="font-bold text-lg text-slate-800">Resumen: Estructura del Ensayo</h3>
+                            <h3 className="font-bold text-lg text-[#101820]">Resumen: Estructura del Ensayo</h3>
                         </div>
 
                         <div className="overflow-x-auto">
                             <table className="w-full text-sm">
                                 <thead>
-                                    <tr className="bg-blue-600 text-white">
-                                        <th className="py-3 px-4 text-left rounded-tl-lg">PARTE</th>
+                                    <tr className="bg-[#2367D1] text-white">
+                                        <th className="py-3 px-4 text-left rounded-tl">PARTE</th>
                                         <th className="py-3 px-4 text-left">FUNCIÓN</th>
-                                        <th className="py-3 px-4 text-left rounded-tr-lg">CÓMO LO HACE</th>
+                                        <th className="py-3 px-4 text-left rounded-tr">CÓMO LO HACE</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr className="border-b border-slate-200 bg-blue-50">
-                                        <td className="py-3 px-4 font-bold text-blue-700">INTRODUCCIÓN</td>
-                                        <td className="py-3 px-4 text-slate-600">Presenta el tema y la posición</td>
-                                        <td className="py-3 px-4 text-slate-600">Explica el problema y establece la tesis</td>
+                                    <tr className="border-b border-[#D7D9D6] bg-[#E7EEF5]">
+                                        <td className="py-3 px-4 font-bold text-[#123C69]">INTRODUCCIÓN</td>
+                                        <td className="py-3 px-4 text-[#727983]">Presenta el tema y la posición</td>
+                                        <td className="py-3 px-4 text-[#727983]">Explica el problema y establece la tesis</td>
                                     </tr>
-                                    <tr className="border-b border-slate-200 bg-amber-50">
-                                        <td className="py-3 px-4 font-bold text-amber-700">DESARROLLO</td>
-                                        <td className="py-3 px-4 text-slate-600">Defiende la tesis con pruebas</td>
-                                        <td className="py-3 px-4 text-slate-600">Usa hechos, causas, autoridades y comparaciones</td>
+                                    <tr className="border-b border-[#D7D9D6] bg-[#FEF7EC]">
+                                        <td className="py-3 px-4 font-bold text-[#7A4A0B]">DESARROLLO</td>
+                                        <td className="py-3 px-4 text-[#727983]">Defiende la tesis con pruebas</td>
+                                        <td className="py-3 px-4 text-[#727983]">Usa hechos, causas, autoridades y comparaciones</td>
                                     </tr>
-                                    <tr className="bg-emerald-50">
-                                        <td className="py-3 px-4 font-bold text-emerald-700 rounded-bl-lg">CONCLUSIÓN</td>
-                                        <td className="py-3 px-4 text-slate-600">Cierra y refuerza la tesis</td>
-                                        <td className="py-3 px-4 text-slate-600 rounded-br-lg">Sintetiza apelando a valores universales</td>
+                                    <tr className="bg-[#EAF5EE]">
+                                        <td className="py-3 px-4 font-bold text-[#17532B] rounded-bl">CONCLUSIÓN</td>
+                                        <td className="py-3 px-4 text-[#727983]">Cierra y refuerza la tesis</td>
+                                        <td className="py-3 px-4 text-[#727983] rounded-br">Sintetiza apelando a valores universales</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -490,14 +490,14 @@ export function EssayExample() {
                     </div>
 
                     {/* Final Note */}
-                    <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-4 sm:p-6 border border-indigo-200 mt-6">
+                    <div className="bg-[#E7EEF5] rounded p-4 sm:p-6 border border-[#A9C6EE] mt-6">
                         <div className="flex items-start gap-3">
                             <span className="text-2xl">💡</span>
                             <div>
-                                <p className="text-slate-700 font-medium">
+                                <p className="text-[#101820] font-medium">
                                     <strong>Recuerda:</strong> Un ensayo argumentativo es como un abogado en un juicio.
                                 </p>
-                                <ul className="mt-2 text-sm text-slate-600 space-y-1">
+                                <ul className="mt-2 text-sm text-[#727983] space-y-1">
                                     <li>• La <strong>INTRODUCCIÓN</strong> dice qué quiere probar.</li>
                                     <li>• El <strong>DESARROLLO</strong> presenta las pruebas.</li>
                                     <li>• La <strong>CONCLUSIÓN</strong> convence al juez de que tiene razón.</li>

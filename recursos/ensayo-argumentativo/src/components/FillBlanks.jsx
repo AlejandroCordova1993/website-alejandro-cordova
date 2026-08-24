@@ -73,19 +73,19 @@ export function FillBlanks() {
 
     if (showResult) {
         return (
-            <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 md:p-8 text-center">
-                <h3 className="text-xl font-bold text-blue-900 mb-4">✏️ Resultado</h3>
+            <div className="bg-white rounded shadow-lg border border-[#D7D9D6] p-6 md:p-8 text-center">
+                <h3 className="text-xl font-bold text-[#071B33] mb-4">✏️ Resultado</h3>
                 <div className="text-5xl mb-4">{score === SENTENCES.length ? '🎉' : '📚'}</div>
-                <p className="text-2xl font-bold text-slate-800 mb-2">{score} / {SENTENCES.length}</p>
-                <p className="text-slate-600 mb-6">
+                <p className="text-2xl font-bold text-[#101820] mb-2">{score} / {SENTENCES.length}</p>
+                <p className="text-[#727983] mb-6">
                     {score === SENTENCES.length ? '¡Excelente! Conoces los tipos de argumentos.' : 'Repasa los tipos de argumentos.'}
                 </p>
                 {canAttempt('fillBlanks') ? (
-                    <button onClick={reset} className="px-6 py-3 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700">
+                    <button onClick={reset} className="px-6 py-3 bg-[#2367D1] text-white rounded font-bold hover:bg-[#123C69]">
                         Intentar de nuevo ({attemptsLeft} intentos)
                     </button>
                 ) : (
-                    <p className="text-slate-500 text-sm">Has agotado tus intentos.</p>
+                    <p className="text-[#727983] text-sm">Has agotado tus intentos.</p>
                 )}
             </div>
         );
@@ -94,24 +94,24 @@ export function FillBlanks() {
     const parts = sentence.text.split('______');
 
     return (
-        <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 md:p-8">
+        <div className="bg-white rounded shadow-lg border border-[#D7D9D6] p-6 md:p-8">
             <div className="flex justify-between items-center mb-4">
-                <h3 className="text-xl font-bold text-blue-900">✏️ Completa la Oración</h3>
+                <h3 className="text-xl font-bold text-[#071B33]">✏️ Completa la Oración</h3>
                 <div className="text-right">
-                    <span className="text-sm text-slate-500">{current + 1}/{SENTENCES.length}</span>
+                    <span className="text-sm text-[#727983]">{current + 1}/{SENTENCES.length}</span>
                     {currentBestScore > 0 && (
-                        <p className="text-xs text-emerald-600">Mejor: {currentBestScore}/{SENTENCES.length}</p>
+                        <p className="text-xs text-[#1E6B38]">Mejor: {currentBestScore}/{SENTENCES.length}</p>
                     )}
                 </div>
             </div>
 
-            <p className="text-lg text-slate-800 mb-6 leading-relaxed">
+            <p className="text-lg text-[#101820] mb-6 leading-relaxed">
                 {parts[0]}
-                <span className={`px-3 py-1 rounded-lg font-bold mx-1 ${selected
+                <span className={`px-3 py-1 rounded font-bold mx-1 ${selected
                         ? selected === sentence.answer
-                            ? 'bg-emerald-200 text-emerald-800'
-                            : 'bg-red-200 text-red-800'
-                        : 'bg-blue-100 text-blue-600'
+                            ? 'bg-[#A3D9B5] text-[#17532B]'
+                            : 'bg-[#F1A8A5] text-[#8A1F1B]'
+                        : 'bg-[#E7EEF5] text-[#2367D1]'
                     }`}>
                     {selected || '______'}
                 </span>
@@ -120,14 +120,14 @@ export function FillBlanks() {
 
             <div className="flex flex-wrap gap-3 mb-6">
                 {sentence.options.map(opt => {
-                    let btnClass = 'bg-slate-100 border-slate-200 hover:border-blue-400';
+                    let btnClass = 'bg-[#F3F1EA] border-[#D7D9D6] hover:border-[#5B7FA6]';
                     if (selected) {
                         if (opt === sentence.answer) {
-                            btnClass = 'bg-emerald-100 border-emerald-400 text-emerald-800';
+                            btnClass = 'bg-[#EAF5EE] border-[#3D7A54] text-[#17532B]';
                         } else if (opt === selected) {
-                            btnClass = 'bg-red-100 border-red-400 text-red-800';
+                            btnClass = 'bg-[#FDF0EF] border-[#B52A25] text-[#8A1F1B]';
                         } else {
-                            btnClass = 'bg-slate-50 border-slate-200 opacity-50';
+                            btnClass = 'bg-[#FAF9F5] border-[#D7D9D6] opacity-50';
                         }
                     }
                     return (
@@ -135,7 +135,7 @@ export function FillBlanks() {
                             key={opt}
                             onClick={() => handleSelect(opt)}
                             disabled={selected !== null}
-                            className={`px-4 py-2 rounded-lg border-2 font-medium transition-all ${btnClass}`}
+                            className={`px-4 py-2 rounded border-2 font-medium transition-all ${btnClass}`}
                         >
                             {opt}
                         </button>
@@ -149,11 +149,11 @@ export function FillBlanks() {
                     animate={{ opacity: 1, y: 0 }}
                     className="flex justify-between items-center"
                 >
-                    <div className={`flex items-center gap-2 font-medium ${selected === sentence.answer ? 'text-emerald-600' : 'text-red-600'}`}>
+                    <div className={`flex items-center gap-2 font-medium ${selected === sentence.answer ? 'text-[#1E6B38]' : 'text-[#B52A25]'}`}>
                         {selected === sentence.answer ? <Check className="w-5 h-5" /> : <X className="w-5 h-5" />}
                         {selected === sentence.answer ? '¡Correcto!' : `Era: ${sentence.answer}`}
                     </div>
-                    <button onClick={handleNext} className="px-5 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700">
+                    <button onClick={handleNext} className="px-5 py-2 bg-[#2367D1] text-white rounded font-medium hover:bg-[#123C69]">
                         {isLast ? 'Ver resultado' : 'Siguiente'}
                     </button>
                 </motion.div>
