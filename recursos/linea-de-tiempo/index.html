@@ -3,34 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historia de la Literatura Ecuatoriana - Línea de Tiempo Interactiva</title>
-    <link rel="stylesheet" href="style.css">
-    </head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Historia de la Literatura Ecuatoriana — Línea de Tiempo Interactiva</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=20260825b">
+</head>
 <body>
+    <!-- Persistent Header -->
     <header class="header">
-        <a href="../../recursos.html" style="position: absolute; top: 18px; left: 20px; z-index: 1000; background: rgba(7, 27, 51, 0.85); color: #FFFFFF; padding: 6px 14px; border-radius: 4px; font-family: 'Public Sans', sans-serif; font-size: 13px; font-weight: 700; text-decoration: none; border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(4px); display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);"><span>←</span><span>Volver a recursos</span></a>
+        <div class="header-left">
+            <a href="../../recursos.html" class="header-back-link" title="Volver al catálogo de recursos">
+                <span>←</span>
+                <span>Volver a recursos</span>
+            </a>
+        </div>
 
         <div class="header-content">
+            <div class="header-tag">HISTORIOGRAFÍA & CRONOLOGÍA INTERACTIVA</div>
             <h1>Historia de la Literatura Ecuatoriana</h1>
-            <p class="subtitle">Una línea de tiempo interactiva con contexto histórico-social</p>
+            <p class="subtitle">Recorrido cronológico de 500 años en paralelo con la historia social y política del Ecuador</p>
+        </div>
+
+        <div class="header-right">
+            <button class="btn btn--sm theme-toggle" onclick="toggleTheme()" title="Cambiar modo claro/oscuro" aria-label="Cambiar tema">
+                <span class="theme-icon">🌙</span>
+            </button>
+            <button class="btn btn--sm" onclick="showKeyboardHelp()" title="Ver atajos de teclado">⌨️ Atajos</button>
         </div>
     </header>
 
+    <!-- Intro Panel Modal -->
     <div class="intro-panel" id="introPanel">
         <div class="intro-content">
-            <h2>Bienvenido</h2>
-            <p>Esta línea de tiempo interactiva te permitirá explorar la rica historia de la literatura ecuatoriana en su contexto histórico-social.</p>
+            <div class="intro-header">
+                <h2>Bienvenido a la Línea de Tiempo</h2>
+                <button class="modal-close" onclick="closeIntro()">&times;</button>
+            </div>
+            <p>Esta herramienta interactiva te permite explorar la evolución de las letras ecuatorianas (1500–2025) y su relación directa con los procesos históricos, rebeliones y transformaciones sociales del país.</p>
             <div class="instructions">
-                <h3>Cómo usar esta herramienta:</h3>
+                <h3>💡 Guía rápida de exploración:</h3>
                 <ul>
-                    <li><strong>Navega</strong> horizontalmente con el mouse o usando las flechas del teclado</li>
-                    <li><strong>Haz clic</strong> en cualquier evento para ver detalles completos</li>
-                    <li><strong>Filtra</strong> por períodos usando los botones superiores</li>
-                    <li><strong>Zoom</strong> para acercar o alejar la vista de la línea de tiempo</li>
-                    <li><strong>Observa las conexiones</strong> visuales entre eventos literarios e históricos relacionados</li>
+                    <li><strong>Arrastrar & Navegar:</strong> Haz clic y arrastra con el ratón en cualquier zona libre del lienzo para desplazarte con total libertad.</li>
+                    <li><strong>Doble pista sincronizada:</strong> En la parte superior verás <em>Literatura</em> y en la inferior <em>Historia Social</em>, con líneas conectoras en eventos simultáneos.</li>
+                    <li><strong>Buscador inteligente:</strong> Escribe autores (<em>Icaza, Palacio, Adoum</em>) u obras (<em>Huasipungo, Cumandá</em>) para viajar directo al hito.</li>
+                    <li><strong>Ficha didáctica completa:</strong> Haz clic en cualquier tarjeta para abrir su análisis contextual pormenorizado.</li>
                 </ul>
             </div>
-            <button class="btn btn--primary" onclick="closeIntro()">Comenzar Exploración</button>
+            <div class="intro-actions">
+                <button class="btn btn--primary" onclick="closeIntro()">Comenzar Exploración →</button>
+            </div>
         </div>
     </div>
 
@@ -38,41 +63,50 @@
     <div class="loading-screen" id="loadingScreen">
         <div class="loading-content">
             <div class="loading-spinner"></div>
-            <h2>Cargando Historia de la Literatura Ecuatoriana</h2>
-            <p>Preparando tu viaje por 500 años de cultura...</p>
+            <h2>Cargando Cronología Literaria</h2>
+            <p>Organizando 500 años de patrimonio cultural ecuatoriano...</p>
         </div>
     </div>
 
-    <!-- Mini-map and century navigation -->
+    <!-- Mini-map and Century Navigation -->
     <div class="minimap-container">
         <div class="minimap-header">
-            <h3>Vista General de la Línea de Tiempo</h3>
-            <div class="minimap-controls">
-                <button class="btn btn--sm theme-toggle" onclick="toggleTheme()" title="Cambiar tema" aria-label="Cambiar tema">
-                    <span class="theme-icon">🌙</span>
-                </button>
-                <button class="btn btn--sm" onclick="showKeyboardHelp()" title="Ayuda de teclado">⌨️ Atajos</button>
+            <div class="minimap-title-wrap">
+                <span class="minimap-label">VISTA PANORÁMICA</span>
+                <span class="current-position" id="currentPosition">Posición: S. XVI (1500)</span>
+            </div>
+            <div class="century-jumps">
+                <span class="century-label">Siglos:</span>
+                <button class="century-btn" onclick="jumpToCentury(1500)" title="Siglo XVI (1500-1599)">XVI</button>
+                <button class="century-btn" onclick="jumpToCentury(1600)" title="Siglo XVII (1600-1699)">XVII</button>
+                <button class="century-btn" onclick="jumpToCentury(1700)" title="Siglo XVIII (1700-1799)">XVIII</button>
+                <button class="century-btn" onclick="jumpToCentury(1800)" title="Siglo XIX (1800-1899)">XIX</button>
+                <button class="century-btn" onclick="jumpToCentury(1900)" title="Siglo XX (1900-1999)">XX</button>
+                <button class="century-btn" onclick="jumpToCentury(2000)" title="Siglo XXI (2000-2025)">XXI</button>
             </div>
         </div>
         <div class="minimap-wrapper">
             <div class="minimap-timeline" id="minimapTimeline">
                 <div class="minimap-viewport" id="minimapViewport"></div>
             </div>
-            <div class="century-jumps">
-                <button class="century-btn" onclick="jumpToCentury(1500)" title="Saltar al siglo XVI">XVI</button>
-                <button class="century-btn" onclick="jumpToCentury(1600)" title="Saltar al siglo XVII">XVII</button>
-                <button class="century-btn" onclick="jumpToCentury(1700)" title="Saltar al siglo XVIII">XVIII</button>
-                <button class="century-btn" onclick="jumpToCentury(1800)" title="Saltar al siglo XIX">XIX</button>
-                <button class="century-btn" onclick="jumpToCentury(1900)" title="Saltar al siglo XX">XX</button>
-                <button class="century-btn" onclick="jumpToCentury(2000)" title="Saltar al siglo XXI">XXI</button>
-            </div>
         </div>
-        <div class="current-position" id="currentPosition">Posición: Inicio de la línea de tiempo</div>
     </div>
 
-    <div class="controls">
-        <div class="control-group">
-            <h3>Períodos Literarios</h3>
+    <!-- Top Controls: Search, Filters & Zoom -->
+    <div class="controls-panel">
+        <!-- Search Box -->
+        <div class="search-box-wrapper">
+            <div class="search-input-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="timelineSearch" placeholder="Buscar autor u obra (ej. Icaza, Huasipungo, Palacio, Tzántzicos...)" autocomplete="off">
+                <button id="clearSearchBtn" class="clear-search-btn" title="Limpiar búsqueda" style="display:none;">✕</button>
+            </div>
+            <div id="searchResultsDropdown" class="search-results-dropdown"></div>
+        </div>
+
+        <!-- Period Filters -->
+        <div class="filter-wrapper">
+            <span class="filter-heading">Períodos:</span>
             <div class="filter-buttons" id="literaryFilters">
                 <button class="filter-btn active" data-filter="all" data-start-year="" data-end-year="">Todos <span class="event-count" data-count="all"></span></button>
                 <button class="filter-btn" data-filter="colonial" data-start-year="1534" data-end-year="1809">Colonial (1534-1809) <span class="event-count" data-count="colonial"></span></button>
@@ -85,133 +119,86 @@
             </div>
         </div>
         
-        <div class="control-group zoom-controls">
-            <h3>Zoom</h3>
-            <button class="btn btn--secondary" onclick="zoomOut()">−</button>
-            <span id="zoomLevel">100%</span>
-            <button class="btn btn--secondary" onclick="zoomIn()">+</button>
-            <button class="btn btn--secondary" onclick="resetZoom()">Reset</button>
+        <!-- Zoom Controls -->
+        <div class="zoom-controls">
+            <span class="zoom-heading">Zoom:</span>
+            <button class="btn btn--secondary" onclick="zoomOut()" title="Alejar vista">−</button>
+            <span id="zoomLevel" class="zoom-level-text">100%</span>
+            <button class="btn btn--secondary" onclick="zoomIn()" title="Acercar vista">+</button>
+            <button class="btn btn--secondary" onclick="resetZoom()" title="Restablecer zoom">Reset</button>
         </div>
     </div>
 
+    <!-- Legend -->
     <div class="legend">
-        <div class="legend-item">
-            <span class="legend-color" style="background: #8B4513"></span>
-            <span>Literatura Colonial</span>
-        </div>
-        <div class="legend-item">
-            <span class="legend-color" style="background: #C41E3A"></span>
-            <span>Romanticismo</span>
-        </div>
-        <div class="legend-item">
-            <span class="legend-color" style="background: #9370DB"></span>
-            <span>Modernismo</span>
-        </div>
-        <div class="legend-item">
-            <span class="legend-color" style="background: #FF6347"></span>
-            <span>Vanguardia</span>
-        </div>
-        <div class="legend-item">
-            <span class="legend-color" style="background: #CD5C5C"></span>
-            <span>Realismo Social</span>
-        </div>
-        <div class="legend-item">
-            <span class="legend-color" style="background: #4682B4"></span>
-            <span>Mediados S. XX</span>
-        </div>
-        <div class="legend-item">
-            <span class="legend-color" style="background: #2E8B57"></span>
-            <span>Contemporáneo</span>
-        </div>
+        <div class="legend-item"><span class="legend-color" style="background: #8B4513"></span><span>Colonial</span></div>
+        <div class="legend-item"><span class="legend-color" style="background: #C41E3A"></span><span>Romanticismo</span></div>
+        <div class="legend-item"><span class="legend-color" style="background: #7C3AED"></span><span>Modernismo</span></div>
+        <div class="legend-item"><span class="legend-color" style="background: #EA580C"></span><span>Vanguardia</span></div>
+        <div class="legend-item"><span class="legend-color" style="background: #DC2626"></span><span>Realismo Social</span></div>
+        <div class="legend-item"><span class="legend-color" style="background: #0284C7"></span><span>Mediados S. XX</span></div>
+        <div class="legend-item"><span class="legend-color" style="background: #16A34A"></span><span>Contemporáneo</span></div>
         <div class="legend-divider"></div>
-        <div class="legend-item">
-            <span class="legend-color" style="background: #4169E1"></span>
-            <span>Historia Social</span>
-        </div>
+        <div class="legend-item"><span class="legend-color" style="background: #2563EB"></span><span>Historia Social</span></div>
     </div>
 
+    <!-- Timeline Main Canvas -->
     <div class="timeline-container" id="timelineContainer">
         <div class="timeline-wrapper" id="timelineWrapper">
-            <!-- Literatura Track -->
+            <!-- Literatura Track (Top) -->
             <div class="timeline-track literature-track">
-                <div class="track-label">LITERATURA</div>
+                <div class="track-label">LITERATURA ECUATORIANA</div>
                 <div class="timeline-line"></div>
                 <div class="events-container" id="literatureEvents"></div>
             </div>
 
-            <!-- History Track -->
+            <!-- History Track (Bottom) -->
             <div class="timeline-track history-track">
-                <div class="track-label">HISTORIA SOCIAL</div>
+                <div class="track-label">HISTORIA SOCIAL & POLÍTICA</div>
                 <div class="timeline-line"></div>
                 <div class="events-container" id="historyEvents"></div>
             </div>
         </div>
     </div>
 
-    <!-- Keyboard shortcuts help modal -->
+    <!-- Keyboard shortcuts modal -->
     <div class="modal" id="keyboardHelpModal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeKeyboardHelp()">&times;</button>
             <div class="keyboard-help">
-                <h2>⌨️ Atajos de Teclado</h2>
+                <h2>⌨️ Atajos de Teclado y Navegación</h2>
                 <div class="keyboard-shortcuts">
-                    <div class="shortcut-item">
-                        <kbd>←</kbd> <kbd>→</kbd>
-                        <span>Desplazar línea de tiempo</span>
-                    </div>
-                    <div class="shortcut-item">
-                        <kbd>+</kbd> <kbd>-</kbd>
-                        <span>Zoom in/out</span>
-                    </div>
-                    <div class="shortcut-item">
-                        <kbd>ESC</kbd>
-                        <span>Cerrar modal</span>
-                    </div>
-                    <div class="shortcut-item">
-                        <kbd>?</kbd>
-                        <span>Mostrar/ocultar esta ayuda</span>
-                    </div>
-                    <div class="shortcut-item">
-                        <kbd>H</kbd>
-                        <span>Volver al inicio</span>
-                    </div>
-                    <div class="shortcut-item">
-                        <kbd>T</kbd>
-                        <span>Cambiar tema claro/oscuro</span>
-                    </div>
+                    <div class="shortcut-item"><kbd>←</kbd> <kbd>→</kbd><span>Desplazar horizontalmente</span></div>
+                    <div class="shortcut-item"><kbd>+</kbd> <kbd>-</kbd><span>Aumentar / Reducir zoom</span></div>
+                    <div class="shortcut-item"><kbd>ESC</kbd><span>Cerrar ventanas modales</span></div>
+                    <div class="shortcut-item"><kbd>?</kbd><span>Abrir esta ayuda</span></div>
+                    <div class="shortcut-item"><kbd>H</kbd><span>Volver al inicio (1500)</span></div>
+                    <div class="shortcut-item"><kbd>T</kbd><span>Alternar tema claro/oscuro</span></div>
                 </div>
-                <h3>💡 Consejos de Navegación</h3>
-                <ul>
-                    <li>Haz clic en cualquier evento para ver detalles completos</li>
-                    <li>Usa el mini-mapa superior para ver tu posición</li>
-                    <li>Los botones de siglos (XVI-XXI) te llevan rápidamente a cada período</li>
-                    <li>Filtra por período literario para enfocarte en una época específica</li>
-                    <li>Las líneas verticales conectan eventos simultáneos de literatura e historia</li>
-                </ul>
             </div>
         </div>
     </div>
 
-    <!-- Modal for event details -->
+    <!-- Modal for Event Details -->
     <div class="modal" id="eventModal">
-        <div class="modal-content">
+        <div class="modal-content event-detail-content">
             <button class="modal-close" onclick="closeModal()">&times;</button>
             <div id="modalBody"></div>
         </div>
     </div>
 
-    <!-- Navigation arrows -->
-    <button class="nav-arrow nav-arrow-left" onclick="scrollTimeline(-300)" aria-label="Scroll izquierda">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <!-- Navigation Arrows -->
+    <button class="nav-arrow nav-arrow-left" onclick="scrollTimeline(-450)" aria-label="Desplazar a la izquierda">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <polyline points="15 18 9 12 15 6"></polyline>
         </svg>
     </button>
-    <button class="nav-arrow nav-arrow-right" onclick="scrollTimeline(300)" aria-label="Scroll derecha">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <button class="nav-arrow nav-arrow-right" onclick="scrollTimeline(450)" aria-label="Desplazar a la derecha">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <polyline points="9 18 15 12 9 6"></polyline>
         </svg>
     </button>
 
-    <script src="app.js"></script>
-    </body>
+    <script src="app.js?v=20260825b"></script>
+</body>
 </html>

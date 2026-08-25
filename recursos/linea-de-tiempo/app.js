@@ -1,9 +1,4 @@
-// Timeline Configuration - GLOBAL SCALE
-const TIMELINE_START_YEAR = 1500;
-const TIMELINE_END_YEAR = 2025;
-const TIMELINE_RANGE = TIMELINE_END_YEAR - TIMELINE_START_YEAR;
-
-// Timeline Data
+// Timeline Data for Literature and Social History
 const literatureEvents = [
   // Colonial Period
   { year: 1534, title: "Conquista Española", description: "Inicio de la literatura colonial. Llegada de los conquistadores españoles marca el comienzo de la escritura europea en territorio ecuatoriano.", category: "colonial", color: "#8B4513", period: "Colonial (1534-1809)", details: "Los primeros textos coloniales incluyen crónicas de conquista, documentos administrativos y primeros intentos de evangelización. La literatura se caracteriza por ser principalmente funcional y religiosa." },
@@ -217,802 +212,718 @@ const historyEvents = [
   { year: 2024, title: "Conflicto Armado Interno", description: "Gobierno declara 'conflicto armado interno' contra crimen organizado. Militarización del país.", category: "democracia", color: "#32CD32", period: "Democracia (2023-2025)", details: "Tras toma de canal de TV por sicarios en vivo (9 enero 2024), Noboa declara guerra al narco. Estado de excepción, toque de queda, militares en calles. Operaciones contra bandas. Derechos humanos en tensión. Ecuador enfrenta su mayor crisis de seguridad." }
 ];
 
-let currentZoom = 1;
-let activeFilter = 'all';
-let isScrolling = false;
-let scrollDebounceTimer = null;
-let currentTheme = 'auto'; // auto, light, dark
-let minimapUpdateInterval = null;
 
-// Initialize timeline
-function initTimeline() {
-  // Show loading screen
-  showLoadingScreen();
-  
-  // Initialize after a brief delay to show loading animation
-  setTimeout(() => {
+// ==================== CONFIGURATION & SCALE ====================
+const TIMELINE_START_YEAR = 1500;
+const TIMELINE_END_YEAR = 2025;
+const TIMELINE_RANGE = TIMELINE_END_YEAR - TIMELINE_START_YEAR;
+
+const TIMELINE_BASE_WIDTH = 15000; // Expanded base width in pixels
+const PADDING_LEFT = 140;
+const PADDING_RIGHT = 140;
+const USABLE_WIDTH = TIMELINE_BASE_WIDTH - PADDING_LEFT - PADDING_RIGHT;
+
+let currentZoom = 1.0;
+let currentFilter = 'all';
+
+// Piecewise density-aware mapping: allocates generous space where 87% of events reside
+function getYearX(year) {
+  let pct = 0;
+  if (year <= 1800) {
+    pct = ((year - 1500) / 300) * 0.12;
+  } else if (year <= 1890) {
+    pct = 0.12 + ((year - 1800) / 90) * 0.18;
+  } else if (year <= 1960) {
+    pct = 0.30 + ((year - 1890) / 70) * 0.42; // Peak density (1890-1960)
+  } else {
+    pct = 0.72 + ((year - 1960) / 65) * 0.28;
+  }
+  return PADDING_LEFT + pct * USABLE_WIDTH;
+}
+
+// Convert an X pixel position back to year for minimap/scroll tracking
+function getYearFromX(x) {
+  const normX = Math.max(0, Math.min(USABLE_WIDTH, x - PADDING_LEFT));
+  const pct = normX / USABLE_WIDTH;
+  if (pct <= 0.12) {
+    return Math.round(1500 + (pct / 0.12) * 300);
+  } else if (pct <= 0.30) {
+    return Math.round(1800 + ((pct - 0.12) / 0.18) * 90);
+  } else if (pct <= 0.72) {
+    return Math.round(1890 + ((pct - 0.30) / 0.42) * 70);
+  } else {
+    return Math.round(1960 + ((pct - 0.72) / 0.28) * 65);
+  }
+}
+
+// Category Color & Label Map
+const CATEGORY_MAP = {
+  colonial: { label: 'Colonial', color: '#8B4513', bg: 'rgba(139, 69, 19, 0.12)' },
+  romanticismo: { label: 'Romanticismo', color: '#C41E3A', bg: 'rgba(196, 30, 58, 0.12)' },
+  modernismo: { label: 'Modernismo', color: '#7C3AED', bg: 'rgba(124, 58, 237, 0.12)' },
+  vanguardia: { label: 'Vanguardia', color: '#EA580C', bg: 'rgba(234, 88, 12, 0.12)' },
+  realismo: { label: 'Realismo Social', color: '#DC2626', bg: 'rgba(220, 38, 38, 0.12)' },
+  sigloxx: { label: 'Mediados S. XX', color: '#0284C7', bg: 'rgba(2, 132, 199, 0.12)' },
+  contemporaneo: { label: 'Contemporáneo', color: '#16A34A', bg: 'rgba(22, 163, 74, 0.12)' },
+  politica: { label: 'Política & Leyes', color: '#2563EB', bg: 'rgba(37, 99, 235, 0.12)' },
+  social: { label: 'Movimiento Social', color: '#0D9488', bg: 'rgba(13, 148, 136, 0.12)' },
+  cultura: { label: 'Institución Cultural', color: '#4F46E5', bg: 'rgba(79, 70, 229, 0.12)' }
+};
+
+function getCategoryMeta(category) {
+  return CATEGORY_MAP[category] || { label: 'Historia', color: '#2563EB', bg: 'rgba(37, 99, 235, 0.12)' };
+}
+
+// ==================== MULTI-LANE SLOT ALLOCATOR ====================
+function allocateLanes(events, maxLanes = 4) {
+  // Group by year
+  const byYear = {};
+  events.forEach((ev, idx) => {
+    ev._id = idx;
+    if (!byYear[ev.year]) byYear[ev.year] = [];
+    byYear[ev.year].push(ev);
+  });
+
+  const placed = [];
+  const minGap = 24;
+
+  Object.keys(byYear).map(Number).sort((a, b) => a - b).forEach(year => {
+    const evList = byYear[year];
+    const baseX = getYearX(year);
+
+    evList.forEach(ev => {
+      const tLen = ev.title.length;
+      const cardW = tLen < 25 ? 210 : (tLen < 45 ? 245 : 275);
+
+      // Search for the closest free slot around baseX
+      let chosenX = baseX;
+      let chosenLane = 0;
+      let placedOk = false;
+
+      for (let radius = 0; radius < 1200; radius += 20) {
+        const shifts = radius === 0 ? [0] : [radius, -radius];
+        for (const s of shifts) {
+          const testX = baseX + s;
+          const xs = testX - cardW / 2;
+          const xe = testX + cardW / 2;
+
+          for (let lIdx = 0; lIdx < maxLanes; lIdx++) {
+            let collision = false;
+            for (const other of placed) {
+              if (other.lane === lIdx) {
+                if (!(xe + minGap < other.xs || xs - minGap > other.xe)) {
+                  collision = true;
+                  break;
+                }
+              }
+            }
+            if (!collision) {
+              chosenX = testX;
+              chosenLane = lIdx;
+              placedOk = true;
+              break;
+            }
+          }
+          if (placedOk) break;
+        }
+        if (placedOk) break;
+      }
+
+      const item = {
+        event: ev,
+        x: chosenX,
+        baseX: baseX,
+        cardW: cardW,
+        xs: chosenX - cardW / 2,
+        xe: chosenX + cardW / 2,
+        lane: chosenLane
+      };
+      placed.push(item);
+    });
+  });
+
+  return placed;
+}
+
+// ==================== RENDERING ENGINE ====================
+function renderAllEvents() {
+  const litContainer = document.getElementById('literatureEvents');
+  const histContainer = document.getElementById('historyEvents');
+  litContainer.innerHTML = '';
+  histContainer.innerHTML = '';
+
+  // Calculate layout
+  const litPlacements = allocateLanes(literatureEvents, 4);
+  const histPlacements = allocateLanes(historyEvents, 4);
+
+  // Vertical offsets per lane: perfectly spaced so no card covers the axis or other cards
+  // Literature is ABOVE axis: Lane 0 (-90px), Lane 1 (-195px), Lane 2 (-300px), Lane 3 (-405px)
+  const litLaneOffsets = [-95, -230, -365, -500];
+  // History is BELOW axis: Lane 0 (+95px), Lane 1 (+230px), Lane 2 (+365px), Lane 3 (+500px)
+  const histLaneOffsets = [95, 230, 365, 500];
+
+  // Render Literature Events
+  litPlacements.forEach(item => {
+    const el = createEventElement(item, litLaneOffsets[item.lane], 'literature');
+    litContainer.appendChild(el);
+  });
+
+  // Render History Events
+  histPlacements.forEach(item => {
+    const el = createEventElement(item, histLaneOffsets[item.lane], 'history');
+    histContainer.appendChild(el);
+  });
+
+  // Render Sync Lines
+  renderSynchronizationLines();
+  // Render Century Markers
   renderCenturyMarkers();
-  renderEvents('literatureEvents', literatureEvents);
-  renderEvents('historyEvents', historyEvents);
-  drawSynchronizationLines();
-  setupFilters();
-  setupKeyboardNavigation();
-  initializeMinimap();
-  updateEventCounts();
-  detectTheme();
-  setupScrollTracking();
-  
-  // Hide loading screen
-  hideLoadingScreen();
-  }, 1500);
+  // Update Counts
+  updateFilterCounts();
 }
 
-// Loading screen functions
-function showLoadingScreen() {
-  const loadingScreen = document.getElementById('loadingScreen');
-  if (loadingScreen) {
-    loadingScreen.classList.remove('hidden');
-  }
-}
+function createEventElement(item, verticalOffset, track) {
+  const ev = item.event;
+  const meta = getCategoryMeta(ev.category);
+  const isAbove = verticalOffset < 0;
 
-function hideLoadingScreen() {
-  const loadingScreen = document.getElementById('loadingScreen');
-  if (loadingScreen) {
-    loadingScreen.classList.add('hidden');
-  }
-}
+  const eventEl = document.createElement('div');
+  eventEl.className = 'timeline-event';
+  eventEl.id = `event-${track}-${ev._id}`;
+  eventEl.dataset.category = ev.category;
+  eventEl.dataset.year = ev.year;
+  eventEl.dataset.track = track;
+  eventEl.style.left = `${item.x}px`;
+  eventEl.style.top = `calc(50% + ${verticalOffset}px)`;
+  eventEl.style.transform = 'translate(-50%, -50%)';
 
-// Theme management
-function detectTheme() {
-  const savedTheme = currentTheme;
-  if (savedTheme === 'auto') {
-    // Use system preference
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    updateThemeIcon(prefersDark ? 'dark' : 'light');
-  } else {
-    applyTheme(savedTheme);
-  }
-}
+  // Distance from card center to horizontal axis (which is at top: 50%)
+  const connectorDist = Math.abs(verticalOffset);
+  // Horizontal shift difference between card center and exact year tick mark
+  const xDiff = item.baseX - item.x;
 
-function toggleTheme() {
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  let newTheme;
-  
-  if (currentTheme === 'auto') {
-    newTheme = prefersDark ? 'light' : 'dark';
-  } else if (currentTheme === 'light') {
-    newTheme = 'dark';
-  } else {
-    newTheme = 'auto';
-  }
-  
-  currentTheme = newTheme;
-  applyTheme(newTheme);
-}
+  // Connector line SVG
+  const connector = document.createElement('div');
+  connector.className = 'event-connector';
+  connector.style.cssText = `
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: ${connectorDist}px;
+    background: ${meta.color};
+    opacity: 0.45;
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 1;
+    ${isAbove ? `top: 50%; height: ${connectorDist}px;` : `bottom: 50%; height: ${connectorDist}px;`}
+  `;
 
-function applyTheme(theme) {
-  if (theme === 'auto') {
-    document.documentElement.removeAttribute('data-color-scheme');
-    updateThemeIcon(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-  } else {
-    document.documentElement.setAttribute('data-color-scheme', theme);
-    updateThemeIcon(theme);
-  }
-}
+  // Node on the central axis
+  const axisNode = document.createElement('div');
+  axisNode.className = 'axis-node';
+  axisNode.style.cssText = `
+    position: absolute;
+    left: calc(50% + ${xDiff}px);
+    ${isAbove ? `top: calc(50% + ${connectorDist}px);` : `bottom: calc(50% + ${connectorDist}px);`}
+    transform: translate(-50%, -50%);
+    background: ${meta.color};
+    border-color: #FFFFFF;
+  `;
 
-function updateThemeIcon(effectiveTheme) {
-  const themeIcon = document.querySelector('.theme-icon');
-  if (themeIcon) {
-    if (currentTheme === 'auto') {
-      themeIcon.textContent = '🌐'; // Globe for auto
-    } else if (effectiveTheme === 'dark') {
-      themeIcon.textContent = '☀️'; // Sun for light mode toggle
-    } else {
-      themeIcon.textContent = '🌙'; // Moon for dark mode toggle
-    }
-  }
-}
-
-// Mini-map functionality
-function initializeMinimap() {
-  const minimapTimeline = document.getElementById('minimapTimeline');
-  if (!minimapTimeline) return;
-  
-  // Add event markers to minimap
-  const allEvents = [...literatureEvents, ...historyEvents];
-  allEvents.forEach(event => {
-    const position = ((event.year - TIMELINE_START_YEAR) / TIMELINE_RANGE) * 100;
-    const marker = document.createElement('div');
-    marker.style.cssText = `
+  // Diagonal connector line to exact baseX tick if shifted
+  if (Math.abs(xDiff) > 5) {
+    const diag = document.createElement('div');
+    diag.style.cssText = `
       position: absolute;
-      left: ${position}%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 3px;
-      height: 60%;
-      background: ${event.color || '#4169E1'};
-      opacity: 0.5;
+      left: 50%;
+      ${isAbove ? `top: calc(50% + ${connectorDist - 2}px);` : `bottom: calc(50% + ${connectorDist - 2}px);`}
+      width: ${Math.abs(xDiff)}px;
+      height: 2px;
+      background: ${meta.color};
+      opacity: 0.45;
+      transform-origin: ${xDiff > 0 ? 'left' : 'right'} center;
+      ${xDiff < 0 ? 'transform: translateX(-100%);' : ''}
+      pointer-events: none;
+      z-index: 1;
     `;
-    minimapTimeline.appendChild(marker);
+    eventEl.appendChild(diag);
+  }
+
+  // Card Body
+  const card = document.createElement('div');
+  card.className = 'event-card';
+  card.style.width = `${item.cardW}px`;
+
+  card.innerHTML = `
+    <div class="event-card-header">
+      <span class="event-badge" style="background-color: ${meta.bg}; color: ${meta.color};">${meta.label}</span>
+      <span class="event-year-tag">${ev.year < 0 ? Math.abs(ev.year) + ' a.C.' : ev.year}</span>
+    </div>
+    <div class="event-card-body">
+      <h4 class="event-title">${ev.title}</h4>
+      <p class="event-desc-snippet">${ev.description}</p>
+    </div>
+    <div class="event-card-footer">
+      <span class="event-more-btn">Ver ficha completa →</span>
+    </div>
+  `;
+
+  eventEl.appendChild(connector);
+  eventEl.appendChild(axisNode);
+  eventEl.appendChild(card);
+
+  // Interactive Click Modal
+  card.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showEventModal(ev, track);
   });
-  
-  updateMinimapViewport();
+
+  return eventEl;
 }
 
-function updateMinimapViewport() {
-  const container = document.getElementById('timelineContainer');
-  const viewport = document.getElementById('minimapViewport');
-  if (!container || !viewport) return;
-  
-  const scrollLeft = container.scrollLeft;
-  const scrollWidth = container.scrollWidth;
-  const containerWidth = container.offsetWidth;
-  
-  const viewportLeft = (scrollLeft / scrollWidth) * 100;
-  const viewportWidth = (containerWidth / scrollWidth) * 100;
-  
-  viewport.style.left = viewportLeft + '%';
-  viewport.style.width = viewportWidth + '%';
-  
-  // Update current position text
-  const currentYear = Math.round(TIMELINE_START_YEAR + (scrollLeft / scrollWidth) * TIMELINE_RANGE);
-  const positionEl = document.getElementById('currentPosition');
-  if (positionEl) {
-    positionEl.textContent = `Posición: Año ${currentYear}`;
-  }
-}
-
-function setupScrollTracking() {
-  const container = document.getElementById('timelineContainer');
-  if (!container) return;
-  
-  container.addEventListener('scroll', () => {
-    if (scrollDebounceTimer) {
-      clearTimeout(scrollDebounceTimer);
-    }
-    scrollDebounceTimer = setTimeout(() => {
-      updateMinimapViewport();
-    }, 50);
-  });
-}
-
-// Century jump function
-function jumpToCentury(year) {
-  scrollToYear(year);
-}
-
-// Update event counts on filter buttons
-function updateEventCounts() {
-  const categories = ['colonial', 'romanticismo', 'modernismo', 'vanguardia', 'realismo', 'sigloxx', 'contemporaneo'];
-  
-  // Count all events
-  const allCount = literatureEvents.length;
-  const allCountEl = document.querySelector('[data-count="all"]');
-  if (allCountEl) {
-    allCountEl.textContent = allCount;
-  }
-  
-  // Count by category
-  categories.forEach(category => {
-    const count = literatureEvents.filter(e => e.category === category).length;
-    const countEl = document.querySelector(`[data-count="${category}"]`);
-    if (countEl) {
-      countEl.textContent = count;
-    }
-  });
-}
-
-// Keyboard shortcuts help
-function showKeyboardHelp() {
-  const modal = document.getElementById('keyboardHelpModal');
-  if (modal) {
-    modal.classList.add('active');
-  }
-}
-
-function closeKeyboardHelp() {
-  const modal = document.getElementById('keyboardHelpModal');
-  if (modal) {
-    modal.classList.remove('active');
-  }
-}
-
-// Draw vertical lines to show year synchronization between tracks
-function drawSynchronizationLines() {
+// ==================== CENTURY MARKERS & SYNC LINES ====================
+function renderCenturyMarkers() {
   const wrapper = document.getElementById('timelineWrapper');
-  const linesContainer = document.createElement('div');
-  linesContainer.className = 'sync-lines';
-  linesContainer.style.cssText = 'position: absolute; top: 0; left: 80px; right: 0; height: 100%; pointer-events: none; z-index: 1;';
-  
-  // Get all unique years from both tracks
+  const existing = wrapper.querySelectorAll('.century-marker-line');
+  existing.forEach(e => e.remove());
+
+  const years = [1500, 1600, 1700, 1800, 1850, 1900, 1920, 1930, 1940, 1950, 1960, 1970, 1980, 1990, 2000, 2010, 2025];
+
+  years.forEach(year => {
+    const x = getYearX(year);
+    const isCentury = year % 100 === 0;
+
+    const line = document.createElement('div');
+    line.className = 'century-marker-line';
+    line.style.cssText = `
+      left: ${x}px;
+      width: ${isCentury ? '2px' : '1px'};
+      background: ${isCentury ? 'rgba(35, 103, 209, 0.35)' : 'rgba(35, 103, 209, 0.15)'};
+    `;
+
+    const label = document.createElement('div');
+    label.className = 'century-marker-label';
+    label.textContent = year;
+    if (isCentury) {
+      label.style.fontWeight = '800';
+      label.style.color = '#071B33';
+      label.style.borderColor = '#2367D1';
+    }
+
+    line.appendChild(label);
+    wrapper.insertBefore(line, wrapper.firstChild);
+  });
+}
+
+function renderSynchronizationLines() {
+  const wrapper = document.getElementById('timelineWrapper');
+  const existing = wrapper.querySelectorAll('.sync-connection-line');
+  existing.forEach(e => e.remove());
+
   const allYears = new Set();
   literatureEvents.forEach(e => allYears.add(e.year));
-  historyEvents.forEach(e => allYears.add(e.year));
-  
-  // Draw subtle lines at years where both tracks have events
+
   allYears.forEach(year => {
-    const hasLit = literatureEvents.some(e => e.year === year);
     const hasHist = historyEvents.some(e => e.year === year);
-    
-    if (hasLit && hasHist) {
-      const position = ((year - TIMELINE_START_YEAR) / TIMELINE_RANGE) * 90;
-      const line = document.createElement('div');
-      line.style.cssText = `
+    if (hasHist) {
+      const x = getYearX(year);
+      const syncLine = document.createElement('div');
+      syncLine.className = 'sync-connection-line';
+      syncLine.style.cssText = `
         position: absolute;
-        left: ${position}%;
+        left: ${x}px;
         top: 0;
         bottom: 0;
         width: 1px;
         background: linear-gradient(to bottom, 
-          rgba(33, 128, 141, 0.3) 0%, 
-          rgba(33, 128, 141, 0.5) 40%, 
-          rgba(33, 128, 141, 0.5) 60%, 
-          rgba(33, 128, 141, 0.3) 100%);
+          rgba(35, 103, 209, 0.1) 0%, 
+          rgba(35, 103, 209, 0.6) 45%, 
+          rgba(35, 103, 209, 0.6) 55%, 
+          rgba(35, 103, 209, 0.1) 100%);
+        pointer-events: none;
+        z-index: 0;
       `;
-      linesContainer.appendChild(line);
+      wrapper.insertBefore(syncLine, wrapper.firstChild);
     }
   });
-  
-  wrapper.insertBefore(linesContainer, wrapper.firstChild);
 }
 
-// Add century markers for visual reference
-function renderCenturyMarkers() {
-  const wrapper = document.getElementById('timelineWrapper');
-  const markersContainer = document.createElement('div');
-  markersContainer.className = 'century-markers';
-  markersContainer.style.cssText = 'position: absolute; top: 0; left: 80px; right: 0; height: 100%; pointer-events: none; z-index: 0;';
-  
-  // Add markers for each century and important decades
-  const years = [1500, 1600, 1700, 1800, 1850, 1900, 1950, 1975, 2000, 2025];
-  
-  years.forEach(year => {
-    const position = ((year - TIMELINE_START_YEAR) / TIMELINE_RANGE) * 90;
-    const isCentury = year % 100 === 0;
-    
-    const marker = document.createElement('div');
-    marker.style.cssText = `
-      position: absolute;
-      left: ${position}%;
-      top: 0;
-      bottom: 0;
-      width: ${isCentury ? '2px' : '1px'};
-      background: ${isCentury ? 'rgba(33, 128, 141, 0.3)' : 'rgba(33, 128, 141, 0.15)'};
-    `;
-    
-    const label = document.createElement('div');
-    label.textContent = year;
-    label.style.cssText = `
-      position: absolute;
-      top: -25px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: ${isCentury ? '14px' : '11px'};
-      font-weight: ${isCentury ? '600' : '500'};
-      color: var(--color-primary);
-      background: var(--color-background);
-      padding: 2px 6px;
-      border-radius: 4px;
-      white-space: nowrap;
-    `;
-    
-    marker.appendChild(label);
-    markersContainer.appendChild(marker);
-  });
-  
-  wrapper.insertBefore(markersContainer, wrapper.firstChild);
-}
+// ==================== SEARCH ENGINE ====================
+function setupSearch() {
+  const searchInput = document.getElementById('timelineSearch');
+  const resultsDropdown = document.getElementById('searchResultsDropdown');
+  const clearBtn = document.getElementById('clearSearchBtn');
+  if (!searchInput || !resultsDropdown) return;
 
-function renderEvents(containerId, events) {
-  const container = document.getElementById(containerId);
-  const isHistory = containerId === 'historyEvents';
-  
-  // CRITICAL: Use GLOBAL timeline scale for synchronization
-  // All tracks use the same year range (1500-2025) so events align vertically
-  
-  // GROUP EVENTS BY YEAR for spacing management
-  const eventsByYear = {};
-  events.forEach(event => {
-    if (!eventsByYear[event.year]) {
-      eventsByYear[event.year] = [];
+  const allPool = [
+    ...literatureEvents.map(e => ({ ...e, track: 'literature' })),
+    ...historyEvents.map(e => ({ ...e, track: 'history' }))
+  ];
+
+  searchInput.addEventListener('input', (e) => {
+    const q = e.target.value.trim().toLowerCase();
+    if (!q) {
+      resultsDropdown.innerHTML = '';
+      resultsDropdown.classList.remove('active');
+      clearBtn.style.display = 'none';
+      resetEventHighlights();
+      return;
     }
-    eventsByYear[event.year].push(event);
-  });
-  
-  // Assign both vertical AND horizontal offsets to prevent overlapping
-  Object.keys(eventsByYear).forEach(year => {
-    const eventsInYear = eventsByYear[year];
-    if (eventsInYear.length > 1) {
-      // Multiple events in same year - space them both vertically AND horizontally
-      eventsInYear.forEach((event, index) => {
-        // Alternate above and below timeline, with increasing distance
-        const isAbove = index % 2 === 0;
-        const stackLevel = Math.floor(index / 2);
-        event.verticalOffset = (isAbove ? -1 : 1) * (140 + stackLevel * 120);
-        
-        // Add horizontal offset to prevent marker overlap
-        const totalEvents = eventsInYear.length;
-        const horizontalSpread = 45; // pixels between each event (aumentado de 25 a 45)
-        event.horizontalOffset = ((index - (totalEvents - 1) / 2) * horizontalSpread);
-        
-        event.isDense = true; // Mark as part of dense year
-        event.denseCount = eventsInYear.length;
+
+    clearBtn.style.display = 'block';
+
+    const matches = allPool.filter(ev => {
+      const t = (ev.title || '').toLowerCase();
+      const d = (ev.description || '').toLowerCase();
+      const det = (ev.details || '').toLowerCase();
+      const y = ev.year.toString();
+      return t.includes(q) || d.includes(q) || det.includes(q) || y.includes(q);
+    }).slice(0, 10);
+
+    if (matches.length === 0) {
+      resultsDropdown.innerHTML = '<div class="search-no-results">No se encontraron eventos con ese término</div>';
+      resultsDropdown.classList.add('active');
+      return;
+    }
+
+    resultsDropdown.innerHTML = matches.map(m => `
+      <div class="search-result-item" data-year="${m.year}" data-track="${m.track}" data-id="${m._id}">
+        <span class="search-item-year">${m.year}</span>
+        <div class="search-item-info">
+          <div class="search-item-title">${m.title}</div>
+          <div class="search-item-track">${m.track === 'literature' ? '📚 Literatura Ecuatoriana' : '🏛️ Historia Social'}</div>
+        </div>
+      </div>
+    `).join('');
+    resultsDropdown.classList.add('active');
+
+    resultsDropdown.querySelectorAll('.search-result-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const year = parseInt(item.dataset.year);
+        const track = item.dataset.track;
+        const id = item.dataset.id;
+        resultsDropdown.classList.remove('active');
+        focusOnEvent(year, track, id);
       });
-    } else {
-      // Single event - no offset needed
-      eventsInYear[0].verticalOffset = 0;
-      eventsInYear[0].horizontalOffset = 0;
-      eventsInYear[0].isDense = false;
-    }
+    });
   });
-  
-  events.forEach(event => {
-    const eventEl = document.createElement('div');
-    eventEl.className = 'timeline-event';
-    eventEl.dataset.category = event.category;
-    eventEl.dataset.year = event.year;
-    
-    // Add dense year indicator
-    if (event.isDense) {
-      eventEl.classList.add('dense-year-event');
-      eventEl.title = `${event.denseCount} eventos en ${event.year}`;
+
+  clearBtn.addEventListener('click', () => {
+    searchInput.value = '';
+    resultsDropdown.innerHTML = '';
+    resultsDropdown.classList.remove('active');
+    clearBtn.style.display = 'none';
+    resetEventHighlights();
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.search-box-wrapper')) {
+      resultsDropdown.classList.remove('active');
     }
-    
-    // Calculate position using GLOBAL scale (ensures synchronization)
-    // Position based on exact year from 1500 to 2025
-    const position = ((event.year - TIMELINE_START_YEAR) / TIMELINE_RANGE) * 90; // 90% to leave margin
-    
-    // Apply horizontal offset for events in same year
-    const horizontalOffset = event.horizontalOffset || 0;
-    eventEl.style.left = `calc(${position}% + ${horizontalOffset}px)`;
-    
-    // Apply vertical offset if events overlap in same year
-    const verticalOffset = event.verticalOffset || 0;
-    eventEl.style.top = `calc(50% + ${verticalOffset}px)`;
-    eventEl.style.transform = 'translateY(-50%)';
-    
-    const marker = document.createElement('div');
-    marker.className = 'event-marker';
-    marker.style.color = event.color;
-    
-    // Add connector line INSIDE marker if vertically offset
-    if (verticalOffset !== 0) {
-      const connector = document.createElement('div');
-      connector.className = 'event-connector';
-      
-      // The connector should go from the marker center to the timeline
-      if (verticalOffset > 0) {
-        // Event is below timeline - line goes UP from marker
-        connector.style.cssText = `
-          position: absolute;
-          left: 50%;
-          top: -${Math.abs(verticalOffset) - 10}px;
-          width: 2px;
-          height: ${Math.abs(verticalOffset) - 10}px;
-          background: ${event.color};
-          opacity: 0.35;
-          transform: translateX(-50%);
-          pointer-events: none;
-          z-index: -1;
-        `;
-      } else {
-        // Event is above timeline - line goes DOWN from marker
-        connector.style.cssText = `
-          position: absolute;
-          left: 50%;
-          bottom: -${Math.abs(verticalOffset) - 10}px;
-          width: 2px;
-          height: ${Math.abs(verticalOffset) - 10}px;
-          background: ${event.color};
-          opacity: 0.35;
-          transform: translateX(-50%);
-          pointer-events: none;
-          z-index: -1;
-        `;
-      }
-      
-      marker.appendChild(connector);
-    }
-    
-    const label = document.createElement('div');
-    label.className = 'event-label';
-    
-    // Calculate dynamic width based on title length
-    const titleLength = event.title.length;
-    let cardWidth = 220; // default (aumentado de 200 a 220)
-    if (titleLength > 40) {
-      cardWidth = 300; // aumentado de 280 a 300
-    } else if (titleLength > 25) {
-      cardWidth = 260; // aumentado de 240 a 260
-    }
-    label.style.minWidth = cardWidth + 'px';
-    
-    // Create title with proper structure
-    const yearSpan = `<span class="event-year">${event.year < 0 ? Math.abs(event.year) + ' a.C.' : event.year}</span>`;
-    const titleSpan = `<span class="event-title">${event.title}</span>`;
-    label.innerHTML = yearSpan + titleSpan;
-    
-    // Add full title as tooltip
-    const tooltipText = `${event.year}: ${event.title}\n${event.description}`;
-    label.setAttribute('title', tooltipText);
-    eventEl.setAttribute('title', tooltipText);
-    
-    eventEl.appendChild(marker);
-    eventEl.appendChild(label);
-    
-    // Add click event
-    eventEl.addEventListener('click', () => showEventModal(event));
-    
-    // Add custom hover tooltip
-    let tooltipElement = null;
-    
-    eventEl.addEventListener('mouseenter', (e) => {
-      // Create custom tooltip
-      tooltipElement = document.createElement('div');
-      tooltipElement.className = 'custom-tooltip';
-      tooltipElement.innerHTML = `
-        <strong>${event.year}: ${event.title}</strong>
-        ${event.description}
-        <small>Haz clic para ver más detalles</small>
-      `;
-      document.body.appendChild(tooltipElement);
-      
-      // Position near cursor
-      const rect = eventEl.getBoundingClientRect();
-      const tooltipRect = tooltipElement.getBoundingClientRect();
-      
-      let left = rect.left + (rect.width / 2) - (tooltipRect.width / 2);
-      let top = rect.top - tooltipRect.height - 10;
-      
-      // Adjust if tooltip goes off screen
-      if (left < 10) left = 10;
-      if (left + tooltipRect.width > window.innerWidth - 10) {
-        left = window.innerWidth - tooltipRect.width - 10;
-      }
-      if (top < 10) {
-        top = rect.bottom + 10; // Show below if no room above
-      }
-      
-      tooltipElement.style.left = left + 'px';
-      tooltipElement.style.top = top + 'px';
-    });
-    
-    eventEl.addEventListener('mouseleave', () => {
-      if (tooltipElement) {
-        tooltipElement.remove();
-        tooltipElement = null;
-      }
-    });
-    
-    container.appendChild(eventEl);
   });
 }
 
-function showEventModal(event) {
+function focusOnEvent(year, track, id) {
+  scrollToYear(year);
+
+  // Highlight element with pulse
+  resetEventHighlights();
+  const el = document.getElementById(`event-${track}-${id}`);
+  if (el) {
+    el.classList.add('highlight-pulse');
+    setTimeout(() => {
+      el.classList.remove('highlight-pulse');
+    }, 4500);
+  }
+}
+
+function resetEventHighlights() {
+  document.querySelectorAll('.timeline-event.highlight-pulse').forEach(el => {
+    el.classList.remove('highlight-pulse');
+  });
+}
+
+// ==================== MODAL & DETAILS ====================
+function showEventModal(ev, track) {
   const modal = document.getElementById('eventModal');
   const modalBody = document.getElementById('modalBody');
-  
-  // Find related events (same year or nearby)
-  const relatedEvents = findRelatedEvents(event);
-  
-  // Determine importance note based on event
-  const importanceNote = getImportanceNote(event);
-  
-  let relatedHTML = '';
-  if (relatedEvents.length > 0) {
-    relatedHTML = `
-      <div class="modal-section">
-        <h3><span class="modal-section-icon">🔗</span> Eventos Relacionados</h3>
-        <ul>
-          ${relatedEvents.map(e => `<li><strong>${e.year}:</strong> ${e.title}</li>`).join('')}
-        </ul>
-      </div>
-    `;
-  }
-  
+  const meta = getCategoryMeta(ev.category);
+
   modalBody.innerHTML = `
-    <h2>${event.title}</h2>
-    <div class="modal-period" style="color: ${event.color}; border-color: ${event.color};">
-      ${event.period} - ${event.year < 0 ? Math.abs(event.year) + ' a.C.' : event.year}
+    <span class="event-modal-badge" style="background-color: ${meta.bg}; color: ${meta.color};">
+      ${track === 'literature' ? '📚 Literatura' : '🏛️ Historia Social'} · ${meta.label}
+    </span>
+    <div class="event-modal-year">${ev.year < 0 ? Math.abs(ev.year) + ' a.C.' : ev.year} — ${ev.period || 'Cronología Nacional'}</div>
+    <h2 class="event-modal-title">${ev.title}</h2>
+    <div class="event-modal-desc">${ev.description}</div>
+    ${ev.details ? `<div class="event-modal-details"><strong>Análisis y Contexto Historiográfico:</strong><br>${ev.details}</div>` : ''}
+    <div class="event-modal-related">
+      <h4>Hitos contemporáneos vinculados:</h4>
+      <div class="related-tags" id="relatedEventsTags"></div>
     </div>
-    <p><strong>${event.description}</strong></p>
-    
-    <div class="modal-section">
-      <h3><span class="modal-section-icon">📝</span> Detalles</h3>
-      <p>${event.details}</p>
-    </div>
-    
-    ${importanceNote ? `
-      <div class="modal-section">
-        <h3><span class="modal-section-icon">💡</span> ¿Por qué es importante?</h3>
-        <div class="importance-note">${importanceNote}</div>
-      </div>
-    ` : ''}
-    
-    ${relatedHTML}
   `;
-  
+
+  // Find contemporaneous events in other track
+  const otherTrackEvents = track === 'literature' ? historyEvents : literatureEvents;
+  const related = otherTrackEvents.filter(o => Math.abs(o.year - ev.year) <= 2).slice(0, 4);
+
+  const relatedContainer = modalBody.querySelector('#relatedEventsTags');
+  if (related.length > 0) {
+    related.forEach(r => {
+      const tag = document.createElement('button');
+      tag.className = 'related-tag';
+      tag.innerHTML = `<strong>${r.year}:</strong> ${r.title}`;
+      tag.addEventListener('click', () => {
+        closeModal();
+        focusOnEvent(r.year, track === 'literature' ? 'history' : 'literature', r._id);
+      });
+      relatedContainer.appendChild(tag);
+    });
+  } else {
+    relatedContainer.innerHTML = '<span style="font-size: 0.8rem; color: var(--text-secondary);">No hay eventos cruzados inmediatos en esta ventana temporal.</span>';
+  }
+
   modal.classList.add('active');
 }
 
-function findRelatedEvents(event) {
-  const allEvents = [...literatureEvents, ...historyEvents];
-  const related = [];
-  
-  // Find events within 5 years
-  allEvents.forEach(e => {
-    if (e !== event && Math.abs(e.year - event.year) <= 5 && Math.abs(e.year - event.year) > 0) {
-      related.push(e);
-    }
-  });
-  
-  // Sort by proximity and limit to 5
-  return related
-    .sort((a, b) => Math.abs(a.year - event.year) - Math.abs(b.year - event.year))
-    .slice(0, 5);
-}
-
-function getImportanceNote(event) {
-  // Generate contextual importance notes based on event category and content
-  const notes = {
-    'Eugenio Espejo': 'Espejo representa el pensamiento ilustrado en América colonial. Su obra sentó las bases del pensamiento crítico ecuatoriano y anticipa la independencia.',
-    'Cumandá': 'Primera gran novela ecuatoriana con proyección internacional. Establece el indigenismo romántico como tema central de la literatura nacional.',
-    'Huasipungo': 'Obra cumbre del indigenismo ecuatoriano. Denuncia brutal de explotación indígena que impactó internacionalmente y marcó el realismo social latinoamericano.',
-    'Los Sangurimas': 'Considerada antecedente de la novela total latinoamericana. José de la Cuadra anticipa técnicas del boom con su complejidad narrativa y estructura carnavalesca. Obra maestra del realismo social montuvio.',
-    'Nuestro Pan': 'Una de las mejores novelas del realismo social ecuatoriano. Combina denuncia de la explotación laboral con alta calidad literaria. Enrique Gil Gilbert retrata magistralmente la vida de los trabajadores arroceros.',
-    'Baldomera': 'Novela pionera que da voz protagónica a una mujer afroecuatoriana. Alfredo Pareja Diezcanseco rompe estereotipos raciales y de género, presentando un personaje con profundidad psicológica sin precedentes en la literatura ecuatoriana.',
-    'Generación Decapitada': 'Renovación modernista de la poesía ecuatoriana. Introduce simbolismo y temáticas existenciales. Su trágico destino los convirtió en mito literario.',
-    'Batalla de Pichincha': 'Independencia definitiva de Ecuador del imperio español. Marca el inicio de la vida republicana y la construcción de la identidad nacional.',
-    'Masacre de trabajadores': 'Punto de inflexión en la historia social ecuatoriana. Marca el fin del liberalismo progresista y el surgimiento del movimiento obrero organizado.',
-    'Dolarización': 'Cambio económico más radical en la historia reciente. Estabilizó la economía pero limitó soberanía monetaria.',
-    'Grupo de Guayaquil': 'Movimiento fundacional del realismo social ecuatoriano. José de la Cuadra, Joaquín Gallegos Lara, Enrique Gil Gilbert, Demetrio Aguilera Malta y Alfredo Pareja Diezcanseco renovaron la narrativa ecuatoriana con compromiso social y calidad literaria.',
-  };
-  
-  // Check if event title contains any key phrases
-  for (const [key, note] of Object.entries(notes)) {
-    if (event.title.includes(key) || event.description.includes(key)) {
-      return note;
-    }
-  }
-  
-  // Generic importance notes by category
-  if (event.category === 'colonial') {
-    return 'El período colonial sentó las bases de la cultura ecuatoriana, mezclando tradiciones indígenas, europeas y africanas.';
-  } else if (event.category === 'romanticismo') {
-    return 'El romanticismo ecuatoriano construyó la identidad nacional post-independencia a través de la literatura.';
-  } else if (event.category === 'modernismo') {
-    return 'El modernismo renovó la estética literaria ecuatoriana, incorporando influencias europeas y expresando la angustia existencial.';
-  } else if (event.category === 'realismo') {
-    return 'El realismo social ecuatoriano (1930-1950) denunció injusticias y dio voz a sectores marginados: indígenas, montuvios, trabajadores urbanos y afrodescendientes. El Grupo de Guayaquil (De la Cuadra, Gallegos Lara, Gil Gilbert, Aguilera Malta, Pareja Diezcanseco) y Jorge Icaza son sus máximos exponentes.';
-  } else if (event.category === 'contemporaneo') {
-    return 'La literatura ecuatoriana contemporánea se caracteriza por diversidad temática, experimentación formal y creciente reconocimiento internacional.';
-  }
-  
-  return null;
-}
-
 function closeModal() {
-  document.getElementById('eventModal').classList.remove('active');
+  document.getElementById('eventModal')?.classList.remove('active');
 }
 
 function closeIntro() {
-  document.getElementById('introPanel').classList.add('hidden');
+  document.getElementById('introPanel')?.classList.add('hidden');
 }
 
+function showKeyboardHelp() {
+  document.getElementById('keyboardHelpModal')?.classList.add('active');
+}
+
+function closeKeyboardHelp() {
+  document.getElementById('keyboardHelpModal')?.classList.remove('active');
+}
+
+// ==================== FILTERS & COUNTS ====================
 function setupFilters() {
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  
-  filterButtons.forEach(btn => {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      // Prevent rapid clicking
-      if (isScrolling) return;
-      
-      filterButtons.forEach(b => b.classList.remove('active'));
+      filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      
       const filter = btn.dataset.filter;
-      const startYear = btn.dataset.startYear;
-      const endYear = btn.dataset.endYear;
-      
-      activeFilter = filter;
-      
-      if (filter === 'all') {
-        resetFilter();
-      } else {
-        applyFilterWithScroll(filter, parseInt(startYear), parseInt(endYear));
-      }
+      const startYear = parseInt(btn.dataset.startYear) || null;
+      const endYear = parseInt(btn.dataset.endYear) || null;
+      applyFilter(filter, startYear, endYear);
     });
   });
 }
 
-function applyFilter(filter) {
+function applyFilter(filter, startYear, endYear) {
+  currentFilter = filter;
   const allEvents = document.querySelectorAll('.timeline-event');
-  
-  allEvents.forEach(event => {
-    if (filter === 'all') {
-      event.style.display = 'flex';
-      event.style.opacity = '1';
-      event.classList.remove('highlighted', 'dimmed');
-    } else if (event.dataset.category === filter) {
-      event.style.display = 'flex';
-      event.style.opacity = '1';
-      event.classList.add('highlighted');
-      event.classList.remove('dimmed');
+
+  allEvents.forEach(el => {
+    const cat = el.dataset.category;
+    if (filter === 'all' || cat === filter) {
+      el.classList.remove('dimmed');
     } else {
-      event.style.opacity = '0.4';
-      event.classList.remove('highlighted');
-      event.classList.add('dimmed');
+      el.classList.add('dimmed');
+    }
+  });
+
+  if (startYear) {
+    scrollToYear(startYear);
+  }
+}
+
+function updateFilterCounts() {
+  const counts = { all: literatureEvents.length };
+  literatureEvents.forEach(e => {
+    counts[e.category] = (counts[e.category] || 0) + 1;
+  });
+
+  document.querySelectorAll('.event-count').forEach(badge => {
+    const cat = badge.dataset.count;
+    if (counts[cat] !== undefined) {
+      badge.textContent = `(${counts[cat]})`;
     }
   });
 }
 
-function applyFilterWithScroll(filter, startYear, endYear) {
-  // First scroll to the period
-  scrollToYear(startYear);
-  
-  // Then apply the filter with highlighting
-  const allEvents = document.querySelectorAll('.timeline-event');
-  
-  allEvents.forEach(event => {
-    const eventYear = parseInt(event.dataset.year);
-    
-    if (event.dataset.category === filter) {
-      event.style.display = 'flex';
-      event.style.opacity = '1';
-      event.classList.add('highlighted');
-      event.classList.remove('dimmed');
-    } else {
-      event.style.opacity = '0.4';
-      event.classList.remove('highlighted');
-      event.classList.add('dimmed');
-    }
-  });
-}
-
+// ==================== NAVIGATION & DRAG-TO-PAN ====================
 function scrollToYear(targetYear) {
-  isScrolling = true;
-  
   const container = document.getElementById('timelineContainer');
-  const wrapper = document.getElementById('timelineWrapper');
-  
-  // Calculate the pixel position of the target year
-  // Position is relative to the timeline wrapper width
-  const wrapperWidth = wrapper.offsetWidth;
-  const containerWidth = container.offsetWidth;
-  
-  // Calculate position as percentage of timeline range
-  const yearPosition = ((targetYear - TIMELINE_START_YEAR) / TIMELINE_RANGE);
-  
-  // Convert to pixel position (accounting for 80px left padding)
-  const pixelPosition = (yearPosition * (wrapperWidth - 80)) + 80;
-  
-  // Center the year in the viewport
-  const scrollPosition = pixelPosition - (containerWidth / 2);
-  
-  // Smooth scroll to position
-  container.scrollTo({
-    left: Math.max(0, scrollPosition),
-    behavior: 'smooth'
-  });
-  
-  // Reset scrolling flag after animation completes
-  setTimeout(() => {
-    isScrolling = false;
-  }, 800);
+  if (!container) return;
+  const x = getYearX(targetYear);
+  const targetScroll = Math.max(0, x - container.clientWidth / 2);
+  container.scrollTo({ left: targetScroll, behavior: 'smooth' });
 }
 
-function resetFilter() {
-  const allEvents = document.querySelectorAll('.timeline-event');
-  
-  allEvents.forEach(event => {
-    event.style.display = 'flex';
-    event.style.opacity = '1';
-    event.classList.remove('highlighted', 'dimmed');
-  });
-  
-  // Optionally scroll back to start or a central position
+function scrollTimeline(amount) {
   const container = document.getElementById('timelineContainer');
-  container.scrollTo({
-    left: 0,
-    behavior: 'smooth'
-  });
+  if (container) {
+    container.scrollBy({ left: amount, behavior: 'smooth' });
+  }
 }
 
+function jumpToCentury(centuryYear) {
+  scrollToYear(centuryYear);
+}
+
+function setupDragToPan() {
+  const container = document.getElementById('timelineContainer');
+  if (!container) return;
+
+  let isDown = false;
+  let startX = 0;
+  let scrollLeft = 0;
+
+  container.addEventListener('mousedown', (e) => {
+    if (e.target.closest('.event-card') || e.target.closest('button') || e.target.closest('input')) return;
+    isDown = true;
+    container.classList.add('is-panning');
+    startX = e.pageX - container.offsetLeft;
+    scrollLeft = container.scrollLeft;
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - container.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    container.scrollLeft = scrollLeft - walk;
+    updateMinimap();
+  });
+
+  window.addEventListener('mouseup', () => {
+    isDown = false;
+    container.classList.remove('is-panning');
+  });
+
+  container.addEventListener('scroll', updateMinimap);
+}
+
+function updateMinimap() {
+  const container = document.getElementById('timelineContainer');
+  const viewport = document.getElementById('minimapViewport');
+  const posLabel = document.getElementById('currentPosition');
+  if (!container || !viewport) return;
+
+  const scrollLeft = container.scrollLeft;
+  const scrollWidth = container.scrollWidth;
+  const clientWidth = container.clientWidth;
+
+  const leftPct = (scrollLeft / scrollWidth) * 100;
+  const widthPct = Math.max(4, (clientWidth / scrollWidth) * 100);
+
+  viewport.style.left = `${leftPct}%`;
+  viewport.style.width = `${widthPct}%`;
+
+  const centerYear = getYearFromX(scrollLeft + clientWidth / 2);
+  if (posLabel) {
+    posLabel.textContent = `Año aproximado: ~${centerYear}`;
+  }
+}
+
+// ==================== ZOOM ENGINE ====================
 function zoomIn() {
-  if (currentZoom < 2) {
-    currentZoom += 0.2;
+  if (currentZoom < 1.8) {
+    currentZoom = +(currentZoom + 0.2).toFixed(1);
     applyZoom();
   }
 }
 
 function zoomOut() {
-  if (currentZoom > 0.5) {
-    currentZoom -= 0.2;
+  if (currentZoom > 0.8) {
+    currentZoom = +(currentZoom - 0.2).toFixed(1);
     applyZoom();
   }
 }
 
 function resetZoom() {
-  currentZoom = 1;
+  currentZoom = 1.0;
   applyZoom();
 }
 
 function applyZoom() {
   const wrapper = document.getElementById('timelineWrapper');
-  wrapper.style.transform = `scale(${currentZoom})`;
-  document.getElementById('zoomLevel').textContent = Math.round(currentZoom * 100) + '%';
+  const zoomText = document.getElementById('zoomLevel');
+  if (zoomText) zoomText.textContent = `${Math.round(currentZoom * 100)}%`;
+
+  if (wrapper) {
+    const newWidth = Math.round(TIMELINE_BASE_WIDTH * currentZoom);
+    wrapper.style.minWidth = `${newWidth}px`;
+    renderAllEvents();
+  }
 }
 
-function scrollTimeline(amount) {
-  const container = document.getElementById('timelineContainer');
-  container.scrollLeft += amount;
+// ==================== THEME TOGGLE ====================
+function toggleTheme() {
+  const current = document.documentElement.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  const icon = document.querySelector('.theme-icon');
+  if (icon) icon.textContent = next === 'dark' ? '☀️' : '🌙';
 }
 
-function setupKeyboardNavigation() {
+// ==================== KEYBOARD AT-A-GLANCE ====================
+function setupKeyboard() {
   document.addEventListener('keydown', (e) => {
-    // Don't trigger shortcuts if user is in an input field
-    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
-      return;
-    }
-    
+    if (e.target.matches('input, textarea')) return;
+
     if (e.key === 'ArrowRight') {
-      e.preventDefault();
-      scrollTimeline(200);
+      scrollTimeline(350);
     } else if (e.key === 'ArrowLeft') {
-      e.preventDefault();
-      scrollTimeline(-200);
+      scrollTimeline(-350);
+    } else if (e.key === '+' || e.key === '=') {
+      zoomIn();
+    } else if (e.key === '-' || e.key === '_') {
+      zoomOut();
     } else if (e.key === 'Escape') {
       closeModal();
       closeKeyboardHelp();
-    } else if (e.key === '+' || e.key === '=') {
-      e.preventDefault();
-      zoomIn();
-    } else if (e.key === '-' || e.key === '_') {
-      e.preventDefault();
-      zoomOut();
-    } else if (e.key === '?' || e.key === '/') {
-      e.preventDefault();
-      showKeyboardHelp();
-    } else if (e.key.toLowerCase() === 'h') {
-      e.preventDefault();
-      scrollToYear(TIMELINE_START_YEAR);
-    } else if (e.key.toLowerCase() === 't') {
-      e.preventDefault();
+    } else if (e.key === 'h' || e.key === 'H') {
+      scrollToYear(1500);
+    } else if (e.key === 't' || e.key === 'T') {
       toggleTheme();
+    } else if (e.key === '?') {
+      showKeyboardHelp();
     }
+  });
+
+  // Modal backdrop click
+  ['eventModal', 'keyboardHelpModal'].forEach(mId => {
+    document.getElementById(mId)?.addEventListener('click', (e) => {
+      if (e.target.id === mId) {
+        document.getElementById(mId).classList.remove('active');
+      }
+    });
   });
 }
 
-// Close modal when clicking outside
-document.getElementById('eventModal')?.addEventListener('click', (e) => {
-  if (e.target.id === 'eventModal') {
-    closeModal();
+// ==================== INITIALIZATION ====================
+function initTimeline() {
+  // Hide loader
+  const loader = document.getElementById('loadingScreen');
+  if (loader) {
+    setTimeout(() => {
+      loader.classList.add('hidden');
+    }, 400);
   }
-});
 
-// Close keyboard help modal when clicking outside
-document.getElementById('keyboardHelpModal')?.addEventListener('click', (e) => {
-  if (e.target.id === 'keyboardHelpModal') {
-    closeKeyboardHelp();
-  }
-});
+  renderAllEvents();
+  setupSearch();
+  setupFilters();
+  setupDragToPan();
+  setupKeyboard();
+  updateMinimap();
 
-// Listen for system theme changes
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-  if (currentTheme === 'auto') {
-    updateThemeIcon(e.matches ? 'dark' : 'light');
-  }
-});
+  // Initial centering at start of literature (1500)
+  scrollToYear(1500);
+}
 
-// Initialize on load
 window.addEventListener('DOMContentLoaded', initTimeline);
-
-// Update minimap on window resize
 window.addEventListener('resize', () => {
-  if (scrollDebounceTimer) {
-    clearTimeout(scrollDebounceTimer);
-  }
-  scrollDebounceTimer = setTimeout(() => {
-    updateMinimapViewport();
-  }, 100);
+  renderAllEvents();
+  updateMinimap();
 });
+
