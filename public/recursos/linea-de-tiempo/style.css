@@ -591,7 +591,7 @@ body {
   background: rgba(35, 103, 209, 0.92);
 }
 
-/* The Single Central Continuous Axis Line */
+/* The Single Central Continuous Axis Line (100% clean, no text clipping) */
 .central-timeline-axis {
   position: absolute;
   left: 0;
@@ -604,6 +604,61 @@ body {
   box-shadow: 0 0 6px rgba(35, 103, 209, 0.3);
 }
 
+/* Epoch Reference Guide Lines and Top/Bottom Labels */
+.timeline-epoch-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.epoch-vertical-guide {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  border-left: 1px dashed rgba(35, 103, 209, 0.22);
+}
+
+.epoch-top-badge {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-card);
+  color: var(--secondary-blue);
+  border: 1px solid var(--border-color);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+  box-shadow: var(--shadow-sm);
+  z-index: 3;
+}
+
+.epoch-bottom-badge {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-card);
+  color: var(--deep-blue);
+  border: 1px solid var(--border-color);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+  box-shadow: var(--shadow-sm);
+  z-index: 3;
+}
+
 .timeline-events-layer {
   position: absolute;
   top: 0;
@@ -611,35 +666,6 @@ body {
   right: 0;
   bottom: 0;
   height: 100%;
-}
-
-/* Century / Epoch Reference Markers on Central Line */
-.epoch-tick-line {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: rgba(35, 103, 209, 0.15);
-  pointer-events: none;
-  z-index: 2;
-}
-
-.epoch-tick-badge {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  font-weight: 800;
-  color: #FFFFFF;
-  background: #071B33;
-  padding: 2px 6px;
-  border-radius: 4px;
-  border: 1px solid #2367D1;
-  white-space: nowrap;
-  z-index: 6;
-  box-shadow: var(--shadow-sm);
 }
 
 /* ==================== EVENT CARDS, STEMS & NODES ==================== */
@@ -658,34 +684,36 @@ body {
   pointer-events: none;
 }
 
-/* Vertical Stem directly connecting Card to Node */
+/* Vertical Stem directly connecting Card to Central Axis Node */
 .event-stem {
   position: absolute;
   left: 50%;
   width: 2px;
   opacity: 0.65;
   pointer-events: none;
-  z-index: 3;
+  z-index: 4;
+  transform: translateX(-50%);
 }
 
-/* Interactive Axis Node */
+/* Interactive Axis Node (Sits exactly on the central line) */
 .event-axis-node {
   position: absolute;
-  width: 14px;
-  height: 14px;
+  left: 50%;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  border: 2.5px solid #FFFFFF;
+  border: 2px solid #FFFFFF;
   cursor: pointer;
   z-index: 10;
   transform: translate(-50%, -50%);
   transition: transform 0.2s var(--ease-spring), box-shadow 0.2s ease;
-  box-shadow: 0 0 0 2px rgba(7, 27, 51, 0.25);
+  box-shadow: 0 0 0 1.5px rgba(7, 27, 51, 0.3);
 }
 
 .event-axis-node:hover {
-  transform: translate(-50%, -50%) scale(1.4);
+  transform: translate(-50%, -50%) scale(1.45);
   box-shadow: 0 0 0 4px rgba(35, 103, 209, 0.5);
-  z-index: 20;
+  z-index: 25;
 }
 
 /* Compact Card Body */

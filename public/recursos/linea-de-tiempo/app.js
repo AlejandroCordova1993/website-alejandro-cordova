@@ -352,9 +352,9 @@ function allocateTiers(events, maxTiers = 3) {
 
 // ==================== RENDERING ENGINE ====================
 function renderAllEvents() {
-  const layer = document.getElementById('timelineEventsLayer');
-  if (!layer) return;
-  layer.innerHTML = '';
+  const eventsLayer = document.getElementById('timelineEventsLayer');
+  if (!eventsLayer) return;
+  eventsLayer.innerHTML = '';
 
   const litPlacements = allocateTiers(literatureEvents, 3);
   const histPlacements = allocateTiers(historyEvents, 3);
@@ -364,16 +364,19 @@ function renderAllEvents() {
   // History is BELOW line: Tier 0 (+65px), Tier 1 (+145px), Tier 2 (+225px)
   const histTierOffsets = [65, 145, 225];
 
-  renderEpochTicks();
+  // Render top and bottom epoch guides (Clean rulers, no central line collisions!)
+  renderEpochGuides();
 
+  // Render Literature Events
   litPlacements.forEach(item => {
     const el = createEventDOM(item, litTierOffsets[item.tier], 'literature');
-    layer.appendChild(el);
+    eventsLayer.appendChild(el);
   });
 
+  // Render History Events
   histPlacements.forEach(item => {
     const el = createEventDOM(item, histTierOffsets[item.tier], 'history');
-    layer.appendChild(el);
+    eventsLayer.appendChild(el);
   });
 
   updateFilterCounts();
@@ -395,9 +398,10 @@ function createEventDOM(item, verticalOffset, track) {
   eventWrap.style.top = `calc(50% + ${verticalOffset}px)`;
   eventWrap.style.transform = 'translate(-50%, -50%)';
 
+  // Distance from card edge to central horizontal line (y = 0 relative to offset)
   const stemHeight = Math.abs(verticalOffset) - (cardH / 2);
-  const xDiff = item.baseX - item.x;
 
+  // Straight clean vertical stem directly from card to central axis
   const stem = document.createElement('div');
   stem.className = 'event-stem';
   stem.style.cssText = `
@@ -405,38 +409,21 @@ function createEventDOM(item, verticalOffset, track) {
     width: 2px;
     height: ${stemHeight}px;
     background: ${meta.color};
-    opacity: 0.55;
-    transform: translateX(-50%);
+    opacity: 0.6;
     ${isAbove ? `top: 100%;` : `bottom: 100%;`}
   `;
 
+  // Interactive axis node positioned directly on the central line
   const node = document.createElement('div');
   node.className = 'event-axis-node';
   node.title = `${ev.year}: ${ev.title} (Clic para ver ficha completa)`;
   node.style.cssText = `
-    left: calc(50% + ${xDiff}px);
+    left: 50%;
     ${isAbove ? `top: calc(100% + ${stemHeight}px);` : `bottom: calc(100% + ${stemHeight}px);`}
     background: ${meta.color};
   `;
 
-  if (Math.abs(xDiff) > 4) {
-    const horizBridge = document.createElement('div');
-    horizBridge.style.cssText = `
-      position: absolute;
-      left: 50%;
-      ${isAbove ? `top: calc(100% + ${stemHeight - 1}px);` : `bottom: calc(100% + ${stemHeight - 1}px);`}
-      width: ${Math.abs(xDiff)}px;
-      height: 2px;
-      background: ${meta.color};
-      opacity: 0.55;
-      transform-origin: ${xDiff > 0 ? 'left' : 'right'} center;
-      ${xDiff < 0 ? 'transform: translateX(-100%);' : ''}
-      pointer-events: none;
-      z-index: 3;
-    `;
-    eventWrap.appendChild(horizBridge);
-  }
-
+  // Compact Card Body
   const card = document.createElement('div');
   card.className = 'event-compact-card';
   card.style.width = `${item.cardW}px`;
@@ -469,48 +456,55 @@ function createEventDOM(item, verticalOffset, track) {
   return eventWrap;
 }
 
-// ==================== EPOCH TICKS ON CENTRAL AXIS ====================
-function renderEpochTicks() {
-  const layer = document.getElementById('timelineEventsLayer');
+// ==================== EPOCH GUIDES (TOP & BOTTOM RULERS) ====================
+function renderEpochGuides() {
+  const epochLayer = document.getElementById('timelineEpochLayer');
+  if (!epochLayer) return;
+  epochLayer.innerHTML = '';
   
   const epochs = [
-    { year: -11000, label: '11,000 a.C. El Inga' },
-    { year: -3500, label: '3,500 a.C. Valdivia' },
-    { year: -1000, label: '1,000 a.C. Chorrera' },
-    { year: 1463, label: '1463 Incas' },
-    { year: 1534, label: '1534 Conquista' },
-    { year: 1600, label: 'S. XVII' },
-    { year: 1700, label: 'S. XVIII' },
-    { year: 1809, label: '1809 Independencia' },
-    { year: 1830, label: '1830 República' },
-    { year: 1860, label: '1860 Romanticismo' },
-    { year: 1895, label: '1895 Rev. Liberal' },
-    { year: 1910, label: '1910 Modernismo' },
-    { year: 1920, label: '1920 Vanguardia' },
-    { year: 1930, label: '1930 Generación 30' },
-    { year: 1944, label: '1944 Rev. Mayo' },
-    { year: 1960, label: '1960 Tzántzicos' },
-    { year: 1970, label: '1970 Petróleo' },
-    { year: 1980, label: '1980 Democracia' },
-    { year: 1990, label: '1990 Indígenas' },
-    { year: 2000, label: '2000 Dolarización' },
-    { year: 2010, label: '2010 S. XXI' },
-    { year: 2025, label: '2025 Actual' }
+    { year: -11000, label: '11,000 a.C. · El Inga' },
+    { year: -3500, label: '3,500 a.C. · Valdivia' },
+    { year: -1000, label: '1,000 a.C. · Chorrera' },
+    { year: 1463, label: '1463 · Imperio Inca' },
+    { year: 1534, label: '1534 · Conquista & Fundación' },
+    { year: 1600, label: 'Siglo XVII · Barroco' },
+    { year: 1700, label: 'Siglo XVIII · Ilustración' },
+    { year: 1809, label: '1809 · Independencia' },
+    { year: 1830, label: '1830 · República del Ecuador' },
+    { year: 1860, label: '1860 · Romanticismo' },
+    { year: 1895, label: '1895 · Revolución Liberal' },
+    { year: 1910, label: '1910 · Modernismo' },
+    { year: 1920, label: '1920 · Vanguardia' },
+    { year: 1930, label: '1930 · Generación del 30' },
+    { year: 1944, label: '1944 · Revolución de Mayo' },
+    { year: 1960, label: '1960 · Los Tzántzicos' },
+    { year: 1970, label: '1970 · Auge Petrolero' },
+    { year: 1980, label: '1980 · Retorno Democrático' },
+    { year: 1990, label: '1990 · Movimiento Indígena' },
+    { year: 2000, label: '2000 · Dolarización' },
+    { year: 2010, label: '2010 · Siglo XXI' },
+    { year: 2025, label: '2025 · Literatura Actual' }
   ];
 
   epochs.forEach(ep => {
     const x = getYearX(ep.year);
 
-    const tickLine = document.createElement('div');
-    tickLine.className = 'epoch-tick-line';
-    tickLine.style.left = `${x}px`;
+    const guide = document.createElement('div');
+    guide.className = 'epoch-vertical-guide';
+    guide.style.left = `${x}px`;
 
-    const badge = document.createElement('div');
-    badge.className = 'epoch-tick-badge';
-    badge.textContent = ep.label;
-    tickLine.appendChild(badge);
+    const topBadge = document.createElement('div');
+    topBadge.className = 'epoch-top-badge';
+    topBadge.textContent = ep.label;
+    guide.appendChild(topBadge);
 
-    layer.appendChild(tickLine);
+    const bottomBadge = document.createElement('div');
+    bottomBadge.className = 'epoch-bottom-badge';
+    bottomBadge.textContent = ep.label;
+    guide.appendChild(bottomBadge);
+
+    epochLayer.appendChild(guide);
   });
 }
 
