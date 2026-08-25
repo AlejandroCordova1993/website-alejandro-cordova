@@ -6,11 +6,11 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>Historia de la Literatura Ecuatoriana — Línea de Tiempo Interactiva</title>
+    <title>Historia de la Literatura Ecuatoriana — Eje Cronológico Unificado</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=20260825b">
+    <link rel="stylesheet" href="style.css?v=20260825e">
 </head>
 <body>
     <!-- Persistent Header -->
@@ -25,7 +25,7 @@
         <div class="header-content">
             <div class="header-tag">HISTORIOGRAFÍA & CRONOLOGÍA INTERACTIVA</div>
             <h1>Historia de la Literatura Ecuatoriana</h1>
-            <p class="subtitle">Recorrido cronológico de 500 años en paralelo con la historia social y política del Ecuador</p>
+            <p class="subtitle">Eje cronológico unificado: Literatura (arriba ↑) e Historia Social (abajo ↓)</p>
         </div>
 
         <div class="header-right">
@@ -43,14 +43,14 @@
                 <h2>Bienvenido a la Línea de Tiempo</h2>
                 <button class="modal-close" onclick="closeIntro()">&times;</button>
             </div>
-            <p>Esta herramienta interactiva te permite explorar la evolución de las letras ecuatorianas (1500–2025) y su relación directa con los procesos históricos, rebeliones y transformaciones sociales del país.</p>
+            <p>Explora la evolución de las letras ecuatorianas y su correspondencia directa con los procesos históricos, rebeliones y transformaciones sociales del Ecuador a lo largo de un solo eje central continuo.</p>
             <div class="instructions">
-                <h3>💡 Guía rápida de exploración:</h3>
+                <h3>💡 Navegación interactiva:</h3>
                 <ul>
-                    <li><strong>Arrastrar & Navegar:</strong> Haz clic y arrastra con el ratón en cualquier zona libre del lienzo para desplazarte con total libertad.</li>
-                    <li><strong>Doble pista sincronizada:</strong> En la parte superior verás <em>Literatura</em> y en la inferior <em>Historia Social</em>, con líneas conectoras en eventos simultáneos.</li>
-                    <li><strong>Buscador inteligente:</strong> Escribe autores (<em>Icaza, Palacio, Adoum</em>) u obras (<em>Huasipungo, Cumandá</em>) para viajar directo al hito.</li>
-                    <li><strong>Ficha didáctica completa:</strong> Haz clic en cualquier tarjeta para abrir su análisis contextual pormenorizado.</li>
+                    <li><strong>Eje Unificado:</strong> Las obras literarias emergen <em>hacia arriba ↑</em> y los hitos socio-históricos <em>hacia abajo ↓</em>.</li>
+                    <li><strong>Mini-mapa interactivo superior:</strong> Haz clic en cualquier parte de la barra o arrastra el selector azul para desplazarte rápidamente.</li>
+                    <li><strong>Círculos y tarjetas interactivas:</strong> Haz clic en cualquier tarjeta o en su círculo sobre el eje central para abrir el análisis histórico detallado.</li>
+                    <li><strong>Buscador:</strong> Escribe autores (<em>Icaza, Palacio, Adoum</em>) u obras (<em>Huasipungo, Cumandá</em>) para saltar directo al evento.</li>
                 </ul>
             </div>
             <div class="intro-actions">
@@ -64,7 +64,7 @@
         <div class="loading-content">
             <div class="loading-spinner"></div>
             <h2>Cargando Cronología Literaria</h2>
-            <p>Organizando 500 años de patrimonio cultural ecuatoriano...</p>
+            <p>Construyendo el eje histórico de la literatura ecuatoriana...</p>
         </div>
     </div>
 
@@ -72,20 +72,21 @@
     <div class="minimap-container">
         <div class="minimap-header">
             <div class="minimap-title-wrap">
-                <span class="minimap-label">VISTA PANORÁMICA</span>
-                <span class="current-position" id="currentPosition">Posición: S. XVI (1500)</span>
+                <span class="minimap-label">MINI-MAPA INTERACTIVO</span>
+                <span class="current-position" id="currentPosition">Época: Raíces & Orígenes</span>
             </div>
             <div class="century-jumps">
-                <span class="century-label">Siglos:</span>
-                <button class="century-btn" onclick="jumpToCentury(1500)" title="Siglo XVI (1500-1599)">XVI</button>
-                <button class="century-btn" onclick="jumpToCentury(1600)" title="Siglo XVII (1600-1699)">XVII</button>
-                <button class="century-btn" onclick="jumpToCentury(1700)" title="Siglo XVIII (1700-1799)">XVIII</button>
-                <button class="century-btn" onclick="jumpToCentury(1800)" title="Siglo XIX (1800-1899)">XIX</button>
-                <button class="century-btn" onclick="jumpToCentury(1900)" title="Siglo XX (1900-1999)">XX</button>
-                <button class="century-btn" onclick="jumpToCentury(2000)" title="Siglo XXI (2000-2025)">XXI</button>
+                <span class="century-label">Épocas & Siglos:</span>
+                <button class="century-btn" onclick="jumpToYear(-3500)" title="Época Aborigen / Valdivia / Incas">Aborigen</button>
+                <button class="century-btn" onclick="jumpToYear(1534)" title="Siglo XVI (1534-1599)">XVI</button>
+                <button class="century-btn" onclick="jumpToYear(1600)" title="Siglo XVII (1600-1699)">XVII</button>
+                <button class="century-btn" onclick="jumpToYear(1700)" title="Siglo XVIII (1700-1799)">XVIII</button>
+                <button class="century-btn" onclick="jumpToYear(1809)" title="Siglo XIX (1809-1899)">XIX</button>
+                <button class="century-btn" onclick="jumpToYear(1900)" title="Siglo XX (1900-1999)">XX</button>
+                <button class="century-btn" onclick="jumpToYear(2000)" title="Siglo XXI (2000-2025)">XXI</button>
             </div>
         </div>
-        <div class="minimap-wrapper">
+        <div class="minimap-wrapper" id="minimapWrapper">
             <div class="minimap-timeline" id="minimapTimeline">
                 <div class="minimap-viewport" id="minimapViewport"></div>
             </div>
@@ -131,6 +132,12 @@
 
     <!-- Legend -->
     <div class="legend">
+        <div class="legend-track-info">
+            <span class="track-hint"><strong>ARRIBA ↑</strong> Literatura Ecuatoriana</span>
+            <span class="track-divider-v">|</span>
+            <span class="track-hint"><strong>ABAJO ↓</strong> Historia Social y Política</span>
+        </div>
+        <div class="legend-divider"></div>
         <div class="legend-item"><span class="legend-color" style="background: #8B4513"></span><span>Colonial</span></div>
         <div class="legend-item"><span class="legend-color" style="background: #C41E3A"></span><span>Romanticismo</span></div>
         <div class="legend-item"><span class="legend-color" style="background: #7C3AED"></span><span>Modernismo</span></div>
@@ -142,22 +149,20 @@
         <div class="legend-item"><span class="legend-color" style="background: #2563EB"></span><span>Historia Social</span></div>
     </div>
 
-    <!-- Timeline Main Canvas -->
+    <!-- Timeline Main Canvas: Unified Single Axis -->
     <div class="timeline-container" id="timelineContainer">
         <div class="timeline-wrapper" id="timelineWrapper">
-            <!-- Literatura Track (Top) -->
-            <div class="timeline-track literature-track">
-                <div class="track-label">LITERATURA ECUATORIANA</div>
-                <div class="timeline-line"></div>
-                <div class="events-container" id="literatureEvents"></div>
+            <!-- Fixed Track Indicator Badges (Left Sticky) -->
+            <div class="unified-track-labels">
+                <span class="track-badge-top">📚 LITERATURA ECUATORIANA ↑</span>
+                <span class="track-badge-bottom">🏛️ HISTORIA SOCIAL & POLÍTICA ↓</span>
             </div>
 
-            <!-- History Track (Bottom) -->
-            <div class="timeline-track history-track">
-                <div class="track-label">HISTORIA SOCIAL & POLÍTICA</div>
-                <div class="timeline-line"></div>
-                <div class="events-container" id="historyEvents"></div>
-            </div>
+            <!-- Single Central Continuous Axis -->
+            <div class="central-timeline-axis" id="centralAxis"></div>
+
+            <!-- Events & Markers Layers -->
+            <div class="timeline-events-layer" id="timelineEventsLayer"></div>
         </div>
     </div>
 
@@ -172,7 +177,7 @@
                     <div class="shortcut-item"><kbd>+</kbd> <kbd>-</kbd><span>Aumentar / Reducir zoom</span></div>
                     <div class="shortcut-item"><kbd>ESC</kbd><span>Cerrar ventanas modales</span></div>
                     <div class="shortcut-item"><kbd>?</kbd><span>Abrir esta ayuda</span></div>
-                    <div class="shortcut-item"><kbd>H</kbd><span>Volver al inicio (1500)</span></div>
+                    <div class="shortcut-item"><kbd>H</kbd><span>Ir al inicio</span></div>
                     <div class="shortcut-item"><kbd>T</kbd><span>Alternar tema claro/oscuro</span></div>
                 </div>
             </div>
@@ -199,6 +204,6 @@
         </svg>
     </button>
 
-    <script src="app.js?v=20260825b"></script>
+    <script src="app.js?v=20260825e"></script>
 </body>
 </html>

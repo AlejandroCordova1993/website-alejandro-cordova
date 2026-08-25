@@ -214,49 +214,57 @@ const historyEvents = [
 
 
 // ==================== CONFIGURATION & SCALE ====================
-const TIMELINE_START_YEAR = 1500;
-const TIMELINE_END_YEAR = 2025;
-const TIMELINE_RANGE = TIMELINE_END_YEAR - TIMELINE_START_YEAR;
-
-const TIMELINE_BASE_WIDTH = 15000; // Expanded base width in pixels
-const PADDING_LEFT = 140;
-const PADDING_RIGHT = 140;
-const USABLE_WIDTH = TIMELINE_BASE_WIDTH - PADDING_LEFT - PADDING_RIGHT;
+const TIMELINE_BASE_WIDTH = 14400;
+const PRE_COLONIAL_WIDTH = 900;
+const POST_COLONIAL_WIDTH = TIMELINE_BASE_WIDTH - PRE_COLONIAL_WIDTH - 200;
 
 let currentZoom = 1.0;
 let currentFilter = 'all';
 
-// Piecewise density-aware mapping: allocates generous space where 87% of events reside
 function getYearX(year) {
+  if (year < 1500) {
+    if (year <= -10000) return 120;
+    if (year <= -3000) return 280;
+    if (year <= -500) return 440;
+    if (year <= 1470) return 620;
+    return 780; // 1493 Huayna Capac
+  }
+
   let pct = 0;
   if (year <= 1800) {
     pct = ((year - 1500) / 300) * 0.12;
   } else if (year <= 1890) {
-    pct = 0.12 + ((year - 1800) / 90) * 0.18;
+    pct = 0.12 + ((year - 1800) / 90) * 0.16;
   } else if (year <= 1960) {
-    pct = 0.30 + ((year - 1890) / 70) * 0.42; // Peak density (1890-1960)
+    pct = 0.28 + ((year - 1890) / 70) * 0.44;
   } else {
     pct = 0.72 + ((year - 1960) / 65) * 0.28;
   }
-  return PADDING_LEFT + pct * USABLE_WIDTH;
+  return PRE_COLONIAL_WIDTH + pct * POST_COLONIAL_WIDTH;
 }
 
-// Convert an X pixel position back to year for minimap/scroll tracking
 function getYearFromX(x) {
-  const normX = Math.max(0, Math.min(USABLE_WIDTH, x - PADDING_LEFT));
-  const pct = normX / USABLE_WIDTH;
+  if (x < PRE_COLONIAL_WIDTH) {
+    if (x < 200) return 'c. 11,000 a.C.';
+    if (x < 360) return 'c. 3,500 a.C. (Valdivia)';
+    if (x < 530) return 'c. 1,000 a.C. (Chorrera)';
+    if (x < 700) return '1463 (Incas)';
+    return '1493 (Huayna Cápac)';
+  }
+
+  const normX = Math.max(0, Math.min(POST_COLONIAL_WIDTH, x - PRE_COLONIAL_WIDTH));
+  const pct = normX / POST_COLONIAL_WIDTH;
   if (pct <= 0.12) {
     return Math.round(1500 + (pct / 0.12) * 300);
-  } else if (pct <= 0.30) {
-    return Math.round(1800 + ((pct - 0.12) / 0.18) * 90);
+  } else if (pct <= 0.28) {
+    return Math.round(1800 + ((pct - 0.12) / 0.16) * 90);
   } else if (pct <= 0.72) {
-    return Math.round(1890 + ((pct - 0.30) / 0.42) * 70);
+    return Math.round(1890 + ((pct - 0.28) / 0.44) * 70);
   } else {
     return Math.round(1960 + ((pct - 0.72) / 0.28) * 65);
   }
 }
 
-// Category Color & Label Map
 const CATEGORY_MAP = {
   colonial: { label: 'Colonial', color: '#8B4513', bg: 'rgba(139, 69, 19, 0.12)' },
   romanticismo: { label: 'Romanticismo', color: '#C41E3A', bg: 'rgba(196, 30, 58, 0.12)' },
@@ -274,9 +282,8 @@ function getCategoryMeta(category) {
   return CATEGORY_MAP[category] || { label: 'Historia', color: '#2563EB', bg: 'rgba(37, 99, 235, 0.12)' };
 }
 
-// ==================== MULTI-LANE SLOT ALLOCATOR ====================
-function allocateLanes(events, maxLanes = 4) {
-  // Group by year
+// ==================== MULTI-TIER SLOT ALLOCATOR ====================
+function allocateTiers(events, maxTiers = 3) {
   const byYear = {};
   events.forEach((ev, idx) => {
     ev._id = idx;
@@ -285,7 +292,7 @@ function allocateLanes(events, maxLanes = 4) {
   });
 
   const placed = [];
-  const minGap = 24;
+  const minGap = 12;
 
   Object.keys(byYear).map(Number).sort((a, b) => a - b).forEach(year => {
     const evList = byYear[year];
@@ -293,24 +300,23 @@ function allocateLanes(events, maxLanes = 4) {
 
     evList.forEach(ev => {
       const tLen = ev.title.length;
-      const cardW = tLen < 25 ? 210 : (tLen < 45 ? 245 : 275);
+      const cardW = tLen < 25 ? 190 : (tLen < 45 ? 220 : 250);
 
-      // Search for the closest free slot around baseX
       let chosenX = baseX;
-      let chosenLane = 0;
+      let chosenTier = 0;
       let placedOk = false;
 
-      for (let radius = 0; radius < 1200; radius += 20) {
+      for (let radius = 0; radius < 1200; radius += 15) {
         const shifts = radius === 0 ? [0] : [radius, -radius];
         for (const s of shifts) {
           const testX = baseX + s;
           const xs = testX - cardW / 2;
           const xe = testX + cardW / 2;
 
-          for (let lIdx = 0; lIdx < maxLanes; lIdx++) {
+          for (let tIdx = 0; tIdx < maxTiers; tIdx++) {
             let collision = false;
             for (const other of placed) {
-              if (other.lane === lIdx) {
+              if (other.tier === tIdx) {
                 if (!(xe + minGap < other.xs || xs - minGap > other.xe)) {
                   collision = true;
                   break;
@@ -319,7 +325,7 @@ function allocateLanes(events, maxLanes = 4) {
             }
             if (!collision) {
               chosenX = testX;
-              chosenLane = lIdx;
+              chosenTier = tIdx;
               placedOk = true;
               break;
             }
@@ -329,16 +335,15 @@ function allocateLanes(events, maxLanes = 4) {
         if (placedOk) break;
       }
 
-      const item = {
+      placed.push({
         event: ev,
         x: chosenX,
         baseX: baseX,
         cardW: cardW,
         xs: chosenX - cardW / 2,
         xe: chosenX + cardW / 2,
-        lane: chosenLane
-      };
-      placed.push(item);
+        tier: chosenTier
+      });
     });
   });
 
@@ -347,205 +352,235 @@ function allocateLanes(events, maxLanes = 4) {
 
 // ==================== RENDERING ENGINE ====================
 function renderAllEvents() {
-  const litContainer = document.getElementById('literatureEvents');
-  const histContainer = document.getElementById('historyEvents');
-  litContainer.innerHTML = '';
-  histContainer.innerHTML = '';
+  const layer = document.getElementById('timelineEventsLayer');
+  if (!layer) return;
+  layer.innerHTML = '';
 
-  // Calculate layout
-  const litPlacements = allocateLanes(literatureEvents, 4);
-  const histPlacements = allocateLanes(historyEvents, 4);
+  const litPlacements = allocateTiers(literatureEvents, 3);
+  const histPlacements = allocateTiers(historyEvents, 3);
 
-  // Vertical offsets per lane: perfectly spaced so no card covers the axis or other cards
-  // Literature is ABOVE axis: Lane 0 (-90px), Lane 1 (-195px), Lane 2 (-300px), Lane 3 (-405px)
-  const litLaneOffsets = [-95, -230, -365, -500];
-  // History is BELOW axis: Lane 0 (+95px), Lane 1 (+230px), Lane 2 (+365px), Lane 3 (+500px)
-  const histLaneOffsets = [95, 230, 365, 500];
+  // Literature is ABOVE line: Tier 0 (-65px), Tier 1 (-145px), Tier 2 (-225px)
+  const litTierOffsets = [-65, -145, -225];
+  // History is BELOW line: Tier 0 (+65px), Tier 1 (+145px), Tier 2 (+225px)
+  const histTierOffsets = [65, 145, 225];
 
-  // Render Literature Events
+  renderEpochTicks();
+
   litPlacements.forEach(item => {
-    const el = createEventElement(item, litLaneOffsets[item.lane], 'literature');
-    litContainer.appendChild(el);
+    const el = createEventDOM(item, litTierOffsets[item.tier], 'literature');
+    layer.appendChild(el);
   });
 
-  // Render History Events
   histPlacements.forEach(item => {
-    const el = createEventElement(item, histLaneOffsets[item.lane], 'history');
-    histContainer.appendChild(el);
+    const el = createEventDOM(item, histTierOffsets[item.tier], 'history');
+    layer.appendChild(el);
   });
 
-  // Render Sync Lines
-  renderSynchronizationLines();
-  // Render Century Markers
-  renderCenturyMarkers();
-  // Update Counts
   updateFilterCounts();
 }
 
-function createEventElement(item, verticalOffset, track) {
+function createEventDOM(item, verticalOffset, track) {
   const ev = item.event;
   const meta = getCategoryMeta(ev.category);
   const isAbove = verticalOffset < 0;
+  const cardH = 58;
 
-  const eventEl = document.createElement('div');
-  eventEl.className = 'timeline-event';
-  eventEl.id = `event-${track}-${ev._id}`;
-  eventEl.dataset.category = ev.category;
-  eventEl.dataset.year = ev.year;
-  eventEl.dataset.track = track;
-  eventEl.style.left = `${item.x}px`;
-  eventEl.style.top = `calc(50% + ${verticalOffset}px)`;
-  eventEl.style.transform = 'translate(-50%, -50%)';
+  const eventWrap = document.createElement('div');
+  eventWrap.className = 'timeline-event-wrap';
+  eventWrap.id = `event-${track}-${ev._id}`;
+  eventWrap.dataset.category = ev.category;
+  eventWrap.dataset.year = ev.year;
+  eventWrap.dataset.track = track;
+  eventWrap.style.left = `${item.x}px`;
+  eventWrap.style.top = `calc(50% + ${verticalOffset}px)`;
+  eventWrap.style.transform = 'translate(-50%, -50%)';
 
-  // Distance from card center to horizontal axis (which is at top: 50%)
-  const connectorDist = Math.abs(verticalOffset);
-  // Horizontal shift difference between card center and exact year tick mark
+  const stemHeight = Math.abs(verticalOffset) - (cardH / 2);
   const xDiff = item.baseX - item.x;
 
-  // Connector line SVG
-  const connector = document.createElement('div');
-  connector.className = 'event-connector';
-  connector.style.cssText = `
-    position: absolute;
+  const stem = document.createElement('div');
+  stem.className = 'event-stem';
+  stem.style.cssText = `
     left: 50%;
     width: 2px;
-    height: ${connectorDist}px;
+    height: ${stemHeight}px;
     background: ${meta.color};
-    opacity: 0.45;
+    opacity: 0.55;
     transform: translateX(-50%);
-    pointer-events: none;
-    z-index: 1;
-    ${isAbove ? `top: 50%; height: ${connectorDist}px;` : `bottom: 50%; height: ${connectorDist}px;`}
+    ${isAbove ? `top: 100%;` : `bottom: 100%;`}
   `;
 
-  // Node on the central axis
-  const axisNode = document.createElement('div');
-  axisNode.className = 'axis-node';
-  axisNode.style.cssText = `
-    position: absolute;
+  const node = document.createElement('div');
+  node.className = 'event-axis-node';
+  node.title = `${ev.year}: ${ev.title} (Clic para ver ficha completa)`;
+  node.style.cssText = `
     left: calc(50% + ${xDiff}px);
-    ${isAbove ? `top: calc(50% + ${connectorDist}px);` : `bottom: calc(50% + ${connectorDist}px);`}
-    transform: translate(-50%, -50%);
+    ${isAbove ? `top: calc(100% + ${stemHeight}px);` : `bottom: calc(100% + ${stemHeight}px);`}
     background: ${meta.color};
-    border-color: #FFFFFF;
   `;
 
-  // Diagonal connector line to exact baseX tick if shifted
-  if (Math.abs(xDiff) > 5) {
-    const diag = document.createElement('div');
-    diag.style.cssText = `
+  if (Math.abs(xDiff) > 4) {
+    const horizBridge = document.createElement('div');
+    horizBridge.style.cssText = `
       position: absolute;
       left: 50%;
-      ${isAbove ? `top: calc(50% + ${connectorDist - 2}px);` : `bottom: calc(50% + ${connectorDist - 2}px);`}
+      ${isAbove ? `top: calc(100% + ${stemHeight - 1}px);` : `bottom: calc(100% + ${stemHeight - 1}px);`}
       width: ${Math.abs(xDiff)}px;
       height: 2px;
       background: ${meta.color};
-      opacity: 0.45;
+      opacity: 0.55;
       transform-origin: ${xDiff > 0 ? 'left' : 'right'} center;
       ${xDiff < 0 ? 'transform: translateX(-100%);' : ''}
       pointer-events: none;
-      z-index: 1;
+      z-index: 3;
     `;
-    eventEl.appendChild(diag);
+    eventWrap.appendChild(horizBridge);
   }
 
-  // Card Body
   const card = document.createElement('div');
-  card.className = 'event-card';
+  card.className = 'event-compact-card';
   card.style.width = `${item.cardW}px`;
 
+  const displayYear = ev.year < 0 ? `${Math.abs(ev.year)} a.C.` : ev.year;
+
   card.innerHTML = `
-    <div class="event-card-header">
-      <span class="event-badge" style="background-color: ${meta.bg}; color: ${meta.color};">${meta.label}</span>
-      <span class="event-year-tag">${ev.year < 0 ? Math.abs(ev.year) + ' a.C.' : ev.year}</span>
+    <div class="event-card-top-row">
+      <span class="event-pill" style="background-color: ${meta.bg}; color: ${meta.color};">${meta.label}</span>
+      <span class="event-year-number">${displayYear}</span>
     </div>
-    <div class="event-card-body">
-      <h4 class="event-title">${ev.title}</h4>
-      <p class="event-desc-snippet">${ev.description}</p>
-    </div>
-    <div class="event-card-footer">
-      <span class="event-more-btn">Ver ficha completa →</span>
-    </div>
+    <div class="event-headline">${ev.title}</div>
+    <div class="event-card-click-hint">Ver ficha completa →</div>
   `;
 
-  eventEl.appendChild(connector);
-  eventEl.appendChild(axisNode);
-  eventEl.appendChild(card);
+  eventWrap.appendChild(stem);
+  eventWrap.appendChild(node);
+  eventWrap.appendChild(card);
 
-  // Interactive Click Modal
-  card.addEventListener('click', (e) => {
+  const openModal = (e) => {
     e.stopPropagation();
     showEventModal(ev, track);
-  });
+  };
+  card.addEventListener('click', openModal);
+  node.addEventListener('click', openModal);
 
-  return eventEl;
+  node.addEventListener('mouseenter', () => card.style.borderColor = meta.color);
+  node.addEventListener('mouseleave', () => card.style.borderColor = '');
+
+  return eventWrap;
 }
 
-// ==================== CENTURY MARKERS & SYNC LINES ====================
-function renderCenturyMarkers() {
-  const wrapper = document.getElementById('timelineWrapper');
-  const existing = wrapper.querySelectorAll('.century-marker-line');
-  existing.forEach(e => e.remove());
+// ==================== EPOCH TICKS ON CENTRAL AXIS ====================
+function renderEpochTicks() {
+  const layer = document.getElementById('timelineEventsLayer');
+  
+  const epochs = [
+    { year: -11000, label: '11,000 a.C. El Inga' },
+    { year: -3500, label: '3,500 a.C. Valdivia' },
+    { year: -1000, label: '1,000 a.C. Chorrera' },
+    { year: 1463, label: '1463 Incas' },
+    { year: 1534, label: '1534 Conquista' },
+    { year: 1600, label: 'S. XVII' },
+    { year: 1700, label: 'S. XVIII' },
+    { year: 1809, label: '1809 Independencia' },
+    { year: 1830, label: '1830 República' },
+    { year: 1860, label: '1860 Romanticismo' },
+    { year: 1895, label: '1895 Rev. Liberal' },
+    { year: 1910, label: '1910 Modernismo' },
+    { year: 1920, label: '1920 Vanguardia' },
+    { year: 1930, label: '1930 Generación 30' },
+    { year: 1944, label: '1944 Rev. Mayo' },
+    { year: 1960, label: '1960 Tzántzicos' },
+    { year: 1970, label: '1970 Petróleo' },
+    { year: 1980, label: '1980 Democracia' },
+    { year: 1990, label: '1990 Indígenas' },
+    { year: 2000, label: '2000 Dolarización' },
+    { year: 2010, label: '2010 S. XXI' },
+    { year: 2025, label: '2025 Actual' }
+  ];
 
-  const years = [1500, 1600, 1700, 1800, 1850, 1900, 1920, 1930, 1940, 1950, 1960, 1970, 1980, 1990, 2000, 2010, 2025];
+  epochs.forEach(ep => {
+    const x = getYearX(ep.year);
 
-  years.forEach(year => {
-    const x = getYearX(year);
-    const isCentury = year % 100 === 0;
+    const tickLine = document.createElement('div');
+    tickLine.className = 'epoch-tick-line';
+    tickLine.style.left = `${x}px`;
 
-    const line = document.createElement('div');
-    line.className = 'century-marker-line';
-    line.style.cssText = `
-      left: ${x}px;
-      width: ${isCentury ? '2px' : '1px'};
-      background: ${isCentury ? 'rgba(35, 103, 209, 0.35)' : 'rgba(35, 103, 209, 0.15)'};
-    `;
+    const badge = document.createElement('div');
+    badge.className = 'epoch-tick-badge';
+    badge.textContent = ep.label;
+    tickLine.appendChild(badge);
 
-    const label = document.createElement('div');
-    label.className = 'century-marker-label';
-    label.textContent = year;
-    if (isCentury) {
-      label.style.fontWeight = '800';
-      label.style.color = '#071B33';
-      label.style.borderColor = '#2367D1';
-    }
-
-    line.appendChild(label);
-    wrapper.insertBefore(line, wrapper.firstChild);
+    layer.appendChild(tickLine);
   });
 }
 
-function renderSynchronizationLines() {
-  const wrapper = document.getElementById('timelineWrapper');
-  const existing = wrapper.querySelectorAll('.sync-connection-line');
-  existing.forEach(e => e.remove());
+// ==================== INTERACTIVE MINI-MAP NAVIGATION ====================
+function setupMinimap() {
+  const container = document.getElementById('timelineContainer');
+  const minimapWrapper = document.getElementById('minimapWrapper');
+  const viewport = document.getElementById('minimapViewport');
+  if (!container || !minimapWrapper || !viewport) return;
 
-  const allYears = new Set();
-  literatureEvents.forEach(e => allYears.add(e.year));
+  minimapWrapper.addEventListener('click', (e) => {
+    const rect = minimapWrapper.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const pct = Math.max(0, Math.min(1, clickX / rect.width));
+    const maxScroll = container.scrollWidth - container.clientWidth;
+    container.scrollTo({ left: pct * maxScroll, behavior: 'smooth' });
+  });
 
-  allYears.forEach(year => {
-    const hasHist = historyEvents.some(e => e.year === year);
-    if (hasHist) {
-      const x = getYearX(year);
-      const syncLine = document.createElement('div');
-      syncLine.className = 'sync-connection-line';
-      syncLine.style.cssText = `
-        position: absolute;
-        left: ${x}px;
-        top: 0;
-        bottom: 0;
-        width: 1px;
-        background: linear-gradient(to bottom, 
-          rgba(35, 103, 209, 0.1) 0%, 
-          rgba(35, 103, 209, 0.6) 45%, 
-          rgba(35, 103, 209, 0.6) 55%, 
-          rgba(35, 103, 209, 0.1) 100%);
-        pointer-events: none;
-        z-index: 0;
-      `;
-      wrapper.insertBefore(syncLine, wrapper.firstChild);
+  let isDraggingViewport = false;
+  let dragStartX = 0;
+  let scrollStart = 0;
+
+  viewport.addEventListener('mousedown', (e) => {
+    e.stopPropagation();
+    isDraggingViewport = true;
+    dragStartX = e.clientX;
+    scrollStart = container.scrollLeft;
+    document.body.style.cursor = 'grabbing';
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDraggingViewport) return;
+    const deltaX = e.clientX - dragStartX;
+    const minimapWidth = minimapWrapper.clientWidth;
+    const maxScroll = container.scrollWidth - container.clientWidth;
+    const scrollDelta = (deltaX / minimapWidth) * container.scrollWidth;
+    container.scrollLeft = scrollStart + scrollDelta;
+    updateMinimap();
+  });
+
+  window.addEventListener('mouseup', () => {
+    if (isDraggingViewport) {
+      isDraggingViewport = false;
+      document.body.style.cursor = '';
     }
   });
+
+  container.addEventListener('scroll', updateMinimap);
+}
+
+function updateMinimap() {
+  const container = document.getElementById('timelineContainer');
+  const viewport = document.getElementById('minimapViewport');
+  const posLabel = document.getElementById('currentPosition');
+  if (!container || !viewport) return;
+
+  const scrollLeft = container.scrollLeft;
+  const scrollWidth = container.scrollWidth;
+  const clientWidth = container.clientWidth;
+
+  const leftPct = (scrollLeft / scrollWidth) * 100;
+  const widthPct = Math.max(4, (clientWidth / scrollWidth) * 100);
+
+  viewport.style.left = `${leftPct}%`;
+  viewport.style.width = `${widthPct}%`;
+
+  const centerYear = getYearFromX(scrollLeft + clientWidth / 2);
+  if (posLabel) {
+    posLabel.textContent = `Época / Año: ~${centerYear}`;
+  }
 }
 
 // ==================== SEARCH ENGINE ====================
@@ -588,7 +623,7 @@ function setupSearch() {
 
     resultsDropdown.innerHTML = matches.map(m => `
       <div class="search-result-item" data-year="${m.year}" data-track="${m.track}" data-id="${m._id}">
-        <span class="search-item-year">${m.year}</span>
+        <span class="search-item-year">${m.year < 0 ? Math.abs(m.year) + ' a.C.' : m.year}</span>
         <div class="search-item-info">
           <div class="search-item-title">${m.title}</div>
           <div class="search-item-track">${m.track === 'literature' ? '📚 Literatura Ecuatoriana' : '🏛️ Historia Social'}</div>
@@ -624,9 +659,8 @@ function setupSearch() {
 }
 
 function focusOnEvent(year, track, id) {
-  scrollToYear(year);
+  jumpToYear(year);
 
-  // Highlight element with pulse
   resetEventHighlights();
   const el = document.getElementById(`event-${track}-${id}`);
   if (el) {
@@ -638,7 +672,7 @@ function focusOnEvent(year, track, id) {
 }
 
 function resetEventHighlights() {
-  document.querySelectorAll('.timeline-event.highlight-pulse').forEach(el => {
+  document.querySelectorAll('.timeline-event-wrap.highlight-pulse').forEach(el => {
     el.classList.remove('highlight-pulse');
   });
 }
@@ -651,28 +685,27 @@ function showEventModal(ev, track) {
 
   modalBody.innerHTML = `
     <span class="event-modal-badge" style="background-color: ${meta.bg}; color: ${meta.color};">
-      ${track === 'literature' ? '📚 Literatura' : '🏛️ Historia Social'} · ${meta.label}
+      ${track === 'literature' ? '📚 Literatura Ecuatoriana' : '🏛️ Historia Social & Política'} · ${meta.label}
     </span>
     <div class="event-modal-year">${ev.year < 0 ? Math.abs(ev.year) + ' a.C.' : ev.year} — ${ev.period || 'Cronología Nacional'}</div>
     <h2 class="event-modal-title">${ev.title}</h2>
     <div class="event-modal-desc">${ev.description}</div>
-    ${ev.details ? `<div class="event-modal-details"><strong>Análisis y Contexto Historiográfico:</strong><br>${ev.details}</div>` : ''}
+    ${ev.details ? `<div class="event-modal-details"><strong>Análisis Historiográfico & Contexto Didáctico:</strong><br>${ev.details}</div>` : ''}
     <div class="event-modal-related">
-      <h4>Hitos contemporáneos vinculados:</h4>
+      <h4>Hitos contemporáneos vinculados en la historia:</h4>
       <div class="related-tags" id="relatedEventsTags"></div>
     </div>
   `;
 
-  // Find contemporaneous events in other track
   const otherTrackEvents = track === 'literature' ? historyEvents : literatureEvents;
-  const related = otherTrackEvents.filter(o => Math.abs(o.year - ev.year) <= 2).slice(0, 4);
+  const related = otherTrackEvents.filter(o => Math.abs(o.year - ev.year) <= 3).slice(0, 5);
 
   const relatedContainer = modalBody.querySelector('#relatedEventsTags');
   if (related.length > 0) {
     related.forEach(r => {
       const tag = document.createElement('button');
       tag.className = 'related-tag';
-      tag.innerHTML = `<strong>${r.year}:</strong> ${r.title}`;
+      tag.innerHTML = `<strong>${r.year < 0 ? Math.abs(r.year) + ' a.C.' : r.year}:</strong> ${r.title}`;
       tag.addEventListener('click', () => {
         closeModal();
         focusOnEvent(r.year, track === 'literature' ? 'history' : 'literature', r._id);
@@ -702,7 +735,7 @@ function closeKeyboardHelp() {
   document.getElementById('keyboardHelpModal')?.classList.remove('active');
 }
 
-// ==================== FILTERS & COUNTS ====================
+// ==================== FILTERS & NAVIGATION ====================
 function setupFilters() {
   const filterBtns = document.querySelectorAll('.filter-btn');
   filterBtns.forEach(btn => {
@@ -711,15 +744,14 @@ function setupFilters() {
       btn.classList.add('active');
       const filter = btn.dataset.filter;
       const startYear = parseInt(btn.dataset.startYear) || null;
-      const endYear = parseInt(btn.dataset.endYear) || null;
-      applyFilter(filter, startYear, endYear);
+      applyFilter(filter, startYear);
     });
   });
 }
 
-function applyFilter(filter, startYear, endYear) {
+function applyFilter(filter, startYear) {
   currentFilter = filter;
-  const allEvents = document.querySelectorAll('.timeline-event');
+  const allEvents = document.querySelectorAll('.timeline-event-wrap');
 
   allEvents.forEach(el => {
     const cat = el.dataset.category;
@@ -731,7 +763,7 @@ function applyFilter(filter, startYear, endYear) {
   });
 
   if (startYear) {
-    scrollToYear(startYear);
+    jumpToYear(startYear);
   }
 }
 
@@ -749,8 +781,7 @@ function updateFilterCounts() {
   });
 }
 
-// ==================== NAVIGATION & DRAG-TO-PAN ====================
-function scrollToYear(targetYear) {
+function jumpToYear(targetYear) {
   const container = document.getElementById('timelineContainer');
   if (!container) return;
   const x = getYearX(targetYear);
@@ -765,10 +796,6 @@ function scrollTimeline(amount) {
   }
 }
 
-function jumpToCentury(centuryYear) {
-  scrollToYear(centuryYear);
-}
-
 function setupDragToPan() {
   const container = document.getElementById('timelineContainer');
   if (!container) return;
@@ -778,7 +805,7 @@ function setupDragToPan() {
   let scrollLeft = 0;
 
   container.addEventListener('mousedown', (e) => {
-    if (e.target.closest('.event-card') || e.target.closest('button') || e.target.closest('input')) return;
+    if (e.target.closest('.event-compact-card') || e.target.closest('.event-axis-node') || e.target.closest('button') || e.target.closest('input')) return;
     isDown = true;
     container.classList.add('is-panning');
     startX = e.pageX - container.offsetLeft;
@@ -798,30 +825,6 @@ function setupDragToPan() {
     isDown = false;
     container.classList.remove('is-panning');
   });
-
-  container.addEventListener('scroll', updateMinimap);
-}
-
-function updateMinimap() {
-  const container = document.getElementById('timelineContainer');
-  const viewport = document.getElementById('minimapViewport');
-  const posLabel = document.getElementById('currentPosition');
-  if (!container || !viewport) return;
-
-  const scrollLeft = container.scrollLeft;
-  const scrollWidth = container.scrollWidth;
-  const clientWidth = container.clientWidth;
-
-  const leftPct = (scrollLeft / scrollWidth) * 100;
-  const widthPct = Math.max(4, (clientWidth / scrollWidth) * 100);
-
-  viewport.style.left = `${leftPct}%`;
-  viewport.style.width = `${widthPct}%`;
-
-  const centerYear = getYearFromX(scrollLeft + clientWidth / 2);
-  if (posLabel) {
-    posLabel.textContent = `Año aproximado: ~${centerYear}`;
-  }
 }
 
 // ==================== ZOOM ENGINE ====================
@@ -853,6 +856,7 @@ function applyZoom() {
     const newWidth = Math.round(TIMELINE_BASE_WIDTH * currentZoom);
     wrapper.style.minWidth = `${newWidth}px`;
     renderAllEvents();
+    updateMinimap();
   }
 }
 
@@ -865,7 +869,7 @@ function toggleTheme() {
   if (icon) icon.textContent = next === 'dark' ? '☀️' : '🌙';
 }
 
-// ==================== KEYBOARD AT-A-GLANCE ====================
+// ==================== KEYBOARD NAVIGATION ====================
 function setupKeyboard() {
   document.addEventListener('keydown', (e) => {
     if (e.target.matches('input, textarea')) return;
@@ -882,7 +886,7 @@ function setupKeyboard() {
       closeModal();
       closeKeyboardHelp();
     } else if (e.key === 'h' || e.key === 'H') {
-      scrollToYear(1500);
+      jumpToYear(1534);
     } else if (e.key === 't' || e.key === 'T') {
       toggleTheme();
     } else if (e.key === '?') {
@@ -890,7 +894,6 @@ function setupKeyboard() {
     }
   });
 
-  // Modal backdrop click
   ['eventModal', 'keyboardHelpModal'].forEach(mId => {
     document.getElementById(mId)?.addEventListener('click', (e) => {
       if (e.target.id === mId) {
@@ -902,7 +905,6 @@ function setupKeyboard() {
 
 // ==================== INITIALIZATION ====================
 function initTimeline() {
-  // Hide loader
   const loader = document.getElementById('loadingScreen');
   if (loader) {
     setTimeout(() => {
@@ -914,11 +916,11 @@ function initTimeline() {
   setupSearch();
   setupFilters();
   setupDragToPan();
+  setupMinimap();
   setupKeyboard();
   updateMinimap();
 
-  // Initial centering at start of literature (1500)
-  scrollToYear(1500);
+  jumpToYear(1534);
 }
 
 window.addEventListener('DOMContentLoaded', initTimeline);
