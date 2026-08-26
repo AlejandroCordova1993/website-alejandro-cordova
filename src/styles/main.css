@@ -212,33 +212,32 @@ body {
   border-radius: var(--radius-sm);
 }
 
-/* ==================== HERO SPLIT SECTION ==================== */
+/* ==================== HERO SPLIT SECTION (OPCIÓN 1: FULL BLEED EDITORIAL) ==================== */
 .hero-split-section {
   padding-top: var(--header-height);
-  min-height: 88vh;
+  min-height: calc(100vh - var(--header-height));
   display: grid;
-  grid-template-columns: 54% 46%;
+  grid-template-columns: 53% 47%;
   background-color: var(--bg-primary);
   border-bottom: 1px solid var(--border-line);
-  position: relative;
 }
 
 .hero-left-col {
-  padding: 60px 48px 60px 64px;
+  padding: 80px 48px 80px 64px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 660px;
+  max-width: 680px;
   justify-self: end;
   width: 100%;
 }
 
 .hero-title {
   font-family: var(--font-sans);
-  font-size: 3.8rem;
+  font-size: 3.9rem;
   font-weight: 800;
   color: var(--deep-blue);
-  line-height: 1.06;
+  line-height: 1.05;
   letter-spacing: -0.035em;
   margin-bottom: 24px;
 }
@@ -301,37 +300,37 @@ body {
 }
 
 .hero-right-col {
-  background-color: var(--deep-blue);
   position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
   overflow: hidden;
-  padding: 40px 48px 0;
+  background-color: var(--deep-blue);
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
 }
 
 .hero-ac-tag {
   position: absolute;
-  top: 28px;
-  right: 32px;
+  top: 24px;
+  right: 28px;
+  background: rgba(7, 27, 51, 0.85);
+  color: #FFFFFF;
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  color: #94A3B8;
+  font-size: 0.72rem;
   font-weight: 500;
+  letter-spacing: 0.12em;
+  padding: 4px 10px;
+  border-radius: 4px;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   z-index: 10;
 }
 
 .hero-portrait-img {
   width: 100%;
-  max-width: 460px;
-  height: 90%;
-  max-height: calc(88vh - 40px);
+  height: 100%;
   object-fit: cover;
-  object-position: center top;
-  border-radius: 10px 10px 0 0;
+  object-position: center 18%;
   display: block;
-  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.35);
 }
 
 /* ==================== SECCIONES GLOBALES ==================== */
@@ -992,9 +991,7 @@ textarea.form-control {
     padding: 60px 32px 40px;
     max-width: 100%;
   }
-  .hero-right-col {
-    padding: 40px 32px 0;
-  }
+  .hero-right-col { height: 500px; width: 100%; }
   .hero-title {
     font-size: 3rem;
   }
