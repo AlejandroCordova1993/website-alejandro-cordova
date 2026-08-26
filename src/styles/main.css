@@ -215,20 +215,22 @@ body {
 /* ==================== HERO SPLIT SECTION ==================== */
 .hero-split-section {
   padding-top: var(--header-height);
-  min-height: calc(100vh - var(--header-height));
+  min-height: 88vh;
   display: grid;
-  grid-template-columns: 55% 45%;
+  grid-template-columns: 54% 46%;
   background-color: var(--bg-primary);
   border-bottom: 1px solid var(--border-line);
+  position: relative;
 }
 
 .hero-left-col {
-  padding: 80px 48px 80px 64px;
+  padding: 60px 48px 60px 64px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 720px;
+  max-width: 660px;
   justify-self: end;
+  width: 100%;
 }
 
 .hero-title {
@@ -246,7 +248,7 @@ body {
   font-size: 1.15rem;
   color: var(--text-body);
   line-height: 1.6;
-  max-width: 580px;
+  max-width: 520px;
   margin-bottom: 36px;
 }
 
@@ -305,13 +307,13 @@ body {
   align-items: flex-end;
   justify-content: center;
   overflow: hidden;
-  padding: 40px 40px 0;
+  padding: 40px 48px 0;
 }
 
 .hero-ac-tag {
   position: absolute;
-  top: 32px;
-  right: 36px;
+  top: 28px;
+  right: 32px;
   font-family: var(--font-mono);
   font-size: 0.75rem;
   letter-spacing: 0.12em;
@@ -322,14 +324,14 @@ body {
 
 .hero-portrait-img {
   width: 100%;
-  max-width: 480px;
-  height: auto;
-  max-height: 85vh;
+  max-width: 460px;
+  height: 90%;
+  max-height: calc(88vh - 40px);
   object-fit: cover;
   object-position: center top;
-  border-radius: 6px 6px 0 0;
+  border-radius: 10px 10px 0 0;
   display: block;
-  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.35);
 }
 
 /* ==================== SECCIONES GLOBALES ==================== */
