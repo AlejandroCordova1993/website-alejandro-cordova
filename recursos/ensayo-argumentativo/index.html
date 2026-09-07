@@ -1,591 +1,680 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <title>Análisis del Ensayo Argumentativo</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --color-primary: #071B33;
-            --color-secondary: #2367D1;
-            --color-success: #1E6B38;
-            --color-info: #123C69;
-            --color-bg: #F3F1EA;
-            --color-card: #FAF9F5;
-            --color-text: #101820;
-            --color-text-light: #727983;
-            --color-border: #D7D9D6;
-            --signal-red: #D83A32;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: var(--color-bg);
-            color: var(--color-text);
-            line-height: 1.6;
-        }
-
-        .essay-text, .text-reading {
-            font-family: 'Source Serif 4', Georgia, serif;
-        }
-
-        header {
-            background: #071B33;
-            color: #F3F1EA;
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 2px solid var(--color-border);
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        header p {
-            font-size: 1.1em;
-            opacity: 0.95;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .section {
-            background-color: var(--color-card);
-            border-radius: 4px;
-            padding: 30px;
-            margin-bottom: 25px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            border-left: 6px solid;
-        }
-
-        .section-intro {
-            border-left-color: var(--color-primary);
-        }
-
-        .section-desarrollo {
-            border-left-color: var(--color-secondary);
-        }
-
-        .section-conclusion {
-            border-left-color: var(--color-success);
-        }
-
-        .section-title {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            font-size: 1.8em;
-            font-weight: 600;
-        }
-
-        .section-title .icon {
-            font-size: 2em;
-            margin-right: 15px;
-        }
-
-        .subsection-title {
-            font-size: 1.3em;
-            font-weight: 600;
-            margin-top: 25px;
-            margin-bottom: 15px;
-            color: var(--color-primary);
-        }
-
-        .paragraph-text {
-            background-color: #FAF9F5;
-            border-left: 4px solid var(--color-primary);
-            padding: 15px;
-            margin: 15px 0;
-            font-style: italic;
-            border-radius: 4px;
-            color: #101820; font-size: 1.05em;
-        }
-
-        .section-desarrollo .paragraph-text {
-            border-left-color: var(--color-secondary);
-        }
-
-        .section-conclusion .paragraph-text {
-            border-left-color: var(--color-success);
-        }
-
-        .checklist {
-            list-style: none;
-            margin: 15px 0;
-        }
-
-        .checklist li {
-            padding: 10px 0;
-            padding-left: 30px;
-            position: relative;
-            font-size: 1em;
-        }
-
-        .checklist li:before {
-            content: "";
-            position: absolute;
-            left: 0;
-            color: var(--color-success);
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-
-        .thesis-box {
-            background: #E7EEF5;
-            border: 2px solid var(--color-primary);
-            border-radius: 4px;
-            padding: 20px;
-            margin: 20px 0;
-            font-weight: 600;
-            color: var(--color-primary);
-            font-size: 1.1em;
-        }
-
-        .argument-card {
-            background-color: #FAF9F5;
-            border-radius: 4px;
-            padding: 20px;
-            margin: 20px 0;
-            border: 2px solid var(--color-secondary);
-        }
-
-        .argument-card h4 {
-            color: var(--color-secondary);
-            margin-bottom: 10px;
-            font-size: 1.1em;
-        }
-
-        .argument-type {
-            display: inline-block;
-            background-color: var(--color-secondary);
-            color: #FFFFFF;
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 0.85em;
-            font-weight: 600;
-            margin: 10px 0;
-        }
-
-        .argument-explanation {
-            background-color: #FAF9F5;
-            border-left: 4px solid var(--color-secondary);
-            padding: 15px;
-            margin-top: 15px;
-            border-radius: 4px;
-            font-size: 0.95em;
-        }
-
-        .support-thesis {
-            background-color: #D7D9D6;
-            border-left: 4px solid var(--color-info);
-            padding: 15px;
-            margin-top: 15px;
-            border-radius: 4px;
-            font-size: 0.95em;
-            color: #101820; font-size: 1.05em;
-        }
-
-        .why-explanation {
-            background-color: #FEF7EC;
-            border-left: 4px solid #945B0E;
-            padding: 15px;
-            margin-top: 15px;
-            border-radius: 4px;
-            font-size: 0.95em;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            background-color: white;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        th {
-            background-color: var(--color-primary);
-            color: white;
-            padding: 15px;
-            text-align: left;
-            font-weight: 600;
-        }
-
-        td {
-            padding: 15px;
-            border-bottom: 1px solid var(--color-border);
-        }
-
-        tr:hover {
-            background-color: #FAF9F5;
-        }
-
-        .activity-section {
-            background: #EAF5EE;
-            border-radius: 4px;
-            padding: 25px;
-            margin-top: 30px;
-        }
-
-        .activity-section h3 {
-            color: var(--color-success);
-            margin-bottom: 15px;
-            font-size: 1.5em;
-        }
-
-        .activity-section ol {
-            margin-left: 20px;
-        }
-
-        .activity-section li {
-            margin-bottom: 12px;
-            line-height: 1.6;
-        }
-
-        .footer-note {
-            background-color: var(--color-card);
-            border-radius: 4px;
-            padding: 25px;
-            margin-top: 30px;
-            border-left: 6px solid var(--color-info);
-            font-style: italic;
-            text-align: center;
-            font-size: 1.05em;
-            color: var(--color-text);
-        }
-
-        .argument-number {
-            display: inline-block;
-            background-color: var(--color-secondary);
-            color: #FFFFFF;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            margin-right: 10px;
-            font-size: 1.1em;
-        }
-
-        .tabs {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--color-border);
-        }
-
-        .tab-btn {
-            background-color: transparent;
-            border: none;
-            padding: 12px 20px;
-            font-size: 1em;
-            cursor: pointer;
-            border-bottom: 3px solid transparent;
-            transition: all 0.3s;
-            color: #101820; font-size: 1.05em;
-            font-weight: 500;
-        }
-
-        .tab-btn.active {
-            color: var(--color-primary);
-            border-bottom-color: var(--color-primary);
-        }
-
-        .tab-btn:hover {
-            color: var(--color-primary);
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8em;
-            }
-
-            .section {
-                padding: 20px;
-            }
-
-            .subsection-title {
-                font-size: 1.1em;
-            }
-
-            table {
-                font-size: 0.9em;
-            }
-
-            th, td {
-                padding: 10px;
-            }
-        }
-    </style>
-<link rel="stylesheet" href="../course-shell/course-shell.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Taller y Simulador de Ensayo Argumentativo: laboratorio interactivo para el aprendizaje de formulación de tesis, tipología de argumentos, contraargumentación y andamiaje paso a paso.">
+  <title>Taller y Simulador de Ensayo Argumentativo — Alejandro Córdova</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../course-shell/course-shell.css">
 </head>
 <body>
-    <header>
-        <h1>Análisis del Ensayo Argumentativo</h1>
-        <p>"La Cancha no Tiene Género" — desglosado por secciones</p>
-    </header>
 
-    <section id="marco-argumentativo" style="max-width: 980px; margin: 28px auto; padding: 24px; background: #FAF9F5; border: 1px solid #D7D9D6; border-radius: 4px; box-shadow: 0 8px 24px rgba(16, 24, 32, 0.08);">
-        <h2 style="margin: 0 0 10px; color: #071B33;">Antes de analizar: ¿qué hace sólido a un argumento?</h2>
-        <p style="margin: 0 0 14px; line-height: 1.7; color: #101820;">Un ensayo argumentativo no gana por sonar seguro, sino por construir una relación visible entre <strong>tesis, razones, evidencia y garantía</strong>. La evidencia puede ser un dato, un ejemplo representativo, una definición, una experiencia documentada o una fuente experta; su calidad depende de que sea pertinente, suficiente, verificable y presentada con honestidad.</p>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px;">
-            <div style="padding: 14px; background: #E7EEF5; border-radius: 4px;"><strong style="color: #123C69;">Tesis</strong><br><span style="color: #727983;">Respuesta debatible que delimita la posición.</span></div>
-            <div style="padding: 14px; background: #E7EEF5; border-radius: 4px;"><strong style="color: #123C69;">Razón</strong><br><span style="color: #727983;">Idea que explica por qué aceptar la tesis.</span></div>
-            <div style="padding: 14px; background: #E7EEF5; border-radius: 4px;"><strong style="color: #123C69;">Garantía</strong><br><span style="color: #727983;">Principio que conecta la razón con la tesis.</span></div>
-            <div style="padding: 14px; background: #E7EEF5; border-radius: 4px;"><strong style="color: #123C69;">Contraargumento</strong><br><span style="color: #727983;">Objeción razonable que se responde con evidencia.</span></div>
+  <!-- CABECERA INSTITUCIONAL DEL RECURSO -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="header-badge">LABORATORIO DIDÁCTICO · ESCRITURA ACADÉMICA</div>
+      <h1 class="header-title">Taller y Simulador de Ensayo Argumentativo</h1>
+      <p class="header-desc">
+        Aprende a defender ideas con rigor lógico. Explora la radiografía de un texto modelo, entrena la formulación de tesis debatibles, identifica tipologías de argumentos y construye tu propio ensayo con andamiaje guiado.
+      </p>
+
+      <!-- BARRA DE NAVEGACIÓN DE MÓDULOS -->
+      <nav class="module-nav" role="tablist" aria-label="Módulos del Taller">
+        <button type="button" class="nav-tab active" role="tab" aria-selected="true" data-tab="tab-radiografia" id="btn-tab-radiografia">
+          <span class="tab-step">01</span>
+          <span class="tab-label">Radiografía del Texto</span>
+        </button>
+        <button type="button" class="nav-tab" role="tab" aria-selected="false" data-tab="tab-tesis" id="btn-tab-tesis">
+          <span class="tab-step">02</span>
+          <span class="tab-label">Laboratorio de Tesis</span>
+        </button>
+        <button type="button" class="nav-tab" role="tab" aria-selected="false" data-tab="tab-argumentos" id="btn-tab-argumentos">
+          <span class="tab-step">03</span>
+          <span class="tab-label">Gimnasio de Argumentos</span>
+        </button>
+        <button type="button" class="nav-tab" role="tab" aria-selected="false" data-tab="tab-constructor" id="btn-tab-constructor">
+          <span class="tab-step">04</span>
+          <span class="tab-label">Simulador Constructor</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-container">
+
+    <!-- ================================================================= -->
+    <!-- MÓDULO 1: RADIOGRAFÍA INTERACTIVA (TEXTO VIVO)                    -->
+    <!-- ================================================================= -->
+    <section class="tab-content active" id="tab-radiografia" role="tabpanel" aria-labelledby="btn-tab-radiografia">
+      <div class="section-intro-card">
+        <div class="intro-tag">MÓDULO 01 · ANÁLISIS DISCURSIVO</div>
+        <h2>Radiografía Interactiva de un Ensayo Modelo</h2>
+        <p>
+          Un ensayo no es un conjunto de opiniones aisladas, sino un tejido donde cada oración cumple una función retórica precisa. Selecciona las capas de análisis o haz clic en cualquier párrafo para ver su desglose pedagógico en tiempo real.
+        </p>
+
+        <!-- FILTROS DE CAPAS DE TEXTO -->
+        <div class="xray-filter-bar">
+          <span class="filter-label">Capas visuales:</span>
+          <button type="button" class="xray-btn active" data-filter="all">Ver Todo el Texto</button>
+          <button type="button" class="xray-btn" data-filter="tesis">🎯 Tesis Central</button>
+          <button type="button" class="xray-btn" data-filter="argumento">🧱 Argumentos</button>
+          <button type="button" class="xray-btn" data-filter="conector">🔗 Conectores Lógicos</button>
+          <button type="button" class="xray-btn" data-filter="conclusion">⚖️ Conclusión</button>
         </div>
-        <p style="margin: 14px 0 0; color: #727983; line-height: 1.65;"><strong>Regla de rigor:</strong> si un número, estudio o institución no tiene una fuente que el lector pueda consultar, debe presentarse como <em>ejemplo hipotético</em>, no como hecho. Analizar también implica detectar autoridad irrelevante, generalizaciones y datos sin contexto.</p>
+      </div>
+
+      <div class="xray-layout">
+        <!-- COLUMNA IZQUIERDA: EL TEXTO VIVO -->
+        <article class="essay-paper" id="essayPaper">
+          <header class="essay-paper-header">
+            <span class="essay-paper-badge">Texto Modelo de Análisis</span>
+            <h3 class="essay-paper-title">La división por género en el deporte debe desaparecer</h3>
+            <p class="essay-paper-byline">Por Lic. Alejandro Córdova · Caso didáctico de argumentación crítica</p>
+          </header>
+
+          <!-- 1. INTRODUCCIÓN -->
+          <div class="essay-block block-intro" data-block-id="intro" tabindex="0">
+            <div class="block-flag">Introducción & Tesis</div>
+            <p class="essay-para">
+              Desde la infancia, a menudo se asume que los deportes son diferentes para niños y niñas: el fútbol para los varones y la danza para las mujeres. Esta distinción parece inocente, pero refuerza barreras culturales y fisiológicas injustificadas. <span class="highlight-target target-tesis" data-tip="tesis">Por ello, la separación estricta por género en las disciplinas deportivas de base y formativas debe ser eliminada progresivamente para garantizar una auténtica igualdad de oportunidades.</span>
+            </p>
+          </div>
+
+          <!-- 2. ARGUMENTO 1: HECHOS Y DATOS -->
+          <div class="essay-block block-arg1" data-block-id="arg1" tabindex="0">
+            <div class="block-flag">Argumento 1 · Datos y Hechos</div>
+            <p class="essay-para">
+              <span class="highlight-target target-conector" data-tip="conector">En primer lugar,</span> las investigaciones biomédicas contemporáneas demuestran que las diferencias fisiológicas individuales dentro de un mismo género son frecuentemente mayores que las diferencias promedio entre géneros. <span class="highlight-target target-argumento" data-tip="arg1">Factores como la masa muscular, la capacidad aeróbica y la altura varían ampliamente entre individuos; por ende, clasificar el rendimiento únicamente por el sexo biológico excluye a atletas competentes y perpetúa mitos de debilidad corporal.</span>
+            </p>
+          </div>
+
+          <!-- 3. ARGUMENTO 2: CAUSA Y CONSECUENCIA -->
+          <div class="essay-block block-arg2" data-block-id="arg2" tabindex="0">
+            <div class="block-flag">Argumento 2 · Causa y Consecuencia</div>
+            <p class="essay-para">
+              <span class="highlight-target target-conector" data-tip="conector">Asimismo,</span> la segregación temprana produce consecuencias psicológicas y sociales adversas en el desarrollo juvenil. <span class="highlight-target target-argumento" data-tip="arg2">Cuando un entorno escolar o recreativo prohíbe que niños y niñas compartan cancha, causa que normalicen la segregación en otros espacios de la vida adulta, consolidando estereotipos laborales y limitando la cooperación intergénero.</span>
+            </p>
+          </div>
+
+          <!-- 4. ARGUMENTO 3: AUTORIDAD CIENTÍFICA -->
+          <div class="essay-block block-arg3" data-block-id="arg3" tabindex="0">
+            <div class="block-flag">Argumento 3 · Autoridad Disciplinar</div>
+            <p class="essay-para">
+              <span class="highlight-target target-conector" data-tip="conector">A esto se suma que</span> organismos rectores de la educación física y la psicología evolutiva coinciden en esta necesidad. <span class="highlight-target target-argumento" data-tip="arg3">Tal como subraya la Asociación Internacional de Sociología del Deporte (ISSA), la integración mixta en categorías infantiles y juveniles promueve una autoimagen corporal más saludable y previene el abandono temprano de la actividad física.</span>
+            </p>
+          </div>
+
+          <!-- 5. ARGUMENTO 4: ANALOGÍA Y COMPARACIÓN -->
+          <div class="essay-block block-arg4" data-block-id="arg4" tabindex="0">
+            <div class="block-flag">Argumento 4 · Analogía y Comparación</div>
+            <p class="essay-para">
+              <span class="highlight-target target-conector" data-tip="conector">De igual manera,</span> podemos observar lo ocurrido en disciplinas donde ya no existe división: el hipismo y la vela olímpica evalúan la destreza técnica independientemente del género. <span class="highlight-target target-argumento" data-tip="arg4">Si en actividades de alta exigencia física y toma de decisiones la integración no solo es viable sino exitosa, resulta contradictorio sostener barreras artificiales en el resto de los deportes.</span>
+            </p>
+          </div>
+
+          <!-- 6. CONCLUSIÓN Y VALORES -->
+          <div class="essay-block block-conclusion" data-block-id="conclusion" tabindex="0">
+            <div class="block-flag">Conclusión · Síntesis y Valores</div>
+            <p class="essay-para">
+              <span class="highlight-target target-conector" data-tip="conector">En conclusión,</span> los datos biomédicos, las consecuencias socioeducativas y los precedentes deportivos evidencian que el criterio divisorio tradicional carece de sustento objetivo. <span class="highlight-target target-conclusion" data-tip="conclusion">Superar estas divisiones no significa ignorar la fisiología, sino basar las categorías en habilidades y categorías de peso o rendimiento real, haciendo del deporte un espacio de libertad, justicia e inclusión democrática.</span>
+            </p>
+          </div>
+        </article>
+
+        <!-- COLUMNA DERECHA: PANEL DIDÁCTICO DINÁMICO -->
+        <aside class="xray-sidebar">
+          <div class="panel-card" id="xrayDetailPanel">
+            <div class="panel-header">
+              <span class="panel-badge" id="panelTypeBadge">HAZ CLIC EN UN PÁRRAFO</span>
+              <h4 class="panel-title" id="panelTitle">Explorador Estructural</h4>
+            </div>
+            <div class="panel-body" id="panelBody">
+              <p class="panel-prompt">
+                👈 Haz clic en cualquier sección del ensayo modelo en la izquierda para ver su función pedagógica, cómo se formuló y por qué es efectiva.
+              </p>
+            </div>
+          </div>
+
+          <div class="quick-summary-box">
+            <h4>💡 Fórmula del Ensayo Argumentativo:</h4>
+            <div class="formula-pill">
+              <span>Tema Polémico</span>
+              <span class="formula-plus">+</span>
+              <span>Tesis Clara</span>
+              <span class="formula-plus">+</span>
+              <span>Razones Diversas</span>
+              <span class="formula-eq">=</span>
+              <span>Persuasión Racional</span>
+            </div>
+          </div>
+        </aside>
+      </div>
     </section>
 
-    <div class="container">
-        <!-- INTRODUCCIÓN -->
-        <div class="section section-intro">
-            <div class="section-title">
-                INTRODUCCIÓN
+    <!-- ================================================================= -->
+    <!-- MÓDULO 2: LABORATORIO DE TESIS (¿HECHO O TESIS?)                  -->
+    <!-- ================================================================= -->
+    <section class="tab-content" id="tab-tesis" role="tabpanel" aria-labelledby="btn-tab-tesis">
+      <div class="section-intro-card">
+        <div class="intro-tag">MÓDULO 02 · DELIMITACIÓN CONCEPTUAL</div>
+        <h2>Laboratorio de Tesis: El Núcleo de tu Argumento</h2>
+        <p>
+          Uno de los errores más comunes al escribir un ensayo es confundir un <strong>hecho evidente</strong> con una <strong>tesis debatible</strong>. Los hechos se comprueban o constatan; las tesis se defienden con razones frente a posturas opuestas.
+        </p>
+      </div>
+
+      <div class="tesis-grid-2col">
+        <!-- JUEGO INTERACTIVO: HECHO VS TESIS -->
+        <div class="lab-card">
+          <div class="lab-card-header">
+            <span class="lab-card-step">ENTRENAMIENTO RÁPIDO</span>
+            <h3>Desafío: ¿Hecho o Tesis Debatible?</h3>
+            <p>Evalúa cada afirmación y selecciona si se trata de un simple hecho o de una auténtica tesis.</p>
+          </div>
+
+          <div class="quiz-challenge-box" id="thesisQuizBox">
+            <div class="quiz-status-row">
+              <span class="quiz-counter" id="thesisQuizCounter">Pregunta 1 de 8</span>
+              <span class="quiz-score" id="thesisQuizScore">Aciertos: 0</span>
             </div>
 
-            <div class="paragraph-text">
-                "El deporte es una herramienta fundamental para el desarrollo humano, pero lamentablemente sigue lleno de prejuicios. La sociedad a menudo decide qué deportes son 'apropiados' para hombres y cuáles para mujeres. Esta división por género es absurda y debe desaparecer para que el talento sea lo único que importe."
+            <div class="quiz-statement-card">
+              <p class="quiz-statement-text" id="thesisQuizText">
+                "En muchas ciudades del mundo, el tráfico vehicular aumenta en las horas de la mañana."
+              </p>
             </div>
 
-            <div class="subsection-title">¿Por qué es INTRODUCCIÓN?</div>
-            <ul class="checklist">
-                <li><strong>Presenta el TEMA GENERAL:</strong> El párrafo inicia hablando del deporte como un concepto amplio.</li>
-                <li><strong>Identifica el PROBLEMA:</strong> Señala que existen prejuicios de género en el deporte.</li>
-                <li><strong>Contextualiza la situación:</strong> Explica cómo la sociedad asigna deportes según el género, lo cual es injusto.</li>
-                <li><strong>Expresa la POSICIÓN DEL AUTOR:</strong> Es claro que el autor está en CONTRA de esta división.</li>
-            </ul>
-
-            <div class="subsection-title">LA TESIS (Idea Principal)</div>
-            <div class="thesis-box">
-                "Esta división por género es absurda y debe desaparecer para que el talento sea lo único que importe."
+            <div class="quiz-actions-row">
+              <button type="button" class="btn-quiz-choice btn-choice-hecho" id="btnChoiceHecho">
+                <span>📊 Es un Hecho</span>
+                <small>Dato comprobable</small>
+              </button>
+              <button type="button" class="btn-quiz-choice btn-choice-tesis" id="btnChoiceTesis">
+                <span>🎯 Es una Tesis</span>
+                <small>Postura debatible</small>
+              </button>
             </div>
 
-            <div class="subsection-title">¿Por qué esta oración es la TESIS?</div>
-            <ul class="checklist">
-                <li>Es la <strong>idea principal</strong> que todo el ensayo defenderá.</li>
-                <li>Es una <strong>posición clara:</strong> no está pidiendo que pienses, está diciendo lo que cree que es correcto.</li>
-                <li>Todos los argumentos que vienen después buscan <strong>convencerte de que esta idea es verdadera.</strong></li>
-                <li>Si alguien dijera "no, creo que la división de género en el deporte es correcta", el autor usaría los argumentos siguientes para convencerlo.</li>
-            </ul>
+            <div class="quiz-feedback-box" id="thesisQuizFeedback" style="display: none;">
+              <div class="feedback-badge" id="feedbackBadge">¡CORRECTO!</div>
+              <p class="feedback-explanation" id="feedbackExplanation"></p>
+              <button type="button" class="btn-next-quiz" id="btnNextQuiz">Siguiente afirmación →</button>
+            </div>
+          </div>
         </div>
 
-        <!-- DESARROLLO -->
-        <div class="section section-desarrollo">
-            <div class="section-title">
-                DESARROLLO - Los 4 Argumentos
+        <!-- CONSTRUCTOR & VALIDADOR DE TESIS -->
+        <div class="lab-card">
+          <div class="lab-card-header">
+            <span class="lab-card-step">SIMULADOR EN TIEMPO REAL</span>
+            <h3>Constructor y Validador de Tesis</h3>
+            <p>Escribe tu postura o selecciona un tema guiado para evaluar su solidez formal.</p>
+          </div>
+
+          <div class="thesis-builder-box">
+            <div class="form-group">
+              <label for="topicSelector">1. Elige un tema polémico o escribe el tuyo:</label>
+              <select id="topicSelector" class="custom-select">
+                <option value="">-- Selecciona un tema sugerido o escribe abajo --</option>
+                <option value="ia-edu">Inteligencia artificial generativa en las aulas escolares</option>
+                <option value="redes-juventud">Regulación del uso de redes sociales en menores de 16 años</option>
+                <option value="tareas-casa">Eliminación de las tareas escolares obligatorias para el hogar</option>
+                <option value="lectura-digital">Sustitución de libros impresos por dispositivos digitales en la escuela</option>
+                <option value="deporte-genero">Integración por habilidades en el deporte formativo</option>
+              </select>
             </div>
 
-            <p>El desarrollo contiene 4 argumentos diferentes. Cada uno tiene un propósito específico.</p>
-
-            <!-- ARGUMENTO 1 -->
-            <div class="argument-card">
-                <h4><span class="argument-number">1</span>Los Hechos y Cifras</h4>
-                
-                <div class="paragraph-text">
-                    "Imaginemos que un informe de medios, con una muestra y una metodología transparentes, registra una diferencia importante en el tiempo de transmisión dedicado a competencias masculinas y femeninas. Esa desproporción puede contribuir a que el público perciba el deporte femenino como menos visible."
-                </div>
-
-                <div class="subsection-title">¿Por qué es DESARROLLO?</div>
-                <ul class="checklist">
-                    <li><strong>Presenta un argumento específico:</strong> No habla de deporte en general, sino de cómo los medios cubren el deporte.</li>
-                    <li><strong>Ofrece EVIDENCIA:</strong> El ejemplo muestra cómo un dato medido podría documentar el problema; en un ensayo real habría que citar el informe, su fecha, muestra y método.</li>
-                    <li><strong>Apoya la TESIS:</strong> Demuestra que la división de género es real y provoca desigualdad.</li>
-                </ul>
-
-                <div class="argument-type">Hechos y Cifras</div>
-                <div class="argument-explanation">
-                    <strong>¿Por qué es este tipo?</strong> Usa un <strong>dato cuantitativo documentado</strong>. En este recurso la cifra es hipotética para enseñar la estructura: solo se convierte en evidencia cuando una fuente permite verificar cómo se obtuvo.
-                </div>
-
-                <div class="support-thesis">
-                    <strong>¿Cómo apoya la TESIS?</strong> Si la tesis dice "la división de género debe desaparecer", este argumento muestra: "Aquí está la prueba de que esa división existe y causa problemas reales."
-                </div>
+            <div class="form-group">
+              <label for="thesisInput">2. Redacta tu tesis en una sola oración afirmativa:</label>
+              <textarea id="thesisInput" class="custom-textarea" rows="3" placeholder="Ejemplo: Las instituciones educativas deben incorporar la alfabetización en IA como competencia obligatoria en vez de prohibir su uso..."></textarea>
             </div>
 
-            <!-- ARGUMENTO 2 -->
-            <div class="argument-card">
-                <h4><span class="argument-number">2</span>Causa y Consecuencia</h4>
-                
-                <div class="paragraph-text">
-                    "Debido a que las niñas ven pocos referentes femeninos exitosos en la televisión, muchas abandonan la actividad física en la adolescencia al sentir que 'no es un lugar para ellas'. Es un círculo vicioso que limita su potencial."
-                </div>
+            <!-- CHECKLIST DE CALIDAD EN TIEMPO REAL -->
+            <div class="thesis-criteria-card">
+              <h4>Evaluación Formativa de tu Tesis:</h4>
+              <ul class="criteria-list">
+                <li id="crit-length" class="criteria-item">
+                  <span class="crit-icon">○</span>
+                  <span class="crit-text">Longitud adecuada (al menos 8 palabras con sujeto y predicado).</span>
+                </li>
+                <li id="crit-debatible" class="criteria-item">
+                  <span class="crit-icon">○</span>
+                  <span class="crit-text">Es una postura discutible (usa verbos de acción, valoración o deber ser: <em>debe, requiere, resulta necesario, perjudica</em>).</span>
+                </li>
+                <li id="crit-evita-hecho" class="criteria-item">
+                  <span class="crit-icon">○</span>
+                  <span class="crit-text">Evita ser una simple afirmación de hecho o dato aislado.</span>
+                </li>
+              </ul>
+              
+              <div class="thesis-status-alert" id="thesisStatusAlert">
+                Escribe tu tesis para recibir retroalimentación automática.
+              </div>
 
-                <div class="subsection-title">¿Por qué es DESARROLLO?</div>
-                <ul class="checklist">
-                    <li><strong>Continúa con un argumento diferente:</strong> Ya vimos que existe desigualdad en los medios (Argumento 1), ahora vemos QUÉ PASA como consecuencia.</li>
-                    <li><strong>Establece una relación CAUSA → CONSECUENCIA:</strong> La falta de visibilidad (causa) hace que las niñas abandonen el deporte (consecuencia).</li>
-                    <li><strong>Profundiza el problema:</strong> No solo es injusto en los medios, sino que tiene efectos negativos en la vida de las personas.</li>
-                </ul>
-
-                <div class="argument-type">Causa y Consecuencia</div>
-                <div class="argument-explanation">
-                    <strong>¿Por qué es este tipo?</strong> Explica <strong>por qué sucede algo</strong> (causa: falta de referentes) y <strong>qué resultado tiene</strong> (consecuencia: abandono del deporte). Este argumento es poderoso porque muestra que el problema no solo es teórico, tiene impactos reales en las personas.
-                </div>
-
-                <div class="support-thesis">
-                    <strong>¿Cómo apoya la TESIS?</strong> Si la tesis dice "la división de género debe desaparecer", este argumento muestra: "Si no eliminamos esta división, las niñas perderán oportunidades. Eso es injusto y hay que cambiar."
-                </div>
+              <button type="button" class="btn-use-thesis" id="btnUseThesis" disabled>
+                <span>Usar esta tesis en el Simulador Constructor (Módulo 4)</span>
+                <span>→</span>
+              </button>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <!-- ARGUMENTO 3 -->
-            <div class="argument-card">
-                <h4><span class="argument-number">3</span>Autoridad</h4>
-                
-                <div class="paragraph-text">
-                    "Una revisión de investigaciones sobre participación deportiva puede aportar evidencia sobre cómo los estereotipos influyen en el acceso, la permanencia y la percepción del talento. La fuente debe identificarse y su alcance debe respetarse: no permite afirmar que todas las personas sean idénticas ni que una sola institución tenga la última palabra."
-                </div>
+    <!-- ================================================================= -->
+    <!-- MÓDULO 3: GIMNASIO DE ARGUMENTOS & CONTRAARGUMENTACIÓN            -->
+    <!-- ================================================================= -->
+    <section class="tab-content" id="tab-argumentos" role="tabpanel" aria-labelledby="btn-tab-argumentos">
+      <div class="section-intro-card">
+        <div class="intro-tag">MÓDULO 03 · TIPOLOGÍAS Y ESTRATEGIAS</div>
+        <h2>Gimnasio de Argumentos y Contraargumentación</h2>
+        <p>
+          Un ensayo robusto no depende de un solo tipo de argumento. Combina datos objetivos, razonamientos causales, autoridades solventes y anticipación de objeciones.
+        </p>
+      </div>
 
-                <div class="subsection-title">¿Por qué es DESARROLLO?</div>
-                <ul class="checklist">
-                    <li><strong>Refuta un prejuicio común:</strong> Algunos podrían pensar "bueno, pero las mujeres y hombres somos biológicamente diferentes."</li>
-                    <li><strong>Usa una fuente especializada:</strong> La autoridad es pertinente solo si conoce el tema, explica su método y su trabajo puede ser revisado.</li>
-                    <li><strong>Evita el salto injustificado:</strong> Una investigación puede apoyar una afirmación concreta, pero no autoriza a generalizar que todas las personas son iguales en todos los aspectos.</li>
-                </ul>
+      <!-- GUÍA DIDÁCTICA RÁPIDA DE TIPOS DE ARGUMENTO -->
+      <div class="arg-types-showcase">
+        <div class="type-badge-card type-hecho">
+          <div class="type-icon">📊</div>
+          <h4>Datos y Hechos</h4>
+          <p>Estadísticas, investigaciones empíricas y hechos verificables e irrefutables.</p>
+        </div>
+        <div class="type-badge-card type-causa">
+          <div class="type-icon">⚙️</div>
+          <h4>Causa-Efecto</h4>
+          <p>Muestra cómo una acción o fenómeno produce directamente una consecuencia positiva o negativa.</p>
+        </div>
+        <div class="type-badge-card type-autoridad">
+          <div class="type-icon">🎓</div>
+          <h4>Autoridad Calificada</h4>
+          <p>Citas y consensos de expertos, organismos científicos o instituciones de prestigio reconocido.</p>
+        </div>
+        <div class="type-badge-card type-comparacion">
+          <div class="type-icon">⚖️</div>
+          <h4>Analogía / Comparación</h4>
+          <p>Relaciona el problema con un caso análogo o precedente exitoso en otro contexto.</p>
+        </div>
+        <div class="type-badge-card type-contra">
+          <div class="type-icon">🛡️</div>
+          <h4>Contraargumento & Refutación</h4>
+          <p>Anticipa la objeción más fuerte del opositor y demuestra por qué la tesis prevalece.</p>
+        </div>
+      </div>
 
-                <div class="argument-type">Autoridad</div>
-                <div class="argument-explanation">
-                    <strong>¿Por qué es este tipo?</strong> Recurre a una <strong>fuente especializada y verificable</strong>. La autoridad fortalece el argumento cuando es pertinente, independiente y acompañada de evidencia; citar un nombre famoso sin comprobar su campo sería una apelación indebida a la autoridad.
-                </div>
-
-                <div class="support-thesis">
-                    <strong>¿Cómo apoya la TESIS?</strong> Si la tesis dice "la división de género debe desaparecer", este argumento puede mostrar que ciertos prejuicios sociales afectan la participación y que las decisiones deben basarse en evidencia, no en estereotipos.
-                </div>
-            </div>
-
-            <!-- ARGUMENTO 4 -->
-            <div class="argument-card">
-                <h4><span class="argument-number">4</span>Comparación o Contraste</h4>
-                
-                <div class="paragraph-text">
-                    "Mientras que a un futbolista hombre se le aplauda por ser agresivo y fuerte en la cancha, a una mujer con la misma actitud competitiva se la critica frecuentemente por ser 'poco femenina' o tosca."
-                </div>
-
-                <div class="subsection-title">¿Por qué es DESARROLLO?</div>
-                <ul class="checklist">
-                    <li><strong>Compara dos situaciones idénticas:</strong> Un futbolista hombre y una futbolista mujer hacen LO MISMO (ser agresivo y fuerte).</li>
-                    <li><strong>Muestra el doble estándar:</strong> Pero reciben TRATAMIENTO DIFERENTE según su género.</li>
-                    <li><strong>Demuestra que es discriminación SOCIAL:</strong> No es una diferencia biológica, es simplemente cómo la sociedad juzga diferente a hombres y mujeres.</li>
-                </ul>
-
-                <div class="argument-type">Comparación o Contraste</div>
-                <div class="argument-explanation">
-                    <strong>¿Por qué es este tipo?</strong> Pone dos cosas lado a lado para mostrar que son <strong>idénticas en lo importante, pero se tratan diferente.</strong> Es poderoso porque es fácil de entender: si dos personas hacen lo mismo pero se critican diferente, eso es injusto.
-                </div>
-
-                <div class="support-thesis">
-                    <strong>¿Cómo apoya la TESIS?</strong> Si la tesis dice "la división de género debe desaparecer", este argumento muestra: "La desigualdad no viene de diferencias reales, sino de normas sociales injustas. Eso es ABSURDO, como dice la tesis."
-                </div>
-            </div>
+      <!-- ENTRENADOR DE CLASIFICACIÓN DE ARGUMENTOS -->
+      <div class="interactive-gym-box">
+        <div class="gym-header">
+          <div>
+            <span class="gym-badge">EJERCICIO DE DISCRIMINACIÓN RETÓRICA</span>
+            <h3>Identifica el Tipo de Argumento</h3>
+          </div>
+          <span class="gym-counter" id="gymCounter">Caso 1 de 6</span>
         </div>
 
-        <!-- CONCLUSIÓN -->
-        <div class="section section-conclusion">
-            <div class="section-title">
-                CONCLUSIÓN
-            </div>
-
-            <div class="paragraph-text">
-                "Finalmente, debemos apelar a lo justo. La igualdad de oportunidades es un valor esencial de la democracia; impedir que alguien practique ballet o rugby solo por su género es negar su derecho a la libertad. Romper estas barreras nos hará una sociedad más sana."
-            </div>
-
-            <div class="subsection-title">¿Por qué es CONCLUSIÓN?</div>
-            <ul class="checklist">
-                <li><strong>Sintetiza lo discutido:</strong> Dice "Finalmente", señalando que estamos cerrando.</li>
-                <li><strong>No introduce argumentos nuevos:</strong> No trae nuevas pruebas, sino que usa todo lo dicho antes.</li>
-                <li><strong>Refuerza la TESIS original:</strong> Vuelve a la idea central de que la división de género debe desaparecer.</li>
-                <li><strong>Apela a valores universales:</strong> Habla de justicia, democracia, libertad y bienestar social.</li>
-            </ul>
-
-            <div class="argument-type" style="background-color: var(--color-success); color: white;">Valores</div>
-            <div class="argument-explanation">
-                <strong>¿Por qué es este tipo?</strong> Apela a conceptos que la mayoría acepta: <strong>justicia, democracia, libertad, sociedad sana.</strong> Es poderoso porque usa valores que casi nadie rechazaría. Transforma el debate de "hechos" a "moral": "Esto es lo JUSTO."
-            </div>
-
-            <div class="support-thesis">
-                <strong>¿Cómo apoya la TESIS?</strong> La conclusión dice: "Ahora que hemos visto todas las pruebas, debemos aceptar esta verdad porque es JUSTA y porque la democracia la exige. Romper estas barreras nos hace más humanos."
-            </div>
+        <div class="gym-snippet-card">
+          <div class="gym-topic-tag" id="gymTopicTag">TEMA: TAREAS ESCOLARES</div>
+          <blockquote class="gym-quote" id="gymQuoteText">
+            "Según el informe internacional PISA de la OCDE, los países con jornadas escolares extensas y menor carga de deberes para la casa obtienen rendimientos académicos más equilibrados y menores índices de ansiedad estudiantil."
+          </blockquote>
         </div>
 
-        <!-- RESUMEN TABLE -->
-        <div class="section">
-            <div class="section-title">
-                RESUMEN: ¿Por qué cada parte es lo que es?
+        <div class="gym-options-grid" id="gymOptionsGrid">
+          <button type="button" class="gym-option-btn" data-type="autoridad">
+            <span>🎓 Autoridad / Estudio Científico</span>
+          </button>
+          <button type="button" class="gym-option-btn" data-type="causa">
+            <span>⚙️ Causa - Consecuencia</span>
+          </button>
+          <button type="button" class="gym-option-btn" data-type="hecho">
+            <span>📊 Datos Estadísticos / Hecho</span>
+          </button>
+          <button type="button" class="gym-option-btn" data-type="comparacion">
+            <span>⚖️ Analogía o Comparación</span>
+          </button>
+          <button type="button" class="gym-option-btn" data-type="valores">
+            <span>❤️ Valores y Principios Morales</span>
+          </button>
+        </div>
+
+        <div class="gym-feedback-card" id="gymFeedbackCard" style="display: none;">
+          <h4 id="gymFeedbackTitle">¡Excelente análisis!</h4>
+          <p id="gymFeedbackExplanation"></p>
+          <button type="button" class="btn-primary" id="btnNextGym">Siguiente caso →</button>
+        </div>
+      </div>
+
+      <!-- TALLER INTERACTIVO DE CONTRAARGUMENTACIÓN -->
+      <div class="counterarg-simulator">
+        <div class="counterarg-header">
+          <span class="lab-card-step">LA TÉCNICA DEL ABOGADO DIALÉCTICO</span>
+          <h3>El Arte de Contraargumentar: Concesión y Refutación</h3>
+          <p>Un ensayo persuasivo no ignora al opositor: <strong>lo escucha, le concede parte de razón y luego demuestra por qué la tesis se mantiene más firme.</strong></p>
+        </div>
+
+        <div class="counterarg-step-flow">
+          <div class="step-card">
+            <span class="step-num">1</span>
+            <h4>Reconocer la objeción</h4>
+            <p>Usa conectores de concesión: <em>«Si bien es cierto que...», «Aunque algunos críticos señalan que...»</em></p>
+          </div>
+          <div class="step-arrow">→</div>
+          <div class="step-card">
+            <span class="step-num">2</span>
+            <h4>Girar con contraste</h4>
+            <p>Introduce el contra-peso: <em>«Sin embargo...», «No obstante...», «A pesar de ello...»</em></p>
+          </div>
+          <div class="step-arrow">→</div>
+          <div class="step-card">
+            <span class="step-num">3</span>
+            <h4>Refutación con evidencia</h4>
+            <p>Prueba que tu tesis supera la objeción con un dato, solución o principio superior.</p>
+          </div>
+        </div>
+
+        <!-- Mini-simulador de fórmula de contraargumento -->
+        <div class="formula-practice-box">
+          <h4>Prueba la estructura de concesión en vivo:</h4>
+          <div class="formula-inputs-grid">
+            <div>
+              <label>Objeción común:</label>
+              <div class="preset-pill">"Los teléfonos distraen a los alumnos en clase."</div>
+            </div>
+            <div>
+              <label>Conector de contraste:</label>
+              <div class="preset-pill preset-accent">"Sin embargo..."</div>
+            </div>
+            <div>
+              <label>Refutación de fondo:</label>
+              <div class="preset-pill">"Prohibirlos impide enseñar alfabetización mediática y autorregulación digital, que son destrezas vitales para el siglo XXI."</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- MÓDULO 4: SIMULADOR CONSTRUCTOR DE ENSAYO (ANDAMIAJE)             -->
+    <!-- ================================================================= -->
+    <section class="tab-content" id="tab-constructor" role="tabpanel" aria-labelledby="btn-tab-constructor">
+      <div class="section-intro-card">
+        <div class="intro-tag">MÓDULO 04 · ANDAMIAJE DIRIGIDO</div>
+        <h2>Simulador Constructor de Ensayo</h2>
+        <p>
+          Construye el andamiaje de tu ensayo paso a paso. Completa cada sección con ayuda de los conectores recomendados, consulta la rúbrica formativa en tiempo real y exporta tu esquema listo para redactar. Tu trabajo se guarda automáticamente en este navegador.
+        </p>
+      </div>
+
+      <div class="builder-layout">
+        <!-- FORMULARIO DE CONSTRUCCIÓN PASO A PASO -->
+        <div class="builder-forms-col">
+
+          <!-- PASO 1: TEMA Y TÍTULO -->
+          <div class="accordion-step open" id="step-1">
+            <div class="step-header">
+              <div class="step-title-row">
+                <span class="step-badge">PASO 1</span>
+                <h3>Tema General y Título Provisional</h3>
+              </div>
+              <span class="step-status" id="status-step-1">En edición</span>
+            </div>
+            <div class="step-content">
+              <div class="form-group">
+                <label for="inputEssayTitle">Título sugerente o provocativo del ensayo:</label>
+                <input type="text" id="inputEssayTitle" class="custom-input" placeholder="Ej: Más allá del algoritmo: por qué la escuela no debe temer a la Inteligencia Artificial">
+              </div>
+              <div class="form-group">
+                <label for="inputEssayAuthor">Nombre del autor / estudiante:</label>
+                <input type="text" id="inputEssayAuthor" class="custom-input" placeholder="Tu nombre o seudónimo académico">
+              </div>
+            </div>
+          </div>
+
+          <!-- PASO 2: INTRODUCCIÓN Y TESIS -->
+          <div class="accordion-step" id="step-2">
+            <div class="step-header">
+              <div class="step-title-row">
+                <span class="step-badge">PASO 2</span>
+                <h3>Introducción: Gancho, Contexto y Tesis</h3>
+              </div>
+              <span class="step-status" id="status-step-2">Pendiente</span>
+            </div>
+            <div class="step-content">
+              <div class="helper-note">
+                <strong>Estructura recomendada:</strong> Comienza con un dato de impacto, una pregunta retórica o una situación cotidiana (gancho) y remata con tu <strong>Tesis</strong> al final del párrafo.
+              </div>
+
+              <div class="form-group">
+                <label for="inputIntroHook">Gancho y planteamiento del contexto:</label>
+                <textarea id="inputIntroHook" class="custom-textarea" rows="3" placeholder="Describe el contexto del problema o por qué es un debate urgente hoy en día..."></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="inputBuilderThesis">Tesis que defenderás a lo largo del ensayo:</label>
+                <textarea id="inputBuilderThesis" class="custom-textarea highlight-input" rows="2" placeholder="Tu afirmación debatible. Ej: La integración regulada de herramientas de IA en la educación secundaria es indispensable para formar pensamiento crítico y reducir la brecha de aprendizaje."></textarea>
+              </div>
+
+              <!-- BOTONES DE CONECTORES PARA INTRODUCCIÓN -->
+              <div class="connectors-bar">
+                <span>Conectores útiles:</span>
+                <button type="button" class="conn-pill" data-target="inputIntroHook" data-text="Hoy en día, ">Hoy en día</button>
+                <button type="button" class="conn-pill" data-target="inputIntroHook" data-text="A menudo se asume que ">A menudo se asume que</button>
+                <button type="button" class="conn-pill" data-target="inputBuilderThesis" data-text="Por esta razón, ">Por esta razón</button>
+                <button type="button" class="conn-pill" data-target="inputBuilderThesis" data-text="Resulta evidente que ">Resulta evidente que</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- PASO 3: ARGUMENTOS DE RESPALDO -->
+          <div class="accordion-step" id="step-3">
+            <div class="step-header">
+              <div class="step-title-row">
+                <span class="step-badge">PASO 3</span>
+                <h3>Cuerpo Argumentativo: 2 Argumentos Centrales</h3>
+              </div>
+              <span class="step-status" id="status-step-3">Pendiente</span>
+            </div>
+            <div class="step-content">
+              <!-- ARGUMENTO 1 -->
+              <div class="arg-builder-subblock">
+                <div class="subblock-tag">ARGUMENTO 1 · PREMISA & EVIDENCIA</div>
+                <div class="form-group">
+                  <label for="arg1Type">Tipo de argumento:</label>
+                  <select id="arg1Type" class="custom-select">
+                    <option value="Datos y Hechos">Datos y Estadísticas / Hechos</option>
+                    <option value="Causa-Efecto">Causa y Efecto</option>
+                    <option value="Autoridad">Cita de Autoridad / Estudio</option>
+                    <option value="Analogía">Analogía o Precedente</option>
+                    <option value="Valores">Valores Morales / Principios</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="inputArg1Premise">Idea central de este argumento (premisa):</label>
+                  <input type="text" id="inputArg1Premise" class="custom-input" placeholder="Ej: Las herramientas de IA permiten personalizar los ritmos de estudio según las necesidades individuales.">
+                </div>
+                <div class="form-group">
+                  <label for="inputArg1Evidence">Evidencia, justificación o dato concreto:</label>
+                  <textarea id="inputArg1Evidence" class="custom-textarea" rows="2" placeholder="Ej: Estudios pedagógicos de 2024 señalan que el feedback formativo inmediato incrementa la retención en un 28%..."></textarea>
+                </div>
+                <div class="connectors-bar">
+                  <span>Conectores:</span>
+                  <button type="button" class="conn-pill" data-target="inputArg1Premise" data-text="En primer lugar, ">En primer lugar</button>
+                  <button type="button" class="conn-pill" data-target="inputArg1Evidence" data-text="Como demuestra ">Como demuestra</button>
+                  <button type="button" class="conn-pill" data-target="inputArg1Evidence" data-text="Por consiguiente, ">Por consiguiente</button>
+                </div>
+              </div>
+
+              <!-- ARGUMENTO 2 -->
+              <div class="arg-builder-subblock">
+                <div class="subblock-tag">ARGUMENTO 2 · SEGUNDA PERSPECTIVA</div>
+                <div class="form-group">
+                  <label for="arg2Type">Tipo de argumento:</label>
+                  <select id="arg2Type" class="custom-select">
+                    <option value="Causa-Efecto">Causa y Efecto</option>
+                    <option value="Autoridad" selected>Cita de Autoridad / Estudio</option>
+                    <option value="Datos y Hechos">Datos y Estadísticas / Hechos</option>
+                    <option value="Analogía">Analogía o Precedente</option>
+                    <option value="Valores">Valores Morales / Principios</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="inputArg2Premise">Idea central de este segundo argumento:</label>
+                  <input type="text" id="inputArg2Premise" class="custom-input" placeholder="Ej: Prohibir la tecnología solo ensancha la brecha de equidad entre estudiantes.">
+                </div>
+                <div class="form-group">
+                  <label for="inputArg2Evidence">Evidencia, ejemplo o respaldo:</label>
+                  <textarea id="inputArg2Evidence" class="custom-textarea" rows="2" placeholder="Ej: Tal como señala la UNESCO, el acceso mediado a tecnología formativa previene la desigualdad digital..."></textarea>
+                </div>
+                <div class="connectors-bar">
+                  <span>Conectores:</span>
+                  <button type="button" class="conn-pill" data-target="inputArg2Premise" data-text="Asimismo, ">Asimismo</button>
+                  <button type="button" class="conn-pill" data-target="inputArg2Evidence" data-text="De modo similar, ">De modo similar</button>
+                  <button type="button" class="conn-pill" data-target="inputArg2Evidence" data-text="En concordancia con ">En concordancia con</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PASO 4: CONTRAARGUMENTO Y REFUTACIÓN -->
+          <div class="accordion-step" id="step-4">
+            <div class="step-header">
+              <div class="step-title-row">
+                <span class="step-badge">PASO 4</span>
+                <h3>Contraargumento y Refutación (La Objeción)</h3>
+              </div>
+              <span class="step-status" id="status-step-4">Pendiente</span>
+            </div>
+            <div class="step-content">
+              <div class="helper-note">
+                <strong>Estrategia dialéctica:</strong> Anticipa qué diría alguien que no está de acuerdo contigo y demuestra por qué tu postura sigue siendo válida.
+              </div>
+
+              <div class="form-group">
+                <label for="inputCounterargOpponent">¿Qué objeción formularía quien está en desacuerdo?</label>
+                <textarea id="inputCounterargOpponent" class="custom-textarea" rows="2" placeholder="Ej: Quienes se oponen argumentan que la IA generará pereza intelectual y plagio generalizado en los ensayos."></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="inputCounterargRefutation">Tu refutación contundente (demuestra por qué tu tesis prevalece):</label>
+                <textarea id="inputCounterargRefutation" class="custom-textarea" rows="2" placeholder="Ej: Sin embargo, el plagio se combate no con prohibiciones inútiles, sino rediseñando la evaluación hacia debates orales y análisis crítico guiado."></textarea>
+              </div>
+
+              <div class="connectors-bar">
+                <span>Conectores de concesión y contraste:</span>
+                <button type="button" class="conn-pill" data-target="inputCounterargOpponent" data-text="Si bien es cierto que ">Si bien es cierto que</button>
+                <button type="button" class="conn-pill" data-target="inputCounterargOpponent" data-text="Ciertamente, algunos afirman que ">Algunos afirman que</button>
+                <button type="button" class="conn-pill" data-target="inputCounterargRefutation" data-text="Sin embargo, ">Sin embargo</button>
+                <button type="button" class="conn-pill" data-target="inputCounterargRefutation" data-text="No obstante, ">No obstante</button>
+                <button type="button" class="conn-pill" data-target="inputCounterargRefutation" data-text="A pesar de ello, ">A pesar de ello</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- PASO 5: CONCLUSIÓN -->
+          <div class="accordion-step" id="step-5">
+            <div class="step-header">
+              <div class="step-title-row">
+                <span class="step-badge">PASO 5</span>
+                <h3>Conclusión: Síntesis y Reflexión de Cierre</h3>
+              </div>
+              <span class="step-status" id="status-step-5">Pendiente</span>
+            </div>
+            <div class="step-content">
+              <div class="helper-note">
+                <strong>Regla de oro:</strong> La conclusión <em>no introduce ideas nuevas sin probar</em>, sino que sintetiza los argumentos expuestos y deja una llamada a la reflexión o un valor democrático.
+              </div>
+
+              <div class="form-group">
+                <label for="inputConclusionSynthesis">Síntesis de las razones principales:</label>
+                <textarea id="inputConclusionSynthesis" class="custom-textarea" rows="2" placeholder="Ej: En conclusión, tanto la evidencia psicopedagógica como las exigencias del entorno contemporáneo demuestran que..."></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="inputConclusionCall">Llamado a la acción o valor universal de cierre:</label>
+                <textarea id="inputConclusionCall" class="custom-textarea" rows="2" placeholder="Ej: Preparar a las nuevas generaciones para pensar con y más allá de la tecnología es, en última instancia, un imperativo de justicia y libertad intelectual."></textarea>
+              </div>
+
+              <div class="connectors-bar">
+                <span>Conectores de cierre:</span>
+                <button type="button" class="conn-pill" data-target="inputConclusionSynthesis" data-text="En conclusión, ">En conclusión</button>
+                <button type="button" class="conn-pill" data-target="inputConclusionSynthesis" data-text="En síntesis, ">En síntesis</button>
+                <button type="button" class="conn-pill" data-target="inputConclusionCall" data-text="Por todo lo anterior, ">Por todo lo anterior</button>
+                <button type="button" class="conn-pill" data-target="inputConclusionCall" data-text="En última instancia, ">En última instancia</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- VISTA PREVIA Y RÚBRICA EN VIVO -->
+        <aside class="builder-preview-col">
+          <div class="sticky-preview-card">
+            <div class="preview-header">
+              <span class="preview-badge">ESQUEMA VIVO</span>
+              <h4>Vista Previa del Ensayo</h4>
             </div>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>PARTE</th>
-                        <th>FUNCIÓN</th>
-                        <th>CÓMO LO HACE</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>INTRODUCCIÓN</strong></td>
-                        <td>Presenta el tema y la posición del autor</td>
-                        <td>Explica qué es el problema y cuál es la tesis a defender</td>
-                    </tr>
-                    <tr>
-                        <td><strong>DESARROLLO<br>(4 argumentos)</strong></td>
-                        <td>Defiende la tesis con pruebas específicas</td>
-                        <td>Usa hechos, causas, autoridades y comparaciones para convencer</td>
-                    </tr>
-                    <tr>
-                        <td><strong>CONCLUSIÓN</strong></td>
-                        <td>Cierra y refuerza la tesis</td>
-                        <td>Sintetiza todo apelando a valores universales</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+            <!-- RÚBRICA DE COMPLETITUD Y CALIDAD -->
+            <div class="rubric-progress-box">
+              <div class="rubric-header">
+                <span>Solidez del Esquema:</span>
+                <strong id="rubricScorePercent">0%</strong>
+              </div>
+              <div class="progress-bar-bg">
+                <div class="progress-bar-active" id="rubricBar"></div>
+              </div>
+              <ul class="rubric-checklist" id="rubricChecklist">
+                <li id="chk-title" class="chk-item">❌ Título y autor asignados</li>
+                <li id="chk-thesis" class="chk-item">❌ Tesis clara y formulada</li>
+                <li id="chk-arg1" class="chk-item">❌ Argumento 1 fundamentado</li>
+                <li id="chk-arg2" class="chk-item">❌ Argumento 2 fundamentado</li>
+                <li id="chk-counter" class="chk-item">❌ Contraargumento y refutación</li>
+                <li id="chk-conclusion" class="chk-item">❌ Conclusión y síntesis</li>
+              </ul>
+            </div>
 
-        <!-- ACTIVIDAD -->
-        <div class="activity-section">
-            <h3>Actividad para practicar:</h3>
-            <ol>
-                <li><strong>Lee la INTRODUCCIÓN:</strong> ¿Cuál es la TESIS? Escríbela con tus propias palabras.</li>
-                <li><strong>Lee cada ARGUMENTO:</strong> Identifica qué tipo es (hechos, causa-consecuencia, autoridad, comparación).</li>
-                <li><strong>Lee la CONCLUSIÓN:</strong> ¿Cuál es el valor universal al que apela?</li>
-                <li><strong>Busca una objeción:</strong> ¿Qué contraargumento razonable podría formular alguien que no está de acuerdo?</li>
-                <li><strong>Respuesta final:</strong> ¿Crees que los argumentos convencen? ¿Qué evidencia adicional pedirías?</li>
-            </ol>
-        </div>
+            <!-- TEXTO INTEGRADO RESULTANTE -->
+            <div class="assembled-essay-view" id="assembledEssayView">
+              <p class="empty-preview-note">
+                A medida que completes los pasos en la izquierda, tu texto argumentativo se irá ensamblando aquí automáticamente en tiempo real.
+              </p>
+            </div>
 
-        <!-- FOOTER NOTE -->
-        <div class="footer-note">
-            <strong>Recuerda:</strong> Un ensayo argumentativo es como un abogado en un juicio. La INTRODUCCIÓN dice qué quiere probar. El DESARROLLO presenta las pruebas. La CONCLUSIÓN convence al juez de que tiene razón.
-        </div>
-    </div>
-<script src="../course-shell/course-shell.js"></script>
+            <!-- ACCIONES DE EXPORTACIÓN -->
+            <div class="export-actions-bar">
+              <button type="button" class="btn-export btn-copy" id="btnCopyEssay">
+                <span>📋 Copiar Texto</span>
+              </button>
+              <button type="button" class="btn-export btn-download" id="btnDownloadTxt">
+                <span>💾 Descargar .TXT</span>
+              </button>
+              <button type="button" class="btn-export btn-print" id="btnPrintEssay">
+                <span>🖨️ Imprimir / PDF</span>
+              </button>
+            </div>
+
+            <div class="clear-draft-row">
+              <button type="button" class="btn-clear-draft" id="btnClearDraft">Restablecer borrador</button>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- NOTIFICACIÓN TOAST -->
+  <div class="app-toast" id="appToast" aria-live="polite"></div>
+
+  <!-- SCRIPTS -->
+  <script src="app.js"></script>
+  <script src="../course-shell/course-shell.js"></script>
 </body>
 </html>
