@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Juego interactivo para aprender a identificar los 6 tipos de falacias lógicas mediante cartas con ejemplos.">
-  <title>Adivina el tipo de Falacia</title>
+  <meta name="description" content="Juego interactivo para aprender a identificar los 6 tipos de falacias lógicas mediante cartas con ejemplos y fichas pedagógicas.">
+  <title>Adivina el tipo de Falacia — Alejandro Córdova</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Public+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;600&family=Public+Sans:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="../course-shell/course-shell.css">
 </head>
@@ -25,16 +25,49 @@
     <h1>Adivina el tipo de Falacia</h1>
     <p class="instructions">
       Cada carta contiene un ejemplo de argumento falaz. <strong>Haz clic en la carta</strong> para descubrir 
-      qué tipo de falacia es y por qué. Las 6 falacias son:
+      qué tipo de falacia es y por qué.
     </p>
-    <div class="fallacy-tags">
-      <span class="tag tag-hominem">Ad hominem</span>
-      <span class="tag tag-verecundiam">Ad verecundiam</span>
-      <span class="tag tag-populum">Ad populum</span>
-      <span class="tag tag-ignorantiam">Ad ignorantiam</span>
-      <span class="tag tag-generalizacion">Generalización apresurada</span>
-      <span class="tag tag-misericordiam">Ad misericordiam</span>
+
+    <!-- Botones de falacias interactivos y con colores de alto contraste -->
+    <div class="fallacy-tags-section">
+      <p class="fallacy-tags-intro">
+        <span>Las 6 falacias de estudio</span>
+        <span class="fallacy-tags-hint">(Haz clic en cualquiera para abrir su ficha didáctica)</span>
+      </p>
+      <div class="fallacy-tags" role="toolbar" aria-label="Tipos de falacias y definiciones">
+        <button type="button" class="tag tag-hominem" data-fallacy="hominem" title="Clic para ver definición didáctica de Ad hominem">
+          <span class="tag-emoji">🎯</span>
+          <span class="tag-name">Ad hominem</span>
+          <span class="tag-badge">ⓘ</span>
+        </button>
+        <button type="button" class="tag tag-verecundiam" data-fallacy="verecundiam" title="Clic para ver definición didáctica de Ad verecundiam">
+          <span class="tag-emoji">👑</span>
+          <span class="tag-name">Ad verecundiam</span>
+          <span class="tag-badge">ⓘ</span>
+        </button>
+        <button type="button" class="tag tag-populum" data-fallacy="populum" title="Clic para ver definición didáctica de Ad populum">
+          <span class="tag-emoji">👥</span>
+          <span class="tag-name">Ad populum</span>
+          <span class="tag-badge">ⓘ</span>
+        </button>
+        <button type="button" class="tag tag-ignorantiam" data-fallacy="ignorantiam" title="Clic para ver definición didáctica de Ad ignorantiam">
+          <span class="tag-emoji">❓</span>
+          <span class="tag-name">Ad ignorantiam</span>
+          <span class="tag-badge">ⓘ</span>
+        </button>
+        <button type="button" class="tag tag-generalizacion" data-fallacy="generalizacion" title="Clic para ver definición didáctica de Generalización apresurada">
+          <span class="tag-emoji">⚡</span>
+          <span class="tag-name">Generalización apresurada</span>
+          <span class="tag-badge">ⓘ</span>
+        </button>
+        <button type="button" class="tag tag-misericordiam" data-fallacy="misericordiam" title="Clic para ver definición didáctica de Ad misericordiam">
+          <span class="tag-emoji">🥺</span>
+          <span class="tag-name">Ad misericordiam</span>
+          <span class="tag-badge">ⓘ</span>
+        </button>
+      </div>
     </div>
+
     <div class="cycle-tracker">
       <span id="cycleInfo">Ciclo 1 de 10</span>
       <div class="progress-bar">
@@ -43,16 +76,16 @@
     </div>
   </header>
 
-  <section id="conceptos" style="max-width: 1180px; margin: 0 auto 28px; padding: 28px; background: rgba(255,255,255,0.94); border: 1px solid rgba(7,27,51,0.12); border-radius: 18px; box-shadow: 0 10px 30px rgba(7,27,51,0.08);">
-    <p style="margin: 0 0 8px; color: #C6426E; font: 600 0.78rem/1.2 'DM Mono', monospace; letter-spacing: 0.12em; text-transform: uppercase;">Marco de análisis</p>
-    <h2 style="margin: 0 0 12px; color: #071B33; font: 600 1.8rem/1.2 'Source Serif 4', serif;">Una falacia no es solo una idea falsa</h2>
-    <p style="margin: 0 0 18px; color: #334155; line-height: 1.7; max-width: 920px;">Una falacia es un razonamiento que parece respaldar una conclusión, pero falla en la relación entre sus razones y esa conclusión. Por eso no basta con reconocer una etiqueta: hay que revisar si la razón es <strong>relevante</strong>, si ofrece apoyo <strong>suficiente</strong> y si sus premisas son aceptables o verificables.</p>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
-      <div style="padding: 16px; border-radius: 12px; background: #F4F7FB; border-left: 4px solid #C6426E;"><strong style="color: #071B33;">1. Reconoce la conclusión</strong><p style="margin: 8px 0 0; color: #475569; line-height: 1.55;">¿Qué quiere que aceptemos la persona que argumenta?</p></div>
-      <div style="padding: 16px; border-radius: 12px; background: #F4F7FB; border-left: 4px solid #C6426E;"><strong style="color: #071B33;">2. Separa razón y emoción</strong><p style="margin: 8px 0 0; color: #475569; line-height: 1.55;">¿La razón aporta evidencia o intenta presionar, distraer o desacreditar?</p></div>
-      <div style="padding: 16px; border-radius: 12px; background: #F4F7FB; border-left: 4px solid #C6426E;"><strong style="color: #071B33;">3. Formula una respuesta</strong><p style="margin: 8px 0 0; color: #475569; line-height: 1.55;">Nombra el problema, explica por qué debilita el argumento y pide la evidencia que falta.</p></div>
+  <section id="conceptos" class="concepts-box">
+    <p class="concepts-tag">Marco de análisis pedagógico</p>
+    <h2 class="concepts-title">Una falacia no es solo una idea falsa</h2>
+    <p class="concepts-lead">Una falacia es un razonamiento que parece respaldar una conclusión, pero falla en la relación entre sus razones y esa conclusión. Por eso no basta con memorizar una etiqueta: hay que evaluar si la razón es <strong>relevante</strong>, si ofrece apoyo <strong>suficiente</strong> y si sus premisas son verificables.</p>
+    <div class="concepts-steps-grid">
+      <div class="concept-step"><strong style="color: #071B33;">1. Reconoce la conclusión</strong><p>¿Qué quiere que aceptemos la persona que argumenta?</p></div>
+      <div class="concept-step"><strong style="color: #071B33;">2. Separa razón y emoción</strong><p>¿La razón aporta evidencia o intenta presionar, distraer o desacreditar?</p></div>
+      <div class="concept-step"><strong style="color: #071B33;">3. Formula una respuesta</strong><p>Nombra el problema, explica por qué debilita el argumento y pide la evidencia que falta.</p></div>
     </div>
-    <p style="margin: 18px 0 0; color: #475569; line-height: 1.65;"><strong>Importante:</strong> una apelación a una autoridad no es automáticamente falaz si la autoridad es pertinente, la afirmación está dentro de su campo y existe evidencia independiente. Del mismo modo, una emoción puede formar parte de una argumentación legítima; el problema aparece cuando sustituye las razones que la conclusión necesita.</p>
+    <p class="concepts-note"><strong>Criterio formativo:</strong> una apelación a una autoridad no es falaz si la persona citada es especialista en ese campo exacto y existe consenso disciplinar. De igual forma, una emoción es válida en la comunicación humana; el problema aparece cuando sustituye las pruebas que la conclusión exige.</p>
   </section>
 
   <!-- View Controls -->
@@ -91,8 +124,36 @@
   </main>
 
   <footer>
-    <p>Falacias lógicas explicadas gráficamente · Recurso educativo</p>
+    <p>Falacias lógicas explicadas gráficamente · Recurso pedagógico creado por Alejandro Córdova</p>
   </footer>
+
+  <!-- VENTANA EMERGENTE (MODAL PEDAGÓGICO DE FALACIAS) -->
+  <div class="fallacy-modal-overlay" id="fallacyModalOverlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="fallacy-modal-container">
+      <div class="fallacy-modal-header" id="modalHeader">
+        <div class="modal-header-text">
+          <div class="modal-category-badge" id="modalCategoryBadge">🎯 FALACIA NO FORMAL</div>
+          <h3 class="modal-title" id="modalTitle">Ad Hominem</h3>
+          <p class="modal-subtitle" id="modalSubtitle">Ataque a la persona</p>
+        </div>
+        <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Cerrar ventana emergente">✕</button>
+      </div>
+
+      <div class="fallacy-modal-body" id="modalBody">
+        <!-- Contenido pedagógico estructurado inyectado por JS -->
+      </div>
+
+      <div class="fallacy-modal-footer">
+        <div class="modal-switcher" id="modalSwitcher">
+          <!-- Botones rápidos para consultar otras falacias -->
+        </div>
+        <button type="button" class="modal-btn-understood" id="modalBtnUnderstood">
+          <span>Entendido</span>
+          <span>✓</span>
+        </button>
+      </div>
+    </div>
+  </div>
 
   <script src="app.js"></script>
   <script src="../course-shell/course-shell.js"></script>

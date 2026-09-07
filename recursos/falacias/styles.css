@@ -168,37 +168,466 @@ header h1 {
   color: var(--text-dark);
 }
 
-/* ===== Fallacy Tags ===== */
+
+/* ===== Fallacy Tags Section & Interactive Objects ===== */
+.fallacy-tags-section {
+  max-width: 860px;
+  margin: 0 auto 28px;
+}
+
+.fallacy-tags-intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.fallacy-tags-hint {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  color: #64748B;
+  font-weight: 400;
+}
+
 .fallacy-tags {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  margin-bottom: 28px;
 }
 
+/* Tag buttons: Vibrant, high-contrast, clickable objects */
 .tag {
-  display: inline-block;
-  padding: 6px 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
   border-radius: 50px;
-  font-size: 0.85rem;
+  font-family: 'Public Sans', sans-serif;
+  font-size: 0.88rem;
   font-weight: 700;
-  letter-spacing: 0.3px;
-  transition: transform var(--transition), box-shadow var(--transition);
-  cursor: default;
+  letter-spacing: 0.2px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(7, 27, 51, 0.12);
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.18s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .tag:hover {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: var(--shadow-soft);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 16px rgba(7, 27, 51, 0.22);
+  filter: brightness(1.06);
 }
 
-.tag-hominem       { background: var(--color-hominem); color: #6b3a1f; }
-.tag-verecundiam   { background: var(--color-verecundiam); color: #1f4e6b; }
-.tag-populum       { background: var(--color-populum); color: #1f6b4a; }
-.tag-ignorantiam   { background: var(--color-ignorantiam); color: #6b5e1f; }
-.tag-generalizacion { background: var(--color-generalizacion); color: #6b2f2f; }
-.tag-misericordiam { background: var(--color-misericordiam); color: #2f6b36; }
+.tag:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+.tag:focus-visible {
+  ring: 3px rgba(7, 27, 51, 0.35);
+  box-shadow: 0 0 0 3px rgba(35, 103, 209, 0.4);
+}
+
+.tag-emoji {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.tag-name {
+  font-weight: 700;
+}
+
+.tag-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.28);
+  font-size: 0.72rem;
+  font-weight: 800;
+  margin-left: 2px;
+}
+
+/* High contrast, distinctive brand & pedagogical colors with 100% white text */
+.tag-hominem {
+  background-color: #C53030;
+  color: #FFFFFF !important;
+  border-color: #9B2C2C;
+}
+
+.tag-verecundiam {
+  background-color: #2B6CB0;
+  color: #FFFFFF !important;
+  border-color: #2C5282;
+}
+
+.tag-populum {
+  background-color: #22543D;
+  color: #FFFFFF !important;
+  border-color: #1C4532;
+}
+
+.tag-ignorantiam {
+  background-color: #B7791F;
+  color: #FFFFFF !important;
+  border-color: #975A16;
+}
+
+.tag-generalizacion {
+  background-color: #9B2C2C;
+  color: #FFFFFF !important;
+  border-color: #742A2A;
+}
+
+.tag-misericordiam {
+  background-color: #553C9A;
+  color: #FFFFFF !important;
+  border-color: #44337A;
+}
+
+/* Concept Box Styling Cleaned */
+.concepts-box {
+  max-width: 1180px;
+  margin: 0 auto 28px;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(7, 27, 51, 0.12);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(7, 27, 51, 0.06);
+}
+
+.concepts-tag {
+  margin: 0 0 8px;
+  color: #C53030;
+  font: 600 0.78rem/1.2 'DM Mono', monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.concepts-title {
+  margin: 0 0 12px;
+  color: #071B33;
+  font: 700 1.8rem/1.2 'Source Serif 4', serif;
+}
+
+.concepts-lead {
+  margin: 0 0 18px;
+  color: #334155;
+  line-height: 1.7;
+  max-width: 920px;
+}
+
+.concepts-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.concept-step {
+  padding: 16px;
+  border-radius: 12px;
+  background: #F4F7FB;
+  border-left: 4px solid #071B33;
+}
+
+.concept-step p {
+  margin: 8px 0 0;
+  color: #475569;
+  line-height: 1.55;
+  font-size: 0.92rem;
+}
+
+.concepts-note {
+  margin: 18px 0 0;
+  color: #475569;
+  line-height: 1.65;
+  font-size: 0.92rem;
+}
+
+/* ===== Fallacy Modal (Ventana Emergente Pedagógica) ===== */
+.fallacy-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(7, 27, 51, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.24s ease;
+}
+
+.fallacy-modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.fallacy-modal-container {
+  width: 100%;
+  max-width: 660px;
+  max-height: 90vh;
+  background: #FFFFFF;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  transform: scale(0.95) translateY(12px);
+  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fallacy-modal-overlay.active .fallacy-modal-container {
+  transform: scale(1) translateY(0);
+}
+
+.fallacy-modal-header {
+  padding: 24px 28px;
+  color: #FFFFFF;
+  background-color: #071B33;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  transition: background-color 0.25s ease;
+}
+
+.modal-header-text {
+  flex: 1;
+  padding-right: 16px;
+}
+
+.modal-category-badge {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.modal-title {
+  font-family: 'Source Serif 4', serif;
+  font-size: 1.85rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 4px;
+}
+
+.modal-subtitle {
+  font-family: 'Public Sans', sans-serif;
+  font-size: 0.95rem;
+  opacity: 0.92;
+  font-weight: 500;
+}
+
+.modal-close-btn {
+  background: rgba(255, 255, 255, 0.18);
+  border: none;
+  color: #FFFFFF;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.modal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.32);
+  transform: scale(1.08);
+}
+
+.fallacy-modal-body {
+  padding: 28px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #FAF9F5;
+  color: #101820;
+}
+
+.modal-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modal-section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #64748B;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.modal-definition-text {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #1E293B;
+}
+
+.modal-error-box {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-left: 4px solid var(--modal-accent, #071B33);
+  padding: 16px 18px;
+  border-radius: 8px;
+}
+
+.modal-error-box p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #334155;
+  margin: 0;
+}
+
+.modal-example-box {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 18px;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.modal-example-quote {
+  font-family: 'Source Serif 4', serif;
+  font-style: italic;
+  font-size: 1.08rem;
+  color: #071B33;
+  line-height: 1.55;
+  margin-bottom: 10px;
+  padding-left: 12px;
+  border-left: 3px solid var(--modal-accent, #C53030);
+}
+
+.modal-example-analysis {
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.modal-response-box {
+  background: #F1F5F9;
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+
+.modal-response-box p {
+  font-size: 0.92rem;
+  color: #1E293B;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.fallacy-modal-footer {
+  padding: 16px 28px;
+  background: #FFFFFF;
+  border-top: 1px solid #E2E8F0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.modal-switcher {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.switcher-pill {
+  padding: 5px 10px;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 1px solid #CBD5E1;
+  background: #F8FAFC;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.switcher-pill:hover,
+.switcher-pill.active {
+  background: #071B33;
+  color: #FFFFFF;
+  border-color: #071B33;
+}
+
+.modal-btn-understood {
+  padding: 8px 20px;
+  background: #071B33;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Public Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: background 0.18s ease;
+}
+
+.modal-btn-understood:hover {
+  background: #123C69;
+}
+
+@media (max-width: 600px) {
+  .fallacy-modal-header {
+    padding: 18px 20px;
+  }
+  .modal-title {
+    font-size: 1.5rem;
+  }
+  .fallacy-modal-body {
+    padding: 20px;
+  }
+  .fallacy-modal-footer {
+    padding: 14px 20px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .modal-switcher {
+    justify-content: center;
+  }
+  .modal-btn-understood {
+    justify-content: center;
+    width: 100%;
+  }
+}
 
 /* ===== Cycle Tracker ===== */
 .cycle-tracker {

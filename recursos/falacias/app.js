@@ -521,3 +521,205 @@ document.addEventListener("DOMContentLoaded", () => {
   initControls();
 });
 
+
+
+// ── Definiciones Pedagógicas de las 6 Falacias (Alejandro Córdova) ──
+const FALLACY_PEDAGOGY = {
+  hominem: {
+    key: "hominem",
+    name: "Ad Hominem",
+    translation: "Contra la persona",
+    tagline: "Ataque a la persona en lugar de refutar su tesis",
+    emoji: "🎯",
+    accentColor: "#C53030",
+    definition: "Consiste en rechazar o desacreditar un argumento atacando las características de quien lo sostiene —su apariencia, edad, origen, condición social, moralidad o errores del pasado— en vez de examinar la pertinencia y verdad de sus razones.",
+    logicFlaw: "La validez o solidez de una conclusión es completamente independiente de las virtudes o defectos personales de quien la defiende. Una persona con contradicciones personales puede formular un argumento lógicamente intachable.",
+    example: "\"No podemos aceptar la propuesta económica del ministro porque se divorció dos veces y no tiene valores familiares.\"",
+    exampleAnalysis: "En vez de debatir las cifras de gasto público o inflación, se desvía la atención hacia su vida privada, la cual carece de relevancia lógica para el debate económico.",
+    howToRespond: "Centrar de inmediato la atención en los datos: «Mis circunstancias personales no alteran los datos presentados; debatamos la propuesta técnica, no a mi persona»."
+  },
+  verecundiam: {
+    key: "verecundiam",
+    name: "Ad Verecundiam",
+    translation: "Apelación a la autoridad",
+    tagline: "Validar una idea apelando al prestigio de alguien fuera de su campo",
+    emoji: "👑",
+    accentColor: "#2B6CB0",
+    definition: "Ocurre cuando se pretende dar por indiscutible una conclusión únicamente porque la defiende una figura famosa, de prestigio o autoridad, pero que carece de competencia técnica o pericia en el tema específico que se debate.",
+    logicFlaw: "El éxito o reconocimiento en un área (ej. el deporte, la música o una disciplina científica ajena) no otorga autoridad epistémica ni convierte la opinión de esa persona en evidencia demostrable en otros campos.",
+    example: "\"Este suplemento nutricional previene el envejecimiento; lo recomendó un famoso actor de cine en sus redes sociales.\"",
+    exampleAnalysis: "La popularidad mediática no equivale a certificación científica en bioquímica, medicina o nutrición.",
+    howToRespond: "Diferenciar fama de rigor disciplinar: «Admiro el talento artístico del actor, pero para evaluar la eficacia médica de un suplemento requerimos ensayos clínicos y el consenso de la comunidad médica»."
+  },
+  populum: {
+    key: "populum",
+    name: "Ad Populum",
+    translation: "Apelación a la multitud",
+    tagline: "Sostener que algo es verdadero solo porque la mayoría lo cree o practica",
+    emoji: "👥",
+    accentColor: "#22543D",
+    definition: "Consiste en sostener que una afirmación es verdadera, acertada o moralmente correcta solo porque la mayoría de personas, la sociedad entera o la tradición popular así lo cree o lo practica.",
+    logicFlaw: "La verdad no se define por consenso democrático ni por estadísticas de consumo. A lo largo de la historia, mayorías enteras han sostenido ideas que luego resultaron falsas o perjudiciales.",
+    example: "\"Millones de personas leen el horóscopo cada mañana; no pueden estar todos equivocados, algo de verdad debe tener.\"",
+    exampleAnalysis: "La masividad de una costumbre o creencia describe un fenómeno sociológico, pero no aporta una sola prueba científica de su veracidad.",
+    howToRespond: "Separar popularidad de justificación lógica: «Que una creencia esté ampliamente extendida explica su éxito cultural, pero no demuestra su certeza empírica ni su validez argumentativa»."
+  },
+  ignorantiam: {
+    key: "ignorantiam",
+    name: "Ad Ignorantiam",
+    translation: "Llamado a la ignorancia",
+    tagline: "Dar por cierta una idea solo porque nadie ha probado que es falsa",
+    emoji: "❓",
+    accentColor: "#B7791F",
+    definition: "Se comete al defender que una afirmación es verdadera únicamente porque nadie ha logrado demostrar que sea falsa, o que es falsa porque nadie ha demostrado aún su veracidad.",
+    logicFlaw: "La ausencia de prueba no es prueba de ausencia ni de verdad. En la lógica formal y el método científico, la carga de la prueba (onus probandi) recae siempre sobre quien postula la afirmación.",
+    example: "\"Nadie ha podido demostrar de forma concluyente que los fantasmas no existan en esa casa abandonada, por lo tanto, existen.\"",
+    exampleAnalysis: "Se invierte la carga probatoria, pretendiendo que la falta de refutación deba tomarse como confirmación de una entidad extraordinaria.",
+    howToRespond: "Recordar la carga de la prueba: «La dificultad para demostrar que algo no existe no lo vuelve real. Quien formula una afirmación tiene el deber de aportar evidencias observables»."
+  },
+  generalizacion: {
+    key: "generalizacion",
+    name: "Generalización Apresurada",
+    translation: "Secundum quid",
+    tagline: "Extraer una ley universal a partir de observaciones insuficientes",
+    emoji: "⚡",
+    accentColor: "#9B2C2C",
+    definition: "Consiste en atribuir una conclusión o rasgo a todo un colectivo, sistema o fenómeno basándose en una muestra demasiado reducida, excepcional o no representativa de casos aislados.",
+    logicFlaw: "Uno o dos casos no permiten establecer una pauta estadística ni una ley general confiable; se ignora la diversidad, el azar y la complejidad del conjunto.",
+    example: "\"Compré dos libros de esa editorial y tenían erratas tipográficas; por tanto, todos los libros de esa editorial están pésimamente editados.\"",
+    exampleAnalysis: "Se extrapola una mala experiencia con dos volúmenes al catálogo entero de miles de publicaciones.",
+    howToRespond: "Exigir representatividad: «Esa experiencia particular es lamentable, pero dos casos aislados no constituyen una muestra suficiente para dictaminar la calidad de toda la producción»."
+  },
+  misericordiam: {
+    key: "misericordiam",
+    name: "Ad Misericordiam",
+    translation: "Apelación a la piedad",
+    tagline: "Manipular la lástima o el sufrimiento para evadir las razones lógicas",
+    emoji: "🥺",
+    accentColor: "#553C9A",
+    definition: "Ocurre cuando se busca convencer al interlocutor o conseguir una decisión favorable apelando a la compasión, la desgracia personal o la súplica emotiva, en vez de aportar razones y méritos pertinentes.",
+    logicFlaw: "Aunque la empatía y la compasión son virtudes humanas indispensables, no sustituyen los hechos ni los criterios objetivos de evaluación académica, legal o profesional.",
+    example: "\"Profesor, por favor apruébeme esta materia; si no paso, perderé mi beca y mi familia pasará por una tristeza inmensa.\"",
+    exampleAnalysis: "La angustia personal es sincera y respetable, pero una calificación académica evalúa los aprendizajes alcanzados, no las circunstancias de vida.",
+    howToRespond: "Validar la emoción sin vulnerar el criterio objetivo: «Comprendo la dificultad de tu situación y la empatizo; sin embargo, la evaluación mide las destrezas logradas con imparcialidad para todos los estudiantes»."
+  }
+};
+
+// ── Lógica de la Ventana Emergente (Modal) ────────────────────
+let activeModalFallacyKey = null;
+
+function initFallacyModal() {
+  const overlay = document.getElementById("fallacyModalOverlay");
+  const closeBtn = document.getElementById("modalCloseBtn");
+  const understoodBtn = document.getElementById("modalBtnUnderstood");
+  const modalHeader = document.getElementById("modalHeader");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalSubtitle = document.getElementById("modalSubtitle");
+  const modalCategoryBadge = document.getElementById("modalCategoryBadge");
+  const modalBody = document.getElementById("modalBody");
+  const modalSwitcher = document.getElementById("modalSwitcher");
+
+  if (!overlay) return;
+
+  // Build switcher pills
+  modalSwitcher.innerHTML = "";
+  Object.keys(FALLACY_PEDAGOGY).forEach(key => {
+    const f = FALLACY_PEDAGOGY[key];
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "switcher-pill";
+    btn.setAttribute("data-key", key);
+    btn.innerHTML = `${f.emoji} ${f.name}`;
+    btn.addEventListener("click", () => openFallacyModal(key));
+    modalSwitcher.appendChild(btn);
+  });
+
+  function openFallacyModal(key) {
+    const data = FALLACY_PEDAGOGY[key];
+    if (!data) return;
+
+    activeModalFallacyKey = key;
+    document.body.classList.add("modal-open");
+
+    // Set header theme
+    modalHeader.style.backgroundColor = data.accentColor;
+    modalTitle.textContent = `${data.emoji} ${data.name}`;
+    modalSubtitle.textContent = data.tagline;
+    modalCategoryBadge.textContent = `${data.translation} · FALACIA NO FORMAL`;
+
+    // Render body content
+    modalBody.style.setProperty("--modal-accent", data.accentColor);
+    modalBody.innerHTML = `
+      <div class="modal-section">
+        <span class="modal-section-label">📖 Definición Pedagógica</span>
+        <p class="modal-definition-text">${data.definition}</p>
+      </div>
+
+      <div class="modal-section">
+        <span class="modal-section-label">⚠️ El Fallo Lógico (¿Por qué no es válido?)</span>
+        <div class="modal-error-box">
+          <p>${data.logicFlaw}</p>
+        </div>
+      </div>
+
+      <div class="modal-section">
+        <span class="modal-section-label">💬 Ejemplo Ilustrativo</span>
+        <div class="modal-example-box">
+          <div class="modal-example-quote">${data.example}</div>
+          <p class="modal-example-analysis"><strong>Análisis:</strong> ${data.exampleAnalysis}</p>
+        </div>
+      </div>
+
+      <div class="modal-section">
+        <span class="modal-section-label">💡 Pauta para el Debate o Análisis</span>
+        <div class="modal-response-box">
+          <p>${data.howToRespond}</p>
+        </div>
+      </div>
+    `;
+
+    // Update switcher pills active state
+    document.querySelectorAll(".switcher-pill").forEach(pill => {
+      pill.classList.toggle("active", pill.getAttribute("data-key") === key);
+    });
+
+    overlay.classList.add("active");
+    overlay.setAttribute("aria-hidden", "false");
+  }
+
+  function closeFallacyModal() {
+    overlay.classList.remove("active");
+    overlay.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+  }
+
+  // Hook tag buttons in header
+  document.querySelectorAll(".fallacy-tags .tag").forEach(tagBtn => {
+    tagBtn.addEventListener("click", () => {
+      const fallacyKey = tagBtn.getAttribute("data-fallacy");
+      openFallacyModal(fallacyKey);
+    });
+  });
+
+  // Close handlers
+  closeBtn.addEventListener("click", closeFallacyModal);
+  understoodBtn.addEventListener("click", closeFallacyModal);
+
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) {
+      closeFallacyModal();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && overlay.classList.contains("active")) {
+      closeFallacyModal();
+    }
+  });
+}
+
+
+// Hook into initialization
+document.addEventListener("DOMContentLoaded", () => {
+  initFallacyModal();
+});
