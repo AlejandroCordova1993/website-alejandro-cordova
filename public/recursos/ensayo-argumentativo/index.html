@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Taller y Simulador de Ensayo Argumentativo: laboratorio interactivo para el aprendizaje de formulación de tesis, tipología de argumentos, contraargumentación y andamiaje paso a paso.">
-  <title>Taller y Simulador de Ensayo Argumentativo — Alejandro Córdova</title>
+  <title>Taller y Simulador de Ensayo Argumentativo — Msc. Alejandro Córdova</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,25 +21,29 @@
       <div class="header-badge">LABORATORIO DIDÁCTICO · ESCRITURA ACADÉMICA</div>
       <h1 class="header-title">Taller y Simulador de Ensayo Argumentativo</h1>
       <p class="header-desc">
-        Aprende a defender ideas con rigor lógico. Explora la radiografía de un texto modelo, entrena la formulación de tesis debatibles, identifica tipologías de argumentos y construye tu propio ensayo con andamiaje guiado.
+        Aprende a defender ideas con rigor lógico. Explora los fundamentos teóricos, analiza la radiografía de un texto modelo, entrena la formulación de tesis debatibles, domina la tipología de argumentos y construye tu propio ensayo con andamiaje guiado paso a paso.
       </p>
 
-      <!-- BARRA DE NAVEGACIÓN DE MÓDULOS -->
+      <!-- BARRA DE NAVEGACIÓN DE MÓDULOS (5 PESTAÑAS) -->
       <nav class="module-nav" role="tablist" aria-label="Módulos del Taller">
-        <button type="button" class="nav-tab active" role="tab" aria-selected="true" data-tab="tab-radiografia" id="btn-tab-radiografia">
+        <button type="button" class="nav-tab active" role="tab" aria-selected="true" data-tab="tab-teoria" id="btn-tab-teoria">
           <span class="tab-step">01</span>
+          <span class="tab-label">Fundamentos Teóricos</span>
+        </button>
+        <button type="button" class="nav-tab" role="tab" aria-selected="false" data-tab="tab-radiografia" id="btn-tab-radiografia">
+          <span class="tab-step">02</span>
           <span class="tab-label">Radiografía del Texto</span>
         </button>
         <button type="button" class="nav-tab" role="tab" aria-selected="false" data-tab="tab-tesis" id="btn-tab-tesis">
-          <span class="tab-step">02</span>
+          <span class="tab-step">03</span>
           <span class="tab-label">Laboratorio de Tesis</span>
         </button>
         <button type="button" class="nav-tab" role="tab" aria-selected="false" data-tab="tab-argumentos" id="btn-tab-argumentos">
-          <span class="tab-step">03</span>
+          <span class="tab-step">04</span>
           <span class="tab-label">Gimnasio de Argumentos</span>
         </button>
         <button type="button" class="nav-tab" role="tab" aria-selected="false" data-tab="tab-constructor" id="btn-tab-constructor">
-          <span class="tab-step">04</span>
+          <span class="tab-step">05</span>
           <span class="tab-label">Simulador Constructor</span>
         </button>
       </nav>
@@ -49,11 +53,591 @@
   <main class="main-container">
 
     <!-- ================================================================= -->
-    <!-- MÓDULO 1: RADIOGRAFÍA INTERACTIVA (TEXTO VIVO)                    -->
+    <!-- MÓDULO 01: FUNDAMENTOS TEÓRICOS (NUEVO MÓDULO PEDAGÓGICO)        -->
     <!-- ================================================================= -->
-    <section class="tab-content active" id="tab-radiografia" role="tabpanel" aria-labelledby="btn-tab-radiografia">
+    <section class="tab-content active" id="tab-teoria" data-label="01. Fundamentos Teóricos" role="tabpanel" aria-labelledby="btn-tab-teoria">
+      
+      <!-- INTRODUCCIÓN AL MARCO TEÓRICO -->
       <div class="section-intro-card">
-        <div class="intro-tag">MÓDULO 01 · ANÁLISIS DISCURSIVO</div>
+        <div class="intro-tag">MÓDULO 01 · MARCO CONCEPTUAL & CONSULTA PERMANENTE</div>
+        <h2>Fundamentos Teóricos del Ensayo Argumentativo</h2>
+        <p>
+          Bienvenido a la brújula conceptual del taller. Aquí encontrarás las definiciones rigurosas, los criterios de validez, la estructura retórica en tres momentos, las tipologías de argumentos y la caja de conectores lógicos a la que podrás recurrir en cualquier momento durante la redacción de tu ensayo.
+        </p>
+
+        <!-- ATRIBUTOS RÁPIDOS / ÍNDICE INTERNO -->
+        <div class="theory-nav-bar">
+          <span class="theory-nav-label">Temas de consulta:</span>
+          <a href="#teoria-concepto" class="theory-nav-pill">📚 ¿Qué es un Ensayo?</a>
+          <a href="#teoria-tesis" class="theory-nav-pill">🎯 La Tesis Central</a>
+          <a href="#teoria-estructura" class="theory-nav-pill">🏛️ Estructura en 3 Momentos</a>
+          <a href="#teoria-tipologias" class="theory-nav-pill">🧱 Tipos de Argumentos</a>
+          <a href="#teoria-contra" class="theory-nav-pill">⚖️ Contraargumentación</a>
+          <a href="#teoria-conectores" class="theory-nav-pill">🔗 Caja de Conectores</a>
+        </div>
+      </div>
+
+      <!-- BANNER DE ENLACE DIRECTO AL SIMULADOR -->
+      <div class="theory-cta-banner">
+        <div class="cta-banner-content">
+          <span class="cta-badge">APRENDIZAJE ACTIVO</span>
+          <p><strong>¿Ya dominas la teoría?</strong> Puedes saltar directamente al <strong>Simulador Constructor (Módulo 05)</strong> para redactar tu texto o a la <strong>Radiografía (Módulo 02)</strong> para ver un ensayo analizado.</p>
+        </div>
+        <div class="cta-banner-actions">
+          <button type="button" class="btn-jump-module" data-jump="tab-radiografia">Ver Radiografía →</button>
+          <button type="button" class="btn-jump-module btn-jump-primary" data-jump="tab-constructor">Ir al Constructor 🚀</button>
+        </div>
+      </div>
+
+      <!-- 1. ¿QUÉ ES UN ENSAYO ARGUMENTATIVO? -->
+      <section class="theory-card" id="teoria-concepto">
+        <div class="theory-card-header">
+          <span class="theory-card-num">TEMA 1</span>
+          <h3>1. ¿Qué es un Ensayo Argumentativo?</h3>
+        </div>
+        <div class="theory-card-body">
+          <p class="theory-lead">
+            Un <strong>ensayo argumentativo</strong> es un texto académico y reflexivo en prosa en el cual el autor expone, fundamenta y defiende una <strong>postura crítica (tesis)</strong> frente a un tema controvertido, con el propósito de convencer o persuadir razonadamente a una comunidad lectora.
+          </p>
+
+          <div class="theory-three-pillars">
+            <div class="pillar-box">
+              <div class="pillar-icon">🎯</div>
+              <h4>Postura Propia</h4>
+              <p>No se limita a resumir libros o recopilar opiniones ajenas; adopta una perspectiva personal reflexiva y explícita.</p>
+            </div>
+            <div class="pillar-box">
+              <div class="pillar-icon">🔬</div>
+              <h4>Rigor Probatorio</h4>
+              <p>Cada afirmación debe estar respaldada por razones demostrables: hechos, evidencias empíricas, citas de autoridad o causalidad lógica.</p>
+            </div>
+            <div class="pillar-box">
+              <div class="pillar-icon">🗣️</div>
+              <h4>Diálogo Dialéctico</h4>
+              <p>No es un dogma ciego. Escucha, analiza y responde a las objeciones del oponente mediante la contraargumentación.</p>
+            </div>
+          </div>
+
+          <!-- COMPARATIVA DIDÁCTICA -->
+          <div class="theory-comparison-table-wrapper">
+            <h4 class="subtable-title">Diferencias clave con otros tipos de textos:</h4>
+            <table class="theory-comparison-table">
+              <thead>
+                <tr>
+                  <th>Criterio</th>
+                  <th>Ensayo Argumentativo</th>
+                  <th>Texto Expositivo / Informativo</th>
+                  <th>Artículo de Opinión Informal</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Propósito central</strong></td>
+                  <td>Persuadir y convencer mediante razonamiento lógico y evidencias.</td>
+                  <td>Informar y explicar un tema con objetividad y neutralidad.</td>
+                  <td>Expresar emociones, vivencias o puntos de vista personales.</td>
+                </tr>
+                <tr>
+                  <td><strong>Papel de la postura</strong></td>
+                  <td><strong>Indispensable</strong>: tiene una tesis explícita y debatible.</td>
+                  <td><strong>Ausente</strong>: busca la imparcialidad sin tomar partido.</td>
+                  <td><strong>Subjetiva</strong>: suele basarse en gustos, creencias o anécdotas.</td>
+                </tr>
+                <tr>
+                  <td><strong>Exigencia probatoria</strong></td>
+                  <td>Alta: requiere datos, autoridades, lógica causal y contraargumentos.</td>
+                  <td>Media-Alta: fuentes fácticas verificadas.</td>
+                  <td>Baja: no requiere justificación metodológica formal.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. LA TESIS CENTRAL -->
+      <section class="theory-card" id="teoria-tesis">
+        <div class="theory-card-header">
+          <span class="theory-card-num">TEMA 2</span>
+          <h3>2. La Tesis: El Corazón y Eje Rector del Ensayo</h3>
+        </div>
+        <div class="theory-card-body">
+          <p class="theory-lead">
+            La <strong>tesis</strong> es la proposición nuclear de todo el ensayo. Es la respuesta directa, clara y sintética a una controversia. Si imaginas el ensayo como un edificio, la tesis son sus cimientos; si la tesis es débil, vaga o indiscutible, todo el edificio argumentativo se derrumba.
+          </p>
+
+          <div class="thesis-rules-grid">
+            <div class="rule-card">
+              <span class="rule-badge">REGLA 1</span>
+              <h4>Debe ser Debatible</h4>
+              <p>Debe admitir desacuerdo razonable. Si nadie inteligente podría oponerse con argumentos serios, entonces es un hecho o una obviedad, no una tesis.</p>
+            </div>
+            <div class="rule-card">
+              <span class="rule-badge">REGLA 2</span>
+              <h4>Debe ser Específica</h4>
+              <p>Evita generalizaciones cósmicas como «la violencia es mala». Delimita el sujeto, el contexto y la acción propuesta.</p>
+            </div>
+            <div class="rule-card">
+              <span class="rule-badge">REGLA 3</span>
+              <h4>Debe ser Sustentable</h4>
+              <p>Debe poder respaldarse con pruebas, estudios, datos y análisis racional, no con preferencias de gusto o dogmas de fe.</p>
+            </div>
+            <div class="rule-card">
+              <span class="rule-badge">REGLA 4</span>
+              <h4>Debe ser una Afirmación</h4>
+              <p>Nunca formules tu tesis como una pregunta retórica («¿debería prohibirse la IA?»). La tesis es la <em>respuesta afirmativa o negativa</em> a esa pregunta.</p>
+            </div>
+          </div>
+
+          <!-- COMPARADOR INTERACTIVO DIDÁCTICO -->
+          <div class="thesis-versus-container">
+            <h4>Ejemplos didácticos: Qué SÍ es una Tesis vs. Qué NO es una Tesis</h4>
+            <div class="versus-cards-grid">
+              
+              <!-- PAR 1 -->
+              <div class="versus-pair">
+                <div class="versus-bad">
+                  <span class="vs-tag tag-bad">❌ NO ES TESIS (Mero hecho comprobable)</span>
+                  <p>«El cambio climático ha elevado las temperaturas globales en el último siglo.»</p>
+                  <small><strong>¿Por qué?</strong> Es un dato fáctico constatado por la ciencia; no hay debate racional sobre su existencia.</small>
+                </div>
+                <div class="versus-good">
+                  <span class="vs-tag tag-good">✓ SÍ ES TESIS (Postura debatible y propositiva)</span>
+                  <p>«Los gobiernos deben gravar con impuestos punitivos a las industrias fósiles para financiar la transición energética en los próximos cinco años.»</p>
+                  <small><strong>¿Por qué?</strong> Plantea una acción controvertida con implicaciones éticas y económicas debatibles.</small>
+                </div>
+              </div>
+
+              <!-- PAR 2 -->
+              <div class="versus-pair">
+                <div class="versus-bad">
+                  <span class="vs-tag tag-bad">❌ NO ES TESIS (Mero tema o frase vaga)</span>
+                  <p>«La inteligencia artificial en la educación secundaria.»</p>
+                  <small><strong>¿Por qué?</strong> Es solo un tema o título; carece de verbo rector y no manifiesta qué postura se defiende.</small>
+                </div>
+                <div class="versus-good">
+                  <span class="vs-tag tag-good">✓ SÍ ES TESIS (Proposición con dirección clara)</span>
+                  <p>«La prohibición de la inteligencia artificial generativa en las aulas perjudica el pensamiento crítico de los estudiantes al aislarlos de su futuro profesional.»</p>
+                  <small><strong>¿Por qué?</strong> Define un efecto causal y adopta una postura definida contra la prohibición.</small>
+                </div>
+              </div>
+
+              <!-- PAR 3 -->
+              <div class="versus-pair">
+                <div class="versus-bad">
+                  <span class="vs-tag tag-bad">❌ NO ES TESIS (Pregunta sin respuesta)</span>
+                  <p>«¿Es conveniente eliminar las tareas escolares para el hogar?»</p>
+                  <small><strong>¿Por qué?</strong> Una pregunta invita a la duda, pero el ensayista tiene la obligación de responder con una postura definida.</small>
+                </div>
+                <div class="versus-good">
+                  <span class="vs-tag tag-good">✓ SÍ ES TESIS (Juicio evaluativo argumentable)</span>
+                  <p>«La eliminación de las tareas escolares en educación primaria incrementa el bienestar familiar y no reduce el rendimiento académico formativo.»</p>
+                  <small><strong>¿Por qué?</strong> Toma partido con claridad y adelanta los criterios de justificación (bienestar y rendimiento).</small>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. LA ESTRUCTURA EN TRES MOMENTOS -->
+      <section class="theory-card" id="teoria-estructura">
+        <div class="theory-card-header">
+          <span class="theory-card-num">TEMA 3</span>
+          <h3>3. La Estructura Retórica en Tres Momentos</h3>
+        </div>
+        <div class="theory-card-body">
+          <p class="theory-lead">
+            Todo ensayo formal se organiza en una progresión lógica clásica: <strong>Introducción</strong>, <strong>Cuerpo Argumentativo (Desarrollo)</strong> y <strong>Conclusión</strong>. Cada momento cumple un objetivo retórico específico que no debe mezclarse desordenadamente.
+          </p>
+
+          <div class="moments-flow">
+            <!-- MOMENTO 1 -->
+            <div class="moment-box moment-intro">
+              <div class="moment-header">
+                <span class="moment-step">MOMENTO 1</span>
+                <h4>Introducción (15% del texto)</h4>
+              </div>
+              <div class="moment-body">
+                <ul class="moment-list">
+                  <li><strong>El Gancho / Exordio:</strong> Abre con una situación cotidiana, una paradoja, un dato revelador o un dilema para capturar la atención del lector.</li>
+                  <li><strong>Contextualización y Problematización:</strong> Explica el contexto de la discusión y por qué genera controversia hoy en día.</li>
+                  <li><strong>Enunciación de la Tesis:</strong> Cierra el párrafo introductorio enunciando de forma explícita y contundente la postura que se defenderá.</li>
+                </ul>
+                <div class="moment-formula">
+                  Fórmula: Gancho + Controversia + Tesis explícita
+                </div>
+              </div>
+            </div>
+
+            <!-- MOMENTO 2 -->
+            <div class="moment-box moment-dev">
+              <div class="moment-header">
+                <span class="moment-step">MOMENTO 2</span>
+                <h4>Cuerpo Argumentativo / Desarrollo (70% del texto)</h4>
+              </div>
+              <div class="moment-body">
+                <p>Se compone de varios párrafos (habitualmente 2 a 4). <strong>Regla de oro:</strong> Un párrafo = Una sola idea o argumento principal.</p>
+                <div class="dev-paragraph-structure">
+                  <h5>Estructura interna de un párrafo de desarrollo:</h5>
+                  <ol>
+                    <li><strong>Oración temática (Premisa):</strong> Introduce el argumento puntual del párrafo conectado a la tesis.</li>
+                    <li><strong>Evidencia y Respaldo:</strong> Cita de autoridad, estadística, hecho histórico o relación causal.</li>
+                    <li><strong>Análisis y Razonamiento:</strong> El autor explica <em>por qué</em> esa evidencia valida la tesis (no basta con pegar una cita sin comentarla).</li>
+                    <li><strong>Contraargumento y Refutación (al menos un párrafo):</strong> Anticipar la crítica del adversario y rebatirla con solidez.</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+
+            <!-- MOMENTO 3 -->
+            <div class="moment-box moment-concl">
+              <div class="moment-header">
+                <span class="moment-step">MOMENTO 3</span>
+                <h4>Conclusión / Cierre (15% del texto)</h4>
+              </div>
+              <div class="moment-body">
+                <ul class="moment-list">
+                  <li><strong>Reafirmación de la Tesis:</strong> Se reformula la tesis con nuevas palabras, enriquecida por todo lo demostrado a lo largo del texto.</li>
+                  <li><strong>Síntesis de los Argumentos Mayores:</strong> Recapitulación concisa de los pilares probatorios expuestos en el desarrollo.</li>
+                  <li><strong>Cierre Reflexivo o Proyección:</strong> Llamado a la acción, advertencia ética, consecuencia futura o pregunta prospectiva que deje huella en el lector.</li>
+                </ul>
+                <div class="moment-caution">
+                  ⚠️ <strong>Cuidado:</strong> La conclusión NUNCA debe introducir argumentos o datos nuevos que no se hayan explicado en el desarrollo.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. TIPOLOGÍAS DE ARGUMENTOS -->
+      <section class="theory-card" id="teoria-tipologias">
+        <div class="theory-card-header">
+          <span class="theory-card-num">TEMA 4</span>
+          <h3>4. Tipologías de Argumentos: El Arsenal Racional</h3>
+        </div>
+        <div class="theory-card-body">
+          <p class="theory-lead">
+            Un ensayista versátil no depende de una sola estrategia. Construir un texto persuasivo exige combinar diferentes tipos de razonamiento para convencer tanto al lector analítico como al empático.
+          </p>
+
+          <div class="arg-catalog-grid">
+            <!-- 1. HECHOS Y DATOS -->
+            <div class="arg-type-card card-hechos">
+              <div class="card-icon">📊</div>
+              <h4>Argumento de Hechos y Datos (Empírico)</h4>
+              <p class="arg-desc">Se fundamenta en evidencias medibles, estadísticas oficiales, censos, experimentos o acontecimientos históricos verificables.</p>
+              <div class="arg-example">
+                <strong>Ejemplo:</strong> «Según el Instituto Nacional de Estadística (2023), el 73% de los accidentes de tránsito en jóvenes involucran el uso del teléfono móvil mientras se conduce.»
+              </div>
+              <span class="arg-tag">Fuerza: Indiscutible ante el escepticismo</span>
+            </div>
+
+            <!-- 2. CAUSA Y CONSECUENCIA -->
+            <div class="arg-type-card card-causa">
+              <div class="card-icon">⚙️</div>
+              <h4>Argumento de Causa y Consecuencia (Causal)</h4>
+              <p class="arg-desc">Establece una relación directa de causa y efecto entre dos variables, demostrando por qué una acción provoca inevitablemente un resultado.</p>
+              <div class="arg-example">
+                <strong>Ejemplo:</strong> «La falta crónica de sueño altera los circuitos neuronales prefrontales, provocando un aumento del 35% en la impulsividad y la pérdida de foco atencional.»
+              </div>
+              <span class="arg-tag">Fuerza: Lógica preventiva y pragmática</span>
+            </div>
+
+            <!-- 3. AUTORIDAD CIENTÍFICA -->
+            <div class="arg-type-card card-autoridad">
+              <div class="card-icon">🎓</div>
+              <h4>Argumento de Autoridad Calificada</h4>
+              <p class="arg-desc">Recurre al juicio consensuado de un especialista reconocido o de una institución de prestigio en la materia exacta del debate.</p>
+              <div class="arg-example">
+                <strong>Ejemplo:</strong> «Como sostiene la UNESCO en su directiva de alfabetización digital, prohibir las herramientas emergentes no previene el fraude y perpetúa la brecha de competencias.»
+              </div>
+              <span class="arg-tag">Fuerza: Respaldo de la comunidad experta</span>
+            </div>
+
+            <!-- 4. ANALOGÍA O COMPARACIÓN -->
+            <div class="arg-type-card card-analogia">
+              <div class="card-icon">⚖️</div>
+              <h4>Argumento por Analogía / Comparación</h4>
+              <p class="arg-desc">Compara la situación debatida con otro caso semejante en el que ya se ha comprobado un resultado favorable o perjudicial.</p>
+              <div class="arg-example">
+                <strong>Ejemplo:</strong> «Así como la obligatoriedad del cinturón de seguridad redujo la mortalidad vial sin violar la libertad, regular el uso de patinetas en aceras protegerá a los peatones.»
+              </div>
+              <span class="arg-tag">Fuerza: Claridad visual y precedentes probados</span>
+            </div>
+
+            <!-- 5. VALORES Y PRINCIPIOS -->
+            <div class="arg-type-card card-valores">
+              <div class="card-icon">❤️</div>
+              <h4>Argumento de Principios o Valores Éticos</h4>
+              <p class="arg-desc">Apela a principios universales compartidos como los derechos humanos, la equidad, la libertad, la justicia distributiva o la dignidad.</p>
+              <div class="arg-example">
+                <strong>Ejemplo:</strong> «Garantizar el acceso gratuito a bibliotecas digitales no es un gasto superfluo, sino un deber ético para asegurar la igualdad de oportunidades democrática.»
+              </div>
+              <span class="arg-tag">Fuerza: Conexión con el sentido de justicia</span>
+            </div>
+
+            <!-- 6. EJEMPLIFICACIÓN -->
+            <div class="arg-type-card card-ejemplo">
+              <div class="card-icon">🔍</div>
+              <h4>Argumento por Ejemplificación / Casos</h4>
+              <p class="arg-desc">Ilustra una tesis abstracta recurriendo a un caso concreto y paradigmático que demuestra la viabilidad o el riesgo de una propuesta.</p>
+              <div class="arg-example">
+                <strong>Ejemplo:</strong> «El modelo educativo finlandés, donde no existen exámenes estandarizados hasta los 16 años, demuestra que una menor presión evaluativa redunda en una mayor equidad formativa.»
+              </div>
+              <span class="arg-tag">Fuerza: Evidencia práctica y tangible</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. LA CONTRAARGUMENTACIÓN -->
+      <section class="theory-card" id="teoria-contra">
+        <div class="theory-card-header">
+          <span class="theory-card-num">TEMA 5</span>
+          <h3>5. La Contraargumentación: Concesión y Refutación</h3>
+        </div>
+        <div class="theory-card-body">
+          <p class="theory-lead">
+            La <strong>contraargumentación</strong> es la técnica más avanzada y persuasiva de la escritura académica. Consiste en anticipar la objeción más sólida que un oponente podría formular en contra de nuestra tesis y demostrar por qué, a pesar de tener cierta lógica, nuestra tesis sigue siendo superior.
+          </p>
+
+          <div class="dialectic-steps-grid">
+            <div class="dialectic-card concession-card">
+              <div class="dialectic-badge">PASO 1 · LA CONCESIÓN</div>
+              <h4>Reconocer con honestidad intelectual</h4>
+              <p>El ensayista maduro no ridiculiza al oponente ni finge que la objeción no existe. Admite que la parte contraria tiene un punto atendible.</p>
+              <div class="connector-sample">
+                <strong>Conectores clave:</strong> <em>«Si bien es cierto que...», «Aunque algunos especialistas sostienen que...», «Ciertamente, es comprensible temer que...»</em>
+              </div>
+            </div>
+
+            <div class="dialectic-card refutation-card">
+              <div class="dialectic-badge">PASO 2 · LA REFUTACIÓN</div>
+              <h4>Girar y desmontar con evidencia superior</h4>
+              <p>Inmediatamente después de conceder, se introduce un contra-peso lógico con un conector de contraste que demuestra la debilidad de la objeción.</p>
+              <div class="connector-sample">
+                <strong>Conectores clave:</strong> <em>«Sin embargo...», «No obstante...», «A pesar de ello...», «Empero, esta mirada pasa por alto que...»</em>
+              </div>
+            </div>
+          </div>
+
+          <div class="dialectic-formula-box">
+            <h4>💡 Fórmula de Oro de la Contraargumentación:</h4>
+            <div class="formula-banner">
+              [ Concesión de la objeción ] + [ Conector de contraste ] + [ Evidencia o Principio Superior que la refuta ]
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. CAJA DE CONECTORES LÓGICOS CLASIFICADOS -->
+      <section class="theory-card" id="teoria-conectores">
+        <div class="theory-card-header">
+          <span class="theory-card-num">TEMA 6</span>
+          <h3>6. Caja de Conectores Lógicos Clasificados</h3>
+        </div>
+        <div class="theory-card-body">
+          <p class="theory-lead">
+            Los <strong>conectores lógicos</strong> son los puentes discursivos que enlazan tus oraciones y párrafos. Indican al lector exactamente qué tipo de relación lógica (causa, efecto, contraste o cierre) existe entre dos ideas. Haz clic en cualquier conector para copiarlo al portapapeles.
+          </p>
+
+          <!-- FILTROS DE CATEGORÍAS DE CONECTORES -->
+          <div class="connector-filter-tabs" role="tablist">
+            <button type="button" class="conn-tab active" data-conn-cat="all">Todos los Conectores</button>
+            <button type="button" class="conn-tab" data-conn-cat="causa">⚙️ Causa</button>
+            <button type="button" class="conn-tab" data-conn-cat="consecuencia">🎯 Consecuencia</button>
+            <button type="button" class="conn-tab" data-conn-cat="contraste">⚡ Contraste y Oposición</button>
+            <button type="button" class="conn-tab" data-conn-cat="concesion">🛡️ Concesión</button>
+            <button type="button" class="conn-tab" data-conn-cat="adicion">➕ Adición e Hilación</button>
+            <button type="button" class="conn-tab" data-conn-cat="conclusion">⚖️ Conclusión y Cierre</button>
+          </div>
+
+          <!-- REJILLA DINÁMICA DE CONECTORES CON EJEMPLOS -->
+          <div class="connectors-interactive-grid" id="connectorsGrid">
+
+            <!-- CAUSA -->
+            <div class="conn-item-card" data-cat="causa">
+              <div class="conn-item-head">
+                <span class="conn-name">Porque / Ya que</span>
+                <button type="button" class="btn-copy-conn" data-copy="Porque" title="Copiar conector">📋</button>
+              </div>
+              <span class="conn-category-tag tag-causa">Causa</span>
+              <p class="conn-desc">Introduce el motivo o razón fundamental de un hecho o afirmación.</p>
+              <div class="conn-usage-example">«Se debe promover la lectura crítica <em>ya que</em> previene la manipulación mediática.»</div>
+            </div>
+
+            <div class="conn-item-card" data-cat="causa">
+              <div class="conn-item-head">
+                <span class="conn-name">Puesto que / Dado que</span>
+                <button type="button" class="btn-copy-conn" data-copy="Puesto que" title="Copiar conector">📋</button>
+              </div>
+              <span class="conn-category-tag tag-causa">Causa</span>
+              <p class="conn-desc">Aporta una justificación formal y analítica para sostener la premisa.</p>
+              <div class="conn-usage-example">«<em>Dado que</em> la tecnología avanza velozmente, la escuela debe actualizar sus métodos.»</div>
+            </div>
+
+            <div class="conn-item-card" data-cat="causa">
+              <div class="conn-item-head">
+                <span class="conn-name">En vista de que</span>
+                <button type="button" class="btn-copy-conn" data-copy="En vista de que" title="Copiar conector">📋</button>
+              </div>
+              <span class="conn-category-tag tag-causa">Causa</span>
+              <p class="conn-desc">Destaca una realidad observable que motiva una decisión o juicio crítico.</p>
+              <div class="conn-usage-example">«<em>En vista de que</em> los índices de ansiedad han aumentado, conviene revisar la carga lectiva.»</div>
+            </div>
+
+            <!-- CONSECUENCIA -->
+            <div class="conn-item-card" data-cat="consecuencia">
+              <div class="conn-item-head">
+                <span class="conn-name">Por lo tanto / Por consiguiente</span>
+                <button type="button" class="btn-copy-conn" data-copy="Por lo tanto, " title="Copiar conector">📋</button>
+              </div>
+              <span class="conn-category-tag tag-consecuencia">Consecuencia</span>
+              <p class="conn-desc">Deducción lógica directa derivada de la evidencia previamente expuesta.</p>
+              <div class="conn-usage-example">«Las evidencias son concluyentes; <em>por consiguiente</em>, se requiere una reforma integral.»</div>
+            </div>
+
+            <div class="conn-item-card" data-cat="consecuencia">
+              <div class="conn-item-head">
+                <span class="conn-name">En consecuencia / De ahí que</span>
+                <button type="button" class="btn-copy-conn" data-copy="En consecuencia, " title="Copiar conector">📋</button>
+              </div>
+              <span class="conn-category-tag tag-consecuencia">Consecuencia</span>
+              <p class="conn-desc">Muestra el efecto inevitable o corolario de una situación previa.</p>
+              <div class="conn-usage-example">«No se capacitó a los docentes; <em>de ahí que</em> la implementación fuera deficiente.»</div>
+            </div>
+
+            <div class="conn-item-card" data-cat="consecuencia">
+              <div class="conn-item-head">
+                <span class="conn-name">Así pues / De modo que</span>
+                <button type="button" class="btn-copy-conn" data-copy="Así pues, " title="Copiar conector">📋</button>
+              </div>
+              <span class="conn-category-tag tag-consecuencia">Consecuencia</span>
+              <p class="conn-desc">Enlaza una premisa probada con su aplicación o conclusión inmediata.</p>
+              <div class="conn-usage-example">«<em>Así pues</em>, resulta indispensable garantizar el presupuesto para las bibliotecas.»</div>
+            </div>
+
+            <!-- CONTRASTE / OPOSICIÓN -->
+            <div class="conn-item-card" data-cat="contraste">
+              <div class="conn-item-head">
+                <span class="conn-name">Sin embargo / No obstante</span>
+                <button type="button" class="btn-copy-conn" data-copy="Sin embargo, " title="Copiar conector">📋</button>
+              </div>
+              <span class="conn-category-tag tag-contraste">Contraste</span>
+              <p class="conn-desc">Introduce una objeción fuerte o un giro argumentativo determinante.</p>
+              <div class="conn-usage-example">«Muchos defienden la prohibición; <em>sin embargo</em>, los datos demuestran su ineficacia.»</div>
+            </div>
+
+            <div class="conn-item-card" data-cat="contraste">
+              <div class="conn-item-head">
+                <span class="conn-name">Por el contrario / En cambio</span>
+                <button type="button" class="btn-copy-conn" data-copy="Por el contrario, " title="Copiar conector">📋</button>
+              </div>
+              <span class="conn-category-tag tag-contraste">Contraste</span>
+              <p class="conn-desc">Contrapone dos realidades diametralmente opuestas para realzar la tesis.</p>
+              <div class="conn-usage-example">«La tecnología no aísla; <em>por el contrario</em>, puede fortalecer la colaboración guiada.»</div>
+            </div>
+
+            <div class="conn-item-card" data-cat="contraste">
+              <div class="conn-item-head">
+                <span class="conn-name">Empero / Antes bien</span>
+                <button type="button" class="btn-copy-conn" data-copy="Empero, " title="Copiar conector">📋</button>
+              </div>
+              <span class="conn-category-tag tag-contraste">Contraste</span>
+              <p class="conn-desc">Matiz formal y culto de objeción o rectificación enfática de una postura.</p>
+              <div class="conn-usage-example">«La medida parece atractiva; <em>empero</em>, sus efectos colaterales son devastadores.»</div>
+            </div>
+
+            <!-- CONCESIÓN -->
+            <div class="conn-item-card" data-cat="concesion">
+              <div class="conn-item-head">
+                <span class="conn-name">Si bien / Aunque</span>
+                <button type="button" class="btn-copy-conn" data-copy="Si bien es cierto que " title="Copiar conector">📋</button>
+              </div>
+              <span class="conn-category-tag tag-concesion">Concesión</span>
+              <p class="conn-desc">Admite una verdad parcial del oponente antes de refutarla.</p>
+              <div class="conn-usage-example">«<em>Si bien</em> el costo inicial es elevado, el ahorro social a largo plazo es innegable.»</div>
+            </div>
+
+            <div class="conn-item-card" data-cat="concesion">
+              <div class="conn-item-head">
+                <span class="conn-name">A pesar de que / Aun cuando</span>
+                <button type="button" class="btn-copy-conn" data-copy="A pesar de que " title="Copiar conector">📋</button>
+              </div>
+              <span class="conn-category-tag tag-concesion">Concesión</span>
+              <p class="conn-desc">Indica que un obstáculo u objeción no anula la validez de la tesis central.</p>
+              <div class="conn-usage-example">«<em>A pesar de que</em> existen posturas escépticas, los consensos científicos son abrumadores.»</div>
+            </div>
+
+            <!-- ADICIÓN E HILACIÓN -->
+            <div class="conn-item-card" data-cat="adicion">
+              <div class="conn-item-head">
+                <span class="conn-name">Asimismo / Además</span>
+                <button type="button" class="btn-copy-conn" data-copy="Asimismo, " title="Copiar conector">📋</button>
+              </div>
+              <span class="conn-category-tag tag-adicion">Adición</span>
+              <p class="conn-desc">Agrega un nuevo argumento o evidencia del mismo peso al cuerpo del texto.</p>
+              <div class="conn-usage-example">«La lectura fomenta el vocabulario; <em>asimismo</em>, fortalece la empatía interpersonal.»</div>
+            </div>
+
+            <div class="conn-item-card" data-cat="adicion">
+              <div class="conn-item-head">
+                <span class="conn-name">Por otra parte / A esto se suma</span>
+                <button type="button" class="btn-copy-conn" data-copy="Por otra parte, " title="Copiar conector">📋</button>
+              </div>
+              <span class="conn-category-tag tag-adicion">Adición</span>
+              <p class="conn-desc">Abre una nueva perspectiva de análisis complementaria a la anterior.</p>
+              <div class="conn-usage-example">«<em>A esto se suma</em> que los organismos internacionales respaldan este protocolo.»</div>
+            </div>
+
+            <!-- CONCLUSIÓN Y CIERRE -->
+            <div class="conn-item-card" data-cat="conclusion">
+              <div class="conn-item-head">
+                <span class="conn-name">En conclusión / En síntesis</span>
+                <button type="button" class="btn-copy-conn" data-copy="En conclusión, " title="Copiar conector">📋</button>
+              </div>
+              <span class="conn-category-tag tag-conclusion">Conclusión</span>
+              <p class="conn-desc">Marca formalmente la apertura del momento de cierre y recapitulación.</p>
+              <div class="conn-usage-example">«<em>En conclusión</em>, la evidencia pedagógica demuestra la urgencia de repensar el aula.»</div>
+            </div>
+
+            <div class="conn-item-card" data-cat="conclusion">
+              <div class="conn-item-head">
+                <span class="conn-name">Por todo lo anterior / En suma</span>
+                <button type="button" class="btn-copy-conn" data-copy="Por todo lo anterior, " title="Copiar conector">📋</button>
+              </div>
+              <span class="conn-category-tag tag-conclusion">Conclusión</span>
+              <p class="conn-desc">Condensa todas las razones expuestas para dar paso a la reflexión final.</p>
+              <div class="conn-usage-example">«<em>En suma</em>, no se trata de temer al porvenir, sino de educar para la libertad crítica.»</div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- BOTONES FINALES DE PROGRESIÓN -->
+      <div class="theory-bottom-bar">
+        <button type="button" class="btn-jump-module" data-jump="tab-radiografia">
+          <span>02. Radiografía del Texto</span>
+          <span>→</span>
+        </button>
+        <button type="button" class="btn-jump-module btn-jump-primary" data-jump="tab-constructor">
+          <span>05. Simulador Constructor de Ensayo</span>
+          <span>🚀</span>
+        </button>
+      </div>
+
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- MÓDULO 02: RADIOGRAFÍA INTERACTIVA (TEXTO VIVO)                   -->
+    <!-- ================================================================= -->
+    <section class="tab-content" id="tab-radiografia" data-label="02. Radiografía del Texto" role="tabpanel" aria-labelledby="btn-tab-radiografia">
+      <div class="section-intro-card">
+        <div class="intro-tag">MÓDULO 02 · ANÁLISIS DISCURSIVO</div>
         <h2>Radiografía Interactiva de un Ensayo Modelo</h2>
         <p>
           Un ensayo no es un conjunto de opiniones aisladas, sino un tejido donde cada oración cumple una función retórica precisa. Selecciona las capas de análisis o haz clic en cualquier párrafo para ver su desglose pedagógico en tiempo real.
@@ -76,7 +660,7 @@
           <header class="essay-paper-header">
             <span class="essay-paper-badge">Texto Modelo de Análisis</span>
             <h3 class="essay-paper-title">La división por género en el deporte debe desaparecer</h3>
-            <p class="essay-paper-byline">Por Lic. Alejandro Córdova · Caso didáctico de argumentación crítica</p>
+            <p class="essay-paper-byline">Por Msc. Alejandro Córdova · Caso didáctico de argumentación crítica</p>
           </header>
 
           <!-- 1. INTRODUCCIÓN -->
@@ -159,11 +743,11 @@
     </section>
 
     <!-- ================================================================= -->
-    <!-- MÓDULO 2: LABORATORIO DE TESIS (¿HECHO O TESIS?)                  -->
+    <!-- MÓDULO 03: LABORATORIO DE TESIS (¿HECHO O TESIS?)                 -->
     <!-- ================================================================= -->
-    <section class="tab-content" id="tab-tesis" role="tabpanel" aria-labelledby="btn-tab-tesis">
+    <section class="tab-content" id="tab-tesis" data-label="03. Laboratorio de Tesis" role="tabpanel" aria-labelledby="btn-tab-tesis">
       <div class="section-intro-card">
-        <div class="intro-tag">MÓDULO 02 · DELIMITACIÓN CONCEPTUAL</div>
+        <div class="intro-tag">MÓDULO 03 · DELIMITACIÓN CONCEPTUAL</div>
         <h2>Laboratorio de Tesis: El Núcleo de tu Argumento</h2>
         <p>
           Uno de los errores más comunes al escribir un ensayo es confundir un <strong>hecho evidente</strong> con una <strong>tesis debatible</strong>. Los hechos se comprueban o constatan; las tesis se defienden con razones frente a posturas opuestas.
@@ -259,7 +843,7 @@
               </div>
 
               <button type="button" class="btn-use-thesis" id="btnUseThesis" disabled>
-                <span>Usar esta tesis en el Simulador Constructor (Módulo 4)</span>
+                <span>Usar esta tesis en el Simulador Constructor (Módulo 5)</span>
                 <span>→</span>
               </button>
             </div>
@@ -269,11 +853,11 @@
     </section>
 
     <!-- ================================================================= -->
-    <!-- MÓDULO 3: GIMNASIO DE ARGUMENTOS & CONTRAARGUMENTACIÓN            -->
+    <!-- MÓDULO 04: GIMNASIO DE ARGUMENTOS & CONTRAARGUMENTACIÓN           -->
     <!-- ================================================================= -->
-    <section class="tab-content" id="tab-argumentos" role="tabpanel" aria-labelledby="btn-tab-argumentos">
+    <section class="tab-content" id="tab-argumentos" data-label="04. Gimnasio de Argumentos" role="tabpanel" aria-labelledby="btn-tab-argumentos">
       <div class="section-intro-card">
-        <div class="intro-tag">MÓDULO 03 · TIPOLOGÍAS Y ESTRATEGIAS</div>
+        <div class="intro-tag">MÓDULO 04 · TIPOLOGÍAS Y ESTRATEGIAS</div>
         <h2>Gimnasio de Argumentos y Contraargumentación</h2>
         <p>
           Un ensayo robusto no depende de un solo tipo de argumento. Combina datos objetivos, razonamientos causales, autoridades solventes y anticipación de objeciones.
@@ -401,15 +985,26 @@
     </section>
 
     <!-- ================================================================= -->
-    <!-- MÓDULO 4: SIMULADOR CONSTRUCTOR DE ENSAYO (ANDAMIAJE)             -->
+    <!-- MÓDULO 05: SIMULADOR CONSTRUCTOR DE ENSAYO (ANDAMIAJE)            -->
     <!-- ================================================================= -->
-    <section class="tab-content" id="tab-constructor" role="tabpanel" aria-labelledby="btn-tab-constructor">
+    <section class="tab-content" id="tab-constructor" data-label="05. Simulador Constructor" role="tabpanel" aria-labelledby="btn-tab-constructor">
       <div class="section-intro-card">
-        <div class="intro-tag">MÓDULO 04 · ANDAMIAJE DIRIGIDO</div>
+        <div class="intro-tag">MÓDULO 05 · ANDAMIAJE DIRIGIDO</div>
         <h2>Simulador Constructor de Ensayo</h2>
         <p>
           Construye el andamiaje de tu ensayo paso a paso. Completa cada sección con ayuda de los conectores recomendados, consulta la rúbrica formativa en tiempo real y exporta tu esquema listo para redactar. Tu trabajo se guarda automáticamente en este navegador.
         </p>
+
+        <!-- BOTÓN DE CONSULTA DIRECTA DE LA TEORÍA -->
+        <div class="builder-theory-banner">
+          <div class="theory-banner-text">
+            <span>💡 <strong>¿Dudas con la estructura o necesitas más conectores?</strong></span>
+            <p>Puedes consultar los fundamentos pedagógicos y el catálogo completo de conectores sin perder tu progreso.</p>
+          </div>
+          <button type="button" class="btn-consult-theory" id="btnConsultTheory">
+            📖 Consultar Fundamentos y Conectores
+          </button>
+        </div>
       </div>
 
       <div class="builder-layout">

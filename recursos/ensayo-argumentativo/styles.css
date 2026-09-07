@@ -1,6 +1,6 @@
 /* ============================================================
    styles.css — Taller y Simulador de Ensayo Argumentativo
-   Diseño pedagógico institucional por Lic. Alejandro Córdova
+   Diseño pedagógico institucional por Msc. Alejandro Córdova
    ============================================================ */
 
 :root {
@@ -1390,4 +1390,807 @@ body {
   .builder-layout { display: block; }
   .sticky-preview-card { border: none; box-shadow: none; padding: 0; }
   .assembled-essay-view { max-height: none; border: none; background: #FFF; }
+}
+
+
+/* ============================================================
+   MÓDULO 01: FUNDAMENTOS TEÓRICOS & CAJA DE CONECTORES
+   Diseño pedagógico institucional por Msc. Alejandro Córdova
+   ============================================================ */
+
+/* BARRA DE NAVEGACIÓN INTERNA DE LA TEORÍA */
+.theory-nav-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+}
+
+.theory-nav-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-right: 4px;
+}
+
+.theory-nav-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-pill);
+  color: var(--primary-navy);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.theory-nav-pill:hover {
+  background: var(--primary-navy);
+  color: #FFFFFF;
+  border-color: var(--primary-navy);
+  transform: translateY(-1px);
+}
+
+/* BANNER DE ACCIÓN RÁPIDA / SALTO */
+.theory-cta-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: linear-gradient(135deg, #071B33 0%, #123C69 100%);
+  color: #FFFFFF;
+  padding: 18px 24px;
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.cta-banner-content {
+  flex: 1;
+  min-width: 260px;
+}
+
+.cta-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.16);
+  color: #F3F1EA;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+}
+
+.cta-banner-content p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: #F3F1EA;
+}
+
+.cta-banner-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-jump-module {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: var(--radius-sm);
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-jump-module:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+.btn-jump-primary {
+  background: #2563EB !important;
+  border-color: #3B82F6 !important;
+}
+
+.btn-jump-primary:hover {
+  background: #1D4ED8 !important;
+}
+
+/* TARJETAS DE TEMAS TEÓRICOS */
+.theory-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-left: 4px solid var(--primary-navy);
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  scroll-margin-top: 40px;
+}
+
+.theory-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.theory-card-num {
+  display: inline-block;
+  background: var(--primary-navy);
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.theory-card-header h3 {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  color: var(--primary-navy);
+  margin: 0;
+}
+
+.theory-lead {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #1E293B;
+  margin-bottom: 20px;
+}
+
+/* 1. TRES PILARES */
+.theory-three-pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.pillar-box {
+  background: var(--paper-surface);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  text-align: center;
+}
+
+.pillar-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.pillar-box h4 {
+  font-size: 1.05rem;
+  color: var(--primary-navy);
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.pillar-box p {
+  font-size: 0.88rem;
+  color: #475569;
+  line-height: 1.45;
+}
+
+/* TABLA COMPARATIVA */
+.theory-comparison-table-wrapper {
+  margin-top: 24px;
+  overflow-x: auto;
+}
+
+.subtable-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  margin-bottom: 12px;
+}
+
+.theory-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  text-align: left;
+}
+
+.theory-comparison-table th {
+  background: var(--primary-navy);
+  color: #FFFFFF;
+  padding: 12px 14px;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.theory-comparison-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border-light);
+  line-height: 1.5;
+  vertical-align: top;
+}
+
+.theory-comparison-table tr:nth-child(even) {
+  background: #F8FAFC;
+}
+
+/* 2. REGLAS DE LA TESIS */
+.thesis-rules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.rule-card {
+  background: #F8FAFC;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.rule-badge {
+  display: inline-block;
+  background: #2563EB;
+  color: #FFFFFF;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 8px;
+}
+
+.rule-card h4 {
+  font-size: 0.98rem;
+  color: var(--primary-navy);
+  margin-bottom: 6px;
+}
+
+.rule-card p {
+  font-size: 0.85rem;
+  color: #475569;
+  line-height: 1.45;
+}
+
+/* COMPARADOR SÍ vs NO ES TESIS */
+.thesis-versus-container {
+  margin-top: 24px;
+  background: var(--paper-surface);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 20px;
+}
+
+.thesis-versus-container h4 {
+  font-size: 1rem;
+  color: var(--primary-navy);
+  margin-bottom: 16px;
+}
+
+.versus-cards-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.versus-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+}
+
+.versus-bad, .versus-good {
+  padding: 12px;
+  border-radius: var(--radius-sm);
+}
+
+.versus-bad {
+  background: #FFF5F5;
+  border: 1px solid #FED7D7;
+}
+
+.versus-good {
+  background: #F0FDF4;
+  border: 1px solid #BBF7D0;
+}
+
+.vs-tag {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 6px;
+}
+
+.tag-bad { color: #C53030; }
+.tag-good { color: #16A34A; }
+
+.versus-bad p, .versus-good p {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  margin-bottom: 8px;
+  color: #1A202C;
+}
+
+.versus-bad small, .versus-good small {
+  display: block;
+  font-size: 0.8rem;
+  color: #64748B;
+  line-height: 1.4;
+}
+
+/* 3. FLUJO DE LOS TRES MOMENTOS */
+.moments-flow {
+  display: grid;
+  gap: 18px;
+}
+
+.moment-box {
+  background: #FFFFFF;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.moment-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  background: #F1F5F9;
+  border-bottom: 1px solid var(--border-medium);
+}
+
+.moment-step {
+  background: var(--primary-navy);
+  color: #FFFFFF;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.moment-header h4 {
+  font-size: 1.05rem;
+  color: var(--primary-navy);
+  margin: 0;
+}
+
+.moment-body {
+  padding: 20px;
+}
+
+.moment-list {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.moment-list li {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #334155;
+  position: relative;
+  padding-left: 20px;
+}
+
+.moment-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #2563EB;
+  font-weight: bold;
+}
+
+.moment-formula {
+  background: #EFF6FF;
+  border: 1px dashed #93C5FD;
+  color: #1E40AF;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.moment-caution {
+  background: #FEF3C7;
+  border: 1px solid #FCD34D;
+  color: #92400E;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.84rem;
+}
+
+.dev-paragraph-structure {
+  background: var(--paper-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  margin-top: 12px;
+}
+
+.dev-paragraph-structure h5 {
+  font-size: 0.88rem;
+  color: var(--primary-navy);
+  margin-bottom: 8px;
+}
+
+.dev-paragraph-structure ol {
+  padding-left: 20px;
+  display: grid;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+/* 4. CATÁLOGO DE TIPOLOGÍAS DE ARGUMENTO */
+.arg-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.arg-type-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast);
+}
+
+.arg-type-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.card-icon {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.arg-type-card h4 {
+  font-size: 1rem;
+  color: var(--primary-navy);
+  margin-bottom: 8px;
+}
+
+.arg-desc {
+  font-size: 0.85rem;
+  color: #475569;
+  line-height: 1.45;
+  margin-bottom: 12px;
+  flex: 1;
+}
+
+.arg-example {
+  background: #F8FAFC;
+  border-left: 3px solid #2563EB;
+  padding: 10px;
+  border-radius: 0 4px 4px 0;
+  font-family: var(--font-serif);
+  font-size: 0.86rem;
+  line-height: 1.4;
+  color: #1E293B;
+  margin-bottom: 10px;
+}
+
+.arg-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #2563EB;
+  background: #EFF6FF;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* 5. CONTRAARGUMENTACIÓN */
+.dialectic-steps-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.dialectic-card {
+  border-radius: var(--radius-md);
+  padding: 20px;
+  border: 1px solid var(--border-medium);
+}
+
+.concession-card {
+  background: #FFFBEB;
+  border-color: #FDE68A;
+}
+
+.refutation-card {
+  background: #EFF6FF;
+  border-color: #BFDBFE;
+}
+
+.dialectic-badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.concession-card .dialectic-badge { color: #B45309; }
+.refutation-card .dialectic-badge { color: #1D4ED8; }
+
+.dialectic-card h4 {
+  font-size: 1.05rem;
+  color: var(--primary-navy);
+  margin-bottom: 8px;
+}
+
+.dialectic-card p {
+  font-size: 0.88rem;
+  color: #475569;
+  line-height: 1.45;
+  margin-bottom: 12px;
+}
+
+.connector-sample {
+  font-size: 0.82rem;
+  color: #334155;
+  line-height: 1.4;
+}
+
+.dialectic-formula-box {
+  background: #F1F5F9;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  text-align: center;
+}
+
+.dialectic-formula-box h4 {
+  font-size: 0.92rem;
+  color: var(--primary-navy);
+  margin-bottom: 8px;
+}
+
+.formula-banner {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary-navy);
+  background: #FFFFFF;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  border: 1px solid var(--border-medium);
+}
+
+/* 6. CONECTORES LÓGICOS CLASIFICADOS */
+.connector-filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.conn-tab {
+  padding: 8px 16px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--primary-navy);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.conn-tab:hover {
+  background: var(--paper-warm);
+  border-color: var(--primary-navy);
+}
+
+.conn-tab.active {
+  background: var(--primary-navy);
+  color: #FFFFFF;
+  border-color: var(--primary-navy);
+}
+
+.connectors-interactive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.conn-item-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.conn-item-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.conn-name {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--primary-navy);
+}
+
+.btn-copy-conn {
+  background: transparent;
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  padding: 4px 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-copy-conn:hover {
+  background: var(--primary-navy);
+  color: #FFFFFF;
+  border-color: var(--primary-navy);
+}
+
+.conn-category-tag {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 7px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.tag-causa { background: #FEF3C7; color: #92400E; }
+.tag-consecuencia { background: #DBEAFE; color: #1E40AF; }
+.tag-contraste { background: #FEE2E2; color: #991B1B; }
+.tag-concesion { background: #E0E7FF; color: #3730A3; }
+.tag-adicion { background: #DCFCE7; color: #166534; }
+.tag-conclusion { background: #F3E8FF; color: #6B21A8; }
+
+.conn-desc {
+  font-size: 0.82rem;
+  color: #475569;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  flex: 1;
+}
+
+.conn-usage-example {
+  background: #F8FAFC;
+  border-left: 2px solid #CBD5E1;
+  padding: 8px 10px;
+  font-family: var(--font-serif);
+  font-size: 0.82rem;
+  color: #1E293B;
+  font-style: italic;
+  border-radius: 0 4px 4px 0;
+}
+
+/* BOTONES FINALES DE PROGRESIÓN */
+.theory-bottom-bar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-light);
+  flex-wrap: wrap;
+}
+
+/* BANNER DE CONSULTA DENTRO DEL CONSTRUCTOR */
+.builder-theory-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  margin-top: 16px;
+}
+
+.theory-banner-text {
+  flex: 1;
+  min-width: 240px;
+}
+
+.theory-banner-text span {
+  font-size: 0.88rem;
+  color: #1E40AF;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.theory-banner-text p {
+  font-size: 0.82rem;
+  color: #3B82F6;
+  margin: 0;
+}
+
+.btn-consult-theory {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--primary-navy);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-consult-theory:hover {
+  background: var(--accent-blue);
+  transform: translateY(-1px);
+}
+
+/* RESPONSIVE TEORÍA */
+@media (max-width: 768px) {
+  .theory-card {
+    padding: 18px;
+  }
+  .versus-pair {
+    grid-template-columns: 1fr;
+  }
+  .dialectic-steps-grid {
+    grid-template-columns: 1fr;
+  }
+  .theory-cta-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .theory-cta-banner .cta-banner-actions {
+    width: 100%;
+  }
+  .btn-jump-module {
+    flex: 1;
+    justify-content: center;
+  }
 }

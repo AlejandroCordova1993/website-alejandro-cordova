@@ -1,10 +1,11 @@
 /* ============================================================
    app.js — Taller y Simulador de Ensayo Argumentativo
-   Lógica pedagógica e interactiva por Lic. Alejandro Córdova
+   Lógica pedagógica e interactiva por Msc. Alejandro Córdova
    ============================================================ */
 
 document.addEventListener("DOMContentLoaded", () => {
   initNavigationTabs();
+  initTheoryModule();
   initXrayAnalysis();
   initThesisLab();
   initGymArguments();
@@ -49,12 +50,74 @@ function initNavigationTabs() {
         targetContent.classList.add("active");
         window.scrollTo({ top: 120, behavior: "smooth" });
       }
+
+      // Notificar cambio de tab a course-shell y observadores
+      document.dispatchEvent(new CustomEvent("tab-changed", { detail: { tabId: targetId } }));
     });
   });
 }
 
 // =========================================================================
-// 2. MÓDULO 1: RADIOGRAFÍA DEL TEXTO MODELO
+// 2. MÓDULO 01: FUNDAMENTOS TEÓRICOS & CAJA DE CONECTORES
+// =========================================================================
+function initTheoryModule() {
+  // Botones de salto entre módulos dentro de la teoría
+  const jumpButtons = document.querySelectorAll(".btn-jump-module[data-jump]");
+  jumpButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const targetTabId = btn.getAttribute("data-jump");
+      const targetTabBtn = document.querySelector(`.nav-tab[data-tab="${targetTabId}"]`);
+      if (targetTabBtn) {
+        targetTabBtn.click();
+      }
+    });
+  });
+
+  // Filtros de categorías de conectores
+  const connTabs = document.querySelectorAll(".conn-tab");
+  const connCards = document.querySelectorAll(".conn-item-card");
+
+  connTabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      connTabs.forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+
+      const cat = tab.getAttribute("data-conn-cat");
+      connCards.forEach(card => {
+        if (cat === "all" || card.getAttribute("data-cat") === cat) {
+          card.style.display = "flex";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
+
+  // Copia de conectores al portapapeles
+  const copyButtons = document.querySelectorAll(".btn-copy-conn");
+  copyButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const textToCopy = btn.getAttribute("data-copy");
+      if (!textToCopy) return;
+
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        showToast(`Conector copiado: "${textToCopy}"`);
+        const originalText = btn.textContent;
+        btn.textContent = "✓";
+        btn.style.color = "#16A34A";
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.style.color = "";
+        }, 1200);
+      }).catch(() => {
+        showToast(`Conector listo: "${textToCopy}"`);
+      });
+    });
+  });
+}
+
+// =========================================================================
+// 3. MÓDULO 02: RADIOGRAFÍA DEL TEXTO MODELO
 // =========================================================================
 const XRAY_DETAILS = {
   intro: {
@@ -142,7 +205,7 @@ function initXrayAnalysis() {
         <div class="panel-section-title">Estructura Retórica:</div>
         <div class="panel-box"><strong>Fórmula:</strong> ${info.formula}</div>
 
-        <div class="panel-section-title">Clave Pedagógica de Alejandro:</div>
+        <div class="panel-section-title">Clave Pedagógica de Msc. Alejandro Córdova:</div>
         <p style="color: #475569; font-size: 0.9rem;">${info.tip}</p>
       `;
     });
@@ -150,7 +213,7 @@ function initXrayAnalysis() {
 }
 
 // =========================================================================
-// 3. MÓDULO 2: LABORATORIO DE TESIS (HECHO VS TESIS & CONSTRUCTOR)
+// 4. MÓDULO 03: LABORATORIO DE TESIS (HECHO VS TESIS & CONSTRUCTOR)
 // =========================================================================
 const THESIS_QUIZ_DATA = [
   {
@@ -189,73 +252,71 @@ const THESIS_QUIZ_DATA = [
     explanation: "Es un dato jurídico explícito en el texto constitucional de 2008. No es debatible que la norma exista, sino un hecho demostrable con el documento."
   },
   {
-    text: "El modelo de evaluación basado únicamente en exámenes de opción múltiple empobrece las capacidades analíticas del alumnado.",
+    text: "La jornada laboral de cuatro días a la semana eleva la productividad docente y disminuye el desgaste emocional.",
     type: "tesis",
-    explanation: "Es una tesis pedagógica profunda: cuestiona un sistema establecido y exige presentar razones empíricas y metodológicas para sostenerse."
+    explanation: "Es una tesis audaz: plantea una reforma laboral con hipótesis de causalidad que debe sustentarse con estudios y evidencias frente a sus detractores."
   }
 ];
 
 function initThesisLab() {
-  let quizIndex = 0;
-  let score = 0;
+  let currentQuizIdx = 0;
+  let quizScore = 0;
 
-  const quizText = document.getElementById("thesisQuizText");
   const quizCounter = document.getElementById("thesisQuizCounter");
-  const quizScore = document.getElementById("thesisQuizScore");
-  const btnHecho = document.getElementById("btnChoiceHecho");
-  const btnTesis = document.getElementById("btnChoiceTesis");
-  const feedbackBox = document.getElementById("thesisQuizFeedback");
+  const quizScoreDisplay = document.getElementById("thesisQuizScore");
+  const quizText = document.getElementById("thesisQuizText");
+  const btnChoiceHecho = document.getElementById("btnChoiceHecho");
+  const btnChoiceTesis = document.getElementById("btnChoiceTesis");
+  const quizFeedback = document.getElementById("thesisQuizFeedback");
   const feedbackBadge = document.getElementById("feedbackBadge");
   const feedbackExplanation = document.getElementById("feedbackExplanation");
   const btnNextQuiz = document.getElementById("btnNextQuiz");
 
   function loadQuiz(index) {
-    const current = THESIS_QUIZ_DATA[index];
-    quizText.textContent = `"${current.text}"`;
-    quizCounter.textContent = `Pregunta ${index + 1} de ${THESIS_QUIZ_DATA.length}`;
-    quizScore.textContent = `Aciertos: ${score}`;
-    feedbackBox.style.display = "none";
-    btnHecho.disabled = false;
-    btnTesis.disabled = false;
+    const item = THESIS_QUIZ_DATA[index];
+    quizCounter.textContent = `Afirmación ${index + 1} de ${THESIS_QUIZ_DATA.length}`;
+    quizText.textContent = `"${item.text}"`;
+    quizFeedback.style.display = "none";
+    btnChoiceHecho.disabled = false;
+    btnChoiceTesis.disabled = false;
+    btnChoiceHecho.classList.remove("selected-correct", "selected-wrong");
+    btnChoiceTesis.classList.remove("selected-correct", "selected-wrong");
   }
 
-  function handleAnswer(selectedType) {
-    const current = THESIS_QUIZ_DATA[quizIndex];
-    btnHecho.disabled = true;
-    btnTesis.disabled = true;
+  function handleChoice(selectedType) {
+    const item = THESIS_QUIZ_DATA[currentQuizIdx];
+    const isCorrect = selectedType === item.type;
 
-    const isCorrect = (selectedType === current.type);
-    if (isCorrect) score++;
+    btnChoiceHecho.disabled = true;
+    btnChoiceTesis.disabled = true;
 
-    quizScore.textContent = `Aciertos: ${score}`;
-    feedbackBox.style.display = "block";
-    feedbackBox.className = "quiz-feedback-box " + (isCorrect ? "feedback-correct" : "feedback-incorrect");
-    feedbackBadge.textContent = isCorrect ? "✓ ¡CORRECTO!" : "✗ REVISA EL CRITERIO";
-    feedbackExplanation.innerHTML = `<strong>${current.type === "hecho" ? "Es un HECHO" : "Es una TESIS"}:</strong> ${current.explanation}`;
-
-    if (quizIndex === THESIS_QUIZ_DATA.length - 1) {
-      btnNextQuiz.textContent = "Ver resultado final y reiniciar";
+    if (isCorrect) {
+      quizScore++;
+      quizScoreDisplay.textContent = `Aciertos: ${quizScore}`;
+      feedbackBadge.textContent = "¡CORRECTO!";
+      feedbackBadge.className = "feedback-badge badge-correct";
     } else {
-      btnNextQuiz.textContent = "Siguiente afirmación →";
+      feedbackBadge.textContent = "INCORRECTO";
+      feedbackBadge.className = "feedback-badge badge-wrong";
     }
+
+    feedbackExplanation.textContent = item.explanation;
+    quizFeedback.style.display = "block";
   }
 
-  btnHecho.addEventListener("click", () => handleAnswer("hecho"));
-  btnTesis.addEventListener("click", () => handleAnswer("tesis"));
+  if (btnChoiceHecho && btnChoiceTesis) {
+    btnChoiceHecho.addEventListener("click", () => handleChoice("hecho"));
+    btnChoiceTesis.addEventListener("click", () => handleChoice("tesis"));
 
-  btnNextQuiz.addEventListener("click", () => {
-    quizIndex++;
-    if (quizIndex >= THESIS_QUIZ_DATA.length) {
-      alert(`¡Completaste el entrenamiento! Lograste ${score} aciertos de ${THESIS_QUIZ_DATA.length}. ¡Excelente práctica de discriminación lógica!`);
-      quizIndex = 0;
-      score = 0;
-    }
-    loadQuiz(quizIndex);
-  });
+    btnNextQuiz.addEventListener("click", () => {
+      currentQuizIdx = (currentQuizIdx + 1) % THESIS_QUIZ_DATA.length;
+      loadQuiz(currentQuizIdx);
+    });
 
-  loadQuiz(0);
+    loadQuiz(0);
+  }
 
-  // --- CONSTRUCTOR Y VALIDADOR DE TESIS ---
+  // --- VALIDADOR EN TIEMPO REAL ---
   const topicSelector = document.getElementById("topicSelector");
   const thesisInput = document.getElementById("thesisInput");
   const critLength = document.getElementById("crit-length");
@@ -265,7 +326,7 @@ function initThesisLab() {
   const btnUseThesis = document.getElementById("btnUseThesis");
 
   const TOPIC_TEMPLATES = {
-    "ia-edu": "La integración crítica de la inteligencia artificial generativa en la educación secundaria debe ser obligatoria para formar competencias de pensamiento reflexivo.",
+    "ia-edu": "Las instituciones educativas deben incorporar la alfabetización en IA como competencia obligatoria en vez de prohibir su uso en las aulas.",
     "redes-juventud": "El acceso a redes sociales en menores de 16 años debe restringirse legalmente para prevenir crisis de atención y ansiedad social.",
     "tareas-casa": "Las instituciones educativas deben erradicar las tareas obligatorias en casa porque profundizan la desigualdad social y el agotamiento familiar.",
     "lectura-digital": "El reemplazo total de libros impresos por tabletas escolares perjudica la comprensión lectora profunda y la retención conceptual.",
@@ -291,7 +352,7 @@ function initThesisLab() {
     critLength.classList.toggle("valid", hasLength);
     critLength.querySelector(".crit-icon").textContent = hasLength ? "✓" : "○";
 
-    // Criterio 2: Palabras debatibles (debe, exige, indispensable, perjudicial, etc.)
+    // Criterio 2: Palabras debatibles
     const debatibleRegex = /(debe|deben|debería|deberían|necesario|indispensable|fundamental|injusto|perjudicial|dañino|urgente|beneficioso|amenaza|prioridad)/i;
     const isDebatible = debatibleRegex.test(text);
     critDebatible.classList.toggle("valid", isDebatible);
@@ -307,14 +368,14 @@ function initThesisLab() {
     btnUseThesis.disabled = !allValid;
 
     if (text.length === 0) {
-      thesisStatusAlert.className = "thesis-status-alert";
       thesisStatusAlert.textContent = "Escribe tu tesis para recibir retroalimentación automática.";
-    } else if (allValid) {
-      thesisStatusAlert.className = "thesis-status-alert valid";
-      thesisStatusAlert.innerHTML = "<strong>¡Tesis bien formulada!</strong> Es una oración afirmativa, debatible y susceptible de recibir argumentos sólidos.";
-    } else {
       thesisStatusAlert.className = "thesis-status-alert";
-      thesisStatusAlert.textContent = "Ajusta la redacción: asegúrate de usar un verbo de juicio o deber (debe, perjudica, requiere) para que sea una postura debatible.";
+    } else if (allValid) {
+      thesisStatusAlert.textContent = "✓ ¡Excelente formulación! Cumple con los criterios de debatibilidad, delimitación y postura explícita.";
+      thesisStatusAlert.className = "thesis-status-alert alert-success";
+    } else {
+      thesisStatusAlert.textContent = "⚠️ Revisa los criterios pendientes arriba para pulir tu tesis y hacerla verdaderamente argumentativa.";
+      thesisStatusAlert.className = "thesis-status-alert alert-warning";
     }
   }
 
@@ -323,163 +384,187 @@ function initThesisLab() {
     const builderThesisInput = document.getElementById("inputBuilderThesis");
     if (builderThesisInput) {
       builderThesisInput.value = text;
-      // Ir a la pestaña 4
+      // Ir a la pestaña del constructor
       const tabConstructor = document.getElementById("btn-tab-constructor");
       if (tabConstructor) tabConstructor.click();
       showToast("¡Tesis transferida exitosamente al Simulador Constructor!");
-      // Actualizar vista previa
       updateEssayPreview();
     }
   });
 }
 
 // =========================================================================
-// 4. MÓDULO 3: GIMNASIO DE TIPOS DE ARGUMENTOS
+// 5. MÓDULO 04: GIMNASIO DE TIPOS DE ARGUMENTOS
 // =========================================================================
 const GYM_CASES = [
   {
-    topic: "TEMA: TAREAS ESCOLARES",
-    quote: "«Según el informe internacional PISA de la OCDE, los países con menor carga de deberes para la casa obtienen rendimientos académicos más equilibrados y menores índices de ansiedad estudiantil.»",
+    topic: "TAREAS ESCOLARES Y BIENESTAR",
+    quote: "Según el informe internacional PISA de la OCDE, los países con jornadas escolares extensas y menor carga de deberes para la casa obtienen rendimientos académicos más equilibrados y menores índices de ansiedad estudiantil.",
     correctType: "autoridad",
-    explanation: "Apela al prestigio metodológico de la OCDE y su informe PISA, citando una institución internacional reconocida como garante de la afirmación."
+    explanation: "Es un argumento de autoridad y estudio formal respaldado por un organismo de investigación internacional de alto prestigio (OCDE / PISA)."
   },
   {
-    topic: "TEMA: REDES SOCIALES Y SUEÑO",
-    quote: "«La exposición prolongada a la luz azul de las pantallas antes de dormir bloquea la segregación de melatonina, lo que produce insomnio crónico y bajo rendimiento diurno en los adolescentes.»",
+    topic: "USO DE DISPOSITIVOS DIGITALES",
+    quote: "El uso excesivo de pantallas iluminadas antes de dormir suprime la segregación de melatonina, lo cual provoca insomnio crónico y merma la capacidad de concentración matutina en un 30%.",
     correctType: "causa",
-    explanation: "Describe un encadenamiento causal directo: la luz azul (causa) bloquea una hormona y desencadena el insomnio (consecuencia directa)."
+    explanation: "Es un argumento de causa y consecuencia: explica con rigor cómo una acción fisiológica desencadena directamente un perjuicio funcional."
   },
   {
-    topic: "TEMA: DESIGUALDAD SALARIAL",
-    quote: "«En América Latina, el Instituto Nacional de Estadísticas registra que las mujeres con título universitario perciben en promedio un 22% menos de remuneración que sus pares masculinos en puestos idénticos.»",
+    topic: "ALFABETIZACIÓN FINANCIERA",
+    quote: "Durante el último censo de inclusión financiera, se constató que el 68% de las familias deudoras carecían de formación elemental sobre tasas de interés compuesto e inflación.",
     correctType: "hecho",
-    explanation: "Es un argumento basado en datos estadísticos y mediciones numéricas oficiales verificables."
+    explanation: "Es un argumento basado en datos y hechos numéricos verificables obtenidos de mediciones estadísticas oficiales."
   },
   {
-    topic: "TEMA: REGULACIÓN DE LA INTELIGENCIA ARTIFICIAL",
-    quote: "«Así como en el siglo XX la aviación comercial solo despegó de forma segura cuando se establecieron estrictos protocolos internacionales de vuelo, la inteligencia artificial requiere normas de auditoría global antes de su despliegue masivo.»",
+    topic: "REGULACIÓN DE PATINETAS ELÉCTRICAS",
+    quote: "Así como la obligatoriedad del cinturón de seguridad en los automóviles redujo drásticamente la mortalidad vial sin vulnerar los derechos de los conductores, la regulación de patinetas en aceras protegerá la vida de los peatones.",
     correctType: "comparacion",
-    explanation: "Utiliza una analogía histórica (la industria de la aviación) para sostener que un fenómeno nuevo (la IA) necesita el mismo tipo de regulación preventiva."
+    explanation: "Es un argumento por analogía: toma un precedente regulatorio aceptado en el tráfico vehicular y lo traslada para justificar una nueva norma de movilidad urbana."
   },
   {
-    topic: "TEMA: ACCESO A LA EDUCACIÓN SUPERIOR",
-    quote: "«Impedir el acceso a la universidad a jóvenes talentosos solo por su origen económico quebranta el principio elemental de justicia y degrada el ideal democrático de una sociedad equitativa.»",
+    topic: "ACCESO UNIVERSAL AL AGUA",
+    quote: "Negar el suministro de agua potable a barrios informales bajo pretextos burocráticos atenta contra la dignidad humana y el derecho inalienable a la vida consignado en los tratados de derechos humanos.",
     correctType: "valores",
-    explanation: "Apela a principios éticos universales (la justicia, la igualdad y la democracia), apelando a lo que una sociedad moralmente sana debe garantizar."
+    explanation: "Es un argumento basado en valores éticos y principios universales de justicia social y derechos humanos fundamentales."
   },
   {
-    topic: "TEMA: DIVERSIDAD EN EL AULA",
-    quote: "«Investigaciones del Centro de Desarrollo Cognitivo de Harvard señalan que los grupos estudiantiles diversos resuelven problemas complejos un 35% más rápido que los grupos homogéneos.»",
-    correctType: "autoridad",
-    explanation: "Cita los hallazgos y el prestigio científico de la Universidad de Harvard para validar la afirmación sobre el beneficio de la diversidad."
+    topic: "INTELIGENCIA ARTIFICIAL EN MEDICINA",
+    quote: "En ensayos clínicos controlados en hospitales universitarios de Boston, los algoritmos de detección temprana identificaron tumores cutáneos con un 94.5% de precisión frente al 86% de los métodos convencionales.",
+    correctType: "hecho",
+    explanation: "Es un argumento empírico basado en datos estadísticos y mediciones científicas comparativas verificadas en ensayos clínicos."
   }
 ];
 
 function initGymArguments() {
-  let currentCaseIndex = 0;
-  const topicTag = document.getElementById("gymTopicTag");
-  const quoteText = document.getElementById("gymQuoteText");
+  let gymIdx = 0;
+
   const gymCounter = document.getElementById("gymCounter");
-  const optionsGrid = document.getElementById("gymOptionsGrid");
-  const feedbackCard = document.getElementById("gymFeedbackCard");
-  const feedbackTitle = document.getElementById("gymFeedbackTitle");
-  const feedbackExplanation = document.getElementById("gymFeedbackExplanation");
+  const gymTopicTag = document.getElementById("gymTopicTag");
+  const gymQuoteText = document.getElementById("gymQuoteText");
+  const optionBtns = document.querySelectorAll(".gym-option-btn");
+  const gymFeedbackCard = document.getElementById("gymFeedbackCard");
+  const gymFeedbackTitle = document.getElementById("gymFeedbackTitle");
+  const gymFeedbackExplanation = document.getElementById("gymFeedbackExplanation");
   const btnNextGym = document.getElementById("btnNextGym");
 
   function loadGymCase(index) {
-    const c = GYM_CASES[index];
-    topicTag.textContent = c.topic;
-    quoteText.textContent = c.quote;
+    const item = GYM_CASES[index];
     gymCounter.textContent = `Caso ${index + 1} de ${GYM_CASES.length}`;
-    feedbackCard.style.display = "none";
+    gymTopicTag.textContent = `TEMA: ${item.topic}`;
+    gymQuoteText.textContent = `"${item.quote}"`;
+    gymFeedbackCard.style.display = "none";
 
-    optionsGrid.querySelectorAll(".gym-option-btn").forEach(btn => {
+    optionBtns.forEach(btn => {
       btn.disabled = false;
-      btn.style.opacity = "1";
+      btn.classList.remove("btn-correct", "btn-wrong");
     });
   }
 
-  optionsGrid.querySelectorAll(".gym-option-btn").forEach(btn => {
+  optionBtns.forEach(btn => {
     btn.addEventListener("click", () => {
       const selected = btn.getAttribute("data-type");
-      const current = GYM_CASES[currentCaseIndex];
+      const current = GYM_CASES[gymIdx];
+      const isCorrect = selected === current.correctType;
 
-      optionsGrid.querySelectorAll(".gym-option-btn").forEach(b => b.disabled = true);
+      optionBtns.forEach(b => {
+        b.disabled = true;
+        if (b.getAttribute("data-type") === current.correctType) {
+          b.classList.add("btn-correct");
+        } else if (b === btn && !isCorrect) {
+          b.classList.add("btn-wrong");
+        }
+      });
 
-      const isCorrect = (selected === current.correctType);
-      feedbackCard.style.display = "block";
-      feedbackCard.className = "gym-feedback-card " + (isCorrect ? "correct" : "incorrect");
-      feedbackTitle.textContent = isCorrect ? "✓ ¡Identificación Correcta!" : "✗ Tipología Imprecisa";
-      feedbackExplanation.textContent = current.explanation;
-
-      if (currentCaseIndex === GYM_CASES.length - 1) {
-        btnNextGym.textContent = "Reiniciar gimnasio argumentativo";
+      if (isCorrect) {
+        gymFeedbackTitle.textContent = "🎯 ¡Identificación Perfecta!";
+        gymFeedbackTitle.style.color = "#16A34A";
       } else {
-        btnNextGym.textContent = "Siguiente caso →";
+        gymFeedbackTitle.textContent = "💡 Observa la estructura con atención";
+        gymFeedbackTitle.style.color = "#C53030";
       }
+
+      gymFeedbackExplanation.textContent = current.explanation;
+      gymFeedbackCard.style.display = "block";
     });
   });
 
-  btnNextGym.addEventListener("click", () => {
-    currentCaseIndex++;
-    if (currentCaseIndex >= GYM_CASES.length) {
-      currentCaseIndex = 0;
-    }
-    loadGymCase(currentCaseIndex);
-  });
-
-  loadGymCase(0);
+  if (btnNextGym) {
+    btnNextGym.addEventListener("click", () => {
+      gymIdx = (gymIdx + 1) % GYM_CASES.length;
+      loadGymCase(gymIdx);
+    });
+    loadGymCase(0);
+  }
 }
 
 // =========================================================================
-// 5. MÓDULO 4: SIMULADOR CONSTRUCTOR DE ENSAYO (ANDAMIAJE & RÚBRICA)
+// 6. MÓDULO 05: SIMULADOR CONSTRUCTOR DE ENSAYO (ANDAMIAJE EN VIVO)
 // =========================================================================
-const STORAGE_KEY = "alejandro_ensayo_draft_v1";
+const ESSAY_STORAGE_KEY = "alejandro_cordova_essay_draft_v2";
 
 function initEssayBuilder() {
-  // Accordion Steps
-  const steps = document.querySelectorAll(".accordion-step");
-  steps.forEach(step => {
-    const header = step.querySelector(".step-header");
+  // Conexión del botón para consultar teoría
+  const btnConsultTheory = document.getElementById("btnConsultTheory");
+  if (btnConsultTheory) {
+    btnConsultTheory.addEventListener("click", () => {
+      const theoryTab = document.querySelector('.nav-tab[data-tab="tab-teoria"]');
+      if (theoryTab) {
+        theoryTab.click();
+      }
+    });
+  }
+
+  // Acordeones de pasos
+  const stepHeaders = document.querySelectorAll(".accordion-step .step-header");
+  stepHeaders.forEach(header => {
     header.addEventListener("click", () => {
-      const isOpen = step.classList.contains("open");
-      steps.forEach(s => s.classList.remove("open"));
-      if (!isOpen) step.classList.add("open");
+      const parentStep = header.closest(".accordion-step");
+      parentStep.classList.toggle("open");
     });
   });
 
-  // Conectores rápidos
-  document.querySelectorAll(".conn-pill").forEach(pill => {
-    pill.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const targetId = pill.getAttribute("data-target");
-      const insertText = pill.getAttribute("data-text");
-      const targetInput = document.getElementById(targetId);
-      if (!targetInput) return;
+  // Inserción de conectores al hacer clic en las pastillas
+  const connPills = document.querySelectorAll(".conn-pill");
+  connPills.forEach(pill => {
+    pill.addEventListener("click", () => {
+      const targetInputId = pill.getAttribute("data-target");
+      const textToInsert = pill.getAttribute("data-text");
+      const targetEl = document.getElementById(targetInputId);
+      if (!targetEl) return;
 
-      const start = targetInput.selectionStart || targetInput.value.length;
-      const end = targetInput.selectionEnd || targetInput.value.length;
-      const val = targetInput.value;
+      const start = targetEl.selectionStart || targetEl.value.length;
+      const end = targetEl.selectionEnd || targetEl.value.length;
+      const val = targetEl.value;
 
-      targetInput.value = val.substring(0, start) + insertText + val.substring(end);
-      targetInput.focus();
-      targetInput.selectionStart = targetInput.selectionEnd = start + insertText.length;
+      targetEl.value = val.substring(0, start) + textToInsert + val.substring(end);
+      targetEl.focus();
+      targetEl.selectionStart = targetEl.selectionEnd = start + textToInsert.length;
 
+      showToast(`Conector «${textToInsert.trim()}» insertado`);
       updateEssayPreview();
       saveDraft();
     });
   });
 
-  // Inputs con autosave
-  const inputsToTrack = [
-    "inputEssayTitle", "inputEssayAuthor", "inputIntroHook", "inputBuilderThesis",
-    "arg1Type", "inputArg1Premise", "inputArg1Evidence",
-    "arg2Type", "inputArg2Premise", "inputArg2Evidence",
-    "inputCounterargOpponent", "inputCounterargRefutation",
-    "inputConclusionSynthesis", "inputConclusionCall"
+  // Campos que disparan actualización del borrador
+  const watchedInputs = [
+    "inputEssayTitle",
+    "inputEssayAuthor",
+    "inputIntroHook",
+    "inputBuilderThesis",
+    "arg1Type",
+    "inputArg1Premise",
+    "inputArg1Evidence",
+    "arg2Type",
+    "inputArg2Premise",
+    "inputArg2Evidence",
+    "inputCounterargOpponent",
+    "inputCounterargRefutation",
+    "inputConclusionSynthesis",
+    "inputConclusionCall"
   ];
 
-  inputsToTrack.forEach(id => {
+  watchedInputs.forEach(id => {
     const el = document.getElementById(id);
     if (el) {
       el.addEventListener("input", () => {
@@ -493,164 +578,86 @@ function initEssayBuilder() {
     }
   });
 
-  // Recuperar borrador si existe
+  // Cargar borrador previo si existe
   loadDraft();
+  updateEssayPreview();
 
-  // Exportar y limpiar
-  document.getElementById("btnCopyEssay").addEventListener("click", copyEssayToClipboard);
-  document.getElementById("btnDownloadTxt").addEventListener("click", downloadEssayTxt);
-  document.getElementById("btnPrintEssay").addEventListener("click", () => window.print());
-  document.getElementById("btnClearDraft").addEventListener("click", clearDraft);
-}
+  // Botón copiar texto completo
+  const btnCopyEssay = document.getElementById("btnCopyEssay");
+  if (btnCopyEssay) {
+    btnCopyEssay.addEventListener("click", () => {
+      const assembledEl = document.getElementById("assembledEssayView");
+      if (!assembledEl) return;
 
-function updateEssayPreview() {
-  const title = (document.getElementById("inputEssayTitle")?.value || "").trim();
-  const author = (document.getElementById("inputEssayAuthor")?.value || "").trim();
-  const hook = (document.getElementById("inputIntroHook")?.value || "").trim();
-  const thesis = (document.getElementById("inputBuilderThesis")?.value || "").trim();
-  
-  const arg1Premise = (document.getElementById("inputArg1Premise")?.value || "").trim();
-  const arg1Evidence = (document.getElementById("inputArg1Evidence")?.value || "").trim();
-  
-  const arg2Premise = (document.getElementById("inputArg2Premise")?.value || "").trim();
-  const arg2Evidence = (document.getElementById("inputArg2Evidence")?.value || "").trim();
-  
-  const opponent = (document.getElementById("inputCounterargOpponent")?.value || "").trim();
-  const refutation = (document.getElementById("inputCounterargRefutation")?.value || "").trim();
-  
-  const conclusionSyn = (document.getElementById("inputConclusionSynthesis")?.value || "").trim();
-  const conclusionCall = (document.getElementById("inputConclusionCall")?.value || "").trim();
-
-  const previewBox = document.getElementById("assembledEssayView");
-
-  // Verificar si está vacío
-  const hasContent = title || hook || thesis || arg1Premise || arg2Premise || conclusionSyn;
-  if (!hasContent) {
-    previewBox.innerHTML = `
-      <p class="empty-preview-note">
-        A medida que completes los pasos en la izquierda, tu texto argumentativo se irá ensamblando aquí automáticamente en tiempo real.
-      </p>
-    `;
-    updateRubric(0, 0, 0, 0, 0, 0);
-    return;
-  }
-
-  // Renderizar preview
-  let html = "";
-  if (title) {
-    html += `<h4 class="preview-rendered-title">${title}</h4>`;
-  }
-  if (author) {
-    html += `<p class="preview-rendered-author">Por: ${author}</p>`;
-  }
-
-  // Párrafo 1: Intro
-  if (hook || thesis) {
-    html += `<p class="preview-p">`;
-    if (hook) html += `${hook} `;
-    if (thesis) html += `<strong class="preview-thesis-highlight">${thesis}</strong>`;
-    html += `</p>`;
-  }
-
-  // Párrafo 2: Arg 1
-  if (arg1Premise || arg1Evidence) {
-    html += `<p class="preview-p">`;
-    if (arg1Premise) html += `${arg1Premise} `;
-    if (arg1Evidence) html += `${arg1Evidence}`;
-    html += `</p>`;
-  }
-
-  // Párrafo 3: Arg 2
-  if (arg2Premise || arg2Evidence) {
-    html += `<p class="preview-p">`;
-    if (arg2Premise) html += `${arg2Premise} `;
-    if (arg2Evidence) html += `${arg2Evidence}`;
-    html += `</p>`;
-  }
-
-  // Párrafo 4: Contraargumento
-  if (opponent || refutation) {
-    html += `<p class="preview-p">`;
-    if (opponent) html += `<em>${opponent}</em> `;
-    if (refutation) html += `${refutation}`;
-    html += `</p>`;
-  }
-
-  // Párrafo 5: Conclusión
-  if (conclusionSyn || conclusionCall) {
-    html += `<p class="preview-p">`;
-    if (conclusionSyn) html += `${conclusionSyn} `;
-    if (conclusionCall) html += `${conclusionCall}`;
-    html += `</p>`;
-  }
-
-  previewBox.innerHTML = html;
-
-  // Actualizar indicadores de pasos
-  updateStepStatus("status-step-1", title.length > 5);
-  updateStepStatus("status-step-2", thesis.length > 10);
-  updateStepStatus("status-step-3", (arg1Premise.length > 8 && arg2Premise.length > 8));
-  updateStepStatus("status-step-4", (opponent.length > 8 && refutation.length > 8));
-  updateStepStatus("status-step-5", (conclusionSyn.length > 8));
-
-  // Actualizar rúbrica
-  updateRubric(
-    title.length > 3 ? 1 : 0,
-    thesis.length > 10 ? 1 : 0,
-    arg1Premise.length > 8 ? 1 : 0,
-    arg2Premise.length > 8 ? 1 : 0,
-    (opponent.length > 6 && refutation.length > 6) ? 1 : 0,
-    conclusionSyn.length > 8 ? 1 : 0
-  );
-}
-
-function updateStepStatus(id, isDone) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  if (isDone) {
-    el.textContent = "✓ Completado";
-    el.className = "step-status completed";
-  } else {
-    el.textContent = "En edición";
-    el.className = "step-status";
-  }
-}
-
-function updateRubric(t, th, a1, a2, co, cl) {
-  const items = [
-    { id: "chk-title", ok: t === 1, text: "Título y autor asignados" },
-    { id: "chk-thesis", ok: th === 1, text: "Tesis clara y formulada" },
-    { id: "chk-arg1", ok: a1 === 1, text: "Argumento 1 fundamentado" },
-    { id: "chk-arg2", ok: a2 === 1, text: "Argumento 2 fundamentado" },
-    { id: "chk-counter", ok: co === 1, text: "Contraargumento y refutación" },
-    { id: "chk-conclusion", ok: cl === 1, text: "Conclusión y síntesis" }
-  ];
-
-  let completedCount = 0;
-  items.forEach(item => {
-    const el = document.getElementById(item.id);
-    if (el) {
-      if (item.ok) {
-        el.className = "chk-item valid";
-        el.textContent = `✓ ${item.text}`;
-        completedCount++;
-      } else {
-        el.className = "chk-item";
-        el.textContent = `❌ ${item.text}`;
+      const plainText = assembledEl.innerText;
+      if (!plainText || plainText.includes("A medida que completes")) {
+        showToast("Primero redacta algunas secciones de tu ensayo.");
+        return;
       }
-    }
-  });
 
-  const percent = Math.round((completedCount / items.length) * 100);
-  const scorePercent = document.getElementById("rubricScorePercent");
-  const rubricBar = document.getElementById("rubricBar");
-  if (scorePercent) scorePercent.textContent = `${percent}%`;
-  if (rubricBar) rubricBar.style.width = `${percent}%`;
+      navigator.clipboard.writeText(plainText).then(() => {
+        showToast("¡Ensayo completo copiado al portapapeles!");
+      }).catch(() => {
+        showToast("Selecciona el texto para copiar manualmente.");
+      });
+    });
+  }
+
+  // Botón descargar .TXT
+  const btnDownloadTxt = document.getElementById("btnDownloadTxt");
+  if (btnDownloadTxt) {
+    btnDownloadTxt.addEventListener("click", () => {
+      const assembledEl = document.getElementById("assembledEssayView");
+      const titleInput = document.getElementById("inputEssayTitle");
+      const title = titleInput.value.trim() || "ensayo-argumentativo";
+      const text = assembledEl.innerText;
+
+      if (!text || text.includes("A medida que completes")) {
+        showToast("Redacta tu ensayo antes de descargarlo.");
+        return;
+      }
+
+      const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}.txt`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast("Archivo .TXT generado y descargado");
+    });
+  }
+
+  // Botón imprimir
+  const btnPrintEssay = document.getElementById("btnPrintEssay");
+  if (btnPrintEssay) {
+    btnPrintEssay.addEventListener("click", () => {
+      window.print();
+    });
+  }
+
+  // Botón restablecer borrador
+  const btnClearDraft = document.getElementById("btnClearDraft");
+  if (btnClearDraft) {
+    btnClearDraft.addEventListener("click", () => {
+      if (confirm("¿Estás seguro de restablecer el borrador? Se borrarán los campos actuales.")) {
+        localStorage.removeItem(ESSAY_STORAGE_KEY);
+        watchedInputs.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.value = "";
+        });
+        updateEssayPreview();
+        showToast("Borrador restablecido.");
+      }
+    });
+  }
 }
 
-// ── GUARDADO LOCAL (LOCALSTORAGE) ────────────────────────────
+// Guardado y carga en localStorage
 function saveDraft() {
-  const draft = {
+  const data = {
     title: document.getElementById("inputEssayTitle")?.value || "",
     author: document.getElementById("inputEssayAuthor")?.value || "",
     hook: document.getElementById("inputIntroHook")?.value || "",
@@ -661,121 +668,197 @@ function saveDraft() {
     arg2Type: document.getElementById("arg2Type")?.value || "",
     arg2Premise: document.getElementById("inputArg2Premise")?.value || "",
     arg2Evidence: document.getElementById("inputArg2Evidence")?.value || "",
-    opponent: document.getElementById("inputCounterargOpponent")?.value || "",
-    refutation: document.getElementById("inputCounterargRefutation")?.value || "",
-    conclusionSyn: document.getElementById("inputConclusionSynthesis")?.value || "",
-    conclusionCall: document.getElementById("inputConclusionCall")?.value || "",
+    counterOpponent: document.getElementById("inputCounterargOpponent")?.value || "",
+    counterRefutation: document.getElementById("inputCounterargRefutation")?.value || "",
+    conclusionSynthesis: document.getElementById("inputConclusionSynthesis")?.value || "",
+    conclusionCall: document.getElementById("inputConclusionCall")?.value || ""
   };
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(draft));
-  } catch (e) {
-    // Silently ignore storage quota or disabled storage
-  }
+  localStorage.setItem(ESSAY_STORAGE_KEY, JSON.stringify(data));
 }
 
 function loadDraft() {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
+    const raw = localStorage.getItem(ESSAY_STORAGE_KEY);
     if (!raw) return;
-    const draft = JSON.parse(raw);
-    
-    if (draft.title) document.getElementById("inputEssayTitle").value = draft.title;
-    if (draft.author) document.getElementById("inputEssayAuthor").value = draft.author;
-    if (draft.hook) document.getElementById("inputIntroHook").value = draft.hook;
-    if (draft.thesis) document.getElementById("inputBuilderThesis").value = draft.thesis;
-    if (draft.arg1Type) document.getElementById("arg1Type").value = draft.arg1Type;
-    if (draft.arg1Premise) document.getElementById("inputArg1Premise").value = draft.arg1Premise;
-    if (draft.arg1Evidence) document.getElementById("inputArg1Evidence").value = draft.arg1Evidence;
-    if (draft.arg2Type) document.getElementById("arg2Type").value = draft.arg2Type;
-    if (draft.arg2Premise) document.getElementById("inputArg2Premise").value = draft.arg2Premise;
-    if (draft.arg2Evidence) document.getElementById("inputArg2Evidence").value = draft.arg2Evidence;
-    if (draft.opponent) document.getElementById("inputCounterargOpponent").value = draft.opponent;
-    if (draft.refutation) document.getElementById("inputCounterargRefutation").value = draft.refutation;
-    if (draft.conclusionSyn) document.getElementById("inputConclusionSynthesis").value = draft.conclusionSyn;
-    if (draft.conclusionCall) document.getElementById("inputConclusionCall").value = draft.conclusionCall;
+    const data = JSON.parse(raw);
 
-    updateEssayPreview();
-  } catch (e) {}
-}
-
-function clearDraft() {
-  if (confirm("¿Deseas restablecer y borrar todo el borrador actual para empezar de nuevo?")) {
-    try {
-      localStorage.removeItem(STORAGE_KEY);
-    } catch (e) {}
-    
-    document.querySelectorAll(".custom-input, .custom-textarea").forEach(input => {
-      if (input.id !== "thesisInput") input.value = "";
-    });
-    updateEssayPreview();
-    showToast("Borrador restablecido.");
+    if (data.title) document.getElementById("inputEssayTitle").value = data.title;
+    if (data.author) document.getElementById("inputEssayAuthor").value = data.author;
+    if (data.hook) document.getElementById("inputIntroHook").value = data.hook;
+    if (data.thesis) document.getElementById("inputBuilderThesis").value = data.thesis;
+    if (data.arg1Type) document.getElementById("arg1Type").value = data.arg1Type;
+    if (data.arg1Premise) document.getElementById("inputArg1Premise").value = data.arg1Premise;
+    if (data.arg1Evidence) document.getElementById("inputArg1Evidence").value = data.arg1Evidence;
+    if (data.arg2Type) document.getElementById("arg2Type").value = data.arg2Type;
+    if (data.arg2Premise) document.getElementById("inputArg2Premise").value = data.arg2Premise;
+    if (data.arg2Evidence) document.getElementById("inputArg2Evidence").value = data.arg2Evidence;
+    if (data.counterOpponent) document.getElementById("inputCounterargOpponent").value = data.counterOpponent;
+    if (data.counterRefutation) document.getElementById("inputCounterargRefutation").value = data.counterRefutation;
+    if (data.conclusionSynthesis) document.getElementById("inputConclusionSynthesis").value = data.conclusionSynthesis;
+    if (data.conclusionCall) document.getElementById("inputConclusionCall").value = data.conclusionCall;
+  } catch (e) {
+    console.warn("No se pudo cargar el borrador de ensayo previo:", e);
   }
 }
 
-// ── EXPORTACIONES ────────────────────────────────────────────
-function getPlainTextEssay() {
-  const title = (document.getElementById("inputEssayTitle")?.value || "Ensayo sin título").trim();
-  const author = (document.getElementById("inputEssayAuthor")?.value || "Autor anónimo").trim();
-  const hook = (document.getElementById("inputIntroHook")?.value || "").trim();
-  const thesis = (document.getElementById("inputBuilderThesis")?.value || "").trim();
-  const a1P = (document.getElementById("inputArg1Premise")?.value || "").trim();
-  const a1E = (document.getElementById("inputArg1Evidence")?.value || "").trim();
-  const a2P = (document.getElementById("inputArg2Premise")?.value || "").trim();
-  const a2E = (document.getElementById("inputArg2Evidence")?.value || "").trim();
-  const opp = (document.getElementById("inputCounterargOpponent")?.value || "").trim();
-  const ref = (document.getElementById("inputCounterargRefutation")?.value || "").trim();
-  const cS = (document.getElementById("inputConclusionSynthesis")?.value || "").trim();
-  const cC = (document.getElementById("inputConclusionCall")?.value || "").trim();
+// Ensamblado en tiempo real de la vista previa y rúbrica
+function updateEssayPreview() {
+  const title = document.getElementById("inputEssayTitle")?.value.trim() || "";
+  const author = document.getElementById("inputEssayAuthor")?.value.trim() || "";
+  const hook = document.getElementById("inputIntroHook")?.value.trim() || "";
+  const thesis = document.getElementById("inputBuilderThesis")?.value.trim() || "";
+  const arg1Type = document.getElementById("arg1Type")?.value || "";
+  const arg1Premise = document.getElementById("inputArg1Premise")?.value.trim() || "";
+  const arg1Evidence = document.getElementById("inputArg1Evidence")?.value.trim() || "";
+  const arg2Type = document.getElementById("arg2Type")?.value || "";
+  const arg2Premise = document.getElementById("inputArg2Premise")?.value.trim() || "";
+  const arg2Evidence = document.getElementById("inputArg2Evidence")?.value.trim() || "";
+  const counterOpponent = document.getElementById("inputCounterargOpponent")?.value.trim() || "";
+  const counterRefutation = document.getElementById("inputCounterargRefutation")?.value.trim() || "";
+  const conclusionSynthesis = document.getElementById("inputConclusionSynthesis")?.value.trim() || "";
+  const conclusionCall = document.getElementById("inputConclusionCall")?.value.trim() || "";
 
-  return `${title.toUpperCase()}
-Por: ${author}
-Fecha: ${new Date().toLocaleDateString('es-ES')}
-Plataforma: alejandrocordova.com — Taller y Simulador de Ensayo Argumentativo
+  // 1. Estados de la rúbrica (checklist)
+  const chkTitle = title.length > 0;
+  const chkThesis = thesis.length > 0;
+  const chkArg1 = arg1Premise.length > 0 && arg1Evidence.length > 0;
+  const chkArg2 = arg2Premise.length > 0 && arg2Evidence.length > 0;
+  const chkCounter = counterOpponent.length > 0 && counterRefutation.length > 0;
+  const chkConclusion = conclusionSynthesis.length > 0 || conclusionCall.length > 0;
 
-==================================================
-INTRODUCCIÓN Y TESIS
-==================================================
-${hook} ${thesis}
+  updateCheckItem("chk-title", chkTitle, "Título y autor asignados");
+  updateCheckItem("chk-thesis", chkThesis, "Tesis clara y formulada");
+  updateCheckItem("chk-arg1", chkArg1, "Argumento 1 fundamentado");
+  updateCheckItem("chk-arg2", chkArg2, "Argumento 2 fundamentado");
+  updateCheckItem("chk-counter", chkCounter, "Contraargumento y refutación");
+  updateCheckItem("chk-conclusion", chkConclusion, "Conclusión y síntesis");
 
-==================================================
-CUERPO ARGUMENTATIVO
-==================================================
-[Argumento 1]
-${a1P} ${a1E}
+  // Estados en los acordeones
+  setStepStatus("status-step-1", chkTitle);
+  setStepStatus("status-step-2", hook.length > 0 && chkThesis);
+  setStepStatus("status-step-3", chkArg1 && chkArg2);
+  setStepStatus("status-step-4", chkCounter);
+  setStepStatus("status-step-5", chkConclusion);
 
-[Argumento 2]
-${a2P} ${a2E}
+  // Porcentaje
+  const items = [chkTitle, chkThesis, chkArg1, chkArg2, chkCounter, chkConclusion];
+  const completedCount = items.filter(Boolean).length;
+  const percent = Math.round((completedCount / items.length) * 100);
 
-[Contraargumento y Refutación]
-${opp} ${ref}
+  const rubricScorePercent = document.getElementById("rubricScorePercent");
+  const rubricBar = document.getElementById("rubricBar");
+  if (rubricScorePercent) rubricScorePercent.textContent = `${percent}%`;
+  if (rubricBar) rubricBar.style.width = `${percent}%`;
 
-==================================================
-CONCLUSIÓN
-==================================================
-${cS} ${cC}
-`;
+  // 2. Renderizar texto ensamblado
+  const assembledEl = document.getElementById("assembledEssayView");
+  if (!assembledEl) return;
+
+  const hasAnyContent = items.some(Boolean) || hook.length > 0;
+  if (!hasAnyContent) {
+    assembledEl.innerHTML = `
+      <p class="empty-preview-note">
+        A medida que completes los pasos en la izquierda, tu texto argumentativo se irá ensamblando aquí automáticamente en tiempo real.
+      </p>
+    `;
+    return;
+  }
+
+  let html = "";
+
+  // Título y autor
+  if (title || author) {
+    html += `<div class="assembled-title">${title || "[Título Provisional del Ensayo]"}</div>`;
+    html += `<div class="assembled-author">Por ${author || "[Nombre del Autor]"}</div>`;
+  }
+
+  // Introducción
+  if (hook || thesis) {
+    html += `
+      <div class="assembled-paragraph">
+        <span class="assembled-label label-intro">INTRODUCCIÓN</span>
+        ${hook ? `${escapeHtml(hook)} ` : ""}
+        ${thesis ? `<strong>${escapeHtml(thesis)}</strong>` : ""}
+      </div>
+    `;
+  }
+
+  // Argumento 1
+  if (arg1Premise || arg1Evidence) {
+    html += `
+      <div class="assembled-paragraph">
+        <span class="assembled-label label-arg">ARGUMENTO 1 (${escapeHtml(arg1Type)})</span>
+        ${arg1Premise ? `${escapeHtml(arg1Premise)} ` : ""}
+        ${arg1Evidence ? `${escapeHtml(arg1Evidence)}` : ""}
+      </div>
+    `;
+  }
+
+  // Argumento 2
+  if (arg2Premise || arg2Evidence) {
+    html += `
+      <div class="assembled-paragraph">
+        <span class="assembled-label label-arg">ARGUMENTO 2 (${escapeHtml(arg2Type)})</span>
+        ${arg2Premise ? `${escapeHtml(arg2Premise)} ` : ""}
+        ${arg2Evidence ? `${escapeHtml(arg2Evidence)}` : ""}
+      </div>
+    `;
+  }
+
+  // Contraargumento
+  if (counterOpponent || counterRefutation) {
+    html += `
+      <div class="assembled-paragraph">
+        <span class="assembled-label label-counter">CONTRAARGUMENTO Y REFUTACIÓN</span>
+        ${counterOpponent ? `${escapeHtml(counterOpponent)} ` : ""}
+        ${counterRefutation ? `<em>${escapeHtml(counterRefutation)}</em>` : ""}
+      </div>
+    `;
+  }
+
+  // Conclusión
+  if (conclusionSynthesis || conclusionCall) {
+    html += `
+      <div class="assembled-paragraph">
+        <span class="assembled-label label-concl">CONCLUSIÓN</span>
+        ${conclusionSynthesis ? `${escapeHtml(conclusionSynthesis)} ` : ""}
+        ${conclusionCall ? `${escapeHtml(conclusionCall)}` : ""}
+      </div>
+    `;
+  }
+
+  assembledEl.innerHTML = html;
 }
 
-function copyEssayToClipboard() {
-  const text = getPlainTextEssay();
-  navigator.clipboard.writeText(text).then(() => {
-    showToast("¡Texto completo copiado al portapapeles!");
-  }).catch(() => {
-    showToast("No se pudo copiar automáticamente. Puedes seleccionar el texto manualmente.");
-  });
+function updateCheckItem(id, isValid, label) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  if (isValid) {
+    el.className = "chk-item done";
+    el.innerHTML = `✓ ${label}`;
+  } else {
+    el.className = "chk-item";
+    el.innerHTML = `❌ ${label}`;
+  }
 }
 
-function downloadEssayTxt() {
-  const text = getPlainTextEssay();
-  const title = (document.getElementById("inputEssayTitle")?.value || "ensayo_argumentativo").toLowerCase().replace(/[^a-z0-9]+/g, "_");
-  const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = `${title}.txt`;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
-  showToast("¡Archivo descargado correctamente!");
+function setStepStatus(id, isComplete) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  if (isComplete) {
+    el.textContent = "Completado";
+    el.className = "step-status done";
+  } else {
+    el.textContent = "En edición";
+    el.className = "step-status";
+  }
+}
+
+function escapeHtml(str) {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 }

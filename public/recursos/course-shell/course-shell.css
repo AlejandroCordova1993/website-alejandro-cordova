@@ -1,14 +1,22 @@
+/* ==================== COURSE-SHELL CSS ==================== */
 :root {
   --course-sidebar-width: 280px;
   --course-sidebar-bg: #071B33;
   --course-sidebar-text: #F3F1EA;
-  --course-sidebar-muted: #CBD5E1;
-  --course-sidebar-active: #F3A39D;
+  --course-sidebar-muted: #94A3B8;
+  --course-sidebar-accent: #3B82F6;
+  --course-sidebar-active-bg: rgba(59, 130, 246, 0.16);
+  --course-sidebar-border: rgba(243, 241, 234, 0.12);
   --course-shell-offset: 28px;
 }
 
 body.course-shell {
   padding-left: var(--course-sidebar-width) !important;
+  transition: padding-left 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.course-shell-collapsed {
+  padding-left: 0 !important;
 }
 
 body.course-shell.modal-open,
@@ -19,13 +27,18 @@ body.lightbox-open {
 }
 
 body.modal-open .course-sidebar,
-body.lightbox-open .course-sidebar {
+body.lightbox-open .course-sidebar,
+body.modal-open .course-sidebar__toggle,
+body.lightbox-open .course-sidebar__toggle,
+body.modal-open .course-sidebar__backdrop,
+body.lightbox-open .course-sidebar__backdrop {
   display: none !important;
   visibility: hidden !important;
   opacity: 0 !important;
   pointer-events: none !important;
 }
 
+/* SIDEBAR ASIDE */
 .course-sidebar {
   position: fixed;
   inset: 0 auto 0 0;
@@ -36,134 +49,187 @@ body.lightbox-open .course-sidebar {
   overflow-y: auto;
   background: var(--course-sidebar-bg);
   color: var(--course-sidebar-text);
-  border-right: 1px solid rgba(243, 241, 234, 0.18);
-  box-shadow: 4px 0 18px rgba(7, 27, 51, 0.18);
-  font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  border-right: 1px solid var(--course-sidebar-border);
+  box-shadow: 4px 0 24px rgba(7, 27, 51, 0.2);
+  font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.course-sidebar-collapsed .course-sidebar {
+  transform: translateX(-100%);
+}
+
+body.course-sidebar-collapsed .course-sidebar__toggle {
+  display: inline-flex;
+}
+
+.course-sidebar__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .course-sidebar__back {
   display: inline-block;
-  margin-bottom: 22px;
   color: var(--course-sidebar-muted) !important;
-  font-size: 11px;
+  font-size: 0.8rem;
+  font-weight: 600;
   text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  transition: background 0.18s ease, color 0.18s ease;
 }
 
 .course-sidebar__back:hover,
 .course-sidebar__back:focus-visible {
   color: #FFFFFF !important;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.course-sidebar__close-btn {
+  background: transparent;
+  border: none;
+  color: var(--course-sidebar-muted);
+  font-size: 1.4rem;
+  line-height: 1;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: color 0.18s ease, background 0.18s ease;
+}
+
+.course-sidebar__close-btn:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .course-sidebar__title {
   margin: 0;
-  padding-bottom: 16px;
-  border-bottom: 1px solid rgba(243, 241, 234, 0.18);
   color: #FFFFFF !important;
-  font-size: 20px;
-  line-height: 1.2;
+  font-size: 1.15rem;
+  line-height: 1.25;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+}
+
+.course-sidebar__subtitle {
+  display: block;
+  margin-top: 6px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--course-sidebar-border);
+  color: #94A3B8;
+  font-size: 0.68rem;
   font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .course-sidebar__nav {
   display: grid;
-  gap: 4px;
-  margin-top: 18px;
+  gap: 6px;
+  margin-top: 16px;
 }
 
 .course-sidebar__link {
   display: block;
   width: 100%;
-  padding: 9px 10px;
-  border: 0;
-  border-left: 2px solid transparent;
+  padding: 10px 12px;
+  border: none;
+  border-left: 3px solid transparent;
+  border-radius: 5px;
   background: transparent;
-  color: var(--course-sidebar-text) !important;
+  color: var(--course-sidebar-muted) !important;
   font: inherit;
-  font-size: 12px;
+  font-size: 0.84rem;
+  font-weight: 500;
   line-height: 1.35;
   text-align: left;
   text-decoration: none;
   cursor: pointer;
+  transition: all 0.18s ease;
 }
 
 .course-sidebar__link:hover,
 .course-sidebar__link:focus-visible {
-  background: rgba(243, 241, 234, 0.1);
+  background: rgba(243, 241, 234, 0.08);
   color: #FFFFFF !important;
+  transform: translateX(2px);
 }
 
 .course-sidebar__link.is-active {
-  border-left-color: var(--course-sidebar-active);
-  background: rgba(243, 241, 234, 0.14);
+  border-left-color: var(--course-sidebar-accent);
+  background: var(--course-sidebar-active-bg);
   color: #FFFFFF !important;
   font-weight: 700;
 }
 
-.course-sidebar__link:focus-visible {
-  outline: 2px solid var(--course-sidebar-active);
-  outline-offset: 2px;
+/* BOTÓN TOGGLE FLOTANTE PARA MÓVIL Y DESKTOP COLAPSADO */
+.course-sidebar__toggle {
+  display: none;
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 2100;
+  background: #071B33;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 8px 15px;
+  border-radius: 30px;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  align-items: center;
+  gap: 7px;
+  transition: transform 0.18s ease, background 0.18s ease, opacity 0.2s ease;
 }
 
-body.course-shell > header,
-body.course-shell > .hero {
-  margin-top: 0;
+.course-sidebar__toggle:hover {
+  background: #0d2847;
+  transform: translateY(-1px);
 }
 
-body.course-shell main,
-body.course-shell > .container,
-body.course-shell > .content-wrapper,
-body.course-shell > .app-container {
-  min-width: 0;
+/* Cuando el drawer está abierto en móvil, ocultamos el botón flotante para que no estorbe */
+body.course-sidebar-open .course-sidebar__toggle {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
 }
 
-body.course-shell .course-shell__section-anchor {
-  scroll-margin-top: var(--course-shell-offset);
+.course-sidebar__backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1999;
+  background: rgba(7, 27, 51, 0.65);
+  backdrop-filter: blur(2px);
 }
 
-body.course-shell .course-shell__section-anchor :is(p, li, td, th, label, input, textarea, select) {
-  color: inherit;
-}
+/* RESPONSIVE DESIGN (DRAWER MÓVIL / TABLET) */
+@media (max-width: 960px) {
+  body.course-shell {
+    padding-left: 0 !important;
+  }
 
-@media (max-width: 900px) {
-  :root {
-    --course-sidebar-width: 228px;
+  .course-sidebar__toggle {
+    display: inline-flex;
   }
 
   .course-sidebar {
-    padding: 20px 12px;
+    transform: translateX(-100%);
+    box-shadow: 10px 0 35px rgba(0, 0, 0, 0.45);
   }
 
-  .course-sidebar__title {
-    font-size: 17px;
+  body.course-sidebar-open .course-sidebar {
+    transform: translateX(0);
   }
 
-  .course-sidebar__link {
-    font-size: 11px;
-  }
-}
-
-@media (max-width: 640px) {
-  :root {
-    --course-sidebar-width: 196px;
-  }
-
-  .course-sidebar__back {
-    margin-bottom: 14px;
-    font-size: 10px;
-  }
-
-  .course-sidebar__title {
-    font-size: 15px;
-  }
-
-  .course-sidebar__link {
-    padding: 8px 7px;
-    font-size: 10px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .course-sidebar__link {
-    transition: none !important;
+  body.course-sidebar-open .course-sidebar__backdrop {
+    display: block;
   }
 }
