@@ -1,2674 +1,811 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Práctica de Análisis Sintáctico - 10mo EGB</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
-    <style>
-        :root {
-        --color-blue: #2367D1;
-        --color-green: #1E6B38;
-        --color-orange: #C2410C;
-        --color-red: #B52A25;
-        --color-yellow: #B45309;
-        --color-cyan: #0284C7;
-        --color-slate-900: #101820;
-        --color-slate-800: #FAF9F5;
-        --color-slate-700: #4B5563;
-        --color-slate-600: #6B7280;
-        --color-slate-400: #9CA3AF;
-        --color-slate-300: #CBD5E1;
-        --color-slate-200: #555E68;
-        --color-white: #FFFFFF;
-    }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #F3F1EA;
-            color: #101820;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .app-container {
-            width: 100%;
-            max-width: 1200px;
-            background-color: #FAF9F5;
-            border-radius: 4px;
-            box-shadow: 0 4px 16px rgba(16, 24, 32, 0.06);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            min-height: 90vh;
-            border: 1px solid #D7D9D6;
-        }
-
-        .header {
-            background-color: #071B33;
-            color: #F3F1EA;
-            padding: 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-            border-bottom: 1px solid #D7D9D6;
-        }
-
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .header-title {
-            font-size: 28px;
-            font-weight: 800;
-            color: var(--color-white);
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        .level-badge {
-            background-color: var(--color-white);
-            color: var(--color-blue);
-            padding: 8px 16px;
-            border-radius: 4px;
-            font-weight: 700;
-            font-size: 14px;
-        }
-
-        .progress-info {
-            text-align: right;
-            color: var(--color-white);
-            font-size: 14px;
-        }
-
-        .progress-bar {
-            width: 200px;
-            height: 8px;
-            background-color: rgba(255, 255, 255, 0.3);
-            border-radius: 4px;
-            overflow: hidden;
-            margin-top: 4px;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: var(--color-orange);
-            transition: width 0.3s ease;
-        }
-
-        .main-content {
-            flex: 1;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            overflow-y: auto;
-        }
-
-        .login-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 24px;
-        }
-
-        .login-title {
-            font-size: 32px;
-            font-weight: 800;
-            text-align: center;
-            color: var(--color-cyan);
-        }
-
-        .login-subtitle {
-            font-size: 15px;
-            color: #555E68;
-            text-align: center;
-            max-width: 520px;
-            line-height: 1.55;
-        }
-
-        .login-form {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            width: 100%;
-            max-width: 400px;
-        }
-
-        .input-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .input-group label {
-            font-size: 14px;
-            font-weight: 700;
-            color: #101820;
-        }
-
-        .input-group input,
-        .input-group select {
-            padding: 12px 16px;
-            border: 1.5px solid #CBD5E1;
-            border-radius: 4px;
-            background-color: #FFFFFF;
-            color: #101820;
-            font-size: 14px;
-            transition: border-color 0.3s;
-        }
-
-        .input-group input:focus,
-        .input-group select:focus {
-            outline: none;
-            border-color: var(--color-cyan);
-            box-shadow: 0 0 10px rgba(35, 103, 209, 0.5);
-        }
-
-        .btn-start {
-            padding: 14px 32px;
-            background: var(--color-green);
-            color: var(--color-white);
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-            margin-top: 12px;
-        }
-
-        .btn-start:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(30, 107, 56, 0.4);
-        }
-
-        .exercise-section {
-            display: none;
-            flex-direction: column;
-            gap: 28px;
-        }
-
-        .exercise-section.active {
-            display: flex;
-        }
-
-        .exercise-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .exercise-title {
-            font-size: 24px;
-            font-weight: 800;
-            color: #071B33;
-        }
-
-        .exercise-meta {
-            display: flex;
-            gap: 16px;
-            font-size: 14px;
-            color: #555E68;
-            font-weight: 600;
-        }
-
-        .sentence-container {
-            background-color: #071B33;
-            border: 1px solid #071B33;
-            border-radius: 6px;
-            padding: 24px 28px;
-            text-align: center;
-            box-shadow: 0 4px 14px rgba(7, 27, 51, 0.15);
-        }
-
-        .sentence-label {
-            font-size: 12px;
-            font-weight: 700;
-            color: #93C5FD;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
-
-        .sentence-text {
-            font-size: 22px;
-            font-weight: 600;
-            color: #FFFFFF;
-            line-height: 1.6;
-            font-style: italic;
-            font-family: 'Source Serif 4', Georgia, serif;
-        }
-
-        .words-pool {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
-            padding: 20px;
-            background-color: #FFFFFF;
-            border: 2px dashed #CBD5E1;
-            border-radius: 6px;
-            min-height: 80px;
-        }
-
-        .word-chip {
-            padding: 10px 18px;
-            background-color: #071B33;
-            color: #FFFFFF;
-            border-radius: 4px;
-            cursor: move;
-            user-select: none;
-            transition: all 0.2s;
-            border: 2px solid transparent;
-            font-weight: 600;
-            font-size: 14px;
-            box-shadow: 0 2px 6px rgba(7, 27, 51, 0.15);
-        }
-
-        .word-chip:hover {
-            transform: translateY(-2px);
-            border-color: #2367D1;
-            background-color: #123C69;
-        }
-
-        .word-chip.dragging {
-            opacity: 0.5;
-        }
-
-        .word-chip.hidden {
-            display: none;
-        }
-
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 16px;
-        }
-
-        .category {
-            background-color: #FFFFFF;
-            border: 2px solid #D7D9D6;
-            border-radius: 6px;
-            padding: 18px;
-            min-height: 155px;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            box-shadow: 0 2px 8px rgba(16, 24, 32, 0.04);
-            transition: all 0.25s ease;
-        }
-
-        .category.sujeto { border-color: #2367D1; background-color: #F8FAFC; }
-        .category.predicado { border-color: #1E6B38; background-color: #F6FBF7; }
-        .category.ns { border-color: #0284C7; background-color: #F0F9FF; }
-        .category.np { border-color: #D97706; background-color: #FFFBEB; }
-        .category.cd { border-color: #EA580C; background-color: #FFF7ED; }
-        .category.ci { border-color: #DC2626; background-color: #FEF2F2; }
-
-        .category:hover {
-            box-shadow: 0 6px 18px rgba(16, 24, 32, 0.08);
-            transform: translateY(-2px);
-        }
-
-        .category-label {
-            font-size: 13px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .category.sujeto .category-label { color: #1E40AF; }
-        .category.predicado .category-label { color: #166534; }
-        .category.ns .category-label { color: #0369A1; }
-        .category.np .category-label { color: #B45309; }
-        .category.cd .category-label { color: #C2410C; }
-        .category.ci .category-label { color: #B91C1C; }
-
-        .category-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            display: inline-block;
-        }
-
-        .category.sujeto .category-dot { background-color: #2563EB; }
-        .category.predicado .category-dot { background-color: #16A34A; }
-        .category.ns .category-dot { background-color: #0284C7; }
-        .category.np .category-dot { background-color: #D97706; }
-        .category.cd .category-dot { background-color: #EA580C; }
-        .category.ci .category-dot { background-color: #DC2626; }
-
-        .drop-zone {
-            flex: 1;
-            background-color: #FFFFFF;
-            border: 2px dashed #CBD5E1;
-            border-radius: 4px;
-            padding: 12px;
-            min-height: 80px;
-            max-height: 150px;
-            overflow-y: auto;
-            display: flex;
-            flex-wrap: wrap;
-            align-content: flex-start;
-            gap: 8px;
-            transition: all 0.2s ease;
-            scroll-behavior: smooth;
-        }
-
-        .drop-zone.drag-over {
-            background-color: #EAF0FB;
-            border-color: #2367D1;
-            box-shadow: inset 0 0 10px rgba(35, 103, 209, 0.15);
-        }
-
-        .dropped-word {
-            padding: 8px 14px;
-            background-color: #071B33;
-            border: 1px solid #071B33;
-            border-radius: 4px;
-            font-size: 13px;
-            font-weight: 600;
-            color: #FFFFFF;
-            cursor: move;
-            transition: all 0.2s ease;
-            user-select: none;
-            -webkit-user-select: none;
-            touch-action: none;
-            box-shadow: 0 2px 4px rgba(7, 27, 51, 0.12);
-        }
-
-        .dropped-word:hover {
-            background-color: #123C69;
-            border-color: #2367D1;
-            transform: scale(1.03);
-        }
-        
-        .dropped-word:active {
-            cursor: grabbing;
-            opacity: 0.7;
-        }
-
-        .controls {
-            display: flex;
-            justify-content: space-between;
-            gap: 16px;
-            margin-top: 28px;
-        }
-
-        .btn {
-            padding: 12px 28px;
-            border: none;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .btn-reset {
-            background-color: var(--color-slate-700);
-            color: var(--color-white);
-        }
-
-        .btn-reset:hover {
-            background-color: var(--color-slate-600);
-        }
-
-        .btn-check {
-            background: var(--color-green);
-            color: var(--color-white);
-            flex: 1;
-        }
-
-        .btn-check:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(30, 107, 56, 0.4);
-        }
-
-        .btn-next {
-            background: var(--color-cyan);
-            color: var(--color-white);
-            flex: 1;
-        }
-
-        .btn-next:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 102, 255, 0.4);
-        }
-
-        .feedback {
-            padding: 16px;
-            border-radius: 4px;
-            margin-top: 16px;
-            font-size: 14px;
-            font-weight: 600;
-            display: none;
-            text-align: center;
-        }
-
-        .feedback.success {
-            background-color: #EAF5EE;
-            color: #1E6B38;
-            border: 2px solid #1E6B38;
-            display: block;
-        }
-
-        .feedback.error {
-            background-color: #FDF0EF;
-            color: #B52A25;
-            border: 2px solid #B52A25;
-            display: block;
-        }
-
-        .learning-route,
-        .diagnostic-panel {
-            width: 100%;
-            max-width: 760px;
-            background-color: #071B33;
-            color: #F3F1EA;
-            border: 1px solid #123C69;
-            border-radius: 4px;
-            padding: 20px;
-            text-align: left;
-        }
-
-        .learning-route {
-            margin-top: 4px;
-        }
-
-        .route-kicker,
-        .reflection-kicker {
-            color: #F1A8A5;
-            font-family: 'DM Mono', monospace;
-            font-size: 11px;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        .learning-route h2,
-        .diagnostic-panel h2 {
-            margin: 8px 0 16px;
-            color: #FFFFFF;
-            font-size: 19px;
-            line-height: 1.2;
-        }
-
-        .learning-route ol {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-            list-style: none;
-        }
-
-        .learning-route li {
-            display: grid;
-            gap: 6px;
-            padding-top: 10px;
-            border-top: 1px solid rgba(243, 241, 234, 0.25);
-        }
-
-        .learning-route li strong {
-            color: #F1A8A5;
-            font-size: 12px;
-        }
-
-        .learning-route li span {
-            color: #D7D9D6;
-            font-size: 12px;
-            line-height: 1.35;
-        }
-
-        .diagnostic-panel {
-            background-color: #FAF9F5;
-            color: #101820;
-            border-color: #D7D9D6;
-        }
-
-        .diagnostic-header {
-            display: flex;
-            align-items: start;
-            justify-content: space-between;
-            gap: 16px;
-        }
-
-        .diagnostic-panel h2 {
-            color: #071B33;
-        }
-
-        .diagnostic-progress {
-            color: #D83A32;
-            font-family: 'DM Mono', monospace;
-            font-size: 12px;
-        }
-
-        .diagnostic-panel > p {
-            color: #727983;
-            font-size: 13px;
-            line-height: 1.5;
-        }
-
-        .diagnostic-options {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            margin-top: 16px;
-        }
-
-        .diagnostic-options button,
-        .diagnostic-next,
-        .diagnostic-skip,
-        .reflection-actions button {
-            min-height: 42px;
-            padding: 10px 12px;
-            border: 1px solid #D7D9D6;
-            border-radius: 6px;
-            background: #FFFFFF;
-            color: #071B33;
-            cursor: pointer;
-            font: inherit;
-            font-size: 12px;
-            font-weight: 700;
-        }
-
-        .diagnostic-options button:hover,
-        .diagnostic-options button:focus-visible,
-        .diagnostic-next:hover,
-        .reflection-actions button:hover,
-        .reflection-actions button:focus-visible {
-            border-color: #2367D1;
-            background-color: #EAF0FB;
-        }
-
-        .diagnostic-options button.is-correct {
-            border-color: #1E6B38;
-            background-color: #EAF5EE;
-            color: #1E6B38;
-        }
-
-        .diagnostic-options button.is-wrong {
-            border-color: #B52A25;
-            background-color: #FDF0EF;
-            color: #B52A25;
-        }
-
-        .diagnostic-feedback {
-            min-height: 20px;
-            margin-top: 10px;
-            color: #727983;
-            font-size: 12px;
-            line-height: 1.45;
-        }
-
-        .diagnostic-feedback.correct {
-            color: #1E6B38;
-        }
-
-        .diagnostic-feedback.incorrect {
-            color: #B52A25;
-        }
-
-        .diagnostic-next {
-            display: inline-block;
-            margin-top: 8px;
-            border-color: #071B33;
-            background-color: #071B33;
-            color: #F3F1EA;
-        }
-
-        .diagnostic-skip {
-            display: block;
-            margin-top: 10px;
-            padding: 0;
-            min-height: auto;
-            border: 0;
-            background: transparent;
-            color: #727983;
-            font-size: 11px;
-            font-weight: 500;
-            text-decoration: underline;
-        }
-
-        .diagnostic-next[hidden],
-        .diagnostic-skip[hidden],
-        .reflection-prompt[hidden] {
-            display: none !important;
-        }
-
-        .reflection-prompt {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-            margin-top: 14px;
-            padding: 14px 16px;
-            border: 1px solid rgba(35, 103, 209, 0.55);
-            border-radius: 4px;
-            background-color: rgba(35, 103, 209, 0.12);
-            color: #F3F1EA;
-        }
-
-        .reflection-prompt strong {
-            display: block;
-            margin-top: 4px;
-            font-size: 13px;
-        }
-
-        .reflection-actions {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-            gap: 8px;
-        }
-
-        .reflection-actions button {
-            min-height: 36px;
-            border-color: #2367D1;
-            background-color: #071B33;
-            color: #F3F1EA;
-            font-size: 11px;
-        }
-
-        .keyboard-selected {
-            outline: 3px solid #F1A8A5;
-            outline-offset: 3px;
-        }
-
-        .drop-zone:focus-visible,
-        .word-chip:focus-visible,
-        .dropped-word:focus-visible {
-            outline: 3px solid #F1A8A5;
-            outline-offset: 3px;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                scroll-behavior: auto !important;
-                transition-duration: 0.01ms !important;
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-            }
-        }
-
-        .pronoun-input {
-            padding: 10px 16px;
-            background-color: var(--color-slate-700);
-            border: 2px solid var(--color-slate-600);
-            border-radius: 4px;
-            color: var(--color-white);
-            font-size: 14px;
-            font-weight: 600;
-            text-align: center;
-            min-width: 80px;
-            transition: all 0.3s;
-        }
-
-        .pronoun-input:focus {
-            outline: none;
-            border-color: var(--color-cyan);
-            box-shadow: 0 0 10px rgba(35, 103, 209, 0.5);
-            background-color: var(--color-slate-600);
-        }
-
-        .pronoun-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            justify-content: center;
-            padding: 20px;
-            background-color: #FFFFFF;
-            border: 2px dashed #CBD5E1;
-            border-radius: 6px;
-            min-height: 100px;
-        }
-
-        .pronoun-pair {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 16px;
-            background-color: #F8FAFC;
-            border-radius: 6px;
-            border: 1px solid #D7D9D6;
-        }
-
-        .pronoun-label {
-            font-size: 12px;
-            font-weight: 700;
-            color: #071B33;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .pronoun-input {
-            background-color: #FFFFFF;
-            border: 1.5px solid #CBD5E1;
-            border-radius: 4px;
-            color: #101820;
-            font-weight: 600;
-            padding: 8px 12px;
-            text-align: center;
-        }
-
-        .pronoun-input:focus {
-            border-color: #2367D1;
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(35, 103, 209, 0.15);
-        }
-
-        .replacement-section {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            padding: 24px;
-            background-color: #FFFFFF;
-            border: 1px solid #D7D9D6;
-            border-radius: 6px;
-            box-shadow: 0 2px 8px rgba(16, 24, 32, 0.04);
-        }
-
-        .replacement-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: #071B33;
-            text-align: center;
-            margin-bottom: 8px;
-        }
-
-        .replacement-options {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .replacement-btn {
-            padding: 10px 22px;
-            background-color: #F8FAFC;
-            border: 1.5px solid #CBD5E1;
-            color: #071B33;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 700;
-            font-size: 14px;
-            transition: all 0.2s ease;
-        }
-
-        .replacement-btn:hover {
-            border-color: #2367D1;
-            background-color: #EAF0FB;
-            color: #2367D1;
-            transform: translateY(-2px);
-        }
-
-        .replacement-btn.active {
-            background-color: #2367D1;
-            color: #FFFFFF;
-            border-color: #2367D1;
-            box-shadow: 0 4px 12px rgba(35, 103, 209, 0.3);
-        }
-
-        .replacement-result {
-            padding: 16px 20px;
-            background-color: #F8FAFC;
-            border: 2px solid #D7D9D6;
-            border-radius: 6px;
-            font-style: italic;
-            font-size: 16px;
-            color: #101820;
-            text-align: center;
-            min-height: 54px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Source Serif 4', Georgia, serif;
-        }
-
-        .replacement-result.cd-active {
-            border-color: #EA580C;
-            background-color: #FFF7ED;
-            color: #C2410C;
-            font-weight: 600;
-        }
-
-        .replacement-result.ci-active {
-            border-color: #DC2626;
-            background-color: #FEF2F2;
-            color: #B91C1C;
-            font-weight: 600;
-        }
-
-        /* RESPONSIVE DESIGN - Tablets y móviles */
-        @media (max-width: 1024px) {
-            .app-container {
-                min-height: auto;
-            }
-
-            .categories-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .replacement-options {
-                flex-direction: column;
-            }
-
-            .replacement-btn {
-                width: 100%;
-            }
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-
-            .app-container {
-                border-radius: 4px;
-            }
-
-            .main-content {
-                padding: 20px 16px;
-            }
-
-            .learning-route,
-            .diagnostic-panel {
-                padding: 16px;
-            }
-
-            .learning-route ol,
-            .diagnostic-options {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .reflection-prompt {
-                align-items: flex-start;
-                flex-direction: column;
-            }
-
-            .reflection-actions {
-                width: 100%;
-                justify-content: stretch;
-            }
-
-            .reflection-actions button {
-                flex: 1;
-            }
-
-            .header {
-                flex-direction: column;
-                gap: 12px;
-                padding: 16px;
-                text-align: center;
-            }
-
-            .header-left {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .header-title {
-                font-size: 20px;
-            }
-
-            .level-badge {
-                font-size: 12px;
-                padding: 6px 12px;
-            }
-
-            .progress-bar {
-                width: 100%;
-            }
-
-            .exercise-title {
-                font-size: 18px;
-            }
-
-            .exercise-header {
-                flex-direction: column;
-                gap: 12px;
-                align-items: flex-start;
-            }
-
-            .exercise-meta {
-                font-size: 12px;
-            }
-
-            .sentence-text {
-                font-size: 16px;
-            }
-
-            .sentence-container {
-                padding: 20px;
-            }
-
-            .categories-grid {
-                grid-template-columns: 1fr;
-                gap: 12px;
-            }
-            
-            .category {
-                padding: 12px;
-                min-height: 80px;
-            }
-            
-            .category-label {
-                font-size: 11px;
-                margin-bottom: 8px;
-            }
-            
-            .drop-zone {
-                min-height: 60px;
-                max-height: 120px;
-                padding: 10px;
-            }
-
-            .word-chip {
-                font-size: 13px;
-                padding: 8px 12px;
-                margin: 4px;
-            }
-            
-            .dropped-word {
-                font-size: 13px;
-                padding: 8px 12px;
-                margin: 4px;
-            }
-            
-            .words-pool {
-                position: sticky;
-                top: 10px;
-                z-index: 10;
-                padding: 12px;
-                margin: 10px 0;
-                max-height: 150px;
-                gap: 8px;
-            }
-            
-            .sentence-container {
-                padding: 15px;
-                margin-bottom: 10px;
-            }
-            
-            .sentence-text {
-                font-size: 15px;
-            }
-            
-            .instructions-box {
-                padding: 12px 15px !important;
-                margin: 10px 0 !important;
-            }
-            
-            #instructionsText {
-                font-size: 12px !important;
-            }
-
-            .controls {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .btn {
-                width: 100%;
-                padding: 14px;
-            }
-
-            .login-title {
-                font-size: 24px;
-            }
-
-            .login-subtitle {
-                font-size: 14px;
-            }
-
-            .login-form {
-                max-width: 100%;
-            }
-
-            .pronoun-input {
-                font-size: 14px;
-                padding: 12px;
-            }
-
-            .replacement-section {
-                padding: 16px;
-            }
-
-            .replacement-title {
-                font-size: 14px;
-            }
-
-            .replacement-btn {
-                font-size: 13px;
-                padding: 10px 16px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .learning-route ol,
-            .diagnostic-options {
-                grid-template-columns: 1fr;
-            }
-
-            .header-title {
-                font-size: 18px;
-            }
-
-            .sentence-text {
-                font-size: 15px;
-            }
-
-            .word-chip {
-                font-size: 12px;
-                padding: 6px 12px;
-            }
-
-            .category-label {
-                font-size: 10px;
-            }
-
-            .btn {
-                font-size: 13px;
-                padding: 12px;
-            }
-
-            .login-title {
-                font-size: 20px;
-            }
-
-            .replacement-options {
-                gap: 8px;
-            }
-
-            .replacement-btn {
-                font-size: 12px;
-                padding: 8px 12px;
-            }
-        }
-
-        /* ESTILOS DE LA GUÍA TEÓRICA Y CLAVES SINTÁCTICAS */
-        .btn-theory-toggle {
-            background-color: rgba(255, 255, 255, 0.12);
-            color: #FFFFFF;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            padding: 6px 14px;
-            border-radius: 4px;
-            font-family: 'Public Sans', sans-serif;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: all 0.2s ease;
-        }
-
-        .btn-theory-toggle:hover {
-            background-color: rgba(255, 255, 255, 0.25);
-            border-color: #FFFFFF;
-            transform: translateY(-1px);
-        }
-
-        .theory-modal-overlay {
-            position: fixed;
-            inset: 0;
-            background-color: rgba(7, 27, 51, 0.75);
-            backdrop-filter: blur(4px);
-            z-index: 3000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            opacity: 1;
-            transition: opacity 0.25s ease;
-        }
-
-        .theory-modal-overlay.hidden {
-            opacity: 0;
-            pointer-events: none;
-            display: none;
-        }
-
-        .theory-modal-container {
-            background-color: #FAF9F5;
-            border: 1px solid #D7D9D6;
-            border-radius: 6px;
-            max-width: 900px;
-            width: 100%;
-            max-height: 90vh;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-        }
-
-        .theory-modal-header {
-            background-color: #071B33;
-            color: #FFFFFF;
-            padding: 20px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #D83A32;
-        }
-
-        .theory-modal-header h2 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .theory-modal-close {
-            background: none;
-            border: none;
-            color: #A0AEC0;
-            font-size: 1.8rem;
-            line-height: 1;
-            cursor: pointer;
-            padding: 0 4px;
-            transition: color 0.2s ease;
-        }
-
-        .theory-modal-close:hover {
-            color: #FFFFFF;
-        }
-
-        .theory-tabs-nav {
-            background-color: #F3F1EA;
-            border-bottom: 1px solid #D7D9D6;
-            display: flex;
-            overflow-x: auto;
-            padding: 0 16px;
-            gap: 4px;
-        }
-
-        .theory-tab-btn {
-            background: none;
-            border: none;
-            border-bottom: 3px solid transparent;
-            padding: 12px 16px;
-            font-family: 'Public Sans', sans-serif;
-            font-size: 13px;
-            font-weight: 600;
-            color: #727983;
-            cursor: pointer;
-            white-space: nowrap;
-            transition: all 0.2s ease;
-        }
-
-        .theory-tab-btn:hover {
-            color: #071B33;
-            background-color: rgba(255, 255, 255, 0.5);
-        }
-
-        .theory-tab-btn.active {
-            color: #071B33;
-            border-bottom-color: #D83A32;
-            font-weight: 700;
-            background-color: #FAF9F5;
-        }
-
-        .theory-modal-body {
-            flex: 1;
-            overflow-y: auto;
-            padding: 28px;
-            font-family: 'Public Sans', sans-serif;
-            color: #101820;
-            line-height: 1.65;
-        }
-
-        .theory-tab-panel {
-            display: none;
-        }
-
-        .theory-tab-panel.active {
-            display: block;
-            animation: fadeIn 0.2s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(4px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .theory-card {
-            background-color: #FFFFFF;
-            border: 1px solid #D7D9D6;
-            border-radius: 4px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        .theory-card-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #071B33;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .theory-tag {
-            font-family: 'DM Mono', monospace;
-            font-size: 11px;
-            font-weight: 600;
-            padding: 3px 8px;
-            border-radius: 2px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .theory-tag-blue { background-color: #EAF0FB; color: #123C69; }
-        .theory-tag-green { background-color: #EAF5EE; color: #1E6B38; }
-        .theory-tag-orange { background-color: #FEF7EC; color: #945B0E; }
-        .theory-tag-red { background-color: #FDF0EF; color: #B52A25; }
-
-        .theory-rule-box {
-            background-color: #FAF9F5;
-            border-left: 4px solid #123C69;
-            padding: 14px 18px;
-            margin: 14px 0;
-            border-radius: 0 4px 4px 0;
-            font-size: 14px;
-        }
-
-        .theory-example-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 14px 0;
-            font-size: 13px;
-        }
-
-        .theory-example-table th,
-        .theory-example-table td {
-            padding: 10px 14px;
-            border: 1px solid #D7D9D6;
-            text-align: left;
-        }
-
-        .theory-example-table th {
-            background-color: #071B33;
-            color: #FFFFFF;
-            font-weight: 600;
-        }
-
-        .theory-example-table tr:nth-child(even) {
-            background-color: #F3F1EA;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sintaxis Flow: Laboratorio interactivo y gamificado de análisis sintáctico. Sujeto, predicado, núcleos, complementos directo e indirecto y sustitución pronominal.">
+  <title>Sintaxis Flow — Análisis Sintáctico Progresivo · Msc. Alejandro Córdova</title>
+
+  <!-- FUENTES TIPOGRÁFICAS INSTITUCIONALES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../course-shell/course-shell.css">
 </head>
 <body>
-    <div class="app-container">
-        <div class="header">
-            <div class="header-left">
-                <div class="header-title">Práctica de Análisis Sintáctico</div>
-                <div class="level-badge" id="levelBadge">NIVEL 1</div>
-                <button type="button" class="btn-theory-toggle" id="btnTheoryToggle" onclick="openTheoryModal()">
-                    Guía Teórica y Claves
-                </button>
-            </div>
-            <div class="progress-info">
-                <div>Pregunta <span id="currentQuestion">0</span> / <span id="totalQuestions">20</span></div>
-                <div class="progress-bar">
-                    <div class="progress-fill" id="progressFill" style="width: 0%"></div>
-                </div>
-            </div>
+
+  <!-- CABECERA INSTITUCIONAL -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="header-badge-row">
+        <span class="header-badge">GRAMÁTICA ACTIVA · ANÁLISIS SINTÁCTICO</span>
+        <div class="student-session-chip" id="studentSessionChip">
+          <span class="student-icon">👤</span>
+          <span class="student-name-display" id="studentNameDisplay">Modo Práctica Libre</span>
+          <button type="button" class="btn-edit-student" id="btnOpenStudentModal" title="Identificarse para registrar calificación">✏️</button>
         </div>
+      </div>
+      
+      <h1 class="header-title">Sintaxis Flow: Análisis Sintáctico Progresivo</h1>
+      <p class="header-desc">
+        Aprende a analizar oraciones no mediante preguntas mecánicas, sino aplicando pruebas científicas: concordancia gramatical, identificación de núcleos, pronominalización de complementos (CD/CI) y la regla fonética de transformación en <em>SE</em>.
+      </p>
 
-        <div class="main-content">
-            <div class="login-section" id="loginSection">
-                <div class="login-title">Bienvenido al Espacio de Práctica</div>
-                <div class="login-subtitle">Domina el análisis sintáctico de oraciones con ejercicios interactivos. No necesitas registrarte: tu progreso se guarda de forma local en este dispositivo.</div>
-
-                <section class="learning-route" aria-labelledby="learningRouteTitle">
-                    <div class="route-kicker">RUTA DE APRENDIZAJE</div>
-                    <h2 id="learningRouteTitle">De la oración a los pronombres.</h2>
-                    <p style="margin: 10px 0 0; color: var(--color-slate-300); line-height: 1.6;">Analizar no consiste en memorizar preguntas aisladas: observa la concordancia, la función que cumple cada grupo y las pruebas de sustitución. Las preguntas sirven como pistas, no como definiciones absolutas.</p>
-                    <ol>
-                        <li><strong>Base</strong><span>Sujeto y predicado</span></li>
-                        <li><strong>Precisión</strong><span>Núcleos de la oración</span></li>
-                        <li><strong>Relaciones</strong><span>Complemento directo e indirecto</span></li>
-                        <li><strong>Transferencia</strong><span>Sustitución por pronombres</span></li>
-                    </ol>
-                </section>
-
-                <section class="diagnostic-panel" id="diagnosticPanel" aria-labelledby="diagnosticTitle">
-                    <div class="diagnostic-header">
-                        <div>
-                            <div class="route-kicker">ANTES DE EMPEZAR</div>
-                            <h2 id="diagnosticTitle">¿Qué recuerdas ya?</h2>
-                        </div>
-                        <span class="diagnostic-progress" id="diagnosticProgress">1 / 3</span>
-                    </div>
-                    <p id="diagnosticPrompt">Responde sin mirar apuntes. El objetivo es reconocer tu punto de partida, no calificarte.</p>
-                    <div class="diagnostic-options" id="diagnosticOptions"></div>
-                    <div class="diagnostic-feedback" id="diagnosticFeedback" role="status" aria-live="polite"></div>
-                    <button type="button" class="diagnostic-next" id="diagnosticNext" hidden>Siguiente pregunta →</button>
-                    <button type="button" class="diagnostic-skip" id="diagnosticSkip">Continuar sin diagnóstico</button>
-                </section>
-                
-                <form class="login-form" id="loginForm">
-                    <input type="hidden" id="nombre" value="Estudiante">
-                    <input type="hidden" id="apellido" value="anónimo">
-                    <input type="hidden" id="curso" value="Sin curso">
-                    <button type="submit" class="btn-start">Iniciar Análisis</button>
-                </form>
-            </div>
-
-            <div class="exercise-section" id="exerciseSection">
-                <div class="exercise-header">
-                    <div class="exercise-title" id="exerciseTitle">Oración 1</div>
-                    <div class="exercise-meta">
-                        <span id="topicTag">Tecnología</span>
-                        <span id="difficultyTag">Nivel 1</span>
-                    </div>
-                </div>
-
-                <div class="sentence-container">
-                    <div class="sentence-label">Analiza la oración:</div>
-                    <div class="sentence-text" id="sentenceText"></div>
-                </div>
-
-                <div class="instructions-box" id="instructionsBox" style="background: #071B33; padding: 16px 22px; border-radius: 6px; margin: 16px 0; border-left: 4px solid #2367D1; box-shadow: 0 4px 14px rgba(7,27,51,0.18);">
-                    <div style="color: #60A5FA; font-weight: 800; font-size: 14px; margin-bottom: 8px; display: flex; align-items: center; letter-spacing: 0.5px;">
-                        <span id="instructionsTitle">Pauta del Ejercicio</span>
-                    </div>
-                    <div id="instructionsText" style="color: #F3F1EA; font-size: 14px; line-height: 1.65;"></div>
-                </div>
-
-                <div class="words-pool" id="wordsPool"></div>
-
-                <div class="categories-grid" id="categoriesGrid"></div>
-
-                <div class="feedback" id="feedback"></div>
-
-                <div class="reflection-prompt" id="reflectionPrompt" hidden>
-                    <div>
-                        <span class="reflection-kicker">METACOGNICIÓN</span>
-                        <strong>¿Qué tan claro te quedó este paso?</strong>
-                    </div>
-                    <div class="reflection-actions">
-                        <button type="button" data-reflection="clear">Puedo explicarlo</button>
-                        <button type="button" data-reflection="review">Necesito otro ejemplo</button>
-                    </div>
-                </div>
-
-                <div class="controls">
-                    <button class="btn btn-reset" id="resetBtn">Reiniciar</button>
-                    <button class="btn btn-check" id="checkBtn">Verificar Respuesta</button>
-                    <button class="btn btn-next" id="nextBtn" style="display: none;">Siguiente</button>
-                </div>
-            </div>
-        </div>
+      <!-- BARRA DE NAVEGACIÓN DE MÓDULOS (5 PESTAÑAS) -->
+      <nav class="module-nav" role="tablist" aria-label="Módulos de Sintaxis Flow">
+        <button type="button" class="nav-tab active" role="tab" aria-selected="true" data-tab="tab-fundamentos" id="btn-tab-fundamentos">
+          <span class="tab-step">01</span>
+          <span class="tab-label">Fundamentos Sintácticos</span>
+        </button>
+        <button type="button" class="nav-tab" role="tab" aria-selected="false" data-tab="tab-basico" id="btn-tab-basico">
+          <span class="tab-step">02</span>
+          <span class="tab-label">Nivel 1 & 2: Sujeto y Núcleos</span>
+        </button>
+        <button type="button" class="nav-tab" role="tab" aria-selected="false" data-tab="tab-complementos" id="btn-tab-complementos">
+          <span class="tab-step">03</span>
+          <span class="tab-label">Nivel 3: Complementos CD y CI</span>
+        </button>
+        <button type="button" class="nav-tab" role="tab" aria-selected="false" data-tab="tab-pronombres" id="btn-tab-pronombres">
+          <span class="tab-step">04</span>
+          <span class="tab-label">Nivel 4: Laboratorio de Pronombres</span>
+        </button>
+        <button type="button" class="nav-tab" role="tab" aria-selected="false" data-tab="tab-resultados" id="btn-tab-resultados">
+          <span class="tab-step">05</span>
+          <span class="tab-label">Analizador y Resultados</span>
+        </button>
+      </nav>
     </div>
+  </header>
 
-    <script>
-        const oraciones = [
-            // NIVEL 1: Sujeto y Predicado (4 oraciones)
-            { nivel: 1, numero: 1, tema: "Tecnología", oracion: "La inteligencia artificial transforma el mundo rápidamente.", palabras: ["La", "inteligencia", "artificial", "transforma", "el", "mundo", "rápidamente"], sujeto: ["La", "inteligencia", "artificial"], predicado: ["transforma", "el", "mundo", "rápidamente"], ns: [], np: [], cd: [], ci: [], tipo: "analisis" },
-            { nivel: 1, numero: 2, tema: "Ambiente", oracion: "Los océanos piden ayuda a gritos.", palabras: ["Los", "océanos", "piden", "ayuda", "a", "gritos"], sujeto: ["Los", "océanos"], predicado: ["piden", "ayuda", "a", "gritos"], ns: [], np: [], cd: [], ci: [], tipo: "analisis" },
-            { nivel: 1, numero: 3, tema: "Vial", oracion: "Los conductores responsables respetan el paso cebra.", palabras: ["Los", "conductores", "responsables", "respetan", "el", "paso", "cebra"], sujeto: ["Los", "conductores", "responsables"], predicado: ["respetan", "el", "paso", "cebra"], ns: [], np: [], cd: [], ci: [], tipo: "analisis" },
-            { nivel: 1, numero: 4, tema: "Cultura", oracion: "Ese streamer famoso rompió un récord mundial ayer.", palabras: ["Ese", "streamer", "famoso", "rompió", "un", "récord", "mundial", "ayer"], sujeto: ["Ese", "streamer", "famoso"], predicado: ["rompió", "un", "récord", "mundial", "ayer"], ns: [], np: [], cd: [], ci: [], tipo: "analisis" },
+  <main class="main-container">
+
+    <!-- ================================================================= -->
+    <!-- MÓDULO 01: FUNDAMENTOS Y ALGORITMO SINTÁCTICO                     -->
+    <!-- ================================================================= -->
+    <section class="tab-content active" id="tab-fundamentos" data-label="01. Fundamentos Sintácticos" role="tabpanel" aria-labelledby="btn-tab-fundamentos">
+      
+      <div class="section-intro-card">
+        <div class="intro-tag">MÓDULO 01 · GUÍA CIENTÍFICA DEL ANÁLISIS</div>
+        <h2>El Algoritmo de las 4 Pruebas Sintácticas</h2>
+        <p>
+          Analizar oraciones no consiste en adivinar o memorizar preguntas engañosas («¿quién hace la acción?» a menudo falla en oraciones pasivas o con verbos de afección). En la lingüística moderna utilizamos <strong>pruebas estructurales</strong>: la concordancia obligatoria, la prueba del número y la pronominalización.
+        </p>
+
+        <div class="theory-quick-nav">
+          <span class="quick-nav-label">Temas clave:</span>
+          <a href="#teo-concordancia" class="quick-pill">⚖️ Prueba de Concordancia (Sujeto)</a>
+          <a href="#teo-nucleos" class="quick-pill">🎯 Núcleos (NS y NP)</a>
+          <a href="#teo-cd" class="quick-pill">📦 Complemento Directo (CD)</a>
+          <a href="#teo-ci" class="quick-pill">✉️ Complemento Indirecto (CI)</a>
+          <a href="#teo-se" class="quick-pill">🔄 Regla de SE y Pronombres</a>
+        </div>
+      </div>
+
+      <!-- BANNER DE ENLACE DIRECTO A LA PRÁCTICA -->
+      <div class="flow-cta-banner">
+        <div class="cta-content">
+          <span class="cta-badge">APRENDIZAJE ACTIVO</span>
+          <p><strong>¿Listo para poner a prueba tus habilidades?</strong> Salta directo al <strong>Nivel 1 & 2</strong> para practicar con ejercicios de arrastrar o tocar, o explora las pruebas teóricas abajo.</p>
+        </div>
+        <div class="cta-actions">
+          <button type="button" class="btn-flow-jump" data-jump="tab-basico">Ir al Nivel 1 & 2 →</button>
+          <button type="button" class="btn-flow-jump btn-flow-accent" data-jump="tab-pronombres">Ir a Pronombres (Nivel 4) 🚀</button>
+        </div>
+      </div>
+
+      <!-- 1. LA PRUEBA DE CONCORDANCIA -->
+      <section class="theory-card" id="teo-concordancia">
+        <div class="theory-card-header">
+          <span class="theory-badge badge-blue">PRUEBA 1</span>
+          <h3>La Prueba de Concordancia: Cómo hallar el Sujeto con Certeza</h3>
+        </div>
+        <div class="theory-card-body">
+          <p class="theory-lead">
+            El <strong>Sujeto</strong> es el constituyente de la oración que concuerda obligatoriamente en <strong>número (singular/plural)</strong> y <strong>persona</strong> con el verbo conjugado.
+          </p>
+
+          <div class="algorithm-steps-flow">
+            <div class="algo-step">
+              <span class="step-circle">1</span>
+              <h4>Ubica el verbo conjugado</h4>
+              <p>Es el Núcleo del Predicado (NP). Ej: «Me <em>gusta</em> ese libro».</p>
+            </div>
+            <div class="algo-arrow">→</div>
+            <div class="algo-step">
+              <span class="step-circle">2</span>
+              <h4>Cambia el número del verbo</h4>
+              <p>Si está en singular, pásalo a plural (o viceversa): «gusta» → «gustan».</p>
+            </div>
+            <div class="algo-arrow">→</div>
+            <div class="algo-step highlight-step">
+              <span class="step-circle">3</span>
+              <h4>Observa qué debe cambiar</h4>
+              <p>«Me gustan <em>esos libros</em>». Al cambiar el verbo, «ese libro» tuvo que cambiar a plural obligatoriamente: ¡ese es el Sujeto!</p>
+            </div>
+          </div>
+
+          <div class="theory-alert-box alert-caution">
+            <strong>⚠️ Desmontando el mito escolar:</strong> Preguntar «¿Quién?» suele confundir al estudiante. En <em>«A Juan le duelen los pies»</em>, si preguntas «¿Quién siente el dolor?», responderías «Juan». Pero aplicando la concordancia: <em>«A Juan le duele el pie»</em> → el verbo concuerda con <strong>los pies</strong> (Sujeto), no con Juan (que es Complemento Indirecto).
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. NÚCLEOS DE LA ORACIÓN -->
+      <section class="theory-card" id="teo-nucleos">
+        <div class="theory-card-header">
+          <span class="theory-badge badge-green">PRUEBA 2</span>
+          <h3>Núcleos: El Motor y el Protagonista</h3>
+        </div>
+        <div class="theory-card-body">
+          <div class="two-pillars-grid">
+            <div class="pillar-card pillar-ns">
+              <div class="pillar-header">
+                <span class="pillar-tag">NS</span>
+                <h4>Núcleo del Sujeto</h4>
+              </div>
+              <p>Es la palabra principal dentro del grupo del Sujeto sobre la que giran los determinantes y adjetivos. Suele ser un <strong>sustantivo</strong> o un <strong>pronombre</strong>.</p>
+              <div class="pillar-example">
+                «Los <strong>conductores</strong> responsables respetan el paso cebra.»<br>
+                <small>Sujeto: Los conductores responsables | <strong>NS: conductores</strong></small>
+              </div>
+            </div>
+
+            <div class="pillar-card pillar-np">
+              <div class="pillar-header">
+                <span class="pillar-tag">NP</span>
+                <h4>Núcleo del Predicado</h4>
+              </div>
+              <p>Es el <strong>verbo conjugado</strong> (simple o compuesto). Conecta todos los argumentos de la oración e indica el tiempo, modo, número y persona.</p>
+              <div class="pillar-example">
+                «La inteligencia artificial <strong>transforma</strong> el mundo.»<br>
+                <small>Predicado: transforma el mundo | <strong>NP: transforma</strong></small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. COMPLEMENTO DIRECTO (CD) -->
+      <section class="theory-card" id="teo-cd">
+        <div class="theory-card-header">
+          <span class="theory-badge badge-orange">PRUEBA 3</span>
+          <h3>Complemento Directo (CD): La Prueba de Sustitución por LO/LA</h3>
+        </div>
+        <div class="theory-card-body">
+          <p class="theory-lead">
+            El <strong>Complemento Directo (CD)</strong> es el argumento que delimita y concreta el significado del verbo transitivo. Recibe de forma inmediata el efecto de la acción verbal.
+          </p>
+
+          <div class="substitution-rule-card">
+            <h4>🧪 La Prueba Científica de Pronominalización:</h4>
+            <p>Un segmento de la oración es <strong>CD</strong> si y solo si puede sustituirse de forma natural por los pronombres átonos acusativos: <strong>lo, la, los, las</strong>.</p>
             
-            // NIVEL 2: Núcleo del Sujeto y Núcleo del Predicado (5 oraciones)
-            { nivel: 2, numero: 5, tema: "Ambiente", oracion: "El plástico contamina nuestros ríos diariamente.", palabras: ["El", "plástico", "contamina", "nuestros", "ríos", "diariamente"], sujeto: [], predicado: [], ns: ["plástico"], np: ["contamina"], cd: [], ci: [], tipo: "analisis" },
-            { nivel: 2, numero: 6, tema: "Vial", oracion: "El casco salva vidas en la carretera.", palabras: ["El", "casco", "salva", "vidas", "en", "la", "carretera"], sujeto: [], predicado: [], ns: ["casco"], np: ["salva"], cd: [], ci: [], tipo: "analisis" },
-            { nivel: 2, numero: 7, tema: "Tecnología", oracion: "Mis amigos crearon un grupo de WhatsApp nuevo.", palabras: ["Mis", "amigos", "crearon", "un", "grupo", "de", "WhatsApp", "nuevo"], sujeto: [], predicado: [], ns: ["amigos"], np: ["crearon"], cd: [], ci: [], tipo: "analisis" },
-            { nivel: 2, numero: 8, tema: "Ética", oracion: "La empatía mejora la convivencia escolar.", palabras: ["La", "empatía", "mejora", "la", "convivencia", "escolar"], sujeto: [], predicado: [], ns: ["empatía"], np: ["mejora"], cd: [], ci: [], tipo: "analisis" },
-            { nivel: 2, numero: 9, tema: "Cultura", oracion: "Los músicos ensayan nuevas canciones diariamente.", palabras: ["Los", "músicos", "ensayan", "nuevas", "canciones", "diariamente"], sujeto: [], predicado: [], ns: ["músicos"], np: ["ensayan"], cd: [], ci: [], tipo: "analisis" },
-            
-            // NIVEL 3: Núcleo + CD + CI (5 oraciones)
-            { nivel: 3, numero: 10, tema: "Vial", oracion: "El semáforo da prioridad a los peatones.", palabras: ["El", "semáforo", "da", "prioridad", "a", "los", "peatones"], sujeto: [], predicado: [], ns: ["semáforo"], np: ["da"], cd: ["prioridad"], ci: ["a", "los", "peatones"], tipo: "analisis" },
-            { nivel: 3, numero: 11, tema: "Tecnología", oracion: "El algoritmo sugiere videos a los usuarios.", palabras: ["El", "algoritmo", "sugiere", "videos", "a", "los", "usuarios"], sujeto: [], predicado: [], ns: ["algoritmo"], np: ["sugiere"], cd: ["videos"], ci: ["a", "los", "usuarios"], tipo: "analisis" },
-            { nivel: 3, numero: 12, tema: "Ambiente", oracion: "El gobierno prometió leyes nuevas a los ciudadanos.", palabras: ["El", "gobierno", "prometió", "leyes", "nuevas", "a", "los", "ciudadanos"], sujeto: [], predicado: [], ns: ["gobierno"], np: ["prometió"], cd: ["leyes", "nuevas"], ci: ["a", "los", "ciudadanos"], tipo: "analisis" },
-            { nivel: 3, numero: 13, tema: "Ética", oracion: "Nosotros mostramos respeto a nuestros mayores.", palabras: ["Nosotros", "mostramos", "respeto", "a", "nuestros", "mayores"], sujeto: [], predicado: [], ns: ["Nosotros"], np: ["mostramos"], cd: ["respeto"], ci: ["a", "nuestros", "mayores"], tipo: "analisis" },
-            { nivel: 3, numero: 14, tema: "Deporte", oracion: "El entrenador explicó la jugada a los deportistas.", palabras: ["El", "entrenador", "explicó", "la", "jugada", "a", "los", "deportistas"], sujeto: [], predicado: [], ns: ["entrenador"], np: ["explicó"], cd: ["la", "jugada"], ci: ["a", "los", "deportistas"], tipo: "analisis" },
-            
-            // NIVEL 4: Sustitución de CD y CI por pronombres (5 oraciones)
-            { nivel: 4, numero: 15, tema: "Tecnología", oracion: "Juan envió los archivos al profesor.", sujeto: "Juan", verbo: "envió", cd: "los archivos", ci: "al profesor", cdPronombre: "los", ciPronombre: "le", oracionCD: "Juan los envió al profesor.", oracionCI: "Juan le envió los archivos.", tipo: "pronombre" },
-            { nivel: 4, numero: 16, tema: "Vial", oracion: "El policía puso una multa al conductor.", sujeto: "El policía", verbo: "puso", cd: "una multa", ci: "al conductor", cdPronombre: "la", ciPronombre: "le", oracionCD: "El policía la puso al conductor.", oracionCI: "El policía le puso una multa.", tipo: "pronombre" },
-            { nivel: 4, numero: 17, tema: "Cultura", oracion: "Marvel presentó el tráiler a la audiencia.", sujeto: "Marvel", verbo: "presentó", cd: "el tráiler", ci: "a la audiencia", cdPronombre: "lo", ciPronombre: "le", oracionCD: "Marvel lo presentó a la audiencia.", oracionCI: "Marvel le presentó el tráiler.", tipo: "pronombre" },
-            { nivel: 4, numero: 18, tema: "Educación", oracion: "La profesora enseñó la lección a los estudiantes.", sujeto: "La profesora", verbo: "enseñó", cd: "la lección", ci: "a los estudiantes", cdPronombre: "la", ciPronombre: "les", oracionCD: "La profesora la enseñó a los estudiantes.", oracionCI: "La profesora les enseñó la lección.", tipo: "pronombre" },
-            { nivel: 4, numero: 19, tema: "Ambiente", oracion: "Los voluntarios entregaron suministros al refugio.", sujeto: "Los voluntarios", verbo: "entregaron", cd: "suministros", ci: "al refugio", cdPronombre: "los", ciPronombre: "le", oracionCD: "Los voluntarios los entregaron al refugio.", oracionCI: "Los voluntarios le entregaron suministros.", tipo: "pronombre" },
-            { nivel: 4, numero: 20, tema: "Ética", oracion: "La escuela otorgó una beca al estudiante.", sujeto: "La escuela", verbo: "otorgó", cd: "una beca", ci: "al estudiante", cdPronombre: "la", ciPronombre: "le", oracionCD: "La escuela la otorgó al estudiante.", oracionCI: "La escuela le otorgó una beca.", tipo: "pronombre" }
-        ];
+            <div class="test-table-wrapper">
+              <table class="test-table">
+                <thead>
+                  <tr>
+                    <th>Oración Original</th>
+                    <th>Elemento Candidato</th>
+                    <th>Sustitución por Pronombre</th>
+                    <th>Veredicto</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>«Juan envió <strong>los archivos</strong>.»</td>
+                    <td>los archivos (masculino plural)</td>
+                    <td>«Juan <strong>los</strong> envió.»</td>
+                    <td><span class="badge-tag-ok">✓ Es CD</span></td>
+                  </tr>
+                  <tr>
+                    <td>«El policía puso <strong>una multa</strong>.»</td>
+                    <td>una multa (femenino singular)</td>
+                    <td>«El policía <strong>la</strong> puso.»</td>
+                    <td><span class="badge-tag-ok">✓ Es CD</span></td>
+                  </tr>
+                  <tr>
+                    <td>«El médico recetó <strong>el jarabe</strong>.»</td>
+                    <td>el jarabe (masculino singular)</td>
+                    <td>«El médico <strong>lo</strong> recetó.»</td>
+                    <td><span class="badge-tag-ok">✓ Es CD</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        let currentUser = null;
-        let currentExerciseIndex = 0;
-        let correctAnswers = 0;
-        let keyboardSelectedElement = null;
+      <!-- 4. COMPLEMENTO INDIRECTO (CI) -->
+      <section class="theory-card" id="teo-ci">
+        <div class="theory-card-header">
+          <span class="theory-badge badge-red">PRUEBA 4</span>
+          <h3>Complemento Indirecto (CI): La Prueba de Sustitución por LE/LES</h3>
+        </div>
+        <div class="theory-card-body">
+          <p class="theory-lead">
+            El <strong>Complemento Indirecto (CI)</strong> designa al destinatario, beneficiario o perjudicado de la acción verbal. Siempre va introducido por la preposición <strong>a</strong> (o para) y responde a la sustitución por <strong>le / les</strong>.
+          </p>
 
-        const diagnosticQuestions = [
-            {
-                prompt: 'En “La estudiante lee el cuento”, ¿cuál es el sujeto?',
-                options: ['La estudiante', 'lee', 'el cuento'],
-                answer: 0,
-                explanation: 'El sujeto concuerda en número y persona con el verbo: “La estudiante” (singular) con “lee”.'
-            },
-            {
-                prompt: 'En “El grupo analiza el texto”, ¿cuál es el núcleo del predicado?',
-                options: ['grupo', 'analiza', 'texto'],
-                answer: 1,
-                explanation: 'El núcleo del predicado es el verbo principal conjugado: “analiza”.'
-            },
-            {
-                prompt: 'En “Ana entregó el libro a su profesora”, ¿qué grupo cumple la función de Complemento Directo (CD)?',
-                options: ['Ana', 'el libro', 'a su profesora'],
-                answer: 1,
-                explanation: 'El CD recibe directamente la acción y admite sustitución por “lo” (“Ana lo entregó”): “el libro”.'
-            }
-        ];
+          <div class="substitution-rule-card rule-ci">
+            <h4>🧪 La Prueba de Pronominalización por LE / LES:</h4>
+            <p>Un segmento es <strong>CI</strong> si puede sustituirse por los pronombres dativos <strong>le</strong> (singular) o <strong>les</strong> (plural), independientemente del género (masculino o femenino).</p>
 
-        let diagnosticIndex = 0;
-        let diagnosticScore = 0;
-        let diagnosticAnswered = false;
+            <div class="test-table-wrapper">
+              <table class="test-table">
+                <thead>
+                  <tr>
+                    <th>Oración Original</th>
+                    <th>Destinatario (CI)</th>
+                    <th>Sustitución Pronominal</th>
+                    <th>Veredicto</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>«Juan envió los archivos <strong>al profesor</strong>.»</td>
+                    <td>al profesor (singular)</td>
+                    <td>«Juan <strong>le</strong> envió los archivos.»</td>
+                    <td><span class="badge-tag-ok">✓ Es CI</span></td>
+                  </tr>
+                  <tr>
+                    <td>«La profesora enseñó la lección <strong>a los estudiantes</strong>.»</td>
+                    <td>a los estudiantes (plural)</td>
+                    <td>«La profesora <strong>les</strong> enseñó la lección.»</td>
+                    <td><span class="badge-tag-ok">✓ Es CI</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        const reflectionGuidance = {
-            1: 'Identifica el bloque que concuerda con el verbo (Sujeto) y el bloque que expresa la acción o estado (Predicado).',
-            2: 'Identifica el sustantivo o pronombre rector (NS) y el verbo conjugado (NP).',
-            3: 'Aplica las pruebas: el CD admite sustitución por lo/la/los/las y paso a pasiva; el CI expresa el destinatario y admite le/les.',
-            4: 'Sustituye con el pronombre correspondiente y recuerda aplicar la regla del "SE" si sustituyes ambos complementos.'
-        };
+      <!-- 5. LA REGLA FONÉTICA DE "SE" -->
+      <section class="theory-card" id="teo-se">
+        <div class="theory-card-header">
+          <span class="theory-badge badge-purple">PRUEBA 5</span>
+          <h3>La Regla Fonética de Evitación de Cacofonía: De «LE» a «SE»</h3>
+        </div>
+        <div class="theory-card-body">
+          <p class="theory-lead">
+            ¿Qué ocurre cuando queremos sustituir <strong>el CD y el CI al mismo tiempo</strong> en una sola oración? El español tiene una regla eufónica estricta para evitar sonidos desagradables.
+          </p>
 
-        function showDiagnosticComplete(score, total) {
-            const panel = document.getElementById('diagnosticPanel');
-            const options = document.getElementById('diagnosticOptions');
-            const feedback = document.getElementById('diagnosticFeedback');
-            const next = document.getElementById('diagnosticNext');
-            const progress = document.getElementById('diagnosticProgress');
+          <div class="cacofonia-box">
+            <div class="cacofonia-alert">
+              <strong>🚫 Prohibición fonética del español:</strong> En español NO se puede decir <em>«le lo»</em>, <em>«le la»</em>, <em>«les los»</em> ni <em>«les las»</em>.
+            </div>
+            <p>
+              Cuando el pronombre de CI (<strong>le / les</strong>) se encuentra inmediatamente antes de un pronombre de CD (<strong>lo / la / los / las</strong>), el pronombre de CI se transforma obligatoriamente en <strong>SE</strong>.
+            </p>
 
-            progress.textContent = 'Listo';
-            options.innerHTML = '';
-            feedback.textContent = `Diagnóstico completado: ${score} de ${total}. Usa este resultado como punto de partida, no como una nota.`;
-            feedback.className = 'diagnostic-feedback correct';
-            next.hidden = true;
-            document.getElementById('diagnosticSkip').hidden = true;
-            panel.dataset.completed = 'true';
-        }
+            <div class="transformation-flow-demo">
+              <div class="tf-step">
+                <span class="tf-label">Oración Base</span>
+                <code>«Juan envió <strong>los archivos</strong> <em>al profesor</em>.»</code>
+              </div>
+              <div class="tf-step">
+                <span class="tf-label">Paso 1: Identificación</span>
+                <code>CD: <strong>los</strong> | CI: <em>le</em></code>
+              </div>
+              <div class="tf-step tf-wrong">
+                <span class="tf-label">Cacofonía prohibida</span>
+                <code><s>«Juan <em>le</em> <strong>los</strong> envió.»</s></code>
+              </div>
+              <div class="tf-step tf-correct">
+                <span class="tf-label">Transformación con SE (Correcto)</span>
+                <code>«Juan <em>se</em> <strong>los</strong> envió.» ✓</code>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        function renderDiagnosticQuestion() {
-            const question = diagnosticQuestions[diagnosticIndex];
-            const options = document.getElementById('diagnosticOptions');
-            const feedback = document.getElementById('diagnosticFeedback');
-            const next = document.getElementById('diagnosticNext');
+      <!-- BOTONES DE PROGRESIÓN -->
+      <div class="theory-footer-actions">
+        <button type="button" class="btn-flow-jump btn-flow-accent" data-jump="tab-basico">
+          <span>Comenzar con Nivel 1 & 2 (Sujeto y Núcleos)</span>
+          <span>→</span>
+        </button>
+      </div>
 
-            document.getElementById('diagnosticPrompt').textContent = question.prompt;
-            document.getElementById('diagnosticProgress').textContent = `${diagnosticIndex + 1} / ${diagnosticQuestions.length}`;
-            options.innerHTML = '';
-            feedback.textContent = '';
-            feedback.className = 'diagnostic-feedback';
-            next.hidden = true;
-            diagnosticAnswered = false;
+    </section>
 
-            question.options.forEach((option, optionIndex) => {
-                const button = document.createElement('button');
-                button.type = 'button';
-                button.className = 'diagnostic-option';
-                button.textContent = option;
-                button.dataset.option = optionIndex;
-                button.addEventListener('click', () => {
-                    if (diagnosticAnswered) return;
-                    diagnosticAnswered = true;
-                    options.querySelectorAll('button').forEach(optionButton => {
-                        optionButton.disabled = true;
-                        const selectedIndex = Number(optionButton.dataset.option);
-                        if (selectedIndex === question.answer) optionButton.classList.add('is-correct');
-                        if (optionButton === button && selectedIndex !== question.answer) optionButton.classList.add('is-wrong');
-                    });
+    <!-- ================================================================= -->
+    <!-- MÓDULO 02: NIVEL 1 & 2 — ESTRUCTURA BÁSICA                        -->
+    <!-- ================================================================= -->
+    <section class="tab-content" id="tab-basico" data-label="02. Sujeto, Predicado y Núcleos" role="tabpanel" aria-labelledby="btn-tab-basico">
+      
+      <div class="section-intro-card">
+        <div class="intro-tag">MÓDULO 02 · ENTRENAMIENTO GUIADO</div>
+        <h2>Nivel 1 & 2: Sujeto, Predicado y Núcleos</h2>
+        <p>
+          Identifica los bloques constitutivos de la oración. Puedes <strong>arrastrar los chips</strong> a sus cajas correspondientes, o simplemente <strong>hacer clic en una palabra y luego en la categoría</strong> (*modo táctil para móviles*).
+        </p>
 
-                    if (optionIndex === question.answer) {
-                        diagnosticScore++;
-                        feedback.textContent = `Correcto: ${question.explanation}`;
-                        feedback.className = 'diagnostic-feedback correct';
-                    } else {
-                        feedback.textContent = `Pauta de revisión: ${question.explanation}`;
-                        feedback.className = 'diagnostic-feedback incorrect';
-                    }
-                    next.hidden = false;
-                    next.focus();
-                });
-                options.appendChild(button);
-            });
-        }
+        <!-- SELECTOR DE SUB-NIVEL Y CONTROLES -->
+        <div class="exercise-nav-bar">
+          <div class="level-tabs-pills">
+            <button type="button" class="btn-filter-level active" data-level-filter="1-2">Todos (Ej. 1 al 9)</button>
+            <button type="button" class="btn-filter-level" data-level-filter="1">Solo Nivel 1 (Sujeto / Predicado)</button>
+            <button type="button" class="btn-filter-level" data-level-filter="2">Solo Nivel 2 (Núcleos NS / NP)</button>
+          </div>
+          <div class="exercise-stepper">
+            <span class="step-indicator" id="basicoProgressText">Ejercicio 1 de 9</span>
+            <span class="score-pill" id="basicoScoreText">Aciertos: 0</span>
+          </div>
+        </div>
+      </div>
 
-        function setupDiagnostic() {
-            const savedDiagnostic = JSON.parse(localStorage.getItem('sintaxisFlowDiagnostic') || 'null');
-            const skippedAt = localStorage.getItem('sintaxisFlowDiagnosticSkipped');
-            if (savedDiagnostic) {
-                diagnosticScore = savedDiagnostic.score || 0;
-                showDiagnosticComplete(diagnosticScore, diagnosticQuestions.length);
-                return;
-            }
-            if (skippedAt) {
-                document.getElementById('diagnosticPanel').hidden = true;
-                return;
-            }
-
-            renderDiagnosticQuestion();
-            document.getElementById('diagnosticNext').addEventListener('click', () => {
-                diagnosticIndex++;
-                if (diagnosticIndex < diagnosticQuestions.length) {
-                    renderDiagnosticQuestion();
-                } else {
-                    const result = {
-                        score: diagnosticScore,
-                        total: diagnosticQuestions.length,
-                        completedAt: new Date().toISOString()
-                    };
-                    localStorage.setItem('sintaxisFlowDiagnostic', JSON.stringify(result));
-                    showDiagnosticComplete(result.score, result.total);
-                }
-            });
-            document.getElementById('diagnosticSkip').addEventListener('click', () => {
-                localStorage.setItem('sintaxisFlowDiagnosticSkipped', new Date().toISOString());
-                document.getElementById('diagnosticPanel').hidden = true;
-            });
-        }
-
-        function resetReflectionPrompt() {
-            const prompt = document.getElementById('reflectionPrompt');
-            const title = prompt.querySelector('strong');
-            prompt.hidden = true;
-            title.textContent = '¿Qué tan claro te quedó este paso?';
-            prompt.querySelectorAll('[data-reflection]').forEach(button => {
-                button.disabled = false;
-            });
-        }
-
-        function showReflectionPrompt(ejercicio) {
-            const prompt = document.getElementById('reflectionPrompt');
-            const title = prompt.querySelector('strong');
-            const guidance = reflectionGuidance[ejercicio.nivel];
-            prompt.hidden = false;
-            prompt.dataset.level = ejercicio.nivel;
-            title.textContent = `¿Qué tan claro te quedó este paso? ${guidance}`;
-            prompt.querySelectorAll('[data-reflection]').forEach(button => {
-                button.disabled = false;
-            });
-        }
-
-        function setupReflectionPrompt() {
-            document.querySelectorAll('[data-reflection]').forEach(button => {
-                button.addEventListener('click', () => {
-                    const prompt = document.getElementById('reflectionPrompt');
-                    const title = prompt.querySelector('strong');
-                    const level = Number(prompt.dataset.level || 1);
-                    if (button.dataset.reflection === 'review') {
-                        const queue = JSON.parse(localStorage.getItem('sintaxisFlowReviewQueue') || '[]');
-                        queue.push({
-                            nivel: level,
-                            foco: reflectionGuidance[level],
-                            timestamp: new Date().toISOString()
-                        });
-                        localStorage.setItem('sintaxisFlowReviewQueue', JSON.stringify(queue.slice(-50)));
-                        title.textContent = 'Guardado para tu repaso. Vuelve a esta idea en unos días.';
-                    } else {
-                        title.textContent = 'Perfecto: intenta explicar este paso con tus propias palabras.';
-                    }
-                    prompt.querySelectorAll('[data-reflection]').forEach(action => {
-                        action.disabled = true;
-                    });
-                });
-            });
-        }
-
-        function enableKeyboardInteraction(element, label) {
-            element.tabIndex = 0;
-            element.setAttribute('role', 'button');
-            element.setAttribute('aria-label', label);
-            element.addEventListener('keydown', (event) => {
-                if (event.key !== 'Enter' && event.key !== ' ') return;
-                event.preventDefault();
-                if (keyboardSelectedElement && keyboardSelectedElement !== element) {
-                    keyboardSelectedElement.classList.remove('keyboard-selected');
-                }
-                keyboardSelectedElement = keyboardSelectedElement === element ? null : element;
-                element.classList.toggle('keyboard-selected', keyboardSelectedElement === element);
-            });
-        }
-
-        setupDiagnostic();
-        setupReflectionPrompt();
-
-        document.getElementById('loginForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const nombre = document.getElementById('nombre').value;
-            const apellido = document.getElementById('apellido').value;
-            const curso = document.getElementById('curso').value;
-
-            currentUser = { nombre, apellido, curso };
-            document.getElementById('loginSection').style.display = 'none';
-            document.getElementById('exerciseSection').classList.add('active');
-            loadExercise(0);
-        });
-
-        // Función para actualizar las instrucciones según el nivel
-        function updateInstructions(ejercicio) {
-            const instructionsBox = document.getElementById('instructionsBox');
-            const instructionsText = document.getElementById('instructionsText');
-            let mensaje = '';
-
-            if (ejercicio.tipo === 'analisis') {
-                instructionsBox.style.display = 'block';
-                const tipMovil = '<span style="display:block; margin-top:8px; color: #94A3B8; font-size: 12px;">Pauta: Puedes mover palabras entre cajones o hacer doble clic sobre una palabra para devolverla al banco.</span>';
-                
-                if (ejercicio.nivel === 1) {
-                    mensaje = '<strong>Arrastra las palabras</strong> hacia las categorías correctas. Identifica qué parte es el <span style="color: #93C5FD; font-weight:700; background: rgba(35,103,209,0.3); padding: 2px 8px; border-radius: 3px;">Sujeto</span> (concuerda en número y persona con el verbo) y qué parte es el <span style="color: #86EFAC; font-weight:700; background: rgba(30,107,56,0.4); padding: 2px 8px; border-radius: 3px;">Predicado</span> (todo lo que se dice del sujeto).' + tipMovil;
-                } else if (ejercicio.nivel === 2) {
-                    mensaje = '<strong>Identifica los núcleos</strong> de la oración. Arrastra únicamente el <span style="color: #7DD3FC; font-weight:700; background: rgba(2,132,199,0.3); padding: 2px 8px; border-radius: 3px;">Núcleo del Sujeto (NS)</span> y el <span style="color: #FDE047; font-weight:700; background: rgba(217,119,6,0.35); padding: 2px 8px; border-radius: 3px;">Núcleo del Predicado (NP)</span> a sus cajones; las palabras secundarias o modificadores deben permanecer en el banco.' + tipMovil;
-                } else if (ejercicio.nivel === 3) {
-                    mensaje = '<strong>Identifica núcleos y complementos</strong>: Arrastra el <span style="color: #7DD3FC; font-weight:700; background: rgba(2,132,199,0.3); padding: 2px 8px; border-radius: 3px;">NS</span>, el <span style="color: #FDE047; font-weight:700; background: rgba(217,119,6,0.35); padding: 2px 8px; border-radius: 3px;">NP</span>, el <span style="color: #FDBA74; font-weight:700; background: rgba(234,88,12,0.35); padding: 2px 8px; border-radius: 3px;">CD</span> (admite lo/la/los/las o paso a pasiva) y el <span style="color: #FCA5A5; font-weight:700; background: rgba(220,38,38,0.35); padding: 2px 8px; border-radius: 3px;">CI</span> (destinatario con a/para, admite le/les).' + tipMovil;
-                }
-            } else if (ejercicio.tipo === 'pronombre') {
-                instructionsBox.style.display = 'none';
-                mensaje = '';
-            }
-
-            instructionsText.innerHTML = mensaje;
-        }
-
-        function loadExercise(index) {
-            currentExerciseIndex = index;
-            const ejercicio = oraciones[index];
-            
-            // Limpiar clones visuales pendientes
-            if (touchClone) {
-                touchClone.remove();
-                touchClone = null;
-            }
-            document.querySelectorAll('.word-chip, .dropped-word').forEach(el => {
-                el.style.opacity = '1';
-            });
-
-            document.getElementById('levelBadge').textContent = `NIVEL ${ejercicio.nivel}`;
-            document.getElementById('currentQuestion').textContent = index + 1;
-            document.getElementById('totalQuestions').textContent = oraciones.length;
-            document.getElementById('progressFill').style.width = ((index + 1) / oraciones.length * 100) + '%';
-
-            document.getElementById('exerciseTitle').textContent = `Oración ${index + 1}`;
-            document.getElementById('topicTag').textContent = ejercicio.tema;
-            document.getElementById('difficultyTag').textContent = `Nivel ${ejercicio.nivel}`;
-            document.getElementById('sentenceText').textContent = ejercicio.oracion;
-
-            updateInstructions(ejercicio);
-
-            document.getElementById('feedback').className = 'feedback';
-            document.getElementById('feedback').textContent = '';
-            resetReflectionPrompt();
-            document.getElementById('checkBtn').style.display = 'block';
-            document.getElementById('nextBtn').style.display = 'none';
-
-            if (ejercicio.tipo === 'analisis') {
-                renderCategories(ejercicio);
-                const wordsPool = document.getElementById('wordsPool');
-                wordsPool.innerHTML = '';
-                
-                // Permitir soltar palabras de vuelta al banco
-                wordsPool.ondragover = handleDragOver;
-                wordsPool.ondrop = (e) => {
-                    e.preventDefault();
-                    if (draggedElement && draggedElement.classList.contains('dropped-word')) {
-                        const originalChipIdx = draggedElement.dataset.originalChip;
-                        const originalEl = document.querySelector(`[data-index="${originalChipIdx}"]`);
-                        if (originalEl) {
-                            originalEl.classList.remove('dragging', 'hidden');
-                            originalEl.style.display = '';
-                        }
-                        draggedElement.remove();
-                    }
-                };
-
-                ejercicio.palabras.forEach((palabra, idx) => {
-                    const chip = document.createElement('div');
-                    chip.className = 'word-chip';
-                    chip.textContent = palabra;
-                    chip.draggable = true;
-                    chip.setAttribute('data-index', idx);
-                    chip.dataset.index = idx;
-                    enableKeyboardInteraction(chip, `Palabra: ${palabra}. Presiona Enter para seleccionarla y luego elige un cajón.`);
-                    chip.addEventListener('dragstart', handleDragStart);
-                    chip.addEventListener('dragend', handleDragEnd);
-                    
-                    enableTouchDrag(chip);
-                    
-                    wordsPool.appendChild(chip);
-                });
-                document.getElementById('categoriesGrid').style.display = 'grid';
-                document.getElementById('wordsPool').style.display = 'flex';
-            } else if (ejercicio.tipo === 'pronombre') {
-                document.getElementById('categoriesGrid').innerHTML = '';
-                document.getElementById('categoriesGrid').style.display = 'none';
-                renderPronounExercise(ejercicio);
-                document.getElementById('wordsPool').style.display = 'block';
-            }
-
-            document.getElementById('resetBtn').onclick = () => loadExercise(index);
-            document.getElementById('checkBtn').onclick = () => checkAnswer(ejercicio);
-            document.getElementById('nextBtn').onclick = () => {
-                if (index < oraciones.length - 1) {
-                    loadExercise(index + 1);
-                } else {
-                    showFinalResults();
-                }
-            };
-        }
-
-        function renderCategories(ejercicio) {
-            const grid = document.getElementById('categoriesGrid');
-            grid.innerHTML = '';
-
-            const categorias = [];
-
-            if (ejercicio.nivel === 1) {
-                categorias.push({ id: 'sujeto', label: 'Sujeto', color: 'blue' });
-                categorias.push({ id: 'predicado', label: 'Predicado', color: 'green' });
-            }
-
-            if (ejercicio.nivel === 2) {
-                categorias.push({ id: 'ns', label: 'Núcleo del Sujeto', color: 'cyan' });
-                categorias.push({ id: 'np', label: 'Núcleo del Predicado', color: 'yellow' });
-            }
-
-            if (ejercicio.nivel === 3) {
-                categorias.push({ id: 'ns', label: 'Núcleo del Sujeto', color: 'cyan' });
-                categorias.push({ id: 'np', label: 'Núcleo del Predicado', color: 'yellow' });
-                if (ejercicio.cd.length > 0) {
-                    categorias.push({ id: 'cd', label: 'CD (¿Qué?)', color: 'orange' });
-                }
-                if (ejercicio.ci.length > 0) {
-                    categorias.push({ id: 'ci', label: 'CI (¿A quién / para quién?)', color: 'red' });
-                }
-            }
-
-            categorias.forEach(cat => {
-                const categoryDiv = document.createElement('div');
-                categoryDiv.className = `category ${cat.id}`;
-                categoryDiv.innerHTML = `
-                    <div class="category-label">
-                        <span class="category-dot"></span>
-                        ${cat.label}
-                    </div>
-                    <div class="drop-zone" data-category="${cat.id}"></div>
-                `;
-                grid.appendChild(categoryDiv);
-
-                const dropZone = categoryDiv.querySelector('.drop-zone');
-                dropZone.tabIndex = 0;
-                dropZone.setAttribute('role', 'button');
-                dropZone.setAttribute('aria-label', `Colocar palabras en ${cat.label}`);
-                dropZone.addEventListener('dragover', handleDragOver);
-                dropZone.addEventListener('dragleave', handleDragLeave);
-                dropZone.addEventListener('drop', (e) => handleDrop(e, cat.id));
-                dropZone.addEventListener('keydown', (event) => {
-                    if ((event.key === 'Enter' || event.key === ' ') && keyboardSelectedElement) {
-                        event.preventDefault();
-                        handleTouchDrop(dropZone, keyboardSelectedElement);
-                        keyboardSelectedElement.classList.remove('keyboard-selected');
-                        keyboardSelectedElement = null;
-                    }
-                });
-            });
-        }
-
-        function renderPronounExercise(ejercicio) {
-            const container = document.getElementById('wordsPool');
-            container.innerHTML = '';
-            container.className = 'replacement-section';
-
-            const instructionsDiv = document.createElement('div');
-            instructionsDiv.style.cssText = 'background: #071B33; padding: 18px; border-radius: 4px; border-left: 4px solid var(--color-cyan); margin-bottom: 20px; box-shadow: 0 2px 8px rgba(16,24,32,0.3);';
-            instructionsDiv.innerHTML = `
-                <div style="font-weight: 700; color: var(--color-cyan); margin-bottom: 10px; font-size: 15px;">INSTRUCCIONES:</div>
-                <div style="color: var(--color-slate-200); font-size: 13px; line-height: 1.7;">
-                    1. Lee la oración original.<br>
-                    2. Identifica el <span style="color: var(--color-orange);">CD (Complemento Directo)</span> y el <span style="color: var(--color-red);">CI (Complemento Indirecto)</span>.<br>
-                    3. Escribe ambas oraciones transformadas usando los pronombres correctos (<strong>lo, la, los, las, le, les</strong>).
-                </div>
-            `;
-            container.appendChild(instructionsDiv);
-
-            const helpDiv = document.createElement('div');
-            helpDiv.style.cssText = 'display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px;';
-            helpDiv.innerHTML = `
-                <div style="background-color: var(--color-slate-800); padding: 12px; border-radius: 4px; border: 2px solid var(--color-orange);">
-                    <div style="font-size: 11px; color: var(--color-orange); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">PAUTA PARA EL CD:</div>
-                    <div style="color: var(--color-slate-200); font-size: 13px;">Pregunta: <strong>¿Qué ${ejercicio.verbo}?</strong></div>
-                    <div style="color: var(--color-slate-300); font-size: 12px; margin-top: 6px; font-style: italic;">Pronombres: lo, la, los, las</div>
-                </div>
-                <div style="background-color: var(--color-slate-800); padding: 12px; border-radius: 4px; border: 2px solid var(--color-red);">
-                    <div style="font-size: 11px; color: var(--color-red); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">PAUTA PARA EL CI:</div>
-                    <div style="color: var(--color-slate-200); font-size: 13px;">Pregunta: <strong>¿A quién ${ejercicio.verbo}?</strong></div>
-                    <div style="color: var(--color-slate-300); font-size: 12px; margin-top: 6px; font-style: italic;">Pronombres: le, les</div>
-                </div>
-            `;
-            container.appendChild(helpDiv);
-
-            const cdDiv = document.createElement('div');
-            cdDiv.style.cssText = 'margin-bottom: 16px;';
-            
-            const cdLabel = document.createElement('div');
-            cdLabel.style.cssText = 'font-weight: 700; color: var(--color-orange); margin-bottom: 8px; font-size: 14px;';
-            cdLabel.innerHTML = '<span style="color: var(--color-red); margin-right: 5px;">*</span>Reemplaza solo el CD por pronombre:';
-            cdDiv.appendChild(cdLabel);
-
-            const cdHint = document.createElement('div');
-            cdHint.style.cssText = 'background-color: var(--color-slate-800); padding: 10px; border-radius: 6px; border: 1px dashed var(--color-orange); margin-bottom: 8px; font-size: 12px; color: var(--color-slate-300);';
-            cdHint.innerHTML = `Pauta: Reemplaza "${ejercicio.cd}" por el pronombre (${ejercicio.cdPronombre})`;
-            cdDiv.appendChild(cdHint);
-
-            const cdInput = document.createElement('input');
-            cdInput.type = 'text';
-            cdInput.className = 'pronoun-input';
-            cdInput.id = 'pronombre-cd-input';
-            cdInput.placeholder = `Ej: ${ejercicio.sujeto} ${ejercicio.cdPronombre} ${ejercicio.verbo} ${ejercicio.ci}`;
-            cdDiv.appendChild(cdInput);
-            container.appendChild(cdDiv);
-
-            const ciDiv = document.createElement('div');
-            ciDiv.style.cssText = 'margin-bottom: 16px;';
-            
-            const ciLabel = document.createElement('div');
-            ciLabel.style.cssText = 'font-weight: 700; color: var(--color-red); margin-bottom: 8px; font-size: 14px;';
-            ciLabel.innerHTML = '<span style="color: var(--color-red); margin-right: 5px;">*</span>Reemplaza solo el CI por pronombre:';
-            ciDiv.appendChild(ciLabel);
-
-            const ciHint = document.createElement('div');
-            ciHint.style.cssText = 'background-color: var(--color-slate-800); padding: 10px; border-radius: 6px; border: 1px dashed var(--color-red); margin-bottom: 8px; font-size: 12px; color: var(--color-slate-300);';
-            ciHint.innerHTML = `Pauta: Reemplaza "${ejercicio.ci}" por el pronombre (${ejercicio.ciPronombre})`;
-            ciDiv.appendChild(ciHint);
-
-            const ciInput = document.createElement('input');
-            ciInput.type = 'text';
-            ciInput.className = 'pronoun-input';
-            ciInput.id = 'pronombre-ci-input';
-            ciInput.placeholder = `Ej: ${ejercicio.sujeto} ${ejercicio.ciPronombre} ${ejercicio.verbo} ${ejercicio.cd}`;
-            ciDiv.appendChild(ciInput);
-            container.appendChild(ciDiv);
-        }
-
-        let draggedElement = null;
-        let touchClone = null;
-        let touchStartTime = 0;
-
-        function enableTouchDrag(element) {
-            let touchStartX, touchStartY;
-            let isDragging = false;
-            
-            element.addEventListener('touchstart', function(e) {
-                touchStartTime = Date.now();
-                const touch = e.touches[0];
-                touchStartX = touch.clientX;
-                touchStartY = touch.clientY;
-                
-                isDragging = true;
-                draggedElement = element;
-                
-                if (touchClone) {
-                    touchClone.remove();
-                }
-                
-                touchClone = element.cloneNode(true);
-                touchClone.style.position = 'fixed';
-                touchClone.style.zIndex = '10000';
-                touchClone.style.pointerEvents = 'none';
-                touchClone.style.opacity = '0.9';
-                touchClone.style.transform = 'scale(1.15) rotate(3deg)';
-                touchClone.style.transition = 'none';
-                touchClone.style.left = touch.clientX - (element.offsetWidth / 2) + 'px';
-                touchClone.style.top = touch.clientY - (element.offsetHeight / 2) + 'px';
-                document.body.appendChild(touchClone);
-                
-                element.style.opacity = '0.3';
-            }, { passive: true });
-            
-            element.addEventListener('touchmove', function(e) {
-                if (isDragging && touchClone) {
-                    e.preventDefault();
-                    const touch = e.touches[0];
-                    touchClone.style.left = touch.clientX - (element.offsetWidth / 2) + 'px';
-                    touchClone.style.top = touch.clientY - (element.offsetHeight / 2) + 'px';
-                    
-                    const dropZones = document.querySelectorAll('.drop-zone, .words-pool');
-                    dropZones.forEach(zone => zone.classList.remove('drag-over'));
-                    
-                    const elementBelow = document.elementFromPoint(touch.clientX, touch.clientY);
-                    if (elementBelow) {
-                        const dropZone = elementBelow.closest('.drop-zone') || elementBelow.closest('.words-pool');
-                        if (dropZone) {
-                            dropZone.classList.add('drag-over');
-                        }
-                    }
-                }
-            }, { passive: false });
-            
-            element.addEventListener('touchend', function(e) {
-                if (isDragging) {
-                    const touch = e.changedTouches[0];
-                    const elementBelow = document.elementFromPoint(touch.clientX, touch.clientY);
-                    
-                    if (elementBelow) {
-                        const dropZone = elementBelow.closest('.drop-zone');
-                        const poolZone = elementBelow.closest('.words-pool');
-                        if (dropZone) {
-                            handleTouchDrop(dropZone, element);
-                        } else if (poolZone && element.classList.contains('dropped-word')) {
-                            const originalChipIdx = element.dataset.originalChip;
-                            const originalEl = document.querySelector(`[data-index="${originalChipIdx}"]`);
-                            if (originalEl) {
-                                originalEl.classList.remove('dragging', 'hidden');
-                                originalEl.style.display = '';
-                            }
-                            element.remove();
-                        }
-                    }
-                    
-                    if (touchClone && touchClone.parentElement) {
-                        touchClone.remove();
-                    }
-                    touchClone = null;
-                    element.style.opacity = '1';
-                    isDragging = false;
-                    draggedElement = null;
-                    
-                    document.querySelectorAll('.drop-zone, .words-pool').forEach(zone => {
-                        zone.classList.remove('drag-over');
-                    });
-                }
-            }, { passive: true });
-        }
+      <!-- ÁREA INTERACTIVA DEL EJERCICIO -->
+      <div class="exercise-workspace" id="basicoWorkspace">
         
-        function handleTouchDrop(dropZone, sourceElement) {
-            if (sourceElement) {
-                const palabra = sourceElement.textContent;
-                
-                if (sourceElement.classList.contains('word-chip')) {
-                    const droppedWord = createDroppedWord(palabra, sourceElement);
-                    enableTouchDrag(droppedWord);
-                    dropZone.appendChild(droppedWord);
-                    sourceElement.classList.add('hidden');
-                }
-                else if (sourceElement.classList.contains('dropped-word')) {
-                    const originalChipIdx = sourceElement.dataset.originalChip;
-                    const originalEl = document.querySelector(`[data-index="${originalChipIdx}"]`);
-                    const droppedWord = createDroppedWord(palabra, originalEl);
-                    enableTouchDrag(droppedWord);
-                    dropZone.appendChild(droppedWord);
-                    sourceElement.remove();
-                }
-            }
-        }
-
-        function handleDragStart(e) {
-            draggedElement = e.target;
-            e.target.classList.add('dragging');
-            e.dataTransfer.effectAllowed = 'move';
-        }
-
-        function handleDragEnd(e) {
-            e.target.classList.remove('dragging');
-            document.querySelectorAll('.drop-zone, .words-pool').forEach(zone => {
-                zone.classList.remove('drag-over');
-            });
-        }
-
-        function handleDragOver(e) {
-            e.preventDefault();
-            e.dataTransfer.dropEffect = 'move';
-            e.currentTarget.classList.add('drag-over');
-        }
-
-        function handleDragLeave(e) {
-            e.currentTarget.classList.remove('drag-over');
-        }
-
-        function handleDrop(e, categoryId) {
-            e.preventDefault();
-            e.currentTarget.classList.remove('drag-over');
-
-            if (draggedElement) {
-                const palabra = draggedElement.textContent;
-                
-                if (draggedElement.classList.contains('word-chip')) {
-                    const droppedWord = createDroppedWord(palabra, draggedElement);
-                    e.currentTarget.appendChild(droppedWord);
-                    draggedElement.classList.add('hidden');
-                }
-                else if (draggedElement.classList.contains('dropped-word')) {
-                    const originalChipIdx = draggedElement.dataset.originalChip;
-                    const originalEl = document.querySelector(`[data-index="${originalChipIdx}"]`);
-                    const droppedWord = createDroppedWord(palabra, originalEl);
-                    e.currentTarget.appendChild(droppedWord);
-                    draggedElement.remove();
-                }
-            }
-        }
-
-        function createDroppedWord(palabra, originalChipElement) {
-            const droppedWord = document.createElement('div');
-            droppedWord.className = 'dropped-word';
-            droppedWord.textContent = palabra;
-            droppedWord.draggable = true;
-            
-            const chipIdx = originalChipElement ? (originalChipElement.dataset.index || originalChipElement.getAttribute('data-index')) : '';
-            droppedWord.dataset.originalChip = chipIdx;
-            enableKeyboardInteraction(droppedWord, `Palabra colocada: ${palabra}. Presiona Enter para moverla.`);
-            
-            droppedWord.addEventListener('dragstart', handleDragStart);
-            droppedWord.addEventListener('dragend', handleDragEnd);
-            
-            droppedWord.ondblclick = () => {
-                const targetChip = originalChipElement || document.querySelector(`[data-index="${chipIdx}"]`);
-                if (targetChip) {
-                    targetChip.classList.remove('dragging', 'hidden');
-                    targetChip.style.display = '';
-                }
-                droppedWord.remove();
-            };
-            
-            return droppedWord;
-        }
-
-        function checkAnswer(ejercicio) {
-            const feedback = document.getElementById('feedback');
-            let esCorrect = true;
-
-            if (ejercicio.tipo === 'analisis') {
-                let hasAttempt = false;
-                
-                if (ejercicio.nivel === 1) {
-                    const sujetoDropZone = document.querySelector('[data-category="sujeto"]');
-                    const predicadoDropZone = document.querySelector('[data-category="predicado"]');
-                    
-                    if (sujetoDropZone && sujetoDropZone.querySelectorAll('.dropped-word').length > 0) hasAttempt = true;
-                    if (predicadoDropZone && predicadoDropZone.querySelectorAll('.dropped-word').length > 0) hasAttempt = true;
-                    
-                    if (!hasAttempt) {
-                        feedback.className = 'feedback error';
-                        feedback.textContent = 'Debes clasificar las palabras en Sujeto y Predicado antes de verificar.';
-                        return;
-                    }
-
-                    const sujetoWords = Array.from(sujetoDropZone.querySelectorAll('.dropped-word')).map(w => w.textContent.trim());
-                    const predicadoWords = Array.from(predicadoDropZone.querySelectorAll('.dropped-word')).map(w => w.textContent.trim());
-
-                    if (JSON.stringify(sujetoWords) !== JSON.stringify(ejercicio.sujeto) ||
-                        JSON.stringify(predicadoWords) !== JSON.stringify(ejercicio.predicado)) {
-                        esCorrect = false;
-                    }
-                }
-
-                if (ejercicio.nivel === 2) {
-                    const nsDropZone = document.querySelector('[data-category="ns"]');
-                    const npDropZone = document.querySelector('[data-category="np"]');
-                    
-                    if (nsDropZone && nsDropZone.querySelectorAll('.dropped-word').length > 0) hasAttempt = true;
-                    if (npDropZone && npDropZone.querySelectorAll('.dropped-word').length > 0) hasAttempt = true;
-                    
-                    if (!hasAttempt) {
-                        feedback.className = 'feedback error';
-                        feedback.textContent = 'Debes identificar el Núcleo del Sujeto (NS) y el Núcleo del Predicado (NP).';
-                        return;
-                    }
-
-                    const nsWords = Array.from(nsDropZone.querySelectorAll('.dropped-word')).map(w => w.textContent.trim());
-                    const npWords = Array.from(npDropZone.querySelectorAll('.dropped-word')).map(w => w.textContent.trim());
-
-                    if (JSON.stringify(nsWords) !== JSON.stringify(ejercicio.ns) ||
-                        JSON.stringify(npWords) !== JSON.stringify(ejercicio.np)) {
-                        esCorrect = false;
-                    }
-                }
-
-                if (ejercicio.nivel === 3) {
-                    const nsDropZone = document.querySelector('[data-category="ns"]');
-                    const npDropZone = document.querySelector('[data-category="np"]');
-                    const cdDropZone = document.querySelector('[data-category="cd"]');
-                    const ciDropZone = document.querySelector('[data-category="ci"]');
-                    
-                    if ((nsDropZone && nsDropZone.querySelectorAll('.dropped-word').length > 0) ||
-                        (npDropZone && npDropZone.querySelectorAll('.dropped-word').length > 0) ||
-                        (cdDropZone && cdDropZone.querySelectorAll('.dropped-word').length > 0) || 
-                        (ciDropZone && ciDropZone.querySelectorAll('.dropped-word').length > 0)) {
-                        hasAttempt = true;
-                    }
-                    
-                    if (!hasAttempt) {
-                        feedback.className = 'feedback error';
-                        feedback.textContent = 'Debes arrastrar los núcleos y complementos identificados antes de verificar.';
-                        return;
-                    }
-
-                    const nsWords = Array.from(nsDropZone ? nsDropZone.querySelectorAll('.dropped-word') : []).map(w => w.textContent.trim());
-                    const npWords = Array.from(npDropZone ? npDropZone.querySelectorAll('.dropped-word') : []).map(w => w.textContent.trim());
-                    const cdWords = Array.from(cdDropZone ? cdDropZone.querySelectorAll('.dropped-word') : []).map(w => w.textContent.trim());
-                    const ciWords = Array.from(ciDropZone ? ciDropZone.querySelectorAll('.dropped-word') : []).map(w => w.textContent.trim());
-
-                    if (JSON.stringify(nsWords) !== JSON.stringify(ejercicio.ns) ||
-                        JSON.stringify(npWords) !== JSON.stringify(ejercicio.np) ||
-                        JSON.stringify(cdWords) !== JSON.stringify(ejercicio.cd) ||
-                        JSON.stringify(ciWords) !== JSON.stringify(ejercicio.ci)) {
-                        esCorrect = false;
-                    }
-                }
-            } else if (ejercicio.tipo === 'pronombre') {
-                const userInputCD = document.getElementById('pronombre-cd-input').value.trim();
-                const userInputCI = document.getElementById('pronombre-ci-input').value.trim();
-
-                if (!userInputCD) {
-                    feedback.className = 'feedback error';
-                    feedback.textContent = 'Debes escribir la oración con el CD reemplazado por pronombre.';
-                    return;
-                }
-
-                if (!userInputCI) {
-                    feedback.className = 'feedback error';
-                    feedback.textContent = 'Debes escribir la oración con el CI reemplazado por pronombre.';
-                    return;
-                }
-                
-                const normalize = (str) => str.toLowerCase()
-                    .replace(/[\.¡!¿?,;:]/g, '')
-                    .replace(/\s+/g, ' ')
-                    .trim();
-
-                const normalizedInputCD = normalize(userInputCD);
-                const normalizedInputCI = normalize(userInputCI);
-
-                const cdVariants = [
-                    normalize(ejercicio.oracionCD),
-                    normalize(`${ejercicio.sujeto} ${ejercicio.cdPronombre} ${ejercicio.verbo}`),
-                    normalize(`${ejercicio.sujeto} ${ejercicio.cdPronombre} ${ejercicio.verbo} ${ejercicio.ci}`)
-                ];
-
-                const ciVariants = [
-                    normalize(ejercicio.oracionCI),
-                    normalize(`${ejercicio.sujeto} ${ejercicio.ciPronombre} ${ejercicio.verbo} ${ejercicio.cd}`),
-                    normalize(`${ejercicio.sujeto} ${ejercicio.ciPronombre} ${ejercicio.verbo} ${ejercicio.cd} ${ejercicio.ci}`)
-                ];
-
-                const cdCorrecto = cdVariants.includes(normalizedInputCD);
-                const ciCorrecto = ciVariants.includes(normalizedInputCI);
-
-                esCorrect = cdCorrecto && ciCorrecto;
-            }
-
-            if (esCorrect) {
-                feedback.className = 'feedback success';
-                feedback.textContent = 'Respuesta correcta. Has completado este ejercicio con precisión.';
-                correctAnswers++;
-                saveProgress(ejercicio, true);
-            } else {
-                feedback.className = 'feedback error';
-                let mensajeError = 'Respuesta no del todo correcta. Revisa la estructura y vuelve a intentar.';
-                if (ejercicio.tipo === 'analisis') {
-                    mensajeError = `Respuesta incorrecta. Pauta: ${reflectionGuidance[ejercicio.nivel]}`;
-                } else if (ejercicio.tipo === 'pronombre') {
-                    const userInputCD = document.getElementById('pronombre-cd-input').value.trim();
-                    const userInputCI = document.getElementById('pronombre-ci-input').value.trim();
-                    const normalize = (str) => str.toLowerCase().replace(/[\.¡!¿?,;:]/g, '').replace(/\s+/g, ' ').trim();
-                    
-                    const cdVariants = [
-                        normalize(ejercicio.oracionCD),
-                        normalize(`${ejercicio.sujeto} ${ejercicio.cdPronombre} ${ejercicio.verbo}`),
-                        normalize(`${ejercicio.sujeto} ${ejercicio.cdPronombre} ${ejercicio.verbo} ${ejercicio.ci}`)
-                    ];
-                    const ciVariants = [
-                        normalize(ejercicio.oracionCI),
-                        normalize(`${ejercicio.sujeto} ${ejercicio.ciPronombre} ${ejercicio.verbo} ${ejercicio.cd}`),
-                        normalize(`${ejercicio.sujeto} ${ejercicio.ciPronombre} ${ejercicio.verbo} ${ejercicio.cd} ${ejercicio.ci}`)
-                    ];
-
-                    const cdOk = cdVariants.includes(normalize(userInputCD));
-                    const ciOk = ciVariants.includes(normalize(userInputCI));
-
-                    if (!cdOk && !ciOk) {
-                        mensajeError = `Ambas transformaciones son incorrectas. Modelo esperado CD: "${ejercicio.oracionCD}" | CI: "${ejercicio.oracionCI}"`;
-                    } else if (!cdOk) {
-                        mensajeError = `CD incorrecto. Modelo esperado: "${ejercicio.oracionCD}"`;
-                    } else if (!ciOk) {
-                        mensajeError = `CI incorrecto. Modelo esperado: "${ejercicio.oracionCI}"`;
-                    }
-                }
-                
-                feedback.textContent = mensajeError;
-                saveProgress(ejercicio, false);
-            }
-
-            showReflectionPrompt(ejercicio);
-
-            document.getElementById('checkBtn').style.display = 'none';
-            document.getElementById('nextBtn').style.display = 'block';
-        }
-
-        // Función para guardar el progreso del estudiante
-        function saveProgress(ejercicio, esCorrecta) {
-            if (!currentUser) return;
-
-            const progressData = {
-                nombre: currentUser.nombre,
-                apellido: currentUser.apellido,
-                curso: currentUser.curso,
-                pregunta: ejercicio.numero,
-                nivel: ejercicio.nivel,
-                tema: ejercicio.tema,
-                correcta: esCorrecta,
-                timestamp: new Date().toISOString()
-            };
-
-            // Guardar en localStorage temporalmente
-            let allProgress = JSON.parse(localStorage.getItem('sintaxisFlowProgress') || '[]');
-            allProgress.push(progressData);
-            localStorage.setItem('sintaxisFlowProgress', JSON.stringify(allProgress));
-        }
-
-        function showFinalResults() {
-            const scorePercentage = Math.round((correctAnswers / oraciones.length) * 100);
-            const scoreSobre10 = ((correctAnswers / oraciones.length) * 10).toFixed(2);
-            const reviewQueue = JSON.parse(localStorage.getItem('sintaxisFlowReviewQueue') || '[]');
-            const reviewLevels = [...new Set(reviewQueue.map(item => item.nivel))];
-            const reviewPlan = [0, 3, 7].map(offset => {
-                const date = new Date();
-                date.setDate(date.getDate() + offset);
-                return date.toLocaleDateString('es-EC', { day: 'numeric', month: 'short' });
-            });
-            localStorage.setItem('sintaxisFlowReviewPlan', JSON.stringify({
-                createdAt: new Date().toISOString(),
-                dates: reviewPlan,
-                niveles: reviewLevels
-            }));
-            const reviewMessage = reviewLevels.length
-                ? `Plan sugerido: repasa los niveles ${reviewLevels.join(', ')} hoy, en 3 días (${reviewPlan[1]}) y en 7 días (${reviewPlan[2]}).`
-                : `Plan sugerido: recupera una idea clave hoy, en 3 días (${reviewPlan[1]}) y en 7 días (${reviewPlan[2]}).`;
-            
-            // Enviar resultados a Google Sheets
-            sendToGoogleSheets(scorePercentage, scoreSobre10);
-
-            const resultsDiv = document.createElement('div');
-            resultsDiv.style.cssText = `
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.8);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                z-index: 1000;
-            `;
-
-            resultsDiv.innerHTML = `
-                <div style="background: #071B33; padding: 40px; border-radius: 8px; text-align: center; border: 2px solid #2367D1; max-width: 500px; box-shadow: 0 12px 36px rgba(0,0,0,0.5);">
-                    <h2 style="color: #60A5FA; font-size: 28px; font-weight: 800; margin-bottom: 16px;">Sesión Finalizada</h2>
-                    <p style="color: #FFFFFF; font-size: 18px; margin-bottom: 8px;">
-                        Calificación: <span style="color: #FBBF24; font-weight: 800; font-size: 42px; display: block; margin: 8px 0;">${scoreSobre10}/10</span>
-                    </p>
-                    <p style="color: #94A3B8; font-size: 15px; font-weight: 600; margin-bottom: 20px;">
-                        (${scorePercentage}% de aciertos)
-                    </p>
-                    <p style="color: #E2E8F0; font-size: 15px; margin-bottom: 24px; line-height: 1.5;">
-                        Respondiste correctamente <strong style="color: #FFFFFF;">${correctAnswers} de ${oraciones.length}</strong> oraciones.
-                    </p>
-                    <p id="review-plan" style="color: #93C5FD; font-size: 14px; line-height: 1.5; margin-bottom: 20px; background: rgba(35,103,209,0.15); padding: 12px; border-radius: 4px; border: 1px solid rgba(35,103,209,0.3);">
-                        ${reviewMessage}
-                    </p>
-                    <p style="color: #4ADE80; font-size: 14px; font-weight: 600; margin-bottom: 24px;" id="sheets-status">
-                        Enviando resultados...
-                    </p>
-                    <button id="reiniciarBtn" disabled onclick="location.reload()" style="padding: 14px 36px; background: #2367D1; color: white; border: none; border-radius: 4px; font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.2s;">
-                        Reiniciar
-                    </button>
-                </div>
-            `;
-
-            document.body.appendChild(resultsDiv);
-        }
-
-        // CONFIGURACIÓN DE GOOGLE SHEETS
-        const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzogh6a08u9ERlt_kTzUfAMUapNdmNiTNsj_rt3s3hfa_c1UcYOJ51q69QLXO3zjnE4nw/exec';
-
-        async function sendToGoogleSheets(scorePercentage, scoreSobre10) {
-            if (!currentUser) {
-                return;
-            }
-
-            const data = {
-                nombre: currentUser.nombre,
-                apellido: currentUser.apellido,
-                curso: currentUser.curso,
-                puntuacion: scorePercentage,
-                calificacion: parseFloat(scoreSobre10),
-                correctas: correctAnswers,
-                total: oraciones.length,
-                fecha: new Date().toLocaleString('es-EC'),
-                detalles: JSON.parse(localStorage.getItem('sintaxisFlowProgress') || '[]')
-            };
-
-            try {
-                const response = await fetch(GOOGLE_SHEETS_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data)
-                });
-
-                setTimeout(() => {
-                    const statusElement = document.getElementById('sheets-status');
-                    const reiniciarBtn = document.getElementById('reiniciarBtn');
-                    
-                    if (statusElement) {
-                        statusElement.textContent = 'Resultados registrados correctamente';
-                        statusElement.style.color = 'var(--color-green)';
-                    }
-                    
-                    if (reiniciarBtn) {
-                        reiniciarBtn.disabled = false;
-                        reiniciarBtn.style.background = 'var(--color-green)';
-                        reiniciarBtn.style.cursor = 'pointer';
-                        reiniciarBtn.style.opacity = '1';
-                    }
-                }, 1000);
-
-                localStorage.removeItem('sintaxisFlowProgress');
-            } catch (error) {
-                console.error('Error al enviar:', error);
-                const statusElement = document.getElementById('sheets-status');
-                const reiniciarBtn = document.getElementById('reiniciarBtn');
-                
-                if (statusElement) {
-                    statusElement.textContent = 'No se pudieron sincronizar los resultados';
-                    statusElement.style.color = 'var(--color-orange)';
-                }
-                
-                if (reiniciarBtn) {
-                    reiniciarBtn.disabled = false;
-                    reiniciarBtn.style.background = 'var(--color-orange)';
-                    reiniciarBtn.style.cursor = 'pointer';
-                    reiniciarBtn.style.opacity = '1';
-                }
-            }
-        }
-
-        // ==================== CONTROL DE GUÍA TEÓRICA ====================
-        function openTheoryModal(tabId = 'tab-sujeto-predicado') {
-            const modal = document.getElementById('theoryModal');
-            if (modal) {
-                modal.classList.remove('hidden');
-                switchTheoryTab(tabId);
-            }
-        }
-
-        function closeTheoryModal() {
-            const modal = document.getElementById('theoryModal');
-            if (modal) modal.classList.add('hidden');
-        }
-
-        function switchTheoryTab(tabId) {
-            document.querySelectorAll('.theory-tab-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.getAttribute('data-tab') === tabId);
-            });
-            document.querySelectorAll('.theory-tab-panel').forEach(panel => {
-                panel.classList.toggle('active', panel.id === tabId);
-            });
-        }
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeTheoryModal();
-        });
-    </script>
-
-    <!-- ==================== MODAL DE GUÍA TEÓRICA ==================== -->
-    <div class="theory-modal-overlay hidden" id="theoryModal" onclick="if(event.target === this) closeTheoryModal()">
-        <div class="theory-modal-container" role="dialog" aria-modal="true" aria-labelledby="theoryModalHeading">
-            <div class="theory-modal-header">
-                <h2 id="theoryModalHeading">
-                    Fundamentos y Claves del Análisis Sintáctico
-                </h2>
-                <button class="theory-modal-close" onclick="closeTheoryModal()" aria-label="Cerrar guía teórica">×</button>
-            </div>
-
-            <nav class="theory-tabs-nav" aria-label="Temas teóricos">
-                <button class="theory-tab-btn active" data-tab="tab-sujeto-predicado" onclick="switchTheoryTab('tab-sujeto-predicado')">
-                    1. Sujeto y Predicado
-                </button>
-                <button class="theory-tab-btn" data-tab="tab-nucleos" onclick="switchTheoryTab('tab-nucleos')">
-                    2. Núcleos (NS y NP)
-                </button>
-                <button class="theory-tab-btn" data-tab="tab-cd-ci" onclick="switchTheoryTab('tab-cd-ci')">
-                    3. Complementos (CD vs. CI)
-                </button>
-                <button class="theory-tab-btn" data-tab="tab-sustitucion-se" onclick="switchTheoryTab('tab-sustitucion-se')">
-                    4. Pronombres y Regla del "SE"
-                </button>
-                <button class="theory-tab-btn" data-tab="tab-pruebas-rapidas" onclick="switchTheoryTab('tab-pruebas-rapidas')">
-                    5. Resumen de Pruebas
-                </button>
-            </nav>
-
-            <div class="theory-modal-body">
-                <!-- TAB 1: SUJETO Y PREDICADO -->
-                <div class="theory-tab-panel active" id="tab-sujeto-predicado">
-                    <div class="theory-card">
-                        <div class="theory-card-title">
-                            <span>La Oración Bimembre</span>
-                            <span class="theory-tag theory-tag-blue">Nivel 1</span>
-                        </div>
-                        <p>Una <strong>oración bimembre</strong> está formada por dos bloques interdependientes que guardan una relación estricta de <strong>concordancia de número y persona</strong>:</p>
-                        
-                        <div class="theory-rule-box">
-                            <strong>1. El Sujeto (S):</strong> Es la persona, animal, concepto o cosa de la que se afirma, niega o describe algo, y cuyo núcleo concuerda obligatoriamente con el verbo.<br><br>
-                            <strong>2. El Predicado (P):</strong> Es todo lo que se dice, predica o expresa acerca del sujeto. Su elemento indispensable es el <strong>verbo conjugado</strong>.
-                        </div>
-
-                        <div class="theory-card-title" style="font-size: 1rem; margin-top: 16px;">
-                            <span>Criterio de la concordancia gramatical</span>
-                        </div>
-                        <p>No preguntes solo <em>"¿Quién hace la acción?"</em> (porque falla en verbos pasivos o impersonales). La prueba científica infalible es <strong>cambiar el número del verbo</strong> (de singular a plural): <em>la parte de la oración que se vea forzada a cambiar obligatoriamente es el Sujeto</em>.</p>
-                        
-                        <table class="theory-example-table">
-                            <thead>
-                                <tr>
-                                    <th>Oración Original</th>
-                                    <th>Prueba (Cambiar verbo a plural)</th>
-                                    <th>Conclusión Sintáctica</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><em>[El estudiante]</em> <strong>estudió</strong> ayer.</td>
-                                    <td><em>[Los estudiantes]</em> <strong>estudiaron</strong> ayer.</td>
-                                    <td><strong>"El estudiante"</strong> es el Sujeto.</td>
-                                </tr>
-                                <tr>
-                                    <td>Me <strong>gusta</strong> <em>[la música clásica]</em>.</td>
-                                    <td>Me <strong>gustan</strong> <em>[las músicas clásicas]</em>.</td>
-                                    <td><strong>"La música clásica"</strong> es el Sujeto (no "yo").</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <div class="theory-rule-box" style="border-left-color: #D83A32;">
-                            <strong>Sujeto Tácito, Elíptico u Omitido:</strong> Cuando el sujeto no aparece explícito en la oración porque se sobreentiende por la terminación verbal (desinencia). Ej: <em>"Viajamos a Cuenca"</em>  Sujeto elíptico: <strong>Nosotros</strong>.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- TAB 2: NÚCLEOS -->
-                <div class="theory-tab-panel" id="tab-nucleos">
-                    <div class="theory-card">
-                        <div class="theory-card-title">
-                            <span>Núcleo del Sujeto (NS) y Núcleo del Predicado (NP)</span>
-                            <span class="theory-tag theory-tag-green">Nivel 2</span>
-                        </div>
-                        <p>Cada una de las dos partes principales de la oración tiene un elemento rector indispensable:</p>
-
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0;">
-                            <div style="background-color: #FAF9F5; border: 1px solid #D7D9D6; padding: 16px; border-radius: 4px;">
-                                <div style="font-weight: 700; color: #123C69; margin-bottom: 6px;">Núcleo del Sujeto (NS)</div>
-                                <p style="font-size: 13px; margin: 0;">Es el <strong>sustantivo o pronombre</strong> central del sujeto sin determinantes ni modificadores.</p>
-                                <div style="margin-top: 8px; font-size: 13px; font-family: monospace; color: #071B33;">
-                                    [La hábil <u>doctora</u>]  NS: <strong>doctora</strong>
-                                </div>
-                            </div>
-
-                            <div style="background-color: #FAF9F5; border: 1px solid #D7D9D6; padding: 16px; border-radius: 4px;">
-                                <div style="font-weight: 700; color: #B52A25; margin-bottom: 6px;">Núcleo del Predicado (NP)</div>
-                                <p style="font-size: 13px; margin: 0;">Es el <strong>verbo conjugado principal</strong> (forma simple, compuesta o perífrasis verbal).</p>
-                                <div style="margin-top: 8px; font-size: 13px; font-family: monospace; color: #071B33;">
-                                    [<u>atendió</u> a los pacientes]  NP: <strong>atendió</strong>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="theory-rule-box">
-                            <strong>Estructura completa de ejemplo:</strong><br>
-                            <em>[Los jóvenes científicos]</em> <strong>[desarrollaron una vacuna innovadora]</strong>.<br>
-                            • <strong>Sujeto:</strong> Los jóvenes científicos | <strong>NS:</strong> científicos<br>
-                            • <strong>Predicado:</strong> desarrollaron una vacuna innovadora | <strong>NP:</strong> desarrollaron
-                        </div>
-                    </div>
-                </div>
-
-                <!-- TAB 3: COMPLEMENTOS DIRECTO E INDIRECTO -->
-                <div class="theory-tab-panel" id="tab-cd-ci">
-                    <div class="theory-card">
-                        <div class="theory-card-title">
-                            <span>Complemento Directo (CD) vs. Complemento Indirecto (CI)</span>
-                            <span class="theory-tag theory-tag-orange">Nivel 3</span>
-                        </div>
-                        <p>Los verbos transitivos necesitan complementos para delimitar y completar su alcance:</p>
-
-                        <div style="margin: 20px 0;">
-                            <h3 style="font-size: 1rem; color: #945B0E; margin-bottom: 8px;">1. Complemento Directo (CD / Objeto Directo)</h3>
-                            <p>Es el elemento sobre el que <strong>recae directamente</strong> la acción ejecutada por el verbo.</p>
-                            <ul style="padding-left: 20px; font-size: 14px; margin-bottom: 12px;">
-                                <li><strong>Prueba 1 (Pronominalización):</strong> Se puede sustituir SIEMPRE por <strong>lo, la, los, las</strong>.</li>
-                                <li><strong>Prueba 2 (Paso a Voz Pasiva):</strong> Al pasar la oración a voz pasiva, el CD se convierte en el <strong>sujeto paciente</strong>.</li>
-                                <li><strong>Preposición 'a':</strong> Solo lleva 'a' cuando se refiere a personas o seres animados (<em>"Vi a Carlos"</em>  <em>"Lo vi"</em>).</li>
-                            </ul>
-                            <div style="background-color: #FEF7EC; padding: 12px 16px; border-radius: 4px; font-size: 13px; border-left: 4px solid #945B0E;">
-                                <em>"El autor escribió <strong>una novela histórica</strong>."</em>  <em>"El autor <strong>la</strong> escribió."</em> (CD comprobado).
-                            </div>
-                        </div>
-
-                        <div style="margin: 20px 0;">
-                            <h3 style="font-size: 1rem; color: #B52A25; margin-bottom: 8px;">2. Complemento Indirecto (CI / Objeto Indirecto)</h3>
-                            <p>Indica el <strong>destinatario, receptor o beneficiario</strong> de la acción verbal o del conjunto predicativo. Siempre va introducido por las preposiciones <strong>a</strong> o <strong>para</strong>.</p>
-                            <ul style="padding-left: 20px; font-size: 14px; margin-bottom: 12px;">
-                                <li><strong>Prueba Infalible (Pronominalización):</strong> Se puede sustituir ÚNICAMENTE por <strong>le, les</strong>.</li>
-                                <li><strong>En voz pasiva:</strong> El CI <strong>permanece idéntico</strong> y no cambia a sujeto.</li>
-                            </ul>
-                            <div style="background-color: #FDF0EF; padding: 12px 16px; border-radius: 4px; font-size: 13px; border-left: 4px solid #B52A25;">
-                                <em>"El docente entregó las notas <strong>a los estudiantes</strong>."</em>  <em>"El docente <strong>les</strong> entregó las notas."</em> (CI comprobado).
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- TAB 4: PRONOMBRES Y REGLA DEL SE -->
-                <div class="theory-tab-panel" id="tab-sustitucion-se">
-                    <div class="theory-card">
-                        <div class="theory-card-title">
-                            <span>Sustitución Simultánea y la Regla Fonética del "SE"</span>
-                            <span class="theory-tag theory-tag-red">Nivel 4</span>
-                        </div>
-                        <p>Cuando sustituimos tanto el Complemento Directo como el Complemento Indirecto en la misma oración, el idioma aplica una regla fonética fundamental:</p>
-
-                        <div class="theory-rule-box" style="border-left-color: #D83A32; background-color: #FDF0EF;">
-                            <strong style="color: #B52A25; font-size: 15px;">Regla de Evitación de Cacofonía:</strong><br>
-                            En español no se dice <em>"le lo"</em>, <em>"le la"</em>, <em>"les los"</em> ni <em>"les las"</em>. Cuando el pronombre de CI (<strong>le / les</strong>) precede inmediatamente a un pronombre de CD (<strong>lo / la / los / las</strong>), el pronombre <strong>le / les</strong> se transforma obligatoriamente en <strong>SE</strong>.
-                        </div>
-
-                        <table class="theory-example-table">
-                            <thead>
-                                <tr>
-                                    <th>Oración Base</th>
-                                    <th>Paso 1: CD y CI</th>
-                                    <th>Paso 2: Transformación con "SE"</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>El cartero entregó <strong>la carta</strong> <em>al vecino</em>.</td>
-                                    <td>CD: <strong>la</strong> | CI: <em>le</em><br><s>El cartero le la entregó</s></td>
-                                    <td><strong>El cartero <em>se</em> <strong>la</strong> entregó.</strong> (Correcto)</td>
-                                </tr>
-                                <tr>
-                                    <td>María regaló <strong>unos chocolates</strong> <em>a sus amigas</em>.</td>
-                                    <td>CD: <strong>los</strong> | CI: <em>les</em><br><s>María les los regaló</s></td>
-                                    <td><strong>María <em>se</em> <strong>los</strong> regaló.</strong> (Correcto)</td>
-                                </tr>
-                                <tr>
-                                    <td>El médico recetó <strong>el jarabe</strong> <em>al paciente</em>.</td>
-                                    <td>CD: <strong>lo</strong> | CI: <em>le</em><br><s>El médico le lo recetó</s></td>
-                                    <td><strong>El médico <em>se</em> <strong>lo</strong> recetó.</strong> (Correcto)</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- TAB 5: RESUMEN DE PRUEBAS RÁPIDAS -->
-                <div class="theory-tab-panel" id="tab-pruebas-rapidas">
-                    <div class="theory-card">
-                        <div class="theory-card-title">
-                            <span>El Algoritmo de las 4 Pruebas Sintácticas</span>
-                        </div>
-                        <p>Aplica este orden metódico para analizar cualquier oración:</p>
-
-                        <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 14px;">
-                            <div style="padding: 14px; background-color: #FAF9F5; border: 1px solid #D7D9D6; border-radius: 4px;">
-                                <strong style="color: #071B33;">Paso 1: Localiza el Verbo Conjugado (NP)</strong>
-                                <p style="font-size: 13px; margin: 4px 0 0; color: #727983;">Es el motor de la oración. Todo gira a su alrededor.</p>
-                            </div>
-                            <div style="padding: 14px; background-color: #FAF9F5; border: 1px solid #D7D9D6; border-radius: 4px;">
-                                <strong style="color: #071B33;">Paso 2: Aplica la Prueba de Concordancia para el Sujeto</strong>
-                                <p style="font-size: 13px; margin: 4px 0 0; color: #727983;">Cambia el verbo a plural. Lo que cambie por obligación gramatical es el Sujeto.</p>
-                            </div>
-                            <div style="padding: 14px; background-color: #FAF9F5; border: 1px solid #D7D9D6; border-radius: 4px;">
-                                <strong style="color: #071B33;">Paso 3: Prueba de Pronominalización LO/LA para el CD</strong>
-                                <p style="font-size: 13px; margin: 4px 0 0; color: #727983;">Sustituye el bloque por <em>lo, la, los, las</em>. Si tiene sentido completo y natural, es CD.</p>
-                            </div>
-                            <div style="padding: 14px; background-color: #FAF9F5; border: 1px solid #D7D9D6; border-radius: 4px;">
-                                <strong style="color: #071B33;">Paso 4: Prueba de Pronominalización LE/LES para el CI</strong>
-                                <p style="font-size: 13px; margin: 4px 0 0; color: #727983;">Sustituye el destinatario (con <em>a/para</em>) por <em>le, les</em>. Si encaja, es CI.</p>
-                            </div>
-                        </div>
-
-                        <div style="text-align: center; margin-top: 24px;">
-                            <button type="button" class="btn-start" onclick="closeTheoryModal()" style="margin: 0; padding: 10px 24px; font-size: 14px;">
-                                Volver a los ejercicios de práctica →
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+        <!-- TARJETA DE LA ORACIÓN ACTIVA -->
+        <div class="sentence-hero-card">
+          <div class="sentence-meta-row">
+            <span class="badge-level" id="basicoLevelBadge">NIVEL 1</span>
+            <span class="badge-theme" id="basicoThemeBadge">TEMA: TECNOLOGÍA</span>
+            <span class="badge-task" id="basicoTaskBadge">Separa en Sujeto y Predicado</span>
+          </div>
+          <div class="sentence-quote" id="basicoSentenceQuote">
+            «La inteligencia artificial transforma el mundo rápidamente.»
+          </div>
+          <p class="interaction-hint">
+            💡 <strong>Modo dual:</strong> Arrastra las fichas o haz clic en una palabra para seleccionarla y enviarla a una caja.
+          </p>
         </div>
+
+        <!-- BANCO DE PALABRAS DISPONIBLES -->
+        <div class="pool-container">
+          <div class="pool-header">
+            <span>Fichas de palabras disponibles:</span>
+            <button type="button" class="btn-return-all" id="btnBasicoReturnAll" title="Regresar todas las palabras al banco">↩ Devolver todas</button>
+          </div>
+          <div class="words-pool" id="basicoWordsPool" aria-label="Banco de palabras">
+            <!-- Chips generados por JS -->
+          </div>
+        </div>
+
+        <!-- ZONAS DE DEPÓSITO (DROPZONES) -->
+        <div class="dropzones-grid" id="basicoDropzonesGrid">
+          <!-- Dropzone 1 -->
+          <div class="dropzone-box dropzone-sujeto" data-zone="sujeto">
+            <div class="dropzone-header">
+              <span class="zone-tag">SUJETO</span>
+              <span class="zone-count" id="count-sujeto">0 palabras</span>
+            </div>
+            <div class="dropzone-content" id="zone-sujeto" data-zone="sujeto">
+              <span class="dropzone-placeholder">Arrastra aquí o toca la palabra y luego aquí</span>
+            </div>
+          </div>
+
+          <!-- Dropzone 2 -->
+          <div class="dropzone-box dropzone-predicado" data-zone="predicado">
+            <div class="dropzone-header">
+              <span class="zone-tag">PREDICADO</span>
+              <span class="zone-count" id="count-predicado">0 palabras</span>
+            </div>
+            <div class="dropzone-content" id="zone-predicado" data-zone="predicado">
+              <span class="dropzone-placeholder">Arrastra aquí o toca la palabra y luego aquí</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- BARRA DE ACCIONES DE VERIFICACIÓN -->
+        <div class="exercise-actions-bar">
+          <button type="button" class="btn-tool btn-hint" id="btnBasicoHint">
+            <span>💡 Pista pedagógica</span>
+          </button>
+          <div class="right-actions">
+            <button type="button" class="btn-tool btn-reset" id="btnBasicoReset">Reiniciar</button>
+            <button type="button" class="btn-action-primary" id="btnBasicoCheck">Verificar Respuesta</button>
+            <button type="button" class="btn-action-next" id="btnBasicoNext" style="display: none;">Siguiente Oración →</button>
+          </div>
+        </div>
+
+        <!-- TARJETA DE RETROALIMENTACIÓN FORMATIVA -->
+        <div class="feedback-card" id="basicoFeedbackCard" style="display: none;">
+          <div class="feedback-header">
+            <span class="feedback-badge" id="basicoFeedbackBadge">¡CORRECTO!</span>
+            <h4 class="feedback-title" id="basicoFeedbackTitle">Análisis Impecable</h4>
+          </div>
+          <p class="feedback-message" id="basicoFeedbackMessage"></p>
+          <div class="feedback-explanation-box" id="basicoExplanationBox"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- MÓDULO 03: NIVEL 3 — COMPLEMENTOS DIRECTO E INDIRECTO             -->
+    <!-- ================================================================= -->
+    <section class="tab-content" id="tab-complementos" data-label="03. Complementos CD y CI" role="tabpanel" aria-labelledby="btn-tab-complementos">
+      
+      <div class="section-intro-card">
+        <div class="intro-tag">MÓDULO 03 · ARGUMENTOS DEL PREDICADO</div>
+        <h2>Nivel 3: Complemento Directo (CD) y Complemento Indirecto (CI)</h2>
+        <p>
+          En este nivel identificarás la estructura completa del predicado verbal: localiza el verbo conjugado (<strong>NP</strong>), su argumento inmediato (<strong>CD</strong>) y el destinatario de la acción (<strong>CI</strong>).
+        </p>
+
+        <div class="exercise-nav-bar">
+          <div class="level-tabs-pills">
+            <span class="pill-active-level">NIVEL 3 · Complementos (Oraciones 10 a 14)</span>
+          </div>
+          <div class="exercise-stepper">
+            <span class="step-indicator" id="compProgressText">Ejercicio 1 de 5</span>
+            <span class="score-pill" id="compScoreText">Aciertos: 0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- WORKSPACE DE COMPLEMENTOS -->
+      <div class="exercise-workspace" id="compWorkspace">
+        
+        <div class="sentence-hero-card">
+          <div class="sentence-meta-row">
+            <span class="badge-level badge-orange">NIVEL 3</span>
+            <span class="badge-theme" id="compThemeBadge">TEMA: VIAL</span>
+            <span class="badge-task">Identifica NP, CD y CI</span>
+          </div>
+          <div class="sentence-quote" id="compSentenceQuote">
+            «El semáforo da prioridad a los peatones.»
+          </div>
+          <p class="interaction-hint">
+            💡 <strong>Prueba de fuego:</strong> Aplica las sustituciones: ¿Qué da el semáforo? (<em>la da</em> → prioridad = CD). ¿A quiénes? (<em>les da</em> → a los peatones = CI).
+          </p>
+        </div>
+
+        <div class="pool-container">
+          <div class="pool-header">
+            <span>Fichas de palabras disponibles:</span>
+            <button type="button" class="btn-return-all" id="btnCompReturnAll">↩ Devolver todas</button>
+          </div>
+          <div class="words-pool" id="compWordsPool"></div>
+        </div>
+
+        <!-- DROPZONES CUÁDRUPLES -->
+        <div class="dropzones-grid comp-grid" id="compDropzonesGrid">
+          <!-- NS -->
+          <div class="dropzone-box dropzone-ns" data-zone="ns">
+            <div class="dropzone-header">
+              <span class="zone-tag">NÚCLEO SUJETO (NS)</span>
+              <span class="zone-count" id="count-ns">0</span>
+            </div>
+            <div class="dropzone-content" id="zone-ns" data-zone="ns">
+              <span class="dropzone-placeholder">Palabra del NS</span>
+            </div>
+          </div>
+
+          <!-- NP -->
+          <div class="dropzone-box dropzone-np" data-zone="np">
+            <div class="dropzone-header">
+              <span class="zone-tag">NÚCLEO PREDICADO (NP)</span>
+              <span class="zone-count" id="count-np">0</span>
+            </div>
+            <div class="dropzone-content" id="zone-np" data-zone="np">
+              <span class="dropzone-placeholder">Verbo conjugado</span>
+            </div>
+          </div>
+
+          <!-- CD -->
+          <div class="dropzone-box dropzone-cd" data-zone="cd">
+            <div class="dropzone-header">
+              <span class="zone-tag">COMP. DIRECTO (CD)</span>
+              <span class="zone-count" id="count-cd">0</span>
+            </div>
+            <div class="dropzone-content" id="zone-cd" data-zone="cd">
+              <span class="dropzone-placeholder">¿Qué? (lo/la)</span>
+            </div>
+          </div>
+
+          <!-- CI -->
+          <div class="dropzone-box dropzone-ci" data-zone="ci">
+            <div class="dropzone-header">
+              <span class="zone-tag">COMP. INDIRECTO (CI)</span>
+              <span class="zone-count" id="count-ci">0</span>
+            </div>
+            <div class="dropzone-content" id="zone-ci" data-zone="ci">
+              <span class="dropzone-placeholder">¿A quién? (le/les)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exercise-actions-bar">
+          <button type="button" class="btn-tool btn-hint" id="btnCompHint">
+            <span>💡 Pistas de sustitución</span>
+          </button>
+          <div class="right-actions">
+            <button type="button" class="btn-tool btn-reset" id="btnCompReset">Reiniciar</button>
+            <button type="button" class="btn-action-primary" id="btnCompCheck">Verificar Complementos</button>
+            <button type="button" class="btn-action-next" id="btnCompNext" style="display: none;">Siguiente Oración →</button>
+          </div>
+        </div>
+
+        <div class="feedback-card" id="compFeedbackCard" style="display: none;">
+          <div class="feedback-header">
+            <span class="feedback-badge" id="compFeedbackBadge">¡CORRECTO!</span>
+            <h4 class="feedback-title" id="compFeedbackTitle">Complementos Identificados</h4>
+          </div>
+          <p class="feedback-message" id="compFeedbackMessage"></p>
+          <div class="feedback-explanation-box" id="compExplanationBox"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- MÓDULO 04: NIVEL 4 — LABORATORIO DE PRONOMBRES ÁTONOS             -->
+    <!-- ================================================================= -->
+    <section class="tab-content" id="tab-pronombres" data-label="04. Laboratorio de Pronombres" role="tabpanel" aria-labelledby="btn-tab-pronombres">
+      
+      <div class="section-intro-card">
+        <div class="intro-tag">MÓDULO 04 · TRANSFORMACIÓN SINTÁCTICA</div>
+        <h2>Nivel 4: Laboratorio de Pronombres y la Regla de «SE»</h2>
+        <p>
+          Aprende a sustituir el <strong>CD</strong> (*lo/la/los/las*) y el <strong>CI</strong> (*le/les*) transformando la oración completa en tiempo real. Aplica obligatoriamente la regla de <strong>SE</strong> cuando ambos pronombres se combinan.
+        </p>
+
+        <div class="exercise-nav-bar">
+          <div class="level-tabs-pills">
+            <span class="pill-active-level">NIVEL 4 · Sustitución y Eufonía (Oraciones 15 a 20)</span>
+          </div>
+          <div class="exercise-stepper">
+            <span class="step-indicator" id="pronomProgressText">Ejercicio 1 de 6</span>
+            <span class="score-pill" id="pronomScoreText">Aciertos: 0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- WORKSPACE DE PRONOMBRES -->
+      <div class="exercise-workspace" id="pronomWorkspace">
+        
+        <!-- MODELO VISUAL DE LA ORACIÓN ORIGINAL -->
+        <div class="pronom-breakdown-card">
+          <span class="pronom-card-label">ORACIÓN ORIGINAL Y SUS COMPONENTES:</span>
+          <div class="breakdown-sentence-display" id="pronomOriginalDisplay">
+            <!-- Segmentos inyectados por JS -->
+          </div>
+
+          <div class="component-chips-row">
+            <div class="comp-chip chip-cd-info">
+              <span>Complemento Directo (CD):</span>
+              <strong id="pronomCdText">los archivos</strong>
+              <small>Pronombre: <em id="pronomCdPro">los</em></small>
+            </div>
+            <div class="comp-chip chip-ci-info">
+              <span>Complemento Indirecto (CI):</span>
+              <strong id="pronomCiText">al profesor</strong>
+              <small>Pronombre: <em id="pronomCiPro">le</em></small>
+            </div>
+          </div>
+        </div>
+
+        <!-- SELECTOR DE TIPO DE TRANSFORMACIÓN -->
+        <div class="transformation-control-card">
+          <h4>Selecciona el tipo de transformación que vas a realizar:</h4>
+          <div class="transform-mode-selector" role="radiogroup">
+            <button type="button" class="btn-mode active" data-mode="cd">
+              <span>1. Reemplazar solo CD</span>
+              <small>Usa lo / la / los / las</small>
+            </button>
+            <button type="button" class="btn-mode" data-mode="ci">
+              <span>2. Reemplazar solo CI</span>
+              <small>Usa le / les</small>
+            </button>
+            <button type="button" class="btn-mode mode-both" data-mode="both">
+              <span>3. Reemplazar CD + CI (Regla SE) ⭐</span>
+              <small>Usa se + lo/la/los/las</small>
+            </button>
+          </div>
+
+          <!-- ÁREA DE ESCRITURA Y ASISTENTE -->
+          <div class="pronom-input-area">
+            <label for="inputTransformedSentence" id="pronomInputLabel">
+              Escribe la oración completa reemplazando solo el Complemento Directo (CD):
+            </label>
+            <div class="input-with-tools">
+              <input type="text" id="inputTransformedSentence" class="custom-sentence-input" placeholder="Ej: Juan los envió al profesor." autocomplete="off">
+              <div class="pronoun-helper-pills">
+                <span class="helper-label">Insertar:</span>
+                <button type="button" class="pro-insert-btn" data-insert="lo">lo</button>
+                <button type="button" class="pro-insert-btn" data-insert="la">la</button>
+                <button type="button" class="pro-insert-btn" data-insert="los">los</button>
+                <button type="button" class="pro-insert-btn" data-insert="las">las</button>
+                <button type="button" class="pro-insert-btn" data-insert="le">le</button>
+                <button type="button" class="pro-insert-btn" data-insert="les">les</button>
+                <button type="button" class="pro-insert-btn pro-accent" data-insert="se">se</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="exercise-actions-bar">
+            <button type="button" class="btn-tool btn-hint" id="btnPronomHint">💡 Ver Pista de Transformación</button>
+            <div class="right-actions">
+              <button type="button" class="btn-tool btn-reset" id="btnPronomClear">Borrar</button>
+              <button type="button" class="btn-action-primary" id="btnPronomCheck">Validar Oración</button>
+              <button type="button" class="btn-action-next" id="btnPronomNext" style="display: none;">Siguiente Ejercicio →</button>
+            </div>
+          </div>
+
+          <!-- RETROALIMENTACIÓN DE PRONOMBRES -->
+          <div class="feedback-card" id="pronomFeedbackCard" style="display: none;">
+            <div class="feedback-header">
+              <span class="feedback-badge" id="pronomFeedbackBadge">¡CORRECTO!</span>
+              <h4 class="feedback-title" id="pronomFeedbackTitle">Transformación Exitosa</h4>
+            </div>
+            <p class="feedback-message" id="pronomFeedbackMessage"></p>
+            <div class="feedback-explanation-box" id="pronomExplanationBox"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- MÓDULO 05: ANALIZADOR SINTÁCTICO LIBRE Y RESULTADOS               -->
+    <!-- ================================================================= -->
+    <section class="tab-content" id="tab-resultados" data-label="05. Analizador y Resultados" role="tabpanel" aria-labelledby="btn-tab-resultados">
+      
+      <div class="section-intro-card">
+        <div class="intro-tag">MÓDULO 05 · BALANCE DE LOGROS & LABORATORIO LIBRE</div>
+        <h2>Resultados Globales y Analizador de Oraciones Libres</h2>
+        <p>
+          Revisa el balance de tus aciertos en los cuatro niveles formativos, tu calificación estandarizada sobre 10 y utiliza el <strong>Analizador Libre</strong> para aplicar el algoritmo de las 4 pruebas sintácticas a cualquier oración que desees.
+        </p>
+      </div>
+
+      <div class="results-and-analyzer-layout">
+        
+        <!-- COLUMNA IZQUIERDA: TARJETA DE CALIFICACIÓN Y LOGROS -->
+        <div class="score-summary-column">
+          <div class="score-card-main">
+            <span class="score-card-badge">BALANCE DE RENDIMIENTO</span>
+            <h3 class="score-card-title">Calificación Global</h3>
+            
+            <div class="big-score-circle">
+              <span class="big-score-num" id="globalScoreNum">0.0</span>
+              <span class="big-score-max">/ 10</span>
+            </div>
+            
+            <p class="score-subtitle" id="globalScoreSubtitle">
+              Comienza los ejercicios en los módulos anteriores para acumular tu puntuación.
+            </p>
+
+            <div class="level-breakdown-list">
+              <div class="breakdown-item">
+                <span>Nivel 1 & 2 (Sujeto y Núcleos):</span>
+                <strong id="scoreLevel12">0 / 9</strong>
+              </div>
+              <div class="breakdown-item">
+                <span>Nivel 3 (Complementos CD / CI):</span>
+                <strong id="scoreLevel3">0 / 5</strong>
+              </div>
+              <div class="breakdown-item">
+                <span>Nivel 4 (Pronombres y SE):</span>
+                <strong id="scoreLevel4">0 / 6</strong>
+              </div>
+            </div>
+
+            <!-- ESTADO DE ENVÍO A GOOGLE SHEETS -->
+            <div class="sheets-sync-card">
+              <div class="sync-header">
+                <span class="sync-icon">📊</span>
+                <strong>Registro de Calificaciones:</strong>
+              </div>
+              <p class="sync-status" id="sheetsStatusMessage">
+                Sesión local activa. Si te identificaste con tu nombre y curso, tus resultados se registrarán automáticamente al culminar las oraciones.
+              </p>
+              <button type="button" class="btn-sync-now" id="btnSyncSheets">
+                Enviar resultados ahora a Google Sheets
+              </button>
+            </div>
+
+            <div class="reset-practice-row">
+              <button type="button" class="btn-clear-session" id="btnResetAllPractice">
+                Reiniciar toda la práctica desde cero
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- COLUMNA DERECHA: ANALIZADOR LIBRE DE ORACIONES -->
+        <div class="free-analyzer-column">
+          <div class="analyzer-card">
+            <div class="analyzer-header">
+              <span class="analyzer-tag">LABORATORIO PRÁCTICO</span>
+              <h3>Analizador Sintáctico Guiado</h3>
+              <p>Escribe tu propia oración o elige un ejemplo sugerido para desglosarla paso a paso con el algoritmo de las 4 pruebas.</p>
+            </div>
+
+            <div class="analyzer-form">
+              <div class="form-group">
+                <label for="customSentenceInput">Escribe o selecciona una oración para analizar:</label>
+                <div class="analyzer-input-row">
+                  <input type="text" id="customSentenceInput" class="custom-input" placeholder="Ej: La profesora envió un correo a los padres de familia.">
+                  <button type="button" class="btn-action-primary" id="btnAnalyzeCustom">Analizar Oración</button>
+                </div>
+              </div>
+
+              <div class="sample-sentences-pills">
+                <span class="sample-label">Ejemplos para probar:</span>
+                <button type="button" class="sample-pill" data-sample="El científico descubrió una cura para la enfermedad.">El científico descubrió una cura para la enfermedad.</button>
+                <button type="button" class="sample-pill" data-sample="Los estudiantes entregaron el proyecto al comité evaluador.">Los estudiantes entregaron el proyecto al comité evaluador.</button>
+                <button type="button" class="sample-pill" data-sample="A los turistas les fascinaron las islas Galápagos.">A los turistas les fascinaron las islas Galápagos.</button>
+              </div>
+            </div>
+
+            <!-- RESULTADO DEL ANÁLISIS GUIADO -->
+            <div class="analyzer-output-card" id="analyzerOutput" style="display: none;">
+              <h4 id="analyzerSentenceTitle">«Oración»</h4>
+              
+              <div class="steps-breakdown-box">
+                <div class="analysis-step-item">
+                  <span class="step-label-tag tag-verb">PASO 1 · VERBO (NP)</span>
+                  <p id="analysisStepVerb">Identificando el verbo conjugado...</p>
+                </div>
+                <div class="analysis-step-item">
+                  <span class="step-label-tag tag-concord">PASO 2 · CONCORDANCIA (SUJETO)</span>
+                  <p id="analysisStepSujeto">Aplicando prueba de pluralización...</p>
+                </div>
+                <div class="analysis-step-item">
+                  <span class="step-label-tag tag-cd">PASO 3 · COMPLEMENTO DIRECTO (CD)</span>
+                  <p id="analysisStepCd">Probando sustitución por lo/la/los/las...</p>
+                </div>
+                <div class="analysis-step-item">
+                  <span class="step-label-tag tag-ci">PASO 4 · COMPLEMENTO INDIRECTO (CI)</span>
+                  <p id="analysisStepCi">Probando sustitución por le/les y regla de SE...</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL DE IDENTIFICACIÓN DE ESTUDIANTE (OPCIONAL PARA REGISTRO) -->
+  <div class="modal-overlay hidden" id="studentModal" onclick="if(event.target === this) closeStudentModal()">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3>Identificación del Estudiante</h3>
+        <button type="button" class="modal-close" onclick="closeStudentModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc">
+          Si tu profesor utiliza Google Sheets para el seguimiento del curso, ingresa tus datos para que tus calificaciones se sincronicen automáticamente:
+        </p>
+        <div class="form-group">
+          <label for="studentInputName">Nombre:</label>
+          <input type="text" id="studentInputName" class="custom-input" placeholder="Ej: Juan">
+        </div>
+        <div class="form-group">
+          <label for="studentInputLastName">Apellido:</label>
+          <input type="text" id="studentInputLastName" class="custom-input" placeholder="Ej: Pérez">
+        </div>
+        <div class="form-group">
+          <label for="studentInputCourse">Curso / Paralelo:</label>
+          <input type="text" id="studentInputCourse" class="custom-input" placeholder="Ej: 10mo EGB 'A'">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-tool btn-reset" onclick="closeStudentModal()">Omitir (Modo Libre)</button>
+        <button type="button" class="btn-action-primary" id="btnSaveStudent">Guardar Datos</button>
+      </div>
     </div>
+  </div>
+
+  <!-- NOTIFICACIÓN TOAST -->
+  <div class="app-toast" id="appToast" aria-live="polite"></div>
+
+  <!-- SCRIPTS -->
+  <script src="app.js"></script>
+  <script src="../course-shell/course-shell.js"></script>
 </body>
 </html>
