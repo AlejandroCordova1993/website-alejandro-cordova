@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sintaxis Flow: Laboratorio interactivo y gamificado de análisis sintáctico. Sujeto, predicado, núcleos, complementos directo e indirecto y sustitución pronominal.">
-  <title>Sintaxis Flow — Análisis Sintáctico Progresivo · Msc. Alejandro Córdova</title>
+  <meta name="description" content="Sintaxis Flow: Laboratorio interactivo y gamificado de análisis sintáctico alineado al Currículo Nacional del Ecuador para 10mo EGB y Bachillerato BGU.">
+  <title>Sintaxis Flow — Laboratorio Gramatical Progresivo · Msc. Alejandro Córdova</title>
 
   <!-- FUENTES TIPOGRÁFICAS INSTITUCIONALES -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,11 +16,11 @@
 </head>
 <body>
 
-  <!-- CABECERA INSTITUCIONAL -->
+  <!-- CABECERA INSTITUCIONAL CON SELECTOR DE RUTA CURRICULAR -->
   <header class="app-header">
     <div class="header-container">
       <div class="header-badge-row">
-        <span class="header-badge">GRAMÁTICA ACTIVA · ANÁLISIS SINTÁCTICO</span>
+        <span class="header-badge">CURRÍCULO NACIONAL DEL ECUADOR · LENGUA Y LITERATURA</span>
         <div class="student-session-chip" id="studentSessionChip">
           <span class="student-icon">👤</span>
           <span class="student-name-display" id="studentNameDisplay">Modo Práctica Libre</span>
@@ -28,33 +28,83 @@
         </div>
       </div>
       
-      <h1 class="header-title">Sintaxis Flow: Análisis Sintáctico Progresivo</h1>
+      <h1 class="header-title">Sintaxis Flow: Laboratorio Gramatical Progresivo</h1>
       <p class="header-desc">
-        Aprende a analizar oraciones no mediante preguntas mecánicas, sino aplicando pruebas científicas: concordancia gramatical, identificación de núcleos, pronominalización de complementos (CD/CI) y la regla fonética de transformación en <em>SE</em>.
+        Aprende y domina la estructura de la lengua mediante pruebas científicas: concordancia gramatical, modificadores del sujeto, complementos del verbo, voz pasiva y oraciones compuestas. Selecciona tu nivel educativo para comenzar:
       </p>
 
-      <!-- BARRA DE NAVEGACIÓN DE MÓDULOS (5 PESTAÑAS) -->
-      <nav class="module-nav" role="tablist" aria-label="Módulos de Sintaxis Flow">
-        <button type="button" class="nav-tab active" role="tab" aria-selected="true" data-tab="tab-fundamentos" id="btn-tab-fundamentos">
+      <!-- SELECTOR PRINCIPAL DE ETAPA CURRICULAR -->
+      <div class="curriculum-route-switcher" role="radiogroup" aria-label="Selector de nivel curricular">
+        <button type="button" class="btn-route active" id="route-btn-egb" data-route="egb">
+          <span class="route-icon">📘</span>
+          <div class="route-meta">
+            <span class="route-title">Básica Superior (10mo EGB)</span>
+            <span class="route-sub">Oración Simple, Modificadores & Pronombres</span>
+          </div>
+        </button>
+
+        <button type="button" class="btn-route" id="route-btn-bgu" data-route="bgu">
+          <span class="route-icon">🎓</span>
+          <div class="route-meta">
+            <span class="route-title">Bachillerato (1ro a 3ro BGU)</span>
+            <span class="route-sub">Voz Pasiva, Pasiva Refleja & Oraciones Compuestas</span>
+          </div>
+        </button>
+
+        <button type="button" class="btn-route" id="route-btn-eval" data-route="eval">
+          <span class="route-icon">📊</span>
+          <div class="route-meta">
+            <span class="route-title">Analizador Universal & Resultados</span>
+            <span class="route-sub">Laboratorio Libre & Registro de Calificación</span>
+          </div>
+        </button>
+      </div>
+
+      <!-- BARRA DE NAVEGACIÓN MODULAR (SE ADAPTA DINÁMICAMENTE) -->
+      <nav class="module-nav" id="moduleNav" role="tablist" aria-label="Módulos de aprendizaje">
+        
+        <!-- Pestañas EGB (10mo) -->
+        <button type="button" class="nav-tab active egb-tab" role="tab" aria-selected="true" data-tab="tab-fundamentos" id="btn-tab-fundamentos">
           <span class="tab-step">01</span>
-          <span class="tab-label">Fundamentos Sintácticos</span>
+          <span class="tab-label">Fundamentos & Concordancia</span>
         </button>
-        <button type="button" class="nav-tab" role="tab" aria-selected="false" data-tab="tab-basico" id="btn-tab-basico">
+        <button type="button" class="nav-tab egb-tab" role="tab" aria-selected="false" data-tab="tab-sujeto" id="btn-tab-sujeto">
           <span class="tab-step">02</span>
-          <span class="tab-label">Nivel 1 & 2: Sujeto y Núcleos</span>
+          <span class="tab-label">Modificadores del Sujeto (MD, MI, Apos)</span>
         </button>
-        <button type="button" class="nav-tab" role="tab" aria-selected="false" data-tab="tab-complementos" id="btn-tab-complementos">
+        <button type="button" class="nav-tab egb-tab" role="tab" aria-selected="false" data-tab="tab-predicado" id="btn-tab-predicado">
           <span class="tab-step">03</span>
-          <span class="tab-label">Nivel 3: Complementos CD y CI</span>
+          <span class="tab-label">Predicado Completo (CD, CI y CC)</span>
         </button>
-        <button type="button" class="nav-tab" role="tab" aria-selected="false" data-tab="tab-pronombres" id="btn-tab-pronombres">
+        <button type="button" class="nav-tab egb-tab" role="tab" aria-selected="false" data-tab="tab-pronombres" id="btn-tab-pronombres">
           <span class="tab-step">04</span>
-          <span class="tab-label">Nivel 4: Laboratorio de Pronombres</span>
+          <span class="tab-label">Pronombres & Regla de SE</span>
         </button>
-        <button type="button" class="nav-tab" role="tab" aria-selected="false" data-tab="tab-resultados" id="btn-tab-resultados">
+
+        <!-- Pestañas BGU (Bachillerato) -->
+        <button type="button" class="nav-tab bgu-tab" role="tab" aria-selected="false" data-tab="tab-pasiva" id="btn-tab-pasiva" style="display: none;">
           <span class="tab-step">05</span>
-          <span class="tab-label">Analizador y Resultados</span>
+          <span class="tab-label">Puente de Voz Activa ↔ Pasiva</span>
         </button>
+        <button type="button" class="nav-tab bgu-tab" role="tab" aria-selected="false" data-tab="tab-refleja" id="btn-tab-refleja" style="display: none;">
+          <span class="tab-step">06</span>
+          <span class="tab-label">Pasiva Refleja vs. Impersonal</span>
+        </button>
+        <button type="button" class="nav-tab bgu-tab" role="tab" aria-selected="false" data-tab="tab-compuestas" id="btn-tab-compuestas" style="display: none;">
+          <span class="tab-step">07</span>
+          <span class="tab-label">Bisturí de Oraciones Compuestas</span>
+        </button>
+        <button type="button" class="nav-tab bgu-tab" role="tab" aria-selected="false" data-tab="tab-subordinadas" id="btn-tab-subordinadas" style="display: none;">
+          <span class="tab-step">08</span>
+          <span class="tab-label">Proposiciones Subordinadas</span>
+        </button>
+
+        <!-- Pestaña Evaluación común -->
+        <button type="button" class="nav-tab eval-tab" role="tab" aria-selected="false" data-tab="tab-resultados" id="btn-tab-resultados">
+          <span class="tab-step">09</span>
+          <span class="tab-label">Analizador & Calificación</span>
+        </button>
+
       </nav>
     </div>
   </header>
@@ -62,432 +112,253 @@
   <main class="main-container">
 
     <!-- ================================================================= -->
-    <!-- MÓDULO 01: FUNDAMENTOS Y ALGORITMO SINTÁCTICO                     -->
+    <!-- MÓDULO 01: FUNDAMENTOS & EL INTERRUPTOR DE CONCORDANCIA           -->
     <!-- ================================================================= -->
-    <section class="tab-content active" id="tab-fundamentos" data-label="01. Fundamentos Sintácticos" role="tabpanel" aria-labelledby="btn-tab-fundamentos">
+    <section class="tab-content active" id="tab-fundamentos" data-label="01. Fundamentos & Concordancia" role="tabpanel">
       
       <div class="section-intro-card">
-        <div class="intro-tag">MÓDULO 01 · GUÍA CIENTÍFICA DEL ANÁLISIS</div>
-        <h2>El Algoritmo de las 4 Pruebas Sintácticas</h2>
+        <div class="intro-tag">MÓDULO 01 · BÁSICA SUPERIOR (10MO EGB)</div>
+        <h2>El Algoritmo de las 4 Pruebas y el Interruptor de Concordancia</h2>
         <p>
-          Analizar oraciones no consiste en adivinar o memorizar preguntas engañosas («¿quién hace la acción?» a menudo falla en oraciones pasivas o con verbos de afección). En la lingüística moderna utilizamos <strong>pruebas estructurales</strong>: la concordancia obligatoria, la prueba del número y la pronominalización.
+          En la lingüística moderna no preguntamos «¿quién hace la acción?» (pregunta engañosa en pasivas o con verbos de afección como <em>«Me gustan los libros»</em>). En su lugar, usamos la <strong>Prueba Científica de Concordancia</strong>.
         </p>
+      </div>
 
-        <div class="theory-quick-nav">
-          <span class="quick-nav-label">Temas clave:</span>
-          <a href="#teo-concordancia" class="quick-pill">⚖️ Prueba de Concordancia (Sujeto)</a>
-          <a href="#teo-nucleos" class="quick-pill">🎯 Núcleos (NS y NP)</a>
-          <a href="#teo-cd" class="quick-pill">📦 Complemento Directo (CD)</a>
-          <a href="#teo-ci" class="quick-pill">✉️ Complemento Indirecto (CI)</a>
-          <a href="#teo-se" class="quick-pill">🔄 Regla de SE y Pronombres</a>
+      <!-- ACTIVIDAD VIVA: EL INTERRUPTOR DE CONCORDANCIA -->
+      <div class="concordance-experiment-card">
+        <div class="experiment-header">
+          <span class="exp-badge">🔬 LABORATORIO ACTIVO</span>
+          <h3>Experimento: Prueba el «Interruptor de Concordancia»</h3>
+          <p>
+            Pulsa el interruptor para forzar un cambio de número en el verbo (de singular a plural o viceversa). Observa cómo se desajusta la oración y <strong>toca la palabra que suena incorrecta</strong> para descubrir el Sujeto auténtico:
+          </p>
+        </div>
+
+        <div class="concordance-stage">
+          <div class="concordance-sentence" id="concordanceSentenceDisplay">
+            <!-- Palabras interactivas inyectadas por JS -->
+          </div>
+
+          <div class="concordance-controls">
+            <span class="ctrl-label">Cambiar número del verbo:</span>
+            <button type="button" class="btn-toggle-number" id="btnToggleVerbNumber">
+              <span class="toggle-icon">⇄</span>
+              <span id="toggleVerbState">Cambiar a Plural</span>
+            </button>
+            <button type="button" class="btn-next-concord" id="btnNextConcordExample">Probar otro ejemplo ↻</button>
+          </div>
+
+          <div class="concordance-feedback" id="concordanceFeedback">
+            💡 Haz clic en el botón «Cambiar a Plural» para ver la prueba en acción.
+          </div>
         </div>
       </div>
 
-      <!-- BANNER DE ENLACE DIRECTO A LA PRÁCTICA -->
+      <!-- GUÍA RÁPIDA DE LAS 4 PRUEBAS -->
+      <div class="theory-grid-cards">
+        <div class="theory-mini-card">
+          <div class="mini-header"><span class="badge-blue">1</span> <h4>Concordancia</h4></div>
+          <p>El Sujeto siempre concuerda en número y persona con el verbo conjugado.</p>
+        </div>
+        <div class="theory-mini-card">
+          <div class="mini-header"><span class="badge-green">2</span> <h4>Núcleos (NS / NP)</h4></div>
+          <p>El NS es el sustantivo rector; el NP es el verbo conjugado principal.</p>
+        </div>
+        <div class="theory-mini-card">
+          <div class="mini-header"><span class="badge-orange">3</span> <h4>Pronominalización CD</h4></div>
+          <p>El CD se sustituye por <em>lo, la, los, las</em> o pasa a Sujeto en voz pasiva.</p>
+        </div>
+        <div class="theory-mini-card">
+          <div class="mini-header"><span class="badge-red">4</span> <h4>Destinatario CI & SE</h4></div>
+          <p>El CI se sustituye por <em>le / les</em>; al juntarse con CD pasa a <strong>SE</strong>.</p>
+        </div>
+      </div>
+
+      <!-- BOTÓN DE AVANCE -->
       <div class="flow-cta-banner">
         <div class="cta-content">
-          <span class="cta-badge">APRENDIZAJE ACTIVO</span>
-          <p><strong>¿Listo para poner a prueba tus habilidades?</strong> Salta directo al <strong>Nivel 1 & 2</strong> para practicar con ejercicios de arrastrar o tocar, o explora las pruebas teóricas abajo.</p>
+          <span class="cta-badge">SIGUIENTE PASO CURRICULAR</span>
+          <p>Aprende ahora a desglosar los <strong>Modificadores del Sujeto (MD, MI, Aposición)</strong> en el Módulo 02.</p>
         </div>
-        <div class="cta-actions">
-          <button type="button" class="btn-flow-jump" data-jump="tab-basico">Ir al Nivel 1 & 2 →</button>
-          <button type="button" class="btn-flow-jump btn-flow-accent" data-jump="tab-pronombres">Ir a Pronombres (Nivel 4) 🚀</button>
-        </div>
-      </div>
-
-      <!-- 1. LA PRUEBA DE CONCORDANCIA -->
-      <section class="theory-card" id="teo-concordancia">
-        <div class="theory-card-header">
-          <span class="theory-badge badge-blue">PRUEBA 1</span>
-          <h3>La Prueba de Concordancia: Cómo hallar el Sujeto con Certeza</h3>
-        </div>
-        <div class="theory-card-body">
-          <p class="theory-lead">
-            El <strong>Sujeto</strong> es el constituyente de la oración que concuerda obligatoriamente en <strong>número (singular/plural)</strong> y <strong>persona</strong> con el verbo conjugado.
-          </p>
-
-          <div class="algorithm-steps-flow">
-            <div class="algo-step">
-              <span class="step-circle">1</span>
-              <h4>Ubica el verbo conjugado</h4>
-              <p>Es el Núcleo del Predicado (NP). Ej: «Me <em>gusta</em> ese libro».</p>
-            </div>
-            <div class="algo-arrow">→</div>
-            <div class="algo-step">
-              <span class="step-circle">2</span>
-              <h4>Cambia el número del verbo</h4>
-              <p>Si está en singular, pásalo a plural (o viceversa): «gusta» → «gustan».</p>
-            </div>
-            <div class="algo-arrow">→</div>
-            <div class="algo-step highlight-step">
-              <span class="step-circle">3</span>
-              <h4>Observa qué debe cambiar</h4>
-              <p>«Me gustan <em>esos libros</em>». Al cambiar el verbo, «ese libro» tuvo que cambiar a plural obligatoriamente: ¡ese es el Sujeto!</p>
-            </div>
-          </div>
-
-          <div class="theory-alert-box alert-caution">
-            <strong>⚠️ Desmontando el mito escolar:</strong> Preguntar «¿Quién?» suele confundir al estudiante. En <em>«A Juan le duelen los pies»</em>, si preguntas «¿Quién siente el dolor?», responderías «Juan». Pero aplicando la concordancia: <em>«A Juan le duele el pie»</em> → el verbo concuerda con <strong>los pies</strong> (Sujeto), no con Juan (que es Complemento Indirecto).
-          </div>
-        </div>
-      </section>
-
-      <!-- 2. NÚCLEOS DE LA ORACIÓN -->
-      <section class="theory-card" id="teo-nucleos">
-        <div class="theory-card-header">
-          <span class="theory-badge badge-green">PRUEBA 2</span>
-          <h3>Núcleos: El Motor y el Protagonista</h3>
-        </div>
-        <div class="theory-card-body">
-          <div class="two-pillars-grid">
-            <div class="pillar-card pillar-ns">
-              <div class="pillar-header">
-                <span class="pillar-tag">NS</span>
-                <h4>Núcleo del Sujeto</h4>
-              </div>
-              <p>Es la palabra principal dentro del grupo del Sujeto sobre la que giran los determinantes y adjetivos. Suele ser un <strong>sustantivo</strong> o un <strong>pronombre</strong>.</p>
-              <div class="pillar-example">
-                «Los <strong>conductores</strong> responsables respetan el paso cebra.»<br>
-                <small>Sujeto: Los conductores responsables | <strong>NS: conductores</strong></small>
-              </div>
-            </div>
-
-            <div class="pillar-card pillar-np">
-              <div class="pillar-header">
-                <span class="pillar-tag">NP</span>
-                <h4>Núcleo del Predicado</h4>
-              </div>
-              <p>Es el <strong>verbo conjugado</strong> (simple o compuesto). Conecta todos los argumentos de la oración e indica el tiempo, modo, número y persona.</p>
-              <div class="pillar-example">
-                «La inteligencia artificial <strong>transforma</strong> el mundo.»<br>
-                <small>Predicado: transforma el mundo | <strong>NP: transforma</strong></small>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 3. COMPLEMENTO DIRECTO (CD) -->
-      <section class="theory-card" id="teo-cd">
-        <div class="theory-card-header">
-          <span class="theory-badge badge-orange">PRUEBA 3</span>
-          <h3>Complemento Directo (CD): La Prueba de Sustitución por LO/LA</h3>
-        </div>
-        <div class="theory-card-body">
-          <p class="theory-lead">
-            El <strong>Complemento Directo (CD)</strong> es el argumento que delimita y concreta el significado del verbo transitivo. Recibe de forma inmediata el efecto de la acción verbal.
-          </p>
-
-          <div class="substitution-rule-card">
-            <h4>🧪 La Prueba Científica de Pronominalización:</h4>
-            <p>Un segmento de la oración es <strong>CD</strong> si y solo si puede sustituirse de forma natural por los pronombres átonos acusativos: <strong>lo, la, los, las</strong>.</p>
-            
-            <div class="test-table-wrapper">
-              <table class="test-table">
-                <thead>
-                  <tr>
-                    <th>Oración Original</th>
-                    <th>Elemento Candidato</th>
-                    <th>Sustitución por Pronombre</th>
-                    <th>Veredicto</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>«Juan envió <strong>los archivos</strong>.»</td>
-                    <td>los archivos (masculino plural)</td>
-                    <td>«Juan <strong>los</strong> envió.»</td>
-                    <td><span class="badge-tag-ok">✓ Es CD</span></td>
-                  </tr>
-                  <tr>
-                    <td>«El policía puso <strong>una multa</strong>.»</td>
-                    <td>una multa (femenino singular)</td>
-                    <td>«El policía <strong>la</strong> puso.»</td>
-                    <td><span class="badge-tag-ok">✓ Es CD</span></td>
-                  </tr>
-                  <tr>
-                    <td>«El médico recetó <strong>el jarabe</strong>.»</td>
-                    <td>el jarabe (masculino singular)</td>
-                    <td>«El médico <strong>lo</strong> recetó.»</td>
-                    <td><span class="badge-tag-ok">✓ Es CD</span></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 4. COMPLEMENTO INDIRECTO (CI) -->
-      <section class="theory-card" id="teo-ci">
-        <div class="theory-card-header">
-          <span class="theory-badge badge-red">PRUEBA 4</span>
-          <h3>Complemento Indirecto (CI): La Prueba de Sustitución por LE/LES</h3>
-        </div>
-        <div class="theory-card-body">
-          <p class="theory-lead">
-            El <strong>Complemento Indirecto (CI)</strong> designa al destinatario, beneficiario o perjudicado de la acción verbal. Siempre va introducido por la preposición <strong>a</strong> (o para) y responde a la sustitución por <strong>le / les</strong>.
-          </p>
-
-          <div class="substitution-rule-card rule-ci">
-            <h4>🧪 La Prueba de Pronominalización por LE / LES:</h4>
-            <p>Un segmento es <strong>CI</strong> si puede sustituirse por los pronombres dativos <strong>le</strong> (singular) o <strong>les</strong> (plural), independientemente del género (masculino o femenino).</p>
-
-            <div class="test-table-wrapper">
-              <table class="test-table">
-                <thead>
-                  <tr>
-                    <th>Oración Original</th>
-                    <th>Destinatario (CI)</th>
-                    <th>Sustitución Pronominal</th>
-                    <th>Veredicto</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>«Juan envió los archivos <strong>al profesor</strong>.»</td>
-                    <td>al profesor (singular)</td>
-                    <td>«Juan <strong>le</strong> envió los archivos.»</td>
-                    <td><span class="badge-tag-ok">✓ Es CI</span></td>
-                  </tr>
-                  <tr>
-                    <td>«La profesora enseñó la lección <strong>a los estudiantes</strong>.»</td>
-                    <td>a los estudiantes (plural)</td>
-                    <td>«La profesora <strong>les</strong> enseñó la lección.»</td>
-                    <td><span class="badge-tag-ok">✓ Es CI</span></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 5. LA REGLA FONÉTICA DE "SE" -->
-      <section class="theory-card" id="teo-se">
-        <div class="theory-card-header">
-          <span class="theory-badge badge-purple">PRUEBA 5</span>
-          <h3>La Regla Fonética de Evitación de Cacofonía: De «LE» a «SE»</h3>
-        </div>
-        <div class="theory-card-body">
-          <p class="theory-lead">
-            ¿Qué ocurre cuando queremos sustituir <strong>el CD y el CI al mismo tiempo</strong> en una sola oración? El español tiene una regla eufónica estricta para evitar sonidos desagradables.
-          </p>
-
-          <div class="cacofonia-box">
-            <div class="cacofonia-alert">
-              <strong>🚫 Prohibición fonética del español:</strong> En español NO se puede decir <em>«le lo»</em>, <em>«le la»</em>, <em>«les los»</em> ni <em>«les las»</em>.
-            </div>
-            <p>
-              Cuando el pronombre de CI (<strong>le / les</strong>) se encuentra inmediatamente antes de un pronombre de CD (<strong>lo / la / los / las</strong>), el pronombre de CI se transforma obligatoriamente en <strong>SE</strong>.
-            </p>
-
-            <div class="transformation-flow-demo">
-              <div class="tf-step">
-                <span class="tf-label">Oración Base</span>
-                <code>«Juan envió <strong>los archivos</strong> <em>al profesor</em>.»</code>
-              </div>
-              <div class="tf-step">
-                <span class="tf-label">Paso 1: Identificación</span>
-                <code>CD: <strong>los</strong> | CI: <em>le</em></code>
-              </div>
-              <div class="tf-step tf-wrong">
-                <span class="tf-label">Cacofonía prohibida</span>
-                <code><s>«Juan <em>le</em> <strong>los</strong> envió.»</s></code>
-              </div>
-              <div class="tf-step tf-correct">
-                <span class="tf-label">Transformación con SE (Correcto)</span>
-                <code>«Juan <em>se</em> <strong>los</strong> envió.» ✓</code>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- BOTONES DE PROGRESIÓN -->
-      <div class="theory-footer-actions">
-        <button type="button" class="btn-flow-jump btn-flow-accent" data-jump="tab-basico">
-          <span>Comenzar con Nivel 1 & 2 (Sujeto y Núcleos)</span>
-          <span>→</span>
-        </button>
+        <button type="button" class="btn-flow-jump btn-flow-accent" data-jump="tab-sujeto">Ir a Modificadores del Sujeto →</button>
       </div>
 
     </section>
 
     <!-- ================================================================= -->
-    <!-- MÓDULO 02: NIVEL 1 & 2 — ESTRUCTURA BÁSICA                        -->
+    <!-- MÓDULO 02: ANATOMÍA DEL SUJETO (MD, NS, MI, APOSICIÓN)            -->
     <!-- ================================================================= -->
-    <section class="tab-content" id="tab-basico" data-label="02. Sujeto, Predicado y Núcleos" role="tabpanel" aria-labelledby="btn-tab-basico">
+    <section class="tab-content" id="tab-sujeto" data-label="02. Modificadores del Sujeto" role="tabpanel">
       
       <div class="section-intro-card">
-        <div class="intro-tag">MÓDULO 02 · ENTRENAMIENTO GUIADO</div>
-        <h2>Nivel 1 & 2: Sujeto, Predicado y Núcleos</h2>
+        <div class="intro-tag">MÓDULO 02 · ESTRUCTURA INTERNA DEL SINTAGMA NOMINAL</div>
+        <h2>Anatomía del Sujeto: Núcleo, MD, MI y Aposición</h2>
         <p>
-          Identifica los bloques constitutivos de la oración. Puedes <strong>arrastrar los chips</strong> a sus cajas correspondientes, o simplemente <strong>hacer clic en una palabra y luego en la categoría</strong> (*modo táctil para móviles*).
-        </p>
-
-        <!-- SELECTOR DE SUB-NIVEL Y CONTROLES -->
-        <div class="exercise-nav-bar">
-          <div class="level-tabs-pills">
-            <button type="button" class="btn-filter-level active" data-level-filter="1-2">Todos (Ej. 1 al 9)</button>
-            <button type="button" class="btn-filter-level" data-level-filter="1">Solo Nivel 1 (Sujeto / Predicado)</button>
-            <button type="button" class="btn-filter-level" data-level-filter="2">Solo Nivel 2 (Núcleos NS / NP)</button>
-          </div>
-          <div class="exercise-stepper">
-            <span class="step-indicator" id="basicoProgressText">Ejercicio 1 de 9</span>
-            <span class="score-pill" id="basicoScoreText">Aciertos: 0</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- ÁREA INTERACTIVA DEL EJERCICIO -->
-      <div class="exercise-workspace" id="basicoWorkspace">
-        
-        <!-- TARJETA DE LA ORACIÓN ACTIVA -->
-        <div class="sentence-hero-card">
-          <div class="sentence-meta-row">
-            <span class="badge-level" id="basicoLevelBadge">NIVEL 1</span>
-            <span class="badge-theme" id="basicoThemeBadge">TEMA: TECNOLOGÍA</span>
-            <span class="badge-task" id="basicoTaskBadge">Separa en Sujeto y Predicado</span>
-          </div>
-          <div class="sentence-quote" id="basicoSentenceQuote">
-            «La inteligencia artificial transforma el mundo rápidamente.»
-          </div>
-          <p class="interaction-hint">
-            💡 <strong>Modo dual:</strong> Arrastra las fichas o haz clic en una palabra para seleccionarla y enviarla a una caja.
-          </p>
-        </div>
-
-        <!-- BANCO DE PALABRAS DISPONIBLES -->
-        <div class="pool-container">
-          <div class="pool-header">
-            <span>Fichas de palabras disponibles:</span>
-            <button type="button" class="btn-return-all" id="btnBasicoReturnAll" title="Regresar todas las palabras al banco">↩ Devolver todas</button>
-          </div>
-          <div class="words-pool" id="basicoWordsPool" aria-label="Banco de palabras">
-            <!-- Chips generados por JS -->
-          </div>
-        </div>
-
-        <!-- ZONAS DE DEPÓSITO (DROPZONES) -->
-        <div class="dropzones-grid" id="basicoDropzonesGrid">
-          <!-- Dropzone 1 -->
-          <div class="dropzone-box dropzone-sujeto" data-zone="sujeto">
-            <div class="dropzone-header">
-              <span class="zone-tag">SUJETO</span>
-              <span class="zone-count" id="count-sujeto">0 palabras</span>
-            </div>
-            <div class="dropzone-content" id="zone-sujeto" data-zone="sujeto">
-              <span class="dropzone-placeholder">Arrastra aquí o toca la palabra y luego aquí</span>
-            </div>
-          </div>
-
-          <!-- Dropzone 2 -->
-          <div class="dropzone-box dropzone-predicado" data-zone="predicado">
-            <div class="dropzone-header">
-              <span class="zone-tag">PREDICADO</span>
-              <span class="zone-count" id="count-predicado">0 palabras</span>
-            </div>
-            <div class="dropzone-content" id="zone-predicado" data-zone="predicado">
-              <span class="dropzone-placeholder">Arrastra aquí o toca la palabra y luego aquí</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- BARRA DE ACCIONES DE VERIFICACIÓN -->
-        <div class="exercise-actions-bar">
-          <button type="button" class="btn-tool btn-hint" id="btnBasicoHint">
-            <span>💡 Pista pedagógica</span>
-          </button>
-          <div class="right-actions">
-            <button type="button" class="btn-tool btn-reset" id="btnBasicoReset">Reiniciar</button>
-            <button type="button" class="btn-action-primary" id="btnBasicoCheck">Verificar Respuesta</button>
-            <button type="button" class="btn-action-next" id="btnBasicoNext" style="display: none;">Siguiente Oración →</button>
-          </div>
-        </div>
-
-        <!-- TARJETA DE RETROALIMENTACIÓN FORMATIVA -->
-        <div class="feedback-card" id="basicoFeedbackCard" style="display: none;">
-          <div class="feedback-header">
-            <span class="feedback-badge" id="basicoFeedbackBadge">¡CORRECTO!</span>
-            <h4 class="feedback-title" id="basicoFeedbackTitle">Análisis Impecable</h4>
-          </div>
-          <p class="feedback-message" id="basicoFeedbackMessage"></p>
-          <div class="feedback-explanation-box" id="basicoExplanationBox"></div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ================================================================= -->
-    <!-- MÓDULO 03: NIVEL 3 — COMPLEMENTOS DIRECTO E INDIRECTO             -->
-    <!-- ================================================================= -->
-    <section class="tab-content" id="tab-complementos" data-label="03. Complementos CD y CI" role="tabpanel" aria-labelledby="btn-tab-complementos">
-      
-      <div class="section-intro-card">
-        <div class="intro-tag">MÓDULO 03 · ARGUMENTOS DEL PREDICADO</div>
-        <h2>Nivel 3: Complemento Directo (CD) y Complemento Indirecto (CI)</h2>
-        <p>
-          En este nivel identificarás la estructura completa del predicado verbal: localiza el verbo conjugado (<strong>NP</strong>), su argumento inmediato (<strong>CD</strong>) y el destinatario de la acción (<strong>CI</strong>).
+          El Sujeto no es solo una palabra; es un sintagma organizado jerárquicamente. Clasifica cada ficha en su cajón correspondiente usando <strong>arrastrar y soltar</strong> o el <strong>modo táctil (tocar ficha y luego cajón)</strong>:
         </p>
 
         <div class="exercise-nav-bar">
           <div class="level-tabs-pills">
-            <span class="pill-active-level">NIVEL 3 · Complementos (Oraciones 10 a 14)</span>
+            <span class="pill-active-level">DCD LL.4.4.7 · Modificadores del Sujeto (Oraciones 1 a 6)</span>
           </div>
           <div class="exercise-stepper">
-            <span class="step-indicator" id="compProgressText">Ejercicio 1 de 5</span>
-            <span class="score-pill" id="compScoreText">Aciertos: 0</span>
+            <span class="step-indicator" id="sujetoProgressText">Ejercicio 1 de 6</span>
+            <span class="score-pill" id="sujetoScoreText">Aciertos: 0</span>
           </div>
         </div>
       </div>
 
-      <!-- WORKSPACE DE COMPLEMENTOS -->
-      <div class="exercise-workspace" id="compWorkspace">
+      <div class="exercise-workspace" id="sujetoWorkspace">
         
         <div class="sentence-hero-card">
           <div class="sentence-meta-row">
-            <span class="badge-level badge-orange">NIVEL 3</span>
-            <span class="badge-theme" id="compThemeBadge">TEMA: VIAL</span>
-            <span class="badge-task">Identifica NP, CD y CI</span>
+            <span class="badge-level">10MO EGB</span>
+            <span class="badge-theme" id="sujetoThemeBadge">TEMA: SOCIEDAD</span>
+            <span class="badge-task">Clasifica la estructura del Sujeto</span>
           </div>
-          <div class="sentence-quote" id="compSentenceQuote">
-            «El semáforo da prioridad a los peatones.»
+          <div class="sentence-quote" id="sujetoSentenceQuote">
+            «Los conductores responsables de la ciudad respetan el paso cebra.»
           </div>
           <p class="interaction-hint">
-            💡 <strong>Prueba de fuego:</strong> Aplica las sustituciones: ¿Qué da el semáforo? (<em>la da</em> → prioridad = CD). ¿A quiénes? (<em>les da</em> → a los peatones = CI).
+            💡 <strong>Pauta:</strong> Identifica el <strong>MD</strong> (artículo/adjetivo sin enlace), el <strong>NS</strong> (sustantivo), el <strong>MI</strong> (con preposición <em>de/con</em>) y la <strong>Aposición</strong>.
           </p>
         </div>
 
+        <!-- BANCO DE PALABRAS -->
         <div class="pool-container">
           <div class="pool-header">
-            <span>Fichas de palabras disponibles:</span>
-            <button type="button" class="btn-return-all" id="btnCompReturnAll">↩ Devolver todas</button>
+            <span>Fichas de palabras del Sujeto:</span>
+            <button type="button" class="btn-return-all" id="btnSujetoReturnAll">↩ Devolver todas</button>
           </div>
-          <div class="words-pool" id="compWordsPool"></div>
+          <div class="words-pool" id="sujetoWordsPool"></div>
         </div>
 
-        <!-- DROPZONES CUÁDRUPLES -->
-        <div class="dropzones-grid comp-grid" id="compDropzonesGrid">
+        <!-- CAJONES DEL SUJETO -->
+        <div class="dropzones-grid comp-grid" id="sujetoDropzonesGrid">
+          <!-- MD -->
+          <div class="dropzone-box dropzone-md" data-zone="md">
+            <div class="dropzone-header">
+              <span class="zone-tag tag-md">MOD. DIRECTO (MD)</span>
+              <span class="zone-count" id="count-md">0</span>
+            </div>
+            <div class="dropzone-content" id="zone-md" data-zone="md">
+              <span class="dropzone-placeholder">Artículos / Adjetivos</span>
+            </div>
+          </div>
+
           <!-- NS -->
           <div class="dropzone-box dropzone-ns" data-zone="ns">
             <div class="dropzone-header">
-              <span class="zone-tag">NÚCLEO SUJETO (NS)</span>
-              <span class="zone-count" id="count-ns">0</span>
+              <span class="zone-tag">NÚCLEO (NS)</span>
+              <span class="zone-count" id="count-sujeto-ns">0</span>
             </div>
-            <div class="dropzone-content" id="zone-ns" data-zone="ns">
-              <span class="dropzone-placeholder">Palabra del NS</span>
+            <div class="dropzone-content" id="zone-sujeto-ns" data-zone="ns">
+              <span class="dropzone-placeholder">Sustantivo rector</span>
             </div>
           </div>
 
+          <!-- MI -->
+          <div class="dropzone-box dropzone-mi" data-zone="mi">
+            <div class="dropzone-header">
+              <span class="zone-tag tag-mi">MOD. INDIRECTO (MI)</span>
+              <span class="zone-count" id="count-mi">0</span>
+            </div>
+            <div class="dropzone-content" id="zone-mi" data-zone="mi">
+              <span class="dropzone-placeholder">Con preposición (de, con...)</span>
+            </div>
+          </div>
+
+          <!-- APOSICIÓN -->
+          <div class="dropzone-box dropzone-apos" data-zone="apos">
+            <div class="dropzone-header">
+              <span class="zone-tag tag-apos">APOSICIÓN</span>
+              <span class="zone-count" id="count-apos">0</span>
+            </div>
+            <div class="dropzone-content" id="zone-apos" data-zone="apos">
+              <span class="dropzone-placeholder">Aclaración nominal</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACCIONES -->
+        <div class="exercise-actions-bar">
+          <button type="button" class="btn-tool btn-hint" id="btnSujetoHint">💡 Pista pedagógica</button>
+          <div class="right-actions">
+            <button type="button" class="btn-tool btn-reset" id="btnSujetoReset">Reiniciar</button>
+            <button type="button" class="btn-action-primary" id="btnSujetoCheck">Verificar Sujeto</button>
+            <button type="button" class="btn-action-next" id="btnSujetoNext" style="display: none;">Siguiente Oración →</button>
+          </div>
+        </div>
+
+        <!-- FEEDBACK -->
+        <div class="feedback-card" id="sujetoFeedbackCard" style="display: none;">
+          <div class="feedback-header">
+            <span class="feedback-badge" id="sujetoFeedbackBadge">¡CORRECTO!</span>
+            <h4 class="feedback-title" id="sujetoFeedbackTitle">Estructura del Sujeto Dominada</h4>
+          </div>
+          <p class="feedback-message" id="sujetoFeedbackMessage"></p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- MÓDULO 03: PREDICADO COMPLETO (NP, CD, CI Y CIRCUNSTANCIALES CC)  -->
+    <!-- ================================================================= -->
+    <section class="tab-content" id="tab-predicado" data-label="03. Predicado Completo (CD, CI, CC)" role="tabpanel">
+      
+      <div class="section-intro-card">
+        <div class="intro-tag">MÓDULO 03 · ARGUMENTOS Y CIRCUNSTANCIALES</div>
+        <h2>El Predicado Completo: Núcleo, CD, CI y Circunstanciales</h2>
+        <p>
+          En este nivel identificarás la constelación completa del predicado: el verbo conjugado (<strong>NP</strong>), los argumentos (<strong>CD, CI</strong>) y los adjuntos que indican circunstancias (<strong>CC Tiempo, CC Lugar, CC Modo</strong>).
+        </p>
+
+        <div class="exercise-nav-bar">
+          <div class="level-tabs-pills">
+            <span class="pill-active-level">DCD LL.4.4.7 · Predicado Completo (Oraciones 7 a 12)</span>
+          </div>
+          <div class="exercise-stepper">
+            <span class="step-indicator" id="predProgressText">Ejercicio 1 de 6</span>
+            <span class="score-pill" id="predScoreText">Aciertos: 0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exercise-workspace" id="predWorkspace">
+        
+        <div class="sentence-hero-card">
+          <div class="sentence-meta-row">
+            <span class="badge-level badge-orange">10MO EGB</span>
+            <span class="badge-theme" id="predThemeBadge">TEMA: VIAL</span>
+            <span class="badge-task">Identifica NP, CD, CI y Circunstanciales</span>
+          </div>
+          <div class="sentence-quote" id="predSentenceQuote">
+            «El semáforo da prioridad a los peatones en la avenida diariamente.»
+          </div>
+          <p class="interaction-hint">
+            💡 <strong>Prueba de fuego:</strong> Pregunta al verbo: ¿Qué da? (CD: prioridad). ¿A quién? (CI: a los peatones). ¿Dónde? (CC Lugar). ¿Cuándo? (CC Tiempo).
+          </p>
+        </div>
+
+        <div class="pool-container">
+          <div class="pool-header">
+            <span>Fichas de palabras del Predicado:</span>
+            <button type="button" class="btn-return-all" id="btnPredReturnAll">↩ Devolver todas</button>
+          </div>
+          <div class="words-pool" id="predWordsPool"></div>
+        </div>
+
+        <!-- CAJONES DE PREDICADO -->
+        <div class="dropzones-grid pred-five-grid" id="predDropzonesGrid">
           <!-- NP -->
           <div class="dropzone-box dropzone-np" data-zone="np">
             <div class="dropzone-header">
-              <span class="zone-tag">NÚCLEO PREDICADO (NP)</span>
-              <span class="zone-count" id="count-np">0</span>
+              <span class="zone-tag">VERBO (NP)</span>
+              <span class="zone-count" id="count-pred-np">0</span>
             </div>
-            <div class="dropzone-content" id="zone-np" data-zone="np">
-              <span class="dropzone-placeholder">Verbo conjugado</span>
+            <div class="dropzone-content" id="zone-pred-np" data-zone="np">
+              <span class="dropzone-placeholder">Verbo principal</span>
             </div>
           </div>
 
@@ -495,9 +366,9 @@
           <div class="dropzone-box dropzone-cd" data-zone="cd">
             <div class="dropzone-header">
               <span class="zone-tag">COMP. DIRECTO (CD)</span>
-              <span class="zone-count" id="count-cd">0</span>
+              <span class="zone-count" id="count-pred-cd">0</span>
             </div>
-            <div class="dropzone-content" id="zone-cd" data-zone="cd">
+            <div class="dropzone-content" id="zone-pred-cd" data-zone="cd">
               <span class="dropzone-placeholder">¿Qué? (lo/la)</span>
             </div>
           </div>
@@ -506,52 +377,60 @@
           <div class="dropzone-box dropzone-ci" data-zone="ci">
             <div class="dropzone-header">
               <span class="zone-tag">COMP. INDIRECTO (CI)</span>
-              <span class="zone-count" id="count-ci">0</span>
+              <span class="zone-count" id="count-pred-ci">0</span>
             </div>
-            <div class="dropzone-content" id="zone-ci" data-zone="ci">
+            <div class="dropzone-content" id="zone-pred-ci" data-zone="ci">
               <span class="dropzone-placeholder">¿A quién? (le/les)</span>
+            </div>
+          </div>
+
+          <!-- CC LUGAR / TIEMPO / MODO -->
+          <div class="dropzone-box dropzone-cc" data-zone="cc">
+            <div class="dropzone-header">
+              <span class="zone-tag tag-cc">CIRCUNSTANCIAL (CC)</span>
+              <span class="zone-count" id="count-pred-cc">0</span>
+            </div>
+            <div class="dropzone-content" id="zone-pred-cc" data-zone="cc">
+              <span class="dropzone-placeholder">Tiempo / Lugar / Modo</span>
             </div>
           </div>
         </div>
 
         <div class="exercise-actions-bar">
-          <button type="button" class="btn-tool btn-hint" id="btnCompHint">
-            <span>💡 Pistas de sustitución</span>
-          </button>
+          <button type="button" class="btn-tool btn-hint" id="btnPredHint">💡 Pistas de complementos</button>
           <div class="right-actions">
-            <button type="button" class="btn-tool btn-reset" id="btnCompReset">Reiniciar</button>
-            <button type="button" class="btn-action-primary" id="btnCompCheck">Verificar Complementos</button>
-            <button type="button" class="btn-action-next" id="btnCompNext" style="display: none;">Siguiente Oración →</button>
+            <button type="button" class="btn-tool btn-reset" id="btnPredReset">Reiniciar</button>
+            <button type="button" class="btn-action-primary" id="btnPredCheck">Verificar Predicado</button>
+            <button type="button" class="btn-action-next" id="btnPredNext" style="display: none;">Siguiente Oración →</button>
           </div>
         </div>
 
-        <div class="feedback-card" id="compFeedbackCard" style="display: none;">
+        <div class="feedback-card" id="predFeedbackCard" style="display: none;">
           <div class="feedback-header">
-            <span class="feedback-badge" id="compFeedbackBadge">¡CORRECTO!</span>
-            <h4 class="feedback-title" id="compFeedbackTitle">Complementos Identificados</h4>
+            <span class="feedback-badge" id="predFeedbackBadge">¡CORRECTO!</span>
+            <h4 class="feedback-title" id="predFeedbackTitle">Predicado Identificado</h4>
           </div>
-          <p class="feedback-message" id="compFeedbackMessage"></p>
-          <div class="feedback-explanation-box" id="compExplanationBox"></div>
+          <p class="feedback-message" id="predFeedbackMessage"></p>
         </div>
 
       </div>
     </section>
 
     <!-- ================================================================= -->
-    <!-- MÓDULO 04: NIVEL 4 — LABORATORIO DE PRONOMBRES ÁTONOS             -->
+    <!-- MÓDULO 04: PRONOMBRES & REGLA FONÉTICA DE "SE"                   -->
     <!-- ================================================================= -->
-    <section class="tab-content" id="tab-pronombres" data-label="04. Laboratorio de Pronombres" role="tabpanel" aria-labelledby="btn-tab-pronombres">
+    <section class="tab-content" id="tab-pronombres" data-label="04. Pronombres & Regla de SE" role="tabpanel">
       
       <div class="section-intro-card">
-        <div class="intro-tag">MÓDULO 04 · TRANSFORMACIÓN SINTÁCTICA</div>
-        <h2>Nivel 4: Laboratorio de Pronombres y la Regla de «SE»</h2>
+        <div class="intro-tag">MÓDULO 04 · DCD LL.4.4.8 · TRANSFORMACIÓN PRONOMINAL</div>
+        <h2>Laboratorio de Pronombres Átonos y la Regla de «SE»</h2>
         <p>
-          Aprende a sustituir el <strong>CD</strong> (*lo/la/los/las*) y el <strong>CI</strong> (*le/les*) transformando la oración completa en tiempo real. Aplica obligatoriamente la regla de <strong>SE</strong> cuando ambos pronombres se combinan.
+          Transforma la oración sustituyendo el <strong>CD</strong> (*lo/la/los/las*) y el <strong>CI</strong> (*le/les*). Aplica la regla eufónica de <strong>SE</strong> cuando ambos pronombres se combinan.
         </p>
 
         <div class="exercise-nav-bar">
           <div class="level-tabs-pills">
-            <span class="pill-active-level">NIVEL 4 · Sustitución y Eufonía (Oraciones 15 a 20)</span>
+            <span class="pill-active-level">Sustitución y Eufonía (Oraciones 13 a 18)</span>
           </div>
           <div class="exercise-stepper">
             <span class="step-indicator" id="pronomProgressText">Ejercicio 1 de 6</span>
@@ -560,15 +439,11 @@
         </div>
       </div>
 
-      <!-- WORKSPACE DE PRONOMBRES -->
       <div class="exercise-workspace" id="pronomWorkspace">
         
-        <!-- MODELO VISUAL DE LA ORACIÓN ORIGINAL -->
         <div class="pronom-breakdown-card">
           <span class="pronom-card-label">ORACIÓN ORIGINAL Y SUS COMPONENTES:</span>
-          <div class="breakdown-sentence-display" id="pronomOriginalDisplay">
-            <!-- Segmentos inyectados por JS -->
-          </div>
+          <div class="breakdown-sentence-display" id="pronomOriginalDisplay"></div>
 
           <div class="component-chips-row">
             <div class="comp-chip chip-cd-info">
@@ -584,7 +459,6 @@
           </div>
         </div>
 
-        <!-- SELECTOR DE TIPO DE TRANSFORMACIÓN -->
         <div class="transformation-control-card">
           <h4>Selecciona el tipo de transformación que vas a realizar:</h4>
           <div class="transform-mode-selector" role="radiogroup">
@@ -602,7 +476,6 @@
             </button>
           </div>
 
-          <!-- ÁREA DE ESCRITURA Y ASISTENTE -->
           <div class="pronom-input-area">
             <label for="inputTransformedSentence" id="pronomInputLabel">
               Escribe la oración completa reemplazando solo el Complemento Directo (CD):
@@ -623,7 +496,7 @@
           </div>
 
           <div class="exercise-actions-bar">
-            <button type="button" class="btn-tool btn-hint" id="btnPronomHint">💡 Ver Pista de Transformación</button>
+            <button type="button" class="btn-tool btn-hint" id="btnPronomHint">💡 Ver Pista</button>
             <div class="right-actions">
               <button type="button" class="btn-tool btn-reset" id="btnPronomClear">Borrar</button>
               <button type="button" class="btn-action-primary" id="btnPronomCheck">Validar Oración</button>
@@ -631,14 +504,12 @@
             </div>
           </div>
 
-          <!-- RETROALIMENTACIÓN DE PRONOMBRES -->
           <div class="feedback-card" id="pronomFeedbackCard" style="display: none;">
             <div class="feedback-header">
               <span class="feedback-badge" id="pronomFeedbackBadge">¡CORRECTO!</span>
               <h4 class="feedback-title" id="pronomFeedbackTitle">Transformación Exitosa</h4>
             </div>
             <p class="feedback-message" id="pronomFeedbackMessage"></p>
-            <div class="feedback-explanation-box" id="pronomExplanationBox"></div>
           </div>
         </div>
 
@@ -646,24 +517,394 @@
     </section>
 
     <!-- ================================================================= -->
-    <!-- MÓDULO 05: ANALIZADOR SINTÁCTICO LIBRE Y RESULTADOS               -->
+    <!-- MÓDULO 05: EL PUENTE DE VOZ ACTIVA ↔ PASIVA (BGU)                 -->
     <!-- ================================================================= -->
-    <section class="tab-content" id="tab-resultados" data-label="05. Analizador y Resultados" role="tabpanel" aria-labelledby="btn-tab-resultados">
+    <section class="tab-content" id="tab-pasiva" data-label="05. Voz Activa ↔ Pasiva" role="tabpanel">
       
       <div class="section-intro-card">
-        <div class="intro-tag">MÓDULO 05 · BALANCE DE LOGROS & LABORATORIO LIBRE</div>
-        <h2>Resultados Globales y Analizador de Oraciones Libres</h2>
+        <div class="intro-tag">MÓDULO 05 · BACHILLERATO (1RO A 3RO BGU) · DCD LL.5.4.1</div>
+        <h2>El Puente Interactivo de Voz Activa a Pasiva Perifrástica</h2>
         <p>
-          Revisa el balance de tus aciertos en los cuatro niveles formativos, tu calificación estandarizada sobre 10 y utiliza el <strong>Analizador Libre</strong> para aplicar el algoritmo de las 4 pruebas sintácticas a cualquier oración que desees.
+          En los textos académicos y periodísticos, la <strong>voz pasiva</strong> permite focalizar la atención en el resultado de la acción (Sujeto Paciente). Observa y construye cómo los argumentos intercambian sus papeles sintácticos:
+        </p>
+
+        <div class="exercise-nav-bar">
+          <div class="level-tabs-pills">
+            <span class="pill-active-level">Voz Pasiva Perifrástica & Complemento Agente (Oraciones 19 a 24)</span>
+          </div>
+          <div class="exercise-stepper">
+            <span class="step-indicator" id="pasivaProgressText">Ejercicio 1 de 6</span>
+            <span class="score-pill" id="pasivaScoreText">Aciertos: 0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exercise-workspace" id="pasivaWorkspace">
+        
+        <!-- CARRIL SUPERIOR: ACTIVA -->
+        <div class="voice-bridge-track active-track">
+          <span class="track-label">ORACIÓN EN VOZ ACTIVA:</span>
+          <div class="voice-elements-row">
+            <div class="voice-slot slot-sujeto-agente">
+              <span class="slot-tag">SUJETO AGENTE</span>
+              <strong id="pasivaAgenteText">El científico</strong>
+            </div>
+            <div class="voice-slot slot-verbo-activo">
+              <span class="slot-tag">VERBO TRANSITIVO</span>
+              <strong id="pasivaVerboActivoText">descubrió</strong>
+            </div>
+            <div class="voice-slot slot-cd-activo">
+              <span class="slot-tag">COMP. DIRECTO (CD)</span>
+              <strong id="pasivaCdActivoText">la vacuna</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- FLECHAS CRUZADAS DEL PUENTE -->
+        <div class="bridge-crossover-diagram">
+          <div class="crossover-arrow left-to-right">
+            <span>El CD pasa a Sujeto Paciente ↙</span>
+          </div>
+          <div class="crossover-arrow right-to-left">
+            <span>↘ El Sujeto pasa a C. Agente con «por»</span>
+          </div>
+        </div>
+
+        <!-- CARRIL INFERIOR: PASIVA (CONSTRUCCIÓN INTERACTIVA) -->
+        <div class="voice-bridge-track passive-track">
+          <span class="track-label">CONSTRUYE LA ORACIÓN EN VOZ PASIVA:</span>
+          
+          <div class="voice-builder-grid">
+            <!-- 1. Sujeto Paciente -->
+            <div class="builder-slot">
+              <label>1. Sujeto Paciente (antiguo CD):</label>
+              <input type="text" id="inputSujetoPaciente" class="custom-input" placeholder="Ej: La vacuna">
+            </div>
+
+            <!-- 2. Verbo Pasivo Perifrástico (Ser + Participio) -->
+            <div class="builder-slot">
+              <label>2. Verbo Pasivo (Auxiliar + Participio):</label>
+              <input type="text" id="inputVerboPasivo" class="custom-input" placeholder="Ej: fue descubierta">
+            </div>
+
+            <!-- 3. Complemento Agente (con por) -->
+            <div class="builder-slot">
+              <label>3. Complemento Agente (con «por»):</label>
+              <input type="text" id="inputCompAgente" class="custom-input" placeholder="Ej: por el científico">
+            </div>
+          </div>
+
+          <div class="preview-assembled-sentence">
+            <span>Oración pasiva ensamblada:</span>
+            <em id="assembledPassivePreview">«La vacuna fue descubierta por el científico.»</em>
+          </div>
+        </div>
+
+        <div class="exercise-actions-bar">
+          <button type="button" class="btn-tool btn-hint" id="btnPasivaHint">💡 Pista de concordancia pasiva</button>
+          <div class="right-actions">
+            <button type="button" class="btn-tool btn-reset" id="btnPasivaReset">Reiniciar</button>
+            <button type="button" class="btn-action-primary" id="btnPasivaCheck">Verificar Voz Pasiva</button>
+            <button type="button" class="btn-action-next" id="btnPasivaNext" style="display: none;">Siguiente Oración →</button>
+          </div>
+        </div>
+
+        <div class="feedback-card" id="pasivaFeedbackCard" style="display: none;">
+          <div class="feedback-header">
+            <span class="feedback-badge" id="pasivaFeedbackBadge">¡CORRECTO!</span>
+            <h4 class="feedback-title" id="pasivaFeedbackTitle">Transformación a Pasiva Impecable</h4>
+          </div>
+          <p class="feedback-message" id="pasivaFeedbackMessage"></p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- MÓDULO 06: PASIVA REFLEJA CON "SE" VS. IMPERSONALIDAD (BGU)      -->
+    <!-- ================================================================= -->
+    <section class="tab-content" id="tab-refleja" data-label="06. Pasiva Refleja vs. Impersonal" role="tabpanel">
+      
+      <div class="section-intro-card">
+        <div class="intro-tag">MÓDULO 06 · BACHILLERATO BGU · VALORES DE «SE»</div>
+        <h2>Pasiva Refleja con «SE» vs. Oraciones Impersonales</h2>
+        <p>
+          Uno de los errores más graves en redacción académica es confundir la <strong>Pasiva Refleja</strong> (donde sí hay Sujeto Paciente y el verbo DEBE concordar en plural: <em>«Se venden departamentos»</em>) con la <strong>Impersonal sintáctica</strong> (donde no hay sujeto y el verbo siempre está en singular: <em>«Se vive bien aquí»</em>).
+        </p>
+
+        <div class="exercise-nav-bar">
+          <div class="level-tabs-pills">
+            <span class="pill-active-level">Diferenciación de «SE» (Oraciones 25 a 30)</span>
+          </div>
+          <div class="exercise-stepper">
+            <span class="step-indicator" id="reflejaProgressText">Ejercicio 1 de 6</span>
+            <span class="score-pill" id="reflejaScoreText">Aciertos: 0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exercise-workspace" id="reflejaWorkspace">
+        
+        <div class="sentence-hero-card">
+          <div class="sentence-meta-row">
+            <span class="badge-level badge-purple">BACHILLERATO BGU</span>
+            <span class="badge-theme" id="reflejaThemeBadge">TEMA: COMUNICACIÓN</span>
+            <span class="badge-task">Determina la estructura con «SE»</span>
+          </div>
+          <div class="sentence-quote" id="reflejaSentenceQuote">
+            «Se transmitieron los mensajes oficiales por televisión.»
+          </div>
+          <p class="interaction-hint">
+            💡 <strong>Prueba científica:</strong> Si puedes pasar el sustantivo a singular y el verbo cambia (*«Se transmitió el mensaje»*), ¡es Sujeto Paciente y por tanto es <strong>Pasiva Refleja</strong>!
+          </p>
+        </div>
+
+        <div class="refleja-decision-card">
+          <h4>Selecciona la clasificación sintáctica correcta:</h4>
+          
+          <div class="decision-options-grid">
+            <button type="button" class="btn-decision" data-decision="pasiva-refleja">
+              <span class="dec-tag">A</span>
+              <div class="dec-info">
+                <strong>Pasiva Refleja</strong>
+                <small>Tiene Sujeto Paciente que concuerda con el verbo (*«Los mensajes fueron transmitidos»*).</small>
+              </div>
+            </button>
+
+            <button type="button" class="btn-decision" data-decision="impersonal">
+              <span class="dec-tag">B</span>
+              <div class="dec-info">
+                <strong>Impersonal con «SE»</strong>
+                <small>No admite sujeto; el verbo queda fijo en 3.ª persona singular.</small>
+              </div>
+            </button>
+          </div>
+
+          <div class="subject-probe-area" id="reflejaProbeArea" style="display: none;">
+            <label>Indica cuál es el Sujeto Paciente de la oración:</label>
+            <input type="text" id="inputReflejaSubject" class="custom-input" placeholder="Escribe el sujeto paciente">
+          </div>
+
+          <div class="exercise-actions-bar">
+            <button type="button" class="btn-tool btn-hint" id="btnReflejaHint">💡 Pista de prueba</button>
+            <div class="right-actions">
+              <button type="button" class="btn-action-primary" id="btnReflejaCheck">Verificar Respuesta</button>
+              <button type="button" class="btn-action-next" id="btnReflejaNext" style="display: none;">Siguiente Oración →</button>
+            </div>
+          </div>
+
+          <div class="feedback-card" id="reflejaFeedbackCard" style="display: none;">
+            <div class="feedback-header">
+              <span class="feedback-badge" id="reflejaFeedbackBadge">¡CORRECTO!</span>
+              <h4 class="feedback-title" id="reflejaFeedbackTitle">Estructura Clarificada</h4>
+            </div>
+            <p class="feedback-message" id="reflejaFeedbackMessage"></p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- MÓDULO 07: EL BISTURÍ DE ORACIONES COMPUESTAS COORDINADAS (BGU)   -->
+    <!-- ================================================================= -->
+    <section class="tab-content" id="tab-compuestas" data-label="07. Bisturí de Compuestas" role="tabpanel">
+      
+      <div class="section-intro-card">
+        <div class="intro-tag">MÓDULO 07 · BACHILLERATO BGU · CE.LL.5.6</div>
+        <h2>El «Bisturí Sintáctico»: Segmentación de Oraciones Compuestas</h2>
+        <p>
+          En una oración compuesta hay <strong>dos o más verbos conjugados</strong> (dos proposiciones) unidas por signos de puntuación (yuxtapuestas) o por nexos lógicos (coordinadas). Usa el bisturí para cortar la oración y clasificar su nexo:
+        </p>
+
+        <div class="exercise-nav-bar">
+          <div class="level-tabs-pills">
+            <span class="pill-active-level">Oraciones Compuestas Coordinadas (Oraciones 31 a 36)</span>
+          </div>
+          <div class="exercise-stepper">
+            <span class="step-indicator" id="compuestaProgressText">Ejercicio 1 de 6</span>
+            <span class="score-pill" id="compuestaScoreText">Aciertos: 0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exercise-workspace" id="compuestaWorkspace">
+        
+        <div class="sentence-hero-card">
+          <div class="sentence-meta-row">
+            <span class="badge-level badge-purple">BACHILLERATO BGU</span>
+            <span class="badge-theme" id="compuestaThemeBadge">TEMA: ENSAYO</span>
+            <span class="badge-task">Corta las proposiciones y clasifica el nexo</span>
+          </div>
+          
+          <div class="bisturi-stage-card">
+            <span class="bisturi-hint">✂️ Toca entre dos palabras para colocar el corte [ // ] de proposiciones:</span>
+            
+            <div class="bisturi-interactive-sentence" id="bisturiSentenceContainer">
+              <!-- Palabras y puntos de corte interactivos inyectados por JS -->
+            </div>
+          </div>
+        </div>
+
+        <div class="compuesta-analysis-card">
+          <div class="propositions-preview-grid">
+            <div class="prop-box prop-1">
+              <span class="prop-tag">PROPOSICIÓN 1 (P1)</span>
+              <p id="prop1Preview">Selecciona el punto de corte arriba...</p>
+            </div>
+            <div class="nexo-box">
+              <span class="prop-tag tag-nexo">NEXO DETECTADO</span>
+              <strong id="nexoDetectedPreview">—</strong>
+            </div>
+            <div class="prop-box prop-2">
+              <span class="prop-tag">PROPOSICIÓN 2 (P2)</span>
+              <p id="prop2Preview">Selecciona el punto de corte arriba...</p>
+            </div>
+          </div>
+
+          <div class="nexo-classifier-section">
+            <h4>Clasifica la relación lógica del nexo coordinante:</h4>
+            <div class="nexo-types-grid">
+              <button type="button" class="btn-nexo-type" data-nexo="copulativa">
+                <strong>Copulativa</strong>
+                <small>Suma o adición (y, e, ni)</small>
+              </button>
+              <button type="button" class="btn-nexo-type" data-nexo="adversativa">
+                <strong>Adversativa</strong>
+                <small>Oposición o contraste (pero, sin embargo, sino)</small>
+              </button>
+              <button type="button" class="btn-nexo-type" data-nexo="disyuntiva">
+                <strong>Disyuntiva</strong>
+                <small>Elección o exclusión (o, u)</small>
+              </button>
+              <button type="button" class="btn-nexo-type" data-nexo="consecutiva">
+                <strong>Consecutiva / Ilativa</strong>
+                <small>Consecuencia lógica (por tanto, luego, así que)</small>
+              </button>
+            </div>
+          </div>
+
+          <div class="exercise-actions-bar">
+            <button type="button" class="btn-tool btn-hint" id="btnCompuestaHint">💡 Pista de nexo</button>
+            <div class="right-actions">
+              <button type="button" class="btn-tool btn-reset" id="btnCompuestaReset">Reiniciar</button>
+              <button type="button" class="btn-action-primary" id="btnCompuestaCheck">Verificar Análisis</button>
+              <button type="button" class="btn-action-next" id="btnCompuestaNext" style="display: none;">Siguiente Oración →</button>
+            </div>
+          </div>
+
+          <div class="feedback-card" id="compuestaFeedbackCard" style="display: none;">
+            <div class="feedback-header">
+              <span class="feedback-badge" id="compuestaFeedbackBadge">¡CORRECTO!</span>
+              <h4 class="feedback-title" id="compuestaFeedbackTitle">Segmentación Impecable</h4>
+            </div>
+            <p class="feedback-message" id="compuestaFeedbackMessage"></p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- MÓDULO 08: PROPOSICIONES SUBORDINADAS (BGU)                      -->
+    <!-- ================================================================= -->
+    <section class="tab-content" id="tab-subordinadas" data-label="08. Proposiciones Subordinadas" role="tabpanel">
+      
+      <div class="section-intro-card">
+        <div class="intro-tag">MÓDULO 08 · BACHILLERATO BGU · SINTAXIS SUPERIOR</div>
+        <h2>Iniciación a las Proposiciones Subordinadas</h2>
+        <p>
+          Una proposición subordinada depende jerárquicamente de una oración principal y cumple una función interna (Sustantiva o Adjetiva). Aplica la prueba del comodín: <strong>sustituye por «ESO» o por un adjetivo</strong>:
+        </p>
+
+        <div class="exercise-nav-bar">
+          <div class="level-tabs-pills">
+            <span class="pill-active-level">Subordinadas Sustantivas y Adjetivas (Oraciones 37 a 42)</span>
+          </div>
+          <div class="exercise-stepper">
+            <span class="step-indicator" id="subordProgressText">Ejercicio 1 de 6</span>
+            <span class="score-pill" id="subordScoreText">Aciertos: 0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exercise-workspace" id="subordWorkspace">
+        
+        <div class="sentence-hero-card">
+          <div class="sentence-meta-row">
+            <span class="badge-level badge-purple">3RO BGU / PREUNIVERSITARIO</span>
+            <span class="badge-theme" id="subordThemeBadge">TEMA: INVESTIGACIÓN</span>
+            <span class="badge-task">Identifica la proposición subordinada</span>
+          </div>
+          <div class="sentence-quote" id="subordSentenceQuote">
+            «El docente anunció que publicará los resultados mañana.»
+          </div>
+          <p class="interaction-hint">
+            💡 <strong>Prueba del comodín:</strong> «El docente anunció [ESO]» → al poder sustituirse por «ESO», cumple la función de Complemento Directo (Subordinada Sustantiva).
+          </p>
+        </div>
+
+        <div class="subord-test-card">
+          <h4>Selecciona el tipo de proposición subordinada:</h4>
+          <div class="subord-buttons-row">
+            <button type="button" class="btn-subord-opt" data-subord="sustantiva">
+              <strong>Subordinada Sustantiva</strong>
+              <small>Equivale a un sustantivo o pronombre neutro («ESO»). Cumple función de CD, Sujeto o Término.</small>
+            </button>
+            <button type="button" class="btn-subord-opt" data-subord="adjetiva">
+              <strong>Subordinada Adjetiva (de Relativo)</strong>
+              <small>Modifica a un sustantivo antecedente mediante que, quien, cuyo. Equivale a un adjetivo.</small>
+            </button>
+          </div>
+
+          <div class="function-choice-box" id="subordFunctionBox" style="display: none;">
+            <label>¿Qué función sintáctica cumple dentro de la oración principal?</label>
+            <div class="func-pills">
+              <button type="button" class="btn-func" data-func="cd">Complemento Directo (CD)</button>
+              <button type="button" class="btn-func" data-func="sujeto">Sujeto</button>
+              <button type="button" class="btn-func" data-func="adyacente">Modificador / Adyacente del nombre</button>
+            </div>
+          </div>
+
+          <div class="exercise-actions-bar">
+            <button type="button" class="btn-tool btn-hint" id="btnSubordHint">💡 Pista de prueba</button>
+            <div class="right-actions">
+              <button type="button" class="btn-action-primary" id="btnSubordCheck">Verificar Subordinada</button>
+              <button type="button" class="btn-action-next" id="btnSubordNext" style="display: none;">Siguiente Oración →</button>
+            </div>
+          </div>
+
+          <div class="feedback-card" id="subordFeedbackCard" style="display: none;">
+            <div class="feedback-header">
+              <span class="feedback-badge" id="subordFeedbackBadge">¡CORRECTO!</span>
+              <h4 class="feedback-title" id="subordFeedbackTitle">Subordinación Identificada</h4>
+            </div>
+            <p class="feedback-message" id="subordFeedbackMessage"></p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- MÓDULO 09: ANALIZADOR UNIVERSAL & EVALUACIÓN                      -->
+    <!-- ================================================================= -->
+    <section class="tab-content" id="tab-resultados" data-label="09. Analizador & Calificación" role="tabpanel">
+      
+      <div class="section-intro-card">
+        <div class="intro-tag">MÓDULO 09 · BALANCE DE LOGROS CURRICULARES & LABORATORIO LIBRE</div>
+        <h2>Resultados Curriculares y Analizador Universal</h2>
+        <p>
+          Consulta tu balance de aciertos y calificación estandarizada sobre 10 según la ruta cursada (<strong>10mo EGB</strong> o <strong>Bachillerato BGU</strong>), y utiliza el <strong>Analizador Universal</strong> para desglosar tanto oraciones simples como compuestas.
         </p>
       </div>
 
       <div class="results-and-analyzer-layout">
         
-        <!-- COLUMNA IZQUIERDA: TARJETA DE CALIFICACIÓN Y LOGROS -->
+        <!-- COLUMNA IZQUIERDA: TARJETA DE CALIFICACIÓN -->
         <div class="score-summary-column">
           <div class="score-card-main">
-            <span class="score-card-badge">BALANCE DE RENDIMIENTO</span>
+            <span class="score-card-badge" id="activeRouteBadge">CALIFICACIÓN BÁSICA SUPERIOR (10MO EGB)</span>
             <h3 class="score-card-title">Calificación Global</h3>
             
             <div class="big-score-circle">
@@ -672,32 +913,20 @@
             </div>
             
             <p class="score-subtitle" id="globalScoreSubtitle">
-              Comienza los ejercicios en los módulos anteriores para acumular tu puntuación.
+              Comienza los ejercicios en tu ruta para acumular tu puntuación.
             </p>
 
-            <div class="level-breakdown-list">
-              <div class="breakdown-item">
-                <span>Nivel 1 & 2 (Sujeto y Núcleos):</span>
-                <strong id="scoreLevel12">0 / 9</strong>
-              </div>
-              <div class="breakdown-item">
-                <span>Nivel 3 (Complementos CD / CI):</span>
-                <strong id="scoreLevel3">0 / 5</strong>
-              </div>
-              <div class="breakdown-item">
-                <span>Nivel 4 (Pronombres y SE):</span>
-                <strong id="scoreLevel4">0 / 6</strong>
-              </div>
+            <div class="level-breakdown-list" id="curriculumBreakdownList">
+              <!-- Desglose inyectado dinámicamente por JS según la ruta activa -->
             </div>
 
-            <!-- ESTADO DE ENVÍO A GOOGLE SHEETS -->
             <div class="sheets-sync-card">
               <div class="sync-header">
                 <span class="sync-icon">📊</span>
                 <strong>Registro de Calificaciones:</strong>
               </div>
               <p class="sync-status" id="sheetsStatusMessage">
-                Sesión local activa. Si te identificaste con tu nombre y curso, tus resultados se registrarán automáticamente al culminar las oraciones.
+                Sesión activa. Tus resultados se sincronizarán con la planilla del docente.
               </p>
               <button type="button" class="btn-sync-now" id="btnSyncSheets">
                 Enviar resultados ahora a Google Sheets
@@ -706,58 +935,57 @@
 
             <div class="reset-practice-row">
               <button type="button" class="btn-clear-session" id="btnResetAllPractice">
-                Reiniciar toda la práctica desde cero
+                Reiniciar práctica de la ruta actual
               </button>
             </div>
           </div>
         </div>
 
-        <!-- COLUMNA DERECHA: ANALIZADOR LIBRE DE ORACIONES -->
+        <!-- COLUMNA DERECHA: ANALIZADOR SINTÁCTICO UNIVERSAL -->
         <div class="free-analyzer-column">
           <div class="analyzer-card">
             <div class="analyzer-header">
-              <span class="analyzer-tag">LABORATORIO PRÁCTICO</span>
-              <h3>Analizador Sintáctico Guiado</h3>
-              <p>Escribe tu propia oración o elige un ejemplo sugerido para desglosarla paso a paso con el algoritmo de las 4 pruebas.</p>
+              <span class="analyzer-tag">LABORATORIO UNIVERSAL</span>
+              <h3>Analizador Sintáctico Guiado (Simples y Compuestas)</h3>
+              <p>Escribe tu propia oración simple o compuesta para que el motor aplique las pruebas de concordancia, voz y proposiciones.</p>
             </div>
 
             <div class="analyzer-form">
               <div class="form-group">
                 <label for="customSentenceInput">Escribe o selecciona una oración para analizar:</label>
                 <div class="analyzer-input-row">
-                  <input type="text" id="customSentenceInput" class="custom-input" placeholder="Ej: La profesora envió un correo a los padres de familia.">
+                  <input type="text" id="customSentenceInput" class="custom-input" placeholder="Ej: El jurado evaluó los proyectos, pero el comité aplazó el veredicto.">
                   <button type="button" class="btn-action-primary" id="btnAnalyzeCustom">Analizar Oración</button>
                 </div>
               </div>
 
               <div class="sample-sentences-pills">
                 <span class="sample-label">Ejemplos para probar:</span>
-                <button type="button" class="sample-pill" data-sample="El científico descubrió una cura para la enfermedad.">El científico descubrió una cura para la enfermedad.</button>
-                <button type="button" class="sample-pill" data-sample="Los estudiantes entregaron el proyecto al comité evaluador.">Los estudiantes entregaron el proyecto al comité evaluador.</button>
-                <button type="button" class="sample-pill" data-sample="A los turistas les fascinaron las islas Galápagos.">A los turistas les fascinaron las islas Galápagos.</button>
+                <button type="button" class="sample-pill" data-sample="Los estudiantes responsables de décimo ganaron el concurso ayer.">Oración Simple (MD, NS, MI, CC)</button>
+                <button type="button" class="sample-pill" data-sample="La vacuna fue descubierta por el científico en el laboratorio.">Voz Pasiva Perifrástica</button>
+                <button type="button" class="sample-pill" data-sample="El científico analizó las pruebas, pero el jurado dudó del testimonio.">Oración Compuesta Coordinada</button>
               </div>
             </div>
 
-            <!-- RESULTADO DEL ANÁLISIS GUIADO -->
             <div class="analyzer-output-card" id="analyzerOutput" style="display: none;">
               <h4 id="analyzerSentenceTitle">«Oración»</h4>
               
               <div class="steps-breakdown-box">
                 <div class="analysis-step-item">
-                  <span class="step-label-tag tag-verb">PASO 1 · VERBO (NP)</span>
-                  <p id="analysisStepVerb">Identificando el verbo conjugado...</p>
+                  <span class="step-label-tag tag-type">PASO 1 · TIPOLOGÍA ORACIONAL</span>
+                  <p id="analysisStepType">Evaluando número de verbos...</p>
                 </div>
                 <div class="analysis-step-item">
-                  <span class="step-label-tag tag-concord">PASO 2 · CONCORDANCIA (SUJETO)</span>
-                  <p id="analysisStepSujeto">Aplicando prueba de pluralización...</p>
+                  <span class="step-label-tag tag-verb">PASO 2 · NÚCLEOS VERBALES</span>
+                  <p id="analysisStepVerb">Identificando verbos rectores...</p>
                 </div>
                 <div class="analysis-step-item">
-                  <span class="step-label-tag tag-cd">PASO 3 · COMPLEMENTO DIRECTO (CD)</span>
-                  <p id="analysisStepCd">Probando sustitución por lo/la/los/las...</p>
+                  <span class="step-label-tag tag-concord">PASO 3 · SUJETO Y CONCORDANCIA / PACIENTE</span>
+                  <p id="analysisStepSujeto">Aplicando prueba de concordancia...</p>
                 </div>
                 <div class="analysis-step-item">
-                  <span class="step-label-tag tag-ci">PASO 4 · COMPLEMENTO INDIRECTO (CI)</span>
-                  <p id="analysisStepCi">Probando sustitución por le/les y regla de SE...</p>
+                  <span class="step-label-tag tag-complements">PASO 4 · ARGUMENTOS Y CIRCUNSTANCIALES</span>
+                  <p id="analysisStepComplements">Revisando CD, CI, CC y C.Agente...</p>
                 </div>
               </div>
             </div>
@@ -770,7 +998,7 @@
 
   </main>
 
-  <!-- MODAL DE IDENTIFICACIÓN DE ESTUDIANTE (OPCIONAL PARA REGISTRO) -->
+  <!-- MODAL DE IDENTIFICACIÓN -->
   <div class="modal-overlay hidden" id="studentModal" onclick="if(event.target === this) closeStudentModal()">
     <div class="modal-dialog">
       <div class="modal-header">
@@ -779,7 +1007,7 @@
       </div>
       <div class="modal-body">
         <p class="modal-desc">
-          Si tu profesor utiliza Google Sheets para el seguimiento del curso, ingresa tus datos para que tus calificaciones se sincronicen automáticamente:
+          Ingresa tus datos para registrar tu calificación en la planilla oficial de Lengua y Literatura:
         </p>
         <div class="form-group">
           <label for="studentInputName">Nombre:</label>
@@ -790,8 +1018,8 @@
           <input type="text" id="studentInputLastName" class="custom-input" placeholder="Ej: Pérez">
         </div>
         <div class="form-group">
-          <label for="studentInputCourse">Curso / Paralelo:</label>
-          <input type="text" id="studentInputCourse" class="custom-input" placeholder="Ej: 10mo EGB 'A'">
+          <label for="studentInputCourse">Curso y Paralelo:</label>
+          <input type="text" id="studentInputCourse" class="custom-input" placeholder="Ej: 10mo 'A' o 2do BGU 'B'">
         </div>
       </div>
       <div class="modal-footer">
@@ -801,10 +1029,8 @@
     </div>
   </div>
 
-  <!-- NOTIFICACIÓN TOAST -->
   <div class="app-toast" id="appToast" aria-live="polite"></div>
 
-  <!-- SCRIPTS -->
   <script src="app.js"></script>
   <script src="../course-shell/course-shell.js"></script>
 </body>

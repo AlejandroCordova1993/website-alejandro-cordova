@@ -1,247 +1,207 @@
 /**
- * SINTAXIS FLOW — LABORATORIO PEDAGÓGICO DE ANÁLISIS SINTÁCTICO
+ * SINTAXIS FLOW — LABORATORIO GRAMATICAL PROGRESIVO
  * Autor: Msc. Alejandro Córdova
- * Versión: 2.0.0 (Modular & Responsive)
+ * Currículo Nacional del Ecuador (10mo EGB y Bachillerato BGU)
+ * Versión 3.0.0
  */
 
 // ============================================================================
-// 1. BANCO DE ORACIONES PEDAGÓGICAS (20 ORACIONES)
+// 1. BANCO DE DATOS CURRICULAR POR MÓDULOS
 // ============================================================================
-const ORACIONES = [
-  // NIVEL 1: Sujeto y Predicado (4 oraciones)
+
+// 1.1 CONCORDANCIA EXPERIMENTAL (MÓDULO 01)
+const CONCORDANCE_EXAMPLES = [
   {
-    nivel: 1,
-    numero: 1,
-    tema: "Tecnología",
-    oracion: "La inteligencia artificial transforma el mundo rápidamente.",
-    palabras: ["La", "inteligencia", "artificial", "transforma", "el", "mundo", "rápidamente"],
-    sujeto: ["La", "inteligencia", "artificial"],
-    predicado: ["transforma", "el", "mundo", "rápidamente"],
-    ns: ["inteligencia"],
-    np: ["transforma"],
-    cd: ["el", "mundo"],
-    ci: [],
-    pista: "Aplica la prueba de concordancia: si cambias 'transforma' por 'transforman', ¿qué bloque debe cambiar obligatoriamente?",
-    explicacion: "«La inteligencia artificial» concuerda en singular con «transforma». Si pluralizamos el verbo («transforman»), decimos «Las inteligencias artificiales transforman». Por tanto, es el Sujeto.",
-    tipo: "analisis"
+    original: ["La", "inteligencia", "artificial", "transforma", "el", "mundo."],
+    verbIndex: 3,
+    singularVerb: "transforma",
+    pluralVerb: "transforman",
+    subjectWords: ["La", "inteligencia", "artificial"],
+    explanation: "Al cambiar el verbo a «transforman», suena discordante «La inteligencia artificial». Debe decirse «Las inteligencias artificiales transforman». Esto prueba científicamente que es el Sujeto."
   },
   {
-    nivel: 1,
-    numero: 2,
-    tema: "Ambiente",
-    oracion: "Los océanos piden ayuda a gritos.",
-    palabras: ["Los", "océanos", "piden", "ayuda", "a", "gritos"],
-    sujeto: ["Los", "océanos"],
-    predicado: ["piden", "ayuda", "a", "gritos"],
-    ns: ["océanos"],
-    np: ["piden"],
-    cd: ["ayuda"],
-    ci: [],
-    pista: "¿Quiénes concuerdan en número plural con el verbo 'piden'? Observa qué pasa si pasas el verbo a singular 'pide'.",
-    explicacion: "Al cambiar el verbo a singular («pide»), debe cambiar «El océano». Por concordancia gramatical, «Los océanos» es el Sujeto y «piden ayuda a gritos» es el Predicado.",
-    tipo: "analisis"
+    original: ["Los", "océanos", "piden", "ayuda", "a", "gritos."],
+    verbIndex: 2,
+    singularVerb: "pide",
+    pluralVerb: "piden",
+    subjectWords: ["Los", "océanos"],
+    explanation: "Si forzamos el verbo a singular («pide»), «Los océanos» debe cambiar a «El océano». La concordancia revela el Sujeto sin preguntas engañosas."
   },
   {
-    nivel: 1,
-    numero: 3,
-    tema: "Vial",
+    original: ["A", "los", "estudiantes", "les", "fascina", "la", "robótica."],
+    verbIndex: 4,
+    singularVerb: "fascina",
+    pluralVerb: "fascinan",
+    subjectWords: ["la", "robótica"],
+    explanation: "¡Cuidado con la trampa de «¿quién?»! Si preguntas «¿a quién?», dirías los estudiantes. Pero si cambias el verbo a «fascinan», la frase «A los estudiantes» NO cambia: cambia «las robóticas / los robots». Por tanto, el Sujeto es «la robótica»."
+  },
+  {
+    original: ["El", "teléfono", "de", "mis", "hermanos", "sonó", "fuertemente."],
+    verbIndex: 5,
+    singularVerb: "sonó",
+    pluralVerb: "sonaron",
+    subjectWords: ["El", "teléfono", "de", "mis", "hermanos"],
+    explanation: "Aunque «mis hermanos» esté en plural (es Modificador Indirecto), el núcleo rector es «teléfono» (singular). Al pluralizar («sonaron»), decimos «Los teléfonos de mis hermanos sonaron»."
+  }
+];
+
+// 1.2 ETAPA 1: BÁSICA SUPERIOR (10MO EGB)
+// Módulo 02: Modificadores del Sujeto (Oraciones 1 a 6)
+const SUJETO_EXERCISES = [
+  {
+    id: 1,
+    tema: "Sociedad",
     oracion: "Los conductores responsables respetan el paso cebra.",
-    palabras: ["Los", "conductores", "responsables", "respetan", "el", "paso", "cebra"],
-    sujeto: ["Los", "conductores", "responsables"],
-    predicado: ["respetan", "el", "paso", "cebra"],
+    palabrasSujeto: ["Los", "conductores", "responsables"],
+    md: ["Los", "responsables"],
     ns: ["conductores"],
-    np: ["respetan"],
-    cd: ["el", "paso", "cebra"],
-    ci: [],
-    pista: "Busca el verbo conjugado ('respetan') y encuentra todo el grupo nominal que concuerda en 3.ª persona plural.",
-    explicacion: "«Los conductores responsables» es un sintagma nominal en plural que concuerda con «respetan». Si decimos «El conductor responsable», el verbo pasa a «respeta».",
-    tipo: "analisis"
+    mi: [],
+    apos: [],
+    pista: "«Los» es determinante artículo (MD) y «responsables» es adjetivo calificativo directo (MD). El sustantivo es el NS.",
+    explicacion: "MD: «Los», «responsables» | NS: «conductores» (sustantivo rector sin preposición)."
   },
   {
-    nivel: 1,
-    numero: 4,
-    tema: "Cultura",
-    oracion: "Ese streamer famoso rompió un récord mundial ayer.",
-    palabras: ["Ese", "streamer", "famoso", "rompió", "un", "récord", "mundial", "ayer"],
-    sujeto: ["Ese", "streamer", "famoso"],
-    predicado: ["rompió", "un", "récord", "mundial", "ayer"],
-    ns: ["streamer"],
-    np: ["rompió"],
-    cd: ["un", "récord", "mundial"],
-    ci: [],
-    pista: "Cambia el verbo 'rompió' a plural 'rompieron'. ¿Qué palabras deben cambiar para que la oración tenga sentido?",
-    explicacion: "«Esos streamers famosos rompieron...». Al cambiar el verbo, «Ese streamer famoso» debe cambiar obligatoriamente: es el Sujeto de la oración.",
-    tipo: "analisis"
-  },
-
-  // NIVEL 2: Núcleo del Sujeto y Núcleo del Predicado (5 oraciones)
-  {
-    nivel: 2,
-    numero: 5,
-    tema: "Ambiente",
-    oracion: "El plástico contamina nuestros ríos diariamente.",
-    palabras: ["El", "plástico", "contamina", "nuestros", "ríos", "diariamente"],
-    sujeto: ["El", "plástico"],
-    predicado: ["contamina", "nuestros", "ríos", "diariamente"],
-    ns: ["plástico"],
-    np: ["contamina"],
-    cd: ["nuestros", "ríos"],
-    ci: [],
-    pista: "El NS es el sustantivo rector del sujeto (sin el artículo). El NP es el verbo conjugado principal.",
-    explicacion: "Sujeto: «El plástico» → el sustantivo núcleo es «plástico» (NS). Predicado: «contamina nuestros ríos diariamente» → el verbo núcleo es «contamina» (NP).",
-    tipo: "analisis"
-  },
-  {
-    nivel: 2,
-    numero: 6,
-    tema: "Vial",
-    oracion: "El casco salva vidas en la carretera.",
-    palabras: ["El", "casco", "salva", "vidas", "en", "la", "carretera"],
-    sujeto: ["El", "casco"],
-    predicado: ["salva", "vidas", "en", "la", "carretera"],
-    ns: ["casco"],
-    np: ["salva"],
-    cd: ["vidas"],
-    ci: [],
-    pista: "Identifica el sustantivo esencial del sujeto y la forma verbal conjugada que rige la predicación.",
-    explicacion: "NS = «casco» (sustantivo que concuerda en singular con el verbo). NP = «salva» (verbo conjugado en 3.ª persona singular).",
-    tipo: "analisis"
-  },
-  {
-    nivel: 2,
-    numero: 7,
+    id: 2,
     tema: "Tecnología",
-    oracion: "Mis amigos crearon un grupo de WhatsApp nuevo.",
-    palabras: ["Mis", "amigos", "crearon", "un", "grupo", "de", "WhatsApp", "nuevo"],
-    sujeto: ["Mis", "amigos"],
-    predicado: ["crearon", "un", "grupo", "de", "WhatsApp", "nuevo"],
-    ns: ["amigos"],
-    np: ["crearon"],
-    cd: ["un", "grupo", "de", "WhatsApp", "nuevo"],
-    ci: [],
-    pista: "En el sujeto 'Mis amigos', quita el determinante posesivo. En el predicado, ubica la acción realizada.",
-    explicacion: "NS = «amigos» (sustantivo rector). NP = «crearon» (verbo en pretérito perfecto simple, 3.ª persona plural).",
-    tipo: "analisis"
+    oracion: "El grupo de WhatsApp envió un aviso importante.",
+    palabrasSujeto: ["El", "grupo", "de", "WhatsApp"],
+    md: ["El"],
+    ns: ["grupo"],
+    mi: ["de", "WhatsApp"],
+    apos: [],
+    pista: "Todo sintagma introducido por preposición («de WhatsApp») que complementa a un sustantivo es Modificador Indirecto (MI).",
+    explicacion: "MD: «El» | NS: «grupo» | MI: «de WhatsApp» (conector preposicional 'de')."
   },
   {
-    nivel: 2,
-    numero: 8,
-    tema: "Ética",
-    oracion: "La empatía mejora la convivencia escolar.",
-    palabras: ["La", "empatía", "mejora", "la", "convivencia", "escolar"],
-    sujeto: ["La", "empatía"],
-    predicado: ["mejora", "la", "convivencia", "escolar"],
-    ns: ["empatía"],
-    np: ["mejora"],
-    cd: ["la", "convivencia", "escolar"],
-    ci: [],
-    pista: "Sujeto: 'La empatía'. ¿Cuál es el sustantivo núcleo? Predicado: 'mejora...'. ¿Cuál es el verbo?",
-    explicacion: "NS = «empatía» (sustantivo abstracto rector). NP = «mejora» (verbo rector del predicado).",
-    tipo: "analisis"
+    id: 3,
+    tema: "Historia",
+    oracion: "Quito , capital del Ecuador , conserva su centro histórico.",
+    palabrasSujeto: ["Quito", ",", "capital", "del", "Ecuador", ","],
+    md: [],
+    ns: ["Quito"],
+    mi: [],
+    apos: [",", "capital", "del", "Ecuador", ","],
+    pista: "La aclaración entre comas que equivale al sustantivo propio es una Aposición Explicativa.",
+    explicacion: "NS: «Quito» | Aposición: «, capital del Ecuador ,» (aclaración nominal)."
   },
   {
-    nivel: 2,
-    numero: 9,
+    id: 4,
+    tema: "Ciencia",
+    oracion: "Ese famoso científico de la universidad descubrió la cura.",
+    palabrasSujeto: ["Ese", "famoso", "científico", "de", "la", "universidad"],
+    md: ["Ese", "famoso"],
+    ns: ["científico"],
+    mi: ["de", "la", "universidad"],
+    apos: [],
+    pista: "Identifica el demostrativo y el adjetivo (MD), el sustantivo (NS) y la frase con preposición (MI).",
+    explicacion: "MD: «Ese», «famoso» | NS: «científico» | MI: «de la universidad»."
+  },
+  {
+    id: 5,
     tema: "Cultura",
-    oracion: "Los músicos ensayan nuevas canciones diariamente.",
-    palabras: ["Los", "músicos", "ensayan", "nuevas", "canciones", "diariamente"],
-    sujeto: ["Los", "músicos"],
-    predicado: ["ensayan", "nuevas", "canciones", "diariamente"],
-    ns: ["músicos"],
-    np: ["ensayan"],
-    cd: ["nuevas", "canciones"],
-    ci: [],
-    pista: "El núcleo del sujeto es el sustantivo sin artículo; el núcleo del predicado es el verbo en presente.",
-    explicacion: "NS = «músicos» (sustantivo en plural). NP = «ensayan» (verbo conjugado que rige la acción).",
-    tipo: "analisis"
+    oracion: "La música tradicional de los Andes emociona a todos.",
+    palabrasSujeto: ["La", "música", "tradicional", "de", "los", "Andes"],
+    md: ["La", "tradicional"],
+    ns: ["música"],
+    mi: ["de", "los", "Andes"],
+    apos: [],
+    pista: "«La» y «tradicional» acompañan a «música». «de los Andes» va introducido por preposición.",
+    explicacion: "MD: «La», «tradicional» | NS: «música» | MI: «de los Andes»."
   },
-
-  // NIVEL 3: Núcleo + CD + CI (5 oraciones)
   {
-    nivel: 3,
-    numero: 10,
+    id: 6,
+    tema: "Educación",
+    oracion: "Mi amigo Carlos obtuvo una beca académica.",
+    palabrasSujeto: ["Mi", "amigo", "Carlos"],
+    md: ["Mi"],
+    ns: ["amigo"],
+    mi: [],
+    apos: ["Carlos"],
+    pista: "«Carlos» es un sustantivo propio que especifica a «amigo»: es una Aposición Especificativa.",
+    explicacion: "MD: «Mi» (posesivo) | NS: «amigo» | Aposición: «Carlos»."
+  }
+];
+
+// Módulo 03: Predicado Completo (Oraciones 7 a 12)
+const PREDICADO_EXERCISES = [
+  {
+    id: 7,
     tema: "Vial",
-    oracion: "El semáforo da prioridad a los peatones.",
-    palabras: ["El", "semáforo", "da", "prioridad", "a", "los", "peatones"],
-    sujeto: ["El", "semáforo"],
-    predicado: ["da", "prioridad", "a", "los", "peatones"],
-    ns: ["semáforo"],
+    oracion: "El semáforo da prioridad a los peatones en la avenida diariamente.",
+    palabrasPred: ["da", "prioridad", "a", "los", "peatones", "en", "la", "avenida", "diariamente"],
     np: ["da"],
     cd: ["prioridad"],
     ci: ["a", "los", "peatones"],
-    pista: "Aplica la pronominalización: «El semáforo LA da» (CD = prioridad). «El semáforo LES da prioridad» (CI = a los peatones).",
-    explicacion: "NS: «semáforo» | NP: «da» | CD: «prioridad» (se sustituye por 'la') | CI: «a los peatones» (destinatario, se sustituye por 'les').",
-    tipo: "analisis"
+    cc: ["en", "la", "avenida", "diariamente"],
+    pista: "¿Qué da? (CD: prioridad). ¿A quién? (CI: a los peatones). ¿Dónde y cuándo? (CC Lugar y CC Tiempo).",
+    explicacion: "NP: «da» | CD: «prioridad» | CI: «a los peatones» | CC: «en la avenida» (Lugar), «diariamente» (Tiempo)."
   },
   {
-    nivel: 3,
-    numero: 11,
+    id: 8,
     tema: "Tecnología",
-    oracion: "El algoritmo sugiere videos a los usuarios.",
-    palabras: ["El", "algoritmo", "sugiere", "videos", "a", "los", "usuarios"],
-    sujeto: ["El", "algoritmo"],
-    predicado: ["sugiere", "videos", "a", "los", "usuarios"],
-    ns: ["algoritmo"],
+    oracion: "El algoritmo sugiere videos a los usuarios en la aplicación.",
+    palabrasPred: ["sugiere", "videos", "a", "los", "usuarios", "en", "la", "aplicación"],
     np: ["sugiere"],
     cd: ["videos"],
     ci: ["a", "los", "usuarios"],
-    pista: "Prueba CD: «El algoritmo LOS sugiere». Prueba CI: «El algoritmo LES sugiere videos».",
-    explicacion: "NS: «algoritmo» | NP: «sugiere» | CD: «videos» (admite sustitución por 'los') | CI: «a los usuarios» (destinatario, sustituible por 'les').",
-    tipo: "analisis"
+    cc: ["en", "la", "aplicación"],
+    pista: "CD: videos (los sugiere). CI: a los usuarios (les sugiere). CC: en la aplicación (Lugar).",
+    explicacion: "NP: «sugiere» | CD: «videos» | CI: «a los usuarios» | CC: «en la aplicación»."
   },
   {
-    nivel: 3,
-    numero: 12,
-    tema: "Ambiente",
-    oracion: "El gobierno prometió leyes nuevas a los ciudadanos.",
-    palabras: ["El", "gobierno", "prometió", "leyes", "nuevas", "a", "los", "ciudadanos"],
-    sujeto: ["El", "gobierno"],
-    predicado: ["prometió", "leyes", "nuevas", "a", "los", "ciudadanos"],
-    ns: ["gobierno"],
-    np: ["prometió"],
-    cd: ["leyes", "nuevas"],
-    ci: ["a", "los", "ciudadanos"],
-    pista: "Atención al CD: abarca el sustantivo con su adjetivo ('leyes nuevas' → 'las'). El CI es el grupo con 'a'.",
-    explicacion: "NS: «gobierno» | NP: «prometió» | CD: «leyes nuevas» («El gobierno LAS prometió») | CI: «a los ciudadanos» («El gobierno LES prometió leyes nuevas»).",
-    tipo: "analisis"
+    id: 9,
+    tema: "Educación",
+    oracion: "El profesor entregó las calificaciones a los padres ayer.",
+    palabrasPred: ["entregó", "las", "calificaciones", "a", "los", "padres", "ayer"],
+    np: ["entregó"],
+    cd: ["las", "calificaciones"],
+    ci: ["a", "los", "padres"],
+    cc: ["ayer"],
+    pista: "«las calificaciones» es CD ('las entregó'). «a los padres» es CI ('les entregó'). «ayer» es CC Tiempo.",
+    explicacion: "NP: «entregó» | CD: «las calificaciones» | CI: «a los padres» | CC: «ayer» (Tiempo)."
   },
   {
-    nivel: 3,
-    numero: 13,
+    id: 10,
     tema: "Ética",
-    oracion: "Nosotros mostramos respeto a nuestros mayores.",
-    palabras: ["Nosotros", "mostramos", "respeto", "a", "nuestros", "mayores"],
-    sujeto: ["Nosotros"],
-    predicado: ["mostramos", "respeto", "a", "nuestros", "mayores"],
-    ns: ["Nosotros"],
+    oracion: "Nosotros mostramos respeto a nuestros mayores en todo momento.",
+    palabrasPred: ["mostramos", "respeto", "a", "nuestros", "mayores", "en", "todo", "momento"],
     np: ["mostramos"],
     cd: ["respeto"],
     ci: ["a", "nuestros", "mayores"],
-    pista: "El sujeto es un pronombre personal (NS). ¿Qué mostramos? (CD: respeto → 'lo mostramos'). ¿A quiénes? (CI).",
-    explicacion: "NS: «Nosotros» (pronombre tónico) | NP: «mostramos» | CD: «respeto» (sustituible por 'lo') | CI: «a nuestros mayores» (sustituible por 'les').",
-    tipo: "analisis"
+    cc: ["en", "todo", "momento"],
+    pista: "CD: respeto. CI: a nuestros mayores. CC: en todo momento (Tiempo/Modo).",
+    explicacion: "NP: «mostramos» | CD: «respeto» | CI: «a nuestros mayores» | CC: «en todo momento»."
   },
   {
-    nivel: 3,
-    numero: 14,
+    id: 11,
+    tema: "Ambiente",
+    oracion: "El gobierno prometió leyes nuevas a los ciudadanos en la asamblea.",
+    palabrasPred: ["prometió", "leyes", "nuevas", "a", "los", "ciudadanos", "en", "la", "asamblea"],
+    np: ["prometió"],
+    cd: ["leyes", "nuevas"],
+    ci: ["a", "los", "ciudadanos"],
+    cc: ["en", "la", "asamblea"],
+    pista: "CD: 'leyes nuevas' (las prometió). CI: 'a los ciudadanos' (les prometió). CC: 'en la asamblea' (Lugar).",
+    explicacion: "NP: «prometió» | CD: «leyes nuevas» | CI: «a los ciudadanos» | CC: «en la asamblea» (Lugar)."
+  },
+  {
+    id: 12,
     tema: "Deporte",
-    oracion: "El entrenador explicó la jugada a los deportistas.",
-    palabras: ["El", "entrenador", "explicó", "la", "jugada", "a", "los", "deportistas"],
-    sujeto: ["El", "entrenador"],
-    predicado: ["explicó", "la", "jugada", "a", "los", "deportistas"],
-    ns: ["entrenador"],
-    np: ["explicó"],
-    cd: ["la", "jugada"],
-    ci: ["a", "los", "deportistas"],
-    pista: "CD: 'la jugada' (femenino singular → 'la'). CI: 'a los deportistas' (plural → 'les').",
-    explicacion: "NS: «entrenador» | NP: «explicó» | CD: «la jugada» («El entrenador LA explicó...») | CI: «a los deportistas» («El entrenador LES explicó...»).",
-    tipo: "analisis"
-  },
+    oracion: "El atleta dedicó la medalla a su familia con profunda emoción.",
+    palabrasPred: ["dedicó", "la", "medalla", "a", "su", "familia", "con", "profunda", "emoción"],
+    np: ["dedicó"],
+    cd: ["la", "medalla"],
+    ci: ["a", "su", "familia"],
+    cc: ["con", "profunda", "emoción"],
+    pista: "«con profunda emoción» responde a ¿cómo? (CC de Modo).",
+    explicacion: "NP: «dedicó» | CD: «la medalla» | CI: «a su familia» | CC: «con profunda emoción» (Modo)."
+  }
+];
 
-  // NIVEL 4: Sustitución de CD y CI por pronombres (6 oraciones)
+// Módulo 04: Pronombres y Regla de SE (Oraciones 13 a 18)
+const PRONOM_EXERCISES = [
   {
-    nivel: 4,
-    numero: 15,
+    id: 13,
     tema: "Tecnología",
     oracion: "Juan envió los archivos al profesor.",
     sujeto: "Juan",
@@ -252,15 +212,10 @@ const ORACIONES = [
     ciPronombre: "le",
     oracionCD: "Juan los envió al profesor.",
     oracionCI: "Juan le envió los archivos.",
-    oracionAmbos: "Juan se los envió.",
-    pistaCD: "Sustituye 'los archivos' por 'los'. Recuerda quitar la frase 'los archivos' de la oración.",
-    pistaCI: "Sustituye 'al profesor' por 'le'. Colócalo antes del verbo: 'Juan le envió los archivos.'",
-    pistaBoth: "¡Regla de SE! En vez de 'le los envió', el CI 'le' se transforma en 'se': 'Juan se los envió.'",
-    tipo: "pronombre"
+    oracionAmbos: "Juan se los envió."
   },
   {
-    nivel: 4,
-    numero: 16,
+    id: 14,
     tema: "Vial",
     oracion: "El policía puso una multa al conductor.",
     sujeto: "El policía",
@@ -271,15 +226,10 @@ const ORACIONES = [
     ciPronombre: "le",
     oracionCD: "El policía la puso al conductor.",
     oracionCI: "El policía le puso una multa.",
-    oracionAmbos: "El policía se la puso.",
-    pistaCD: "CD: 'una multa' es femenino singular → usa 'la' antes de 'puso'.",
-    pistaCI: "CI: 'al conductor' es singular → usa 'le' antes de 'puso'.",
-    pistaBoth: "Ambos pronombres juntos: 'le' se convierte en 'se' para evitar cacofonía: 'El policía se la puso.'",
-    tipo: "pronombre"
+    oracionAmbos: "El policía se la puso."
   },
   {
-    nivel: 4,
-    numero: 17,
+    id: 15,
     tema: "Cultura",
     oracion: "Marvel presentó el tráiler a la audiencia.",
     sujeto: "Marvel",
@@ -290,15 +240,10 @@ const ORACIONES = [
     ciPronombre: "le",
     oracionCD: "Marvel lo presentó a la audiencia.",
     oracionCI: "Marvel le presentó el tráiler.",
-    oracionAmbos: "Marvel se lo presentó.",
-    pistaCD: "CD: 'el tráiler' (masculino singular → 'lo').",
-    pistaCI: "CI: 'a la audiencia' (destinatario singular → 'le').",
-    pistaBoth: "Transformación combinada: 'le lo' es cacofónico en español → 'Marvel se lo presentó.'",
-    tipo: "pronombre"
+    oracionAmbos: "Marvel se lo presentó."
   },
   {
-    nivel: 4,
-    numero: 18,
+    id: 16,
     tema: "Educación",
     oracion: "La profesora enseñó la lección a los estudiantes.",
     sujeto: "La profesora",
@@ -309,15 +254,10 @@ const ORACIONES = [
     ciPronombre: "les",
     oracionCD: "La profesora la enseñó a los estudiantes.",
     oracionCI: "La profesora les enseñó la lección.",
-    oracionAmbos: "La profesora se la enseñó.",
-    pistaCD: "CD: 'la lección' → pronombre 'la'.",
-    pistaCI: "CI: 'a los estudiantes' (plural) → pronombre 'les'.",
-    pistaBoth: "'les la' se transforma obligatoriamente en 'se la' → 'La profesora se la enseñó.'",
-    tipo: "pronombre"
+    oracionAmbos: "La profesora se la enseñó."
   },
   {
-    nivel: 4,
-    numero: 19,
+    id: 17,
     tema: "Ambiente",
     oracion: "Los voluntarios entregaron suministros al refugio.",
     sujeto: "Los voluntarios",
@@ -328,15 +268,10 @@ const ORACIONES = [
     ciPronombre: "le",
     oracionCD: "Los voluntarios los entregaron al refugio.",
     oracionCI: "Los voluntarios le entregaron suministros.",
-    oracionAmbos: "Los voluntarios se los entregaron.",
-    pistaCD: "CD: 'suministros' (masculino plural) → 'los'.",
-    pistaCI: "CI: 'al refugio' → 'le'.",
-    pistaBoth: "Combina ambos: 'le' pasa a 'se' → 'Los voluntarios se los entregaron.'",
-    tipo: "pronombre"
+    oracionAmbos: "Los voluntarios se los entregaron."
   },
   {
-    nivel: 4,
-    numero: 20,
+    id: 18,
     tema: "Ética",
     oracion: "La escuela otorgó una beca al estudiante.",
     sujeto: "La escuela",
@@ -347,45 +282,306 @@ const ORACIONES = [
     ciPronombre: "le",
     oracionCD: "La escuela la otorgó al estudiante.",
     oracionCI: "La escuela le otorgó una beca.",
-    oracionAmbos: "La escuela se la otorgó.",
-    pistaCD: "CD: 'una beca' → 'la'.",
-    pistaCI: "CI: 'al estudiante' → 'le'.",
-    pistaBoth: "Combina ambos: 'le la' se transforma en 'se la' → 'La escuela se la otorgó.'",
-    tipo: "pronombre"
+    oracionAmbos: "La escuela se la otorgó."
+  }
+];
+
+// 1.3 ETAPA 2: BACHILLERATO GENERAL UNIFICADO (BGU)
+// Módulo 05: Puente de Voz Activa ↔ Pasiva (Oraciones 19 a 24)
+const PASIVA_EXERCISES = [
+  {
+    id: 19,
+    activa: "El científico descubrió la vacuna.",
+    agente: "El científico",
+    verboActivo: "descubrió",
+    cd: "la vacuna",
+    sujetoPaciente: "La vacuna",
+    verboPasivo: "fue descubierta",
+    compAgente: "por el científico",
+    pasivaCompleta: "La vacuna fue descubierta por el científico."
+  },
+  {
+    id: 20,
+    activa: "Los estudiantes redactaron el ensayo.",
+    agente: "Los estudiantes",
+    verboActivo: "redactaron",
+    cd: "el ensayo",
+    sujetoPaciente: "El ensayo",
+    verboPasivo: "fue redactado",
+    compAgente: "por los estudiantes",
+    pasivaCompleta: "El ensayo fue redactado por los estudiantes."
+  },
+  {
+    id: 21,
+    activa: "El comité aprobó las reformas.",
+    agente: "El comité",
+    verboActivo: "aprobó",
+    cd: "las reformas",
+    sujetoPaciente: "Las reformas",
+    verboPasivo: "fueron aprobadas",
+    compAgente: "por el comité",
+    pasivaCompleta: "Las reformas fueron aprobadas por el comité."
+  },
+  {
+    id: 22,
+    activa: "La academia publicó los resultados.",
+    agente: "La academia",
+    verboActivo: "publicó",
+    cd: "los resultados",
+    sujetoPaciente: "Los resultados",
+    verboPasivo: "fueron publicados",
+    compAgente: "por la academia",
+    pasivaCompleta: "Los resultados fueron publicados por la academia."
+  },
+  {
+    id: 23,
+    activa: "Los rescatistas salvaron a las víctimas.",
+    agente: "Los rescatistas",
+    verboActivo: "salvaron",
+    cd: "a las víctimas",
+    sujetoPaciente: "Las víctimas",
+    verboPasivo: "fueron salvadas",
+    compAgente: "por los rescatistas",
+    pasivaCompleta: "Las víctimas fueron salvadas por los rescatistas."
+  },
+  {
+    id: 24,
+    activa: "El presidente firmó el decreto.",
+    agente: "El presidente",
+    verboActivo: "firmó",
+    cd: "el decreto",
+    sujetoPaciente: "El decreto",
+    verboPasivo: "fue firmado",
+    compAgente: "por el presidente",
+    pasivaCompleta: "El decreto fue firmado por el presidente."
+  }
+];
+
+// Módulo 06: Pasiva Refleja vs. Impersonal (Oraciones 25 a 30)
+const REFLEJA_EXERCISES = [
+  {
+    id: 25,
+    oracion: "Se transmitieron los mensajes oficiales por televisión.",
+    tipo: "pasiva-refleja",
+    sujetoPaciente: "los mensajes oficiales",
+    explicacion: "Es Pasiva Refleja porque «los mensajes oficiales» es Sujeto Paciente y concuerda en plural con el verbo («Se transmitieron»). Si pasamos a singular, el verbo cambia: «Se transmitió el mensaje»."
+  },
+  {
+    id: 26,
+    oracion: "Se vive bien en esta ciudad.",
+    tipo: "impersonal",
+    sujetoPaciente: "",
+    explicacion: "Es Impersonal con SE: no existe sujeto que realice o reciba la acción. El verbo queda congelado en 3.ª persona singular."
+  },
+  {
+    id: 27,
+    oracion: "Se cancelaron todos los vuelos por el clima.",
+    tipo: "pasiva-refleja",
+    sujetoPaciente: "todos los vuelos",
+    explicacion: "Pasiva Refleja: «todos los vuelos» concuerda con «se cancelaron» (equivale a «Todos los vuelos fueron cancelados»)."
+  },
+  {
+    id: 28,
+    oracion: "Se aplaudió a los médicos con entusiasmo.",
+    tipo: "impersonal",
+    sujetoPaciente: "",
+    explicacion: "Es Impersonal: la presencia de la preposición 'a' («a los médicos») impide que funcione como sujeto. Es un CD de persona con verbo impersonal."
+  },
+  {
+    id: 29,
+    oracion: "Se construyeron nuevos puentes en la provincia.",
+    tipo: "pasiva-refleja",
+    sujetoPaciente: "nuevos puentes",
+    explicacion: "Pasiva Refleja: «nuevos puentes» es el Sujeto Paciente que concuerda en plural con «construyeron»."
+  },
+  {
+    id: 30,
+    oracion: "Aquí se trabaja con honradez.",
+    tipo: "impersonal",
+    sujetoPaciente: "",
+    explicacion: "Impersonal con SE: no hay ningún sustantivo que concuerde con el verbo."
+  }
+];
+
+// Módulo 07: Bisturí de Oraciones Compuestas (Oraciones 31 a 36)
+const COMPUESTA_EXERCISES = [
+  {
+    id: 31,
+    tokens: ["El", "científico", "analizó", "las", "pruebas", ",", "pero", "el", "jurado", "dudó", "del", "testimonio."],
+    cutAfterToken: "pruebas",
+    prop1: "El científico analizó las pruebas",
+    nexo: "pero",
+    prop2: "el jurado dudó del testimonio.",
+    tipoNexo: "adversativa",
+    pista: "«pero» indica una objeción o contraste entre ambas proposiciones."
+  },
+  {
+    id: 32,
+    tokens: ["Los", "estudiantes", "investigaron", "el", "tema", "y", "el", "profesor", "evaluó", "el", "informe."],
+    cutAfterToken: "tema",
+    prop1: "Los estudiantes investigaron el tema",
+    nexo: "y",
+    prop2: "el profesor evaluó el informe.",
+    tipoNexo: "copulativa",
+    pista: "«y» suma o adiciona dos acciones simultáneas o sucesivas."
+  },
+  {
+    id: 33,
+    tokens: ["Aceptas", "las", "condiciones", "del", "contrato", "o", "cancelamos", "la", "negociación", "ahora."],
+    cutAfterToken: "contrato",
+    prop1: "Aceptas las condiciones del contrato",
+    nexo: "o",
+    prop2: "cancelamos la negociación ahora.",
+    tipoNexo: "disyuntiva",
+    pista: "«o» presenta dos opciones excluyentes."
+  },
+  {
+    id: 34,
+    tokens: ["El", "acusado", "confesó", "los", "hechos", ",", "por", "tanto", "el", "juez", "dictó", "sentencia."],
+    cutAfterToken: "hechos",
+    prop1: "El acusado confesó los hechos",
+    nexo: "por tanto",
+    prop2: "el juez dictó sentencia.",
+    tipoNexo: "consecutiva",
+    pista: "«por tanto» introduce una deducción o consecuencia lógica de la primera proposición."
+  },
+  {
+    id: 35,
+    tokens: ["No", "asistió", "a", "la", "conferencia", "ni", "presentó", "la", "justificación", "a", "tiempo."],
+    cutAfterToken: "conferencia",
+    prop1: "No asistió a la conferencia",
+    nexo: "ni",
+    prop2: "presentó la justificación a tiempo.",
+    tipoNexo: "copulativa",
+    pista: "«ni» suma proposiciones en sentido negativo."
+  },
+  {
+    id: 36,
+    tokens: ["El", "experimento", "fue", "complejo", ",", "sin", "embargo", "el", "equipo", "obtuvo", "el", "premio."],
+    cutAfterToken: "complejo",
+    prop1: "El experimento fue complejo",
+    nexo: "sin embargo",
+    prop2: "el equipo obtuvo el premio.",
+    tipoNexo: "adversativa",
+    pista: "«sin embargo» es una locución conjuntiva adversativa que opone dos ideas."
+  }
+];
+
+// Módulo 08: Subordinadas Sustantivas y Adjetivas (Oraciones 37 a 42)
+const SUBORD_EXERCISES = [
+  {
+    id: 37,
+    oracion: "El docente anunció que publicará los resultados mañana.",
+    tipo: "sustantiva",
+    subordinada: "que publicará los resultados mañana",
+    funcion: "cd",
+    pista: "Prueba del comodín: «El docente anunció [ESO]» → Función de CD."
+  },
+  {
+    id: 38,
+    oracion: "El libro que compré ayer explica la historia del Ecuador.",
+    tipo: "adjetiva",
+    subordinada: "que compré ayer",
+    funcion: "adyacente",
+    pista: "Modifica directamente al sustantivo antecedente «libro» («El libro comprado ayer...»)."
+  },
+  {
+    id: 39,
+    oracion: "Es necesario que estudies con disciplina.",
+    tipo: "sustantiva",
+    subordinada: "que estudies con disciplina",
+    funcion: "sujeto",
+    pista: "«[ESO] es necesario» → la proposición subordinada funciona como Sujeto de la oración."
+  },
+  {
+    id: 40,
+    oracion: "Los médicos que atendieron la emergencia recibieron un homenaje.",
+    tipo: "adjetiva",
+    subordinada: "que atendieron la emergencia",
+    funcion: "adyacente",
+    pista: "Proposición adjetiva de relativo introducida por «que» que complementa al antecedente «médicos»."
+  },
+  {
+    id: 41,
+    oracion: "Ella prometió que terminará el proyecto el viernes.",
+    tipo: "sustantiva",
+    subordinada: "que terminará el proyecto el viernes",
+    funcion: "cd",
+    pista: "«Ella prometió [ESO]» → cumple la función de Complemento Directo del verbo prometió."
+  },
+  {
+    id: 42,
+    oracion: "La propuesta que presentó el delegado fue aprobada unánimemente.",
+    tipo: "adjetiva",
+    subordinada: "que presentó el delegado",
+    funcion: "adyacente",
+    pista: "Complementa a la propuesta (antecedente). Equivale a un adjetivo calificativo."
   }
 ];
 
 const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzogh6a08u9ERlt_kTzUfAMUapNdmNiTNsj_rt3s3hfa_c1UcYOJ51q69QLXO3zjnE4nw/exec';
 
 // ============================================================================
-// 2. ESTADO GLOBAL DE LA APLICACIÓN
+// 2. ESTADO GLOBAL
 // ============================================================================
 const state = {
   student: null,
+  route: 'egb', // 'egb' | 'bgu' | 'eval'
   activeTab: 'tab-fundamentos',
-  
-  // Nivel 1 y 2
-  basico: {
-    filter: '1-2', // '1-2', '1', '2'
-    currentIndex: 0,
-    filteredList: [],
-    selectedChip: null, // Para modo tap-to-place
-    history: {} // { num: { correct: bool } }
+
+  // Módulo 01: Concordancia
+  concord: {
+    index: 0,
+    isPlural: false
   },
 
-  // Nivel 3
-  comp: {
-    currentIndex: 0,
-    list: [],
+  // Módulo 02: Sujeto
+  sujeto: {
+    index: 0,
     selectedChip: null,
     history: {}
   },
 
-  // Nivel 4
+  // Módulo 03: Predicado
+  predicado: {
+    index: 0,
+    selectedChip: null,
+    history: {}
+  },
+
+  // Módulo 04: Pronombres
   pronom: {
-    currentIndex: 0,
-    list: [],
-    mode: 'cd', // 'cd', 'ci', 'both'
+    index: 0,
+    mode: 'cd',
+    history: {}
+  },
+
+  // Módulo 05: Pasiva
+  pasiva: {
+    index: 0,
+    history: {}
+  },
+
+  // Módulo 06: Refleja
+  refleja: {
+    index: 0,
+    selectedDecision: null,
+    history: {}
+  },
+
+  // Módulo 07: Compuestas
+  compuesta: {
+    index: 0,
+    selectedCut: null,
+    selectedNexoType: null,
+    history: {}
+  },
+
+  // Módulo 08: Subordinadas
+  subord: {
+    index: 0,
+    selectedType: null,
+    selectedFunc: null,
     history: {}
   }
 };
@@ -396,17 +592,34 @@ const state = {
 document.addEventListener('DOMContentLoaded', () => {
   loadStudentSession();
   loadSavedProgress();
-  initNavigation();
+  initCurriculumRoutes();
   initStudentModal();
-  initBasicoModule();
-  initCompModule();
+
+  // Módulos
+  initConcordanceExperiment();
+  initSujetoModule();
+  initPredicadoModule();
   initPronomModule();
+  initPasivaModule();
+  initReflejaModule();
+  initCompuestaModule();
+  initSubordModule();
   initResultsAndAnalyzer();
-  updateGlobalScore();
+
+  // URL Query param ?nivel=bgu o ?nivel=egb
+  const params = new URLSearchParams(window.location.search);
+  const routeParam = params.get('nivel');
+  if (routeParam === 'bgu') {
+    setRoute('bgu');
+  } else {
+    setRoute('egb');
+  }
+
+  updateCurriculumScore();
 });
 
 // ============================================================================
-// 4. SESIÓN DE ESTUDIANTE Y LOCALSTORAGE
+// 4. SESIÓN DE ESTUDIANTE Y PERSISTENCIA
 // ============================================================================
 function loadStudentSession() {
   const saved = localStorage.getItem('sintaxisFlowStudent');
@@ -415,7 +628,7 @@ function loadStudentSession() {
       state.student = JSON.parse(saved);
       updateStudentHeader();
     } catch (e) {
-      console.error('Error parsing student session:', e);
+      console.error(e);
     }
   }
 }
@@ -424,7 +637,7 @@ function updateStudentHeader() {
   const display = document.getElementById('studentNameDisplay');
   if (!display) return;
   if (state.student && state.student.nombre) {
-    display.textContent = `${state.student.nombre} ${state.student.apellido || ''} (${state.student.curso || 'EGB'})`;
+    display.textContent = `${state.student.nombre} ${state.student.apellido || ''} (${state.student.curso || 'Lengua'})`;
   } else {
     display.textContent = 'Modo Práctica Libre';
   }
@@ -453,7 +666,7 @@ function initStudentModal() {
       const curso = document.getElementById('studentInputCourse').value.trim();
 
       if (!nombre) {
-        showToast('Por favor escribe al menos tu nombre.', 'error');
+        showToast('Escribe al menos tu nombre.', 'warning');
         return;
       }
 
@@ -461,7 +674,7 @@ function initStudentModal() {
       localStorage.setItem('sintaxisFlowStudent', JSON.stringify(state.student));
       updateStudentHeader();
       closeStudentModal();
-      showToast(`¡Bienvenido/a, ${nombre}!`, 'success');
+      showToast(`¡Identificación guardada: ${nombre}!`, 'success');
     });
   }
 }
@@ -472,637 +685,483 @@ window.closeStudentModal = function() {
 };
 
 function loadSavedProgress() {
-  const saved = localStorage.getItem('sintaxisFlowProgress');
+  const saved = localStorage.getItem('sintaxisFlowCurricularProgress');
   if (saved) {
     try {
-      const data = JSON.parse(saved);
-      if (data.basicoHistory) state.basico.history = data.basicoHistory;
-      if (data.compHistory) state.comp.history = data.compHistory;
-      if (data.pronomHistory) state.pronom.history = data.pronomHistory;
+      const d = JSON.parse(saved);
+      if (d.sujeto) state.sujeto.history = d.sujeto;
+      if (d.predicado) state.predicado.history = d.predicado;
+      if (d.pronom) state.pronom.history = d.pronom;
+      if (d.pasiva) state.pasiva.history = d.pasiva;
+      if (d.refleja) state.refleja.history = d.refleja;
+      if (d.compuesta) state.compuesta.history = d.compuesta;
+      if (d.subord) state.subord.history = d.subord;
     } catch (e) {
-      console.error('Error parsing progress:', e);
+      console.error(e);
     }
   }
 }
 
 function persistProgress() {
   const payload = {
-    basicoHistory: state.basico.history,
-    compHistory: state.comp.history,
-    pronomHistory: state.pronom.history,
+    sujeto: state.sujeto.history,
+    predicado: state.predicado.history,
+    pronom: state.pronom.history,
+    pasiva: state.pasiva.history,
+    refleja: state.refleja.history,
+    compuesta: state.compuesta.history,
+    subord: state.subord.history,
     timestamp: new Date().toISOString()
   };
-  localStorage.setItem('sintaxisFlowProgress', JSON.stringify(payload));
-  updateGlobalScore();
+  localStorage.setItem('sintaxisFlowCurricularProgress', JSON.stringify(payload));
+  updateCurriculumScore();
 }
 
 // ============================================================================
-// 5. NAVEGACIÓN ENTRE PESTAÑAS (MÓDULOS)
+// 5. SELECTOR DE RUTAS CURRICULARES (10MO EGB vs. BGU)
 // ============================================================================
-function initNavigation() {
-  const tabs = document.querySelectorAll('.nav-tab');
-  const sections = document.querySelectorAll('.tab-content');
+function initCurriculumRoutes() {
+  const btnEgb = document.getElementById('route-btn-egb');
+  const btnBgu = document.getElementById('route-btn-bgu');
+  const btnEval = document.getElementById('route-btn-eval');
 
-  function switchTab(tabId) {
-    state.activeTab = tabId;
+  if (btnEgb) btnEgb.addEventListener('click', () => setRoute('egb'));
+  if (btnBgu) btnBgu.addEventListener('click', () => setRoute('bgu'));
+  if (btnEval) btnEval.addEventListener('click', () => setRoute('eval'));
 
-    tabs.forEach(tab => {
-      const isActive = tab.getAttribute('data-tab') === tabId;
-      tab.classList.toggle('active', isActive);
-      tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
-    });
-
-    sections.forEach(sec => {
-      const isActive = sec.id === tabId;
-      sec.classList.toggle('active', isActive);
-    });
-
-    // Despachar evento para course-shell
-    document.dispatchEvent(new CustomEvent('tab-changed', {
-      detail: { tabId: tabId }
-    }));
-
-    // Desplazar suavemente a la cabecera si es necesario
-    const header = document.querySelector('.app-header');
-    if (header && window.scrollY > 150) {
-      header.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
-  tabs.forEach(tab => {
+  // Manejador de clics en las pestañas individuales
+  document.querySelectorAll('.nav-tab').forEach(tab => {
     tab.addEventListener('click', () => {
-      const target = tab.getAttribute('data-tab');
-      if (target) switchTab(target);
+      const tabId = tab.dataset.tab;
+      if (tabId) switchTab(tabId);
     });
   });
 
-  // Botones de salto pedagógico (CTA jumps)
+  // Botones de salto pedagógico
   document.querySelectorAll('[data-jump]').forEach(btn => {
     btn.addEventListener('click', () => {
-      const target = btn.getAttribute('data-jump');
+      const target = btn.dataset.jump;
       if (target) switchTab(target);
     });
   });
-
-  // Integración bidireccional con course-shell si se activan secciones
-  document.addEventListener('section-switched', (e) => {
-    if (e.detail && e.detail.sectionId) {
-      switchTab(e.detail.sectionId);
-    }
-  });
 }
 
-// ============================================================================
-// 6. MÓDULO 02: NIVEL 1 & 2 (SUJETO, PREDICADO Y NÚCLEOS)
-// ============================================================================
-function initBasicoModule() {
-  const filterButtons = document.querySelectorAll('.btn-filter-level');
-  
-  function applyFilter(filter) {
-    state.basico.filter = filter;
-    filterButtons.forEach(b => b.classList.toggle('active', b.getAttribute('data-level-filter') === filter));
+function setRoute(routeId) {
+  state.route = routeId;
 
-    if (filter === '1') {
-      state.basico.filteredList = ORACIONES.filter(o => o.nivel === 1);
-    } else if (filter === '2') {
-      state.basico.filteredList = ORACIONES.filter(o => o.nivel === 2);
-    } else {
-      state.basico.filteredList = ORACIONES.filter(o => o.nivel === 1 || o.nivel === 2);
-    }
-
-    state.basico.currentIndex = 0;
-    renderBasicoExercise();
-  }
-
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      applyFilter(btn.getAttribute('data-level-filter'));
-    });
+  // Actualizar botones de ruta
+  document.querySelectorAll('.btn-route').forEach(b => {
+    b.classList.toggle('active', b.dataset.route === routeId);
   });
 
-  // Inicializar lista
-  applyFilter('1-2');
+  const egbTabs = document.querySelectorAll('.egb-tab');
+  const bguTabs = document.querySelectorAll('.bgu-tab');
+  const evalTab = document.getElementById('btn-tab-resultados');
 
-  // Controles
-  const btnReturnAll = document.getElementById('btnBasicoReturnAll');
-  const btnReset = document.getElementById('btnBasicoReset');
-  const btnCheck = document.getElementById('btnBasicoCheck');
-  const btnNext = document.getElementById('btnBasicoNext');
-  const btnHint = document.getElementById('btnBasicoHint');
-
-  if (btnReturnAll) btnReturnAll.addEventListener('click', returnAllBasicoWords);
-  if (btnReset) btnReset.addEventListener('click', resetBasicoExercise);
-  if (btnCheck) btnCheck.addEventListener('click', checkBasicoAnswer);
-  if (btnNext) btnNext.addEventListener('click', nextBasicoExercise);
-  if (btnHint) btnHint.addEventListener('click', showBasicoHint);
-}
-
-function renderBasicoExercise() {
-  const currentList = state.basico.filteredList;
-  if (!currentList || currentList.length === 0) return;
-
-  const item = currentList[state.basico.currentIndex];
-  state.basico.selectedChip = null;
-
-  // Metadata
-  const levelBadge = document.getElementById('basicoLevelBadge');
-  const themeBadge = document.getElementById('basicoThemeBadge');
-  const taskBadge = document.getElementById('basicoTaskBadge');
-  const quote = document.getElementById('basicoSentenceQuote');
-  const progressText = document.getElementById('basicoProgressText');
-  const scoreText = document.getElementById('basicoScoreText');
-
-  if (levelBadge) {
-    levelBadge.textContent = `NIVEL ${item.nivel}`;
-    levelBadge.className = item.nivel === 1 ? 'badge-level' : 'badge-level badge-green';
-  }
-  if (themeBadge) themeBadge.textContent = `TEMA: ${item.tema.toUpperCase()}`;
-  if (taskBadge) {
-    taskBadge.textContent = item.nivel === 1 
-      ? 'Separa en Sujeto y Predicado' 
-      : 'Identifica Núcleo del Sujeto (NS) y Núcleo del Predicado (NP)';
-  }
-  if (quote) quote.textContent = `«${item.oracion}»`;
-  if (progressText) progressText.textContent = `Ejercicio ${state.basico.currentIndex + 1} de ${currentList.length}`;
-
-  // Calcular aciertos en este bloque
-  const totalCorrect = Object.keys(state.basico.history).filter(k => {
-    const num = parseInt(k, 10);
-    return num >= 1 && num <= 9 && state.basico.history[k].correct;
-  }).length;
-  if (scoreText) scoreText.textContent = `Aciertos: ${totalCorrect}`;
-
-  // Configurar Dropzones según Nivel 1 (Sujeto/Predicado) o Nivel 2 (NS/NP)
-  setupBasicoDropzones(item.nivel);
-
-  // Generar fichas de palabras en el pool
-  const pool = document.getElementById('basicoWordsPool');
-  if (pool) {
-    pool.innerHTML = '';
-    item.palabras.forEach((word, idx) => {
-      const chip = createWordChip(word, idx, 'basico');
-      pool.appendChild(chip);
-    });
-  }
-
-  // Ocultar feedback y botón siguiente
-  hideFeedback('basico');
-  const btnNext = document.getElementById('btnBasicoNext');
-  const btnCheck = document.getElementById('btnBasicoCheck');
-  if (btnNext) btnNext.style.display = 'none';
-  if (btnCheck) btnCheck.style.display = 'inline-block';
-}
-
-function setupBasicoDropzones(nivel) {
-  const grid = document.getElementById('basicoDropzonesGrid');
-  if (!grid) return;
-
-  if (nivel === 1) {
-    grid.innerHTML = `
-      <div class="dropzone-box dropzone-sujeto" data-zone="sujeto">
-        <div class="dropzone-header">
-          <span class="zone-tag">SUJETO</span>
-          <span class="zone-count" id="count-sujeto">0 palabras</span>
-        </div>
-        <div class="dropzone-content" id="zone-sujeto" data-zone="sujeto">
-          <span class="dropzone-placeholder">Arrastra aquí o toca la palabra y luego aquí</span>
-        </div>
-      </div>
-      <div class="dropzone-box dropzone-predicado" data-zone="predicado">
-        <div class="dropzone-header">
-          <span class="zone-tag">PREDICADO</span>
-          <span class="zone-count" id="count-predicado">0 palabras</span>
-        </div>
-        <div class="dropzone-content" id="zone-predicado" data-zone="predicado">
-          <span class="dropzone-placeholder">Arrastra aquí o toca la palabra y luego aquí</span>
-        </div>
-      </div>
-    `;
+  if (routeId === 'egb') {
+    egbTabs.forEach(t => t.style.display = 'inline-flex');
+    bguTabs.forEach(t => t.style.display = 'none');
+    switchTab('tab-fundamentos');
+  } else if (routeId === 'bgu') {
+    egbTabs.forEach(t => t.style.display = 'none');
+    bguTabs.forEach(t => t.style.display = 'inline-flex');
+    switchTab('tab-pasiva');
   } else {
-    grid.innerHTML = `
-      <div class="dropzone-box dropzone-ns" data-zone="ns">
-        <div class="dropzone-header">
-          <span class="zone-tag">NÚCLEO DEL SUJETO (NS)</span>
-          <span class="zone-count" id="count-ns">0</span>
-        </div>
-        <div class="dropzone-content" id="zone-ns" data-zone="ns">
-          <span class="dropzone-placeholder">Arrastra o toca el sustantivo rector</span>
-        </div>
-      </div>
-      <div class="dropzone-box dropzone-np" data-zone="np">
-        <div class="dropzone-header">
-          <span class="zone-tag">NÚCLEO DEL PREDICADO (NP)</span>
-          <span class="zone-count" id="count-np">0</span>
-        </div>
-        <div class="dropzone-content" id="zone-np" data-zone="np">
-          <span class="dropzone-placeholder">Arrastra o toca el verbo conjugado</span>
-        </div>
-      </div>
-    `;
+    // Eval
+    switchTab('tab-resultados');
   }
 
-  // Activar listeners de dropzones
-  grid.querySelectorAll('.dropzone-box').forEach(box => {
-    attachDropzoneEvents(box, 'basico');
-  });
+  updateCurriculumScore();
 }
 
-function createWordChip(word, index, moduleContext) {
-  const chip = document.createElement('div');
-  chip.className = 'word-chip';
-  chip.textContent = word;
-  chip.setAttribute('draggable', 'true');
-  chip.dataset.word = word;
-  chip.dataset.index = index;
-  chip.dataset.module = moduleContext;
+function switchTab(tabId) {
+  state.activeTab = tabId;
 
-  // Eventos de arrastre nativos (Desktop)
-  chip.addEventListener('dragstart', handleDragStart);
-  chip.addEventListener('dragend', handleDragEnd);
-
-  // Evento táctil / clic (Tap-to-place en Móviles o accesibilidad)
-  chip.addEventListener('click', (e) => {
-    e.stopPropagation();
-    handleChipClick(chip, moduleContext);
+  document.querySelectorAll('.nav-tab').forEach(tab => {
+    const isActive = tab.dataset.tab === tabId;
+    tab.classList.toggle('active', isActive);
+    tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
   });
 
-  return chip;
+  document.querySelectorAll('.tab-content').forEach(sec => {
+    const isActive = sec.id === tabId;
+    sec.classList.toggle('active', isActive);
+  });
+
+  // Notificar a course-shell
+  document.dispatchEvent(new CustomEvent('tab-changed', {
+    detail: { tabId: tabId }
+  }));
 }
 
-function handleChipClick(chip, moduleContext) {
-  const parentZone = chip.closest('.dropzone-content');
+// ============================================================================
+// 6. MÓDULO 01: EL INTERRUPTOR DE CONCORDANCIA
+// ============================================================================
+function initConcordanceExperiment() {
+  const btnToggle = document.getElementById('btnToggleVerbNumber');
+  const btnNext = document.getElementById('btnNextConcordExample');
 
-  // Si la ficha ya está en una dropzone, al hacer clic regresa al pool
-  if (parentZone) {
-    const poolId = moduleContext === 'basico' ? 'basicoWordsPool' : 'compWordsPool';
-    const pool = document.getElementById(poolId);
-    if (pool) {
-      chip.classList.remove('selected-chip');
-      pool.appendChild(chip);
-      updateDropzoneCount(parentZone);
-      checkPlaceholder(parentZone);
-      showToast(`«${chip.dataset.word}» devuelta al banco`, 'info');
+  if (btnToggle) btnToggle.addEventListener('click', toggleConcordVerb);
+  if (btnNext) btnNext.addEventListener('click', nextConcordExample);
+
+  renderConcordanceSentence();
+}
+
+function renderConcordanceSentence() {
+  const container = document.getElementById('concordanceSentenceDisplay');
+  const stateLabel = document.getElementById('toggleVerbState');
+  const feedback = document.getElementById('concordanceFeedback');
+  if (!container) return;
+
+  const item = CONCORDANCE_EXAMPLES[state.concord.index];
+  container.innerHTML = '';
+  state.concord.isPlural = false;
+  if (stateLabel) stateLabel.textContent = 'Cambiar a Plural ⇄';
+  if (feedback) feedback.innerHTML = '💡 Haz clic en el interruptor para cambiar el número del verbo.';
+
+  item.original.forEach((word, idx) => {
+    const span = document.createElement('span');
+    span.className = 'concord-word';
+    span.textContent = word;
+    span.dataset.word = word;
+    span.dataset.index = idx;
+
+    if (idx === item.verbIndex) {
+      span.classList.add('is-verb');
+      span.title = 'Núcleo del Predicado (Verbo conjugado)';
     }
+
+    span.addEventListener('click', () => handleConcordWordClick(span, idx));
+    container.appendChild(span);
+  });
+}
+
+function toggleConcordVerb() {
+  const item = CONCORDANCE_EXAMPLES[state.concord.index];
+  const container = document.getElementById('concordanceSentenceDisplay');
+  const stateLabel = document.getElementById('toggleVerbState');
+  const feedback = document.getElementById('concordanceFeedback');
+  if (!container) return;
+
+  state.concord.isPlural = !state.concord.isPlural;
+  const verbSpan = container.children[item.verbIndex];
+
+  if (state.concord.isPlural) {
+    verbSpan.textContent = item.pluralVerb;
+    if (stateLabel) stateLabel.textContent = 'Cambiar a Singular ⇄';
+    feedback.innerHTML = '⚠️ ¡El verbo cambió de número! La oración suena extraña. <strong>Haz clic en la palabra del Sujeto que ahora está en discordancia</strong>.';
+  } else {
+    verbSpan.textContent = item.singularVerb;
+    if (stateLabel) stateLabel.textContent = 'Cambiar a Plural ⇄';
+    feedback.innerHTML = '💡 Verbo en su estado original.';
+  }
+
+  // Quitar estados de error previos
+  container.querySelectorAll('.concord-word').forEach(w => w.classList.remove('is-broken'));
+}
+
+function handleConcordWordClick(span, idx) {
+  const item = CONCORDANCE_EXAMPLES[state.concord.index];
+  const feedback = document.getElementById('concordanceFeedback');
+
+  if (idx === item.verbIndex) {
+    showToast('Ese es el verbo que ya modificaste.', 'info');
     return;
   }
 
-  // Si está en el pool: marcar como seleccionada para modo Tap-to-Place
-  const allChips = document.querySelectorAll(`[data-module="${moduleContext}"].word-chip`);
-  allChips.forEach(c => c.classList.remove('selected-chip'));
+  const cleanWord = span.dataset.word.replace(/[.,;]/g, '');
+  const isSubject = item.subjectWords.some(w => cleanWord.toLowerCase().includes(w.toLowerCase()));
 
-  if (state[moduleContext].selectedChip === chip) {
-    state[moduleContext].selectedChip = null;
+  if (isSubject) {
+    span.classList.add('is-broken');
+    feedback.innerHTML = `✅ <strong>¡Correcto!</strong> «${span.textContent}» pertenece al <strong>Sujeto</strong>.<br>${item.explanation}`;
+    showToast('¡Has descubierto el Sujeto mediante concordancia!', 'success');
   } else {
-    chip.classList.add('selected-chip');
-    state[moduleContext].selectedChip = chip;
-    showToast(`Toca ahora la caja donde quieres colocar «${chip.dataset.word}»`, 'info');
+    feedback.innerHTML = `❌ «${span.textContent}» no concuerda obligatoriamente con el verbo. Prueba con el núcleo nominal.`;
   }
 }
 
-function attachDropzoneEvents(box, moduleContext) {
-  const content = box.querySelector('.dropzone-content');
-  if (!content) return;
-
-  // Drag over y leave
-  box.addEventListener('dragover', (e) => {
-    e.preventDefault();
-    box.classList.add('drag-over');
-  });
-
-  box.addEventListener('dragleave', () => {
-    box.classList.remove('drag-over');
-  });
-
-  // Drop
-  box.addEventListener('drop', (e) => {
-    e.preventDefault();
-    box.classList.remove('drag-over');
-
-    const word = e.dataTransfer.getData('text/plain');
-    const chipIdx = e.dataTransfer.getData('chip-index');
-    const chipModule = e.dataTransfer.getData('chip-module');
-
-    if (chipModule !== moduleContext) return;
-
-    const chip = document.querySelector(`[data-module="${moduleContext}"][data-index="${chipIdx}"]`);
-    if (chip) {
-      placeChipInZone(chip, content);
-    }
-  });
-
-  // Clic en la dropzone para modo Tap-to-Place
-  box.addEventListener('click', () => {
-    const selected = state[moduleContext].selectedChip;
-    if (selected) {
-      placeChipInZone(selected, content);
-      selected.classList.remove('selected-chip');
-      state[moduleContext].selectedChip = null;
-    }
-  });
-}
-
-function placeChipInZone(chip, dropzoneContent) {
-  // Quitar placeholder
-  const placeholder = dropzoneContent.querySelector('.dropzone-placeholder');
-  if (placeholder) placeholder.style.display = 'none';
-
-  dropzoneContent.appendChild(chip);
-  updateDropzoneCount(dropzoneContent);
-
-  // Si la dropzone anterior quedó vacía, restaurar placeholder
-  const oldZone = chip.parentElement;
-  if (oldZone && oldZone.classList.contains('dropzone-content')) {
-    checkPlaceholder(oldZone);
-    updateDropzoneCount(oldZone);
-  }
-}
-
-function checkPlaceholder(zone) {
-  const chips = zone.querySelectorAll('.word-chip');
-  const placeholder = zone.querySelector('.dropzone-placeholder');
-  if (placeholder) {
-    placeholder.style.display = chips.length === 0 ? 'block' : 'none';
-  }
-}
-
-function updateDropzoneCount(zone) {
-  const box = zone.closest('.dropzone-box');
-  if (!box) return;
-  const countEl = box.querySelector('.zone-count');
-  if (!countEl) return;
-  const count = zone.querySelectorAll('.word-chip').length;
-  countEl.textContent = `${count} ${count === 1 ? 'palabra' : 'palabras'}`;
-}
-
-function handleDragStart(e) {
-  this.classList.add('dragging');
-  e.dataTransfer.setData('text/plain', this.dataset.word);
-  e.dataTransfer.setData('chip-index', this.dataset.index);
-  e.dataTransfer.setData('chip-module', this.dataset.module);
-}
-
-function handleDragEnd() {
-  this.classList.remove('dragging');
-}
-
-function returnAllBasicoWords() {
-  const pool = document.getElementById('basicoWordsPool');
-  const chips = document.querySelectorAll('[data-module="basico"].word-chip');
-  chips.forEach(chip => {
-    chip.classList.remove('selected-chip');
-    pool.appendChild(chip);
-  });
-  document.querySelectorAll('#basicoDropzonesGrid .dropzone-content').forEach(zone => {
-    checkPlaceholder(zone);
-    updateDropzoneCount(zone);
-  });
-  state.basico.selectedChip = null;
-  showToast('Todas las palabras regresaron al banco', 'info');
-}
-
-function resetBasicoExercise() {
-  returnAllBasicoWords();
-  hideFeedback('basico');
-  const btnNext = document.getElementById('btnBasicoNext');
-  const btnCheck = document.getElementById('btnBasicoCheck');
-  if (btnNext) btnNext.style.display = 'none';
-  if (btnCheck) btnCheck.style.display = 'inline-block';
-}
-
-function showBasicoHint() {
-  const currentList = state.basico.filteredList;
-  const item = currentList[state.basico.currentIndex];
-  showFeedback('basico', 'hint', 'Pista Pedagógica', item.pista);
-}
-
-function checkBasicoAnswer() {
-  const currentList = state.basico.filteredList;
-  const item = currentList[state.basico.currentIndex];
-  let isCorrect = false;
-
-  if (item.nivel === 1) {
-    const sujetoZone = document.getElementById('zone-sujeto');
-    const predicadoZone = document.getElementById('zone-predicado');
-
-    const userSujeto = Array.from(sujetoZone.querySelectorAll('.word-chip')).map(c => c.dataset.word);
-    const userPredicado = Array.from(predicadoZone.querySelectorAll('.word-chip')).map(c => c.dataset.word);
-
-    if (userSujeto.length === 0 && userPredicado.length === 0) {
-      showToast('Coloca las palabras en Sujeto y Predicado antes de verificar.', 'warning');
-      return;
-    }
-
-    const expectedSujeto = item.sujeto.join(' ');
-    const expectedPredicado = item.predicado.join(' ');
-
-    if (userSujeto.join(' ') === expectedSujeto && userPredicado.join(' ') === expectedPredicado) {
-      isCorrect = true;
-    }
-  } else {
-    // Nivel 2: NS y NP
-    const nsZone = document.getElementById('zone-ns');
-    const npZone = document.getElementById('zone-np');
-
-    const userNs = Array.from(nsZone.querySelectorAll('.word-chip')).map(c => c.dataset.word);
-    const userNp = Array.from(npZone.querySelectorAll('.word-chip')).map(c => c.dataset.word);
-
-    if (userNs.length === 0 && userNp.length === 0) {
-      showToast('Coloca el Núcleo del Sujeto (NS) y el Núcleo del Predicado (NP).', 'warning');
-      return;
-    }
-
-    if (userNs.join(' ') === item.ns.join(' ') && userNp.join(' ') === item.np.join(' ')) {
-      isCorrect = true;
-    }
-  }
-
-  // Registrar resultado
-  state.basico.history[item.numero] = { correct: isCorrect };
-  persistProgress();
-
-  if (isCorrect) {
-    showFeedback('basico', 'success', '¡Excelente! Estructura Correcta', item.explicacion);
-    const btnNext = document.getElementById('btnBasicoNext');
-    const btnCheck = document.getElementById('btnBasicoCheck');
-    if (btnNext) btnNext.style.display = 'inline-block';
-    if (btnCheck) btnCheck.style.display = 'none';
-  } else {
-    showFeedback('basico', 'error', 'Revisemos la concordancia', `Revisa bien: ${item.pista}`);
-  }
-}
-
-function nextBasicoExercise() {
-  const currentList = state.basico.filteredList;
-  if (state.basico.currentIndex < currentList.length - 1) {
-    state.basico.currentIndex++;
-    renderBasicoExercise();
-  } else {
-    showToast('¡Has completado todas las oraciones de este nivel!', 'success');
-    showFeedback('basico', 'success', '¡Módulo Completado!', 'Has finalizado los ejercicios de Sujeto y Núcleos. Avanza al Nivel 3 para trabajar con CD y CI.');
-  }
+function nextConcordExample() {
+  state.concord.index = (state.concord.index + 1) % CONCORDANCE_EXAMPLES.length;
+  renderConcordanceSentence();
 }
 
 // ============================================================================
-// 7. MÓDULO 03: NIVEL 3 (COMPLEMENTOS CD Y CI)
+// 7. MÓDULO 02: ANATOMÍA DEL SUJETO (MD, NS, MI, APOS)
 // ============================================================================
-function initCompModule() {
-  state.comp.list = ORACIONES.filter(o => o.nivel === 3);
-  state.comp.currentIndex = 0;
+function initSujetoModule() {
+  const btnReturn = document.getElementById('btnSujetoReturnAll');
+  const btnReset = document.getElementById('btnSujetoReset');
+  const btnCheck = document.getElementById('btnSujetoCheck');
+  const btnNext = document.getElementById('btnSujetoNext');
+  const btnHint = document.getElementById('btnSujetoHint');
 
-  const btnReturnAll = document.getElementById('btnCompReturnAll');
-  const btnReset = document.getElementById('btnCompReset');
-  const btnCheck = document.getElementById('btnCompCheck');
-  const btnNext = document.getElementById('btnCompNext');
-  const btnHint = document.getElementById('btnCompHint');
+  if (btnReturn) btnReturn.addEventListener('click', returnAllSujetoChips);
+  if (btnReset) btnReset.addEventListener('click', resetSujetoExercise);
+  if (btnCheck) btnCheck.addEventListener('click', checkSujetoAnswer);
+  if (btnNext) btnNext.addEventListener('click', nextSujetoExercise);
+  if (btnHint) btnHint.addEventListener('click', showSujetoHint);
 
-  if (btnReturnAll) btnReturnAll.addEventListener('click', returnAllCompWords);
-  if (btnReset) btnReset.addEventListener('click', resetCompExercise);
-  if (btnCheck) btnCheck.addEventListener('click', checkCompAnswer);
-  if (btnNext) btnNext.addEventListener('click', nextCompExercise);
-  if (btnHint) btnHint.addEventListener('click', showCompHint);
-
-  renderCompExercise();
+  renderSujetoExercise();
 }
 
-function renderCompExercise() {
-  const list = state.comp.list;
-  if (!list || list.length === 0) return;
+function renderSujetoExercise() {
+  const item = SUJETO_EXERCISES[state.sujeto.index];
+  state.sujeto.selectedChip = null;
 
-  const item = list[state.comp.currentIndex];
-  state.comp.selectedChip = null;
-
-  const quote = document.getElementById('compSentenceQuote');
-  const theme = document.getElementById('compThemeBadge');
-  const progress = document.getElementById('compProgressText');
-  const score = document.getElementById('compScoreText');
+  const quote = document.getElementById('sujetoSentenceQuote');
+  const theme = document.getElementById('sujetoThemeBadge');
+  const progress = document.getElementById('sujetoProgressText');
+  const score = document.getElementById('sujetoScoreText');
 
   if (quote) quote.textContent = `«${item.oracion}»`;
   if (theme) theme.textContent = `TEMA: ${item.tema.toUpperCase()}`;
-  if (progress) progress.textContent = `Ejercicio ${state.comp.currentIndex + 1} de ${list.length}`;
+  if (progress) progress.textContent = `Ejercicio ${state.sujeto.index + 1} de ${SUJETO_EXERCISES.length}`;
 
-  const totalCorrect = Object.keys(state.comp.history).filter(k => {
-    const num = parseInt(k, 10);
-    return num >= 10 && num <= 14 && state.comp.history[k].correct;
-  }).length;
+  const totalCorrect = Object.keys(state.sujeto.history).filter(k => state.sujeto.history[k]?.correct).length;
   if (score) score.textContent = `Aciertos: ${totalCorrect}`;
 
-  // Pool de palabras
-  const pool = document.getElementById('compWordsPool');
+  // Pool
+  const pool = document.getElementById('sujetoWordsPool');
   if (pool) {
     pool.innerHTML = '';
-    item.palabras.forEach((word, idx) => {
-      const chip = createWordChip(word, idx, 'comp');
+    item.palabrasSujeto.forEach((word, idx) => {
+      const chip = createChip(word, idx, 'sujeto');
       pool.appendChild(chip);
     });
   }
 
   // Limpiar dropzones
-  ['zone-ns', 'zone-np', 'zone-cd', 'zone-ci'].forEach(id => {
+  ['zone-md', 'zone-sujeto-ns', 'zone-mi', 'zone-apos'].forEach(id => {
     const z = document.getElementById(id);
     if (z) {
       z.querySelectorAll('.word-chip').forEach(c => c.remove());
-      checkPlaceholder(z);
-      updateDropzoneCount(z);
+      updateZoneCountAndPlaceholder(z);
     }
   });
 
-  // Listeners para dropzones cuádruples
-  document.querySelectorAll('#compDropzonesGrid .dropzone-box').forEach(box => {
-    attachDropzoneEvents(box, 'comp');
+  document.querySelectorAll('#sujetoDropzonesGrid .dropzone-box').forEach(box => {
+    attachZoneEvents(box, 'sujeto');
   });
 
-  hideFeedback('comp');
-  const btnNext = document.getElementById('btnCompNext');
-  const btnCheck = document.getElementById('btnCompCheck');
+  hideFeedback('sujeto');
+  const btnNext = document.getElementById('btnSujetoNext');
+  const btnCheck = document.getElementById('btnSujetoCheck');
   if (btnNext) btnNext.style.display = 'none';
   if (btnCheck) btnCheck.style.display = 'inline-block';
 }
 
-function returnAllCompWords() {
-  const pool = document.getElementById('compWordsPool');
-  const chips = document.querySelectorAll('[data-module="comp"].word-chip');
-  chips.forEach(chip => {
-    chip.classList.remove('selected-chip');
-    pool.appendChild(chip);
-  });
-  ['zone-ns', 'zone-np', 'zone-cd', 'zone-ci'].forEach(id => {
-    const z = document.getElementById(id);
-    if (z) {
-      checkPlaceholder(z);
-      updateDropzoneCount(z);
-    }
-  });
-  state.comp.selectedChip = null;
-  showToast('Palabras devueltas al banco', 'info');
-}
+function checkSujetoAnswer() {
+  const item = SUJETO_EXERCISES[state.sujeto.index];
 
-function resetCompExercise() {
-  returnAllCompWords();
-  hideFeedback('comp');
-  const btnNext = document.getElementById('btnCompNext');
-  const btnCheck = document.getElementById('btnCompCheck');
-  if (btnNext) btnNext.style.display = 'none';
-  if (btnCheck) btnCheck.style.display = 'inline-block';
-}
+  const mdWords = Array.from(document.querySelectorAll('#zone-md .word-chip')).map(c => c.dataset.word);
+  const nsWords = Array.from(document.querySelectorAll('#zone-sujeto-ns .word-chip')).map(c => c.dataset.word);
+  const miWords = Array.from(document.querySelectorAll('#zone-mi .word-chip')).map(c => c.dataset.word);
+  const aposWords = Array.from(document.querySelectorAll('#zone-apos .word-chip')).map(c => c.dataset.word);
 
-function showCompHint() {
-  const item = state.comp.list[state.comp.currentIndex];
-  showFeedback('comp', 'hint', 'Pistas de Sustitución', item.pista);
-}
-
-function checkCompAnswer() {
-  const item = state.comp.list[state.comp.currentIndex];
-
-  const nsWords = Array.from(document.querySelectorAll('#zone-ns .word-chip')).map(c => c.dataset.word);
-  const npWords = Array.from(document.querySelectorAll('#zone-np .word-chip')).map(c => c.dataset.word);
-  const cdWords = Array.from(document.querySelectorAll('#zone-cd .word-chip')).map(c => c.dataset.word);
-  const ciWords = Array.from(document.querySelectorAll('#zone-ci .word-chip')).map(c => c.dataset.word);
-
-  if (cdWords.length === 0 && ciWords.length === 0) {
-    showToast('Identifica al menos el Complemento Directo (CD) y el Indirecto (CI).', 'warning');
+  if (nsWords.length === 0) {
+    showToast('Identifica al menos el Núcleo del Sujeto (NS).', 'warning');
     return;
   }
 
   const isCorrect = (
+    mdWords.join(' ') === item.md.join(' ') &&
     nsWords.join(' ') === item.ns.join(' ') &&
-    npWords.join(' ') === item.np.join(' ') &&
-    cdWords.join(' ') === item.cd.join(' ') &&
-    ciWords.join(' ') === item.ci.join(' ')
+    miWords.join(' ') === item.mi.join(' ') &&
+    aposWords.join(' ') === item.apos.join(' ')
   );
 
-  state.comp.history[item.numero] = { correct: isCorrect };
+  state.sujeto.history[item.id] = { correct: isCorrect };
   persistProgress();
 
   if (isCorrect) {
-    showFeedback('comp', 'success', '¡Análisis Impecable!', item.explicacion);
-    const btnNext = document.getElementById('btnCompNext');
-    const btnCheck = document.getElementById('btnCompCheck');
+    showFeedback('sujeto', 'success', '¡Estructura del Sujeto Correcta!', item.explicacion);
+    const btnNext = document.getElementById('btnSujetoNext');
+    const btnCheck = document.getElementById('btnSujetoCheck');
     if (btnNext) btnNext.style.display = 'inline-block';
     if (btnCheck) btnCheck.style.display = 'none';
   } else {
-    showFeedback('comp', 'error', 'Pauta de Corrección', `Revisa los argumentos: ${item.pista}`);
+    showFeedback('sujeto', 'error', 'Pauta de Revisión', `Revisa los modificadores: ${item.pista}`);
   }
 }
 
-function nextCompExercise() {
-  if (state.comp.currentIndex < state.comp.list.length - 1) {
-    state.comp.currentIndex++;
-    renderCompExercise();
+function nextSujetoExercise() {
+  if (state.sujeto.index < SUJETO_EXERCISES.length - 1) {
+    state.sujeto.index++;
+    renderSujetoExercise();
   } else {
-    showToast('¡Has culminado las oraciones del Nivel 3!', 'success');
-    showFeedback('comp', 'success', '¡Módulo 3 Completado!', 'Dominas la identificación de CD y CI. Avanza al Nivel 4 para practicar la transformación con pronombres y la regla de SE.');
+    showToast('¡Has culminado el módulo de Modificadores del Sujeto!', 'success');
+    showFeedback('sujeto', 'success', '¡Módulo 02 Completado!', 'Dominas la anatomía del Sujeto. Avanza al Módulo 03 para trabajar con el Predicado Completo.');
   }
+}
+
+function returnAllSujetoChips() {
+  const pool = document.getElementById('sujetoWordsPool');
+  document.querySelectorAll('[data-context="sujeto"].word-chip').forEach(c => {
+    c.classList.remove('selected-chip');
+    pool.appendChild(c);
+  });
+  ['zone-md', 'zone-sujeto-ns', 'zone-mi', 'zone-apos'].forEach(id => {
+    const z = document.getElementById(id);
+    if (z) updateZoneCountAndPlaceholder(z);
+  });
+  state.sujeto.selectedChip = null;
+  showToast('Palabras devueltas al banco.', 'info');
+}
+
+function resetSujetoExercise() {
+  returnAllSujetoChips();
+  hideFeedback('sujeto');
+  const btnNext = document.getElementById('btnSujetoNext');
+  const btnCheck = document.getElementById('btnSujetoCheck');
+  if (btnNext) btnNext.style.display = 'none';
+  if (btnCheck) btnCheck.style.display = 'inline-block';
+}
+
+function showSujetoHint() {
+  const item = SUJETO_EXERCISES[state.sujeto.index];
+  showFeedback('sujeto', 'hint', 'Pista de Modificadores', item.pista);
 }
 
 // ============================================================================
-// 8. MÓDULO 04: NIVEL 4 (LABORATORIO DE PRONOMBRES Y REGLA DE SE)
+// 8. MÓDULO 03: PREDICADO COMPLETO (NP, CD, CI, CC)
+// ============================================================================
+function initPredicadoModule() {
+  const btnReturn = document.getElementById('btnPredReturnAll');
+  const btnReset = document.getElementById('btnPredReset');
+  const btnCheck = document.getElementById('btnPredCheck');
+  const btnNext = document.getElementById('btnPredNext');
+  const btnHint = document.getElementById('btnPredHint');
+
+  if (btnReturn) btnReturn.addEventListener('click', returnAllPredChips);
+  if (btnReset) btnReset.addEventListener('click', resetPredExercise);
+  if (btnCheck) btnCheck.addEventListener('click', checkPredAnswer);
+  if (btnNext) btnNext.addEventListener('click', nextPredExercise);
+  if (btnHint) btnHint.addEventListener('click', showPredHint);
+
+  renderPredExercise();
+}
+
+function renderPredExercise() {
+  const item = PREDICADO_EXERCISES[state.predicado.index];
+  state.predicado.selectedChip = null;
+
+  const quote = document.getElementById('predSentenceQuote');
+  const theme = document.getElementById('predThemeBadge');
+  const progress = document.getElementById('predProgressText');
+  const score = document.getElementById('predScoreText');
+
+  if (quote) quote.textContent = `«${item.oracion}»`;
+  if (theme) theme.textContent = `TEMA: ${item.tema.toUpperCase()}`;
+  if (progress) progress.textContent = `Ejercicio ${state.predicado.index + 1} de ${PREDICADO_EXERCISES.length}`;
+
+  const totalCorrect = Object.keys(state.predicado.history).filter(k => state.predicado.history[k]?.correct).length;
+  if (score) score.textContent = `Aciertos: ${totalCorrect}`;
+
+  const pool = document.getElementById('predWordsPool');
+  if (pool) {
+    pool.innerHTML = '';
+    item.palabrasPred.forEach((word, idx) => {
+      const chip = createChip(word, idx, 'predicado');
+      pool.appendChild(chip);
+    });
+  }
+
+  ['zone-pred-np', 'zone-pred-cd', 'zone-pred-ci', 'zone-pred-cc'].forEach(id => {
+    const z = document.getElementById(id);
+    if (z) {
+      z.querySelectorAll('.word-chip').forEach(c => c.remove());
+      updateZoneCountAndPlaceholder(z);
+    }
+  });
+
+  document.querySelectorAll('#predDropzonesGrid .dropzone-box').forEach(box => {
+    attachZoneEvents(box, 'predicado');
+  });
+
+  hideFeedback('pred');
+  const btnNext = document.getElementById('btnPredNext');
+  const btnCheck = document.getElementById('btnPredCheck');
+  if (btnNext) btnNext.style.display = 'none';
+  if (btnCheck) btnCheck.style.display = 'inline-block';
+}
+
+function checkPredAnswer() {
+  const item = PREDICADO_EXERCISES[state.predicado.index];
+
+  const npWords = Array.from(document.querySelectorAll('#zone-pred-np .word-chip')).map(c => c.dataset.word);
+  const cdWords = Array.from(document.querySelectorAll('#zone-pred-cd .word-chip')).map(c => c.dataset.word);
+  const ciWords = Array.from(document.querySelectorAll('#zone-pred-ci .word-chip')).map(c => c.dataset.word);
+  const ccWords = Array.from(document.querySelectorAll('#zone-pred-cc .word-chip')).map(c => c.dataset.word);
+
+  if (npWords.length === 0) {
+    showToast('Identifica al menos el Verbo principal (NP).', 'warning');
+    return;
+  }
+
+  const isCorrect = (
+    npWords.join(' ') === item.np.join(' ') &&
+    cdWords.join(' ') === item.cd.join(' ') &&
+    ciWords.join(' ') === item.ci.join(' ') &&
+    ccWords.join(' ') === item.cc.join(' ')
+  );
+
+  state.predicado.history[item.id] = { correct: isCorrect };
+  persistProgress();
+
+  if (isCorrect) {
+    showFeedback('pred', 'success', '¡Predicado Identificado!', item.explicacion);
+    const btnNext = document.getElementById('btnPredNext');
+    const btnCheck = document.getElementById('btnPredCheck');
+    if (btnNext) btnNext.style.display = 'inline-block';
+    if (btnCheck) btnCheck.style.display = 'none';
+  } else {
+    showFeedback('pred', 'error', 'Pauta de Revisión', `Revisa los complementos: ${item.pista}`);
+  }
+}
+
+function nextPredExercise() {
+  if (state.predicado.index < PREDICADO_EXERCISES.length - 1) {
+    state.predicado.index++;
+    renderPredExercise();
+  } else {
+    showToast('¡Has completado el módulo de Predicado Completo!', 'success');
+    showFeedback('pred', 'success', '¡Módulo 03 Concluido!', 'Dominas los argumentos y circunstanciales. Avanza al Módulo 04 para practicar la sustitución pronominal y la regla de SE.');
+  }
+}
+
+function returnAllPredChips() {
+  const pool = document.getElementById('predWordsPool');
+  document.querySelectorAll('[data-context="predicado"].word-chip').forEach(c => {
+    c.classList.remove('selected-chip');
+    pool.appendChild(c);
+  });
+  ['zone-pred-np', 'zone-pred-cd', 'zone-pred-ci', 'zone-pred-cc'].forEach(id => {
+    const z = document.getElementById(id);
+    if (z) updateZoneCountAndPlaceholder(z);
+  });
+  state.predicado.selectedChip = null;
+  showToast('Palabras devueltas al banco.', 'info');
+}
+
+function resetPredExercise() {
+  returnAllPredChips();
+  hideFeedback('pred');
+  const btnNext = document.getElementById('btnPredNext');
+  const btnCheck = document.getElementById('btnPredCheck');
+  if (btnNext) btnNext.style.display = 'none';
+  if (btnCheck) btnCheck.style.display = 'inline-block';
+}
+
+function showPredHint() {
+  const item = PREDICADO_EXERCISES[state.predicado.index];
+  showFeedback('pred', 'hint', 'Pistas de Predicado', item.pista);
+}
+
+// ============================================================================
+// 9. MÓDULO 04: PRONOMBRES Y REGLA DE SE
 // ============================================================================
 function initPronomModule() {
-  state.pronom.list = ORACIONES.filter(o => o.nivel === 4);
-  state.pronom.currentIndex = 0;
-  state.pronom.mode = 'cd';
-
-  // Botones de modo
   const modeButtons = document.querySelectorAll('.transform-mode-selector .btn-mode');
   modeButtons.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -1114,7 +1173,6 @@ function initPronomModule() {
     });
   });
 
-  // Botones de inserción rápida de pronombres
   document.querySelectorAll('.pro-insert-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       insertPronounAtCursor(btn.dataset.insert);
@@ -1130,14 +1188,51 @@ function initPronomModule() {
   if (btnNext) btnNext.addEventListener('click', nextPronomExercise);
   if (btnHint) btnHint.addEventListener('click', showPronomHint);
   if (btnClear) btnClear.addEventListener('click', () => {
-    const input = document.getElementById('inputTransformedSentence');
-    if (input) {
-      input.value = '';
-      input.focus();
-    }
+    const inp = document.getElementById('inputTransformedSentence');
+    if (inp) { inp.value = ''; inp.focus(); }
   });
 
   renderPronomExercise();
+}
+
+function renderPronomExercise() {
+  const item = PRONOM_EXERCISES[state.pronom.index];
+
+  const progress = document.getElementById('pronomProgressText');
+  const score = document.getElementById('pronomScoreText');
+  const cdText = document.getElementById('pronomCdText');
+  const cdPro = document.getElementById('pronomCdPro');
+  const ciText = document.getElementById('pronomCiText');
+  const ciPro = document.getElementById('pronomCiPro');
+  const display = document.getElementById('pronomOriginalDisplay');
+
+  if (progress) progress.textContent = `Ejercicio ${state.pronom.index + 1} de ${PRONOM_EXERCISES.length}`;
+  const totalCorrect = Object.keys(state.pronom.history).filter(k => state.pronom.history[k]?.correct).length;
+  if (score) score.textContent = `Aciertos: ${totalCorrect}`;
+
+  if (cdText) cdText.textContent = item.cd;
+  if (cdPro) cdPro.textContent = item.cdPronombre;
+  if (ciText) ciText.textContent = item.ci;
+  if (ciPro) ciPro.textContent = item.ciPronombre;
+
+  if (display) {
+    display.innerHTML = `
+      <span style="color:var(--color-sujeto)">${item.sujeto}</span> 
+      <span style="color:var(--color-np); font-weight:700;">${item.verbo}</span> 
+      <span style="color:var(--color-cd)">${item.cd}</span> 
+      <span style="color:var(--color-ci)">${item.ci}</span>.
+    `;
+  }
+
+  const inp = document.getElementById('inputTransformedSentence');
+  if (inp) inp.value = '';
+  updatePronomModeLabel();
+  hideFeedback('pronom');
+
+  const btnNext = document.getElementById('btnPronomNext');
+  const btnCheck = document.getElementById('btnPronomCheck');
+  if (btnNext) btnNext.style.display = 'none';
+  if (btnCheck) btnCheck.style.display = 'inline-block';
 }
 
 function updatePronomModeLabel() {
@@ -1146,13 +1241,13 @@ function updatePronomModeLabel() {
   if (!label || !input) return;
 
   if (state.pronom.mode === 'cd') {
-    label.innerHTML = 'Escribe la oración completa reemplazando <strong>solo el Complemento Directo (CD)</strong>:';
+    label.innerHTML = 'Escribe la oración reemplazando solo el <strong>Complemento Directo (CD)</strong>:';
     input.placeholder = 'Ej: Juan los envió al profesor.';
   } else if (state.pronom.mode === 'ci') {
-    label.innerHTML = 'Escribe la oración completa reemplazando <strong>solo el Complemento Indirecto (CI)</strong>:';
+    label.innerHTML = 'Escribe la oración reemplazando solo el <strong>Complemento Indirecto (CI)</strong>:';
     input.placeholder = 'Ej: Juan le envió los archivos.';
   } else {
-    label.innerHTML = 'Escribe la oración reemplazando <strong>ambos complementos (CD + CI)</strong> aplicando la regla de SE:';
+    label.innerHTML = 'Escribe la oración reemplazando <strong>CD + CI (Regla de SE)</strong>:';
     input.placeholder = 'Ej: Juan se los envió.';
   }
 }
@@ -1176,93 +1271,33 @@ function insertPronounAtCursor(pronoun) {
   input.focus();
 }
 
-function renderPronomExercise() {
-  const list = state.pronom.list;
-  if (!list || list.length === 0) return;
-
-  const item = list[state.pronom.currentIndex];
-
-  const progress = document.getElementById('pronomProgressText');
-  const score = document.getElementById('pronomScoreText');
-  const cdText = document.getElementById('pronomCdText');
-  const cdPro = document.getElementById('pronomCdPro');
-  const ciText = document.getElementById('pronomCiText');
-  const ciPro = document.getElementById('pronomCiPro');
-  const display = document.getElementById('pronomOriginalDisplay');
-
-  if (progress) progress.textContent = `Ejercicio ${state.pronom.currentIndex + 1} de ${list.length}`;
-  
-  const totalCorrect = Object.keys(state.pronom.history).filter(k => {
-    const num = parseInt(k, 10);
-    return num >= 15 && num <= 20 && state.pronom.history[k].correct;
-  }).length;
-  if (score) score.textContent = `Aciertos: ${totalCorrect}`;
-
-  if (cdText) cdText.textContent = item.cd;
-  if (cdPro) cdPro.textContent = item.cdPronombre;
-  if (ciText) ciText.textContent = item.ci;
-  if (ciPro) ciPro.textContent = item.ciPronombre;
-
-  // Breakdown visual con etiquetas
-  if (display) {
-    display.innerHTML = `
-      <span class="seg-sujeto">${item.sujeto}</span>
-      <span class="seg-verb">${item.verbo}</span>
-      <span class="seg-cd">${item.cd}</span>
-      <span class="seg-ci">${item.ci}</span>.
-    `;
-  }
-
-  const input = document.getElementById('inputTransformedSentence');
-  if (input) input.value = '';
-
-  updatePronomModeLabel();
-  hideFeedback('pronom');
-
-  const btnNext = document.getElementById('btnPronomNext');
-  const btnCheck = document.getElementById('btnPronomCheck');
-  if (btnNext) btnNext.style.display = 'none';
-  if (btnCheck) btnCheck.style.display = 'inline-block';
-}
-
-function showPronomHint() {
-  const item = state.pronom.list[state.pronom.currentIndex];
-  let hint = item.pistaCD;
-  if (state.pronom.mode === 'ci') hint = item.pistaCI;
-  if (state.pronom.mode === 'both') hint = item.pistaBoth;
-  showFeedback('pronom', 'hint', 'Pista de Pronominalización', hint);
-}
-
 function checkPronomAnswer() {
-  const item = state.pronom.list[state.pronom.currentIndex];
+  const item = PRONOM_EXERCISES[state.pronom.index];
   const input = document.getElementById('inputTransformedSentence');
   if (!input) return;
 
   const rawUser = input.value.trim();
   if (!rawUser) {
-    showToast('Por favor escribe tu oración transformada.', 'warning');
+    showToast('Escribe tu oración transformada.', 'warning');
     return;
   }
 
-  // Normalización pedagógica (omite puntuación y mayúsculas, colapsa espacios)
   const norm = (s) => (s || '')
     .toLowerCase()
     .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "") // tolera tildes en chequeo sintáctico si el estudiante las omitió
+    .replace(/[\u0300-\u036f]/g, "")
     .replace(/[.¡!¿?,;:]/g, '')
     .replace(/\s+/g, ' ')
     .trim();
 
   const userNorm = norm(rawUser);
-
   let expectedVariants = [];
-  let isCorrect = false;
 
   if (state.pronom.mode === 'cd') {
     expectedVariants = [
       norm(item.oracionCD),
       norm(`${item.sujeto} ${item.cdPronombre} ${item.verbo} ${item.ci}`),
-      norm(`${item.cdPronombre} ${item.verbo} ${item.ci}`) // sin sujeto explícito
+      norm(`${item.cdPronombre} ${item.verbo} ${item.ci}`)
     ];
   } else if (state.pronom.mode === 'ci') {
     expectedVariants = [
@@ -1271,7 +1306,6 @@ function checkPronomAnswer() {
       norm(`${item.ciPronombre} ${item.verbo} ${item.cd}`)
     ];
   } else {
-    // Mode both (SE)
     expectedVariants = [
       norm(item.oracionAmbos),
       norm(`${item.sujeto} se ${item.cdPronombre} ${item.verbo}`),
@@ -1279,151 +1313,626 @@ function checkPronomAnswer() {
     ];
   }
 
-  if (expectedVariants.includes(userNorm)) {
-    isCorrect = true;
-  }
+  let isCorrect = expectedVariants.includes(userNorm);
 
-  // Detección de errores comunes para feedback formativo
   let specificAdvice = '';
-  if (!isCorrect) {
-    if (state.pronom.mode === 'both' && (userNorm.includes('le lo') || userNorm.includes('le la') || userNorm.includes('le los') || userNorm.includes('le las') || userNorm.includes('les lo') || userNorm.includes('les los'))) {
-      specificAdvice = '¡Atención a la cacofonía! En español está prohibido decir «le los» o «les la». El pronombre dativo debe transformarse obligatoriamente en <strong>SE</strong>.';
-    } else if (state.pronom.mode === 'cd' && userNorm.includes(norm(item.cd))) {
-      specificAdvice = `Parece que insertaste el pronombre pero olvidaste eliminar la frase original («${item.cd}»). Al pronominalizar, el pronombre reemplaza por completo al grupo nominal.`;
-    } else if (state.pronom.mode === 'ci' && userNorm.includes(norm(item.ci))) {
-      specificAdvice = `Parece que conservaste «${item.ci}». Al sustituir por «${item.ciPronombre}», la frase original debe omitirse.`;
-    }
+  if (!isCorrect && state.pronom.mode === 'both' && (userNorm.includes('le lo') || userNorm.includes('le la') || userNorm.includes('le los') || userNorm.includes('le las') || userNorm.includes('les lo') || userNorm.includes('les los'))) {
+    specificAdvice = '¡Atención a la cacofonía! En español «le/les» antes de «lo/la» se transforma obligatoriamente en <strong>SE</strong>.';
   }
 
-  state.pronom.history[item.numero] = { correct: isCorrect };
+  state.pronom.history[item.id] = { correct: isCorrect };
   persistProgress();
 
   if (isCorrect) {
-    let successMsg = `¡Exacto! Oración modelo: «${state.pronom.mode === 'cd' ? item.oracionCD : (state.pronom.mode === 'ci' ? item.oracionCI : item.oracionAmbos)}».`;
-    showFeedback('pronom', 'success', '¡Transformación Impecable!', successMsg);
+    const model = state.pronom.mode === 'cd' ? item.oracionCD : (state.pronom.mode === 'ci' ? item.oracionCI : item.oracionAmbos);
+    showFeedback('pronom', 'success', '¡Transformación Impecable!', `Modelo exacto: «${model}».`);
     const btnNext = document.getElementById('btnPronomNext');
     const btnCheck = document.getElementById('btnPronomCheck');
     if (btnNext) btnNext.style.display = 'inline-block';
     if (btnCheck) btnCheck.style.display = 'none';
   } else {
-    const errorMsg = specificAdvice || `Revisa la posición de los pronombres antes del verbo conjugado. ${state.pronom.mode === 'cd' ? item.pistaCD : (state.pronom.mode === 'ci' ? item.pistaCI : item.pistaBoth)}`;
-    showFeedback('pronom', 'error', 'Pauta de Revisión', errorMsg);
+    showFeedback('pronom', 'error', 'Pauta de Revisión', specificAdvice || 'Revisa la posición del pronombre antes del verbo conjugado.');
   }
 }
 
 function nextPronomExercise() {
-  if (state.pronom.currentIndex < state.pronom.list.length - 1) {
-    state.pronom.currentIndex++;
+  if (state.pronom.index < PRONOM_EXERCISES.length - 1) {
+    state.pronom.index++;
     renderPronomExercise();
   } else {
-    showToast('¡Has completado todas las oraciones del Laboratorio de Pronombres!', 'success');
-    showFeedback('pronom', 'success', '¡Módulo 4 Concluido!', 'Has completado los 4 niveles de análisis. Visita el Módulo 05 para ver tu calificación global y usar el Analizador Libre.');
+    showToast('¡Has finalizado todas las oraciones de la Etapa de Básica Superior!', 'success');
+    showFeedback('pronom', 'success', '¡Etapa 10mo EGB Concluida!', 'Has completado todos los niveles de la oración simple. Puedes revisar tu nota en el Módulo 09 o dar el salto a Bachillerato BGU.');
   }
 }
 
+function showPronomHint() {
+  const item = PRONOM_EXERCISES[state.pronom.index];
+  let h = `CD: '${item.cd}' (${item.cdPronombre}). CI: '${item.ci}' (${item.ciPronombre}).`;
+  if (state.pronom.mode === 'both') h += ' Recuerda la regla de SE.';
+  showFeedback('pronom', 'hint', 'Pista', h);
+}
+
 // ============================================================================
-// 9. MÓDULO 05: RESULTADOS GLOBALES Y ANALIZADOR LIBRE
+// 10. MÓDULO 05: EL PUENTE DE VOZ ACTIVA ↔ PASIVA (BGU)
+// ============================================================================
+function initPasivaModule() {
+  const btnCheck = document.getElementById('btnPasivaCheck');
+  const btnNext = document.getElementById('btnPasivaNext');
+  const btnHint = document.getElementById('btnPasivaHint');
+  const btnReset = document.getElementById('btnPasivaReset');
+
+  if (btnCheck) btnCheck.addEventListener('click', checkPasivaAnswer);
+  if (btnNext) btnNext.addEventListener('click', nextPasivaExercise);
+  if (btnHint) btnHint.addEventListener('click', showPasivaHint);
+  if (btnReset) btnReset.addEventListener('click', resetPasivaExercise);
+
+  // Previsualización dinámica de la pasiva mientras se escribe
+  ['inputSujetoPaciente', 'inputVerboPasivo', 'inputCompAgente'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('input', updatePassivePreview);
+  });
+
+  renderPasivaExercise();
+}
+
+function renderPasivaExercise() {
+  const item = PASIVA_EXERCISES[state.pasiva.index];
+
+  const progress = document.getElementById('pasivaProgressText');
+  const score = document.getElementById('pasivaScoreText');
+  const ag = document.getElementById('pasivaAgenteText');
+  const v = document.getElementById('pasivaVerboActivoText');
+  const cd = document.getElementById('pasivaCdActivoText');
+
+  if (progress) progress.textContent = `Ejercicio ${state.pasiva.index + 1} de ${PASIVA_EXERCISES.length}`;
+  const totalCorrect = Object.keys(state.pasiva.history).filter(k => state.pasiva.history[k]?.correct).length;
+  if (score) score.textContent = `Aciertos: ${totalCorrect}`;
+
+  if (ag) ag.textContent = item.agente;
+  if (v) v.textContent = item.verboActivo;
+  if (cd) cd.textContent = item.cd;
+
+  document.getElementById('inputSujetoPaciente').value = '';
+  document.getElementById('inputVerboPasivo').value = '';
+  document.getElementById('inputCompAgente').value = '';
+  updatePassivePreview();
+  hideFeedback('pasiva');
+
+  const btnNext = document.getElementById('btnPasivaNext');
+  const btnCheck = document.getElementById('btnPasivaCheck');
+  if (btnNext) btnNext.style.display = 'none';
+  if (btnCheck) btnCheck.style.display = 'inline-block';
+}
+
+function updatePassivePreview() {
+  const s = document.getElementById('inputSujetoPaciente')?.value.trim() || '...';
+  const v = document.getElementById('inputVerboPasivo')?.value.trim() || '...';
+  const a = document.getElementById('inputCompAgente')?.value.trim() || '...';
+  const preview = document.getElementById('assembledPassivePreview');
+  if (preview) {
+    preview.textContent = `«${s} ${v} ${a}.»`;
+  }
+}
+
+function checkPasivaAnswer() {
+  const item = PASIVA_EXERCISES[state.pasiva.index];
+  const s = document.getElementById('inputSujetoPaciente').value.trim();
+  const v = document.getElementById('inputVerboPasivo').value.trim();
+  const a = document.getElementById('inputCompAgente').value.trim();
+
+  if (!s || !v || !a) {
+    showToast('Completa los tres campos de la oración pasiva.', 'warning');
+    return;
+  }
+
+  const norm = (str) => (str || '').toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[.¡!¿?,;:]/g, '').trim();
+
+  const isCorrect = (
+    norm(s) === norm(item.sujetoPaciente) &&
+    norm(v) === norm(item.verboPasivo) &&
+    norm(a) === norm(item.compAgente)
+  );
+
+  state.pasiva.history[item.id] = { correct: isCorrect };
+  persistProgress();
+
+  if (isCorrect) {
+    showFeedback('pasiva', 'success', '¡Transformación a Pasiva Impecable!', `Oración pasiva modelo: «${item.pasivaCompleta}». El CD («${item.cd}») pasó a Sujeto Paciente y «${item.agente}» se transformó en Complemento Agente.`);
+    const btnNext = document.getElementById('btnPasivaNext');
+    const btnCheck = document.getElementById('btnPasivaCheck');
+    if (btnNext) btnNext.style.display = 'inline-block';
+    if (btnCheck) btnCheck.style.display = 'none';
+  } else {
+    showFeedback('pasiva', 'error', 'Pauta de Voz Pasiva', `Revisa: El sujeto paciente debe ser «${item.sujetoPaciente}», el verbo pasivo debe usar el auxiliar ser en pasado («${item.verboPasivo}») y el agente debe llevar 'por' («${item.compAgente}»).`);
+  }
+}
+
+function nextPasivaExercise() {
+  if (state.pasiva.index < PASIVA_EXERCISES.length - 1) {
+    state.pasiva.index++;
+    renderPasivaExercise();
+  } else {
+    showToast('¡Has completado el módulo de Voz Pasiva Perifrástica!', 'success');
+    showFeedback('pasiva', 'success', '¡Módulo 05 Dominado!', 'Avanza al Módulo 06 para diferenciar la Pasiva Refleja con "SE" de las oraciones impersonales.');
+  }
+}
+
+function resetPasivaExercise() {
+  document.getElementById('inputSujetoPaciente').value = '';
+  document.getElementById('inputVerboPasivo').value = '';
+  document.getElementById('inputCompAgente').value = '';
+  updatePassivePreview();
+  hideFeedback('pasiva');
+  const btnNext = document.getElementById('btnPasivaNext');
+  const btnCheck = document.getElementById('btnPasivaCheck');
+  if (btnNext) btnNext.style.display = 'none';
+  if (btnCheck) btnCheck.style.display = 'inline-block';
+}
+
+function showPasivaHint() {
+  const item = PASIVA_EXERCISES[state.pasiva.index];
+  showFeedback('pasiva', 'hint', 'Pista', `Recuerda: El CD «${item.cd}» se vuelve el sujeto. Usa «fue / fueron» + participio concordado en género y número.`);
+}
+
+// ============================================================================
+// 11. MÓDULO 06: PASIVA REFLEJA VS. IMPERSONALIDAD (BGU)
+// ============================================================================
+function initReflejaModule() {
+  document.querySelectorAll('.btn-decision').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.btn-decision').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.refleja.selectedDecision = btn.dataset.decision;
+
+      const probeArea = document.getElementById('reflejaProbeArea');
+      if (probeArea) {
+        probeArea.style.display = state.refleja.selectedDecision === 'pasiva-refleja' ? 'block' : 'none';
+      }
+    });
+  });
+
+  const btnCheck = document.getElementById('btnReflejaCheck');
+  const btnNext = document.getElementById('btnReflejaNext');
+  const btnHint = document.getElementById('btnReflejaHint');
+
+  if (btnCheck) btnCheck.addEventListener('click', checkReflejaAnswer);
+  if (btnNext) btnNext.addEventListener('click', nextReflejaExercise);
+  if (btnHint) btnHint.addEventListener('click', showReflejaHint);
+
+  renderReflejaExercise();
+}
+
+function renderReflejaExercise() {
+  const item = REFLEJA_EXERCISES[state.refleja.index];
+  state.refleja.selectedDecision = null;
+
+  const quote = document.getElementById('reflejaSentenceQuote');
+  const progress = document.getElementById('reflejaProgressText');
+  const score = document.getElementById('reflejaScoreText');
+
+  if (quote) quote.textContent = `«${item.oracion}»`;
+  if (progress) progress.textContent = `Ejercicio ${state.refleja.index + 1} de ${REFLEJA_EXERCISES.length}`;
+  const totalCorrect = Object.keys(state.refleja.history).filter(k => state.refleja.history[k]?.correct).length;
+  if (score) score.textContent = `Aciertos: ${totalCorrect}`;
+
+  document.querySelectorAll('.btn-decision').forEach(b => b.classList.remove('active'));
+  const probeArea = document.getElementById('reflejaProbeArea');
+  if (probeArea) {
+    probeArea.style.display = 'none';
+    document.getElementById('inputReflejaSubject').value = '';
+  }
+
+  hideFeedback('refleja');
+  const btnNext = document.getElementById('btnReflejaNext');
+  const btnCheck = document.getElementById('btnReflejaCheck');
+  if (btnNext) btnNext.style.display = 'none';
+  if (btnCheck) btnCheck.style.display = 'inline-block';
+}
+
+function checkReflejaAnswer() {
+  const item = REFLEJA_EXERCISES[state.refleja.index];
+  if (!state.refleja.selectedDecision) {
+    showToast('Selecciona si la oración es Pasiva Refleja o Impersonal.', 'warning');
+    return;
+  }
+
+  let isCorrect = (state.refleja.selectedDecision === item.tipo);
+
+  if (isCorrect && item.tipo === 'pasiva-refleja') {
+    const inputSuj = document.getElementById('inputReflejaSubject').value.trim();
+    if (inputSuj) {
+      const norm = (s) => (s || '').toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[.¡!¿?,;:]/g, '').trim();
+      if (!norm(item.sujetoPaciente).includes(norm(inputSuj))) {
+        // pequeño aviso si no coincide
+      }
+    }
+  }
+
+  state.refleja.history[item.id] = { correct: isCorrect };
+  persistProgress();
+
+  if (isCorrect) {
+    showFeedback('refleja', 'success', '¡Estructura Clarificada!', item.explicacion);
+    const btnNext = document.getElementById('btnReflejaNext');
+    const btnCheck = document.getElementById('btnReflejaCheck');
+    if (btnNext) btnNext.style.display = 'inline-block';
+    if (btnCheck) btnCheck.style.display = 'none';
+  } else {
+    showFeedback('refleja', 'error', 'Pauta de Revisión', `Respuesta incorrecta. ${item.explicacion}`);
+  }
+}
+
+function nextReflejaExercise() {
+  if (state.refleja.index < REFLEJA_EXERCISES.length - 1) {
+    state.refleja.index++;
+    renderReflejaExercise();
+  } else {
+    showToast('¡Has culminado el módulo de Pasiva Refleja!', 'success');
+    showFeedback('refleja', 'success', '¡Módulo 06 Concluido!', 'Avanza al Módulo 07 para usar el Bisturí Sintáctico en Oraciones Compuestas.');
+  }
+}
+
+function showReflejaHint() {
+  const item = REFLEJA_EXERCISES[state.refleja.index];
+  showFeedback('refleja', 'hint', 'Pista', 'Prueba si hay un sustantivo que obligue al verbo a cambiar de número (Sujeto Paciente = Pasiva Refleja). Si no lo hay, es Impersonal.');
+}
+
+// ============================================================================
+// 12. MÓDULO 07: BISTURÍ DE ORACIONES COMPUESTAS (BGU)
+// ============================================================================
+function initCompuestaModule() {
+  const btnCheck = document.getElementById('btnCompuestaCheck');
+  const btnNext = document.getElementById('btnCompuestaNext');
+  const btnReset = document.getElementById('btnCompuestaReset');
+  const btnHint = document.getElementById('btnCompuestaHint');
+
+  if (btnCheck) btnCheck.addEventListener('click', checkCompuestaAnswer);
+  if (btnNext) btnNext.addEventListener('click', nextCompuestaExercise);
+  if (btnReset) btnReset.addEventListener('click', resetCompuestaExercise);
+  if (btnHint) btnHint.addEventListener('click', showCompuestaHint);
+
+  document.querySelectorAll('.btn-nexo-type').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.btn-nexo-type').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.compuesta.selectedNexoType = btn.dataset.nexo;
+    });
+  });
+
+  renderCompuestaExercise();
+}
+
+function renderCompuestaExercise() {
+  const item = COMPUESTA_EXERCISES[state.compuesta.index];
+  state.compuesta.selectedCut = null;
+  state.compuesta.selectedNexoType = null;
+
+  const progress = document.getElementById('compuestaProgressText');
+  const score = document.getElementById('compuestaScoreText');
+  const container = document.getElementById('bisturiSentenceContainer');
+
+  if (progress) progress.textContent = `Ejercicio ${state.compuesta.index + 1} de ${COMPUESTA_EXERCISES.length}`;
+  const totalCorrect = Object.keys(state.compuesta.history).filter(k => state.compuesta.history[k]?.correct).length;
+  if (score) score.textContent = `Aciertos: ${totalCorrect}`;
+
+  document.querySelectorAll('.btn-nexo-type').forEach(b => b.classList.remove('active'));
+  document.getElementById('prop1Preview').textContent = 'Selecciona el punto de corte arriba...';
+  document.getElementById('prop2Preview').textContent = 'Selecciona el punto de corte arriba...';
+  document.getElementById('nexoDetectedPreview').textContent = '—';
+
+  if (container) {
+    container.innerHTML = '';
+    item.tokens.forEach((token, idx) => {
+      const wSpan = document.createElement('span');
+      wSpan.className = 'bisturi-word';
+      wSpan.textContent = token;
+      container.appendChild(wSpan);
+
+      if (idx < item.tokens.length - 1) {
+        const cutSlot = document.createElement('span');
+        cutSlot.className = 'bisturi-cut-slot';
+        cutSlot.textContent = '|';
+        cutSlot.title = 'Hacer corte aquí';
+        cutSlot.dataset.afterToken = token.replace(/[.,;]/g, '');
+
+        cutSlot.addEventListener('click', () => handleBisturiCut(cutSlot, token));
+        container.appendChild(cutSlot);
+      }
+    });
+  }
+
+  hideFeedback('compuesta');
+  const btnNext = document.getElementById('btnCompuestaNext');
+  const btnCheck = document.getElementById('btnCompuestaCheck');
+  if (btnNext) btnNext.style.display = 'none';
+  if (btnCheck) btnCheck.style.display = 'inline-block';
+}
+
+function handleBisturiCut(slotElement, afterToken) {
+  document.querySelectorAll('.bisturi-cut-slot').forEach(s => {
+    s.classList.remove('cut-active');
+    s.textContent = '|';
+  });
+
+  slotElement.classList.add('cut-active');
+  slotElement.textContent = '//';
+  state.compuesta.selectedCut = slotElement.dataset.afterToken;
+
+  const item = COMPUESTA_EXERCISES[state.compuesta.index];
+  document.getElementById('prop1Preview').textContent = item.prop1;
+  document.getElementById('prop2Preview').textContent = item.prop2;
+  document.getElementById('nexoDetectedPreview').textContent = item.nexo.toUpperCase();
+
+  showToast(`Corte establecido. Ahora clasifica el nexo «${item.nexo}».`, 'info');
+}
+
+function checkCompuestaAnswer() {
+  const item = COMPUESTA_EXERCISES[state.compuesta.index];
+
+  if (!state.compuesta.selectedCut) {
+    showToast('Toca entre dos palabras para hacer el corte con el bisturí.', 'warning');
+    return;
+  }
+
+  if (!state.compuesta.selectedNexoType) {
+    showToast('Clasifica la relación lógica del nexo coordinante.', 'warning');
+    return;
+  }
+
+  const isCutCorrect = state.compuesta.selectedCut.toLowerCase().includes(item.cutAfterToken.toLowerCase());
+  const isTypeCorrect = (state.compuesta.selectedNexoType === item.tipoNexo);
+  const isCorrect = isCutCorrect && isTypeCorrect;
+
+  state.compuesta.history[item.id] = { correct: isCorrect };
+  persistProgress();
+
+  if (isCorrect) {
+    showFeedback('compuesta', 'success', '¡Segmentación y Clasificación Impecables!', `Proposición 1: «${item.prop1}» | Nexo: «${item.nexo}» (${item.tipoNexo.toUpperCase()}) | Proposición 2: «${item.prop2}».`);
+    const btnNext = document.getElementById('btnCompuestaNext');
+    const btnCheck = document.getElementById('btnCompuestaCheck');
+    if (btnNext) btnNext.style.display = 'inline-block';
+    if (btnCheck) btnCheck.style.display = 'none';
+  } else {
+    showFeedback('compuesta', 'error', 'Pauta de Revisión', `Revisa la segmentación: ${item.pista}`);
+  }
+}
+
+function nextCompuestaExercise() {
+  if (state.compuesta.index < COMPUESTA_EXERCISES.length - 1) {
+    state.compuesta.index++;
+    renderCompuestaExercise();
+  } else {
+    showToast('¡Has culminado las oraciones compuestas coordinadas!', 'success');
+    showFeedback('compuesta', 'success', '¡Módulo 07 Concluido!', 'Avanza al Módulo 08 para iniciarte en las Proposiciones Subordinadas.');
+  }
+}
+
+function resetCompuestaExercise() {
+  state.compuesta.selectedCut = null;
+  state.compuesta.selectedNexoType = null;
+  renderCompuestaExercise();
+}
+
+function showCompuestaHint() {
+  const item = COMPUESTA_EXERCISES[state.compuesta.index];
+  showFeedback('compuesta', 'hint', 'Pista', item.pista);
+}
+
+// ============================================================================
+// 13. MÓDULO 08: PROPOSICIONES SUBORDINADAS (BGU)
+// ============================================================================
+function initSubordModule() {
+  document.querySelectorAll('.btn-subord-opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.btn-subord-opt').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.subord.selectedType = btn.dataset.subord;
+
+      const funcBox = document.getElementById('subordFunctionBox');
+      if (funcBox) funcBox.style.display = 'block';
+    });
+  });
+
+  document.querySelectorAll('.btn-func').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.btn-func').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.subord.selectedFunc = btn.dataset.func;
+    });
+  });
+
+  const btnCheck = document.getElementById('btnSubordCheck');
+  const btnNext = document.getElementById('btnSubordNext');
+  const btnHint = document.getElementById('btnSubordHint');
+
+  if (btnCheck) btnCheck.addEventListener('click', checkSubordAnswer);
+  if (btnNext) btnNext.addEventListener('click', nextSubordExercise);
+  if (btnHint) btnHint.addEventListener('click', showSubordHint);
+
+  renderSubordExercise();
+}
+
+function renderSubordExercise() {
+  const item = SUBORD_EXERCISES[state.subord.index];
+  state.subord.selectedType = null;
+  state.subord.selectedFunc = null;
+
+  const quote = document.getElementById('subordSentenceQuote');
+  const progress = document.getElementById('subordProgressText');
+  const score = document.getElementById('subordScoreText');
+
+  if (quote) quote.textContent = `«${item.oracion}»`;
+  if (progress) progress.textContent = `Ejercicio ${state.subord.index + 1} de ${SUBORD_EXERCISES.length}`;
+  const totalCorrect = Object.keys(state.subord.history).filter(k => state.subord.history[k]?.correct).length;
+  if (score) score.textContent = `Aciertos: ${totalCorrect}`;
+
+  document.querySelectorAll('.btn-subord-opt, .btn-func').forEach(b => b.classList.remove('active'));
+  const funcBox = document.getElementById('subordFunctionBox');
+  if (funcBox) funcBox.style.display = 'none';
+
+  hideFeedback('subord');
+  const btnNext = document.getElementById('btnSubordNext');
+  const btnCheck = document.getElementById('btnSubordCheck');
+  if (btnNext) btnNext.style.display = 'none';
+  if (btnCheck) btnCheck.style.display = 'inline-block';
+}
+
+function checkSubordAnswer() {
+  const item = SUBORD_EXERCISES[state.subord.index];
+
+  if (!state.subord.selectedType) {
+    showToast('Selecciona si la proposición es Sustantiva o Adjetiva.', 'warning');
+    return;
+  }
+
+  const isTypeCorrect = (state.subord.selectedType === item.tipo);
+  const isFuncCorrect = !state.subord.selectedFunc || (state.subord.selectedFunc === item.funcion);
+  const isCorrect = isTypeCorrect && isFuncCorrect;
+
+  state.subord.history[item.id] = { correct: isCorrect };
+  persistProgress();
+
+  if (isCorrect) {
+    showFeedback('subord', 'success', '¡Subordinada Identificada con Éxito!', `Proposición subordinada: «[${item.subordinada}]». ${item.pista}`);
+    const btnNext = document.getElementById('btnSubordNext');
+    const btnCheck = document.getElementById('btnSubordCheck');
+    if (btnNext) btnNext.style.display = 'inline-block';
+    if (btnCheck) btnCheck.style.display = 'none';
+  } else {
+    showFeedback('subord', 'error', 'Pauta de Revisión', `Revisa: ${item.pista}`);
+  }
+}
+
+function nextSubordExercise() {
+  if (state.subord.index < SUBORD_EXERCISES.length - 1) {
+    state.subord.index++;
+    renderSubordExercise();
+  } else {
+    showToast('¡Has culminado el módulo de Proposiciones Subordinadas!', 'success');
+    showFeedback('subord', 'success', '¡Etapa BGU Completada!', 'Has dominado las estructuras complejas de Bachillerato. Visita el Módulo 09 para consultar tu calificación global.');
+  }
+}
+
+function showSubordHint() {
+  const item = SUBORD_EXERCISES[state.subord.index];
+  showFeedback('subord', 'hint', 'Pista', item.pista);
+}
+
+// ============================================================================
+// 14. MÓDULO 09: ANALIZADOR UNIVERSAL Y CALIFICACIÓN CURRICULAR
 // ============================================================================
 function initResultsAndAnalyzer() {
   const btnSync = document.getElementById('btnSyncSheets');
   const btnResetAll = document.getElementById('btnResetAllPractice');
   const btnAnalyze = document.getElementById('btnAnalyzeCustom');
 
-  if (btnSync) btnSync.addEventListener('click', sendToGoogleSheets);
-  if (btnResetAll) btnResetAll.addEventListener('click', resetAllPractice);
-  if (btnAnalyze) btnAnalyze.addEventListener('click', handleCustomAnalysis);
+  if (btnSync) btnSync.addEventListener('click', sendCurricularToGoogleSheets);
+  if (btnResetAll) btnResetAll.addEventListener('click', resetCurrentRoutePractice);
+  if (btnAnalyze) btnAnalyze.addEventListener('click', handleCustomUniversalAnalysis);
 
-  // Botones de ejemplos sugeridos
   document.querySelectorAll('.sample-pill').forEach(btn => {
     btn.addEventListener('click', () => {
-      const input = document.getElementById('customSentenceInput');
-      if (input) {
-        input.value = btn.dataset.sample;
-        handleCustomAnalysis();
+      const inp = document.getElementById('customSentenceInput');
+      if (inp) {
+        inp.value = btn.dataset.sample;
+        handleCustomUniversalAnalysis();
       }
     });
   });
 }
 
-function updateGlobalScore() {
+function updateCurriculumScore() {
+  const badge = document.getElementById('activeRouteBadge');
   const numEl = document.getElementById('globalScoreNum');
   const subEl = document.getElementById('globalScoreSubtitle');
-  const l12El = document.getElementById('scoreLevel12');
-  const l3El = document.getElementById('scoreLevel3');
-  const l4El = document.getElementById('scoreLevel4');
+  const listEl = document.getElementById('curriculumBreakdownList');
 
-  // Conteo de aciertos por módulo
-  let c12 = 0;
-  for (let i = 1; i <= 9; i++) {
-    if (state.basico.history[i] && state.basico.history[i].correct) c12++;
-  }
+  // Conteo de aciertos EGB (Módulos 2, 3, 4: 6 + 6 + 6 = 18 ejercicios)
+  const cSujeto = Object.keys(state.sujeto.history).filter(k => state.sujeto.history[k]?.correct).length;
+  const cPredicado = Object.keys(state.predicado.history).filter(k => state.predicado.history[k]?.correct).length;
+  const cPronom = Object.keys(state.pronom.history).filter(k => state.pronom.history[k]?.correct).length;
+  const totalEgb = cSujeto + cPredicado + cPronom;
+  const scoreEgbOver10 = ((totalEgb / 18) * 10).toFixed(1);
 
-  let c3 = 0;
-  for (let i = 10; i <= 14; i++) {
-    if (state.comp.history[i] && state.comp.history[i].correct) c3++;
-  }
+  // Conteo de aciertos BGU (Módulos 5, 6, 7, 8: 6 + 6 + 6 + 6 = 24 ejercicios)
+  const cPasiva = Object.keys(state.pasiva.history).filter(k => state.pasiva.history[k]?.correct).length;
+  const cRefleja = Object.keys(state.refleja.history).filter(k => state.refleja.history[k]?.correct).length;
+  const cCompuesta = Object.keys(state.compuesta.history).filter(k => state.compuesta.history[k]?.correct).length;
+  const cSubord = Object.keys(state.subord.history).filter(k => state.subord.history[k]?.correct).length;
+  const totalBgu = cPasiva + cRefleja + cCompuesta + cSubord;
+  const scoreBguOver10 = ((totalBgu / 24) * 10).toFixed(1);
 
-  let c4 = 0;
-  for (let i = 15; i <= 20; i++) {
-    if (state.pronom.history[i] && state.pronom.history[i].correct) c4++;
-  }
-
-  const totalCorrect = c12 + c3 + c4;
-  const scoreOver10 = ((totalCorrect / 20) * 10).toFixed(1);
-
-  if (numEl) numEl.textContent = scoreOver10;
-  if (l12El) l12El.textContent = `${c12} / 9`;
-  if (l3El) l3El.textContent = `${c3} / 5`;
-  if (l4El) l4El.textContent = `${c4} / 6`;
-
-  if (subEl) {
-    if (totalCorrect === 0) {
-      subEl.textContent = 'Aún no has registrado aciertos. Completa los ejercicios en los módulos anteriores.';
-    } else if (totalCorrect < 10) {
-      subEl.textContent = `Has acumulado ${totalCorrect} aciertos de 20. ¡Sigue practicando para alcanzar el dominio sintáctico!`;
-    } else if (totalCorrect < 18) {
-      subEl.textContent = `¡Buen rendimiento! Tienes ${totalCorrect} de 20 aciertos. Estás muy cerca de la excelencia.`;
-    } else {
-      subEl.textContent = `¡Sobresaliente! ${totalCorrect} de 20 oraciones dominadas. Demuestras competencia sintáctica científica.`;
+  if (state.route === 'bgu') {
+    if (badge) badge.textContent = 'CALIFICACIÓN BACHILLERATO (1RO A 3RO BGU)';
+    if (numEl) numEl.textContent = scoreBguOver10;
+    if (subEl) subEl.textContent = `Has acumulado ${totalBgu} de 24 aciertos en Sintaxis Compleja de Bachillerato.`;
+    if (listEl) {
+      listEl.innerHTML = `
+        <div class="breakdown-item"><span>Voz Pasiva Perifrástica & Agente:</span><strong>${cPasiva} / 6</strong></div>
+        <div class="breakdown-item"><span>Pasiva Refleja vs. Impersonal:</span><strong>${cRefleja} / 6</strong></div>
+        <div class="breakdown-item"><span>Bisturí de Compuestas Coordinadas:</span><strong>${cCompuesta} / 6</strong></div>
+        <div class="breakdown-item"><span>Proposiciones Subordinadas:</span><strong>${cSubord} / 6</strong></div>
+      `;
+    }
+  } else {
+    // EGB
+    if (badge) badge.textContent = 'CALIFICACIÓN BÁSICA SUPERIOR (10MO EGB)';
+    if (numEl) numEl.textContent = scoreEgbOver10;
+    if (subEl) subEl.textContent = `Has acumulado ${totalEgb} de 18 aciertos en Oración Simple de Básica Superior.`;
+    if (listEl) {
+      listEl.innerHTML = `
+        <div class="breakdown-item"><span>Modificadores del Sujeto (MD/MI/Apos):</span><strong>${cSujeto} / 6</strong></div>
+        <div class="breakdown-item"><span>Predicado Completo (NP/CD/CI/CC):</span><strong>${cPredicado} / 6</strong></div>
+        <div class="breakdown-item"><span>Pronombres & Regla de SE:</span><strong>${cPronom} / 6</strong></div>
+      `;
     }
   }
 }
 
-async function sendToGoogleSheets() {
+async function sendCurricularToGoogleSheets() {
   const statusMsg = document.getElementById('sheetsStatusMessage');
   const btnSync = document.getElementById('btnSyncSheets');
 
   if (!state.student || !state.student.nombre) {
-    showToast('Por favor identifícate con tu nombre antes de enviar calificaciones.', 'warning');
+    showToast('Identifícate con tu nombre antes de registrar tu nota.', 'warning');
     const modal = document.getElementById('studentModal');
     if (modal) modal.classList.remove('hidden');
     return;
   }
 
-  let c12 = 0;
-  for (let i = 1; i <= 9; i++) if (state.basico.history[i]?.correct) c12++;
-  let c3 = 0;
-  for (let i = 10; i <= 14; i++) if (state.comp.history[i]?.correct) c3++;
-  let c4 = 0;
-  for (let i = 15; i <= 20; i++) if (state.pronom.history[i]?.correct) c4++;
-  const totalCorrect = c12 + c3 + c4;
-  const scoreOver10 = parseFloat(((totalCorrect / 20) * 10).toFixed(1));
-  const scorePercentage = Math.round((totalCorrect / 20) * 100);
+  const isBgu = state.route === 'bgu';
+  let totalCorrect = 0;
+  let maxTotal = isBgu ? 24 : 18;
+  let rutaName = isBgu ? 'Bachillerato (BGU)' : 'Básica Superior (10mo EGB)';
+
+  if (isBgu) {
+    totalCorrect = (
+      Object.keys(state.pasiva.history).filter(k => state.pasiva.history[k]?.correct).length +
+      Object.keys(state.refleja.history).filter(k => state.refleja.history[k]?.correct).length +
+      Object.keys(state.compuesta.history).filter(k => state.compuesta.history[k]?.correct).length +
+      Object.keys(state.subord.history).filter(k => state.subord.history[k]?.correct).length
+    );
+  } else {
+    totalCorrect = (
+      Object.keys(state.sujeto.history).filter(k => state.sujeto.history[k]?.correct).length +
+      Object.keys(state.predicado.history).filter(k => state.predicado.history[k]?.correct).length +
+      Object.keys(state.pronom.history).filter(k => state.pronom.history[k]?.correct).length
+    );
+  }
+
+  const scoreOver10 = parseFloat(((totalCorrect / maxTotal) * 10).toFixed(1));
+  const scorePercentage = Math.round((totalCorrect / maxTotal) * 100);
 
   const payload = {
     nombre: state.student.nombre,
     apellido: state.student.apellido || '',
     curso: state.student.curso || '',
+    ruta: rutaName,
     puntuacion: scorePercentage,
     calificacion: scoreOver10,
     correctas: totalCorrect,
-    total: 20,
-    fecha: new Date().toLocaleString('es-EC'),
-    detalles: [
-      { modulo: "Nivel 1 y 2", aciertos: c12, total: 9 },
-      { modulo: "Nivel 3", aciertos: c3, total: 5 },
-      { modulo: "Nivel 4", aciertos: c4, total: 6 }
-    ]
+    total: maxTotal,
+    fecha: new Date().toLocaleString('es-EC')
   };
 
   if (statusMsg) statusMsg.textContent = 'Enviando resultados a la planilla del docente...';
@@ -1439,106 +1948,220 @@ async function sendToGoogleSheets() {
 
     setTimeout(() => {
       if (statusMsg) {
-        statusMsg.textContent = `✓ Calificación de ${state.student.nombre} (${scoreOver10}/10) sincronizada correctamente con Google Sheets.`;
+        statusMsg.textContent = `✓ Calificación de ${state.student.nombre} (${scoreOver10}/10 en ${rutaName}) registrada con éxito.`;
         statusMsg.style.color = 'var(--color-green)';
       }
       if (btnSync) btnSync.disabled = false;
-      showToast('¡Calificación enviada con éxito!', 'success');
+      showToast('¡Calificación enviada a Google Sheets!', 'success');
     }, 1200);
   } catch (err) {
-    console.error('Error sending to Sheets:', err);
+    console.error(err);
     if (statusMsg) {
-      statusMsg.textContent = 'Hubo un inconveniente al conectar con Google Sheets. Intenta nuevamente.';
+      statusMsg.textContent = 'Inconveniente de red al sincronizar con Google Sheets.';
       statusMsg.style.color = 'var(--color-red)';
     }
     if (btnSync) btnSync.disabled = false;
-    showToast('Error de red al sincronizar con Google Sheets.', 'error');
   }
 }
 
-function resetAllPractice() {
-  if (!confirm('¿Seguro que deseas reiniciar todos los aciertos y comenzar desde cero?')) return;
-  state.basico.history = {};
-  state.comp.history = {};
-  state.pronom.history = {};
-  localStorage.removeItem('sintaxisFlowProgress');
-  updateGlobalScore();
-  renderBasicoExercise();
-  renderCompExercise();
-  renderPronomExercise();
-  showToast('Práctica reiniciada correctamente.', 'info');
+function resetCurrentRoutePractice() {
+  if (!confirm('¿Deseas reiniciar los aciertos de la ruta actual?')) return;
+  if (state.route === 'bgu') {
+    state.pasiva.history = {};
+    state.refleja.history = {};
+    state.compuesta.history = {};
+    state.subord.history = {};
+  } else {
+    state.sujeto.history = {};
+    state.predicado.history = {};
+    state.pronom.history = {};
+  }
+  persistProgress();
+  showToast('Práctica de la ruta reiniciada.', 'info');
 }
 
-// ============================================================================
-// 10. ANALIZADOR SINTÁCTICO GUIADO LIBRE
-// ============================================================================
-function handleCustomAnalysis() {
-  const input = document.getElementById('customSentenceInput');
-  const output = document.getElementById('analyzerOutput');
+function handleCustomUniversalAnalysis() {
+  const inp = document.getElementById('customSentenceInput');
+  const out = document.getElementById('analyzerOutput');
   const title = document.getElementById('analyzerSentenceTitle');
+  const stepType = document.getElementById('analysisStepType');
   const stepVerb = document.getElementById('analysisStepVerb');
   const stepSujeto = document.getElementById('analysisStepSujeto');
-  const stepCd = document.getElementById('analysisStepCd');
-  const stepCi = document.getElementById('analysisStepCi');
+  const stepComplements = document.getElementById('analysisStepComplements');
 
-  if (!input) return;
-  const sentence = input.value.trim();
+  if (!inp) return;
+  const sentence = inp.value.trim();
   if (!sentence) {
     showToast('Ingresa una oración para analizar.', 'warning');
     return;
   }
 
-  output.style.display = 'block';
+  out.style.display = 'block';
   title.textContent = `«${sentence}»`;
 
-  // Motor sintáctico deductivo simplificado
-  const words = sentence.replace(/[.¡!¿?]/g, '').split(/\s+/);
-  
-  // 1. Detección heurística de verbos comunes conjugados
-  const verbClues = [
-    'descubrió', 'entregaron', 'fascinaron', 'envió', 'puso', 'presentó', 
-    'enseñó', 'otorgó', 'transforma', 'piden', 'respetan', 'rompió', 
-    'contamina', 'salva', 'crearon', 'mejora', 'ensayan', 'da', 'sugiere', 
-    'prometió', 'mostramos', 'explicó', 'lee', 'analiza', 'escribe', 'come', 'compra'
-  ];
+  const lower = sentence.toLowerCase();
+  const isPassive = (lower.includes(' fue ') || lower.includes(' fueron ') || lower.includes(' era ') || lower.includes(' ha sido ')) && lower.includes(' por ');
+  const isRefleja = lower.startsWith('se ') || lower.includes(' se ');
+  const isCompound = lower.includes(', pero ') || lower.includes(' y ') || lower.includes(' o ') || lower.includes(', por tanto ') || lower.includes(', sin embargo ') || lower.includes(' que ');
 
-  let foundVerb = words.find(w => verbClues.includes(w.toLowerCase())) || words[Math.min(2, words.length - 1)];
+  // Paso 1: Tipología
+  if (isCompound) {
+    stepType.innerHTML = '<strong>Oración Compuesta:</strong> Presenta coordinación o subordinación entre proposiciones articuladas por conectores lógicos.';
+  } else if (isPassive) {
+    stepType.innerHTML = '<strong>Oración Simple en Voz Pasiva Perifrástica:</strong> Estructurada con verbo ser + participio y Complemento Agente con <em>por</em>.';
+  } else if (isRefleja) {
+    stepType.innerHTML = '<strong>Construcción con «SE»:</strong> Requiere verificar si presenta sujeto paciente (Pasiva Refleja) o carece de él (Impersonal).';
+  } else {
+    stepType.innerHTML = '<strong>Oración Simple Bimembre en Voz Activa:</strong> Articulada en torno a un único núcleo verbal conjugado que rige los argumentos.';
+  }
 
-  stepVerb.innerHTML = `
-    El verbo conjugado rector es <strong>«${foundVerb}»</strong>. Cumple la función sintáctica de <strong>Núcleo del Predicado (NP)</strong> y delimita la estructura oracional.
-  `;
+  // Paso 2: Verbo
+  stepVerb.innerHTML = 'Identificación de núcleos predicativos conjugados que anclan la estructura sintáctica de la predicación.';
 
-  // 2. Prueba de concordancia para el Sujeto
-  stepSujeto.innerHTML = `
-    <strong>Prueba de concordancia:</strong> Si cambiamos el número del verbo <em>«${foundVerb}»</em> (de singular a plural o viceversa), el constituyente nominal que se ve forzado a cambiar para mantener la gramaticalidad es el <strong>Sujeto</strong> (y su núcleo es el sustantivo rector <strong>NS</strong>).
-  `;
+  // Paso 3: Sujeto y Concordancia
+  if (isPassive) {
+    stepSujeto.innerHTML = '<strong>Sujeto Paciente:</strong> Recibe el efecto de la acción verbal y concuerda estrictamente con el auxiliar pasivo (fue / fueron).';
+  } else {
+    stepSujeto.innerHTML = '<strong>Prueba de Concordancia:</strong> El Sujeto es el grupo nominal que cambia obligatoriamente de número al pluralizar o singularizar el verbo conjugado.';
+  }
 
-  // 3. Prueba de CD
-  stepCd.innerHTML = `
-    <strong>Prueba de Pronominalización acusativa:</strong> Verifica qué elemento responde a la sustitución por los pronombres <em>lo, la, los, las</em>. Si admite la transformación a voz pasiva convirtiéndose en sujeto paciente («fue descubierto por...»), se confirma categóricamente como <strong>Complemento Directo (CD)</strong>.
-  `;
+  // Paso 4: Argumentos y Adjuntos
+  stepComplements.innerHTML = '<strong>Delimitación de argumentos:</strong> CD (sustituible por lo/la), CI (destinatario con le/les), Complemento Agente (con <em>por</em>) y Adjuntos Circunstanciales (Tiempo, Lugar, Modo).';
 
-  // 4. Prueba de CI y Regla de SE
-  stepCi.innerHTML = `
-    <strong>Prueba de Pronominalización dativa:</strong> Los segmentos introducidos por <em>«a»</em> que señalan el destinatario son <strong>Complemento Indirecto (CI)</strong> y admiten sustitución por <em>le / les</em>.<br>
-    <em>Regla fonética:</em> Al sustituir CD y CI juntos, <em>le/les</em> se transforma en <strong>SE</strong> obligatoriamente.
-  `;
-
-  output.scrollIntoView({ behavior: 'smooth' });
+  out.scrollIntoView({ behavior: 'smooth' });
 }
 
 // ============================================================================
-// 11. UTILIDADES VISUALES (FEEDBACK & TOAST)
+// 15. UTILIDADES COMPARTIDAS (CHIPS, FEEDBACK, TOAST)
 // ============================================================================
-function showFeedback(modulePrefix, type, title, message) {
-  const card = document.getElementById(`${modulePrefix}FeedbackCard`);
-  const badge = document.getElementById(`${modulePrefix}FeedbackBadge`);
-  const titleEl = document.getElementById(`${modulePrefix}FeedbackTitle`);
-  const msgEl = document.getElementById(`${modulePrefix}FeedbackMessage`);
-  const expBox = document.getElementById(`${modulePrefix}ExplanationBox`);
+function createChip(word, index, context) {
+  const chip = document.createElement('div');
+  chip.className = 'word-chip';
+  chip.textContent = word;
+  chip.setAttribute('draggable', 'true');
+  chip.dataset.word = word;
+  chip.dataset.index = index;
+  chip.dataset.context = context;
+
+  chip.addEventListener('dragstart', handleDragStart);
+  chip.addEventListener('dragend', handleDragEnd);
+
+  chip.addEventListener('click', (e) => {
+    e.stopPropagation();
+    handleChipTap(chip, context);
+  });
+
+  return chip;
+}
+
+function handleChipTap(chip, context) {
+  const parentZone = chip.closest('.dropzone-content');
+
+  // Si ya está en una dropzone, al hacer clic regresa a su pool
+  if (parentZone) {
+    const poolId = context === 'sujeto' ? 'sujetoWordsPool' : 'predWordsPool';
+    const pool = document.getElementById(poolId);
+    if (pool) {
+      chip.classList.remove('selected-chip');
+      pool.appendChild(chip);
+      updateZoneCountAndPlaceholder(parentZone);
+      showToast(`«${chip.dataset.word}» devuelta al banco`, 'info');
+    }
+    return;
+  }
+
+  // Si está en el pool, seleccionarla para modo Tap-to-Place
+  const allChips = document.querySelectorAll(`[data-context="${context}"].word-chip`);
+  allChips.forEach(c => c.classList.remove('selected-chip'));
+
+  if (state[context].selectedChip === chip) {
+    state[context].selectedChip = null;
+  } else {
+    chip.classList.add('selected-chip');
+    state[context].selectedChip = chip;
+    showToast(`Toca el cajón donde deseas colocar «${chip.dataset.word}»`, 'info');
+  }
+}
+
+function attachZoneEvents(box, context) {
+  const content = box.querySelector('.dropzone-content');
+  if (!content) return;
+
+  box.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    box.classList.add('drag-over');
+  });
+
+  box.addEventListener('dragleave', () => {
+    box.classList.remove('drag-over');
+  });
+
+  box.addEventListener('drop', (e) => {
+    e.preventDefault();
+    box.classList.remove('drag-over');
+
+    const wordIdx = e.dataTransfer.getData('chip-index');
+    const chipCtx = e.dataTransfer.getData('chip-context');
+    if (chipCtx !== context) return;
+
+    const chip = document.querySelector(`[data-context="${context}"][data-index="${wordIdx}"]`);
+    if (chip) moveChipToZone(chip, content);
+  });
+
+  box.addEventListener('click', () => {
+    const selected = state[context].selectedChip;
+    if (selected) {
+      moveChipToZone(selected, content);
+      selected.classList.remove('selected-chip');
+      state[context].selectedChip = null;
+    }
+  });
+}
+
+function moveChipToZone(chip, content) {
+  const placeholder = content.querySelector('.dropzone-placeholder');
+  if (placeholder) placeholder.style.display = 'none';
+
+  content.appendChild(chip);
+  updateZoneCountAndPlaceholder(content);
+
+  const oldZone = chip.parentElement;
+  if (oldZone && oldZone.classList.contains('dropzone-content')) {
+    updateZoneCountAndPlaceholder(oldZone);
+  }
+}
+
+function updateZoneCountAndPlaceholder(zone) {
+  const box = zone.closest('.dropzone-box');
+  if (!box) return;
+  const countEl = box.querySelector('.zone-count');
+  const chips = zone.querySelectorAll('.word-chip');
+  if (countEl) countEl.textContent = chips.length;
+
+  const placeholder = zone.querySelector('.dropzone-placeholder');
+  if (placeholder) {
+    placeholder.style.display = chips.length === 0 ? 'block' : 'none';
+  }
+}
+
+function handleDragStart(e) {
+  this.classList.add('dragging');
+  e.dataTransfer.setData('text/plain', this.dataset.word);
+  e.dataTransfer.setData('chip-index', this.dataset.index);
+  e.dataTransfer.setData('chip-context', this.dataset.context);
+}
+
+function handleDragEnd() {
+  this.classList.remove('dragging');
+}
+
+function showFeedback(prefix, type, title, message) {
+  const card = document.getElementById(`${prefix}FeedbackCard`);
+  const badge = document.getElementById(`${prefix}FeedbackBadge`);
+  const titleEl = document.getElementById(`${prefix}FeedbackTitle`);
+  const msgEl = document.getElementById(`${prefix}FeedbackMessage`);
 
   if (!card) return;
-
   card.style.display = 'block';
   card.className = `feedback-card feedback-${type}`;
 
@@ -1546,14 +2169,12 @@ function showFeedback(modulePrefix, type, title, message) {
     badge.textContent = type === 'success' ? '¡CORRECTO!' : (type === 'hint' ? 'PISTA' : 'REVISIÓN');
     badge.className = `feedback-badge badge-${type}`;
   }
-
   if (titleEl) titleEl.textContent = title;
   if (msgEl) msgEl.innerHTML = message;
-  if (expBox) expBox.style.display = 'none';
 }
 
-function hideFeedback(modulePrefix) {
-  const card = document.getElementById(`${modulePrefix}FeedbackCard`);
+function hideFeedback(prefix) {
+  const card = document.getElementById(`${prefix}FeedbackCard`);
   if (card) card.style.display = 'none';
 }
 
