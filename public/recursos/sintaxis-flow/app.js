@@ -1,12 +1,12 @@
 /**
- * SINTAXIS FLOW — LABORATORIO GRAMATICAL PROGRESIVO
+ * SINTAXISLAB — LABORATORIO DE ANÁLISIS SINTÁCTICO
  * Autor: Msc. Alejandro Córdova
- * Currículo Nacional del Ecuador (10mo EGB y Bachillerato BGU)
+ * Gramática Activa y Análisis Sintáctico Progresivo
  * Versión 3.0.0
  */
 
 // ============================================================================
-// 1. BANCO DE DATOS CURRICULAR POR MÓDULOS
+// 1. BANCO DE DATOS DIDÁCTICO POR MÓDULOS
 // ============================================================================
 
 // 1.1 CONCORDANCIA EXPERIMENTAL (MÓDULO 01)
@@ -45,7 +45,7 @@ const CONCORDANCE_EXAMPLES = [
   }
 ];
 
-// 1.2 ETAPA 1: BÁSICA SUPERIOR (10MO EGB)
+// 1.2 ETAPA 1: NIVEL FUNDAMENTAL (ORACIÓN SIMPLE)
 // Módulo 02: Modificadores del Sujeto (Oraciones 1 a 6)
 const SUJETO_EXERCISES = [
   {
@@ -622,7 +622,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // 4. SESIÓN DE ESTUDIANTE Y PERSISTENCIA
 // ============================================================================
 function loadStudentSession() {
-  const saved = localStorage.getItem('sintaxisFlowStudent');
+  const saved = localStorage.getItem('sintaxisLabStudent') || localStorage.getItem('sintaxisFlowStudent');
   if (saved) {
     try {
       state.student = JSON.parse(saved);
@@ -671,7 +671,7 @@ function initStudentModal() {
       }
 
       state.student = { nombre, apellido, curso };
-      localStorage.setItem('sintaxisFlowStudent', JSON.stringify(state.student));
+      localStorage.setItem('sintaxisLabStudent', JSON.stringify(state.student));
       updateStudentHeader();
       closeStudentModal();
       showToast(`¡Identificación guardada: ${nombre}!`, 'success');
@@ -685,7 +685,7 @@ window.closeStudentModal = function() {
 };
 
 function loadSavedProgress() {
-  const saved = localStorage.getItem('sintaxisFlowCurricularProgress');
+  const saved = localStorage.getItem('sintaxisLabCurricularProgress') || localStorage.getItem('sintaxisFlowCurricularProgress');
   if (saved) {
     try {
       const d = JSON.parse(saved);
@@ -713,12 +713,12 @@ function persistProgress() {
     subord: state.subord.history,
     timestamp: new Date().toISOString()
   };
-  localStorage.setItem('sintaxisFlowCurricularProgress', JSON.stringify(payload));
+  localStorage.setItem('sintaxisLabCurricularProgress', JSON.stringify(payload));
   updateCurriculumScore();
 }
 
 // ============================================================================
-// 5. SELECTOR DE RUTAS CURRICULARES (10MO EGB vs. BGU)
+// 5. SELECTOR DE RUTAS DE APRENDIZAJE
 // ============================================================================
 function initCurriculumRoutes() {
   const btnEgb = document.getElementById('route-btn-egb');
@@ -1341,7 +1341,7 @@ function nextPronomExercise() {
     renderPronomExercise();
   } else {
     showToast('¡Has finalizado todas las oraciones de la Etapa de Básica Superior!', 'success');
-    showFeedback('pronom', 'success', '¡Etapa 10mo EGB Concluida!', 'Has completado todos los niveles de la oración simple. Puedes revisar tu nota en el Módulo 09 o dar el salto a Bachillerato BGU.');
+    showFeedback('pronom', 'success', '¡Nivel Fundamental Concluido!', 'Has completado todos los ejercicios de la oración simple. Puedes revisar tu calificación en el Módulo 09 o avanzar al Nivel Avanzado.');
   }
 }
 
@@ -1845,7 +1845,7 @@ function updateCurriculumScore() {
   const badge = document.getElementById('activeRouteBadge');
   const numEl = document.getElementById('globalScoreNum');
   const subEl = document.getElementById('globalScoreSubtitle');
-  const listEl = document.getElementById('curriculumBreakdownList');
+  const listEl = document.getElementById('learningBreakdownList');
 
   // Conteo de aciertos EGB (Módulos 2, 3, 4: 6 + 6 + 6 = 18 ejercicios)
   const cSujeto = Object.keys(state.sujeto.history).filter(k => state.sujeto.history[k]?.correct).length;
@@ -1863,9 +1863,9 @@ function updateCurriculumScore() {
   const scoreBguOver10 = ((totalBgu / 24) * 10).toFixed(1);
 
   if (state.route === 'bgu') {
-    if (badge) badge.textContent = 'CALIFICACIÓN BACHILLERATO (1RO A 3RO BGU)';
+    if (badge) badge.textContent = 'CALIFICACIÓN NIVEL AVANZADO';
     if (numEl) numEl.textContent = scoreBguOver10;
-    if (subEl) subEl.textContent = `Has acumulado ${totalBgu} de 24 aciertos en Sintaxis Compleja de Bachillerato.`;
+    if (subEl) subEl.textContent = `Has acumulado ${totalBgu} de 24 aciertos en Sintaxis Compleja y Oraciones Compuestas.`;
     if (listEl) {
       listEl.innerHTML = `
         <div class="breakdown-item"><span>Voz Pasiva Perifrástica & Agente:</span><strong>${cPasiva} / 6</strong></div>
@@ -1876,9 +1876,9 @@ function updateCurriculumScore() {
     }
   } else {
     // EGB
-    if (badge) badge.textContent = 'CALIFICACIÓN BÁSICA SUPERIOR (10MO EGB)';
+    if (badge) badge.textContent = 'CALIFICACIÓN NIVEL FUNDAMENTAL';
     if (numEl) numEl.textContent = scoreEgbOver10;
-    if (subEl) subEl.textContent = `Has acumulado ${totalEgb} de 18 aciertos en Oración Simple de Básica Superior.`;
+    if (subEl) subEl.textContent = `Has acumulado ${totalEgb} de 18 aciertos en Sintaxis de la Oración Simple.`;
     if (listEl) {
       listEl.innerHTML = `
         <div class="breakdown-item"><span>Modificadores del Sujeto (MD/MI/Apos):</span><strong>${cSujeto} / 6</strong></div>
@@ -1903,7 +1903,7 @@ async function sendCurricularToGoogleSheets() {
   const isBgu = state.route === 'bgu';
   let totalCorrect = 0;
   let maxTotal = isBgu ? 24 : 18;
-  let rutaName = isBgu ? 'Bachillerato (BGU)' : 'Básica Superior (10mo EGB)';
+  let rutaName = isBgu ? 'Nivel Avanzado (Sintaxis Compleja)' : 'Nivel Fundamental (Oración Simple)';
 
   if (isBgu) {
     totalCorrect = (

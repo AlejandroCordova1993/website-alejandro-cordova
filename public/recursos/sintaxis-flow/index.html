@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sintaxis Flow: Laboratorio interactivo y gamificado de análisis sintáctico alineado al Currículo Nacional del Ecuador para 10mo EGB y Bachillerato BGU.">
-  <title>Sintaxis Flow — Laboratorio Gramatical Progresivo · Msc. Alejandro Córdova</title>
+  <meta name="description" content="SintaxisLab: Laboratorio interactivo y progresivo de análisis sintáctico desde la oración simple hasta estructuras oracionales compuestas. Desarrollado por Msc. Alejandro Córdova.">
+  <title>SintaxisLab — Laboratorio de Análisis Sintáctico · Msc. Alejandro Córdova</title>
 
   <!-- FUENTES TIPOGRÁFICAS INSTITUCIONALES -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,11 +16,11 @@
 </head>
 <body>
 
-  <!-- CABECERA INSTITUCIONAL CON SELECTOR DE RUTA CURRICULAR -->
+  <!-- CABECERA INSTITUCIONAL CON SELECTOR DE RUTA DE APRENDIZAJE -->
   <header class="app-header">
     <div class="header-container">
       <div class="header-badge-row">
-        <span class="header-badge">CURRÍCULO NACIONAL DEL ECUADOR · LENGUA Y LITERATURA</span>
+        <span class="header-badge">LABORATORIO INTERACTIVO · ANÁLISIS SINTÁCTICO</span>
         <div class="student-session-chip" id="studentSessionChip">
           <span class="student-icon">👤</span>
           <span class="student-name-display" id="studentNameDisplay">Modo Práctica Libre</span>
@@ -28,17 +28,17 @@
         </div>
       </div>
       
-      <h1 class="header-title">Sintaxis Flow: Laboratorio Gramatical Progresivo</h1>
+      <h1 class="header-title">SintaxisLab: Laboratorio de Análisis Sintáctico</h1>
       <p class="header-desc">
         Aprende y domina la estructura de la lengua mediante pruebas científicas: concordancia gramatical, modificadores del sujeto, complementos del verbo, voz pasiva y oraciones compuestas. Selecciona tu nivel educativo para comenzar:
       </p>
 
       <!-- SELECTOR PRINCIPAL DE ETAPA CURRICULAR -->
-      <div class="curriculum-route-switcher" role="radiogroup" aria-label="Selector de nivel curricular">
+      <div class="learning-route-switcher" role="radiogroup" aria-label="Selector de nivel de aprendizaje">
         <button type="button" class="btn-route active" id="route-btn-egb" data-route="egb">
           <span class="route-icon">📘</span>
           <div class="route-meta">
-            <span class="route-title">Básica Superior (10mo EGB)</span>
+            <span class="route-title">Nivel Fundamental (Oración Simple)</span>
             <span class="route-sub">Oración Simple, Modificadores & Pronombres</span>
           </div>
         </button>
@@ -46,7 +46,7 @@
         <button type="button" class="btn-route" id="route-btn-bgu" data-route="bgu">
           <span class="route-icon">🎓</span>
           <div class="route-meta">
-            <span class="route-title">Bachillerato (1ro a 3ro BGU)</span>
+            <span class="route-title">Nivel Avanzado (Sintaxis Compleja)</span>
             <span class="route-sub">Voz Pasiva, Pasiva Refleja & Oraciones Compuestas</span>
           </div>
         </button>
@@ -63,7 +63,7 @@
       <!-- BARRA DE NAVEGACIÓN MODULAR (SE ADAPTA DINÁMICAMENTE) -->
       <nav class="module-nav" id="moduleNav" role="tablist" aria-label="Módulos de aprendizaje">
         
-        <!-- Pestañas EGB (10mo) -->
+        <!-- Pestañas Nivel Fundamental -->
         <button type="button" class="nav-tab active egb-tab" role="tab" aria-selected="true" data-tab="tab-fundamentos" id="btn-tab-fundamentos">
           <span class="tab-step">01</span>
           <span class="tab-label">Fundamentos & Concordancia</span>
@@ -81,7 +81,7 @@
           <span class="tab-label">Pronombres & Regla de SE</span>
         </button>
 
-        <!-- Pestañas BGU (Bachillerato) -->
+        <!-- Pestañas Nivel Avanzado -->
         <button type="button" class="nav-tab bgu-tab" role="tab" aria-selected="false" data-tab="tab-pasiva" id="btn-tab-pasiva" style="display: none;">
           <span class="tab-step">05</span>
           <span class="tab-label">Puente de Voz Activa ↔ Pasiva</span>
@@ -117,7 +117,7 @@
     <section class="tab-content active" id="tab-fundamentos" data-label="01. Fundamentos & Concordancia" role="tabpanel">
       
       <div class="section-intro-card">
-        <div class="intro-tag">MÓDULO 01 · BÁSICA SUPERIOR (10MO EGB)</div>
+        <div class="intro-tag">MÓDULO 01 · FUNDAMENTOS GRAMATICALES</div>
         <h2>El Algoritmo de las 4 Pruebas y el Interruptor de Concordancia</h2>
         <p>
           En la lingüística moderna no preguntamos «¿quién hace la acción?» (pregunta engañosa en pasivas o con verbos de afección como <em>«Me gustan los libros»</em>). En su lugar, usamos la <strong>Prueba Científica de Concordancia</strong>.
@@ -199,7 +199,7 @@
 
         <div class="exercise-nav-bar">
           <div class="level-tabs-pills">
-            <span class="pill-active-level">DCD LL.4.4.7 · Modificadores del Sujeto (Oraciones 1 a 6)</span>
+            <span class="pill-active-level">Estructura y Modificadores del Sujeto (Oraciones 1 a 6)</span>
           </div>
           <div class="exercise-stepper">
             <span class="step-indicator" id="sujetoProgressText">Ejercicio 1 de 6</span>
@@ -212,7 +212,7 @@
         
         <div class="sentence-hero-card">
           <div class="sentence-meta-row">
-            <span class="badge-level">10MO EGB</span>
+            <span class="badge-level">NIVEL FUNDAMENTAL</span>
             <span class="badge-theme" id="sujetoThemeBadge">TEMA: SOCIEDAD</span>
             <span class="badge-task">Clasifica la estructura del Sujeto</span>
           </div>
@@ -316,7 +316,7 @@
 
         <div class="exercise-nav-bar">
           <div class="level-tabs-pills">
-            <span class="pill-active-level">DCD LL.4.4.7 · Predicado Completo (Oraciones 7 a 12)</span>
+            <span class="pill-active-level">Estructura y Complementos del Predicado (Oraciones 7 a 12)</span>
           </div>
           <div class="exercise-stepper">
             <span class="step-indicator" id="predProgressText">Ejercicio 1 de 6</span>
@@ -329,7 +329,7 @@
         
         <div class="sentence-hero-card">
           <div class="sentence-meta-row">
-            <span class="badge-level badge-orange">10MO EGB</span>
+            <span class="badge-level badge-orange">NIVEL FUNDAMENTAL</span>
             <span class="badge-theme" id="predThemeBadge">TEMA: VIAL</span>
             <span class="badge-task">Identifica NP, CD, CI y Circunstanciales</span>
           </div>
@@ -422,7 +422,7 @@
     <section class="tab-content" id="tab-pronombres" data-label="04. Pronombres & Regla de SE" role="tabpanel">
       
       <div class="section-intro-card">
-        <div class="intro-tag">MÓDULO 04 · DCD LL.4.4.8 · TRANSFORMACIÓN PRONOMINAL</div>
+        <div class="intro-tag">MÓDULO 04 · SUSTITUCIÓN PRONOMINAL & VARIACIÓN EUFÓNICA</div>
         <h2>Laboratorio de Pronombres Átonos y la Regla de «SE»</h2>
         <p>
           Transforma la oración sustituyendo el <strong>CD</strong> (*lo/la/los/las*) y el <strong>CI</strong> (*le/les*). Aplica la regla eufónica de <strong>SE</strong> cuando ambos pronombres se combinan.
@@ -517,12 +517,12 @@
     </section>
 
     <!-- ================================================================= -->
-    <!-- MÓDULO 05: EL PUENTE DE VOZ ACTIVA ↔ PASIVA (BGU)                 -->
+    <!-- MÓDULO 05: EL PUENTE DE VOZ ACTIVA ↔ PASIVA                 -->
     <!-- ================================================================= -->
     <section class="tab-content" id="tab-pasiva" data-label="05. Voz Activa ↔ Pasiva" role="tabpanel">
       
       <div class="section-intro-card">
-        <div class="intro-tag">MÓDULO 05 · BACHILLERATO (1RO A 3RO BGU) · DCD LL.5.4.1</div>
+        <div class="intro-tag">MÓDULO 05 · NIVEL AVANZADO · VOZ PASIVA PERIFRÁSTICA</div>
         <h2>El Puente Interactivo de Voz Activa a Pasiva Perifrástica</h2>
         <p>
           En los textos académicos y periodísticos, la <strong>voz pasiva</strong> permite focalizar la atención en el resultado de la acción (Sujeto Paciente). Observa y construye cómo los argumentos intercambian sus papeles sintácticos:
@@ -621,12 +621,12 @@
     </section>
 
     <!-- ================================================================= -->
-    <!-- MÓDULO 06: PASIVA REFLEJA CON "SE" VS. IMPERSONALIDAD (BGU)      -->
+    <!-- MÓDULO 06: PASIVA REFLEJA CON "SE" VS. IMPERSONALIDAD      -->
     <!-- ================================================================= -->
     <section class="tab-content" id="tab-refleja" data-label="06. Pasiva Refleja vs. Impersonal" role="tabpanel">
       
       <div class="section-intro-card">
-        <div class="intro-tag">MÓDULO 06 · BACHILLERATO BGU · VALORES DE «SE»</div>
+        <div class="intro-tag">MÓDULO 06 · NIVEL AVANZADO · VARIACIONES DEL MORFEMA «SE»</div>
         <h2>Pasiva Refleja con «SE» vs. Oraciones Impersonales</h2>
         <p>
           Uno de los errores más graves en redacción académica es confundir la <strong>Pasiva Refleja</strong> (donde sí hay Sujeto Paciente y el verbo DEBE concordar en plural: <em>«Se venden departamentos»</em>) con la <strong>Impersonal sintáctica</strong> (donde no hay sujeto y el verbo siempre está en singular: <em>«Se vive bien aquí»</em>).
@@ -647,7 +647,7 @@
         
         <div class="sentence-hero-card">
           <div class="sentence-meta-row">
-            <span class="badge-level badge-purple">BACHILLERATO BGU</span>
+            <span class="badge-level badge-purple">NIVEL AVANZADO</span>
             <span class="badge-theme" id="reflejaThemeBadge">TEMA: COMUNICACIÓN</span>
             <span class="badge-task">Determina la estructura con «SE»</span>
           </div>
@@ -706,12 +706,12 @@
     </section>
 
     <!-- ================================================================= -->
-    <!-- MÓDULO 07: EL BISTURÍ DE ORACIONES COMPUESTAS COORDINADAS (BGU)   -->
+    <!-- MÓDULO 07: EL BISTURÍ DE ORACIONES COMPUESTAS COORDINADAS   -->
     <!-- ================================================================= -->
     <section class="tab-content" id="tab-compuestas" data-label="07. Bisturí de Compuestas" role="tabpanel">
       
       <div class="section-intro-card">
-        <div class="intro-tag">MÓDULO 07 · BACHILLERATO BGU · CE.LL.5.6</div>
+        <div class="intro-tag">MÓDULO 07 · NIVEL AVANZADO · ORACIONES COMPUESTAS COORDINADAS</div>
         <h2>El «Bisturí Sintáctico»: Segmentación de Oraciones Compuestas</h2>
         <p>
           En una oración compuesta hay <strong>dos o más verbos conjugados</strong> (dos proposiciones) unidas por signos de puntuación (yuxtapuestas) o por nexos lógicos (coordinadas). Usa el bisturí para cortar la oración y clasificar su nexo:
@@ -732,7 +732,7 @@
         
         <div class="sentence-hero-card">
           <div class="sentence-meta-row">
-            <span class="badge-level badge-purple">BACHILLERATO BGU</span>
+            <span class="badge-level badge-purple">NIVEL AVANZADO</span>
             <span class="badge-theme" id="compuestaThemeBadge">TEMA: ENSAYO</span>
             <span class="badge-task">Corta las proposiciones y clasifica el nexo</span>
           </div>
@@ -806,12 +806,12 @@
     </section>
 
     <!-- ================================================================= -->
-    <!-- MÓDULO 08: PROPOSICIONES SUBORDINADAS (BGU)                      -->
+    <!-- MÓDULO 08: PROPOSICIONES SUBORDINADAS                      -->
     <!-- ================================================================= -->
     <section class="tab-content" id="tab-subordinadas" data-label="08. Proposiciones Subordinadas" role="tabpanel">
       
       <div class="section-intro-card">
-        <div class="intro-tag">MÓDULO 08 · BACHILLERATO BGU · SINTAXIS SUPERIOR</div>
+        <div class="intro-tag">MÓDULO 08 · NIVEL AVANZADO · SINTAXIS SUPERIOR</div>
         <h2>Iniciación a las Proposiciones Subordinadas</h2>
         <p>
           Una proposición subordinada depende jerárquicamente de una oración principal y cumple una función interna (Sustantiva o Adjetiva). Aplica la prueba del comodín: <strong>sustituye por «ESO» o por un adjetivo</strong>:
@@ -832,7 +832,7 @@
         
         <div class="sentence-hero-card">
           <div class="sentence-meta-row">
-            <span class="badge-level badge-purple">3RO BGU / PREUNIVERSITARIO</span>
+            <span class="badge-level badge-purple">NIVEL AVANZADO / PREUNIVERSITARIO</span>
             <span class="badge-theme" id="subordThemeBadge">TEMA: INVESTIGACIÓN</span>
             <span class="badge-task">Identifica la proposición subordinada</span>
           </div>
@@ -892,10 +892,10 @@
     <section class="tab-content" id="tab-resultados" data-label="09. Analizador & Calificación" role="tabpanel">
       
       <div class="section-intro-card">
-        <div class="intro-tag">MÓDULO 09 · BALANCE DE LOGROS CURRICULARES & LABORATORIO LIBRE</div>
-        <h2>Resultados Curriculares y Analizador Universal</h2>
+        <div class="intro-tag">MÓDULO 09 · BALANCE FORMATIVO & ANALIZADOR UNIVERSAL</div>
+        <h2>Resultados de Aprendizaje y Analizador Universal</h2>
         <p>
-          Consulta tu balance de aciertos y calificación estandarizada sobre 10 según la ruta cursada (<strong>10mo EGB</strong> o <strong>Bachillerato BGU</strong>), y utiliza el <strong>Analizador Universal</strong> para desglosar tanto oraciones simples como compuestas.
+          Consulta tu balance de aciertos y calificación estandarizada sobre 10 según la ruta cursada (<strong>Nivel Fundamental</strong> o <strong>Nivel Avanzado</strong>), y utiliza el <strong>Analizador Universal</strong> para desglosar tanto oraciones simples como compuestas.
         </p>
       </div>
 
@@ -904,7 +904,7 @@
         <!-- COLUMNA IZQUIERDA: TARJETA DE CALIFICACIÓN -->
         <div class="score-summary-column">
           <div class="score-card-main">
-            <span class="score-card-badge" id="activeRouteBadge">CALIFICACIÓN BÁSICA SUPERIOR (10MO EGB)</span>
+            <span class="score-card-badge" id="activeRouteBadge">CALIFICACIÓN NIVEL FUNDAMENTAL (ORACIÓN SIMPLE)</span>
             <h3 class="score-card-title">Calificación Global</h3>
             
             <div class="big-score-circle">
@@ -916,7 +916,7 @@
               Comienza los ejercicios en tu ruta para acumular tu puntuación.
             </p>
 
-            <div class="level-breakdown-list" id="curriculumBreakdownList">
+            <div class="level-breakdown-list" id="learningBreakdownList">
               <!-- Desglose inyectado dinámicamente por JS según la ruta activa -->
             </div>
 
@@ -1019,7 +1019,7 @@
         </div>
         <div class="form-group">
           <label for="studentInputCourse">Curso y Paralelo:</label>
-          <input type="text" id="studentInputCourse" class="custom-input" placeholder="Ej: 10mo 'A' o 2do BGU 'B'">
+          <input type="text" id="studentInputCourse" class="custom-input" placeholder="Ej: Nivel 1 o Bachillerato">
         </div>
       </div>
       <div class="modal-footer">

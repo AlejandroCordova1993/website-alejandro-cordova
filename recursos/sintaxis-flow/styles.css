@@ -1,7 +1,7 @@
 /* ============================================================
-   styles.css — Sintaxis Flow: Laboratorio Gramatical Progresivo
+   styles.css — SintaxisLab: Laboratorio de Análisis Sintáctico
    Diseño pedagógico institucional por Msc. Alejandro Córdova
-   Currículo Nacional del Ecuador (10mo EGB y Bachillerato BGU)
+   Gramática Activa y Análisis Sintáctico Progresivo
    ============================================================ */
 
 :root {
@@ -155,7 +155,7 @@ body {
 }
 
 /* ==================== SELECTOR DE RUTA CURRICULAR ==================== */
-.curriculum-route-switcher {
+.learning-route-switcher {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
@@ -1730,7 +1730,7 @@ body {
   .app-header {
     padding-top: 64px;
   }
-  .curriculum-route-switcher {
+  .learning-route-switcher {
     grid-template-columns: 1fr;
   }
   .theory-grid-cards {
