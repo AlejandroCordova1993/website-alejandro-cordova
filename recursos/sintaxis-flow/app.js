@@ -9,6 +9,149 @@
 // 1. BANCO DE DATOS DIDÁCTICO POR MÓDULOS
 // ============================================================================
 
+
+// ============================================================================
+// DICCIONARIO DIDÁCTICO DE TÉRMINOS LINGÜÍSTICOS (GLOSARIO INTERACTIVO)
+// ============================================================================
+const GLOSSARY_TERMS = {
+  "verbos-afeccion": {
+    name: "Verbos de Afección Psíquica",
+    category: "Semántica & Sintaxis Verbal",
+    icon: "🧠",
+    def: "Verbos como <em>gustar, encantar, fascinar, molestar, doler, apasionar</em> que expresan una emoción, vivencia o reacción interna experimentada por alguien. En estas oraciones, la persona que siente la emoción NO es el sujeto gramatical, sino el <strong>Complemento Indirecto</strong> (introducido por <em>a mí, a ti, a ella, me, te, le</em>).",
+    example: "En <strong>«A los estudiantes les fascina la robótica»</strong>, el Sujeto es <strong>«la robótica»</strong>. La trampa habitual consiste en creer que quien siente la emoción es el sujeto.",
+    tip: "Aplica siempre la <strong>Prueba Científica de Concordancia</strong>: Si cambias el verbo a plural (<em>«fascinan»</em>), lo único que cambia obligatoriamente es el sujeto: <em>«las robóticas fascinan»</em>. La frase <em>«A los estudiantes»</em> no cambia porque es CI."
+  },
+  "concordancia": {
+    name: "Prueba Científica de Concordancia",
+    category: "Principio Sintáctico Rector",
+    icon: "🔬",
+    def: "Es el criterio formal y riguroso de la lingüística moderna para identificar el Sujeto sin caer en ambigüedades semánticas. El Sujeto y el Verbo coinciden obligatoriamente en <strong>número</strong> (singular/plural) y <strong>persona</strong> (1.ª, 2.ª, 3.ª).",
+    example: "En <strong>«El teléfono de mis hermanos sonó fuertemente»</strong>: si forzamos el verbo a plural (<em>«sonaron»</em>), la oración exige decir <em>«Los teléfonos de mis hermanos sonaron»</em>. Esto demuestra que <em>teléfono</em> es el núcleo del Sujeto y no <em>hermanos</em>.",
+    tip: "Jamás preguntes <em>«¿quién hace la acción?»</em> porque falla estrepitosamente en pasivas (<em>«El informe fue leído»</em>) y en verbos de afección (<em>«Me duele la cabeza»</em>). La concordancia es la única prueba científica infalible."
+  },
+  "sintagma": {
+    name: "Sintagma (Grupo Sintáctico)",
+    category: "Estructura Gramatical",
+    icon: "🧱",
+    def: "Palabra o conjunto articulado de palabras que se organizan en torno a un <strong>núcleo</strong> (sustantivo, verbo, adjetivo, adverbio o preposición) y desempeñan una función sintáctica unitaria dentro de la oración.",
+    example: "En <strong>«Los conductores responsables de la ciudad»</strong>, todo el bloque forma un <strong>Sintagma Nominal (SN)</strong> con función de Sujeto. Su núcleo rector es el sustantivo <em>conductores</em>.",
+    tip: "Prueba del desplazamiento: los sintagmas se mueven o se sustituyen en bloque completo, nunca como palabras sueltas aisladas."
+  },
+  "modificador-directo": {
+    name: "Modificador Directo (MD)",
+    category: "Estructura del Sujeto",
+    icon: "🎯",
+    def: "Elemento (artículo, determinante o adjetivo calificativo) que acompaña al Núcleo del Sujeto <strong>directamente</strong>, sin preposiciones intermedias, concordando en género y número.",
+    example: "En <strong>«Los conductores responsables»</strong>: <em>«Los»</em> (artículo determinado) y <em>«responsables»</em> (adjetivo) son ambos <strong>MD</strong> del núcleo <em>conductores</em>.",
+    tip: "Todo artículo y todo adjetivo adherido directamente al sustantivo sin nexo preposicional funciona como Modificador Directo."
+  },
+  "modificador-indirecto": {
+    name: "Modificador Indirecto (MI)",
+    category: "Estructura del Sujeto",
+    icon: "🔗",
+    def: "Sintagma preposicional que complementa al Núcleo del Sujeto mediante un enlace subordinante (preposiciones como <em>de, con, sin, para, sobre</em>).",
+    example: "En <strong>«El teléfono de mis hermanos»</strong>: la construcción <strong>«de mis hermanos»</strong> es el <strong>MI</strong>, encabezado por la preposición <em>de</em>.",
+    tip: "A diferencia del MD, el MI siempre requiere una preposición o conector que enlace el complemento subordinado con el sustantivo núcleo."
+  },
+  "aposicion": {
+    name: "Aposición",
+    category: "Estructura del Sujeto",
+    icon: "🏷️",
+    def: "Sintagma nominal que aclara, nombra o precisa al Núcleo del Sujeto. Puede ser <strong>explicativa</strong> (va aislada entre comas) o <strong>especificativa</strong> (añade un nombre propio sin comas).",
+    example: "Explicativa: <strong>«Quito, capital del Ecuador, conserva su historia»</strong>. Especificativa: <strong>«El río Guayas baña la ciudad»</strong>.",
+    tip: "Prueba de permutabilidad: la aposición explicativa puede intercambiar su posición con el núcleo conservando el sentido exacto."
+  },
+  "complemento-directo": {
+    name: "Complemento Directo (CD)",
+    category: "Estructura del Predicado",
+    icon: "📦",
+    def: "Argumento verbal requerido por los verbos transitivos que delimita y completa directamente el proceso verbal. Designa el objeto, entidad o ser afectado por la acción.",
+    example: "En <strong>«El docente redactó el informe académico»</strong>: <em>«el informe académico»</em> es el <strong>CD</strong>.",
+    tip: "Doble prueba científica: 1) Se sustituye por los pronombres acusativos átonos <strong>lo, la, los, las</strong> (<em>«El docente lo redactó»</em>). 2) En voz pasiva, se convierte obligatoriamente en Sujeto Paciente (<em>«El informe fue redactado»</em>)."
+  },
+  "complemento-indirecto": {
+    name: "Complemento Indirecto (CI)",
+    category: "Estructura del Predicado",
+    icon: "📬",
+    def: "Función sintáctica que designa al destinatario, beneficiario o término receptor de la acción verbal. Va siempre introducido por la preposición <strong>«a»</strong>.",
+    example: "En <strong>«El director entregó los diplomas a los graduados»</strong>: <em>«a los graduados»</em> es el <strong>CI</strong>.",
+    tip: "Prueba de conmutación: se sustituye únicamente por los pronombres dativos <strong>le / les</strong> (<em>«El director les entregó los diplomas»</em>)."
+  },
+  "regla-eufonica": {
+    name: "Regla Eufónica de SE (Disimilación Pronominal)",
+    category: "Fonética y Pronominalización",
+    icon: "🎶",
+    def: "Principio fonético del español que impide la cacofonía cuando coinciden consecutivamente un pronombre de CI de 3.ª persona (<em>le / les</em>) con un pronombre de CD (<em>lo, la, los, las</em>).",
+    example: "No decimos *«Le lo entregué», sino que <em>le</em> muta eufónicamente a <strong>«se»</strong>: <strong>«Se lo entregué»</strong>.",
+    tip: "En <em>«se lo dije»</em>, la partícula <em>se</em> sigue funcionando como Complemento Indirecto (proviene etimológicamente del pronombre latino <em>illi</em>)."
+  },
+  "voz-activa": {
+    name: "Voz Activa",
+    category: "Diátesis Gramatical",
+    icon: "⚡",
+    def: "Construcción oracional en la que el Sujeto gramatical es el <strong>Agente</strong>: la entidad que causa, ejecuta o protagoniza activamente la acción verbal transitiva.",
+    example: "<strong>«El comité editorial publicó la investigación científica.»</strong> (Sujeto Agente: <em>El comité</em>; CD: <em>la investigación</em>).",
+    tip: "Focaliza la atención en el agente causante. Si el verbo es transitivo con CD, admite transformación regular a voz pasiva."
+  },
+  "pasiva-perifrastica": {
+    name: "Voz Pasiva Perifrástica",
+    category: "Diátesis Gramatical",
+    icon: "🌉",
+    def: "Estructura formal construida con la perífrasis verbal <strong>SER (conjugado en el tiempo de la activa) + PARTICIPIO (concordado en género y número)</strong>. El CD de la activa se transforma en Sujeto Paciente.",
+    example: "<strong>«La investigación científica fue publicada por el comité editorial.»</strong>",
+    tip: "El participante que realizaba la acción en la activa pasa al final de la pasiva como <strong>Complemento Agente</strong> introducido por la preposición <strong>«por»</strong>."
+  },
+  "complemento-agente": {
+    name: "Complemento Agente (C.Ag)",
+    category: "Voz Pasiva",
+    icon: "👤",
+    def: "Sintagma preposicional encabezado por la preposición <strong>«por»</strong> (o raramente <em>de</em>) en oraciones pasivas, que señala quién ejecutó efectivamente la acción verbal.",
+    example: "En <strong>«La ley fue aprobada por la asamblea»</strong>: <em>«por la asamblea»</em> es el <strong>Complemento Agente</strong>.",
+    tip: "Si transformas la oración a voz activa, el Complemento Agente se convierte inmediatamente en el Sujeto gramatical: <em>«La asamblea aprobó la ley»</em>."
+  },
+  "pasiva-refleja": {
+    name: "Pasiva Refleja con «SE»",
+    category: "Valores de «SE»",
+    icon: "🪞",
+    def: "Estructura sintáctica que emplea la partícula <strong>«se»</strong> junto a un verbo en forma activa con un <strong>Sujeto Paciente inanimado o de cosa</strong>, omitiendo voluntariamente la mención del agente.",
+    example: "<strong>«Se transmitieron los mensajes de emergencia.»</strong> (Equivale semánticamente a: <em>«Los mensajes de emergencia fueron transmitidos»</em>).",
+    tip: "Prueba de concordancia en plural: Si cambias el sustantivo a singular, el verbo cambia obligatoriamente: <em>«Se transmitió el mensaje»</em>. Esto demuestra que el sustantivo es Sujeto Paciente."
+  },
+  "impersonales": {
+    name: "Oraciones Impersonales con «SE»",
+    category: "Valores de «SE»",
+    icon: "🚫",
+    def: "Construcciones sintácticas que carecen por completo de Sujeto (ni expreso ni omitido). El verbo se fija de forma invariable y obligatoria en <strong>3.ª persona singular</strong>.",
+    example: "<strong>«Se vive bien en este barrio.»</strong> / <strong>«Se premió a los estudiantes más destacados.»</strong> (<em>«A los estudiantes»</em> es CD de persona, no sujeto).",
+    tip: "Jamás admiten verbo en plural: es completamente agramatical decir *«Se viven bien en este barrio». Si no puede concordar en plural, es una oración impersonal."
+  },
+  "oracion-compuesta": {
+    name: "Oraciones Compuestas Coordinadas",
+    category: "Sintaxis Compleja",
+    icon: "✂️",
+    def: "Estructuras oracionales que integran dos o más proposiciones sintácticamente independientes (cada una con su propio verbo conjugado) unidas mediante conjunciones coordinantes al mismo nivel de jerarquía.",
+    example: "<strong>«[El científico formuló la hipótesis] y [el equipo contrastó los datos].»</strong>",
+    tip: "Usa el bisturí sintáctico: separa las dos proposiciones. Si ambas tienen sentido completo por separado, están coordinadas o yuxtapuestas."
+  },
+  "nexo-sintactico": {
+    name: "Nexo Coordinante",
+    category: "Conectores Sintácticos",
+    icon: "🔗",
+    def: "Palabra gramatical invariable (conjunción) que enlaza proposiciones estableciendo relaciones lógicas de adición (copulativa), oposición (adversativa), alternativa (disyuntiva) o consecuencia (ilativa).",
+    example: "Copulativas: <em>y, e, ni</em> | Adversativas: <em>pero, mas, sino que</em> | Disyuntivas: <em>o, u</em> | Ilativas: <em>luego, conque, por tanto</em>.",
+    tip: "El nexo no forma parte del predicado ni del sujeto de ninguna proposición; actúa como una bisagra o puente lógico entre ambas."
+  },
+  "proposicion-subordinada": {
+    name: "Proposiciones Subordinadas",
+    category: "Sintaxis Compleja",
+    icon: "📐",
+    def: "Proposición dependiente que carece de autonomía sintáctica y se incrusta dentro de otra oración desempeñando la función propia de un sustantivo (sustantiva: CD, Término o Sujeto) o de un adjetivo (adjetiva o de relativo: CN).",
+    example: "Sustantiva: <strong>«El testigo afirmó [que vio el incidente]»</strong> (➔ <em>«afirmó [eso]»</em>). Adjetiva: <strong>«El informe [que entregaste hoy] es exhaustivo»</strong> (➔ <em>«el informe [exhaustivo]»</em>).",
+    tip: "Prueba del comodín: Si la proposición se puede sustituir por el pronombre neutro <strong>«ESO»</strong>, es sustantiva. Si se puede sustituir por un adjetivo calificativo, es adjetiva."
+  }
+};
+
 // 1.1 CONCORDANCIA EXPERIMENTAL (MÓDULO 01)
 const CONCORDANCE_EXAMPLES = [
   {
@@ -594,6 +737,7 @@ document.addEventListener('DOMContentLoaded', () => {
   loadSavedProgress();
   initCurriculumRoutes();
   initStudentModal();
+  initTermGlossary();
 
   // Módulos
   initConcordanceExperiment();
@@ -774,8 +918,40 @@ function setRoute(routeId) {
   updateCurriculumScore();
 }
 
-function switchTab(tabId) {
+function getRouteForTab(tabId) {
+  if (['tab-fundamentos', 'tab-sujeto', 'tab-predicado', 'tab-pronombres'].includes(tabId)) return 'egb';
+  if (['tab-pasiva', 'tab-refleja', 'tab-compuestas', 'tab-subordinadas'].includes(tabId)) return 'bgu';
+  if (tabId === 'tab-resultados') return 'eval';
+  return 'egb';
+}
+
+function switchTab(tabId, syncRoute = true) {
   state.activeTab = tabId;
+
+  // Sincronizar automáticamente el selector de nivel con la pestaña seleccionada
+  if (syncRoute) {
+    const expectedRoute = getRouteForTab(tabId);
+    if (state.route !== expectedRoute) {
+      state.route = expectedRoute;
+
+      // Actualizar visualmente los botones de nivel superior
+      document.querySelectorAll('.btn-route').forEach(b => {
+        b.classList.toggle('active', b.dataset.route === expectedRoute);
+      });
+
+      // Conmutar visibilidad de pestañas según el nivel
+      const egbTabs = document.querySelectorAll('.egb-tab');
+      const bguTabs = document.querySelectorAll('.bgu-tab');
+      if (expectedRoute === 'egb') {
+        egbTabs.forEach(t => t.style.display = 'inline-flex');
+        bguTabs.forEach(t => t.style.display = 'none');
+      } else if (expectedRoute === 'bgu') {
+        egbTabs.forEach(t => t.style.display = 'none');
+        bguTabs.forEach(t => t.style.display = 'inline-flex');
+      }
+      updateCurriculumScore();
+    }
+  }
 
   document.querySelectorAll('.nav-tab').forEach(tab => {
     const isActive = tab.dataset.tab === tabId;
@@ -788,11 +964,18 @@ function switchTab(tabId) {
     sec.classList.toggle('active', isActive);
   });
 
-  // Notificar a course-shell
+  // Notificar al menú lateral desplegable (course-shell)
   document.dispatchEvent(new CustomEvent('tab-changed', {
     detail: { tabId: tabId }
   }));
 }
+
+// Escuchar eventos emitidos desde el menú lateral de course-shell
+window.addEventListener('course-shell-switch-tab', (e) => {
+  if (e.detail && e.detail.tabId) {
+    switchTab(e.detail.tabId, true);
+  }
+});
 
 // ============================================================================
 // 6. MÓDULO 01: EL INTERRUPTOR DE CONCORDANCIA
@@ -2189,4 +2372,77 @@ function showToast(message, type = 'info') {
   toast._timeout = setTimeout(() => {
     toast.classList.remove('show');
   }, 3200);
+}
+
+
+// ============================================================================
+// GESTIÓN DEL MODAL DE GLOSARIO DE TÉRMINOS LINGÜÍSTICOS
+// ============================================================================
+function initTermGlossary() {
+  const overlay = document.getElementById('termModalOverlay');
+  const btnClose = document.getElementById('btnCloseTermModal');
+  const btnConfirm = document.getElementById('btnConfirmTermModal');
+
+  // Delegación de clics para cualquier botón de búsqueda de términos
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.term-lookup-btn, [data-term]');
+    if (btn) {
+      e.preventDefault();
+      e.stopPropagation();
+      const termKey = btn.dataset.term;
+      openTermModal(termKey);
+    }
+  });
+
+  if (btnClose) btnClose.addEventListener('click', closeTermModal);
+  if (btnConfirm) btnConfirm.addEventListener('click', closeTermModal);
+
+  // Cerrar al hacer clic fuera de la tarjeta modal
+  if (overlay) {
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeTermModal();
+    });
+  }
+
+  // Cerrar con tecla Escape
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay && !overlay.classList.contains('hidden')) {
+      closeTermModal();
+    }
+  });
+}
+
+function openTermModal(termKey) {
+  const data = GLOSSARY_TERMS[termKey];
+  if (!data) {
+    console.warn(`Término no encontrado en el glosario: ${termKey}`);
+    return;
+  }
+
+  const overlay = document.getElementById('termModalOverlay');
+  const catEl = document.getElementById('termModalCat');
+  const titleEl = document.getElementById('termModalName');
+  const iconEl = document.getElementById('termModalIcon');
+  const defEl = document.getElementById('termModalDef');
+  const exampleEl = document.getElementById('termModalExample');
+  const tipEl = document.getElementById('termModalTip');
+
+  if (catEl) catEl.textContent = data.category || 'SINTAXIS & GRAMÁTICA';
+  if (titleEl) titleEl.textContent = data.name || termKey;
+  if (iconEl) iconEl.textContent = data.icon || '📖';
+  if (defEl) defEl.innerHTML = data.def || '';
+  if (exampleEl) exampleEl.innerHTML = data.example || '';
+  if (tipEl) tipEl.innerHTML = data.tip || '';
+
+  if (overlay) {
+    overlay.classList.remove('hidden');
+    // Enfocar el botón de cerrar para accesibilidad
+    const btnClose = document.getElementById('btnCloseTermModal');
+    if (btnClose) btnClose.focus();
+  }
+}
+
+function closeTermModal() {
+  const overlay = document.getElementById('termModalOverlay');
+  if (overlay) overlay.classList.add('hidden');
 }

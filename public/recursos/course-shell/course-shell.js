@@ -139,12 +139,25 @@
     nav.className = 'course-sidebar__nav';
     nav.setAttribute('aria-label', 'Secciones del recurso');
 
+    let lastGroup = null;
     sections.items.forEach((section, index) => {
+      const groupName = section.dataset.group ? section.dataset.group.trim() : null;
+      if (groupName && groupName !== lastGroup) {
+        lastGroup = groupName;
+        const groupHeader = document.createElement('div');
+        groupHeader.className = 'course-sidebar__group-title';
+        groupHeader.textContent = groupName;
+        nav.appendChild(groupHeader);
+      }
+
       const label = getSectionLabel(section, index);
       const link = document.createElement(sections.mode === 'slides' ? 'button' : 'a');
       link.className = 'course-sidebar__link';
       link.textContent = label;
       link.dataset.target = section.id || `course-section-${index + 1}`;
+      if (groupName) {
+        link.dataset.group = groupName;
+      }
 
       if (sections.mode === 'slides') {
         link.type = 'button';
@@ -163,6 +176,7 @@
             const tabContent = targetEl.classList.contains('tab-content') ? targetEl : targetEl.closest('.tab-content');
             if (tabContent) {
               e.preventDefault();
+              window.dispatchEvent(new CustomEvent('course-shell-switch-tab', { detail: { tabId: tabContent.id } }));
               const tabBtn = document.querySelector(`.nav-tab[data-tab="${tabContent.id}"]`);
               if (tabBtn) {
                 tabBtn.click();

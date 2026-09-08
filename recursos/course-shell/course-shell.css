@@ -134,6 +134,24 @@ body.course-sidebar-collapsed .course-sidebar__toggle {
   margin-top: 16px;
 }
 
+.course-sidebar__group-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #60A5FA;
+  text-transform: uppercase;
+  padding: 14px 10px 4px 10px;
+  margin-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.course-sidebar__group-title:first-of-type {
+  margin-top: 0;
+  border-top: none;
+  padding-top: 0;
+}
+
 .course-sidebar__link {
   display: block;
   width: 100%;
