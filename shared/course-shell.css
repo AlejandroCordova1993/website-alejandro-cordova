@@ -1,0 +1,253 @@
+/* ==================== COURSE-SHELL CSS ==================== */
+:root {
+  --course-sidebar-width: 280px;
+  --course-sidebar-bg: #071B33;
+  --course-sidebar-text: #F3F1EA;
+  --course-sidebar-muted: #94A3B8;
+  --course-sidebar-accent: #3B82F6;
+  --course-sidebar-active-bg: rgba(59, 130, 246, 0.16);
+  --course-sidebar-border: rgba(243, 241, 234, 0.12);
+  --course-shell-offset: 28px;
+}
+
+body.course-shell {
+  padding-left: var(--course-sidebar-width) !important;
+  transition: padding-left 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.course-shell-collapsed {
+  padding-left: 0 !important;
+}
+
+body.course-shell.modal-open,
+body.course-shell.lightbox-open,
+body.modal-open,
+body.lightbox-open {
+  padding-left: 0 !important;
+}
+
+body.modal-open .course-sidebar,
+body.lightbox-open .course-sidebar,
+body.modal-open .course-sidebar__toggle,
+body.lightbox-open .course-sidebar__toggle,
+body.modal-open .course-sidebar__backdrop,
+body.lightbox-open .course-sidebar__backdrop {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* SIDEBAR ASIDE */
+.course-sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 2000;
+  width: var(--course-sidebar-width);
+  min-height: 100vh;
+  padding: 24px 18px;
+  overflow-y: auto;
+  background: var(--course-sidebar-bg);
+  color: var(--course-sidebar-text);
+  border-right: 1px solid var(--course-sidebar-border);
+  box-shadow: 4px 0 24px rgba(7, 27, 51, 0.2);
+  font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.course-sidebar-collapsed .course-sidebar {
+  transform: translateX(-100%);
+}
+
+body.course-sidebar-collapsed .course-sidebar__toggle {
+  display: inline-flex;
+}
+
+.course-sidebar__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.course-sidebar__back {
+  display: inline-block;
+  color: var(--course-sidebar-muted) !important;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.course-sidebar__back:hover,
+.course-sidebar__back:focus-visible {
+  color: #FFFFFF !important;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.course-sidebar__close-btn {
+  background: transparent;
+  border: none;
+  color: var(--course-sidebar-muted);
+  font-size: 1.4rem;
+  line-height: 1;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: color 0.18s ease, background 0.18s ease;
+}
+
+.course-sidebar__close-btn:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.course-sidebar__title {
+  margin: 0;
+  color: #FFFFFF !important;
+  font-size: 1.15rem;
+  line-height: 1.25;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+}
+
+.course-sidebar__subtitle {
+  display: block;
+  margin-top: 6px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--course-sidebar-border);
+  color: #94A3B8;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.course-sidebar__nav {
+  display: grid;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.course-sidebar__group-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #60A5FA;
+  text-transform: uppercase;
+  padding: 14px 10px 4px 10px;
+  margin-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.course-sidebar__group-title:first-of-type {
+  margin-top: 0;
+  border-top: none;
+  padding-top: 0;
+}
+
+.course-sidebar__link {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  border-left: 3px solid transparent;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--course-sidebar-muted) !important;
+  font: inherit;
+  font-size: 0.84rem;
+  font-weight: 500;
+  line-height: 1.35;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.course-sidebar__link:hover,
+.course-sidebar__link:focus-visible {
+  background: rgba(243, 241, 234, 0.08);
+  color: #FFFFFF !important;
+  transform: translateX(2px);
+}
+
+.course-sidebar__link.is-active {
+  border-left-color: var(--course-sidebar-accent);
+  background: var(--course-sidebar-active-bg);
+  color: #FFFFFF !important;
+  font-weight: 700;
+}
+
+/* BOTÓN TOGGLE FLOTANTE PARA MÓVIL Y DESKTOP COLAPSADO */
+.course-sidebar__toggle {
+  display: none;
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 2100;
+  background: #071B33;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 8px 15px;
+  border-radius: 30px;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  align-items: center;
+  gap: 7px;
+  transition: transform 0.18s ease, background 0.18s ease, opacity 0.2s ease;
+}
+
+.course-sidebar__toggle:hover {
+  background: #0d2847;
+  transform: translateY(-1px);
+}
+
+/* Cuando el drawer está abierto en móvil, ocultamos el botón flotante para que no estorbe */
+body.course-sidebar-open .course-sidebar__toggle {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.course-sidebar__backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1999;
+  background: rgba(7, 27, 51, 0.65);
+  backdrop-filter: blur(2px);
+}
+
+/* RESPONSIVE DESIGN (DRAWER MÓVIL / TABLET) */
+@media (max-width: 960px) {
+  body.course-shell {
+    padding-left: 0 !important;
+  }
+
+  .course-sidebar__toggle {
+    display: inline-flex;
+  }
+
+  .course-sidebar {
+    transform: translateX(-100%);
+    box-shadow: 10px 0 35px rgba(0, 0, 0, 0.45);
+  }
+
+  body.course-sidebar-open .course-sidebar {
+    transform: translateX(0);
+  }
+
+  body.course-sidebar-open .course-sidebar__backdrop {
+    display: block;
+  }
+}
