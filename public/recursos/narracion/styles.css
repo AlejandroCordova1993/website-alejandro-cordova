@@ -5,53 +5,72 @@
    ============================================================================ */
 
 :root {
-  /* Paleta cromática editorial y literaria */
-  --bg: #F3F1EA;
+  /* ==========================================
+     PALETA DE COLOR OFICIAL (MANUAL DE MARCA)
+     Filosofía: HUMAN / SYSTEM (70 / 20 / 10)
+     ========================================== */
+  --paper-warm: #F3F1EA;       /* ~70% Fondo dominante */
+  --charcoal: #101820;         /* Texto principal de alto contraste */
+  --deep-blue: #071B33;        /* ~20% Bloques de impacto, cabecera */
+  --inst-blue: #123C69;        /* Metadatos secundarios, títulos intermedios */
+  --active-blue: #2367D1;      /* Interacción, estados activos, enlaces */
+  --grey-mineral: #5C636C;     /* ~7% Textos de apoyo, microetiquetas */
+  --grey-line: #D7D9D6;        /* Divisores de 1px, retículas, bordes */
+  --signal-red: #D83A32;       /* ~3% Micro-acentos técnicos, dots de 6px */
+
+  /* Aliases para compatibilidad con la plataforma */
+  --bg: var(--paper-warm);
   --card-bg: #FAF9F5;
   --card-hover: #FFFFFF;
   --surface-alt: #EAE6DB;
-  
-  --deep-blue: #071B33;
-  --accent-navy: #123C69;
-  --accent-blue: #2367D1;
-  --accent-blue-light: #EFF6FF;
-  --accent-blue-border: #93C5FD;
-  
-  /* Acentos por dimensión narrativa */
-  --color-narrador: #123C69;
-  --color-personajes: #2563EB;
-  --color-tiempo: #B45309;
-  --color-espacio: #15803D;
-  --color-conflicto: #DC2626;
-  --color-trama: #7C3AED;
-  --color-posclasico: #0D9488;
 
-  --text-main: #101820;
-  --text-soft: #64748B;
-  --text-muted: #94A3B8;
-  --text-dark: #0F172A;
-  
-  --border-soft: #D7D9D6;
-  --border-medium: #CBD5E1;
-  --border-focus: #2367D1;
+  --accent-navy: var(--inst-blue);
+  --accent-blue: var(--active-blue);
+  --accent-blue-light: #F0F4F8;
+  --accent-blue-border: #94A3B8;
 
-  --shadow-sm: 0 2px 6px rgba(7, 27, 51, 0.05);
-  --shadow-md: 0 4px 16px rgba(7, 27, 51, 0.08);
-  --shadow-lg: 0 10px 30px rgba(7, 27, 51, 0.12);
-  --shadow-modal: 0 24px 60px rgba(7, 27, 51, 0.45);
+  --color-narrador: var(--inst-blue);
+  --color-personajes: var(--active-blue);
+  --color-tiempo: var(--inst-blue);
+  --color-espacio: #1E6B38;
+  --color-conflicto: var(--signal-red);
+  --color-trama: var(--deep-blue);
+  --color-posclasico: var(--inst-blue);
 
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 14px;
-  --radius-pill: 9999px;
+  --text-main: var(--charcoal);
+  --text-soft: var(--grey-mineral);
+  --text-muted: #8A929C;
+  --text-dark: var(--charcoal);
 
-  --transition-fast: 0.18s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-normal: 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  --border-soft: var(--grey-line);
+  --border-medium: #BDC2BD;
+  --border-focus: var(--active-blue);
 
-  --font-title: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body: 'Source Serif 4', Georgia, serif;
-  --font-ui: 'Public Sans', sans-serif;
+  /* Sombras sobrias y reticulares (Prohibidas sombras difusas pesadas) */
+  --shadow-sm: 0 1px 3px rgba(16, 24, 32, 0.05);
+  --shadow-md: 0 2px 8px rgba(16, 24, 32, 0.07);
+  --shadow-lg: 0 4px 16px rgba(16, 24, 32, 0.09);
+  --shadow-modal: 0 12px 32px rgba(7, 27, 51, 0.35);
+
+  /* Bordes limpios de 2px a 4px (Regla estricta del manual) */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 4px;
+  --radius-pill: 4px;
+
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+
+  /* Tipografías Oficiales */
+  --font-sans: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Source Serif 4', Georgia, serif;
   --font-mono: 'DM Mono', monospace;
+
+  --font-title: var(--font-sans);
+  --font-body: var(--font-serif);
+  --font-ui: var(--font-sans);
+
+  --max-width: 1280px;
 }
 
 /* Reset y base */
@@ -90,7 +109,7 @@ body::before {
 
 /* ==================== HERO / ENCABEZADO INSTITUCIONAL ==================== */
 .hero-card {
-  background: linear-gradient(135deg, #071B33 0%, #123C69 100%);
+  background: var(--deep-blue);
   color: #FFFFFF;
   border-radius: var(--radius-lg);
   padding: 36px 32px;
@@ -101,7 +120,7 @@ body::before {
 }
 
 .hero-card::after {
-  content: "📖";
+  content: "";
   position: absolute;
   right: 20px;
   bottom: -15px;
@@ -1283,4 +1302,55 @@ body.modal-open {
   .hero-title {
     font-size: 1.55rem;
   }
+}
+
+
+/* ============================================================================
+   ELEMENTOS GRÁFICOS OFICIALES (MANUAL DE MARCA)
+   ============================================================================ */
+
+/* 1. Microetiqueta Técnica (Mono-Label con punto rojo de 6px) */
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem; /* 12px */
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--grey-mineral);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.mono-label .dot-red {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--signal-red);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* 2. Línea Vectorial Técnica con remate en punto rojo */
+.vector-line {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 1px;
+  background-color: var(--grey-line);
+  position: relative;
+  margin: 28px 0 20px 0;
+}
+
+.vector-line::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--signal-red);
 }

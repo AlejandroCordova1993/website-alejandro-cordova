@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" style="background:#F3F1EA; font-family:'Public Sans', -apple-system, sans-serif;">
+  <defs>
+    <style>
+      .title { font-family: 'Public Sans', sans-serif; font-size: 26px; font-weight: 700; fill: #071B33; letter-spacing: -0.02em; }
+      .mono-label { font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500; fill: #5C636C; letter-spacing: 0.08em; text-transform: uppercase; }
+      .row-title { font-family: 'Public Sans', sans-serif; font-size: 18px; font-weight: 700; fill: #071B33; }
+      .row-formula { font-family: 'DM Mono', monospace; font-size: 15px; font-weight: 600; fill: #123C69; }
+      .row-desc { font-family: 'Source Serif 4', Georgia, serif; font-size: 14px; fill: #101820; line-height: 1.5; }
+      .row-meta { font-family: 'DM Mono', monospace; font-size: 12px; fill: #5C636C; }
+      .grid-line { stroke: #D7D9D6; stroke-width: 1; }
+      .accent-dot { fill: #D83A32; }
+      .bar-bg { fill: #EAE6DB; }
+      .bar-tr { fill: #071B33; }
+      .bar-th { fill: #123C69; }
+    </style>
+  </defs>
+
+  <!-- Border container -->
+  <rect x="40" y="30" width="1120" height="615" fill="#FAF9F5" stroke="#D7D9D6" stroke-width="1" rx="4" />
+
+  <!-- Header section -->
+  <circle cx="70" cy="65" r="4" class="accent-dot" />
+  <text x="85" y="70" class="mono-label">GÉRARD GENETTE · TEORÍA NARRATOLÓGICA (FIGURAS III)</text>
+  <text x="70" y="105" class="title">ANISOCRONÍAS NARRATIVAS: VELOCIDAD Y DURACIÓN</text>
+  <text x="70" y="128" class="mono-label" style="fill:#5C636C;">RELACIÓN DIALÉCTICA: TIEMPO DEL RELATO (TR / PÁGINAS) VS. TIEMPO DE LA HISTORIA (TH / DÍAS, AÑOS)</text>
+  
+  <line x1="70" y1="145" x2="1130" y2="145" class="grid-line" />
+  <circle cx="1130" cy="145" r="3.5" class="accent-dot" />
+
+  <!-- Column Headers -->
+  <text x="70" y="175" class="mono-label">MOVIMIENTO NARRATIVO</text>
+  <text x="320" y="175" class="mono-label">FÓRMULA &amp; VELOCIDAD</text>
+  <text x="560" y="175" class="mono-label">ESCALA COMPARATIVA (TR vs. TH)</text>
+  <text x="850" y="175" class="mono-label">EFECTO DISCURSIVO &amp; EJEMPLO CANÓNICO</text>
+  
+  <line x1="70" y1="188" x2="1130" y2="188" class="grid-line" />
+
+  <!-- ROW 1: PAUSA -->
+  <g transform="translate(0, 205)">
+    <rect x="55" y="-5" width="1090" height="85" fill="#FAF9F5" stroke="#D7D9D6" stroke-width="0.5" rx="2" />
+    <text x="70" y="28" class="row-title">01. PAUSA DESCRIPTIVA</text>
+    <text x="70" y="52" class="row-meta">Detención temporal absoluta</text>
+    
+    <text x="320" y="28" class="row-formula">TR = n &gt; 0, TH = 0</text>
+    <text x="320" y="50" class="mono-label" style="fill:#D83A32;">VELOCIDAD NULA (V = 0)</text>
+    
+    <!-- Vector Bar visualization -->
+    <text x="560" y="22" class="mono-label" style="font-size:11px;">TR (Relato): Extenso</text>
+    <rect x="560" y="28" width="220" height="8" rx="2" class="bar-tr" />
+    <text x="560" y="52" class="mono-label" style="font-size:11px;">TH (Historia): Detenido (0 seg)</text>
+    <rect x="560" y="58" width="4" height="8" rx="1" fill="#D83A32" />
+
+    <text x="850" y="25" class="row-desc">El cronómetro de la acción se congela por completo</text>
+    <text x="850" y="45" class="row-desc">mientras la prosa describe espacios o atmósferas.</text>
+    <text x="850" y="65" class="mono-label" style="font-size:11px; fill:#123C69;">Balzac: Eugénie Grandet / Clarín: La Regenta</text>
+  </g>
+
+  <!-- ROW 2: ESCENA -->
+  <g transform="translate(0, 310)">
+    <rect x="55" y="-5" width="1090" height="85" fill="#FFFFFF" stroke="#D7D9D6" stroke-width="0.5" rx="2" />
+    <text x="70" y="28" class="row-title">02. ESCENA DIALOGADA</text>
+    <text x="70" y="52" class="row-meta">Isomorfismo temporal</text>
+    
+    <text x="320" y="28" class="row-formula">TR ≅ TH</text>
+    <text x="320" y="50" class="mono-label" style="fill:#2367D1;">TIEMPO REAL (1:1)</text>
+    
+    <!-- Vector Bar visualization -->
+    <text x="560" y="22" class="mono-label" style="font-size:11px;">TR (Relato): 5 minutos de lectura</text>
+    <rect x="560" y="28" width="150" height="8" rx="2" class="bar-tr" />
+    <text x="560" y="52" class="mono-label" style="font-size:11px;">TH (Historia): 5 minutos de diálogo</text>
+    <rect x="560" y="58" width="150" height="8" rx="2" class="bar-th" />
+
+    <text x="850" y="25" class="row-desc">Coincidencia mimética: la duración discursiva simula</text>
+    <text x="850" y="45" class="row-desc">exactamente el tiempo dramático del suceso.</text>
+    <text x="850" y="65" class="mono-label" style="font-size:11px; fill:#123C69;">Hemingway: Los asesinos / Diálogos teatrales</text>
+  </g>
+
+  <!-- ROW 3: RESUMEN -->
+  <g transform="translate(0, 415)">
+    <rect x="55" y="-5" width="1090" height="85" fill="#FAF9F5" stroke="#D7D9D6" stroke-width="0.5" rx="2" />
+    <text x="70" y="28" class="row-title">03. RESUMEN O SUMARIO</text>
+    <text x="70" y="52" class="row-meta">Aceleración sintética</text>
+    
+    <text x="320" y="28" class="row-formula">TR &lt; TH</text>
+    <text x="320" y="50" class="mono-label" style="fill:#123C69;">ACELERACIÓN CONDENSADA</text>
+    
+    <!-- Vector Bar visualization -->
+    <text x="560" y="22" class="mono-label" style="font-size:11px;">TR (Relato): 1 párrafo (10 líneas)</text>
+    <rect x="560" y="28" width="50" height="8" rx="2" class="bar-tr" />
+    <text x="560" y="52" class="mono-label" style="font-size:11px;">TH (Historia): 20 años transcurridos</text>
+    <rect x="560" y="58" width="230" height="8" rx="2" class="bar-th" />
+
+    <text x="850" y="25" class="row-desc">Grandes lapsos cronológicos son sintetizados</text>
+    <text x="850" y="45" class="row-desc">en fórmulas condensadas de alta economía expresiva.</text>
+    <text x="850" y="65" class="mono-label" style="font-size:11px; fill:#123C69;">Virginia Woolf: Orlando / Flaubert: Madame Bovary</text>
+  </g>
+
+  <!-- ROW 4: ELIPSIS -->
+  <g transform="translate(0, 520)">
+    <rect x="55" y="-5" width="1090" height="85" fill="#FFFFFF" stroke="#D7D9D6" stroke-width="0.5" rx="2" />
+    <text x="70" y="28" class="row-title">04. ELIPSIS TEMPORAL</text>
+    <text x="70" y="52" class="row-meta">Silenciamiento deliberado</text>
+    
+    <text x="320" y="28" class="row-formula">TR = 0, TH = n &gt; 0</text>
+    <text x="320" y="50" class="mono-label" style="fill:#D83A32;">VELOCIDAD INFINITA (SALTO)</text>
+    
+    <!-- Vector Bar visualization -->
+    <text x="560" y="22" class="mono-label" style="font-size:11px;">TR (Relato): Cero palabras (vacío)</text>
+    <rect x="560" y="28" width="2" height="8" rx="1" fill="#D83A32" />
+    <text x="560" y="52" class="mono-label" style="font-size:11px;">TH (Historia): Meses o años omitidos</text>
+    <rect x="560" y="58" width="250" height="8" rx="2" stroke="#123C69" stroke-dasharray="4,3" fill="none" stroke-width="1.5" />
+
+    <text x="850" y="25" class="row-desc">El tiempo de la historia transcurre sin registro en el texto.</text>
+    <text x="850" y="45" class="row-desc">Omisión intencionada que exige deducción al lector.</text>
+    <text x="850" y="65" class="mono-label" style="font-size:11px; fill:#123C69;">Rulfo: Pedro Páramo / García Márquez: Crónica</text>
+  </g>
+
+  <!-- Footer Technical Annotation -->
+  <text x="70" y="628" class="mono-label" style="font-size:11px;">● MATRIZ ANALÍTICA DE DURACIÓN NARRATIVA · MSC. ALEJANDRO CÓRDOVA · SISTEMA HUMAN / SYSTEM</text>
+</svg>

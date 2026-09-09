@@ -518,7 +518,7 @@ const VOICE_PERSPECTIVES = {
   "1-protag": {
     name: "1.ª Persona Protagonista (Martín, anticuario)",
     type: "Narrador Autodiégético",
-    icon: "👤",
+    
     text: "«Tenía el reloj de oro entre mis dedos temblorosos. Llevaba meses buscándolo en los mercadillos de Nápoles. Cuando el hombre de la gabardina se acercó con paso sigiloso, sentí un escalofrío en la nuca; supe de inmediato que venía a arrebatármelo. Me aferré a la cadena de plata como si en ello se me fuera la vida.»",
     knowledge: "Acceso total a sus emociones, sospechas y dolor físico inmediato.",
     limits: "Ignora por completo qué piensa el hombre de la gabardina o si lleva un arma oculta.",
@@ -527,7 +527,7 @@ const VOICE_PERSPECTIVES = {
   "1-testigo": {
     name: "1.ª Persona Testigo (Don Aurelio, vendedor vecino)",
     type: "Narrador Homodiégético",
-    icon: "👥",
+    
     text: "«Yo estaba ordenando unos candelabros de bronce en mi puesto cuando escuché el alboroto. Vi a Martín forcejear con un forastero alto que vestía gabardina oscura. El rostro de Martín estaba desencajado por el terror. El forastero tiró con furia del reloj, pero no pude oír lo que se susurraban entre dientes antes de que la multitud los rodeara.»",
     knowledge: "Registra ademanes, distancias físicas y expresiones faciales perceptibles.",
     limits: "No puede penetrar la conciencia de ninguno; deduce intenciones solo por gestos externos.",
@@ -536,7 +536,7 @@ const VOICE_PERSPECTIVES = {
   "3-omni": {
     name: "3.ª Persona Omnisciente (Visión Panorámica)",
     type: "Focalización Cero (N > P)",
-    icon: "👁️",
+    
     text: "«Martín sostenía el reloj de oro con una codicia mezclada con remordimiento: sabía que pertenecía a los herederos de su hermano. A pocos metros, Julián avanzaba con el corazón desbocado; no buscaba enriquecerse, sino recuperar la única prenda que le recordaba a su madre antes de que Martín la empeñara. Ninguno de los dos imaginaba que la policía vigilaba el callejón desde el amanecer.»",
     knowledge: "Penetración simultánea en la psicología de ambos antagonistas, sus pasados y el futuro inminente.",
     limits: "Ninguno dentro del universo de la ficción (omnipresencia epistemológica).",
@@ -545,7 +545,7 @@ const VOICE_PERSPECTIVES = {
   "3-obser": {
     name: "3.ª Persona Observador / Cámara (Registro Conductual)",
     type: "Focalización Externa (N < P)",
-    icon: "📹",
+    
     text: "«A las once y diez de la mañana, un hombre de cabello canoso sujetaba un reloj dorado junto al mostrador del puesto número doce. Un segundo individuo, de un metro ochenta y gabardina gris, se aproximó con las manos en los bolsillos. Hubo una breve tensión muscular en ambos antebrazos. La cadena metálica cayó al suelo de adoquines produciendo un chasquido agudo. Cinco transeúntes giraron la cabeza.»",
     knowledge: "Exclusivamente lo observable por una lente cinematográfica y un micrófono neutral.",
     limits: "Cero acceso a pensamientos, emociones, recuerdos o intenciones previas.",
@@ -1447,7 +1447,7 @@ function renderCurrentQuestion() {
 
     <div id="quizActionContainer" style="display:none; text-align:right;">
       <button type="button" class="btn-quiz-next" id="btnQuizNext">
-        ${qNum === totalQ ? 'Finalizar y Calificar Reto 🏁' : 'Siguiente Desafío →'}
+        ${qNum === totalQ ? 'Finalizar y Calificar Reto ' : 'Siguiente Desafío →'}
       </button>
     </div>
   `;
@@ -1502,7 +1502,7 @@ function handleOptionSelection(selectedIdx) {
   if (feedbackContainer) {
     feedbackContainer.className = `quiz-feedback-box ${isCorrect ? 'correct' : 'incorrect'}`;
     feedbackContainer.innerHTML = `
-      <div style="font-weight:700; margin-bottom:4px;">${isCorrect ? '✓ ¡Respuesta Correcta!' : '✕ Fundamentación Teórica:'}</div>
+      <div style="font-weight:700; margin-bottom:4px;">${isCorrect ? 'CORRECTO — FUNDAMENTACIÓN FILOLÓGICA:' : '✕ Fundamentación Teórica:'}</div>
       <div>${selectedOpt.feedback}</div>
     `;
     feedbackContainer.style.display = 'block';
@@ -1564,8 +1564,8 @@ function showQuizResults() {
       </div>
 
       <div style="margin-top:24px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button type="button" class="btn-primary" id="btnRestartQuiz">Reintentar Gran Reto 🔄</button>
-        <button type="button" class="btn-secondary" id="btnChangeStudentAfterQuiz">Cambiar Estudiante 👤</button>
+        <button type="button" class="btn-primary" id="btnRestartQuiz">Reintentar Gran Reto </button>
+        <button type="button" class="btn-secondary" id="btnChangeStudentAfterQuiz">Cambiar Estudiante </button>
       </div>
     </div>
   `;
