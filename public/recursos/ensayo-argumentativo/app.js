@@ -205,7 +205,7 @@ function initXrayAnalysis() {
         <div class="panel-section-title">Estructura Retórica:</div>
         <div class="panel-box"><strong>Fórmula:</strong> ${info.formula}</div>
 
-        <div class="panel-section-title">Clave Pedagógica de Msc. Alejandro Córdova:</div>
+        <div class="panel-section-title">Clave Pedagógica:</div>
         <p style="color: #475569; font-size: 0.9rem;">${info.tip}</p>
       `;
     });
