@@ -973,7 +973,7 @@ const COHN_MODES = {
     name: "3. Narrated Monologue / Estilo Indirecto Libre",
     voice: "Fusión íntima y polifónica: voz en 3.ª persona pero impregnada de la afectividad del personaje.",
     text: "«¡Qué hombre tan insoportable! ¿Cómo había podido atarse de por vida a un ser semejante? Charles masticaba la sopa con aquel ruido odioso de siempre. ¡Qué agonía! Rodolfo llegaría tarde o temprano a rescatarla; no cabía duda alguna de su amor.»",
-    markers: "Supresión de verbos introductores ('pensó que'), mantenimiento de tiempos pasados ('había podido', 'masticaba', 'llegaría'), pero adopción de exclamaciones e interrogaciones propias del tormento de Emma."
+    markers: "Supresión de verbos introductores ('pensó que'), mantenimiento de tiempos pasados ('había podido', 'masticaba', 'llegaría'), pero adopción de exclamaciones e interrogaciones propias del tormento de Emma. (Ver ficha didáctica: <button type=\"button\" class=\"term-lookup-btn\" data-term=\"estilo-indirecto-libre\"><span class=\"term-info-dot\">ℹ</span> Estilo Indirecto Libre</button>)."
   }
 };
 
