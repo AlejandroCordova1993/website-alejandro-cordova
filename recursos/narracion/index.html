@@ -1364,6 +1364,37 @@
             });
         });
     </script>
+
+    <!-- ==================== MODAL DE GLOSARIO DIDÁCTICO ==================== -->
+    <div id="termModalOverlay" class="term-modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="termModalTitle" aria-describedby="termModalDef">
+        <div class="term-modal-card" role="document">
+            <div class="term-modal-header">
+                <div class="term-header-left">
+                    <span class="term-cat-badge" id="termModalCat">Ontología Narrativa</span>
+                    <h3 class="term-modal-title" id="termModalTitle">Término Narratológico</h3>
+                </div>
+                <button class="term-modal-close" id="termModalClose" aria-label="Cerrar modal de término">✕</button>
+            </div>
+            <div class="term-modal-body">
+                <p class="term-modal-def" id="termModalDef">Definición conceptual...</p>
+                
+                <div class="term-example-box">
+                    <div class="term-sub-tag">Ejemplo Canónico Analizado</div>
+                    <p class="term-example-text" id="termModalExample">Cita literaria...</p>
+                </div>
+
+                <div class="term-tip-box">
+                    <div class="term-sub-tag tip-tag">Análisis Crítico / Clave Narratológica</div>
+                    <p class="term-tip-text" id="termModalAnalysis">Comentario crítico formativo...</p>
+                </div>
+            </div>
+            <div class="term-modal-footer">
+                <button class="btn-term-close" id="termModalGotIt">¡Entendido, continuar explorando!</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 
 </html>

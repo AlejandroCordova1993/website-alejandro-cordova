@@ -400,6 +400,10 @@ body::before {
 }
 
 /* ==================== MODAL DE TÉRMINOS (GLOSARIO) ==================== */
+body.modal-open {
+  overflow: hidden !important;
+}
+
 .term-modal-overlay {
   position: fixed;
   inset: 0;
