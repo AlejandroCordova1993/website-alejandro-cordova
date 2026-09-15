@@ -407,7 +407,7 @@ const GYM_CASES = [
     topic: "USO DE DISPOSITIVOS DIGITALES",
     quote: "El uso excesivo de pantallas iluminadas antes de dormir suprime la segregación de melatonina, lo cual provoca insomnio crónico y merma la capacidad de concentración matutina en un 30%.",
     correctType: "causa",
-    explanation: "Es un argumento de causa y consecuencia: explica con rigor cómo una acción fisiológica desencadena directamente un perjuicio funcional."
+    explanation: "Es un argumento de causa y consecuencia: explica con rigor cómo una alteración fisiológica desencadena directamente un perjuicio funcional."
   },
   {
     topic: "ALFABETIZACIÓN FINANCIERA",
@@ -432,6 +432,90 @@ const GYM_CASES = [
     quote: "En ensayos clínicos controlados en hospitales universitarios de Boston, los algoritmos de detección temprana identificaron tumores cutáneos con un 94.5% de precisión frente al 86% de los métodos convencionales.",
     correctType: "hecho",
     explanation: "Es un argumento empírico basado en datos estadísticos y mediciones científicas comparativas verificadas en ensayos clínicos."
+  },
+  {
+    topic: "CAMBIO CLIMÁTICO Y BIODIVERSIDAD",
+    quote: "La bióloga marina Jane Lubchenco y los informes del Panel Intergubernamental sobre Cambio Climático (IPCC) advierten que un incremento térmico oceánico superior a 1.5 °C destruirá entre el 70% y el 90% de los arrecifes coralinos globales.",
+    correctType: "autoridad",
+    explanation: "Es un argumento de autoridad calificada: se fundamenta en el consenso de la máxima institución científica climática (IPCC) y el juicio de una destacada investigadora."
+  },
+  {
+    topic: "PEATONALIZACIÓN DE CASCOS HISTÓRICOS",
+    quote: "De la misma manera en que un organismo colapsa si sus arterias principales se bloquean por un flujo desmedido, una ciudad se asfixia comercial y ambientalmente cuando su centro histórico se satura de automóviles en lugar de priorizar a los transeúntes.",
+    correctType: "comparacion",
+    explanation: "Es un argumento por analogía estructural: equipara el flujo circulatorio biológico con la movilidad urbana para ilustrar visualmente las consecuencias de la congestión."
+  },
+  {
+    topic: "ALIMENTACIÓN EN EDAD ESCOLAR",
+    quote: "El consumo recurrente de ultraprocesados con jarabe de maíz de alta fructosa altera la respuesta dopaminérgica del cerebro, lo cual propicia adicción temprana al dulce y duplica la incidencia de síndrome metabólico en adolescentes.",
+    correctType: "causa",
+    explanation: "Es un argumento de causa - consecuencia: establece el vínculo fisiológico causal directo entre un patrón dietético y el desarrollo de un trastorno posterior."
+  },
+  {
+    topic: "LIBERTAD ACADÉMICA Y DELIBERACIÓN",
+    quote: "Censurar debates incómodos en el ámbito universitario corrompe la misión formadora de la educación superior, pues la verdad sólo puede alcanzarse mediante la confrontación libre, honesta y respetuosa de ideas antagónicas.",
+    correctType: "valores",
+    explanation: "Es un argumento sustentado en principios morales y teleológicos: apela a la honestidad intelectual, la libertad de conciencia y el sentido ético de la búsqueda de la verdad."
+  },
+  {
+    topic: "BECAS ESCOLARES Y RETENCIÓN",
+    quote: "Las auditorías del Ministerio de Educación constataron que la deserción escolar se redujo del 19.2% al 5.4% en los distritos rurales donde se garantizó transporte gratuito y almuerzo caliente entre 2022 y 2025.",
+    correctType: "hecho",
+    explanation: "Es un argumento de hecho sustentado en datos numéricos objetivos y registros empíricos oficiales de políticas públicas."
+  },
+  {
+    topic: "JORNADA LABORAL REDUCIDA",
+    quote: "Disminuir la jornada semanal de 40 a 32 horas atenúa el agotamiento mental crónico, lo que redunda en una mayor concentración efectiva de los colaboradores y disminuye en un 28% los errores operativos en las líneas de producción.",
+    correctType: "causa",
+    explanation: "Es un argumento de causa y efecto: desglosa cómo una medida laboral actúa como causa generadora de bienestar psicológico y optimización de rendimiento."
+  },
+  {
+    topic: "NEUROPLASTICIDAD Y TERCERA EDAD",
+    quote: "Los estudios de la neurocientífica Marian Diamond y los investigadores del Instituto Max Planck corroboran que el aprendizaje de nuevos idiomas en la vejez preserva la densidad sináptica y retrasa hasta cinco años los síntomas de demencia senil.",
+    correctType: "autoridad",
+    explanation: "Es un argumento de autoridad científica: respalda la tesis citando a investigadores renombrados y a un centro de investigación neurocientífica de vanguardia mundial."
+  },
+  {
+    topic: "CONSERVACIÓN LINGÜÍSTICA ANCESTRAL",
+    quote: "Permitir que una lengua indígena desaparezca por desidia estatal equivale a quemar una enciclopedia viva e irrepetible donde se cifraron durante milenios secretos botánicos, medicinales y cosmovisiones irremplazables.",
+    correctType: "comparacion",
+    explanation: "Es un argumento por analogía: compara la pérdida de una lengua originaria con la destrucción de un archivo bibliográfico irremplazable para subrayar la magnitud del desastre cultural."
+  },
+  {
+    topic: "JUSTICIA AMBIENTAL INTERGENERACIONAL",
+    quote: "Agotar irreversiblemente los acuíferos subterráneos en aras de un beneficio agroexportador a corto plazo constituye una vulneración moral flagrante del principio de solidaridad y custodia hacia las futuras generaciones.",
+    correctType: "valores",
+    explanation: "Es un argumento fundado en valores y principios éticos: juzga la sostenibilidad desde el deber moral, la justicia distributiva y la responsabilidad hacia quienes heredarán el planeta."
+  },
+  {
+    topic: "TRANSICIÓN ENERGÉTICA GLOBAL",
+    quote: "El anuario de la Agencia Internacional de Energías Renovables (IRENA) registró que la energía solar y eólica generaron 14.2 millones de empleos directos a escala global en 2024, superando por primera vez a la minería de combustibles fósiles.",
+    correctType: "hecho",
+    explanation: "Es un argumento de hecho con respaldo estadístico cuantificable: ofrece una medición empírica documentada por una agencia multilateral especializada."
+  },
+  {
+    topic: "ALGORITMOS Y CONDICIONAMIENTO SOCIAL",
+    quote: "Tal como sostiene la catedrática de Harvard Shoshana Zuboff, los sistemas predictivos de las plataformas digitales no son neutrales, sino arquitecturas de extracción diseñadas para modificar conductas humanas a gran escala con fines de lucro.",
+    correctType: "autoridad",
+    explanation: "Es un argumento de autoridad teórica: recurre a una destacada académica y teórica social para validar conceptualmente el impacto manipulativo del entorno digital."
+  },
+  {
+    topic: "PROTECCIÓN DEL PERIODISMO DE INVESTIGACIÓN",
+    quote: "Un Estado democrático que persigue a sus reporteros críticos es semejante a un navío cuyo capitán decide destruir el radar y los faros costeros solo porque le incomoda que alerten de arrecifes cercanos.",
+    correctType: "comparacion",
+    explanation: "Es un argumento por comparación o analogía figurativa: utiliza una metáfora de navegación para evidenciar lo autodestructivo de acallar la prensa fiscalizadora."
+  },
+  {
+    topic: "DEFORESTACIÓN Y VULNERABILIDAD RURAL",
+    quote: "La tala intensiva en las cabeceras de las cuencas elimina las raíces que cohesionan el estrato vegetal, lo que acelera la sedimentación fluvial y provoca desbordamientos catastróficos ante lluvias torrenciales estacionales.",
+    correctType: "causa",
+    explanation: "Es un argumento de causa - consecuencia: explica con precisión el encadenamiento geofísico que une la deforestación de altura con los desastres naturales en los valles."
+  },
+  {
+    topic: "EXPERIMENTACIÓN Y SINESTESIA ANIMAL",
+    quote: "Imponer sufrimientos agudos y confinamiento atroz a animales sintientes para evaluar cosméticos de lujo es un acto éticamente injustificable: la belleza estética jamás puede construirse sobre la crueldad y la deshumanización.",
+    correctType: "valores",
+    explanation: "Es un argumento anclado en valores éticos y principios deontológicos: apela a la empatía moral, el rechazo a la crueldad innecesaria y los deberes humanitarios básicos hacia seres sintientes."
   }
 ];
 
@@ -458,6 +542,12 @@ function initGymArguments() {
       btn.disabled = false;
       btn.classList.remove("btn-correct", "btn-wrong");
     });
+
+    if (btnNextGym) {
+      btnNextGym.textContent = (index === GYM_CASES.length - 1) 
+        ? "Reiniciar entrenamiento ↻" 
+        : "Siguiente caso →";
+    }
   }
 
   optionBtns.forEach(btn => {
