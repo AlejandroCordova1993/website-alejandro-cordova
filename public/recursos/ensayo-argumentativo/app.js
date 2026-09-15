@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initNavigationTabs();
   initTheoryModule();
   initXrayAnalysis();
+  initAssemblyLab();
   initThesisLab();
   initGymArguments();
   initEssayBuilder();
@@ -210,6 +211,819 @@ function initXrayAnalysis() {
       `;
     });
   });
+}
+
+// =========================================================================
+// 3.B. MÓDULO 02: TALLER DE ENSAMBLE DISCURSIVO & LECTURA COMPRENSIVA
+// =========================================================================
+const ASSEMBLY_ESSAYS = [
+  {
+    id: "lectura",
+    title: "El valor insustituible de la lectura en la era digital",
+    author: "Msc. Alejandro Córdova",
+    topicTag: "HUMANIDADES Y COGNICIÓN",
+    icon: "📖",
+    summary: "Explora por qué la lectura profunda de literatura y textos complejos es un gimnasio mental urgente para preservar el pensamiento crítico y la empatía en un mundo de estímulos fragmentados.",
+    paragraphs: [
+      {
+        partId: "intro",
+        partName: "Párrafo 1: Introducción & Tesis",
+        formulaTokens: ["Gancho Contextual", "+", "Problematización", "+", "Tesis Central Debatible"],
+        slots: [
+          {
+            id: "s1",
+            label: "1. Gancho Contextual",
+            hint: "Atrae al lector con una observación sobre la prisa y la sobreestimulación cotidiana.",
+            expectedText: "En una sociedad saturada de notificaciones instantáneas, videos breves de quince segundos y estímulos continuos, el silencio que exige abrir un libro físico parece haberse convertido en un anacronismo incómodo."
+          },
+          {
+            id: "s2",
+            label: "2. Problematización",
+            hint: "Plantea el dilema: consumimos muchas palabras pero con menor profundidad atencional.",
+            expectedText: "Aunque hoy consumimos más palabras escritas que en cualquier otra época histórica a través de pantallas luminosas, la mayor parte de esa lectura es fugaz, fragmentada y dispersa, lo que debilita nuestra capacidad de concentración prolongada."
+          },
+          {
+            id: "s3",
+            label: "3. Tesis Central Debatible",
+            hint: "Formula la postura firme: la lectura profunda es un entrenamiento cognitivo insustituible.",
+            expectedText: "Por consiguiente, recuperar el hábito de la lectura sostenida de textos complejos y obras literarias no es un mero pasatiempo nostálgico, sino un entrenamiento cognitivo insustituible para cultivar el pensamiento crítico y la autonomía intelectual."
+          }
+        ],
+        explanation: "¡Excelente ensamblaje! Observa la progresión lógica: partes del síntoma cotidiano (la saturación digital), abres la controversia real (leer fragmentado vs. leer profundo) y desembocas de manera natural en una tesis afirmativa y debatible."
+      },
+      {
+        partId: "arg1",
+        partName: "Párrafo 2: Argumento 1 (Causa y Neurociencia)",
+        formulaTokens: ["Conector Discursivo", "+", "Premisa Fisiológica", "+", "Evidencia Empírica", "+", "Inferencia de Remate"],
+        slots: [
+          {
+            id: "s1",
+            label: "1. Conector Discursivo",
+            hint: "Introduce ordenadamente la primera línea de argumentación.",
+            expectedText: "En primer lugar,"
+          },
+          {
+            id: "s2",
+            label: "2. Premisa Fisiológica",
+            hint: "Afirma que la lectura atenta modela positivamente la red neuronal atencional.",
+            expectedText: "la lectura atenta y prolongada reconfigura la arquitectura neuronal del cerebro fortaleciendo los circuitos de atención voluntaria y memoria de trabajo."
+          },
+          {
+            id: "s3",
+            label: "3. Evidencia Empírica",
+            hint: "Aporta mediciones científicas comparativas de centros universitarios especializados.",
+            expectedText: "Investigaciones del Centro de Lectura de la Universidad de Stavanger constataron que los lectores de textos extensos en papel retienen un 35% más de secuencias argumentativas que quienes hojean los mismos contenidos en dispositivos con hipervínculos."
+          },
+          {
+            id: "s4",
+            label: "4. Inferencia de Remate",
+            hint: "Concluye cómo este hallazgo respalda la necesidad de concentración rigurosa.",
+            expectedText: "De este modo, resistir la pulsión de la navegación espasmódica permite consolidar redes cognitivas indispensables para el razonamiento abstracto y la asimilación conceptual rigurosa."
+          }
+        ],
+        explanation: "¡Párrafo perfectamente hilvanado! Iniciar con el marcador discursivo, enunciar la premisa causal, blindarla con un dato empírico contrastado y cerrar con la inferencia confiere a este argumento un rigor académico intachable."
+      },
+      {
+        partId: "arg2",
+        partName: "Párrafo 3: Argumento 2 (Empatía y Valores Cívicos)",
+        formulaTokens: ["Conector de Adición", "+", "Premisa Ética", "+", "Respaldo Psicológico", "+", "Inferencia Democrática"],
+        slots: [
+          {
+            id: "s1",
+            label: "1. Conector de Adición",
+            hint: "Suma un segundo ángulo reflexivo de igual peso que el anterior.",
+            expectedText: "Asimismo,"
+          },
+          {
+            id: "s2",
+            label: "2. Premisa Ética",
+            hint: "Sostiene que la literatura estimula la capacidad de entender y sentir con el otro.",
+            expectedText: "la inmersión en la ficción literaria activa procesos psicológicos fundamentales de empatía y comprensión del otro que ninguna red social puede replicar."
+          },
+          {
+            id: "s3",
+            label: "3. Respaldo Psicológico",
+            hint: "Cita hallazgos de psicología cognitiva sobre la «teoría de la mente».",
+            expectedText: "Estudios de psicología cognitiva de The New School en Nueva York evidenciaron que leer narrativa compleja incrementa de inmediato el rendimiento en pruebas de teoría de la mente, facultando al lector para descifrar motivaciones ajenas y convivir con la ambigüedad moral."
+          },
+          {
+            id: "s4",
+            label: "4. Inferencia Democrática",
+            hint: "Remata vinculando la empatía literaria con el ejercicio ciudadano plural.",
+            expectedText: "Al obligarnos a habitar mentes y realidades disímiles a la propia, la literatura educa la sensibilidad cívica indispensable para la deliberación democrática plural."
+          }
+        ],
+        explanation: "¡Brillante reconstrucción! Tras el argumento científico-neurológico, este segundo argumento aporta la dimensión humana y ética, demostrando que la lectura forja ciudadanos más comprensivos y tolerantes."
+      },
+      {
+        partId: "concl",
+        partName: "Párrafo 4: Conclusión & Llamado a la Acción",
+        formulaTokens: ["Conector de Cierre", "+", "Recapitulación Sintética", "+", "Reafirmación", "+", "Llamado a la Acción"],
+        slots: [
+          {
+            id: "s1",
+            label: "1. Conector de Cierre",
+            hint: "Marca formalmente la apertura del momento de recapitulación final.",
+            expectedText: "En conclusión,"
+          },
+          {
+            id: "s2",
+            label: "2. Recapitulación Sintética",
+            hint: "Condensa los dos pilares demostrados (atención neuronal + empatía cívica).",
+            expectedText: "los descubrimientos neurológicos sobre la atención sostenida y las evidencias psicosociales sobre la empatía demuestran que leer en profundidad preserva lo más valioso de nuestras facultades reflexivas."
+          },
+          {
+            id: "s3",
+            label: "3. Reafirmación de la Tesis",
+            hint: "Reitera la postura inicial con mayor fuerza retórica y convicción.",
+            expectedText: "Frente a la tiranía de la inmediatez algorítmica, el acto solitario de leer con calma constituye la trinchera más efectiva de soberanía mental."
+          },
+          {
+            id: "s4",
+            label: "4. Llamado a la Acción",
+            hint: "Cierra proyectando un deber ético hacia la escuela y la familia.",
+            expectedText: "Urge, por tanto, que familias e instituciones educativas protejan el tiempo de lectura libre no como una tarea impuesta, sino como un derecho inalienable al propio pensamiento."
+          }
+        ],
+        explanation: "¡Enhorabuena, has cerrado el ensayo con maestría! La conclusión no inventa tesis nuevas; recoge las pruebas previas, reafirma la postura nuclear y remata con un llamado inspirador a la acción comunitaria."
+      }
+    ]
+  },
+  {
+    id: "ia_educacion",
+    title: "Inteligencia artificial en el aula: andamiaje de apoyo, no sustituto del criterio",
+    author: "Msc. Alejandro Córdova",
+    topicTag: "TECNOLOGÍA Y PEDAGOGÍA",
+    icon: "🤖",
+    summary: "Analiza cómo integrar las herramientas generativas en la educación secundaria y superior como un espejo dialéctico sin perder la autoría reflexiva ni la honestidad intelectual.",
+    paragraphs: [
+      {
+        partId: "intro",
+        partName: "Párrafo 1: Introducción & Tesis",
+        formulaTokens: ["Gancho Contextual", "+", "Problematización", "+", "Tesis Central Debatible"],
+        slots: [
+          {
+            id: "s1",
+            label: "1. Gancho Contextual",
+            hint: "Describe la sorpresa y desconcierto ante la repentina masificación de la IA generativa.",
+            expectedText: "La irrupción repentina de los modelos generativos de lenguaje ha generado un desconcierto generalizado en los claustros docentes de todo el mundo."
+          },
+          {
+            id: "s2",
+            label: "2. Problematización",
+            hint: "Plantea el falso dilema entre la prohibición absoluta o la entrega incondicional a la máquina.",
+            expectedText: "Frente al temor comprensible de plagios masivos y pérdida de rigor académico, muchas instituciones han optado por la prohibición ciega, mientras otras promueven una adopción acrítica que delega la producción textual en los algoritmos."
+          },
+          {
+            id: "s3",
+            label: "3. Tesis Central Debatible",
+            hint: "Enuncia la tesis propositiva: usarla como andamiaje bajo estricto juicio crítico humano.",
+            expectedText: "Frente a estos extremos, la inteligencia artificial debe ser integrada en el aula como un andamiaje para formular preguntas y contrastar enfoques, pero supeditada siempre al juicio crítico y la voz reflexiva del estudiante."
+          }
+        ],
+        explanation: "¡Ensamble impecable! Has contextualizado el dilema tecnológico actual y derivado hacia una tesis matizada que supera el binarismo simplista de 'prohibir o entregarse'."
+      },
+      {
+        partId: "arg1",
+        partName: "Párrafo 2: Argumento 1 (Metacognición y Andamiaje)",
+        formulaTokens: ["Conector Discursivo", "+", "Premisa de Andamiaje", "+", "Evidencia Universitaria", "+", "Inferencia de Cierre"],
+        slots: [
+          {
+            id: "s1",
+            label: "1. Conector Discursivo",
+            hint: "Abre el cuerpo argumentativo con tono deliberativo.",
+            expectedText: "Para comenzar,"
+          },
+          {
+            id: "s2",
+            label: "2. Premisa de Andamiaje",
+            hint: "Explica cómo la IA sirve como interlocutora dialéctica para retar las ideas propias.",
+            expectedText: "utilizada pedagógicamente como contraparte dialéctica, la IA generativa puede potenciar la metacognición y la habilidad de depuración argumentativa."
+          },
+          {
+            id: "s3",
+            label: "3. Evidencia Universitaria",
+            hint: "Aporta resultados de pruebas en consorcios universitarios destacados.",
+            expectedText: "Experiencias piloto en universidades del consorcio Russell Group revelaron que los estudiantes que emplean la IA para generar contraargumentos a sus tesis aprenden a anticipar objeciones con el doble de profundidad que mediante métodos pasivos."
+          },
+          {
+            id: "s4",
+            label: "4. Inferencia de Cierre",
+            hint: "Remata destacando que la máquina funciona como espejo retórico, no como autora.",
+            expectedText: "La máquina, en consecuencia, no piensa por el alumno, sino que funciona como un espejo retórico exigente que lo obliga a blindar y afinar sus propias razones."
+          }
+        ],
+        explanation: "¡Extraordinario! Demuestras que la tecnología puede ser un catalizador del rigor discursivo cuando se utiliza para someter la propia tesis a escrutinio dialéctico."
+      },
+      {
+        partId: "arg2",
+        partName: "Párrafo 3: Argumento 2 (Auditoría de Fuentes y Falibilidad)",
+        formulaTokens: ["Conector de Contraste", "+", "Premisa de Advertencia", "+", "Dato de Auditoría", "+", "Inferencia Ética"],
+        slots: [
+          {
+            id: "s1",
+            label: "1. Conector de Contraste",
+            hint: "Introduce la necesaria prevención crítica ante los riesgos del sistema.",
+            expectedText: "No obstante,"
+          },
+          {
+            id: "s2",
+            label: "2. Premisa de Advertencia",
+            hint: "Advierte que la herramienta exige adiestramiento en verificar fuentes y alucinaciones.",
+            expectedText: "este beneficio formativo solo es viable si se entrena paralelamente la capacidad de auditar fuentes y detectar falsedades verosímiles en las respuestas automáticas."
+          },
+          {
+            id: "s3",
+            label: "3. Dato de Auditoría",
+            hint: "Aporta estadísticas oficiales sobre la frecuencia de invención de datos en la IA.",
+            expectedText: "Auditorías tecnológicas del Instituto Alan Turing advierten que los modelos de lenguaje inventan citas académicas y datos cuantitativos con apariencia formalmente impecable en más de un 15% de sus respuestas especializadas."
+          },
+          {
+            id: "s4",
+            label: "4. Inferencia Ética",
+            hint: "Concluye que el foco formativo debe desplazarse hacia la verificación probatoria.",
+            expectedText: "Por consiguiente, el docente debe desplazar el foco de la mera redacción mecánica hacia la verificación probatoria y la evaluación de la pertinencia ética."
+          }
+        ],
+        explanation: "¡Estructura balanceada y madura! Un ensayo académico convincente no es complaciente: anticipa los riesgos empíricos de la tecnología para fortalecer la tesis central."
+      },
+      {
+        partId: "concl",
+        partName: "Párrafo 4: Conclusión & Llamado a la Acción",
+        formulaTokens: ["Conector de Cierre", "+", "Recapitulación", "+", "Reafirmación Humanista", "+", "Proyección Educativa"],
+        slots: [
+          {
+            id: "s1",
+            label: "1. Conector de Cierre",
+            hint: "Inicia la recapitulación global de ideas.",
+            expectedText: "En suma,"
+          },
+          {
+            id: "s2",
+            label: "2. Recapitulación",
+            hint: "Define la IA como espejo de la lucidez de su usuario humano.",
+            expectedText: "la tecnología artificial no es una amenaza fatal ni una panacea milagrosa, sino un espejo de la propia capacidad analítica de quien la instruye mediante indicaciones reflexivas."
+          },
+          {
+            id: "s3",
+            label: "3. Reafirmación Humanista",
+            hint: "Reafirma que las virtudes éticas y estéticas son exclusivas del ser humano.",
+            expectedText: "La escuela no debe competir con la velocidad de la máquina, sino enseñar aquello que ningún modelo algorítmico posee: intención estética, responsabilidad moral y autenticidad expresiva."
+          },
+          {
+            id: "s4",
+            label: "4. Proyección Educativa",
+            hint: "Concluye con un llamado propositivo a formar criterios autónomos.",
+            expectedText: "El desafío supremo de la educación actual no es prohibir las herramientas del porvenir, sino educar inteligencias humanas con suficiente criterio como para gobernarlas con sensatez."
+          }
+        ],
+        explanation: "¡Magnífico cierre dialéctico! Sintetiza la postura pedagógica y culmina con un mensaje humanista contundente sobre el propósito final de la educación."
+      }
+    ]
+  },
+  {
+    id: "ciudades_humanas",
+    title: "Ciudades para las personas: la urgencia de peatonalizar los centros urbanos",
+    author: "Msc. Alejandro Córdova",
+    topicTag: "SOSTENIBILIDAD Y URBANISMO",
+    icon: "🌳",
+    summary: "Descubre las razones ecológicas, sanitarias y de convivencia comunitaria que exigen desterrar el automóvil privado de los corazones urbanos y priorizar la escala peatonal.",
+    paragraphs: [
+      {
+        partId: "intro",
+        partName: "Párrafo 1: Introducción & Tesis",
+        formulaTokens: ["Gancho Histórico", "+", "Problematización", "+", "Tesis Central Debatible"],
+        slots: [
+          {
+            id: "s1",
+            label: "1. Gancho Histórico",
+            hint: "Evoca cómo medio siglo de urbanismo convirtió las calles en pistas para automóviles.",
+            expectedText: "Durante más de medio siglo, el urbanismo occidental subordinó la escala humana a la velocidad del automóvil privado, transformando las calles históricas en meros corredores de escape y parqueaderos."
+          },
+          {
+            id: "s2",
+            label: "2. Problematización",
+            hint: "Expone el agotamiento del modelo automovilístico ante el colapso vial y ambiental.",
+            expectedText: "Hoy, el colapso vial crónico, la contaminación acústica y el aislamiento social ponen en evidencia que este modelo ha agotado su viabilidad física y comunitaria."
+          },
+          {
+            id: "s3",
+            label: "3. Tesis Central Debatible",
+            hint: "Presenta la tesis: la peatonalización es la medida más urgente para devolver vida a la ciudad.",
+            expectedText: "Por tanto, la peatonalización integral de los cascos urbanos y la priorización del transporte colectivo activo representan la vía más urgente y democrática para devolver la vitalidad ecológica y cívica a nuestras urbes."
+          }
+        ],
+        explanation: "¡Introducción ejemplar! Plantea un recorrido desde el error histórico del urbanismo automovilístico hasta la justificación de una reforma espacial urgente."
+      },
+      {
+        partId: "arg1",
+        partName: "Párrafo 2: Argumento 1 (Salud Pública y Medio Ambiente)",
+        formulaTokens: ["Conector Discursivo", "+", "Premisa Ambiental", "+", "Evidencia de Emisiones", "+", "Inferencia Sanitaria"],
+        slots: [
+          {
+            id: "s1",
+            label: "1. Conector Discursivo",
+            hint: "Inicia la demostración con un conector de orden.",
+            expectedText: "En primer término,"
+          },
+          {
+            id: "s2",
+            label: "2. Premisa Ambiental",
+            hint: "Sostiene que erradicar el tráfico de paso reduce la toxicidad del aire y los accidentes.",
+            expectedText: "restringir el tráfico vehicular pesado produce una mejora inmediata y cuantificable en la salud respiratoria y la seguridad vial de los residentes."
+          },
+          {
+            id: "s3",
+            label: "3. Evidencia de Emisiones",
+            hint: "Aporta mediciones oficiales de organismos europeos sobre dióxido de nitrógeno y siniestros.",
+            expectedText: "Mediciones de la Agencia Europea de Medio Ambiente constataron que el programa de supermanzanas peatonales en Barcelona redujo los niveles de dióxido de nitrógeno en un 25% y disminuyó los siniestros viales en las zonas intervenidas en más de un 40%."
+          },
+          {
+            id: "s4",
+            label: "4. Inferencia Sanitaria",
+            hint: "Concluye que respirar aire puro es un derecho básico por encima de la velocidad vehicular.",
+            expectedText: "Este dato refuta el dogma de que el automóvil es sinónimo de progreso, demostrando que respirar aire limpio en la propia acera es una condición básica de habitabilidad."
+          }
+        ],
+        explanation: "¡Argumento fáctico de gran impacto! Las mediciones ambientales desmoronan la resistencia inicial al cambio urbano demostrando beneficios tangibles de supervivencia."
+      },
+      {
+        partId: "arg2",
+        partName: "Párrafo 3: Argumento 2 (Comercio Local y Convivencia)",
+        formulaTokens: ["Conector de Adición", "+", "Premisa Económica", "+", "Evidencia Comercial", "+", "Inferencia Comunitaria"],
+        slots: [
+          {
+            id: "s1",
+            label: "1. Conector de Adición",
+            hint: "Agrega una nueva perspectiva socioeconómica.",
+            expectedText: "A lo expuesto se añade que,"
+          },
+          {
+            id: "s2",
+            label: "2. Premisa Económica",
+            hint: "Afirma que caminar fomenta el comercio de barrio y el sentido de comunidad.",
+            expectedText: "lejos de perjudicar al comercio tradicional, la peatonalización revitaliza las ventas de proximidad y fomenta el arraigo barrial."
+          },
+          {
+            id: "s3",
+            label: "3. Evidencia Comercial",
+            hint: "Cita el caso documentado de ciudades peatonales exitosas como Pontevedra.",
+            expectedText: "Informes de la Cámara de Comercio de Pontevedra confirman que, tras eliminar los coches del centro histórico, el número de pequeños comercios aumentó un 30%, al tiempo que la permanencia de peatones en las calles atrajo turismo cultural sostenido."
+          },
+          {
+            id: "s4",
+            label: "4. Inferencia Comunitaria",
+            hint: "Remata con la metáfora de la calle como sala de estar compartida.",
+            expectedText: "La calle deja de ser un lugar de paso hostil para convertirse nuevamente en el salón de estar colectivo de la ciudadanía."
+          }
+        ],
+        explanation: "¡Excelente ensamblaje! Combina un argumento de hecho comercial con una imagen poética y cívica ('la calle como salón de estar colectivo') que eleva la fuerza persuasiva del texto."
+      },
+      {
+        partId: "concl",
+        partName: "Párrafo 4: Conclusión & Llamado a la Acción",
+        formulaTokens: ["Conector de Cierre", "+", "Recapitulación Integral", "+", "Reafirmación Ética", "+", "Llamado Urbanístico"],
+        slots: [
+          {
+            id: "s1",
+            label: "1. Conector de Cierre",
+            hint: "Conector que engloba todas las razones dadas.",
+            expectedText: "Por todo lo anterior,"
+          },
+          {
+            id: "s2",
+            label: "2. Recapitulación Integral",
+            hint: "Resume tanto la dimensión ambiental como la económica y humana.",
+            expectedText: "tanto la evidencia ambiental como los balances económicos y comunitarios demuestran que las ciudades más prósperas no son las que facilitan mayor velocidad a los autos, sino las que devuelven el espacio a los transeúntes."
+          },
+          {
+            id: "s3",
+            label: "3. Reafirmación Ética",
+            hint: "Define la ciudad caminable como una cuestión de equidad espacial.",
+            expectedText: "Diseñar urbes caminables es un imperativo ético de equidad espacial frente al privilegio de unos pocos conductores."
+          },
+          {
+            id: "s4",
+            label: "4. Llamado Urbanístico",
+            hint: "Remata convocando a recuperar la escala humana en la planificación urbana.",
+            expectedText: "Ha llegado el momento de que la planificación territorial recupere la escala de la mirada humana y devuelva el corazón de las ciudades a quienes las caminan día a día."
+          }
+        ],
+        explanation: "¡Has completado la reconstrucción del ensayo! La conclusión logra articular la síntesis probatoria con un llamado elocuente y transformador sobre el futuro de nuestras ciudades."
+      }
+    ]
+  }
+];
+
+function initAssemblyLab() {
+  const essaySelector = document.getElementById("assemblyEssaySelector");
+  const stepperBar = document.getElementById("assemblyStepperBar");
+  const formulaTokensEl = document.getElementById("assemblyFormulaTokens");
+  const bankEl = document.getElementById("assemblyBank");
+  const slotsEl = document.getElementById("assemblySlots");
+  const feedbackCard = document.getElementById("assemblyFeedback");
+  const feedbackTitle = document.getElementById("assemblyFeedbackTitle");
+  const feedbackText = document.getElementById("assemblyFeedbackText");
+  const btnCheck = document.getElementById("btnCheckAssembly");
+  const btnReset = document.getElementById("btnResetAssembly");
+  const btnNext = document.getElementById("btnNextAssemblyPara");
+  const fullPaper = document.getElementById("assembledFullPaper");
+  const fullTitle = document.getElementById("assembledFullTitle");
+  const fullAuthor = document.getElementById("assembledFullAuthor");
+  const fullBody = document.getElementById("assembledFullBody");
+
+  if (!essaySelector || !stepperBar || !bankEl || !slotsEl) return;
+
+  let currentEssayIdx = 0;
+  let currentParaIdx = 0;
+  // Estado de completitud por ensayo: [ [bool, bool, bool, bool], ... ]
+  const completionState = ASSEMBLY_ESSAYS.map(() => [false, false, false, false]);
+  let selectedFragmentEl = null;
+
+  // 1. Renderizar selector de ensayos
+  function renderEssaySelector() {
+    essaySelector.innerHTML = "";
+    ASSEMBLY_ESSAYS.forEach((essay, idx) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = `essay-tab-btn ${idx === currentEssayIdx ? "active" : ""}`;
+      const completedCount = completionState[idx].filter(Boolean).length;
+
+      btn.innerHTML = `
+        <div class="essay-tab-top">
+          <span class="essay-tab-icon">${essay.icon}</span>
+          <span class="essay-tab-topic">${escapeHtml(essay.topicTag)}</span>
+        </div>
+        <div class="essay-tab-title">${escapeHtml(essay.title)}</div>
+        <div class="essay-tab-progress">${completedCount}/4 párrafos ensamblados</div>
+      `;
+
+      btn.addEventListener("click", () => {
+        if (currentEssayIdx !== idx) {
+          currentEssayIdx = idx;
+          currentParaIdx = 0;
+          renderEssaySelector();
+          renderStepper();
+          loadParagraph(currentEssayIdx, currentParaIdx);
+        }
+      });
+      essaySelector.appendChild(btn);
+    });
+  }
+
+  // 2. Renderizar stepper de párrafos
+  function renderStepper() {
+    stepperBar.innerHTML = "";
+    const essay = ASSEMBLY_ESSAYS[currentEssayIdx];
+
+    essay.paragraphs.forEach((p, idx) => {
+      const isCompleted = completionState[currentEssayIdx][idx];
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = `assembly-step-btn ${idx === currentParaIdx ? "active" : ""} ${isCompleted ? "completed" : ""}`;
+      btn.innerHTML = `<span>${isCompleted ? "✓" : `0${idx + 1}`}</span> ${escapeHtml(p.partName)}`;
+
+      btn.addEventListener("click", () => {
+        currentParaIdx = idx;
+        renderStepper();
+        loadParagraph(currentEssayIdx, currentParaIdx);
+      });
+      stepperBar.appendChild(btn);
+    });
+
+    // Botón especial para Ensayo Completo
+    const allCompleted = completionState[currentEssayIdx].every(Boolean);
+    const fullBtn = document.createElement("button");
+    fullBtn.type = "button";
+    fullBtn.className = `assembly-step-btn ${currentParaIdx === 4 ? "active" : ""} ${allCompleted ? "completed" : ""}`;
+    fullBtn.innerHTML = `<span>📖</span> Ensayo Completo`;
+    fullBtn.addEventListener("click", () => {
+      currentParaIdx = 4;
+      renderStepper();
+      showFullEssayView();
+    });
+    stepperBar.appendChild(fullBtn);
+  }
+
+  // 3. Cargar párrafo actual
+  function loadParagraph(essayIdx, paraIdx) {
+    if (paraIdx === 4) {
+      showFullEssayView();
+      return;
+    }
+
+    fullPaper.style.display = "none";
+    document.getElementById("assemblyWorkspace").style.display = "grid";
+    document.getElementById("assemblyFormulaCard").style.display = "flex";
+    document.querySelector(".assembly-actions-bar").style.display = "flex";
+
+    const essay = ASSEMBLY_ESSAYS[essayIdx];
+    const para = essay.paragraphs[paraIdx];
+
+    // Banner de fórmula
+    formulaTokensEl.innerHTML = "";
+    para.formulaTokens.forEach(tok => {
+      const span = document.createElement("span");
+      if (tok === "+") {
+        span.className = "formula-op";
+        span.textContent = "+";
+      } else {
+        span.className = "formula-token";
+        span.textContent = tok;
+      }
+      formulaTokensEl.appendChild(span);
+    });
+
+    // Limpiar estado
+    selectedFragmentEl = null;
+    feedbackCard.style.display = "none";
+    btnNext.style.display = "none";
+
+    // Generar piezas mezcladas
+    const rawFragments = para.slots.map((s, idx) => ({
+      slotId: s.id,
+      text: s.expectedText,
+      origIdx: idx
+    }));
+    // Mezcla aleatoria
+    const shuffled = [...rawFragments].sort(() => Math.random() - 0.5);
+
+    bankEl.innerHTML = "";
+    shuffled.forEach((item, fIdx) => {
+      const card = document.createElement("div");
+      card.className = "fragment-card";
+      card.setAttribute("draggable", "true");
+      card.setAttribute("data-frag-text", item.text);
+      card.id = `frag_${essayIdx}_${paraIdx}_${fIdx}`;
+      card.innerHTML = `
+        <span class="fragment-drag-handle" title="Arrastrar">⋮⋮</span>
+        <div class="fragment-text">${escapeHtml(item.text)}</div>
+      `;
+
+      // Eventos Drag
+      card.addEventListener("dragstart", (e) => {
+        card.classList.add("dragging");
+        e.dataTransfer.setData("text/plain", card.id);
+      });
+      card.addEventListener("dragend", () => {
+        card.classList.remove("dragging");
+      });
+
+      // Evento Click (soporte táctil y móvil)
+      card.addEventListener("click", () => {
+        // Si ya está en un slot, regresar al banco
+        if (card.parentElement && card.parentElement.classList.contains("slot-dropzone")) {
+          returnToBank(card);
+          return;
+        }
+
+        if (selectedFragmentEl === card) {
+          card.classList.remove("selected-fragment");
+          selectedFragmentEl = null;
+        } else {
+          document.querySelectorAll(".fragment-card").forEach(c => c.classList.remove("selected-fragment"));
+          card.classList.add("selected-fragment");
+          selectedFragmentEl = card;
+        }
+      });
+
+      bankEl.appendChild(card);
+    });
+
+    // Generar cajones (slots)
+    slotsEl.innerHTML = "";
+    para.slots.forEach(slot => {
+      const slotBox = document.createElement("div");
+      slotBox.className = "slot-box";
+      slotBox.id = `slot_${slot.id}`;
+
+      slotBox.innerHTML = `
+        <div class="slot-header">
+          <span class="slot-label">${escapeHtml(slot.label)}</span>
+        </div>
+        <div class="slot-hint">${escapeHtml(slot.hint)}</div>
+        <div class="slot-dropzone" data-slot-id="${slot.id}">
+          <span class="slot-placeholder">Suelta o toca para ubicar este fragmento</span>
+        </div>
+      `;
+
+      const dropzone = slotBox.querySelector(".slot-dropzone");
+
+      // Eventos Drag en dropzone
+      dropzone.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        slotBox.classList.add("drag-over");
+      });
+      dropzone.addEventListener("dragleave", () => {
+        slotBox.classList.remove("drag-over");
+      });
+      dropzone.addEventListener("drop", (e) => {
+        e.preventDefault();
+        slotBox.classList.remove("drag-over");
+        const fragId = e.dataTransfer.getData("text/plain");
+        const draggedCard = document.getElementById(fragId);
+        if (draggedCard) {
+          placeInSlot(draggedCard, dropzone, slotBox);
+        }
+      });
+
+      // Evento Click en dropzone (para ubicar el fragmento seleccionado)
+      dropzone.addEventListener("click", () => {
+        if (selectedFragmentEl) {
+          placeInSlot(selectedFragmentEl, dropzone, slotBox);
+          selectedFragmentEl.classList.remove("selected-fragment");
+          selectedFragmentEl = null;
+        }
+      });
+
+      slotsEl.appendChild(slotBox);
+    });
+  }
+
+  // Colocar una ficha en un cajón
+  function placeInSlot(card, dropzone, slotBox) {
+    // Si la dropzone ya tiene un item, devolver ese item al banco
+    const existingCard = dropzone.querySelector(".fragment-card");
+    if (existingCard) {
+      returnToBank(existingCard);
+    }
+
+    const placeholder = dropzone.querySelector(".slot-placeholder");
+    if (placeholder) placeholder.style.display = "none";
+
+    dropzone.classList.add("has-item");
+    slotBox.classList.add("slot-filled");
+
+    // Botón de remoción
+    let removeBtn = card.querySelector(".btn-remove-slot-item");
+    if (!removeBtn) {
+      removeBtn = document.createElement("button");
+      removeBtn.type = "button";
+      removeBtn.className = "btn-remove-slot-item";
+      removeBtn.title = "Devolver al banco";
+      removeBtn.textContent = "✕";
+      removeBtn.addEventListener("click", (ev) => {
+        ev.stopPropagation();
+        returnToBank(card);
+      });
+      card.appendChild(removeBtn);
+    }
+
+    dropzone.appendChild(card);
+  }
+
+  // Devolver ficha al banco
+  function returnToBank(card) {
+    const parentDropzone = card.parentElement;
+    if (parentDropzone && parentDropzone.classList.contains("slot-dropzone")) {
+      const removeBtn = card.querySelector(".btn-remove-slot-item");
+      if (removeBtn) removeBtn.remove();
+
+      bankEl.appendChild(card);
+
+      const placeholder = parentDropzone.querySelector(".slot-placeholder");
+      if (placeholder) placeholder.style.display = "block";
+      parentDropzone.classList.remove("has-item");
+
+      const parentSlotBox = parentDropzone.closest(".slot-box");
+      if (parentSlotBox) parentSlotBox.classList.remove("slot-filled");
+    }
+  }
+
+  // 4. Comprobación de ensamble
+  btnCheck.addEventListener("click", () => {
+    const essay = ASSEMBLY_ESSAYS[currentEssayIdx];
+    const para = essay.paragraphs[currentParaIdx];
+    const dropzones = slotsEl.querySelectorAll(".slot-dropzone");
+
+    // Verificar si todos los cajones están llenos
+    let allFilled = true;
+    dropzones.forEach(dz => {
+      if (!dz.querySelector(".fragment-card")) allFilled = false;
+    });
+
+    if (!allFilled) {
+      feedbackCard.className = "assembly-feedback-card incorrect";
+      feedbackTitle.textContent = "⚠️ Faltan fragmentos por ubicar";
+      feedbackText.textContent = "Debes colocar un fragmento en cada uno de los cajones retóricos antes de comprobar el ensamble del párrafo.";
+      feedbackCard.style.display = "block";
+      return;
+    }
+
+    // Verificar si cada cajón tiene el fragmento esperado
+    let isAllCorrect = true;
+    para.slots.forEach((slot, sIdx) => {
+      const dz = dropzones[sIdx];
+      const card = dz.querySelector(".fragment-card");
+      const text = card ? card.getAttribute("data-frag-text") : "";
+      if (text !== slot.expectedText) {
+        isAllCorrect = false;
+      }
+    });
+
+    if (isAllCorrect) {
+      feedbackCard.className = "assembly-feedback-card correct";
+      feedbackTitle.textContent = "🎯 ¡Ensamble Perfecto y Cohesión Impecable!";
+      feedbackText.textContent = para.explanation;
+      feedbackCard.style.display = "block";
+
+      completionState[currentEssayIdx][currentParaIdx] = true;
+      renderEssaySelector();
+      renderStepper();
+
+      if (currentParaIdx < 3) {
+        btnNext.textContent = `Siguiente: Párrafo ${currentParaIdx + 2} →`;
+        btnNext.style.display = "inline-block";
+      } else {
+        btnNext.textContent = "Ver Ensayo Completo Reconstruido 📖";
+        btnNext.style.display = "inline-block";
+        showToast("¡Felicitaciones! Has completado la reconstrucción de los 4 párrafos.");
+      }
+    } else {
+      feedbackCard.className = "assembly-feedback-card incorrect";
+      feedbackTitle.textContent = "💡 Revisa la progresión lógica";
+      feedbackText.textContent = "Uno o más fragmentos no se encuentran en su cajón correspondiente. Revisa la fórmula en la parte superior: recuerda qué parte debe abrir, cuál aporta la evidencia y cuál sintetiza o infiere la consecuencia.";
+      feedbackCard.style.display = "block";
+    }
+  });
+
+  // 5. Reiniciar Párrafo
+  btnReset.addEventListener("click", () => {
+    loadParagraph(currentEssayIdx, currentParaIdx);
+    showToast("Párrafo reiniciado al banco.");
+  });
+
+  // 6. Botón Siguiente
+  btnNext.addEventListener("click", () => {
+    if (currentParaIdx < 3) {
+      currentParaIdx++;
+      renderStepper();
+      loadParagraph(currentEssayIdx, currentParaIdx);
+    } else {
+      currentParaIdx = 4;
+      renderStepper();
+      showFullEssayView();
+    }
+  });
+
+  // 7. Mostrar Vista del Ensayo Completo
+  function showFullEssayView() {
+    document.getElementById("assemblyWorkspace").style.display = "none";
+    document.getElementById("assemblyFormulaCard").style.display = "none";
+    document.querySelector(".assembly-actions-bar").style.display = "none";
+    feedbackCard.style.display = "none";
+
+    const essay = ASSEMBLY_ESSAYS[currentEssayIdx];
+    fullTitle.textContent = essay.title;
+    fullAuthor.textContent = `Por ${essay.author} · Ensayo modelo formativo reconstruido`;
+
+    let html = "";
+    essay.paragraphs.forEach(p => {
+      const fullParaText = p.slots.map(s => s.expectedText).join(" ");
+      html += `
+        <div class="assembled-paragraph-block">
+          <span class="assembled-paragraph-tag">${escapeHtml(p.partName)}</span>
+          <p>${escapeHtml(fullParaText)}</p>
+        </div>
+      `;
+    });
+
+    // Botones de acción final en lectura completa
+    html += `
+      <div style="margin-top: 26px; display: flex; gap: 12px; flex-wrap: wrap;">
+        <button type="button" class="btn-primary" id="btnExploreOtherEssay">Explorar otro ensayo modelo ↻</button>
+        <button type="button" class="btn-secondary" id="btnJumpToConstructorFromAssembly">Ir al Simulador Constructor 🚀</button>
+      </div>
+    `;
+
+    fullBody.innerHTML = html;
+    fullPaper.style.display = "block";
+
+    const btnExplore = document.getElementById("btnExploreOtherEssay");
+    if (btnExplore) {
+      btnExplore.addEventListener("click", () => {
+        currentEssayIdx = (currentEssayIdx + 1) % ASSEMBLY_ESSAYS.length;
+        currentParaIdx = 0;
+        renderEssaySelector();
+        renderStepper();
+        loadParagraph(currentEssayIdx, currentParaIdx);
+        fullPaper.style.display = "none";
+      });
+    }
+
+    const btnJump = document.getElementById("btnJumpToConstructorFromAssembly");
+    if (btnJump) {
+      btnJump.addEventListener("click", () => {
+        const tabConstructor = document.querySelector('.nav-tab[data-tab="tab-constructor"]');
+        if (tabConstructor) tabConstructor.click();
+      });
+    }
+  }
+
+  // Inicialización inicial
+  renderEssaySelector();
+  renderStepper();
+  loadParagraph(0, 0);
 }
 
 // =========================================================================
@@ -428,10 +1242,10 @@ const GYM_CASES = [
     explanation: "Es un argumento basado en valores éticos y principios universales de justicia social y derechos humanos fundamentales."
   },
   {
-    topic: "INTELIGENCIA ARTIFICIAL EN MEDICINA",
-    quote: "En ensayos clínicos controlados en hospitales universitarios de Boston, los algoritmos de detección temprana identificaron tumores cutáneos con un 94.5% de precisión frente al 86% de los métodos convencionales.",
-    correctType: "hecho",
-    explanation: "Es un argumento empírico basado en datos estadísticos y mediciones científicas comparativas verificadas en ensayos clínicos."
+    topic: "EQUIDAD LABORAL Y LEGISLACIÓN",
+    quote: "El caso paradigmático de Islandia demuestra que la aprobación de auditorías salariales obligatorias y sanciones severas a las empresas infractoras logró reducir la brecha salarial de género al mínimo histórico continental en menos de cinco años.",
+    correctType: "ejemplo",
+    explanation: "Es un argumento de ejemplificación o caso concreto: respalda la viabilidad de una política general ilustrándola mediante un caso real, emblemático y documentado (la experiencia legislativa de Islandia)."
   },
   {
     topic: "CAMBIO CLIMÁTICO Y BIODIVERSIDAD",
@@ -458,10 +1272,10 @@ const GYM_CASES = [
     explanation: "Es un argumento sustentado en principios morales y teleológicos: apela a la honestidad intelectual, la libertad de conciencia y el sentido ético de la búsqueda de la verdad."
   },
   {
-    topic: "BECAS ESCOLARES Y RETENCIÓN",
-    quote: "Las auditorías del Ministerio de Educación constataron que la deserción escolar se redujo del 19.2% al 5.4% en los distritos rurales donde se garantizó transporte gratuito y almuerzo caliente entre 2022 y 2025.",
-    correctType: "hecho",
-    explanation: "Es un argumento de hecho sustentado en datos numéricos objetivos y registros empíricos oficiales de políticas públicas."
+    topic: "RESTAURACIÓN ECOLÓGICA DEPREDADORA",
+    quote: "La reintroducción del lobo gris en el Parque Nacional de Yellowstone en 1995 ejemplifica cómo la restitución de un único depredador tope puede regular las poblaciones de ciervos, regenerar los bosques de álamos y estabilizar el cauce de los ríos mediante una cascada trófica real.",
+    correctType: "ejemplo",
+    explanation: "Es un argumento de ejemplificación: recurre a un acontecimiento histórico-científico documentado (el caso Yellowstone) para ilustrar de modo tangible y representativo cómo funciona la restauración ecológica."
   },
   {
     topic: "JORNADA LABORAL REDUCIDA",
@@ -494,10 +1308,10 @@ const GYM_CASES = [
     explanation: "Es un argumento de hecho con respaldo estadístico cuantificable: ofrece una medición empírica documentada por una agencia multilateral especializada."
   },
   {
-    topic: "ALGORITMOS Y CONDICIONAMIENTO SOCIAL",
-    quote: "Tal como sostiene la catedrática de Harvard Shoshana Zuboff, los sistemas predictivos de las plataformas digitales no son neutrales, sino arquitecturas de extracción diseñadas para modificar conductas humanas a gran escala con fines de lucro.",
-    correctType: "autoridad",
-    explanation: "Es un argumento de autoridad teórica: recurre a una destacada académica y teórica social para validar conceptualmente el impacto manipulativo del entorno digital."
+    topic: "ACUERDOS CLIMÁTICOS VINCULANTES",
+    quote: "El éxito histórico del Protocolo de Montreal de 1987, que logró eliminar el 99% de las sustancias que agotaban la capa de ozono atmosférico, demuestra que cuando la comunidad internacional pacta metas de prohibición técnica obligatorias, las crisis ecológicas globales pueden revertirse eficazmente.",
+    correctType: "ejemplo",
+    explanation: "Es un argumento de ejemplificación empírica: valida la eficacia de los tratados vinculantes presentando un caso histórico concreto que alcanzó resultados indiscutibles."
   },
   {
     topic: "PROTECCIÓN DEL PERIODISMO DE INVESTIGACIÓN",
@@ -506,10 +1320,10 @@ const GYM_CASES = [
     explanation: "Es un argumento por comparación o analogía figurativa: utiliza una metáfora de navegación para evidenciar lo autodestructivo de acallar la prensa fiscalizadora."
   },
   {
-    topic: "DEFORESTACIÓN Y VULNERABILIDAD RURAL",
-    quote: "La tala intensiva en las cabeceras de las cuencas elimina las raíces que cohesionan el estrato vegetal, lo que acelera la sedimentación fluvial y provoca desbordamientos catastróficos ante lluvias torrenciales estacionales.",
-    correctType: "causa",
-    explanation: "Es un argumento de causa - consecuencia: explica con precisión el encadenamiento geofísico que une la deforestación de altura con los desastres naturales en los valles."
+    topic: "URBANISMO SOCIAL Y MOVILIDAD",
+    quote: "La experiencia de Medellín con la implementación de las líneas de Metrocable en las comunas populares demuestra que conectar los barrios periféricos marginalizados con el corazón productivo de la metrópoli reduce drásticamente los índices de criminalidad y dinamiza la economía local.",
+    correctType: "ejemplo",
+    explanation: "Es un argumento de ejemplificación urbana: toma la transformación documentada de una ciudad específica para demostrar de manera concreta el impacto del transporte social en zonas vulnerables."
   },
   {
     topic: "EXPERIMENTACIÓN Y SINESTESIA ANIMAL",

@@ -766,6 +766,7 @@ body {
 .type-autoridad    { border-top-color: #7C3AED; }
 .type-comparacion  { border-top-color: #059669; }
 .type-contra       { border-top-color: #DC2626; }
+.type-ejemplo      { border-top-color: #EA580C; }
 
 .type-icon {
   font-size: 1.5rem;
@@ -2193,4 +2194,571 @@ body {
     flex: 1;
     justify-content: center;
   }
+}
+
+/* ==========================================================================
+   LABORATORIO DE ENSAMBLE Y LECTURA COMPRENSIVA (MÓDULO 02)
+   ========================================================================== */
+.assembly-lab-section {
+  margin-top: 48px;
+  background: var(--white);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 34px 30px;
+  box-shadow: var(--shadow-sm);
+}
+
+.assembly-header {
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 18px;
+  margin-bottom: 24px;
+}
+
+.assembly-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--accent-blue);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.assembly-header h3 {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--primary-navy);
+  margin: 6px 0 8px;
+}
+
+.assembly-header p {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+  max-width: 900px;
+}
+
+/* Selector de Ensayos */
+.assembly-essay-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+.essay-tab-btn {
+  background: #F8FAFC;
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  cursor: pointer;
+  text-align: left;
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+
+.essay-tab-btn:hover {
+  background: #F1F5F9;
+  border-color: var(--border-medium);
+  transform: translateY(-2px);
+}
+
+.essay-tab-btn.active {
+  background: #EFF6FF;
+  border-color: var(--accent-blue);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
+}
+
+.essay-tab-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.essay-tab-icon {
+  font-size: 1.4rem;
+}
+
+.essay-tab-topic {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #64748B;
+  letter-spacing: 0.08em;
+}
+
+.essay-tab-title {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  line-height: 1.35;
+}
+
+.essay-tab-progress {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent-blue);
+  font-weight: 700;
+}
+
+/* Stepper de Párrafos */
+.assembly-stepper-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  margin-bottom: 22px;
+  border-bottom: 1px dashed var(--border-light);
+}
+
+.assembly-step-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  background: #F1F5F9;
+  border: 1px solid var(--border-light);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.assembly-step-btn:hover {
+  background: #E2E8F0;
+  color: var(--primary-navy);
+}
+
+.assembly-step-btn.active {
+  background: var(--primary-navy);
+  color: #FFFFFF;
+  border-color: var(--primary-navy);
+}
+
+.assembly-step-btn.completed {
+  background: #DCFCE7;
+  color: #166534;
+  border-color: #86EFAC;
+}
+
+/* Banner de Fórmula */
+.assembly-formula-card {
+  background: #FEF9C3;
+  border: 1px solid #FDE047;
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.formula-card-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.formula-card-content {
+  font-size: 0.88rem;
+  color: #854D0E;
+}
+
+.formula-card-content strong {
+  color: #713F12;
+  font-weight: 700;
+}
+
+.formula-tokens {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.formula-token {
+  background: rgba(255, 255, 255, 0.88);
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid #FACC15;
+  color: #713F12;
+}
+
+.formula-op {
+  color: #A16207;
+  font-weight: 800;
+}
+
+/* Área de Trabajo de Ensamble */
+.assembly-workspace {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 900px) {
+  .assembly-workspace {
+    grid-template-columns: 1fr;
+  }
+}
+
+.assembly-panel-title {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #64748B;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.assembly-panel-hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  text-transform: none;
+}
+
+/* Banco de Fragmentos */
+.assembly-bank-box {
+  background: #F8FAFC;
+  border: 1.5px dashed #CBD5E1;
+  border-radius: var(--radius-md);
+  padding: 18px;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fragment-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #1E293B;
+  cursor: grab;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+  position: relative;
+  user-select: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.fragment-card:active {
+  cursor: grabbing;
+}
+
+.fragment-card:hover {
+  border-color: var(--accent-blue);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.12);
+  transform: translateY(-1px);
+}
+
+.fragment-card.selected-fragment {
+  border-color: #2563EB;
+  background: #EFF6FF;
+  box-shadow: 0 0 0 2px #3B82F6;
+}
+
+.fragment-card.dragging {
+  opacity: 0.4;
+}
+
+.fragment-drag-handle {
+  color: #94A3B8;
+  font-size: 1rem;
+  flex-shrink: 0;
+  cursor: grab;
+}
+
+.fragment-text {
+  flex: 1;
+}
+
+/* Cajones Receptores */
+.assembly-slots-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.slot-box {
+  background: #FAF9F5;
+  border: 1.5px solid #E2E8F0;
+  border-radius: var(--radius-md);
+  padding: 14px;
+  transition: all var(--transition-fast);
+}
+
+.slot-box.drag-over {
+  background: #EFF6FF;
+  border-color: #3B82F6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.25);
+}
+
+.slot-box.slot-filled {
+  background: #FFFFFF;
+  border-color: #CBD5E1;
+}
+
+.slot-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.slot-label {
+  font-family: var(--font-mono);
+  font-size: 0.73rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.slot-hint {
+  font-size: 0.78rem;
+  color: #64748B;
+  margin-bottom: 8px;
+  font-style: italic;
+}
+
+.slot-dropzone {
+  min-height: 54px;
+  border-radius: var(--radius-sm);
+  background: #F1F5F9;
+  border: 1px dashed #CBD5E1;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.slot-dropzone.has-item {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.slot-placeholder {
+  font-size: 0.8rem;
+  color: #94A3B8;
+  width: 100%;
+  text-align: center;
+  font-style: italic;
+  pointer-events: none;
+}
+
+.btn-remove-slot-item {
+  background: #FEE2E2;
+  border: none;
+  color: #991B1B;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 6px;
+  flex-shrink: 0;
+  transition: background var(--transition-fast);
+}
+
+.btn-remove-slot-item:hover {
+  background: #FCA5A5;
+}
+
+/* Retroalimentación de Ensamble */
+.assembly-feedback-card {
+  margin-top: 20px;
+  padding: 16px 20px;
+  border-radius: var(--radius-sm);
+  display: none;
+  animation: fadeIn 0.25s ease;
+}
+
+.assembly-feedback-card.correct {
+  background: #DCFCE7;
+  border: 1px solid #86EFAC;
+  color: #14532D;
+}
+
+.assembly-feedback-card.incorrect {
+  background: #FEF2F2;
+  border: 1px solid #FCA5A5;
+  color: #991B1B;
+}
+
+.assembly-feedback-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.assembly-feedback-card p {
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+/* Barra de Botones de Acción */
+.assembly-actions-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+}
+
+.assembly-actions-left {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-assembly-check {
+  padding: 10px 22px;
+  background: var(--primary-navy);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-assembly-check:hover {
+  background: var(--accent-blue);
+  transform: translateY(-1px);
+}
+
+.btn-assembly-reset {
+  padding: 10px 16px;
+  background: #F1F5F9;
+  color: #475569;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-assembly-reset:hover {
+  background: #E2E8F0;
+  color: var(--primary-navy);
+}
+
+.btn-assembly-next {
+  padding: 10px 20px;
+  background: #16A34A;
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: none;
+}
+
+.btn-assembly-next:hover {
+  background: #15803D;
+  transform: translateY(-1px);
+}
+
+/* Vista de Ensayo Completo Reconstruido */
+.assembled-full-paper {
+  display: none;
+  background: var(--white);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 36px 32px;
+  box-shadow: var(--shadow-sm);
+  margin-top: 18px;
+  animation: fadeIn 0.3s ease;
+}
+
+.assembled-full-header {
+  border-bottom: 2px solid var(--border-light);
+  padding-bottom: 18px;
+  margin-bottom: 24px;
+}
+
+.assembled-full-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #16A34A;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.assembled-full-title {
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  margin: 6px 0;
+  line-height: 1.3;
+}
+
+.assembled-full-author {
+  font-size: 0.85rem;
+  color: #64748B;
+  font-style: italic;
+}
+
+.assembled-paragraph-block {
+  margin-bottom: 22px;
+  padding: 16px 18px;
+  border-radius: var(--radius-sm);
+  background: #FAF9F5;
+  border-left: 4px solid var(--accent-blue);
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #1E293B;
+}
+
+.assembled-paragraph-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary-navy);
+  background: rgba(35, 103, 209, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
 }

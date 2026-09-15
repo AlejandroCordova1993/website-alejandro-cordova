@@ -740,6 +740,80 @@
           </div>
         </aside>
       </div>
+
+      <!-- ============================================================= -->
+      <!-- TALLER DE ENSAMBLE DISCURSIVO & LECTURA COMPRENSIVA          -->
+      <!-- ============================================================= -->
+      <section class="assembly-lab-section" id="assemblyLab">
+        <div class="assembly-header">
+          <span class="assembly-badge">LABORATORIO DE RECONSTRUCCIÓN DISCURSIVA</span>
+          <h3>Taller de Ensamble y Lectura: Reconstruye el Ensayo Modelo</h3>
+          <p>
+            La lectura crítica no es pasiva: descubre la arquitectura interna de un ensayo de alto nivel. Selecciona uno de los tres temas formativos, analiza sus fragmentos desordenados y colócalos en los cajones correctos según la fórmula retórica de cada párrafo. Al completar los cuatro párrafos, podrás leer el ensayo completo y articulado.
+          </p>
+        </div>
+
+        <!-- SELECTOR DE LOS 3 ENSAYOS -->
+        <div class="assembly-essay-selector" id="assemblyEssaySelector" role="tablist"></div>
+
+        <!-- BARRA NAVEGADORA DE PÁRRAFOS (STEPPER) -->
+        <div class="assembly-stepper-bar" id="assemblyStepperBar"></div>
+
+        <!-- BANNER DE FÓRMULA DEL PÁRRAFO -->
+        <div class="assembly-formula-card" id="assemblyFormulaCard">
+          <div class="formula-card-icon">💡</div>
+          <div class="formula-card-content">
+            <div id="assemblyFormulaLabel"><strong>Fórmula del Párrafo:</strong></div>
+            <div class="formula-tokens" id="assemblyFormulaTokens"></div>
+          </div>
+        </div>
+
+        <!-- ÁREA DE TRABAJO: BANCO DE PIEZAS Y CAJONES -->
+        <div class="assembly-workspace" id="assemblyWorkspace">
+          <!-- COLUMNA 1: BANCO DE FRAGMENTOS DESORDENADOS -->
+          <div class="assembly-bank-wrapper">
+            <div class="assembly-panel-title">
+              <span>Fragmentos Desordenados</span>
+              <span class="assembly-panel-hint">Arrastra o toca para seleccionar</span>
+            </div>
+            <div class="assembly-bank-box" id="assemblyBank"></div>
+          </div>
+
+          <!-- COLUMNA 2: CAJONES RECEPTORES -->
+          <div class="assembly-slots-wrapper">
+            <div class="assembly-panel-title">
+              <span>Cajones Retóricos del Párrafo</span>
+              <span class="assembly-panel-hint">Ubica cada pieza según la fórmula</span>
+            </div>
+            <div class="assembly-slots-container" id="assemblySlots"></div>
+          </div>
+        </div>
+
+        <!-- RETROALIMENTACIÓN FORMATIVA -->
+        <div class="assembly-feedback-card" id="assemblyFeedback">
+          <h4 id="assemblyFeedbackTitle"></h4>
+          <p id="assemblyFeedbackText"></p>
+        </div>
+
+        <!-- BARRA DE BOTONES DE ACCIÓN -->
+        <div class="assembly-actions-bar">
+          <div class="assembly-actions-left">
+            <button type="button" class="btn-assembly-check" id="btnCheckAssembly">Comprobar Párrafo ✓</button>
+            <button type="button" class="btn-assembly-reset" id="btnResetAssembly">Reiniciar Párrafo ↺</button>
+          </div>
+          <button type="button" class="btn-assembly-next" id="btnNextAssemblyPara">Siguiente Párrafo →</button>
+        </div>
+
+        <!-- VISTA DE ENSAYO COMPLETO RECONSTRUIDO -->
+        <article class="assembled-full-paper" id="assembledFullPaper">
+          <header class="assembled-full-header">
+            <span class="assembled-full-badge">LECTURA INTEGRAL · ENSAYO RECONSTRUIDO</span>
+            <h3 class="assembled-full-title" id="assembledFullTitle"></h3>
+            <p class="assembled-full-author" id="assembledFullAuthor"></p>
+          </header>
+          <div id="assembledFullBody"></div>
+        </article>
+      </section>
     </section>
 
     <!-- ================================================================= -->
@@ -886,6 +960,11 @@
           <h4>Analogía / Comparación</h4>
           <p>Relaciona el problema con un caso análogo o precedente exitoso en otro contexto.</p>
         </div>
+        <div class="type-badge-card type-ejemplo">
+          <div class="type-icon">🌟</div>
+          <h4>Ejemplificación</h4>
+          <p>Ilustra y valida una tesis general a través de un caso particular, real, histórico o emblemático debidamente documentado.</p>
+        </div>
         <div class="type-badge-card type-contra">
           <div class="type-icon">🛡️</div>
           <h4>Contraargumento & Refutación</h4>
@@ -922,6 +1001,9 @@
           </button>
           <button type="button" class="gym-option-btn" data-type="comparacion">
             <span>⚖️ Analogía o Comparación</span>
+          </button>
+          <button type="button" class="gym-option-btn" data-type="ejemplo">
+            <span>🌟 Ejemplificación / Caso Concreto</span>
           </button>
           <button type="button" class="gym-option-btn" data-type="valores">
             <span>❤️ Valores y Principios Morales</span>
