@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071B33">
+  <meta name="description" content="Diglosia: lenguas, poder y palabras. Un recurso interactivo de Lengua y Literatura en tres niveles: las causas, las consecuencias y el peso de las palabras.">
+  <title>Diglosia · Lenguas, poder y palabras</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23071B33'/%3E%3Cpath d='M7 9h7v14H7zm11 0h7v14h-7z' fill='none' stroke='%23F3F1EA' stroke-width='2'/%3E%3Ccircle cx='16' cy='6' r='2' fill='%23D83A32'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./fonts.css">
+  <link rel="stylesheet" href="./styles.css?v=7">
+  <script defer src="./icons.js?v=7"></script>
+  <script defer src="./content.js?v=7"></script>
+  <script defer src="./nivel1.js?v=7"></script>
+  <script defer src="./nivel2.js?v=7"></script>
+  <script defer src="./nivel3.js?v=7"></script>
+  <script defer src="./evidencia.js?v=7"></script>
+  <script defer src="./app.js?v=8"></script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Ir al contenido</a>
+  <header class="topbar on-deep">
+    <button type="button" class="menu-btn" id="menu-btn" data-action="menu" aria-expanded="false" aria-controls="sidebar"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Menú</span></button>
+    <button type="button" class="brand" data-action="levels" title="Volver a elegir nivel"><span class="brand-dot" aria-hidden="true"></span><span><strong>Diglosia</strong><small>LENGUA Y LITERATURA</small></span><span class="sr-only">: volver a elegir nivel</span></button>
+    <div class="level-chip" id="level-chip"></div>
+    <div class="header-progress" id="header-progress" aria-live="polite"></div>
+    <div class="top-actions">
+      <button type="button" class="tool" data-action="levels">Niveles</button>
+      <button type="button" class="tool" data-action="font-down" title="Reducir el tamaño del texto">A−<span class="sr-only">: reducir el tamaño del texto</span></button>
+      <button type="button" class="tool" data-action="font-up" title="Aumentar el tamaño del texto">A+<span class="sr-only">: aumentar el tamaño del texto</span></button>
+      <button type="button" class="tool" data-action="present" id="present-btn" aria-pressed="false">Presentar</button>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar" id="sidebar" aria-label="Capítulos y herramientas">
+      <div id="sidebar-body"></div>
+      <div class="side-tools">
+        <button type="button" data-action="portfolio">Mi portafolio</button>
+        <button type="button" data-action="glossary">Glosario y fuentes</button>
+      </div>
+      <p class="local-note" id="storage-note">Tu trabajo se guarda solo en este navegador. Descarga tu portafolio antes de cambiar de equipo.</p>
+      <button type="button" class="reset-link" data-action="reset">Borrar mi trabajo</button>
+      <a href="./verificar.html" class="reset-link" style="display:block; text-align:center; margin-top:12px; color:#5C636C; text-decoration:none;">Acceso docente: Verificar código</a>
+      <a href="../../recursos.html" class="reset-link" style="display:block; text-align:center; margin-top:8px; color:#5C636C; text-decoration:none;">← Volver a recursos</a>
+    </aside>
+    <main id="contenido" tabindex="-1"></main>
+  </div>
+  <footer class="brand-footer"><a href="../../recursos.html" style="color: inherit; text-decoration: underline; margin-right: 12px;">← Catálogo de recursos</a> <strong>Alejandro Córdova</strong> <span>Pedagogía y tecnología al servicio del aprendizaje. · <a href="./verificar.html" style="color: inherit; text-decoration: underline;">Verificación docente</a></span></footer>
+  <dialog id="dlg" aria-labelledby="dlg-title">
+    <div class="dlg-head"><span class="mono-label" id="dlg-kicker"></span><button type="button" class="dlg-close" data-action="close-dialog">Cerrar</button></div>
+    <div id="dlg-body"></div>
+  </dialog>
+  <div class="toast" id="toast" role="status" hidden></div>
+  <section id="ficha-imprimible" aria-hidden="true"></section>
+  <input type="file" id="import-file" accept="application/json,.json" hidden aria-label="Elegir un respaldo">
+  <noscript><p class="noscript">Activa JavaScript para usar este recurso.</p></noscript>
+</body>
+</html>

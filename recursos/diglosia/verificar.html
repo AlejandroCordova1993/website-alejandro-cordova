@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071B33">
+  <title>Verificación de Constancias · Diglosia · Guía Docente</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23071B33'/%3E%3Cpath d='M7 9h7v14H7zm11 0h7v14h-7z' fill='none' stroke='%23F3F1EA' stroke-width='2'/%3E%3Ccircle cx='16' cy='6' r='2' fill='%23D83A32'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./fonts.css">
+  <link rel="stylesheet" href="./styles.css?v=7">
+  <style>
+    body {
+      background-color: var(--bg-canvas, #F3F1EA);
+      color: var(--text-body, #101820);
+      font-family: 'Public Sans', system-ui, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .verify-topbar {
+      background: var(--bg-deep, #071B33);
+      color: #FFFFFF;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--accent, #D83A32);
+    }
+    .verify-topbar a {
+      color: #CBD5E1;
+      text-decoration: none;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.15s ease;
+    }
+    .verify-topbar a:hover {
+      color: #FFFFFF;
+    }
+    .verify-container {
+      max-width: 860px;
+      margin: 36px auto;
+      padding: 0 20px;
+      width: 100%;
+      box-sizing: border-box;
+      flex: 1;
+    }
+    .verify-header {
+      margin-bottom: 28px;
+    }
+    .verify-header h1 {
+      font-family: 'Public Sans', system-ui, sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--bg-deep, #071B33);
+      margin: 6px 0 10px;
+      letter-spacing: -0.02em;
+    }
+    .verify-header p {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 17px;
+      color: #475569;
+      line-height: 1.5;
+      margin: 0;
+    }
+    .verify-card {
+      background: #FFFFFF;
+      border: 1px solid #D7D9D6;
+      border-radius: 8px;
+      padding: 24px;
+      box-shadow: 0 2px 8px rgba(7, 27, 51, 0.04);
+      margin-bottom: 24px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+    @media (max-width: 640px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .field-group label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--bg-deep, #071B33);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .field-group small {
+      color: #64748B;
+      font-size: 12px;
+    }
+    .input-code {
+      font-family: 'DM Mono', monospace;
+      font-size: 18px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 10px 14px;
+      border: 2px solid #CBD5E1;
+      border-radius: 6px;
+      background: #F8FAFC;
+      color: var(--bg-deep, #071B33);
+    }
+    .input-code:focus, .input-text:focus {
+      outline: none;
+      border-color: var(--brand, #123C69);
+      background: #FFFFFF;
+    }
+    .input-text {
+      font-size: 15px;
+      padding: 11px 14px;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 6px;
+      color: var(--text-body, #101820);
+    }
+    .btn-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn-verify {
+      background: var(--bg-deep, #071B33);
+      color: #FFFFFF;
+      border: none;
+      padding: 11px 22px;
+      font-weight: 600;
+      font-size: 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.15s ease;
+    }
+    .btn-verify:hover {
+      background: #123C69;
+    }
+    .btn-sec {
+      background: transparent;
+      color: #475569;
+      border: 1.5px solid #CBD5E1;
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .btn-sec:hover {
+      background: #F1F5F9;
+      color: var(--bg-deep, #071B33);
+    }
+    /* Resultados */
+    .res-box {
+      margin-top: 28px;
+      border-top: 2px solid #E2E8F0;
+      padding-top: 24px;
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    .status-ok {
+      background: #DCFCE7;
+      color: #166534;
+      border: 1px solid #86EFAC;
+    }
+    .status-bad {
+      background: #FEE2E2;
+      color: #991B1B;
+      border: 1px solid #FCA5A5;
+    }
+    .status-warn {
+      background: #FEF3C7;
+      color: #92400E;
+      border: 1px solid #FCD34D;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      padding: 16px;
+      margin-bottom: 24px;
+    }
+    .meta-item span {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      color: #64748B;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 3px;
+    }
+    .meta-item strong {
+      font-size: 16px;
+      color: var(--bg-deep, #071B33);
+    }
+    .check-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+    .check-table th, .check-table td {
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 1px solid #E2E8F0;
+    }
+    .check-table th {
+      background: #F1F5F9;
+      color: #475569;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .badge-done {
+      color: #166534;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .badge-pending {
+      color: #991B1B;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .sec-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--bg-deep, #071B33);
+      margin: 24px 0 8px;
+    }
+    .footer-docente {
+      text-align: center;
+      padding: 24px;
+      font-size: 13px;
+      color: #64748B;
+      border-top: 1px solid #D7D9D6;
+      background: #FFFFFF;
+    }
+  </style>
+</head>
+<body>
+  <header class="verify-topbar">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="font-weight: 800; font-size: 16px; letter-spacing: -0.01em;">DIGLOSIA</span>
+      <span style="background: rgba(255,255,255,0.15); padding: 2px 8px; border-radius: 4px; font-size: 11px; font-family: 'DM Mono', monospace;">PANEL DOCENTE</span>
+    </div>
+    <div style="display: flex; gap: 16px;">
+      <a href="./index.html"><span>← Volver al recurso interactivo</span></a>
+      <a href="../../recursos.html"><span>Recursos generales</span></a>
+    </div>
+  </header>
+
+  <main class="verify-container">
+    <div class="verify-header">
+      <span class="mono-label" style="color: var(--brand, #123C69); font-weight: 700;">Herramienta de verificación de evidencias</span>
+      <h1>Validación de Constancias de Aprendizaje</h1>
+      <p>Comprueba la autenticidad del código de 15 caracteres generado al finalizar un nivel, el grado de cumplimiento de actividades y la consistencia del trabajo registrado por el estudiante.</p>
+    </div>
+
+    <div class="verify-card">
+      <form id="verify-form" onsubmit="event.preventDefault(); procesarCodigo();">
+        <div class="form-row">
+          <div class="field-group">
+            <label for="code-input">Código de verificación</label>
+            <input type="text" id="code-input" class="input-code" placeholder="XXXXX-XXXXX-XXXXX" maxlength="17" autocomplete="off" spellcheck="false" required>
+            <small>Ubicado en el recuadro superior de la constancia en PDF o impresa.</small>
+          </div>
+          <div class="field-group">
+            <label for="name-input">Nombre del estudiante (Opcional)</label>
+            <input type="text" id="name-input" class="input-text" placeholder="Ej. María José Pérez Quishpe" autocomplete="name">
+            <small>Permite cotejar si la huella digital del código pertenece al alumno.</small>
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <button type="submit" class="btn-verify">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            Verificar código
+          </button>
+          <button type="button" class="btn-sec" onclick="pegarPortapapeles()">Pegar del portapapeles</button>
+          <button type="button" class="btn-sec" onclick="limpiar()">Limpiar</button>
+        </div>
+      </form>
+
+      <div id="resultado" class="res-box" style="display: none;"></div>
+    </div>
+  </main>
+
+  <footer class="footer-docente">
+    <strong>Alejandro Córdova</strong> · Pedagogía y tecnología al servicio del aprendizaje · © 2026
+  </footer>
+
+  <script src="./content.js?v=7"></script>
+  <script src="./nivel1.js?v=7"></script>
+  <script src="./nivel2.js?v=7"></script>
+  <script src="./nivel3.js?v=7"></script>
+  <script src="./evidencia.js?v=7"></script>
+  <script>
+    const EVID = window.DG_EVIDENCIA;
+    const LEVELS = window.DG.levels;
+
+    // Formatear código automáticamente con guiones
+    const codeInput = document.getElementById('code-input');
+    codeInput.addEventListener('input', (e) => {
+      let v = e.target.value.toUpperCase().replace(/[^0-9A-Z]/g, '').replace(/O/g, '0').replace(/[IL]/g, '1');
+      if (v.length > 15) v = v.slice(0, 15);
+      let formatted = '';
+      if (v.length > 10) formatted = v.slice(0, 5) + '-' + v.slice(5, 10) + '-' + v.slice(10);
+      else if (v.length > 5) formatted = v.slice(0, 5) + '-' + v.slice(5);
+      else formatted = v;
+      e.target.value = formatted;
+      if (v.length === 15) {
+        procesarCodigo();
+      }
+    });
+
+    async function pegarPortapapeles() {
+      try {
+        const text = await navigator.clipboard.readText();
+        codeInput.value = text.trim();
+        codeInput.dispatchEvent(new Event('input'));
+      } catch {
+        alert('No se pudo acceder al portapapeles. Pega el código manualmente.');
+      }
+    }
+
+    function limpiar() {
+      codeInput.value = '';
+      document.getElementById('name-input').value = '';
+      document.getElementById('resultado').style.display = 'none';
+      codeInput.focus();
+    }
+
+    function procesarCodigo() {
+      const rawCode = codeInput.value.trim();
+      const studentName = document.getElementById('name-input').value.trim();
+      const resEl = document.getElementById('resultado');
+
+      if (!rawCode) return;
+
+      const dec = EVID.decode(rawCode);
+      if (!dec.ok) {
+        resEl.style.display = 'block';
+        resEl.innerHTML = `
+          <div class="status-badge status-bad">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+            Código no válido o modificado
+          </div>
+          <p style="color: #991B1B; font-size: 15px; margin: 0 0 10px;">${dec.error || 'El código no supera la suma de control de integridad. Posible error de tipeo o constancia alterada.'}</p>
+        `;
+        return;
+      }
+
+      const lv = LEVELS[dec.level];
+      if (!lv) {
+        resEl.style.display = 'block';
+        resEl.innerHTML = `<div class="status-badge status-bad">Nivel desconocido en el sistema (${dec.level})</div>`;
+        return;
+      }
+
+      // Nombre
+      let nameStatusHtml = '';
+      if (studentName) {
+        const matches = EVID.nameMatches(studentName, dec.name);
+        if (matches) {
+          nameStatusHtml = `<span style="color: #166534; font-weight: 700;">✓ Coincide con «${studentName}»</span>`;
+        } else {
+          nameStatusHtml = `<span style="color: #991B1B; font-weight: 700;">✗ No coincide con el nombre ingresado</span>`;
+        }
+      } else {
+        nameStatusHtml = `<span style="color: #64748B;">No especificado (huella: ${dec.name})</span>`;
+      }
+
+      // Actividades
+      const acts = lv.chapters.flatMap(ch => ch.steps.filter(st => st.activity && !st.optional).map(st => ({
+        id: st.activity.id,
+        title: st.activity.title,
+        ch: ch.short
+      })));
+
+      let solvedActsCount = 0;
+      const actsRows = acts.map((a, i) => {
+        const isSolved = (dec.mask & (1 << i)) !== 0;
+        if (isSolved) solvedActsCount++;
+        return `
+          <tr>
+            <td><strong>${a.ch}</strong></td>
+            <td>${a.title}</td>
+            <td>${isSolved 
+              ? '<span class="badge-done">✓ Resuelta</span>' 
+              : '<span class="badge-pending">○ Pendiente</span>'}</td>
+          </tr>
+        `;
+      }).join('');
+
+      // Redacciones
+      const ws = lv.chapters.flatMap(ch => ch.steps.filter(st => st.write).map(st => ({
+        id: st.write.id,
+        title: st.write.title,
+        min: st.write.min,
+        max: st.write.max,
+        ch: ch.short
+      })));
+
+      const writesData = [
+        { obj: ws[0], words: dec.w1, bit: 1 },
+        { obj: ws[1], words: dec.w2, bit: 2 }
+      ];
+
+      let registeredWritesCount = 0;
+      const writesRows = writesData.map(w => {
+        if (!w.obj) return '';
+        const isReg = (dec.writes & w.bit) !== 0;
+        if (isReg) registeredWritesCount++;
+        const withinTarget = w.words >= w.obj.min && w.words <= w.obj.max;
+        return `
+          <tr>
+            <td><strong>${w.obj.ch}</strong></td>
+            <td>${w.obj.title} <small style="display:block; color:#64748B;">Meta: ${w.obj.min}–${w.obj.max} palabras</small></td>
+            <td>${isReg 
+              ? `<span class="badge-done">✓ Registrado (${w.words} palabras ${withinTarget ? '· en meta' : '· fuera de meta'})</span>` 
+              : '<span class="badge-pending">○ Pendiente</span>'}</td>
+          </tr>
+        `;
+      }).filter(Boolean).join('');
+
+      const totalReq = acts.length + ws.length;
+      const totalDone = solvedActsCount + registeredWritesCount;
+      const isComplete = totalDone === totalReq;
+
+      const dateStr = dec.date.toLocaleDateString('es-EC', { day: 'numeric', month: 'long', year: 'numeric' });
+
+      resEl.style.display = 'block';
+      resEl.innerHTML = `
+        <div class="status-badge ${isComplete ? 'status-ok' : 'status-warn'}">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          ${isComplete ? 'Código íntegro · Nivel 100% completado' : `Código íntegro · Avance parcial (${totalDone}/${totalReq} elementos)`}
+        </div>
+
+        <div class="meta-grid">
+          <div class="meta-item">
+            <span>Nivel cursado</span>
+            <strong>Nivel ${lv.num}: ${lv.name}</strong>
+          </div>
+          <div class="meta-item">
+            <span>Fecha de emisión</span>
+            <strong>${dateStr}</strong>
+          </div>
+          <div class="meta-item">
+            <span>Verificación del alumno</span>
+            <strong>${nameStatusHtml}</strong>
+          </div>
+          <div class="meta-item">
+            <span>Progreso global</span>
+            <strong>${solvedActsCount}/${acts.length} actividades · ${registeredWritesCount}/${ws.length} textos</strong>
+          </div>
+        </div>
+
+        <h3 class="sec-title">1. Desglose de actividades formativas</h3>
+        <table class="check-table">
+          <thead>
+            <tr>
+              <th style="width: 25%;">Capítulo</th>
+              <th>Actividad</th>
+              <th style="width: 25%;">Estado verificado</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${actsRows}
+          </tbody>
+        </table>
+
+        <h3 class="sec-title">2. Textos de redacción y producción</h3>
+        <table class="check-table">
+          <thead>
+            <tr>
+              <th style="width: 25%;">Capítulo</th>
+              <th>Tarea de escritura</th>
+              <th style="width: 35%;">Estado y palabras</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${writesRows}
+          </tbody>
+        </table>
+      `;
+    }
+  </script>
+</body>
+</html>
