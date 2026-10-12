@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#071B33">
+  <meta name="description" content="Un espacio para leer, comparar y construir interpretaciones. Literatura comparada: recorrido, biblioteca, mesa de lectura y ensayo final.">
+  <title>Literatura comparada · Alejandro Córdova</title>
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./fonts.css"><link rel="stylesheet" href="./styles.css"><link rel="stylesheet" href="./usability.css"><link rel="stylesheet" href="./seminar.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Saltar al contenido</a>
+  <header class="topbar">
+    <a href="#inicio" class="brand" aria-label="Literatura comparada, inicio"><span class="monogram" aria-hidden="true">LC<span></span></span><span>Literatura<br><strong>comparada</strong></span></a>
+    <nav aria-label="Navegación principal"><a href="#inicio" data-nav="inicio">Recorrido</a><a href="#biblioteca" data-nav="biblioteca">Biblioteca</a><a href="#proyecto" data-nav="proyecto">Ensayo final</a><a href="#cuaderno" data-nav="cuaderno">Mi cuaderno</a><a data-catalog-link href="../../recursos.html">Catálogo</a></nav>
+    <button type="button" class="class-toggle" id="class-toggle">Modo clase <span aria-hidden="true">↗</span></button>
+  </header>
+  <div class="shell"><aside id="sidebar" class="sidebar" aria-label="Índice del recorrido"></aside><main id="main" tabindex="-1"></main></div>
+  <footer class="footer"><span>Alejandro Córdova <span class="slash" aria-hidden="true"></span> HUMAN · SYSTEM</span><span>Literatura comparada · Seminario y taller</span><a data-catalog-link href="../../recursos.html">Catálogo de recursos</a><a href="#cuaderno">Mi cuaderno</a></footer>
+  <div id="status" class="toast" role="status" aria-live="polite"></div>
+  <div id="save-announcement" class="sr-only" role="status" aria-live="polite"></div>
+  <dialog id="class-dialog" aria-labelledby="class-title"></dialog>
+  <dialog id="import-dialog" aria-labelledby="import-title"></dialog>
+  <dialog id="action-dialog" aria-labelledby="action-title"></dialog>
+  <dialog id="concept-dialog" aria-labelledby="concept-title"></dialog>
+  <dialog id="delivery-dialog" aria-labelledby="delivery-title"></dialog>
+  <input type="file" id="import-file" accept="application/json,.json" hidden>
+  <noscript><p>Activa JavaScript para navegar y guardar notas. Las lecturas están documentadas en el inventario del curso.</p></noscript>
+</body>
+</html>

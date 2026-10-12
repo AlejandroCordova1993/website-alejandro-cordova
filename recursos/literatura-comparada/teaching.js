@@ -1,0 +1,35 @@
+import {weeks,minimumContents} from './schedule.js';
+import {taskNotes,assessments,unitActivities} from './curriculum.js';
+import {weeklyReadings,essayMilestones} from './journey.js';
+import {resourceById} from './corpus.js';
+import {courseModules} from './curriculum.js';
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+export function weekLabel(value){
+ const text=Array.isArray(value)?value.join(' y '):String(value).replace('; retorno ',' y ').replace('; transversal','').replace('; anticipación ',' y ');
+ return (/^\d+$/.test(text)?'Semana ':'Semanas ')+text;
+}
+export function activityTitle(a){const key=a.field.slice(0,a.field.lastIndexOf('-'));if(taskNotes[key])return taskNotes[key].title;return a.title;}
+export function readingDestination(id,module){
+ if(['baudelaire','casal','diez'].includes(id))return {href:'#modulo/3/traduccion',field:'recurso-'+id};
+ const renders=m=>[...m.theory,...(m.common||[]),...(m.support||[]),...Object.values(m.routes).flatMap(r=>r.texts)].includes(id);
+ const owner=courseModules.find(m=>m.id===module&&renders(m))||courseModules.find(renders);
+ const route=Object.entries(owner.routes).find(([,r])=>r.texts.includes(id))?.[0];
+ return {href:`#modulo/${owner.id}/leer`,field:'recurso-'+id,module:owner.id,...(route?{route:`${owner.id}-${route}`}:{})};
+}
+export function studentReadings(week,module){
+ const plan=weeklyReadings[week];
+ const groups=[['autonomous','Lecturas para el trabajo autónomo'],['classroom','Materiales que se trabajan en clase'],['revisit','Relecturas y materiales ya trabajados']];
+ return `<section class="week-readings" aria-label="Lecturas de la semana ${week}">${groups.filter(([key])=>plan[key]?.length).map(([key,title])=>`<h3>${title}</h3><ul>${plan[key].map(([id,selection])=>{const r=resourceById[id],dest=readingDestination(id,module);return `<li><a href="${dest.href}" data-goto-field="${dest.field}"${dest.route?` data-route-note="${dest.route}"`:''}>${esc(r.author)} · ${esc(r.title)}</a><p class="caption">${esc(selection)}${dest.module&&dest.module!==module?` · Recuperar en M${dest.module}`:''}${!r.url?' · Selección facilitada por el docente':''}${r.access==='Biblioteca'?' · Ejemplar gestionado por el docente':''}</p></li>`;}).join('')}</ul>`).join('')}${plan.note?`<p class="week-reading-note">${esc(plan.note)}</p>`:''}</section>`;
+}
+function milestone(week){const m=essayMilestones[week];return m?`<section class="essay-milestone"><h3>Hito del ensayo</h3><p>${esc(m.description)}</p><a href="#proyecto" data-goto-field="${m.field}">${esc(m.title)}</a></section>`:'';}
+function weekNavigation(week){return `<nav class="week-navigation" aria-label="Continuar el recorrido semanal"><a href="${week===1?'#introduccion':'#semana/'+(week-1)}">${week===1?'Volver a la introducción':'Semana '+(week-1)+' · Anterior'}</a><a href="${week===16?'#proyecto':'#semana/'+(week+1)}">${week===16?'Revisar y exportar el ensayo':'Semana '+(week+1)+' · Continuar'}</a></nav>`;}
+const activityLink=a=>`<a href="${a.href}" data-goto-field="${a.field}"${a.route?` data-route-note="${a.route}"`:''}>${esc(activityTitle(a))}${a.href.startsWith('#modulo/')&&Number(a.href.split('/')[1])!==a.module?` <span class="destination-note">→ M${a.href.split('/')[1]} · Situar</span>`:''}</a>`;
+export function activityLinks(m,heading='Actividades de esta unidad'){
+ return `<section class="activity-links" aria-label="${esc(heading)}"><h3>${esc(heading)}</h3><p>Abre el espacio de cada producto según la semana de trabajo. Las fichas, la cartografía y el ensayo conservan sus consignas y ponderaciones.</p><ul>${unitActivities.filter(a=>a.module===m.id).map(a=>`<li><span class="caption">${weekLabel(a.weeks)}</span>${activityLink(a)}</li>`).join('')}</ul></section>`;
+}
+export function teachingPlan(m,field){
+ const sessions=weeks.filter(w=>Math.ceil(w.week/4)===m.id);
+ const task=(key,t)=>`<section class="unit-task" id="task-${key}"><h3>${esc(t.title)}</h3><p>${esc(t.prompt)}</p>${field(key,'argument','Mi desarrollo','Conserva fuentes, localizadores y razones de cada decisión.',7)}${field(key,'revisionReason','Cambios y decisiones de revisión','Explica qué corriges y con qué evidencia.',3)}</section>`;
+ return `<section class="teaching-plan" id="unit-program-${m.id}" tabindex="-1" aria-label="Programación de la unidad"><h2>Programación semanal</h2><p>Cada semana reúne la sesión, sus actividades y los espacios del cuaderno. Puedes abrirla directamente desde el acceso por semana.</p><div class="weekly-plan">${sessions.map(w=>`<details id="week-${w.week}"><summary><span class="number">${String(w.week).padStart(2,'0')}</span><span>${esc(w.title.replace('Oralitura lengua','Oralitura, lengua'))}</span></summary><div class="weekly-body">${studentReadings(w.week,m.id)}<h3>Trabajo de la sesión</h3>${w.description.split(/ (?=Docencia:|Práctica:|Docencia y práctica:|Autónomo:|Evidencia:)/).map(t=>`<p>${esc(t)}</p>`).join('')}<div class="weekly-actions"><button type="button" class="button" data-class-week="${w.week}">Proyectar esta sesión <span aria-hidden="true">↗</span></button>${unitActivities.filter(a=>a.module===m.id&&a.weeks.includes(w.week)).map(activityLink).join('')}</div>${Object.entries(taskNotes).filter(([,t])=>t.module===m.id&&t.week===w.week).map(([key,t])=>task(key,t)).join('')}${milestone(w.week)}${weekNavigation(w.week)}</div></details>`).join('')}</div><details class="minimum-list"><summary>${esc(m.official)} · Contenidos mínimos y evidencias</summary><dl>${minimumContents.filter(c=>c.module===m.id).map(c=>`<dt>${esc(c.title)}</dt><dd><span class="caption">${esc(weekLabel(c.weeks))}</span><p>${esc(c.evidence)}</p></dd>`).join('')}</dl><p class="caption">Programa Analítico. Por semana: 3 horas de docencia, 1 de práctica y 2 de trabajo autónomo. Las semanas 8, 12, 15 y 16 reutilizan lecturas.</p></details></section>`;
+}
+export function evaluationView(){return `<section class="course-assessment"><h2>Evaluación del recorrido</h2><p>96 horas: 48 de docencia, 16 de práctica y 32 de trabajo autónomo. Cada componente se califica sobre 20 y se pondera por su porcentaje.</p><div class="assessment-grid">${assessments.map(([name,weight,text])=>`<article><p class="number">${weight}</p><h3>${name}</h3><p>${text}</p></article>`).join('')}</div><details><summary>Criterios de cartografía, microclase y defensa</summary><p><strong>Cartografía:</strong> relaciones y fuentes verificables, 40 %; mediaciones y escalas, 30 %; revisión, 20 %; claridad y referencias, 10 %.</p><p><strong>Microclase:</strong> relación y consigna, 25 %; comparación realizada por el público con evidencias, 35 %; discusión, 25 %; organización y tiempo, 15 %.</p><p><strong>Defensa:</strong> tesis, 25 %; evidencia, 35 %; respuesta y límites, 30 %; síntesis en el tiempo previsto, 10 %.</p><p>Son pesos internos de cada instrumento. La cartografía y la microclase tienen nota grupal; fichas, ensayo y defensa tienen evidencia individual.</p></details></section>`;}
