@@ -88,8 +88,14 @@ document.addEventListener("DOMContentLoaded", () => {
         showSlide(currentSlide);
     }
 
-    // Navegación con teclado
+    // Navegación con teclado y control de modal accesible
     document.addEventListener('keydown', (e) => {
+        if (modal && modal.style.display === 'block') {
+            if (e.key === 'Escape') {
+                modal.style.display = 'none';
+            }
+            return;
+        }
         if (e.key === 'ArrowRight' || e.key === ' ') {
             nextSlide();
         } else if (e.key === 'ArrowLeft') {
