@@ -155,7 +155,7 @@ document.addEventListener('change',e=>{if(e.target.id==='week-jump'&&e.target.va
 document.addEventListener('click',async e=>{
  if(e.target.closest('.skip')){e.preventDefault();(main.querySelector('h1')||main).focus();return;}
  if(e.target.closest('[data-owner-ok]'))unlockNotebook();
- const weekSummary=e.target.closest('.weekly-plan summary');if(weekSummary)selectedWeek=Number(weekSummary.parentElement.id.slice(5));const classWeek=e.target.closest('[data-class-week]');if(classWeek){const week=Number(classWeek.dataset.classWeek),module=Math.ceil(week/4);presenter.show(module,state.routes[module]||'A','',week);return;}
+ const weekSummary=e.target.closest('.weekly-plan>details>summary');if(weekSummary)selectedWeek=Number(weekSummary.parentElement.id.slice(5));const classWeek=e.target.closest('[data-class-week]');if(classWeek){const week=Number(classWeek.dataset.classWeek),module=Math.ceil(week/4);presenter.show(module,state.routes[module]||'A','',week,classWeek.dataset.classDay||null);return;}
  const goto=e.target.closest('[data-goto-field]');if(goto){pendingFocus=goto.dataset.gotoField;if(goto.getAttribute('href')===location.hash){const target=document.getElementById(pendingFocus);if(target){for(let el=target.parentElement;el;el=el.parentElement)if(el.tagName==='DETAILS')el.open=true;target.focus();pendingFocus='';}}}
  const focusLink=e.target.closest('[data-focus-field]');if(focusLink){e.preventDefault();document.getElementById(focusLink.dataset.focusField)?.focus();return;}
  const noteLink=e.target.closest('[data-route-note]');if(noteLink){const [m,r]=noteLink.dataset.routeNote.split('-');if(['2','3','4'].includes(m)&&['A','B'].includes(r)){state.routes[m]=r;save();if(location.hash===noteLink.getAttribute('href'))render();}}

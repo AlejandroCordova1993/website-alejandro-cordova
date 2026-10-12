@@ -2,6 +2,7 @@ import {weeks} from './schedule.js';
 import {unitActivities} from './curriculum.js';
 import {translationRows} from './corpus.js';
 import {activityTitle} from './teaching.js';
+import {encounterById,dayLabel} from './encounters.js';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 // Teaching prompts are original syntheses. Texts and attributions are in Leer.
 const lessons={
@@ -19,7 +20,7 @@ const lessons={
   ['Bloom: defender un juicio de valor','La discusión de la fuerza estética y la originalidad requiere explicar qué recursos de una obra sustentan el juicio. Una preferencia no demuestra por sí sola consagración institucional.','¿Qué pasaje o procedimiento respalda el valor que atribuyes?'],
   ['Bourdieu: estudiar la consagración','Relaciona posiciones de autores, editoriales, crítica y enseñanza. Investiga qué agentes y condiciones de producción y circulación hacen posible el reconocimiento.','¿Qué documento permite identificar al agente y su intervención?'],
   ['Guillory: acceso y transmisión escolar','Pregunta quién accede a las prácticas y saberes que la enseñanza distribuye. Una lista de autores no basta para explicar las oportunidades de lectura.','¿Qué condiciones de acceso supone cada selección?'],
-  ['Un caso, tres preguntas','Contrasta las dos listas y los dos registros del dossier. Separa juicio estético, consagración y transmisión educativa.','Dossier local de canon, pp. 1–4. Cuadro: teoría, pregunta, dato y límite.']
+  ['Un caso, tres preguntas','Contrasta las dos listas y los dos registros del dossier. Separa juicio estético, consagración y transmisión educativa.','Dossier local de canon, cuatro secciones. Cuadro: teoría, pregunta, dato y límite.']
  ],
  4:[
   ['Tipos de canon','Compara selecciones personales, escolares, críticas y editoriales. Sus agentes, destinatarios y criterios pueden coincidir parcialmente.','No conviertas una lista individual en prueba de todo el canon de una institución.'],
@@ -81,7 +82,7 @@ const lessons={
  15:[
   ['Tematología entre literaturas','Compara violencia y deshumanización en Palacio–Machado. Distingue tema, motivos, recursos formales y variación histórica.','Matriz tematológica: pasaje, procedimiento, contexto y límite.'],
   ['Una extensión entre medios','Coteja Ataúd en llamas e Historia de un oso: ausencia y memoria mediante testimonio, escritura, imagen y sonido.','El cortometraje no adapta la crónica; delimita la comparación.'],
-  ['Microclases y ensayo','Segunda jornada de microclases y revisión del borrador: tesis, evidencias, objeción y consigna didáctica.','Distribución orientativa: microclases 90 min, temas 30, medios 25 y ensayo 35.']
+  ['Microclases y ensayo','Segunda jornada de microclases y revisión del borrador: tesis, evidencias, objeción y consigna didáctica.','Lunes: tematología, extensión intermedial y borrador. Miércoles: microclases y revisión del ensayo.']
  ],
  16:[
   ['Defender una relación','Presenta tesis, evidencia decisiva y límite del contraste. Responde una pregunta vinculada con tu método o interpretación.','Defensa individual: 4 min + 1 pregunta de 1 min.'],
@@ -89,7 +90,9 @@ const lessons={
   ['Recuperar las revisiones','Identifica qué cambió en tu manera de comparar y qué evidencias produjeron esa revisión.','Síntesis de canon, mediación y escalas; sin corpus nuevo.']
  ]
 };
-export function sessionSlides(week){
+export function sessionSlides(week,day=null){
+ const encounter=day&&encounterById[week+'-'+day];
+ if(encounter)return [{title:encounter.title,text:encounter.aim,detail:`Semana ${week} · ${dayLabel(day)} · 16:00–18:00`},...encounter.stages.map(s=>({title:s.title,text:s.student,detail:`${s.minutes} min · Orientación docente: ${s.teacher}`})),{title:'Qué conservamos y cómo continuamos',text:encounter.output,detail:'Guarda evidencias, localizadores y decisiones en los espacios existentes del cuaderno.'}];
  const w=weeks.find(w=>w.week===week);if(!w)return [];
  const slides=lessons[week].map(s=>Array.isArray(s)?{title:s[0],text:s[1],detail:s[2]}:s);
  const activities=unitActivities.filter(a=>a.module===Math.ceil(week/4)&&a.weeks.includes(week));

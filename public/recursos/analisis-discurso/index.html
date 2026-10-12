@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="theme-color" content="#071B33">
+ <meta name="description" content="Laboratorio universitario de análisis del discurso: corpus, contexto, voces, evidencias y revisión de interpretaciones.">
+ <title>Análisis del discurso · Alejandro Córdova</title>
+ <link rel="icon" href="./icon.svg" type="image/svg+xml">
+ <link rel="stylesheet" href="./fonts.css"><link rel="stylesheet" href="./styles.css">
+ <script type="module" src="./app.js"></script>
+</head>
+<body>
+ <a class="skip" href="#main">Saltar al contenido</a>
+ <header class="topbar"><a class="brand" href="#inicio" aria-label="Análisis del discurso, inicio"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M12 6H5v28h7M28 6h7v28h-7M14 15h12M14 21h12M14 27h8" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>Análisis<br><strong>del discurso</strong></span></a><nav aria-label="Navegación principal"><a href="#inicio" data-nav="inicio">Recorrido</a><a href="#biblioteca" data-nav="biblioteca">Corpus y lecturas</a><a href="#proyecto" data-nav="proyecto">Expediente</a><a href="#cuaderno" data-nav="cuaderno">Cuaderno</a></nav><button type="button" class="button class-toggle" data-action="class">Modo clase</button></header>
+ <div class="session-line"><span id="save-status" role="status" aria-live="polite"></span><span>HUMAN · SYSTEM</span></div>
+ <aside id="session-message" class="session-message" aria-label="Estado del cuaderno" hidden></aside>
+ <div class="shell"><aside id="sidebar" aria-label="Índice del curso"></aside><main id="main" tabindex="-1"></main></div>
+ <footer><span>Alejandro Córdova · Análisis del discurso</span><a href="#glosario">Glosario situado</a><a href="#cuaderno">Respaldo y continuidad</a><a id="catalog-link" href="https://alejandrocordova.com/recursos.html">Volver a recursos docentes</a></footer>
+ <div id="status" class="toast" role="status" aria-live="polite"></div>
+ <dialog id="concept-dialog" aria-labelledby="concept-title"></dialog>
+ <dialog id="class-dialog" aria-labelledby="class-title"></dialog>
+ <dialog id="import-dialog" aria-labelledby="import-title"></dialog>
+ <dialog id="action-dialog" aria-labelledby="action-title"></dialog>
+ <dialog id="delivery-dialog" aria-labelledby="delivery-title"></dialog>
+ <input type="file" id="import-file" accept="application/json,.json" hidden>
+ <noscript><p>Activa JavaScript para utilizar las guías, el modo clase y el cuaderno local.</p></noscript>
+</body>
+</html>
