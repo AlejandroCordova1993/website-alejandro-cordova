@@ -60,6 +60,28 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+::selection {
+  background-color: var(--inst-blue);
+  color: var(--paper-warm);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--paper-warm);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--grey-line);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--grey-mineral);
+}
+
 h1, h2, h3, h4 {
   font-family: var(--font-sans);
   color: var(--charcoal);
@@ -161,8 +183,7 @@ img {
   border-top: 1px solid var(--grey-line);
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: normal;
   color: var(--grey-mineral);
   display: flex;
   justify-content: space-between;
@@ -179,8 +200,7 @@ img {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.05em;
   color: var(--grey-mineral);
 }
 
@@ -298,8 +318,7 @@ img {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--grey-mineral);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
 }
 
 .clickable-img {
@@ -307,12 +326,13 @@ img {
   border: 1px solid var(--grey-line);
   border-radius: var(--radius) !important;
   box-shadow: none !important;
-  transition: transform var(--transition-fast), border-color var(--transition-fast);
+  transition: border-color var(--transition-fast), outline-color var(--transition-fast);
 }
 
 .clickable-img:hover {
   border-color: var(--active-blue);
-  transform: translateY(-2px);
+  outline: 1px solid var(--active-blue);
+  outline-offset: 1px;
 }
 
 /* Textos reflexivos en Source Serif 4 */
@@ -516,17 +536,17 @@ blockquote.pedagogical-quote {
   padding: 20px 24px;
   background-color: var(--paper-pure);
   border: 1px solid var(--grey-line);
-  border-left: 4px solid var(--deep-blue);
-  transition: transform var(--transition-fast), border-color var(--transition-fast);
+  border-top: 2px solid var(--deep-blue);
+  transition: border-color var(--transition-fast);
 }
 
 .level-box:hover {
-  transform: translateY(-2px);
+  border-color: var(--active-blue);
 }
 
-.level-box.macro-level { border-left-color: var(--deep-blue); }
-.level-box.meso-level { border-left-color: var(--inst-blue); }
-.level-box.micro-level { border-left-color: var(--active-blue); }
+.level-box.macro-level { border-top-color: var(--deep-blue); }
+.level-box.meso-level { border-top-color: var(--inst-blue); }
+.level-box.micro-level { border-top-color: var(--active-blue); }
 
 .level-icon {
   width: 44px;
@@ -538,6 +558,7 @@ blockquote.pedagogical-quote {
   border: 1px solid var(--grey-line);
   color: var(--inst-blue);
   flex-shrink: 0;
+  padding: 10px;
 }
 
 .level-icon i {
@@ -548,7 +569,7 @@ blockquote.pedagogical-quote {
   font-family: var(--font-mono);
   font-size: 0.95rem;
   font-weight: 600;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
   color: var(--deep-blue);
   margin-bottom: 8px;
 }
@@ -591,7 +612,6 @@ blockquote.pedagogical-quote {
   gap: 24px;
   background-color: var(--paper-surface);
   border: 1px solid var(--grey-line);
-  border-left: 3px solid var(--inst-blue);
   padding: 20px 24px;
   margin-top: 20px;
 }
@@ -640,13 +660,7 @@ blockquote.pedagogical-quote {
   display: flex;
   align-items: center;
   gap: 16px;
-  border-left: 3px solid var(--inst-blue);
 }
-
-.pyramid-level.level-1 { border-left-color: var(--deep-blue); }
-.pyramid-level.level-2 { border-left-color: var(--inst-blue); }
-.pyramid-level.level-3 { border-left-color: var(--active-blue); }
-.pyramid-level.level-4 { border-left-color: var(--grey-mineral); }
 
 .level-content {
   display: flex;
@@ -754,17 +768,14 @@ blockquote.pedagogical-quote {
   padding: 10px 18px;
   background-color: var(--paper-pure);
   border: 1px solid var(--grey-line);
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
   font-weight: 500;
   color: var(--inst-blue);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: transform var(--transition-fast), border-color var(--transition-fast);
+  transition: border-color var(--transition-fast);
 }
 
 .bubble:hover {
-  transform: translateY(-2px);
   border-color: var(--active-blue);
 }
 
@@ -1030,7 +1041,6 @@ blockquote.pedagogical-quote {
   padding: 12px 16px;
   background-color: var(--paper-surface);
   border: 1px solid var(--grey-line);
-  border-left: 3px solid var(--inst-blue);
 }
 
 .step-circle i {
@@ -1414,7 +1424,6 @@ blockquote.pedagogical-quote {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--grey-mineral);
-  text-transform: uppercase;
   margin-bottom: 8px;
 }
 
@@ -1527,6 +1536,7 @@ blockquote.pedagogical-quote {
   border: 1px solid var(--grey-line);
   background-color: var(--paper-pure);
   color: var(--inst-blue);
+  padding: 10px;
 }
 
 /* --- Modal de Inspección Técnica (#imageModal) --- */
@@ -1592,7 +1602,7 @@ blockquote.pedagogical-quote {
   font-variant-numeric: tabular-nums;
   font-weight: 500;
   color: var(--deep-blue);
-  letter-spacing: 0.05em;
+  letter-spacing: normal;
 }
 
 .progress-bar {
@@ -1605,8 +1615,10 @@ blockquote.pedagogical-quote {
 .progress-fill {
   height: 100%;
   background-color: var(--deep-blue);
-  width: 7.14%;
-  transition: width var(--transition-normal);
+  width: 100%;
+  transform-origin: left center;
+  transform: scaleX(0.0714);
+  transition: transform var(--transition-normal);
 }
 
 .nav-buttons {

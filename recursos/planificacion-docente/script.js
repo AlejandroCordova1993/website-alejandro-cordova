@@ -61,7 +61,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentElem) currentElem.textContent = idx + 1;
     const progress = ((idx + 1) / slides.length) * 100;
     const progressFill = document.getElementById('progressFill');
-    if (progressFill) progressFill.style.width = progress + '%';
+    if (progressFill) {
+        progressFill.style.transform = `scaleX(${(idx + 1) / slides.length})`;
+    }
         
         // Verificar si el slide necesita scroll después de un pequeño delay
         setTimeout(() => {
