@@ -4,6 +4,7 @@ import {resourceById,resourceHref} from './resources.js';
 // Teaching references and documents of analysis have separate roles.
 export const unitCorpusIds={1:['drexler'],2:['becas'],3:['becas'],4:['becas','menchu'],5:['becas'],6:['becas']};
 export const unitSequence=unit=>sessions.filter(s=>s.unit===unit&&!(unit===1&&s.week===1)).sort((a,b)=>a.week-b.week||a.encounter-b.encounter);
+export function newEvidenceSource(unit,evidence){const last=evidence.findLast(e=>e.unit===unit&&(!e.resource||unitCorpusIds[unit].includes(e.resource)));return last?{resource:last.resource||'',source:last.source}:null;}
 export function evidenceSources(unit,entry){
  const list=unitCorpusIds[unit].map(id=>resourceById[id]).filter(r=>r.kind==='corpus'&&resourceHref(r));
  if(entry?.resource&&!list.some(r=>r.id===entry.resource))list.push({id:entry.resource,title:resourceById[entry.resource]?.title||'Documento registrado',legacy:true});

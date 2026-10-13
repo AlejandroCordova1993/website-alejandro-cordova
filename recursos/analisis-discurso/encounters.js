@@ -96,15 +96,21 @@ firstOral.agenda=[
 const secondOral=sessions.find(s=>s.week===2&&s.encounter===2);
 secondOral.preparation='Retoma la charla, el intervalo y la transcripción guardados en la primera clase. La guía sirve para interpretar las marcas; ahora vuelves al tramo para añadir voz y cuerpo al mismo registro.';
 secondOral.agenda[0][1]='Retomar el episodio registrado';
-secondOral.agenda[0][2]='Abre la transcripción y la identificación de la situación que conservaste en la primera clase. Comprueba el intervalo y la distinción entre conferencia presente y diálogo narrado.';
+secondOral.agenda[0][2]='Abre la transcripción y la identificación de la situación que conservaste en la primera clase. Comprueba el intervalo y quién habla o qué voz se representa. En Drexler, distingue la conferencia presente del diálogo narrado.';
 secondOral.agenda[1][1]='Reescucha dirigida del mismo tramo';
-secondOral.agenda[1][2]='Vuelve al tramo elegido de 00:39–01:47 y repite solo las partes necesarias para escuchar pausas, énfasis y observar gestos. Usa el visionado anterior como contexto; no es otra actividad sobre otra charla.';
+secondOral.agenda[1][2]='Vuelve al intervalo guardado de tu episodio. Si usas Drexler, está dentro de 00:39–01:47; si usas un registro de taller, sigue su intervalo propio. Reescucha solo las partes necesarias para localizar voz y cuerpo; conserva el contexto observado en la primera clase.';
+secondOral.agenda[2][1]='Comprobar la transcripción y las voces';
+secondOral.agenda[2][2]='Abre la transcripción que ya guardaste y comprueba sus palabras, intervalo y leyenda. Corrige solo las marcas que lo necesiten. Identifica una característica verbal del tramo, como una cita, un marcador o una forma personal, y señala quién habla o qué voz se representa. Añade esa observación al registro o al argumento; no escribas otra transcripción completa.';
 secondOral.agenda[3][2]='Añade al registro de la ficha 1 dos recursos paraverbales, como pausa o énfasis, y un recurso corporal cuando tu registro permita observarlo. Para cada uno, indica el intervalo y describe lo percibido antes de interpretar su función. Si tu episodio propio solo tiene audio, declara ese límite y no inventes un gesto.';
 const supportOral=sessions.find(s=>s.week===3&&s.encounter===1);
 supportOral.title='Explicar las marcas de voz';
 supportOral.product='Ficha 1: argumento que justifica las marcas ya registradas con la guía y Caldiz; correcciones localizadas, sin iniciar otro episodio.';
 supportOral.agenda[1][2]='Retoma la misma transcripción y las marcas guardadas. Usa la selección de Caldiz para justificar cómo anotas una pausa o un énfasis. Corrige solo el registro que lo necesite y explica qué aporta la categoría a su interpretación.';
-supportOral.agenda[2][2]='En «Escribir argumento», relaciona las marcas de tu registro con su función posible y una alternativa. Conserva los localizadores; esta clase desarrolla la explicación, no solicita otra transcripción completa.';
+supportOral.agenda[2][2]='En «Escribir argumento», añade un apartado de justificación después de tu primera interpretación, sin borrar el borrador. Relaciona las marcas con su función posible y una alternativa; cita la guía o la selección de Caldiz que realmente utilizaste. Conserva los localizadores y reserva la nueva interpretación completa para «Revisar ficha».';
+const lastOral=sessions.find(s=>s.week===3&&s.encounter===2);
+lastOral.preparation='Retoma tu pregunta, transcripción, registros y borrador con la justificación añadida en la clase 3. Relee solo los intervalos y la guía que necesites para contrastar la interpretación; no se asigna otra lectura completa.';
+lastOral.agenda[1][2]='Con ayuda de la guía, vuelve a la pausa, énfasis o gesto del mismo episodio. Compara tu interpretación con otra explicación de esa marca y señala qué dato apoya cada una. No busques un nuevo corpus para hacer el contraste.';
+lastOral.agenda[4][2]='Intercambia la ficha con otro lector. Pídele comprobar un localizador, proponer una alternativa y señalar una corrección concreta. Usa la objeción para ajustar «Interpretación revisada» y explica el cambio en «Qué cambió y por qué». Si mantienes la lectura, justifica por qué resiste el contraste.';
 for(const s of sessions)if(s.week>1){s.preparation=s.preparation.replaceAll('«Material central del encuentro»','«Guía y lecturas de apoyo»').replaceAll('indicada en el material central','indicada en «Guía y lecturas de apoyo»').replaceAll('el visionado completo está previsto en clase','el visionado completo se hizo en la primera clase oral').replaceAll('que indica el material central','que trabajaste en el encuentro anterior');}
 export const sessionById=Object.fromEntries(sessions.map(s=>[s.id,s]));
 export const getSession=(week,encounter)=>sessionById[`s${week}-e${encounter}`];

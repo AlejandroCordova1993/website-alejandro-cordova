@@ -9,7 +9,7 @@ import {button,renderPage,sidebar,libraryResults,conceptHtml,renderClass,evidenc
 
 const $=selector=>document.querySelector(selector),main=$('#main');
 if(location.pathname.includes('/recursos/analisis-discurso/'))$('#catalog-link').href='../../recursos.html';
-let route=parseRoute(location.hash),routeHash=location.hash||'#inicio',draftForm=false,editingEvidence=null,importCandidate=null,dialogReturn=null,confirmCallback=null,classSession=null,classStep=0,caret=null,lastActivity=Date.now(),notebook,requestedPane=null,requestedUnit=null,requestedField=null;
+let route=parseRoute(location.hash),routeHash=location.hash||'#inicio',draftForm=false,editingEvidence=null,importCandidate=null,dialogReturn=null,confirmCallback=null,classSession=null,classStep=0,caret=null,lastActivity=Date.now(),notebook,requestedPane=null,requestedUnit=null,requestedField=null,workEncounter=null;
 const blockedStorage={getItem:()=>{throw Error('unavailable');},setItem:()=>{throw Error('unavailable');},removeItem:()=>{throw Error('unavailable');}};
 let storage;try{storage=window.localStorage;}catch{storage=blockedStorage;}
 const lock=navigator.locks?.request?fn=>navigator.locks.request('ad-cuaderno-v1-write',fn):null;
@@ -30,7 +30,8 @@ function refreshStatus(){if(!notebook)return;const mode=notebook.mode,phase=note
  document.querySelectorAll('[data-report-word-count]').forEach(el=>el.textContent=`${reportWordCount(notebook.state.notes.proyecto||{})} palabras en el cuerpo del informe · orientación: 1800–2200`);
 }
 function render(keep=false){const y=scrollY,active=document.activeElement,id=active?.id,selection=typeof active?.selectionStart==='number'?[active.selectionStart,active.selectionEnd]:null;draftForm=false;
- main.innerHTML=renderPage(route,notebook.state,notebook.editable());$('#sidebar').innerHTML=sidebar(route,notebook.state);document.querySelectorAll('[data-nav]').forEach(a=>{const page=route.page==='unidad'||route.page==='semana'?'inicio':route.page;a.toggleAttribute('aria-current',a.dataset.nav===page);if(a.hasAttribute('aria-current'))a.setAttribute('aria-current','page');});
+ if(route.page==='semana')workEncounter=route.week>1?getSession(route.week,route.encounter):null;else if(route.page==='unidad'&&workEncounter?.unit!==route.unit)workEncounter=null;
+ main.innerHTML=renderPage(route,notebook.state,notebook.editable(),workEncounter);$('#sidebar').innerHTML=sidebar(route,notebook.state);document.querySelectorAll('[data-nav]').forEach(a=>{const page=route.page==='unidad'||route.page==='semana'?'inicio':route.page;a.toggleAttribute('aria-current',a.dataset.nav===page);if(a.hasAttribute('aria-current'))a.setAttribute('aria-current','page');});
  document.title=`${route.page==='unidad'?unitById[route.unit].title:route.page==='semana'?getSession(route.week,route.encounter).title:'Análisis del discurso'} · Alejandro Córdova`;
  for(const [key,draft] of Object.entries(notebook.state.drafts||{})){let form=document.getElementById(key.startsWith('evidence-')?'evidence-form':'relation-form');if(form&&(key==='relation'||+form.dataset.unit===draft.unit)){if(key.startsWith('evidence-')){form.outerHTML=evidenceForm(draft.unit,draft.data,notebook.editable());form=$('#evidence-form');}else for(const [name,value] of Object.entries(draft.data)){const field=form.elements.namedItem(name);if(field)field.value=value;}draftForm=notebook.editable();}}
  if(requestedPane&&route.page==='proyecto'){const tab=document.querySelector(`[data-desk-tab="${requestedPane}"]`);if(tab)switchDesk(tab,false);const ficha=requestedUnit&&document.getElementById(`project-ficha-${requestedUnit}`);if(ficha)ficha.open=true;requestedPane=null;requestedUnit=null;}
