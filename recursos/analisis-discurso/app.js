@@ -102,3 +102,5 @@ setInterval(checkIdle,15000);
 for(const d of document.querySelectorAll('dialog'))d.addEventListener('close',()=>{if(d.id==='class-dialog')classSession=null;if(dialogReturn?.isConnected)dialogReturn.focus({preventScroll:true});});
 window.addEventListener('afterprint',()=>{delete document.body.dataset.print;$('#delivery-print')?.remove();});
 render();
+document.documentElement.dataset.appReady='true';
+document.dispatchEvent(new Event('ad:ready'));
