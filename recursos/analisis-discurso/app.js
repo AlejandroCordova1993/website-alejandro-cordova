@@ -9,7 +9,7 @@ import {button,renderPage,sidebar,libraryResults,conceptHtml,renderClass,evidenc
 
 const $=selector=>document.querySelector(selector),main=$('#main');
 if(location.pathname.includes('/recursos/analisis-discurso/'))$('#catalog-link').href='../../recursos.html';
-let route=parseRoute(location.hash),routeHash=location.hash||'#inicio',draftForm=false,editingEvidence=null,importCandidate=null,dialogReturn=null,confirmCallback=null,classSession=null,classStep=0,caret=null,lastActivity=Date.now(),notebook,requestedPane=null,requestedUnit=null;
+let route=parseRoute(location.hash),routeHash=location.hash||'#inicio',draftForm=false,editingEvidence=null,importCandidate=null,dialogReturn=null,confirmCallback=null,classSession=null,classStep=0,caret=null,lastActivity=Date.now(),notebook,requestedPane=null,requestedUnit=null,requestedField=null;
 const blockedStorage={getItem:()=>{throw Error('unavailable');},setItem:()=>{throw Error('unavailable');},removeItem:()=>{throw Error('unavailable');}};
 let storage;try{storage=window.localStorage;}catch{storage=blockedStorage;}
 const lock=navigator.locks?.request?fn=>navigator.locks.request('ad-cuaderno-v1-write',fn):null;
@@ -34,7 +34,9 @@ function render(keep=false){const y=scrollY,active=document.activeElement,id=act
  for(const [key,draft] of Object.entries(notebook.state.drafts||{})){let form=document.getElementById(key.startsWith('evidence-')?'evidence-form':'relation-form');if(form&&(key==='relation'||+form.dataset.unit===draft.unit)){if(key.startsWith('evidence-')){form.outerHTML=evidenceForm(draft.unit,draft.data,notebook.editable());form=$('#evidence-form');}else for(const [name,value] of Object.entries(draft.data)){const field=form.elements.namedItem(name);if(field)field.value=value;}draftForm=notebook.editable();}}
  if(requestedPane&&route.page==='proyecto'){const tab=document.querySelector(`[data-desk-tab="${requestedPane}"]`);if(tab)switchDesk(tab,false);const ficha=requestedUnit&&document.getElementById(`project-ficha-${requestedUnit}`);if(ficha)ficha.open=true;requestedPane=null;requestedUnit=null;}
  refreshStatus();if(keep){scrollTo(0,y);const el=id&&document.getElementById(id);if(el){el.focus({preventScroll:true});if(selection&&el.setSelectionRange)el.setSelectionRange(...selection);}}else{scrollTo(0,0);(main.querySelector('h1')||main).setAttribute('tabindex','-1');(main.querySelector('h1')||main).focus({preventScroll:true});}
+ if(requestedField&&route.page==='proyecto'){focusField(`proyecto-${requestedField}`);requestedField=null;}
 }
+function focusField(id){const target=document.getElementById(id);if(!target)return;for(let parent=target.parentElement;parent;parent=parent.parentElement)if(parent.tagName==='DETAILS')parent.open=true;if(target.tagName==='DETAILS')target.open=true;target.focus({preventScroll:true});target.scrollIntoView({block:'center',behavior:'auto'});}
 function navigate(hash){draftForm=false;editingEvidence=null;location.hash=hash;}
 function dialog(id,html){dialogReturn=document.activeElement;const el=document.getElementById(id);el.innerHTML=html;el.showModal();}
 function confirm(title,text,callback,label='Confirmar'){confirmCallback=callback;dialog('action-dialog',`<div class="dialog-heading"><h2 id="action-title">${esc(title)}</h2>${button('close-dialog','Cancelar','autofocus')}</div><p>${esc(text)}</p><div class="actions">${button('confirm',esc(label),'',true)}</div><p id="action-error" role="alert" class="field-error"></p>`);}
@@ -62,6 +64,7 @@ document.addEventListener('submit',event=>{event.preventDefault();const form=eve
 document.addEventListener('click',async event=>{const concept=event.target.closest('[data-concept]');if(concept){dialog('concept-dialog',conceptHtml(concept.dataset.concept));return;}
  const tab=event.target.closest('[data-desk-tab]');if(tab){switchDesk(tab);return;}
  const anchor=event.target.closest('a[href^="#"]');if(anchor?.getAttribute('href')==='#main'){event.preventDefault();main.setAttribute('tabindex','-1');main.focus();return;}
+ if(anchor?.dataset.projectField&&anchor.getAttribute('href')==='#proyecto'){requestedField=anchor.dataset.projectField;if(route.page==='proyecto'){event.preventDefault();focusField(`proyecto-${requestedField}`);requestedField=null;}}
  if(anchor?.dataset.projectPane){requestedPane=anchor.dataset.projectPane;requestedUnit=anchor.dataset.projectUnit;if(route.page==='proyecto'){event.preventDefault();const tab=document.querySelector(`[data-desk-tab="${requestedPane}"]`);if(tab)switchDesk(tab);const ficha=requestedUnit&&document.getElementById(`project-ficha-${requestedUnit}`);if(ficha)ficha.open=true;requestedPane=null;requestedUnit=null;}}
  const control=event.target.closest('[data-action]');if(!control)return;const action=control.dataset.action;
  if(action==='close-dialog'){control.closest('dialog')?.close();return;}
@@ -79,7 +82,7 @@ document.addEventListener('click',async event=>{const concept=event.target.close
  if(action==='class'){showClass(control.dataset.week,control.dataset.encounter);return;}
  if(action==='class-prev'||action==='class-next'){classStep+=action==='class-prev'?-1:1;classStep=Math.max(0,Math.min(classSession.agenda.length-1,classStep));updateClass();return;}
  if(action==='delivery'){showDelivery();return;}
- if(action==='focus-field'){const target=document.getElementById(control.dataset.target);if(target){for(let parent=target.parentElement;parent;parent=parent.parentElement)if(parent.tagName==='DETAILS')parent.open=true;if(target.tagName==='DETAILS')target.open=true;target.focus({preventScroll:true});target.scrollIntoView({block:'center',behavior:'auto'});}return;}
+ if(action==='focus-field'){focusField(control.dataset.target);return;}
  if(action==='print'){printDelivery();return;}
  if(action==='review'){const result=notebook.review(control.dataset.key);if(result.ok){refreshStatus();toast('Revisión registrada. El estado no es una calificación.');}else{const labels={argument:'argumento',revision:'interpretación revisada',revisionReason:'explicación del cambio'};$('#review-error').innerHTML=`Completa ${result.missing.map(f=>esc(labels[f])).join(', ')} antes de registrar la revisión. ${result.missing.includes('argument')?`<a href="#unidad/${route.unit}/argumentar">Volver al argumento</a>`:''}`;const first=document.getElementById(`${control.dataset.key}-${result.missing[0]}`);first?.focus();}return;}
  if(action==='edit-evidence'){const item=notebook.state.evidence.find(e=>e.id===control.dataset.id);if(!item||!notebook.editable())return;const open=()=>{notebook.removeDraft('evidence',item.unit);editingEvidence=item;draftForm=false;if(route.page==='unidad'&&route.unit===item.unit&&route.step==='analizar'){$('#evidence-form').outerHTML=evidenceForm(item.unit,item,true);$('#e-source').focus();}else location.hash=`#unidad/${item.unit}/analizar`;};if(notebook.state.drafts[evidenceDraftKey(item.unit)])confirm('Hay una preparación en esta unidad','Se sustituirá por la evidencia que elegiste editar. Puedes cancelar para conservar la preparación.',()=>{closeDialogs();open();},'Sustituir preparación y editar');else open();return;}

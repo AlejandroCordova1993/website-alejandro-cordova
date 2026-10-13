@@ -1,7 +1,7 @@
 export const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 import {units,unitById,course} from './course.js';
 export const fieldLabels={expectations:'Experiencias y expectativas',agreements:'Acuerdos de trabajo',reflection:'Reflexión',question:'Pregunta de investigación',corpus:'Corpus y criterios de selección',method:'Método y fuentes contextuales',argument:'Argumento',revision:'Interpretación revisada',revisionReason:'Qué cambió y por qué',title:'Título',student:'Nombre',mediation:'Actividad de enseñanza',credits:'Referencias y atribuciones',defense:'Guion de defensa',selfAssessment:'Autoevaluación'};
-export const sectionTitle=key=>key==='apertura'?'Apertura: expectativas y diagnóstico':key==='proyecto'?'Expediente final':`Ficha ${key.split('-')[1]} · ${unitById[+key.split('-')[1]]?.title||''}`;
+export const sectionTitle=key=>key==='apertura'?'Diagnóstico inicial y notas personales':key==='proyecto'?'Expediente final':`Ficha ${key.split('-')[1]} · ${unitById[+key.split('-')[1]]?.title||''}`;
 const paragraphs=text=>String(text||'').trim().split(/\n\s*\n/).filter(Boolean).map(p=>`<p class="preserve">${esc(p)}</p>`).join('');
 export function relationDiagram(relations){
  if(!relations.length)return '<p class="empty">Las relaciones que registres aparecerán aquí con su evidencia.</p>';
