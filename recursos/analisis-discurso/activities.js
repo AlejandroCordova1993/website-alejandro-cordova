@@ -1,4 +1,12 @@
 // Instructions use the existing note fields and records; no additional assignments.
+export const writingStages={
+ "1": "Clase 1: guarda solo la pregunta. Clase 2: escribe el borrador con las evidencias. Clase 3: añade la justificación de las marcas sin borrar ese borrador. Clase 4: conserva la nueva interpretación en «Revisar ficha».",
+ "2": "Clase 1: guarda la pregunta. Clase 2: registra participantes y acciones. Clases 3–4: desarrolla las inferencias y la síntesis del tema global. Clase 5: añade la descripción del contraste visual al mismo borrador. Clase 6: guarda la versión ajustada en «Revisar ficha» y conserva aquí la primera interpretación.",
+ "3": "Clase 1: guarda la pregunta y compara enfoques para proponer uno provisional. Clase 2: añade los tres datos contextuales y sus fuentes. Clase 3: contrasta esa elección y guarda la nueva interpretación en «Revisar ficha»; ajusta también el método del expediente. La clase 4 es evaluación de un caso nuevo: su respuesta se conserva aparte, por el medio indicado por el docente.",
+ "4": "Clase 1: identifica tres segmentos. Clase 2: organiza sus atribuciones como mapa escrito. Clase 3: añade el contraste de una atribución y una alternativa, sin borrar el borrador. Clase 4: conserva aquí la primera interpretación y escribe la nueva versión en «Revisar ficha».",
+ "5": "Clase 1: identifica la primera pieza y elige una ruta. Clase 2: compara las dos piezas y escribe aquí el borrador. Clase 3: selecciona evidencia para el desarrollo del expediente, en su campo propio. Clase 4: revisa esta ficha y el desarrollo del informe, cada uno en su espacio. La comparación visual de la unidad 2 no sustituye este análisis de destinatario, propósito y género.",
+ "6": "Clases 1–2: construye la matriz de secuencias y explica sus transiciones. Clase 3: añade inferencia y objeción sin borrar la matriz. Clase 4: añade el examen de una respuesta y guarda la nueva interpretación en «Revisar ficha». Clases 5–8: continúa conclusión, enseñanza, defensa y entrega en el expediente; no empiezas otra ficha 6."
+};
 export const unitActivities={
  1:{
   material:'Corpus común: la charla de Jorge Drexler enlazada en esta unidad, tramo 00:39–01:47 (68 segundos). También puedes analizar un intercambio producido en el taller si conservas un registro que permita volver a escucharlo u observarlo.',
@@ -44,20 +52,20 @@ export const unitActivities={
  },
  4:{
   material:'En clase, usa los considerandos y artículos del reglamento enlazado. Para la ficha, retoma tres segmentos de tu corpus con marcas personales, atribuciones, citas, negaciones o reformulaciones. El texto de Menchú es una ampliación opcional.',
-  product:'Ficha 4: tres segmentos con marcas de personas o perspectivas, explicación de sus atribuciones y revisión de un caso ambiguo.',
+  product:'Ficha 4: tres segmentos con marcas de personas o perspectivas, explicación de sus atribuciones y revisión de una atribución contrastada.',
   steps:[
    ['Seleccionar tres segmentos','Busca marcas que permitan investigar quién habla, quién es citado, qué perspectiva se evoca y a quién se dirige el texto. Copia o describe cada segmento en una evidencia con fuente y localizador; no es necesario que los tres contengan citas directas.'],
    ['Reconstruir personas y perspectivas','Para cada segmento, distingue quien escribe o habla, la persona o institución a quien se atribuyen palabras y el destinatario construido. Si hay «yo», «nosotros» o «ustedes», explica a quién remite la marca en ese pasaje. No inventes un hablante empírico para una perspectiva evocada por una negación.'],
    ['Justificar adhesión o distancia','En «Interpretación que permite sostener», señala qué comillas, verbos, negaciones o reformulaciones apoyan tu lectura. Explica si el texto incorpora, discute o se distancia de una proposición. Citarla no implica necesariamente aceptarla.'],
    ['Organizar el mapa de voces','En «Mi argumento», presenta el mapa como una lista o tabla escrita: segmento y localizador; voz o perspectiva; marca textual; responsabilidad; adhesión o distancia. No necesitas dibujar un gráfico para cumplir la actividad.'],
-   ['Revisar un caso ambiguo','Elige un segmento que permita dos atribuciones razonables; si tus tres son claros, busca otro y añádelo al registro. Explica qué marca apoya cada lectura y qué dato resolvería la diferencia. En «Revisar ficha», indica qué atribución corriges o mantienes y por qué.']
+   ['Contrastar una atribución','Busca entre tus tres segmentos un caso que permita dos atribuciones razonables. Explica qué marca apoya cada lectura y qué dato resolvería la diferencia. Puedes añadir otro segmento localizado si ayuda al contraste, pero no inventes ambigüedad para completar la ficha. Si no hay dos atribuciones sostenibles, justifica la más respaldada y explica por qué descartas una alternativa propuesta por otro lector. En «Revisar ficha», indica qué atribución corriges o mantienes y por qué.']
   ],
   questionHelp:'Pregunta por la referencia de una marca personal o por la responsabilidad de una proposición en tus segmentos; identifica las marcas que vas a estudiar.',
-  argumentHelp:'Presenta los tres segmentos como un mapa escrito de voces o perspectivas. Justifica responsabilidad y adhesión con marcas; desarrolla el caso de atribución ambiguo y sus dos lecturas.',
+  argumentHelp:'Presenta los tres segmentos como un mapa escrito de voces o perspectivas. Justifica responsabilidad y adhesión con marcas; examina una atribución y una alternativa. Si las marcas no sostienen dos atribuciones, explica por qué descartas la alternativa en vez de inventar ambigüedad.',
   reviewFocus:'Comprueba que distingues voz citada, perspectiva evocada y autor del documento, y que cada atribución tenga una marca localizable.'
  },
  5:{
-  material:'Puedes comparar dos documentos cuyo vínculo puedas documentar. La ruta común del taller es el reglamento de becas y una explicación o aviso que tú elabores para estudiantes de primer semestre. Esa segunda pieza es un experimento didáctico propio.',
+  material:'Puedes comparar dos documentos cuyo vínculo puedas documentar. La ruta común del taller es el reglamento de becas y una explicación o aviso que tú elabores para estudiantes de primer semestre. Esa segunda pieza es un experimento didáctico propio. En la unidad 2 conservaste las palabras para contrastar la disposición visual; aquí puedes reformularlas y estudias el cambio de propósito, destinatario y género. No repitas aquella maqueta como toda la ficha 5.',
   product:'Ficha 5: comparación de dos piezas, explicación de cambios de destinatario y función, y distinción entre vínculo documentado y reformulación propia.',
   steps:[
    ['Elegir una de las dos rutas','Ruta documentada: identifica dos piezas y una fuente que acredite su relación, por ejemplo una publicación que enlaza o cita el documento anterior. Ruta de taller: selecciona un tramo del reglamento y crea una explicación o aviso para otro destinatario. No necesitas completar ambas rutas.'],
