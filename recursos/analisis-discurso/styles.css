@@ -12,3 +12,10 @@ footer{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;paddin
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}@media print{@page{size:A4;margin:20mm}body[data-print=delivery]>*{display:none!important}body[data-print=delivery]>#delivery-print{display:block!important;background:white;color:#101820}.delivery{font-size:11pt;line-height:1.6}.delivery-cover{break-after:page;min-height:160mm;padding-top:35mm;border:0}.delivery-annex{break-before:page}.delivery h2,.delivery h3,.delivery h4{break-after:avoid}.delivery p{orphans:3;widows:3}.delivery section{margin-bottom:1.5rem}.delivery .relation-figure{overflow:visible}.delivery .relation-figure svg{width:100%;min-width:0}.delivery h1{font-size:27pt}.delivery .caption{color:#383f48}.delivery .evidence-record{break-inside:avoid}.delivery .button{display:none}}
 /* Page headings receive navigation focus without an interactive-control frame. */
 h1[tabindex="-1"]:focus { outline: none; }
+.unit-meetings,.teacher-references{margin:1.5rem 0;border-top:1px solid var(--line)}
+.work-help{margin:-1rem 0 2rem}
+.milestone-links{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0 2rem}
+.project-section{margin-bottom:1.25rem;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.project-section summary{font-weight:650;font-size:1rem}
+.stage-content{padding:1rem 0}
+.diagnosis-record{margin-top:1.5rem}

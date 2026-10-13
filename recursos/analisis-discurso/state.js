@@ -5,6 +5,7 @@ export const sectionKeys=['apertura',...unitIds.map(id=>`ficha-${id}`),'proyecto
 export const noteFields=['expectations','agreements','reflection','question','corpus','method','argument','revision','revisionReason','title','student','mediation','credits','defense','selfAssessment'];
 export const evidenceFields=['id','resource','source','locator','observation','category','context','interpretation','alternative'];
 export const relationFields=['id','from','to','evidence','mediator','medium'];
+export const evidenceDraftKey=unit=>`evidence-${unit}`;
 export const freshState=()=>({version:1,courseId:COURSE_ID,updatedAt:null,notes:{},evidence:[],relations:[],drafts:{},completed:[],modified:[],reviewedAt:{},lastLocation:'#inicio',delivery:{annexes:[],includeMap:false,includeAssessment:false}});
 const object=value=>!!value&&typeof value==='object'&&!Array.isArray(value);
 function text(value,max=60000){if(typeof value!=='string'||value.length>max)throw Error('Hay datos de texto no válidos o demasiado extensos.');return value;}
@@ -35,13 +36,24 @@ export function validateState(input){
  for(const key of sectionKeys)if(typeof input.reviewedAt?.[key]==='string'&&Number.isFinite(Date.parse(input.reviewedAt[key])))clean.reviewedAt[key]=input.reviewedAt[key];
  if(input.delivery!==undefined){const d=input.delivery;if(!object(d)||!Array.isArray(d.annexes)||d.annexes.some(key=>!sectionKeys.includes(key)||key==='proyecto')||typeof d.includeMap!=='boolean'||typeof d.includeAssessment!=='boolean')throw Error('La selección de anexos no es válida.');clean.delivery={annexes:[...new Set(d.annexes)],includeMap:d.includeMap,includeAssessment:d.includeAssessment};}
  if(typeof input.lastLocation==='string'&&/^#(?:inicio|biblioteca|proyecto|cuaderno|glosario|unidad\/[1-6]\/(?:situar|observar|analizar|argumentar|revisar)|semana\/(?:[1-9]|1[0-6])\/[12])$/.test(input.lastLocation))clean.lastLocation=input.lastLocation;
- if(input.drafts!==undefined){if(!object(input.drafts))throw Error('Las preparaciones no son válidas.');for(const [key,draft] of Object.entries(input.drafts)){if(!['evidence','relation'].includes(key)||!object(draft)||!unitIds.includes(draft.unit)||!object(draft.data))throw Error('Una preparación no es válida.');const fields=key==='evidence'?[...evidenceFields,'mode']:[...relationFields,'type'];const data={};for(const [field,value] of Object.entries(draft.data)){if(!fields.includes(field))throw Error('Campo de preparación desconocido: '+field);data[field]=text(value,10000);}clean.drafts[key]={unit:draft.unit,data};}}
+ if(input.drafts!==undefined){
+  if(!object(input.drafts))throw Error('Las preparaciones no son válidas.');
+  for(const [key,draft] of Object.entries(input.drafts)){
+   const evidence=key==='evidence'||/^evidence-[1-6]$/.test(key);
+   if((!evidence&&key!=='relation')||!object(draft)||!unitIds.includes(draft.unit)||!object(draft.data))throw Error('Una preparación no es válida.');
+   const canonical=evidence?evidenceDraftKey(draft.unit):'relation';
+   if((key.startsWith('evidence-')&&key!==canonical)||clean.drafts[canonical])throw Error('Hay preparaciones repetidas o de una unidad distinta.');
+   const fields=evidence?[...evidenceFields,'mode']:[...relationFields,'type'],data={};
+   for(const [field,value] of Object.entries(draft.data)){if(!fields.includes(field))throw Error('Campo de preparación desconocido: '+field);data[field]=text(value,10000);}
+   clean.drafts[canonical]={unit:draft.unit,data};
+  }
+ }
  if(typeof input.updatedAt==='string'&&Number.isFinite(Date.parse(input.updatedAt)))clean.updatedAt=input.updatedAt;
  return clean;
 }
 export function loadState(storage){let raw=null;try{raw=storage.getItem(STORAGE_KEY);if(raw===null)return {state:freshState(),raw,error:null};try{return {state:validateState(JSON.parse(raw)),raw,error:null};}catch{return {state:freshState(),raw,error:'invalid'};}}catch{return {state:freshState(),raw,error:'unavailable'};}}
 export const hasWork=state=>Object.values(state.notes||{}).some(note=>Object.values(note).some(v=>v.trim()))||(state.evidence?.length||0)>0||(state.relations?.length||0)>0||Object.keys(state.drafts||{}).length>0;
-export function workStatus(state,key){if(state.completed.includes(key))return state.modified.includes(key)?'Modificado después de revisar':'Revisión registrada';return Object.values(state.notes[key]||{}).some(v=>v.trim())||state.evidence.some(e=>key===`ficha-${e.unit}`)?'En construcción':'Sin empezar';}
+export function workStatus(state,key){if(state.completed.includes(key))return state.modified.includes(key)?'Modificado después de revisar':'Revisión registrada';return Object.values(state.notes[key]||{}).some(v=>v.trim())||state.evidence.some(e=>key===`ficha-${e.unit}`)||state.drafts?.[evidenceDraftKey(+key.split('-')[1])]?'En construcción':'Sin empezar';}
 export function setNote(state,key,field,value){if(!sectionKeys.includes(key)||!noteFields.includes(field))throw Error('Campo desconocido.');text(value);state.notes[key]??={};if(state.notes[key][field]===value)return;state.notes[key][field]=value;if(state.completed.includes(key)&&!state.modified.includes(key))state.modified.push(key);}
 export function touchUnit(state,unit){const key=`ficha-${unit}`;if(state.completed.includes(key)&&!state.modified.includes(key))state.modified.push(key);}
 export function registerReview(state,key){const note=state.notes[key]||{};const missing=['argument','revision','revisionReason'].filter(field=>!note[field]?.trim());if(missing.length)return {ok:false,missing};if(!state.completed.includes(key))state.completed.push(key);state.modified=state.modified.filter(k=>k!==key);state.reviewedAt[key]=new Date().toISOString();return {ok:true};}

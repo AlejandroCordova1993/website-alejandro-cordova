@@ -1,5 +1,6 @@
-import {freshState,loadState,hasWork,setNote,touchUnit,registerReview,validateState,STORAGE_KEY} from './state.js';
+import {freshState,loadState,hasWork,setNote,touchUnit,registerReview,validateState,STORAGE_KEY,evidenceDraftKey} from './state.js';
 import {createSession} from './session.js';
+import {parseRoute} from './navigation.js';
 
 export function createNotebook({storage,lock,onChange=()=>{}}){
  let loaded=loadState(storage),state=loaded.state,held=null,mode=loaded.error==='invalid'?'invalid':loaded.error==='unavailable'||!lock?'memory':'active',phase=mode==='memory'?'unavailable':'saved',reason=loaded.error,dirty=false,timer=null,epoch=0;
@@ -13,8 +14,9 @@ export function createNotebook({storage,lock,onChange=()=>{}}){
  function changed(){dirty=true;phase='pending';clearTimeout(timer);timer=setTimeout(flush,220);notify('status');}
  function mutate(callback){if(!editable())return false;callback(state);changed();return true;}
  function note(key,field,value){return mutate(s=>setNote(s,key,field,value));}
- function draft(key,unit,data){return mutate(s=>s.drafts=validateState({...s,drafts:{...s.drafts,[key]:{unit,data}}}).drafts);}
- function removeDraft(key){return mutate(s=>delete s.drafts[key]);}
+ function draft(key,unit,data){const target=key==='evidence'?evidenceDraftKey(unit):key;return mutate(s=>s.drafts=validateState({...s,drafts:{...s.drafts,[target]:{unit,data}}}).drafts);}
+ function removeDraft(key,unit){const target=key==='evidence'?evidenceDraftKey(unit):key;return mutate(s=>delete s.drafts[target]);}
+ function rememberLocation(hash){const r=parseRoute(hash);if(!['unidad','semana','proyecto'].includes(r.page))return false;const target=r.page==='unidad'?`#unidad/${r.unit}/${r.step}`:r.page==='semana'?`#semana/${r.week}/${r.encounter}`:'#proyecto';if(state.lastLocation===target)return false;return mutate(s=>s.lastLocation=target);}
  function evidence(entry){return mutate(s=>{const candidate=validateState({...s,evidence:s.evidence.some(e=>e.id===entry.id)?s.evidence.map(e=>e.id===entry.id?entry:e):[...s.evidence,entry]});s.evidence=candidate.evidence;touchUnit(s,entry.unit);});}
  function removeEvidence(id){return mutate(s=>{const found=s.evidence.find(e=>e.id===id);s.evidence=s.evidence.filter(e=>e.id!==id);if(found)touchUnit(s,found.unit);});}
  function review(key){if(!editable())return {ok:false,missing:[]};const result=registerReview(state,key);if(result.ok)changed();return result;}
@@ -31,5 +33,5 @@ export function createNotebook({storage,lock,onChange=()=>{}}){
   if(mode==='locked'||mode==='consult'){held=next.state;state=freshState();}else state=next.state;notify('synced');
  }
  function reload(){epoch++;clearTimeout(timer);loaded=loadState(storage);state=loaded.state;held=null;recovery=null;dirty=false;session=createSession({storage,lock,initialRaw:loaded.raw});reason=loaded.error;mode=loaded.error==='invalid'?'invalid':loaded.error||!lock?'memory':'active';phase=mode==='memory'?'unavailable':'saved';if(hasWork(state)){held=state;state=freshState();mode='locked';}notify('reloaded');}
- return {get state(){return state;},get exportState(){return recovery||state;},get reason(){return reason;},get mode(){return mode;},get phase(){return phase;},get dirty(){return dirty;},editable,note,draft,removeDraft,mutate,evidence,removeEvidence,review,flush,hide,resume,consult,restore,clear,external,reload};
+ return {get state(){return state;},get exportState(){return recovery||state;},get reason(){return reason;},get mode(){return mode;},get phase(){return phase;},get dirty(){return dirty;},editable,note,draft,removeDraft,rememberLocation,mutate,evidence,removeEvidence,review,flush,hide,resume,consult,restore,clear,external,reload};
 }
