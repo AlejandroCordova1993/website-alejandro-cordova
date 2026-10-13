@@ -2,7 +2,7 @@ import {unitForWeek} from './course.js';
 
 // Each week advances an existing record; it does not create another diagnosis.
 export const weeklyPath=[
- {title:'Diagnóstico inicial y contraste',steps:['diagnosis','diagnosis'],advance:'Guardar la lectura inicial y su revisión en el diagnóstico del cuaderno. No tiene calificación.'},
+ {title:'Fundamentos del discurso y diagnóstico',steps:['diagnosis','diagnosis'],advance:'Guardar la lectura inicial y su revisión en el diagnóstico del cuaderno. No tiene calificación.'},
  {title:'Oralidad: transcripción, voz y cuerpo',steps:['analizar','argumentar'],advance:'Observar la charla, iniciar su transcripción y añadir voz y cuerpo al mismo episodio de la ficha 1.'},
  {title:'Oralidad: argumentar y revisar',steps:['argumentar','revisar'],advance:'Completar y revisar la misma ficha 1 con una interpretación alternativa.'},
  {title:'Escritura: acciones y representación',steps:['argumentar','analizar'],advance:'Comenzar la ficha 2 con el reglamento y delimitar pregunta y corpus del expediente.',milestone:1},

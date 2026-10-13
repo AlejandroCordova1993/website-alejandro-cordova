@@ -11,7 +11,7 @@ export function evidenceSources(unit,entry){
  return list;
 }
 export function sessionMaterials(s){
- if(s.week===1)return {corpus:['agencia'],readings:[],note:''};
+ if(s.week===1)return {corpus:['agencia'],readings:['guia-fundamentos'],note:'La guía se explica en clase. Los originales de los autores son ampliación opcional; el trabajo se conserva en el mismo diagnóstico.'};
  if(s.week===8&&s.encounter===2)return {corpus:[],readings:[],note:'El caso nuevo lo proporciona el docente. La ficha 3 y el método del expediente son preparación; el reglamento no sustituye el caso de evaluación.'};
  if(s.week>=15)return {corpus:[],readings:[`guia-${s.unit}`,...(resourceById[s.resource].kind==='teoria'?[s.resource]:[])],note:'Trabaja con los documentos y segmentos de tu expediente. No se asigna otro corpus para el cierre.'};
  const reference=resourceById[s.resource];

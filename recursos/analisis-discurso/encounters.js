@@ -205,5 +205,28 @@ finalMeeting.agenda=[
  [10,'Cerrar y conservar','Guarda respaldo JSON y entrega por el canal indicado. El docente confirma qué respuestas faltan; el cuaderno no envía la entrega ni asigna nota.']
 ];
 finalMeeting.product='Últimas 15 defensas; expediente ajustado, autoevaluación y entrega preparada con anexos pertinentes. JSON para conservar la edición.';
+// Foundations precede the existing diagnosis; no additional encounter or notebook record.
+byId('s1-e1').title='Discurso y AD · Diagnóstico inicial';
+byId('s1-e1').preparation='Sin lectura previa. En clase se explican los fundamentos y el mapa de autores; después compararás A, B y C. La guía integrada permite volver a la explicación. Mantén cerrados los contextos hasta el encuentro 2.';
+byId('s1-e1').question='¿Qué estudia el análisis del discurso y qué permite afirmar una diferencia entre formulaciones?';
+byId('s1-e1').agenda=[
+ [15,'Fundamentos: discurso y análisis del discurso','Sigue en modo clase qué se entiende por discurso, qué investiga el AD y qué preguntan cinco perspectivas. La guía «Fundamentos» reúne las explicaciones. Usa el mapa para reconocer diferencias; no memorices cinco definiciones ni abras una ficha por autor.'],
+ [10,'Tres versiones, un problema','Lee A, B y C en «Material central del encuentro». En pareja, señala qué acción se formula, qué participante se nombra y qué información cambia. En C también cambia lo afirmado sobre las becas. Mantén cerrados los contextos de contraste.'],
+ [10,'Separar descripción e interpretación','Elige una diferencia entre las versiones. Escribe qué palabras la muestran y separa esa observación de tu interpretación. No atribuyas una intención de ocultar solo porque no aparece un actor. El docente comentará un ejemplo; compara con tus notas.'],
+ [15,'Formular hipótesis rivales','Con tu pareja, propón dos explicaciones posibles de la ausencia del órgano responsable en B. Para cada una, indica qué dato del documento o de su situación necesitarías. Todavía no abras los contextos: los contrastarás en el siguiente encuentro.'],
+ [10,'Guardar mi lectura inicial','En «Mi lectura inicial», escribe individualmente un párrafo con la diferencia observada, tus dos hipótesis y los datos que faltan. Comprueba el aviso de guardado. Conserva esta primera lectura: la revisarás sin borrarla en el encuentro 2. El diagnóstico no se califica.']
+];
+byId('s1-e2').preparation='Retoma tu interpretación inicial y sus dos hipótesis. Si necesitas recordar una perspectiva, consulta «Fundamentos · Semana 1»; no leas todavía la sección de oralidad ni todos los originales de los autores.';
+byId('s1-e2').agenda=[
+ [10,'Retomar la interpretación','Lee «Mi lectura inicial». Recupera con tu pareja las dos hipótesis y los datos que faltaban; no reemplaces la primera versión.'],
+ [15,'Distinguir palabras, acto e interpretación','Sigue la explicación de texto, enunciado y enunciación. Usa una frase de tu diagnóstico para distinguir observación, inferencia, explicación y valoración. Señala qué proviene de las palabras y qué supusiste sobre la situación.'],
+ [20,'Dos perspectivas, un mismo aviso','Vuelve al mapa de «Fundamentos». El docente seleccionará dos perspectivas, por ejemplo Benveniste y Fairclough. En pareja, formula una pregunta sobre A, B o C desde cada una y el dato que necesitaría. Compara sus alcances oralmente; son preguntas para orientar la revisión del mismo diagnóstico, no dos análisis completos ni nuevas fichas.'],
+ [10,'Pausa','Conserva la lectura inicial y las preguntas; retomarás el mismo diagnóstico.'],
+ [35,'Contrastar los contextos','Abre «Contextos de contraste». Dedica 10 minutos a leer ambos, 15 a explicar con tu pareja qué hipótesis gana o pierde apoyo y 10 a escribir individualmente «Mi lectura después del contraste». Usa los contextos como casos construidos, no como hechos reales.'],
+ [15,'Demostración oral','Escucha al docente leer un mismo enunciado con dos énfasis distintos. Describe qué cambia en la voz y qué interpretación permite proponer. Identifica ambas realizaciones como demostraciones de aula, no como voces del documento original. Esto prepara la observación oral de la semana 2.'],
+ [15,'Conservar el cambio','Completa «Qué cambió y qué evidencia falta». Explica qué dato modificó tu lectura y lo que aún no puedes afirmar. Comprueba el guardado sin borrar «Mi lectura inicial». En la semana 2 comenzarás una ficha oral distinta de este diagnóstico.']
+];
+byId('s2-e1').preparation='Lee solo «Oralidad · Semanas 2–3» en la guía de la unidad 1 y ten disponible el enlace de Drexler. Aplica la enunciación ya introducida; no repitas el diagnóstico. El visionado completo se hace en esta clase antes de seleccionar y transcribir el tramo.';
+byId('s7-e1').preparation='Lee la guía de contexto y Pardo: impresas 43–47 / PDF 3–7. Retoma la pregunta y el corpus del hito 1. La introducción de la semana 1 sirve de mapa; ahora compara categorías, evidencia necesaria y límites para justificar un enfoque provisional en la ficha 3.';
 export const sessionById=Object.fromEntries(sessions.map(s=>[s.id,s]));
 export const getSession=(week,encounter)=>sessionById[`s${week}-e${encounter}`];

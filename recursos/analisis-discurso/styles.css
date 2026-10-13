@@ -37,3 +37,14 @@ html:has(#class-dialog[open]){overflow:hidden}
 #class-fullscreen-status{flex-basis:100%;max-width:none;margin:0;font-size:.74rem}
 #class-dialog .class-controls>.button{margin-left:0}
 @media(max-width:520px){#class-dialog .class-controls>.button{flex:1;font-size:.73rem}.class-controls .class-screen-select{order:4}}
+
+/* One foundations map serves reading and projection without extra activities. */
+.perspective-map table{width:100%;min-width:0;table-layout:fixed}
+.perspective-map th:first-child{width:43%}.perspective-map th,.perspective-map td{vertical-align:top;overflow-wrap:anywhere}
+.perspective-map th .caption{display:block;font-weight:400;margin-top:.4rem}
+.perspective-detail{border-bottom:1px solid var(--line);padding:.8rem 0}.perspective-detail summary{cursor:pointer;font-weight:600}
+.foundation-guide{padding-bottom:2rem;border-bottom:1px solid var(--line)}.oral-guide-title{padding-top:1.5rem}
+.class-slide .perspective-map{margin:1rem 0}.class-slide .perspective-map table{font-size:clamp(.9rem,1.35vw,1.25rem)}
+.class-slide .perspective-map th,.class-slide .perspective-map td{padding:.55rem .75rem}
+.class-slide .perspective-map .caption{font-size:.84em;line-height:1.4}
+@media(max-width:520px){.perspective-map table{font-size:.88rem}.perspective-map th,.perspective-map td{padding:.6rem .35rem}.perspective-detail summary{line-height:1.55}}

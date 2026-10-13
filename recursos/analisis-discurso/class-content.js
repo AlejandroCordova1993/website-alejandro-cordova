@@ -1,14 +1,18 @@
+import {foundations,distinctions} from './foundations.js';
 // Exposition accompanies an existing agenda block; it adds no assignments or minutes.
 // Examples are authored illustrations, not quotations or new empirical corpus.
 const topic=(block,title,explanation,points,example,reading,prompt,source,lesson)=>({block,title,explanation,points,example,reading,prompt,source,lesson});
 export const classContent={
  's1-e1':[
-  topic(1,'Observar antes de atribuir intención','Una descripción identifica una forma que otro lector puede comprobar. La interpretación propone qué permite entender esa forma en una situación. El motivo de quien escribe constituye una hipótesis adicional.',
+  ...foundations.map(item=>({...item,block:0})),
+  {block:0,title:'Cinco perspectivas para abrir preguntas',explanation:'Este mapa reúne tradiciones diferentes. Sus conceptos orientan preguntas; no son cinco definiciones equivalentes ni cinco análisis que debas entregar.',perspectives:true,points:[],prompt:'¿Qué diferencia hay entre preguntar por las marcas del hablante y por las condiciones institucionales del discurso?',source:'guia-fundamentos'},
+  topic(2,'Observar antes de atribuir intención','Una descripción identifica una forma que otro lector puede comprobar. La interpretación propone qué permite entender esa forma en una situación. El motivo de quien escribe constituye una hipótesis adicional.',
    ['Distingue palabras presentes, información recuperada y explicación propuesta.','La ausencia de un nombre no identifica por sí sola a quien quiso ocultarlo.'],
    '«Se canceló la reunión».','Podemos comprobar que esta oración no nombra a quien canceló. Para explicar la omisión necesitamos el texto circundante y la situación de publicación.',
    '¿Qué parte de nuestra afirmación puede verificar otro lector en la oración?','guia-2',4)
  ],
  's1-e2':[
+  {...distinctions,block:1},
   topic(1,'Cuatro operaciones del análisis','Observar, inferir, explicar y valorar cumplen funciones distintas. Separarlas permite reconocer qué fundamento necesita cada afirmación y revisar una interpretación sin borrar el registro inicial.',
    ['Observar: describir una marca. Inferir: proponer una conclusión a partir de ella.','Explicar: relacionarla con condiciones de uso. Valorar: juzgar desde un criterio explícito.'],
    '«El aviso no identifica al responsable; quizá supone que ya lo conocemos; eso dificulta exigir una respuesta».','La primera afirmación describe; la segunda propone una explicación; la tercera atribuye una dificultad que necesita contrastarse con lectores y condiciones concretas.',
@@ -213,7 +217,7 @@ export function classSlides(session){
  return session.agenda.flatMap(([,title,task],block)=>[
   ...content.filter(topic=>topic.block===block).flatMap(topic=>[
    {...topic,kind:'concept'},
-   {...topic,kind:'example'}
+   ...(topic.example?[{...topic,kind:'example'}]:[])
   ]),
   {kind:'work',block,title,task}
  ]);
