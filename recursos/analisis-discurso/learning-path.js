@@ -16,8 +16,8 @@ export const weeklyPath=[
  {title:'Géneros: contraste y argumento parcial',steps:['project','revisar'],advance:'Revisar la ficha 5 e integrar un análisis parcial en el expediente.',milestone:3},
  {title:'Organización textual: secuencias',steps:['analizar','argumentar'],advance:'Comenzar la ficha 6: localizar secuencias y explicar cómo se articulan.'},
  {title:'Argumentación: inferencias y objeciones',steps:['argumentar','revisar'],advance:'Revisar la ficha 6 y utilizar sus evidencias en el borrador del expediente.'},
- {title:'Expediente: revisión y enseñanza',steps:['project','project'],advance:'Revisar el informe y probar la actividad de enseñanza del hito 4.',milestone:4},
- {title:'Expediente: defensa y cierre',steps:['project','project'],advance:'Defender las decisiones y preparar la versión final del mismo expediente.',milestone:4}
+ {title:'Expediente: revisión, enseñanza y primeras defensas',steps:['project','project'],advance:'Revisar el informe, probar la microconsigna del hito 4 en tríos y comenzar las defensas individuales según el turno asignado.',milestone:4},
+ {title:'Expediente: defensas y cierre',steps:['project','project'],advance:'Completar los turnos de defensa y ajustar la versión final del mismo expediente; no se redacta todo el informe en clase.',milestone:4}
 ];
 export const projectFieldForWeek=week=>({4:'question',8:'method',12:'argument',15:'revision',16:'defense'})[week];
 export function sessionWork(s){

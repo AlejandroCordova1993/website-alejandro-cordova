@@ -160,5 +160,50 @@ for(const s of sessions.filter(s=>s.week>=4&&s.encounter===2&&!(s.week===8))){
  s.agenda[4][2]=s.week===12?'Comprueba las fuentes y atribuciones del argumento ya ajustado: verifica localizadores, vínculo entre las piezas y límites. Corrige solo lo que esta comprobación detecte; no repitas el intercambio completo ni escribas un segundo informe.':s.week===15?'Comprueba con otro lector un paso de la consigna ya ajustada: ¿puede encontrar el material y producir el resultado? Registra el último ajuste en «Actividad de enseñanza», sin repetir toda la microclase.':s.week===16?'Comprueba la vista previa: portada, apartados, referencias y anexos elegidos. Retira material ajeno al informe o notas que no deseas compartir. Guarda el PDF por el diálogo del navegador y conserva el JSON para editar.':s.week===6||s.week===10||s.week===14?'Comprueba la versión revisada con los mismos localizadores y la objeción. Haz el último ajuste en «Interpretación revisada» y «Qué cambió y por qué»; conserva el argumento anterior. No inicies otro análisis completo.':`Pide a otro lector comprobar un localizador y una interpretación del registro existente de la ficha ${s.unit}. Corrige esa entrada o añade una aclaración al borrador; no registres otra copia de todo el documento.`;
  if(s.week===16)s.agenda[4][1]='Comprobar la vista previa y los anexos';
 }
+// Operational limits keep classroom work inside the existing 60/120-minute blocks.
+const byId=id=>sessions.find(s=>s.id===id);
+byId('s2-e1').agenda[2][2]='Vuelve al tramo común 00:39–01:47 (68 segundos). Conserva ese intervalo o elige 30–68 segundos dentro de él; transcribe solo un segmento de 20–30 segundos y añade una leyenda de marcas. No necesitas transcribir los 68 segundos completos en estos 15 minutos. Comprueba las palabras mediante escucha, sin tomar la puntuación del subtítulo como pausa. Si usas un episodio propio de taller, identifica su registro e intervalo.';
+byId('s4-e1').agenda[2][2]='Guarda la pregunta inicial de la ficha 2. En el hito 1, registra la propuesta de 2–4 documentos o episodios que trajiste, sus localizadores disponibles y por qué responden al problema. Es una delimitación provisional: marca lo pendiente de comprobar y ajusta la selección en el siguiente encuentro; no tienes que localizar todo el corpus en estos 25 minutos.';
+byId('s7-e2').agenda[1][2]='Retoma los tres datos contextuales traídos de la preparación. Verifica fuente, localizador y función de cada uno; la información del propio documento puede ser pertinente. Usa las fuentes disponibles y marca «pendiente de comprobar» cuando falte una. No conviertas el taller en una búsqueda ilimitada de nuevos enlaces.';
+byId('s12-e1').agenda[2][2]='Construye en «Desarrollo del análisis» del hito 3 un núcleo parcial con dos segmentos ya localizados: observación, categoría, contexto y relación con la pregunta. Añade una objeción y un límite. No redactes el informe completo en estos 25 minutos; ampliarás el desarrollo con las demás evidencias antes del taller siguiente.';
+byId('s12-e2').agenda[1][2]='Intercambia un núcleo de dos o tres párrafos de tu argumento parcial y sus dos segmentos de apoyo. Pide a otro lector comprobar un localizador, una relación documentada y un posible salto inferencial. Trabaja sobre ese recorte; no es una lectura completa de todos los expedientes.';
+byId('s15-e1').preparation+=' Ten también preparado un borrador del guion de defensa y confirma el turno asignado para los tres últimos encuentros.';
+byId('s15-e1').agenda[3][2]='Conserva conclusión y registro de cambios. Antes del siguiente encuentro, termina la microconsigna de 5 minutos en «Actividad de enseñanza» y el guion de defensa. Comprueba el turno que te corresponde; no son otra ficha ni otro informe.';
+const defenseBlock=(slots,otherWork)=>`${slots} estudiantes defienden individualmente en turnos de 4 minutos: 2 minutos para explicar una decisión con evidencia localizable, 1 minuto para una pregunta del docente y la respuesta breve del estudiante, y 1 minuto para registrar la respuesta y cambiar de turno. El guion está preparado; no se lee el informe completo. Quienes no tienen turno ${otherWork}. La rúbrica del curso se mantiene.`;
+const teachingDefense=byId('s15-e2');
+teachingDefense.title='Probar la enseñanza y comenzar las defensas';
+teachingDefense.defensePlan={slots:16,slotMinutes:4};
+teachingDefense.preparation='Trae un borrador completo de la microconsigna que pueda realizarse en 5 minutos: problema, segmento breve accesible, dos o tres pasos, resultado y criterio de revisión. Conserva la versión en «Actividad de enseñanza». Prepara también «Guion de defensa» y comprueba si estás entre los primeros 16 turnos. La prueba se hará en tríos, no como 45 exposiciones ante toda la clase.';
+teachingDefense.agenda=[
+ [5,'Organizar tríos y turnos','Comprueba los materiales de la microconsigna y el turno de defensa. Cada trío distribuye autor, lector y observador; los papeles rotan.'],
+ [25,'Probar la microconsigna en tríos','Reserva 4 minutos para organizarse. Cada integrante dispone de 5 minutos para que el lector realice su microconsigna y 2 minutos para recibir la observación sobre claridad y evidencia. Rota tres veces: 21 minutos de prueba y devolución. Los tríos trabajan simultáneamente; no repitas la actividad ante toda la clase.'],
+ [10,'Pausa','Conserva el resultado de la prueba y vuelve con los mismos materiales.'],
+ [64,'Defensas individuales · primer bloque',defenseBlock(16,'revisan en silencio su consigna y las fuentes del expediente, sin interferir con la defensa')],
+ [8,'Ajustar la consigna probada','En «Actividad de enseñanza», señala la dificultad observada y el cambio realizado. Identifica la aportación del lector y del observador; no presentes el resultado de una prueba breve como efecto general.'],
+ [8,'Cierre y continuidad','Guarda los cambios, revisa el turno restante y conserva el guion. Puedes ajustar el informe tras las objeciones; la página no envía el trabajo al docente.']
+];
+teachingDefense.product='Microconsigna probada y ajustada en el expediente; primeras 16 defensas individuales. El resto conserva su guion para el turno asignado.';
+const defenseMeeting=byId('s16-e1');
+defenseMeeting.defensePlan={slots:14,slotMinutes:4};
+defenseMeeting.preparation='Trae el guion ya preparado, los segmentos localizables y el expediente. Confirma si te corresponde uno de los siguientes 14 turnos; no se reserva este bloque para preparar el guion desde cero. Quienes ya defendieron trabajan en las objeciones; quienes esperan comprueban su evidencia.';
+defenseMeeting.agenda=[
+ [2,'Confirmar el orden','Ten listo el guion, la evidencia y el turno asignado. La pauta es la misma del encuentro anterior.'],
+ [56,'Defensas individuales · segundo bloque',defenseBlock(14,'trabajan en silencio en los ajustes del expediente o comprueban la evidencia para su turno')],
+ [2,'Conservar la objeción','Anota la pregunta u objeción recibida y qué parte del informe revisarás. Conserva el trabajo y comprueba los turnos del encuentro final.']
+];
+defenseMeeting.product='Siguientes 14 defensas individuales y objeciones localizadas para revisar el expediente; no es otro informe.';
+const finalMeeting=byId('s16-e2');
+finalMeeting.title='Completar las defensas y cerrar el expediente';
+finalMeeting.defensePlan={slots:15,slotMinutes:4};
+finalMeeting.preparation='Trae una versión completa del expediente y las referencias, no un texto que haya que redactar desde cero. Confirma si te corresponde uno de los últimos 15 turnos y prepara el guion con sus localizadores. Retoma las objeciones previas y elige los anexos. La consulta de Bolívar se limita al pasaje que ya utilizaste; no hay otra lectura completa.';
+finalMeeting.agenda=[
+ [5,'Preparar el cierre','Abre la versión del expediente que vas a entregar, sus fuentes y los anexos. Comprueba el último bloque de turnos.'],
+ [60,'Defensas individuales · último bloque',defenseBlock(15,'comprueban en silencio referencias, localizadores y anexos de su expediente')],
+ [10,'Pausa','Conserva el trabajo; retoma la misma versión para el ajuste final.'],
+ [20,'Incorporar objeciones y autoevaluar','Ajusta «Conclusión revisada y límites» y «Registro de cambios» según la defensa. Completa la autoevaluación con ejemplos de las dimensiones de la rúbrica. Son ajustes de un informe ya escrito, no la redacción completa de 1800–2200 palabras.'],
+ [15,'Comprobar la vista previa y los anexos','Comprueba portada, apartados, referencias y anexos elegidos. Guarda el PDF desde la impresión del navegador. Si falla el diálogo, conserva el JSON o texto y prepara el PDF cuando dispongas del equipo; el medio de entrega lo indica el docente.'],
+ [10,'Cerrar y conservar','Guarda respaldo JSON y entrega por el canal indicado. El docente confirma qué respuestas faltan; el cuaderno no envía la entrega ni asigna nota.']
+];
+finalMeeting.product='Últimas 15 defensas; expediente ajustado, autoevaluación y entrega preparada con anexos pertinentes. JSON para conservar la edición.';
 export const sessionById=Object.fromEntries(sessions.map(s=>[s.id,s]));
 export const getSession=(week,encounter)=>sessionById[`s${week}-e${encounter}`];
