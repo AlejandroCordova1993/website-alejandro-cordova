@@ -24,4 +24,5 @@ h1[tabindex="-1"]:focus { outline: none; }
 .session-connection p{font-size:.94rem}.session-connection .actions{margin-bottom:0}
 .notebook-diagnosis{max-width:76ch;margin:2rem 0}.notebook-diagnosis details,.personal-notes{border-top:1px solid var(--line)}
 .personal-notes{max-width:76ch;margin:2rem 0}.personal-notes>.field{margin-bottom:1.5rem}
+.activity-instructions>ol{padding-left:1.5rem}.activity-instructions>ol>li{margin:1.5rem 0;padding-left:.35rem}.activity-instructions h3{font-size:1rem}.activity-instructions li p{font-size:.92rem}
 .class-work{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:2rem;align-items:start}.class-work .class-task{font-size:1.1rem;line-height:1.6}.class-work .agency-versions p{padding:.6rem 0;margin-bottom:.6rem}@media(max-width:850px){.class-work{grid-template-columns:1fr;gap:1.5rem}}
