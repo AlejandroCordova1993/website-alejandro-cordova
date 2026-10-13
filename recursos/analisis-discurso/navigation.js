@@ -1,5 +1,5 @@
 import {unitIds} from './state.js';
-export const steps=[['situar','Situar'],['observar','Leer y observar'],['analizar','Analizar'],['argumentar','Argumentar'],['revisar','Revisar']];
+export const steps=[['situar','Unidad y encuentros'],['observar','Guía de lectura'],['analizar','Registrar evidencias'],['argumentar','Escribir argumento'],['revisar','Revisar ficha']];
 export function parseRoute(hash){
  const value=String(hash||'').replace(/^#/,'');
  if(['inicio','biblioteca','proyecto','cuaderno','glosario'].includes(value))return {page:value};
