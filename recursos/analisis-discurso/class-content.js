@@ -5,7 +5,7 @@ const topic=(block,title,explanation,points,example,reading,prompt,source,lesson
 export const classContent={
  's1-e1':[
   ...foundations.map(item=>({...item,block:0})),
-  {block:0,title:'Cinco perspectivas para abrir preguntas',explanation:'Este mapa reúne tradiciones diferentes. Sus conceptos orientan preguntas; no son cinco definiciones equivalentes ni cinco análisis que debas entregar.',perspectives:true,points:[],prompt:'¿Qué diferencia hay entre preguntar por las marcas del hablante y por las condiciones institucionales del discurso?',source:'guia-fundamentos'},
+  {block:0,title:'El concepto de discurso en cinco autores',explanation:'Cada autor destaca un aspecto del discurso. Estas formulaciones resumen sus ideas; son paráfrasis, no citas literales.',perspectives:true,points:[],source:'guia-fundamentos'},
   topic(2,'Observar antes de atribuir intención','Una descripción identifica una forma que otro lector puede comprobar. La interpretación propone qué permite entender esa forma en una situación. El motivo de quien escribe constituye una hipótesis adicional.',
    ['Distingue palabras presentes, información recuperada y explicación propuesta.','La ausencia de un nombre no identifica por sí sola a quien quiso ocultarlo.'],
    '«Se canceló la reunión».','Podemos comprobar que esta oración no nombra a quien canceló. Para explicar la omisión necesitamos el texto circundante y la situación de publicación.',

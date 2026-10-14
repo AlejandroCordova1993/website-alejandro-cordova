@@ -48,3 +48,12 @@ html:has(#class-dialog[open]){overflow:hidden}
 .class-slide .perspective-map th,.class-slide .perspective-map td{padding:.55rem .75rem}
 .class-slide .perspective-map .caption{font-size:.84em;line-height:1.4}
 @media(max-width:520px){.perspective-map table{font-size:.88rem}.perspective-map th,.perspective-map td{padding:.6rem .35rem}.perspective-detail summary{line-height:1.55}}
+
+/* Keep the actual notice next to the explanation that refers to it. */
+.notice-example{margin:1rem 0 1.4rem;padding-left:1rem;border-left:3px solid var(--blue)}
+.notice-example blockquote{margin:.6rem 0;font-size:1.3em;line-height:1.4;color:var(--navy)}
+.notice-example p{margin:.6rem 0}.notice-example .caption{line-height:1.5}
+.class-slide .notice-example{max-width:72ch}.class-slide .notice-example>p:not(.caption){font-size:1.05rem;line-height:1.5}
+.class-slide .notice-example blockquote{font-size:clamp(1.2rem,2vw,1.8rem)}
+.class-slide .perspective-map th:first-child{width:25%}
+@media(max-width:520px){.class-slide .perspective-map th:first-child{width:35%}.notice-example{padding-left:.7rem}}
