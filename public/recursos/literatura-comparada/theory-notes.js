@@ -2,14 +2,14 @@
 // Cada bloque desarrolla una operación que ya exige la planificación aprobada.
 const local=(label,href)=>({label,href});
 const sources={
- canon:local('Dossier de canon: fundamentos y fuentes','./materiales/canon.html'),
+ canon:local('Dossier de canon: fundamentos y fuentes','./materiales/canon.html?v=lc-34d6660d15db'),
  repertorio:local('Even-Zohar · El sistema literario, § 2.5 (texto español)','https://www.tau.ac.il/~itamarez/works/papers/trabajos/EZ-sistema_literario.pdf'),
- oralitura:local('Brígido-Corachán y Domínguez · estudio del corpus, pp. 76–98','./materiales/world-literature-2019.pdf#page=82'),
- hermeneutica:local('Dossier de hermenéutica: Gadamer, explicación y fuentes','./materiales/hermeneutica.html'),
- recepcion:local('Dossier de recepción: Jauss, Iser y Eco','./materiales/recepcion.html'),
- documentos:local('Prólogos de Avellaneda y Cervantes: recortes identificados','./materiales/recepcion-documentos.html'),
+ oralitura:local('Brígido-Corachán y Domínguez · estudio del corpus, pp. 76–98','./materiales/world-literature-2019.pdf?v=lc-34d6660d15db#page=82'),
+ hermeneutica:local('Dossier de hermenéutica: Gadamer, explicación y fuentes','./materiales/hermeneutica.html?v=lc-34d6660d15db'),
+ recepcion:local('Dossier de recepción: Jauss, Iser y Eco','./materiales/recepcion.html?v=lc-34d6660d15db'),
+ documentos:local('Prólogos de Avellaneda y Cervantes: recortes identificados','./materiales/recepcion-documentos.html?v=lc-34d6660d15db'),
  rajewsky:local('Rajewsky · Intermedialidad, intertextualidad y remediación (traducción española)','https://www.vivomatografias.com/index.php/vmfs/article/view/278/314'),
- goethe:local('Goethe / Eckermann · selección y mediación de la traducción','./materiales/goethe.html')
+ goethe:local('Goethe / Eckermann · selección y mediación de la traducción','./materiales/goethe.html?v=lc-34d6660d15db')
 };
 export const theoryNotes={
  1:{title:'Una disciplina, varias maneras de construir el problema',paragraphs:[
@@ -75,7 +75,7 @@ export const theoryNotes={
  ],exampleTitle:'Un mapa posible no es circulación probada',example:[
  'Un texto producido en una localidad puede publicarse en una editorial nacional y traducirse en otro continente. Cada vínculo exige su registro: lugar de edición, traductor, fecha, medio y destinatarios cuando consten. La disponibilidad de una web demuestra acceso potencial, no lectura efectiva en todos los lugares donde puede abrirse.',
  'Para revisar la cartografía, separa las relaciones documentadas de las conexiones que propones investigar. Un nodo grande en el dibujo no demuestra poder: necesitas explicar qué decisiones controla ese agente y con qué evidencia.'
- ],application:'Añade a una relación de tu mapa el criterio de escala y una limitación. Usa el caso de Ortiz Wallner para examinar qué cambia al mediar un testimonio entre circuitos.',limit:'No equipares procedencia nacional, lengua, pertenencia cultural y lugar de recepción.',sources:[sources.goethe,local('Ortiz Wallner · caso del corpus, pp. 132–135','./materiales/world-literature-2019.pdf#page=138')]},
+ ],application:'Añade a una relación de tu mapa el criterio de escala y una limitación. Usa el caso de Ortiz Wallner para examinar qué cambia al mediar un testimonio entre circuitos.',limit:'No equipares procedencia nacional, lengua, pertenencia cultural y lugar de recepción.',sources:[sources.goethe,local('Ortiz Wallner · caso del corpus, pp. 132–135','./materiales/world-literature-2019.pdf?v=lc-34d6660d15db#page=138')]},
  15:{title:'Del tema abstracto a sus realizaciones y transformaciones',paragraphs:[
  'Tema y motivo tienen delimitaciones distintas en la tradición comparatista. Para esta matriz llamaremos tema al problema de sentido que construimos al leer —por ejemplo, la justificación de la violencia— y motivo a una situación o elemento concreto que participa en su realización y puede reaparecer con otras funciones. Son distinciones operativas del curso, no una taxonomía universal.',
  'La variación se explica relacionando esa realización con voz, composición, género y contexto. No consiste en afirmar que «el mismo tema está en todas partes». Tampoco toda recurrencia demuestra influencia: primero hay que justificar la comparabilidad y conservar la diferencia.'

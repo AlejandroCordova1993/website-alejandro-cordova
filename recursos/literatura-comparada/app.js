@@ -1,19 +1,19 @@
-import {taskNotes,optionalComparison} from './curriculum.js';
-import {encounters,dayLabel} from './encounters.js';
-import {classHref,classFromHash,resumeHref,projectPhases,suggestedProjectPhase,workDestination,fichaTitles} from './class-flow.js';
-import {renderClassPage} from './classroom-view.js';
-import {weeks} from './schedule.js';
-import {essayMilestones} from './journey.js';
-import {collectEvidence,insertPassage,projectDesk,relationDiagram,deliveryHtml,deliveryChecklist,annexOptions,alertHtml} from './seminar.js';
-import {glossaryLinks,conceptHtml,conceptById} from './glossary.js';
-import {teachingPlan,evaluationView,activityLinks} from './teaching.js';
-import {resources,resourceById,translationRows} from './corpus.js';
-import {modules,moduleById,steps,history,schools,diagnostic,rubric} from './course.js';
-import {STORAGE_KEY,freshState,loadState,writeNote,markReviewed,workStatus,hasWork,wordCount,exportMarkdown,validateState,fileName,moduleKeys,moduleWorkStatus,fieldNames,keyNames,routeKey,noteDestination,activityProgress,archivedKeys,fieldLabel,reviewFields} from './state.js';
+import {taskNotes,optionalComparison} from './curriculum.js?v=lc-34d6660d15db';
+import {encounters,dayLabel} from './encounters.js?v=lc-34d6660d15db';
+import {classHref,classFromHash,resumeHref,projectPhases,suggestedProjectPhase,workDestination,fichaTitles} from './class-flow.js?v=lc-34d6660d15db';
+import {renderClassPage} from './classroom-view.js?v=lc-34d6660d15db';
+import {weeks} from './schedule.js?v=lc-34d6660d15db';
+import {essayMilestones} from './journey.js?v=lc-34d6660d15db';
+import {collectEvidence,insertPassage,projectDesk,relationDiagram,deliveryHtml,deliveryChecklist,annexOptions,alertHtml} from './seminar.js?v=lc-34d6660d15db';
+import {glossaryLinks,conceptHtml,conceptById} from './glossary.js?v=lc-34d6660d15db';
+import {teachingPlan,evaluationView,activityLinks} from './teaching.js?v=lc-34d6660d15db';
+import {resources,resourceById,translationRows} from './corpus.js?v=lc-34d6660d15db';
+import {modules,moduleById,steps,history,schools,diagnostic,rubric} from './course.js?v=lc-34d6660d15db';
+import {STORAGE_KEY,freshState,loadState,writeNote,markReviewed,workStatus,hasWork,wordCount,exportMarkdown,validateState,fileName,moduleKeys,moduleWorkStatus,fieldNames,keyNames,routeKey,noteDestination,activityProgress,archivedKeys,fieldLabel,reviewFields} from './state.js?v=lc-34d6660d15db';
 
-import {createPresenter} from './presenter.js';
-import {createSession} from './session.js';
-import {uiIcon,toneHead,toneSummary} from './ui-icons.js';
+import {createPresenter} from './presenter.js?v=lc-34d6660d15db';
+import {createSession} from './session.js?v=lc-34d6660d15db';
+import {uiIcon,toneHead,toneSummary} from './ui-icons.js?v=lc-34d6660d15db';
 const $=s=>document.querySelector(s);
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let storage;try{storage=window.localStorage;}catch{storage={getItem(){throw Error();},setItem(){throw Error();}};}
@@ -21,7 +21,7 @@ const loaded=loadState(storage);let state=loaded.state,storageBlocked=!!loaded.e
 let current={page:'inicio',module:1,step:'orientar'},pendingImport=null,toastTimer;
 const main=$('#main');
 // In the catalogue installation the return is relative; standalone local work uses its local preview.
-const catalogHref=location.pathname.includes('/recursos/literatura-comparada/')?'../../recursos.html':/^(127\.0\.0\.1|localhost)$/.test(location.hostname)?'http://127.0.0.1:4184/recursos.html':null;
+const catalogHref=location.pathname.includes('/recursos/literatura-comparada/')?'../../recursos.html?v=lc-34d6660d15db':/^(127\.0\.0\.1|localhost)$/.test(location.hostname)?'http://127.0.0.1:4184/recursos.html':null;
 document.querySelectorAll('[data-catalog-link]').forEach(a=>{if(!catalogHref){a.hidden=true;return;}a.href=catalogHref;if(!location.pathname.includes('/recursos/literatura-comparada/')){a.target='_blank';a.rel='noopener noreferrer';a.setAttribute('aria-label',a.textContent+' (abre en otra pestaña)');}});
 const lock=navigator.locks?fn=>navigator.locks.request('lc-cuaderno-write',fn):null;
 let session=createSession({storage,lock,initialRaw:loaded.raw}),savePhase=storageBlocked?'unavailable':'saved',pendingSaves=0,saveAnnouncement,lastAnnounced='',relationEdit=-1,mutationBusy=false;
@@ -80,7 +80,7 @@ function renderSidebar(){
 }
 
 function resourceCard(id,compact=false,selectionOverride=null,sourceOverride=null){
- const r=sourceOverride?{...resourceById[id],url:sourceOverride.url,linkLabel:sourceOverride.label}:resourceById[id],heading=current.page==='biblioteca'?'h2':'h3';
+ const r=sourceOverride?{...resourceById[id],url:sourceOverride.url,linkLabel:sourceOverride.label,availabilityNote:sourceOverride.availabilityNote||resourceById[id].availabilityNote}:resourceById[id],heading=current.page==='biblioteca'?'h2':'h3';
  const available=r.url&&r.access!=='Biblioteca';
  return `<article id="recurso-${r.id}" tabindex="-1" class="resource ${compact?'compact':''}"><div class="resource-meta"><span>${escape(r.kind)} · ${escape(r.language)}</span><span class="access ${r.access==='Biblioteca'?'library-access':''}">${escape(r.access==='Gratis'?'Consulta gratuita':r.access)}</span></div><p class="author">${escape(r.author)}</p><${heading}>${escape(r.title)}</${heading}>${compact?'':`<p class="resource-place">${r.modules.map(id=>id===0?'Introducción':`M${id} · ${moduleById[id].title}`).join(' / ')}</p><p class="caption resource-role">${escape(r.audience||'Lectura común')}${r.time?' · '+escape(r.time):''}</p>`}<p class="selection">${escape(selectionOverride??r.selection)}</p>${r.availabilityNote?`<p class="availability-note">${escape(r.availabilityNote)}</p>`:''}${r.translator?`<p class="translator">Traducción: ${escape(r.translator)}</p>`:''}<p>${escape(r.purpose)}</p>${available?`<div class="resource-links">${link(r.url,r.linkLabel||(r.format==='Video'?'Ver el cortometraje':'Abrir lectura'))}</div>`:`<p class="availability-note">${r.access==='En preparación'?'Selección pendiente de incorporar.':'Trabaja con el ejemplar o fragmento facilitado por el docente. La referencia editorial no ofrece la lectura completa.'}</p>`}<details class="source-details"><summary>Edición, límites y otras fuentes</summary><p>${escape(r.edition)}</p><p>${escape(r.limit)}</p><div class="resource-links">${!available&&r.url?link(r.url,'Identificar la edición'):''}${r.alternate?link(r.alternate,r.alternateLabel):''}${r.publisherUrl?link(r.publisherUrl,r.publisherLabel):''}</div></details></article>`;
 }

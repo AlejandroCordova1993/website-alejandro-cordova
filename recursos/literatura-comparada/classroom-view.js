@@ -1,9 +1,9 @@
-import {encounters,dayLabel} from './encounters.js';
-import {taskNotes} from './curriculum.js';
-import {classHref,classPlan,classPreparation,classContinuation,classReadingGroups} from './class-flow.js';
-import {toneHead} from './ui-icons.js';
-import {glossaryLinks,concepts} from './glossary.js';
-import {theoryNoteHtml} from './theory-notes.js';
+import {encounters,dayLabel} from './encounters.js?v=lc-34d6660d15db';
+import {taskNotes} from './curriculum.js?v=lc-34d6660d15db';
+import {classHref,classPlan,classPreparation,classContinuation,classReadingGroups} from './class-flow.js?v=lc-34d6660d15db';
+import {toneHead} from './ui-icons.js?v=lc-34d6660d15db';
+import {glossaryLinks,concepts} from './glossary.js?v=lc-34d6660d15db';
+import {theoryNoteHtml} from './theory-notes.js?v=lc-34d6660d15db';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 export function renderClassPage(e,ctx){
