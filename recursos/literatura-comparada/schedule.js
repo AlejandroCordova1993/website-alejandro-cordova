@@ -43,7 +43,7 @@ export const weeks=[
   {
     "week": 9,
     "title": "Comprender y revisar la interpretación",
-    "description": "Docencia: epistemología de la hermenéutica; qué significa comprender, historicidad del lector, círculo parte–conjunto y justificación de una interpretación, con Gadamer. Práctica: comparar Carrington y Bierce y revisar hipótesis tras el desenlace. Autónomo: cuentos y ficha conceptual de 2 páginas. Evidencia: explicar un presupuesto propio, su revisión y el pasaje que la exige."
+    "description": "Docencia: epistemología de la hermenéutica; qué significa comprender, historicidad del lector, círculo parte–conjunto y justificación de una interpretación, con Gadamer. Práctica: comparar cómo Carrington y Bierce ponen a prueba expectativas y juicios en momentos diferentes. Autónomo: cuentos y ficha conceptual de 2 páginas. Evidencia: explicar un presupuesto propio, cómo se pone a prueba y qué pasaje sostiene la conclusión."
   },
   {
     "week": 10,

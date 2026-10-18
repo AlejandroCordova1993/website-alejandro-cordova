@@ -1,0 +1,128 @@
+/* Lectura, escritura y entrega sobre la línea clara (dirección A). Dentro de una tarjeta, los recuadros van sobre papel y sin borde. */
+.weekly-encounters{margin:24px 0}
+.encounter{padding:24px 0;border-top:1px solid var(--line)}
+.encounter>h3{font:500 24px/1.3 var(--serif);margin:10px 0 14px}
+.weekly-body .encounter-time{font:500 14px/1.5 var(--sans);color:var(--blue);margin:0}
+.encounter-flow{margin:20px 0}
+.encounter-flow>summary{font-size:15px}
+.encounter-flow ol{list-style:none;padding:0}
+.encounter-flow li{padding:20px 0;border-top:1px solid var(--line)}
+.stage-heading{display:flex;justify-content:space-between;gap:20px;margin-bottom:14px}
+.stage-heading h4{font:600 16px/1.5 var(--sans);margin:0}
+.stage-heading>span{align-self:flex-start;padding:2px 8px;border-radius:var(--radius-pill);background:var(--activity-surface);color:var(--activity-ink);font:600 13px/1.5 var(--sans);font-variant-numeric:tabular-nums;white-space:nowrap}
+.encounter-flow p{font-size:16px}
+.encounter-flow .caption{font-size:14px}
+.encounter-output{padding-top:14px;border-top:1px solid var(--line)}
+.encounter>.button{margin-top:10px}
+.autonomous-timing{margin:30px 0;padding:24px 0;border-block:1px solid var(--line)}
+.autonomous-timing h3{font:600 18px/1.5 var(--sans);margin:0 0 14px}
+.autonomous-timing ol{padding-left:24px}
+.autonomous-timing li{margin:20px 0}
+.autonomous-timing li strong{display:block;margin-bottom:10px;font-size:15px}
+.planning-summary{margin:24px 0}
+.planning-summary p:first-of-type{margin-top:18px}
+.reading-supply{padding:14px 18px;background:var(--paper);border:0;border-radius:var(--radius);font-size:15px}
+
+/* Nested work sequences use native summaries; the week alone has the expanded heading row. */
+.weekly-plan .encounter-flow>summary,.weekly-plan .planning-summary>summary{display:list-item;list-style:revert;font-weight:500;padding:14px 0}
+.weekly-plan .encounter-flow>summary::after,.weekly-plan .planning-summary>summary::after{display:none}
+
+@media(max-width:650px){.encounter>h3{font-size:24px}.stage-heading{gap:12px}.reading-supply{padding:14px}.encounter-flow li{padding-block:16px}}
+.essay-milestones{margin:34px 0}
+.essay-milestones .tone-body>p{margin:0 0 18px}
+.essay-milestones ol{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.essay-milestones li{padding:18px 20px;background:var(--paper);border-radius:var(--radius)}
+.essay-milestones h3{font:500 22px/1.3 var(--serif);margin:6px 0 10px;color:var(--activity-ink)}
+.essay-milestones p{font-size:15px;line-height:1.65}
+.essay-milestones a{font-size:14px;min-height:44px;display:inline-flex;align-items:center}
+.project-stages-fold{margin:26px 0 36px;border-block:1px solid var(--line);padding:8px 0}
+.project-stages-fold>summary{font-weight:600}
+.project-start .lead{color:var(--ink)}
+.essay-writing{margin:24px 0 0;display:grid;gap:24px;align-items:start}
+.essay-writing-main{min-width:0}
+.essay-writing .essay-rubric{margin:0 0 24px}
+.essay-writing textarea{font:19px/1.75 var(--serif);min-height:560px;resize:vertical}
+.essay-desk{min-width:0;padding:6px 18px 16px;background:var(--paper);border-radius:var(--radius)}
+.desk-fold>summary{font:500 22px/1.3 var(--serif);color:var(--activity-ink)}
+.desk-fold>.caption{margin:14px 0 18px}
+.desk-tabs{display:flex;gap:0;border-bottom:1px solid var(--line);margin:20px 0}
+.desk-tabs button{background:transparent;border:0;border-bottom:2px solid transparent;min-height:44px;padding:12px 15px;color:var(--muted);font:500 14px var(--sans);cursor:pointer}
+.desk-tabs button[aria-selected=true]{border-bottom-color:var(--activity-ink);color:var(--activity-ink);font-weight:600}
+.desk-passage{padding:18px 0;border-bottom:1px solid var(--line)}
+.desk-passage h3{font:500 20px/1.3 var(--serif);margin:0 0 12px}
+.desk-passage .preserve{font:17px/1.65 var(--serif);margin-bottom:14px}
+.desk-passage .caption{font:13px/1.6 var(--sans)}
+.essay-desk [role=tabpanel]{max-height:55vh;overflow:auto;padding-right:12px;scrollbar-color:var(--line) var(--paper);scrollbar-width:thin}
+.essay-desk .text-button{min-height:44px;line-height:1.4;text-align:left}
+.delivery-start .tone-body>p:first-child{margin:0 0 16px}
+.glossary-links{margin:16px 0;padding:14px 16px 8px;background:var(--paper);border-radius:var(--radius)}
+.glossary-links h3{font:600 16px/1.4 var(--sans);margin-bottom:8px;color:var(--theory-ink)}
+.glossary-links .caption{margin-bottom:12px}
+.concept-link{display:block;min-height:44px;padding:8px 0;border:0;background:transparent;font:15px/1.5 var(--sans);color:var(--blue);text-align:left;text-decoration:underline;text-decoration-style:dotted;text-decoration-color:var(--active);text-decoration-thickness:2px;text-underline-offset:4px;cursor:pointer}
+.method-alerts{margin:24px 0;padding:4px 18px;background:var(--paper);border-radius:var(--radius)}
+.method-alerts summary{font-weight:600}
+.method-alerts p{margin:18px 0}
+.method-alerts li{margin:12px 0;font-size:16px;line-height:1.6}
+.method-alerts ul{padding-left:24px}
+.mediation-fields{margin:24px 0;padding:14px 0;border-block:1px solid var(--line)}
+.mediation-fields>.caption{margin-top:16px}
+.relation-inputs input{border:1px solid var(--control-line);border-radius:var(--radius);background:var(--paper-pure);width:100%;min-width:0;min-height:44px;padding:12px;font:15px var(--sans);color:var(--ink)}
+.circuit-figure{overflow-x:auto;margin:24px 0;scrollbar-color:var(--line) var(--paper)}
+.circuit-figure svg{display:block;width:100%;min-width:600px;height:auto}
+.map-kind{font:13px var(--sans);fill:var(--muted)}
+.map-label{font:16px var(--serif);fill:var(--ink)}
+.backup-help{margin:28px 0;padding:8px 0;border-block:1px solid var(--line)}
+.backup-help summary{font-weight:600}
+.backup-help li{margin:14px 0}
+.backup-help p{margin-top:18px}
+#concept-dialog,#delivery-dialog{color:var(--ink);background:var(--surface);border:1px solid var(--line);max-height:90vh;overflow:auto;width:calc(100% - 40px);max-width:760px;padding:30px 36px}
+dialog::backdrop{background:rgba(7,27,51,.55)}
+.dialog-heading{display:flex;gap:24px;justify-content:space-between;align-items:start;margin-bottom:24px}
+.dialog-heading h2{font:400 32px/1.2 var(--serif);margin:0}
+.dialog-heading .button{flex:none}
+.dialog-heading~h3{font:600 16px var(--sans);margin:26px 0 12px}
+#concept-dialog p{font:17px/1.7 var(--serif);margin-bottom:16px}
+#concept-dialog .caption{font:13px/1.65 var(--sans)}
+#concept-dialog a{min-height:44px;display:inline-flex;align-items:center;line-height:1.6}
+#delivery-dialog{max-width:1000px}
+#delivery-dialog>p{margin:18px 0}
+.delivery-choices{border:1px solid var(--line);border-radius:var(--radius);padding:18px 22px;margin:22px 0}
+.delivery-choices legend{font-weight:600}
+.delivery-choices label{display:flex;gap:12px;align-items:center;min-height:44px;font-size:15px;margin:0}
+.delivery-choices input{width:24px;height:24px;accent-color:var(--blue);flex:none}
+#delivery-preview{border-top:1px solid var(--line);padding-top:22px;margin-top:26px}
+.seminar-delivery{font:18px/1.7 var(--serif);max-width:780px;margin:auto}
+.seminar-delivery h1{font-size:40px;margin:34px 0}
+.seminar-delivery h2{font-size:28px;margin:30px 0 20px}
+.seminar-delivery h3{font-size:20px;margin:24px 0 14px}
+.seminar-delivery p{margin:18px 0;max-width:72ch}
+.delivery-cover{padding:36px 0;border-bottom:1px solid var(--line)}
+.delivery-cover>p{font:15px/1.6 var(--sans)}
+.delivery-body,.delivery-annex{padding:20px 0}
+.seminar-delivery blockquote{margin:24px 0;padding-left:30px;font-size:17px;white-space:pre-wrap}
+.seminar-delivery table{width:100%;border-collapse:collapse;font:14px/1.65 var(--sans)}
+.seminar-delivery td,.seminar-delivery th{border-bottom:1px solid var(--line);padding:12px;text-align:left;vertical-align:top;overflow-wrap:anywhere}
+.seminar-delivery table th{font-weight:600}
+.seminar-delivery .map-kind{font-size:12px}
+#delivery-print{display:none}
+
+@media(min-width:1180px){.essay-writing{grid-template-columns:minmax(0,1.35fr) minmax(285px,.8fr);gap:34px}.essay-desk{position:sticky;top:calc(90px + var(--warning-h,0px))}}
+
+@media(max-width:740px){.essay-milestones ol{grid-template-columns:1fr;gap:12px}.essay-milestones li{padding:16px}.essay-desk{padding:4px 16px 14px}.essay-writing textarea{min-height:450px;font-size:18px}.essay-desk [role=tabpanel]{max-height:420px}.relation-inputs{grid-template-columns:1fr}#concept-dialog,#delivery-dialog{padding:22px;width:calc(100% - 20px);max-height:92vh}.dialog-heading{gap:12px}.dialog-heading h2{font-size:27px}.seminar-delivery h1{font-size:32px;overflow-wrap:anywhere}.seminar-delivery table{font-size:12px}.seminar-delivery th,.seminar-delivery td{padding:7px}.delivery-choices{padding:16px}}
+
+.essay-view-controls{display:none}
+.delivery-checklist{margin:24px 0;padding:18px 0;border-block:1px solid var(--line)}
+.delivery-checklist h3{margin-top:0;font:600 18px/1.5 var(--sans)}
+.delivery-checklist li{margin:10px 0}
+@media(max-width:1179px){
+ .essay-view-controls{display:flex;position:sticky;top:calc(88px + var(--warning-h,0px));z-index:7;gap:8px;background:var(--paper);padding:8px 0;border-bottom:1px solid var(--line)}
+ .essay-view-controls button{min-height:44px;padding:10px 14px;font:600 15px var(--sans);border:1px solid var(--line);border-radius:8px;color:var(--blue);background:var(--surface);cursor:pointer}
+ .essay-view-controls button[aria-pressed=true]{background:var(--activity-surface);border-color:var(--blue)}
+ .essay-writing[data-view=draft]>.essay-desk,.essay-writing[data-view=materials]>.essay-writing-main{display:none}
+}
+@media(max-width:740px){.essay-view-controls{top:calc(120px + var(--warning-h,0px))}.essay-view-controls button{flex:1}}
+@media print{.essay-view-controls{display:none!important}.essay-writing>.essay-desk,.essay-writing>.essay-writing-main{display:block!important}}
+@page{size:A4;margin:22mm 20mm}
+
+@media print{body[data-print=delivery]>:not(#delivery-print){display:none!important}body[data-print=delivery]>#delivery-print{display:block!important}.seminar-delivery{font:12pt/1.65 var(--serif);max-width:none}.seminar-delivery h1{font-size:28pt}.seminar-delivery h2{font-size:19pt;break-after:avoid}.seminar-delivery h3{font-size:13pt;break-after:avoid}.seminar-delivery p{orphans:3;widows:3;margin:3mm 0}.delivery-cover{min-height:180mm;border:0;break-after:page;padding-top:35mm}.delivery-cover p{font-size:11pt}.delivery-annex{break-before:page}.seminar-delivery blockquote{font-size:11pt;margin:5mm 10mm;line-height:1.6;padding:0}.seminar-delivery table{font-size:9pt}.seminar-delivery tr{break-inside:avoid}.seminar-delivery thead{display:table-header-group}.seminar-delivery .circuit-figure svg{min-width:0}.seminar-delivery .circuit-figure{overflow:visible}.seminar-delivery .caption{font-size:9pt}}
+
