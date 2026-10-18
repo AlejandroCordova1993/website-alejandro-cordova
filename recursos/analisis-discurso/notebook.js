@@ -1,4 +1,4 @@
-import {freshState,loadState,hasWork,setNote,touchUnit,registerReview,validateState,STORAGE_KEY,evidenceDraftKey} from './state.js';
+import {freshState,loadState,hasWork,setNote,touchUnit,registerReview,validateState,sameWork,STORAGE_KEY,evidenceDraftKey} from './state.js';
 import {createSession} from './session.js';
 import {parseRoute} from './navigation.js';
 
@@ -16,7 +16,7 @@ export function createNotebook({storage,lock,onChange=()=>{}}){
  function note(key,field,value){return mutate(s=>setNote(s,key,field,value));}
  function draft(key,unit,data){const target=key==='evidence'?evidenceDraftKey(unit):key;return mutate(s=>s.drafts=validateState({...s,drafts:{...s.drafts,[target]:{unit,data}}}).drafts);}
  function removeDraft(key,unit){const target=key==='evidence'?evidenceDraftKey(unit):key;return mutate(s=>delete s.drafts[target]);}
- function rememberLocation(hash){const r=parseRoute(hash);if(!['unidad','semana','proyecto'].includes(r.page))return false;const target=r.page==='unidad'?`#unidad/${r.unit}/${r.step}`:r.page==='semana'?`#semana/${r.week}/${r.encounter}`:'#proyecto';if(state.lastLocation===target)return false;return mutate(s=>s.lastLocation=target);}
+ function rememberLocation(hash){const r=parseRoute(hash);if(!['unidad','ficha','semana','proyecto'].includes(r.page))return false;const target=r.page==='ficha'?`#ficha/${r.unit}`:r.page==='unidad'?`#unidad/${r.unit}/${r.step}`:r.page==='semana'?`#semana/${r.week}/${r.encounter}`:'#proyecto';if(state.lastLocation===target)return false;return mutate(s=>s.lastLocation=target);}
  function evidence(entry){return mutate(s=>{const candidate=validateState({...s,evidence:s.evidence.some(e=>e.id===entry.id)?s.evidence.map(e=>e.id===entry.id?entry:e):[...s.evidence,entry]});s.evidence=candidate.evidence;touchUnit(s,entry.unit);});}
  function removeEvidence(id){return mutate(s=>{const found=s.evidence.find(e=>e.id===id);s.evidence=s.evidence.filter(e=>e.id!==id);if(found)touchUnit(s,found.unit);});}
  function review(key){if(!editable())return {ok:false,missing:[]};const result=registerReview(state,key);if(result.ok)changed();return result;}
@@ -27,6 +27,8 @@ export function createNotebook({storage,lock,onChange=()=>{}}){
  async function clear(){await flush();await session.idle();const result=await session.clear();if(result.ok){epoch++;state=freshState();held=null;dirty=false;phase='saved';reason=null;mode='active';notify('deleted');}return result;}
  function external(formDirty=false){if(!session.changed())return;let raw;try{raw=storage.getItem(STORAGE_KEY);}catch{phase='unavailable';mode='memory';notify('unavailable');return;}
   if(raw===null){const pending=dirty||phase==='saving'||phase==='conflict'||formDirty;if(pending&&!recovery)recovery=held||state;epoch++;clearTimeout(timer);state=freshState();held=null;dirty=false;phase=pending?'conflict':'saved';reason=pending?'deleted':null;mode=pending?'conflict':lock?'active':'memory';session=createSession({storage,lock,initialRaw:null});notify(pending?'deleted-conflict':'deleted');return;}
+  // Another tab only moved «Continuar»: adopt its write silently and keep writing here, without reloading or conflict.
+  if(mode!=='conflict'&&phase!=='conflict'&&!recovery&&sameWork(session.baseline,raw)){session.rebase(raw);return;}
   if(mode==='conflict'||phase==='conflict'||recovery||dirty||phase==='saving'||formDirty){clearTimeout(timer);mode='conflict';phase='conflict';reason=reason==='deleted'?'deleted':'conflict';notify('conflict');return;}
   const next=loadState(storage);if(next.error){mode='conflict';phase='conflict';reason='invalid';notify('conflict');return;}
   epoch++;session=createSession({storage,lock,initialRaw:next.raw});phase='saved';reason=null;

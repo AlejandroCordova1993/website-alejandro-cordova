@@ -10,7 +10,7 @@ export const weeklyPath=[
  {title:'Escritura: composición y reformulación',steps:['analizar','revisar'],advance:'Contrastar una alternativa visual que conserva las palabras y revisar la misma ficha 2.'},
  {title:'Contexto: fuentes y elección del método',steps:['argumentar','analizar'],advance:'Proponer el enfoque de la ficha 3 y documentar el contexto para contrastar esa elección.'},
  {title:'Contexto: límites y transferencia',steps:['revisar','assessment'],advance:'Revisar la ficha 3, precisar el método del expediente y aplicar el enfoque a un caso acotado.',milestone:2},
- {title:'Voces: personas y responsabilidad',steps:['analizar','argumentar'],advance:'Comenzar la ficha 4: identificar participantes, voces y marcas de responsabilidad.'},
+ {title:'Voces: personas y responsabilidad',steps:['analizar','argumentar'],advance:'Comenzar la ficha 4 con tres segmentos en total del contraste Menchú–Márquez; identificar participantes, voces y responsabilidad. Si ya la empezaste, continúa tus registros.'},
  {title:'Voces: perspectivas y atribuciones',steps:['argumentar','revisar'],advance:'Revisar la misma ficha 4 mediante una atribución contrastada y una alternativa examinada.'},
  {title:'Géneros: acciones y circulación',steps:['analizar','argumentar'],advance:'Comenzar la ficha 5 con dos piezas y una relación documentada o una adaptación propia claramente identificada.'},
  {title:'Géneros: contraste y argumento parcial',steps:['project','revisar'],advance:'Revisar la ficha 5 e integrar un análisis parcial en el expediente.',milestone:3},

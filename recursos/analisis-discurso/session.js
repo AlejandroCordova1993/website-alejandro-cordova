@@ -20,5 +20,6 @@ export function createSession({storage,lock,initialRaw}){
   });
   queue=job.then(()=>{});return job;
  }
- return {save:state=>run(JSON.parse(JSON.stringify(state))),clear:()=>run(null,true),changed,idle:()=>queue};
+ // rebase adopts another tab's write as the new baseline; only for writes that leave the work unchanged.
+ return {save:state=>run(JSON.parse(JSON.stringify(state))),clear:()=>run(null,true),changed,idle:()=>queue,get baseline(){return baseline;},rebase:raw=>{baseline=raw;}};
 }
