@@ -63,14 +63,14 @@ export const visualSchemas={
   type:'segments',planned:'s13-e1',topic:'Un texto puede combinar secuencias',placed:true,replaces:'example',
   label:'Un texto que combina tres secuencias',
   segments:[
-   {text:'La solicitud estaba incompleta. Ana añadió el certificado y terminó de reunir los documentos.',label:'Narración',note:'Relata una transformación: de solicitud incompleta a expediente reunido.'},
-   {text:'El certificado contiene nombre y fecha.',label:'Descripción',note:'Selecciona partes del certificado.'},
-   {text:'Ahora el expediente reúne los documentos exigidos; por eso debe admitirse.',label:'Argumentación',note:'Sostiene una decisión mediante una razón; «por eso» marca el paso, pero no basta por sí solo.'}
+   {text:'En el primer taller de lectura, el grupo entregó respuestas muy breves. La docente incorporó un intercambio en parejas y, en la siguiente entrega, aparecieron más referencias al cuento.',label:'Narración',note:'Relata un cambio entre dos entregas y las acciones que ocurrieron entre ellas.'},
+   {text:'El curso reúne a treinta estudiantes y cuenta con quince ejemplares impresos, con márgenes amplios para anotar.',label:'Descripción',note:'Describe la composición del grupo y las características del material disponible.'},
+   {text:'Conviene mantener el intercambio para contrastar interpretaciones, pero habrá que comprobar quiénes participan y qué cambia en cada escrito antes de atribuirle la mejora.',label:'Argumentación',note:'Propone mantener una práctica, da una razón y señala una condición para valorar sus resultados.'}
   ],
   verdict:'Un verbo o un conector aislado no determina la clasificación: cada segmento se justifica por su función.',
   task:{label:'En la ficha 6',text:'Arma tu matriz de segmentos, secuencias y transiciones con la marca y la función de cada tramo.'},
   source:'Ejemplo inventado del curso. Textos heterogéneos y secuencia dominante: Calsamiglia y Tusón (2012, §9.2.2 · PDF 266–268). Narración, descripción y argumentación: §10.1 · PDF 270–274; §10.2 · PDF 280–282; §10.3 · PDF 295–300.',
-  anchors:['La solicitud estaba incompleta. Ana añadió el certificado y terminó de reunir los documentos. El certificado contiene nombre y fecha. Ahora el expediente reúne los documentos exigidos; por eso debe admitirse','de solicitud incompleta a expediente reunido','un verbo o conector aislado no determina la clasificación']
+  anchors:['En el primer taller de lectura, el grupo entregó respuestas muy breves','El curso reúne a treinta estudiantes','Conviene mantener el intercambio para contrastar interpretaciones','un verbo o conector aislado no determina la clasificación']
  },
  'agencia-escala':{
   type:'matrix',planned:'s4-e2',topic:'Agencia y representación de participantes',placed:true,replaces:'example',
@@ -136,7 +136,7 @@ export const visualSchemas={
   type:'tree',planned:'s5-e2',topic:'Del significado local al tema global',placed:true,replaces:'example',
   label:'De las proposiciones del texto a una síntesis, y lo que se pierde en el camino',
   leaves:[{label:'Proposición',text:'La ayuda exige matrícula vigente.'},{label:'Proposición',text:'La ayuda exige acreditación de ingresos.'}],
-  operation:{label:'Condensar y comprobar qué se pierde',text:'Acorta la formulación de las dos exigencias y compara el resultado con el texto. Esto no ejemplifica por sí solo una generalización.'},
+  operation:{label:'Condensar y comprobar qué se pierde',text:'Acorta la formulación de las dos exigencias. Comprueba si tu síntesis conserva «vigente» y «acreditación», pues ambas palabras precisan las condiciones de la ayuda.'},
   top:{label:'Síntesis que hay que revisar',text:'«La ayuda está condicionada a matrícula e ingresos».'},
   loss:{label:'Qué se pierde',items:['«vigente»: no cualquier matrícula sirve.','«acreditación»: no basta tener ingresos; hay que demostrarlos.'],question:'¿Son detalles que pueden omitirse o condiciones que cambian el contenido?'},
   rejected:{label:'No la sostiene el texto',text:'«La ayuda se ofrece a todos».',note:'Añade una generalización que elimina las condiciones.'},
@@ -185,31 +185,31 @@ export const visualSchemas={
   ],
   verdict:'La adaptación se declara propia: no es una comunicación oficial de la institución.',
   task:{label:'En la ficha 5',text:'Compara las dos piezas de tu ruta: qué se conserva, omite o reformula, con vínculo documentado o adaptación identificada.'},
-  source:'Cláusula del curso; la adaptación es propia y se escribió para este esquema. Recontextualización: guía de la unidad 5, apartado «Recontextualizar implica seleccionar», síntesis docente de Fairclough, Discourse and Social Change (1992).',
+  source:'Cláusula del curso; la adaptación es propia y se escribió para este esquema. Recontextualización: apartado «Recontextualizar implica seleccionar» de la lectura integrada de «Teoría» y de la guía de la unidad 5, síntesis docente de Fairclough, Discourse and Social Change (1992).',
   anchors:['Transformamos una cláusula normativa en una explicación para estudiantes de primer semestre','se pueden conservar, omitir o reformular elementos','aclarar vocabulario y ordenar la información','no es una comunicación oficial de la institución']
  },
  'intercambio-accesible':{
   type:'turns',planned:'s14-e2',topic:'Una respuesta modifica la interacción',placed:true,replaces:'example',
-  label:'Un intercambio en el que una objeción lleva a reconocer una precisión pendiente',
+  label:'Un intercambio en el que una objeción desplaza el foco de la respuesta',
   turns:[
-   {speaker:'A',text:'«El trámite es accesible».',move:'Valora el trámite.'},
-   {speaker:'B',text:'«¿Accesible también para quien no tiene conexión?».',move:'Cuestiona el alcance de «accesible».'},
-   {speaker:'A',text:'«Entonces debemos precisar esa condición».',move:'Reconoce que debe precisar la condición.'}
+   {speaker:'A',text:'«La inscripción al taller de lectura es accesible: se completa en línea».',move:'Presenta la inscripción en línea como razón para valorar el acceso.'},
+   {speaker:'B',text:'«¿Y cómo se inscribe quien no tiene conexión?».',move:'Cuestiona que la conexión esté al alcance de todas las personas.'},
+   {speaker:'A',text:'«Por eso ofrecemos un punto de atención en el campus, de ocho a doce».',move:'Desplaza el foco hacia una alternativa presencial con horario limitado.'}
   ],
-  note:'Una valoración espera acuerdo, que es la segunda parte preferida, o desacuerdo, la no preferida. Aquí el desacuerdo llega como pregunta.',
+  note:'Ante una valoración, el acuerdo suele ser la segunda parte preferida y el desacuerdo la no preferida: se trata de una organización del intercambio, no de gustos personales. Aquí la pregunta de B cuestiona la valoración; A responde con una alternativa que deja abiertas otras condiciones de acceso.',
   limit:'la secuencia permite describir ese cambio; no prueba un efecto general en toda la institución.',
   task:{label:'En el borrador del expediente',text:'Incorpora la objeción y muestra dónde se observa la modificación.'},
   source:'Ejemplo del curso. Pares adyacentes y segunda parte preferida: Levinson (1983: 324), en Calsamiglia y Tusón (2012, §2.2 · PDF 35). Diálogo y evaluación: Bolívar (2024: 98–99, cuadro 1).',
-  anchors:['El trámite es accesible','¿Accesible también para quien no tiene conexión?','Entonces debemos precisar esa condición','no prueba un efecto general en toda la institución']
+  anchors:['La inscripción al taller de lectura es accesible: se completa en línea','¿Y cómo se inscribe quien no tiene conexión?','Por eso ofrecemos un punto de atención en el campus, de ocho a doce','no prueba un efecto general en toda la institución']
  },
  'negacion-voces':{
   type:'voices',planned:'s9-e2',topic:'Responsabilidad y perspectiva',placed:true,replaces:'example',
   label:'Las figuras de Ducrot en un enunciado negativo',
   object:{label:'Enunciado',text:'«La medida no es un privilegio».'},
   subject:{role:'Sujeto hablante',text:'Ser empírico que produce el mensaje. El enunciado aislado no lo identifica.'},
-  speaker:{role:'Locutor',text:'Figura responsable de enunciar: asume «no es un privilegio».'},
-  evoked:{role:'Enunciador evocado',text:'«La medida es un privilegio».'},
-  relation:'evoca y rechaza',
+  speaker:{role:'Locutor (L)',text:'Figura responsable del enunciado: rechaza el punto de vista E1 y asume el rechazo E2.'},
+  evoked:{role:'Enunciador evocado',text:'«La medida es un privilegio».',stance:'L lo rechaza'},
+  assumed:{role:'Enunciador asumido',text:'«La medida no es un privilegio».',stance:'L asume este rechazo'},
   limit:'el enunciado aislado no identifica a quien habría sostenido esa perspectiva; el cotexto dirá si se responde a algo dicho o se previene una objeción.',
   task:{label:'En la ficha 4',text:'Distingue cuándo puedes atribuir una perspectiva a alguien y cuándo solo puedes describir que se evoca.'},
   source:'Ejemplo del curso. Sujeto hablante («ser empírico»), locutor y enunciador: Ducrot (1984), en Calsamiglia y Tusón (2012, §5.2 · PDF 150). Negación polifónica: Ducrot, en Caldiz (2014, PDF 5).',
@@ -238,7 +238,7 @@ export const visualSchemas={
    {label:'Transcripción con leyenda',text:'«No [pausa] aceptamos esa explicación».',marks:['[pausa]'],note:'La marca declara una pausa que habría que comprobar en el audio; la leyenda explica la convención.'}
   ],
   verdict:'Su función requiere escuchar el entorno: no basta cambiar la puntuación para atribuir una intención.',
-  task:{label:'Al transcribir el tramo de Drexler',text:'Transcribe 20–30 segundos, toma las marcas de la escucha y añade una leyenda.'},
+  task:{label:'Al transcribir el tramo de Drexler',text:'Dentro del episodio elegido, transcribe un fragmento de 20–30 segundos. Anota ambos intervalos en el localizador: episodio observado y fragmento transcrito. Toma las marcas de la escucha y añade una leyenda.'},
   source:'Representación didáctica del curso. Transcripción: Calsamiglia y Tusón (2012, apéndice, §1.2 · PDF 358–361).',
   anchors:['No [pausa] aceptamos esa explicación','la puntuación del subtítulo no demuestra prosodia','La marca declara una pausa que habría que comprobar en el audio','no basta cambiar la puntuación para atribuir una intención']
  },
@@ -303,7 +303,7 @@ export const visualSchemas={
  },
  'recorrido-reparto':{
   type:'path',planned:'s7-e2',topic:'De una formulación a un problema social',placed:true,replaces:'example',
-  label:'El recorrido de la clase 1·1 aplicado al reparto del reglamento de becas',
+  label:'El recorrido de la semana 1, clase 1 aplicado al reparto del reglamento de becas',
   object:{label:'La cláusula',text:'Artículo 3: 65 % para excelencia académica y 35 % por vulnerabilidad.'},
   claimLabel:'En la cláusula',
   steps:[
@@ -311,7 +311,7 @@ export const visualSchemas={
    {verb:'Interpretar',dimension:'la práctica discursiva',question:'¿Quién la produce, cómo circula, cómo se lee?',claim:'Los considerandos invocan inclusión y equidad para justificar el reparto.',evidence:'la norma completa, su emisor y sus reformas.'},
    {verb:'Explicar',dimension:'la práctica social',question:'¿Qué relación social mantiene o cambia?',claim:'Reparte un recurso entre excelencia y vulnerabilidad: ¿cómo se relaciona con la equidad?',evidence:'datos de adjudicación: quién recibió las ayudas.'}
   ],
-  scale:'El recorrido de la clase 1·1: relaciona el texto con otros datos y vuelve a sus marcas para comprobar la interpretación.',
+  scale:'El recorrido de la semana 1, clase 1: relaciona el texto con otros datos y vuelve a sus marcas para comprobar la interpretación.',
   task:{label:'En la ficha 3',text:'Reúne tres datos contextuales con fuente, localizador y función en tu análisis.'},
   limit:'el ejemplar no demuestra por sí solo quién recibió las ayudas ni una discriminación efectiva.',
   source:'Paráfrasis del curso del artículo 3 del Reglamento de Becas (2022). Tres dimensiones del análisis: Fairclough (1992: 73).',
@@ -350,7 +350,7 @@ export const visualSchemas={
   premise:{label:'Premisa · dato',text:'ambos avisos hablan de becas'},
   conclusion:{label:'Conclusión',connector:'por eso',text:'uno deriva del otro'},
   law:{label:'Ley de paso implícita, sin justificar',text:'si dos avisos comparten tema, uno deriva del otro',missing:true},
-  verdict:'Para investigar el vínculo hace falta otro dato: una cita, un enlace, una identificación de versión u otra fuente que documente el vínculo. En la clase 14·1 el esquema se completa con garantía y reserva.',
+  verdict:'Para investigar el vínculo hace falta otro dato: una cita, un enlace, una identificación de versión u otra fuente que documente el vínculo. En la semana 14, clase 1 el esquema se completa con garantía y reserva.',
   limit:'una semejanza temática puede sostener una comparación sin probar dependencia entre piezas.',
   task:{label:'En la revisión entre pares',text:'Busca en el desarrollo de tu compañero el dato, el criterio o la condición que sostiene cada paso.'},
   source:'Ejemplo del curso. Premisa, ley de paso y conclusión: Plantin (1996: 38), en Calsamiglia y Tusón (2012, §10.3 · PDF 297); pasos implícitos, PDF 298.',
@@ -365,7 +365,7 @@ export const visualSchemas={
   rejected:{label:'Excede los datos',text:'«La adaptación hizo que se entendiera mejor».',note:'Atribuir efectos exige otras evidencias de lectura.'},
   limit:'dos evidencias necesitan una relación explicada; una lista de citas no constituye ese desarrollo.',
   task:{label:'En el hito 3',text:'Explica qué muestra cada segmento, cómo se relacionan, qué objeción afecta a la conclusión y hasta dónde llega.'},
-  source:'Ejemplo de esta clase; la conclusión que excede los datos se escribió para este esquema. Efectos y evidencias de lectura: guía de la unidad 5, apartado «Dibujar una relación no la demuestra». Procesos de lectura: Calsamiglia y Tusón (2012, §3.4.2 · PDF 83–85).',
+  source:'Ejemplo de esta clase; la conclusión que excede los datos se escribió para este esquema. Efectos y evidencias de lectura: apartado «Dibujar una relación no la demuestra» de la lectura integrada de «Teoría» y de la guía de la unidad 5. Procesos de lectura: Calsamiglia y Tusón (2012, §3.4.2 · PDF 83–85).',
   anchors:['una condición se formula en la norma','esa condición se reformula en una adaptación propia','Podemos comparar la representación de la condición y justificar el cambio','Para atribuir efectos a la adaptación necesitamos otras evidencias de lectura','una lista de citas no constituye ese desarrollo']
  },
  'explicar-justificar':{
@@ -393,7 +393,7 @@ export const visualSchemas={
   ],
   limit:'el corpus pequeño permite afirmaciones delimitadas. La revisión debe indicar qué evidencia afectó qué afirmación.',
   task:{label:'En el hito 4',text:'Escribe tu conclusión revisada con su alcance y registra qué evidencia cambió qué afirmación.'},
-  source:'Ejemplo de esta clase; las dos formulaciones más amplias se escribieron para este esquema. Corpus pequeño y explicación acotada: guía de la unidad 3, apartado «Hacer visible la propia posición». Selección de corpus: Calsamiglia y Tusón (2012, apéndice, §4 · PDF 368–370).',
+  source:'Ejemplo de esta clase; las dos formulaciones más amplias se escribieron para este esquema. Corpus pequeño y explicación acotada: apartado «Hacer visible la propia posición» de la lectura integrada de «Teoría» y de la guía de la unidad 3. Selección de corpus: Calsamiglia y Tusón (2012, apéndice, §4 · PDF 368–370).',
   anchors:['En los tres avisos analizados no se identifica al órgano responsable','La formulación fija conjunto y observación','Para afirmar una estrategia institucional sistemática necesitaríamos criterios y fuentes adicionales','El corpus pequeño permite afirmaciones delimitadas','La revisión debe indicar qué evidencia afectó qué afirmación']
  },
  'revision-atribucion':{
@@ -421,7 +421,7 @@ export const visualSchemas={
   scale:'Probar la consigna revisa la instrucción, no solo al lector.',
   task:{label:'En el expediente',text:'Prueba tu microconsigna con un compañero y registra qué ajustaste y por qué.'},
   limit:'la consigna admite interpretaciones discrepantes que se justifiquen con evidencia.',
-  source:'Consigna y criterios propios del curso. Probar la consigna y admitir lecturas discrepantes justificadas: guía de la unidad 6, apartado «Transformar un análisis en enseñanza». No se atribuyen estos criterios a un autor externo.',
+  source:'Consigna y criterios propios del curso. Probar la consigna y admitir lecturas discrepantes justificadas: apartado «Transformar un análisis en enseñanza» de la lectura integrada de «Teoría» y de la guía de la unidad 6. No se atribuyen estos criterios a un autor externo.',
   anchors:['En estas dos cláusulas, subraya quién realiza la acción','La tarea identifica material, operación y resultado','Una respuesta inesperada ayuda a revisar la consigna; no demuestra por sí sola que el lector no comprendió el tema','¿La dificultad observada procede del concepto, del material o de la instrucción?','producir una respuesta examinable','Admite interpretaciones discrepantes que se justifiquen con evidencia']
  },
  // Theory models: each draws a model that its source presents and that the class already names.
@@ -436,7 +436,7 @@ export const visualSchemas={
   ],
   verdict:'Observa qué respuestas son posibles. La duración aislada no acredita dominación.',
   task:{label:'En la ficha 1',text:'Si tu episodio incluye un intercambio, anota cómo se asigna el turno y qué respuestas quedaban abiertas.'},
-  source:'Mecanismos del cambio de turno: Calsamiglia y Tusón (2012, §2.2 · PDF 32–33). El esquema no muestra los lugares apropiados para la transición, PDF 33.',
+  source:'Mecanismos del cambio de turno: Calsamiglia y Tusón (2012, §2.2 · PDF 32–33). El manual explica también cuándo puede producirse el relevo entre hablantes: los «lugares apropiados para la transición» (PDF 33).',
   anchors:['Heteroselección: quien habla elige al siguiente','Autoselección: alguien empieza sin ser elegido','Observa qué respuestas son posibles','La duración aislada no acredita dominación']
  },
  'escritura-procesos':{
@@ -450,7 +450,7 @@ export const visualSchemas={
   ],
   back:'No forman un circuito fijo: cada proceso puede activar los otros, y revisar puede llevar a cambiar el plan.',
   task:{label:'En la ficha 2',text:'Si al revisar una inferencia deja de sostenerse, vuelve al plan: conserva la primera versión y explica el cambio.'},
-  source:'Modelo de Flower y Hayes (1980, 1981), en Calsamiglia y Tusón (2012, §3.4.1 · PDF 81). El esquema omite el monitor que regula los tres procesos.',
+  source:'Modelo de Flower y Hayes (1980, 1981), en Calsamiglia y Tusón (2012, §3.4.1 · PDF 81). En el modelo completo, un «monitor» coordina cuándo planificar, poner las ideas por escrito o revisar.',
   anchors:['describen los procesos de quien escribe','planificar, textualizar y revisar son procesos que se alternan','Textualizar es poner las ideas por escrito','revisar puede llevar a cambiar el plan','No forman un circuito fijo: cada proceso puede activar los otros']
  },
  'contexto-dimensiones':{
@@ -473,21 +473,26 @@ export const visualSchemas={
 // Image slots. While `file` is empty students see nothing and the author view shows the specification.
 // The teacher saves the image as dist/<file> (WebP, about 1600 × 900, under 250 KB) and fills `credit`.
 // AI images are scenes only: no text inside the image and no people; any needed text is laid over in HTML.
+const unaeBecasPair={
+ id:'unae-is2023',
+ label:'Ejemplo documental: resolución y aviso de las mismas becas UNAE',
+ intro:'Becas de grado IS2023 · UNAE, Ecuador. El aviso enlaza la resolución que aprueba las bases y el cronograma.'
+};
 export const visualImages={
  'img-aviso-puerta':{
   planned:'s1-e1',topic:'El discurso: lenguaje en una situación concreta',kind:'Escena',ai:true,placed:true,
   show:'Puerta de vidrio de la biblioteca de una facultad con una hoja en blanco pegada a la altura de los ojos. El texto del aviso se superpone en HTML.',
-  alt:'Puerta de la biblioteca de una facultad con el aviso pegado a la altura de los ojos.',
-  caption:'El aviso en su situación: «desde mañana» depende del día en que se pegó.',
+  alt:'Escena ficticia de una puerta de vidrio de biblioteca, con una hoja blanca pegada y estanterías al fondo. El aviso se muestra como texto sobre la hoja.',
+  caption:'Escena ficticia para situar el aviso: «desde mañana» depende del día en que se pegó.',
   overlay:openingNotice.text,
   prompt:'Fotografía realista, plano medio, puerta de vidrio de la biblioteca de una facultad universitaria latinoamericana, luz de día, una hoja A4 en blanco pegada con cinta a la altura de los ojos, sin texto legible, sin personas, sin logotipos.',
-  file:null,credit:null,width:1600,height:900
+  file:'img/img-aviso-puerta.webp',credit:'OpenAI · ilustración creada para este curso',width:1600,height:900
  },
  'img-entonacion-bueno':{
   planned:'s3-e1',topic:'Una marca de voz necesita contraste',kind:'Evidencia',ai:false,placed:true,
   show:'Captura de Praat con la curva de tono de tu grabación de «bueno» dicho dos veces: para iniciar una respuesta y para cerrar una discusión.',
   alt:'Dos curvas de tono de «bueno»: [describe la dirección de cada curva al añadir la imagen].',
-  caption:'Demostración de aula grabada por el docente; no es una voz del documento analizado.',
+  caption:'Demostración de aula: grabación del docente.',
   file:null,credit:null,width:1600,height:900
  },
  'img-cartelera':{
@@ -499,16 +504,38 @@ export const visualImages={
  },
  'img-resolucion':{
   planned:'s11-e1',topic:'Género, secuencia y medio',kind:'Evidencia',ai:false,placed:true,
-  show:'Captura de una página de la resolución sobre las ayudas, con el enlace de origen y la fecha de consulta.',
-  alt:'Página de la resolución: [describe el encabezado, sus partes y dónde aparece lo que se dispone].',
-  caption:'La resolución dispone: realiza una acción institucional.',
-  file:null,credit:null,width:1600,height:1200
+  show:'Recorte fiel de la página 5 de la Resolución 001-UNAE-CBAEEE-002-2023: autoridad, bloque RESUELVE, artículo 1, disposiciones y fecha.',
+  alt:'Resolución UNAE: bajo el rótulo RESUELVE, el artículo 1 aprueba las bases y el cronograma de becas de grado IS2023. Después se ordena su publicación. Es un recorte de la página 5.',
+  caption:'Resolución 001-UNAE-CBAEEE-002-2023 (4 de mayo de 2023) · recorte de la p. 5. El artículo 1 aprueba las bases y el cronograma de postulación; la disposición general ordena su publicación.',
+  pair:unaeBecasPair,
+  source:{url:'https://unae.edu.ec/wp-content/uploads/2023/05/resoluciO%CC%81n_no._001-unae-cbaeee-002-2023-signed-signed-1.pdf#page=5',label:'Fuente: resolución original · PDF, p. 5',consulted:'18 de octubre de 2026'},
+  transcript:[
+   'En ejercicio de las atribuciones que le confiere la Constitución de la República del Ecuador, Ley Orgánica de Educación Superior, Reglamento de Becas, Ayudas Económicas y Estímulos Económicos para los Estudiantes de la Universidad Nacional de Educación, y demás normativa aplicable:',
+   'RESUELVE:',
+   'Artículo 1.- Aprobar las bases de postulación y el cronograma de postulación, precalificación y adjudicación a becas de grado IS2023, de conformidad con el documento adjunto que forma parte integrante de la presente resolución.',
+   'DISPOSICIÓNES GENERALES',
+   'PRIMERA. - Notifíquese con el contenido de la presente resolución a la Dirección de Comunicación Estratégica y Secretaría General, a fin de que proceda con su inmediata publicación.',
+   'DISPOSICIÓN FINAL:',
+   'La presente resolución entrará en vigencia a partir de su aprobación.',
+   'Dado y suscrito en la ciudad de Azogues, provincia de Cañar a los cuatro días del mes de mayo de 2023.'
+  ],
+  file:'img/img-resolucion.webp',credit:'Universidad Nacional de Educación (UNAE) · 2023',width:1601,height:1126
  },
  'img-convocatoria':{
   planned:'s11-e1',topic:'Género, secuencia y medio',kind:'Evidencia',ai:false,placed:true,
-  show:'Captura del aviso de convocatoria de las mismas ayudas, con el enlace de origen y la fecha de consulta.',
-  alt:'Aviso de convocatoria: [describe qué acción pide a sus destinatarios y dónde aparece].',
-  caption:'El aviso orienta una acción de sus destinatarios.',
-  file:null,credit:null,width:1600,height:1200
+  show:'Captura del cuerpo del aviso oficial «Becas nuevas y renovación», con el enlace a la misma resolución, plazo, emisor y fecha de publicación.',
+  alt:'Aviso de Bienestar Universitario UNAE: se dirige a la comunidad estudiantil, enlaza la Resolución 001-UNAE-CBAEEE-002-2023, destaca la postulación del 8 al 21 de mayo de 2023 y enlaza las bases. La fecha publicada es el 5 de mayo de 2023.',
+  caption:'Aviso «Becas nuevas y renovación» (5 de mayo de 2023) · recorte de la página web. Difunde la decisión y destaca cuándo postular. Su primer párrafo identifica y enlaza la misma resolución.',
+  pair:unaeBecasPair,
+  source:{url:'https://unae.edu.ec/becas-nuevas-y-renovacion/',label:'Fuente: aviso original · página web',consulted:'18 de octubre de 2026'},
+  transcript:[
+   'Estimada Comunidad Estudiantil:',
+   'Por medio del presente ponemos en su conocimiento la RESOLUCIÓN No.001-UNAE-CBAEEE-002-2023, de fecha 04 de mayo del 2023; el Comité de Becas, Ayudas Económicas y Estímulos Económicos, resuelve en el Artículo 1.- Aprobar las bases de postulación y el cronograma de postulación, precalificación y adjudicación a becas de grado IS2023.',
+   'Fechas de postulación: 08 al 21 de mayo del 2023.',
+   '>> BASES DE POSTULACIÓN <<',
+   'Dirección de Bienestar Universitario',
+   '5 mayo, 2023'
+  ],
+  file:'img/img-convocatoria.webp',credit:'Dirección de Bienestar Universitario, UNAE · 2023',width:858,height:640
  }
 };

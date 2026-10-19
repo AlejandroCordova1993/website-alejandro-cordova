@@ -1,11 +1,11 @@
 import {foundations,distinctions} from './foundations.js';
 // Exposition accompanies an existing agenda block; it adds no assignments or minutes.
 // Examples are authored illustrations, not quotations or new empirical corpus.
-const topic=(block,title,explanation,points,example,reading,prompt,source,lesson,projectionDetails=false)=>({block,title,explanation,points,example,reading,prompt,source,lesson,projectionDetails});
+const topic=(block,title,explanation,points,example,reading,prompt,source,lesson)=>({block,title,explanation,points,example,reading,prompt,source,lesson});
 export const classContent={
  's1-e1':[
   ...foundations.map(item=>({...item,block:0})),
-  {block:0,title:'El concepto de discurso en cinco autores',explanation:'Estas perspectivas construyen problemas distintos: enunciación, diálogo, formación histórica del saber y relaciones entre discurso y sociedad. Las formulaciones son paráfrasis introductorias; no son cinco definiciones equivalentes ni un único método.',perspectives:true,points:[],source:'guia-fundamentos'},
+  {block:0,title:'El concepto de discurso en cinco autores',explanation:'Estas perspectivas construyen problemas distintos: enunciación, diálogo, formación histórica del saber y relaciones entre discurso y sociedad. Las paráfrasis introductorias presentan el aporte específico de cada enfoque.',perspectives:true,points:[],source:'guia-fundamentos'},
   topic(2,'Observar antes de atribuir intención','Una descripción identifica una forma que otro lector puede comprobar. La interpretación propone qué permite entender esa forma en una situación. El motivo de quien escribe constituye una hipótesis adicional. La descripción también usa categorías: separar sus fundamentos ayuda a revisarlas, sin suponer una observación libre de teoría.',
    ['Distingue palabras presentes, información recuperada y explicación propuesta.','La ausencia de un nombre no identifica por sí sola a quien quiso ocultarlo.'],
    '«Se canceló la reunión».','Podemos comprobar que esta oración no nombra a quien canceló. Para explicar la omisión necesitamos el texto circundante y la situación de publicación.',
@@ -40,7 +40,7 @@ export const classContent={
   topic(5,'El género organiza la intervención','Una intervención larga puede ser esperable en una conferencia. En una conversación, su relación con turnos, respuestas y oportunidades de oposición puede ser diferente. La duración aislada no acredita dominación.',
    ['Heteroselección: quien habla elige al siguiente. Autoselección: alguien empieza sin ser elegido. Observa qué respuestas son posibles.','El público presente y el público digital no participan del mismo modo.'],
    'Un docente explica durante cinco minutos; después abre preguntas y retoma una objeción.','Para estudiar control de la interacción interesa la secuencia completa y la posibilidad de respuesta, no solo contar los minutos del docente.',
-   '¿Qué evidencia mostraría una restricción de participación en este género?','guia-1',4,true)
+   '¿Qué evidencia mostraría una restricción de participación en este género?','guia-1',4)
  ],
  's3-e1':[
   topic(1,'Una marca de voz necesita contraste','Una pausa, una altura tonal o un énfasis puede contribuir a organizar el discurso. Su función se argumenta en relación con la secuencia y se contrasta con otros casos.',
@@ -70,7 +70,7 @@ export const classContent={
   topic(1,'El lector aporta conocimientos','Comprender relaciona expresiones del texto con información disponible para el lector. Una inferencia necesita explicitar qué aporta cada componente y qué lectura alternativa sigue siendo posible.',
    ['Flower y Hayes, según el manual, describen los procesos de quien escribe: planificar, textualizar y revisar son procesos que se alternan. Textualizar es poner las ideas por escrito; revisar puede llevar a cambiar el plan. No forman un circuito fijo: cada proceso puede activar los otros.','El conocimiento que el analista supone no coincide necesariamente con el de los lectores reales.','En Grice según Escandell, «Algunos grupos entregaron» puede sugerir «no todos». «Algunos; de hecho, todos» cancela esa implicatura. El supuesto de una entrega anterior en «nuevamente» funciona de otra manera.'],
    '«Adjunte nuevamente el certificado».','«Nuevamente» presenta una acción anterior como información dada por supuesta: una presuposición, según el tratamiento de Calsamiglia y Tusón y Brown y Yule. No prueba que esa acción haya ocurrido. Identificar el certificado exige otras referencias. La lectura integrada distingue este caso de una implicatura.',
-   '¿Qué aporta la expresión y qué conocimiento estamos añadiendo?','escandell',1,true)
+   '¿Qué aporta la expresión y qué conocimiento estamos añadiendo?','escandell',1)
  ],
  's5-e2':[
   topic(1,'Poner a prueba una inferencia','Una interpretación se fortalece cuando mostramos su fundamento y un dato que podría confirmarla o hacerla cambiar. No toda cláusula es ambigua ni toda inferencia necesita una rival igualmente plausible. La interpretación del lector, la intención atribuida y el efecto observado deben identificarse por separado.',
@@ -79,7 +79,7 @@ export const classContent={
    '¿Qué información resolvería la discrepancia sin adivinar lo que quiso decir quien escribió?','brown-yule',1),
   topic(1,'Del significado local al tema global','La macroestructura organiza el sentido global que se reconstruye desde las proposiciones del texto. Seleccionar conserva información pertinente; generalizar sustituye casos por una categoría común; integrar reúne pasos en una acción global. Estas operaciones requieren conservar las condiciones que sostienen la síntesis. La lectura integrada muestra ejemplos y sus pérdidas de información.',
    ['Una síntesis puede omitir detalles; debe justificar su selección.','Cambiar una condición o introducir una conclusión ajena altera el contenido que se representa.'],
-   'Texto: «La ayuda exige matrícula vigente y acreditación de ingresos». Síntesis: «La ayuda está condicionada a matrícula e ingresos».','Esta condensación reúne las dos condiciones, pero pierde «vigente» y «acreditación»: hay que revisarla porque puede cambiar lo que se exige. Acortar dos requisitos no ejemplifica por sí solo generalizar; la lectura integrada muestra una generalización mediante una categoría común. «La ayuda se ofrece a todos» va más lejos: añade una generalización que el fragmento no sostiene.',
+   'Texto: «La ayuda exige matrícula vigente y acreditación de ingresos». Síntesis: «La ayuda está condicionada a matrícula e ingresos».','Esta condensación reúne las dos condiciones, pero pierde «vigente» y «acreditación»: hay que revisarla porque puede cambiar lo que se exige. Para generalizar, los casos deben poder reunirse bajo una categoría común; la lectura integrada muestra un ejemplo de esa operación. «La ayuda se ofrece a todos» va más lejos: añade una generalización que el fragmento no sostiene.',
    '¿Qué condición perderíamos con una síntesis demasiado amplia?','van-dijk',2)
  ],
  's6-e1':[
@@ -131,7 +131,7 @@ export const classContent={
  's9-e2':[
   topic(1,'Responsabilidad y perspectiva','En la distinción de Ducrot presentada por el manual, el sujeto hablante (ser empírico) produce el mensaje; el locutor es la figura responsable de enunciarlo; los enunciadores son figuras o voces a las que atribuye puntos de vista. No equivalen automáticamente a personas, redactores o firmantes.',
    ['Para esta ficha usamos esas definiciones de Ducrot. No las trasladamos automáticamente a otros modelos de enunciación.','Negar una proposición puede evocar una perspectiva sin identificar un hablante empírico.'],
-   '«La medida no es un privilegio».','Ejemplo docente de una lectura polifónica de la negación, apoyada en Ducrot según Caldiz: se evoca «la medida es un privilegio» y se lo rechaza. El enunciado aislado no identifica a quien lo habría sostenido. El cotexto permite precisar si se responde a algo dicho o se previene una objeción.',
+   '«La medida no es un privilegio».','En esta lectura polifónica de la negación, apoyada en Ducrot según Caldiz, el locutor (L) pone en escena dos puntos de vista: E1 afirma «la medida es un privilegio»; E2 rechaza esa afirmación. L se distancia de E1 y asume E2. Estos puntos de vista se reconstruyen a partir del enunciado. El sujeto hablante es quien produce materialmente el mensaje. El enunciado aislado no identifica a quien habría sostenido E1. El cotexto permite precisar si se responde a algo dicho o se previene una objeción.',
    '¿Podemos atribuir la perspectiva a alguien o solo describir que se evoca?','caldiz',1)
  ],
  's10-e1':[
@@ -173,7 +173,7 @@ export const classContent={
  's13-e1':[
   topic(1,'Un texto puede combinar secuencias','Las secuencias describen operaciones internas que pueden coexistir en un género. Segmentar exige justificar la función del tramo y su relación con los siguientes.',
    ["Narración: presenta acontecimientos relacionados, participantes y una transformación entre una situación inicial y otra final. Los tiempos y conectores ayudan; mencionar un hecho pasado no basta por sí solo.", "Descripción: identifica aquello que describe —anclaje—, selecciona partes o propiedades —aspectualización— y establece relaciones, como ubicación o comparación. También puede describir procesos y adoptar un punto de vista.", "Explicación: hace comprensible una dificultad mediante definición, clasificación, reformulación, ejemplo o analogía. La dificultad y su respuesta pueden estar implícitas; no se limita a explicar causas.", "Argumentación: sostiene una posición ante otras posibles mediante razones que conducen a una conclusión. Hay que reconstruir el paso entre ellas, aunque falte un conector.", "Diálogo: relaciona intervenciones en intercambios, como pregunta/respuesta u ofrecimiento/aceptación. Puede estar registrado o representado dentro de un relato; no equivale simplemente a tener varias voces."],
-   '«La solicitud estaba incompleta. Ana añadió el certificado y terminó de reunir los documentos. El certificado contiene nombre y fecha. Ahora el expediente reúne los documentos exigidos; por eso debe admitirse».','El inicio relata una transformación, de solicitud incompleta a expediente reunido. Después se describen partes del certificado. El cierre sostiene una decisión mediante una razón. Son ejemplos inventados para reconocer relaciones; un verbo o conector aislado no determina la clasificación.',
+   '«En el primer taller de lectura, el grupo entregó respuestas muy breves. La docente incorporó un intercambio en parejas y, en la siguiente entrega, aparecieron más referencias al cuento. El curso reúne a treinta estudiantes y cuenta con quince ejemplares impresos, con márgenes amplios para anotar. Conviene mantener el intercambio para contrastar interpretaciones, pero habrá que comprobar quiénes participan y qué cambia en cada escrito antes de atribuirle la mejora».','El inicio relata un cambio entre dos entregas y las acciones que ocurrieron entre ellas. Después se describen el grupo y los materiales. El cierre propone mantener el intercambio, da una razón y establece una condición para valorar sus resultados. Que los cambios ocurran después del intercambio permite formular una hipótesis sobre su relación; habrá que contrastarla. En este ejemplo inventado, un verbo o conector aislado no determina la clasificación: cada tramo se reconoce por su función en el conjunto.',
    '¿Qué marca y qué función justifican cada segmentación?','calsamiglia',0)
  ],
  's13-e2':[
@@ -191,7 +191,7 @@ export const classContent={
  's14-e2':[
   topic(1,'Una respuesta modifica la interacción','El manual estudia intervenciones que se relacionan en intercambios, como pregunta y respuesta. Bolívar profundiza en diálogo, evaluación y cambio con un método propio. Examina qué hace una respuesta con lo anterior: retoma, reformula, objeta o evalúa; no todo diálogo exige una evaluación explícita.',
    ['La evaluación se construye en relaciones entre intervenciones.','Distingue interacción registrada de diálogo reconstruido dentro de un relato.'],
-   'A: «El trámite es accesible». B: «¿Accesible también para quien no tiene conexión?». A: «Entonces debemos precisar esa condición».','La respuesta cuestiona el alcance de «accesible». A reconoce que debe precisar la condición, pero todavía no ofrece una nueva formulación. La secuencia permite describir ese cambio; no prueba un efecto general en toda la institución.',
+   'A: «La inscripción al taller de lectura es accesible: se completa en línea». B: «¿Y cómo se inscribe quien no tiene conexión?». A: «Por eso ofrecemos un punto de atención en el campus, de ocho a doce».','B cuestiona que la conexión esté al alcance de todas las personas. A responde con una alternativa presencial y desplaza el foco hacia un lugar y un horario. Esa respuesta atiende la dificultad de conexión; quedan por examinar el traslado y la disponibilidad en ese horario antes de dar por resuelto el acceso. La secuencia permite describir ese cambio; no prueba un efecto general en toda la institución.',
    '¿Qué modifica la respuesta y dónde se observa la modificación?','bolivar',3)
  ],
  's15-e1':[
@@ -220,13 +220,3 @@ export const classContent={
  ]
 };
 
-export function classSlides(session){
- const content=classContent[session.id]||[];
- return session.agenda.flatMap(([,title,task],block)=>[
-  ...content.filter(topic=>topic.block===block).flatMap(topic=>[
-   {...topic,kind:'concept'},
-   ...(topic.example?[{...topic,kind:'example'}]:[])
-  ]),
-  {kind:'work',block,title,task}
- ]);
-}

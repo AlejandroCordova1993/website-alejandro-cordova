@@ -90,31 +90,36 @@ const renderers={
  branch:s=>`<div class="vs-branch"><p class="vs-branch-root">${esc(s.question)}</p><ul class="vs-branches" role="list">${s.branches.map(b=>`<li>${card(b.name,b.text)}</li>`).join('')}</ul></div>${verdictHtml(s.verdict)}`,
  cycle:s=>`<div class="vs-cycle"><ol class="vs-flow vs-cycle-steps" role="list">${s.steps.map(st=>`<li>${card(st.name,st.text)}</li>`).join('')}</ol><p class="vs-cycle-back"><span class="vs-cycle-head" aria-hidden="true"></span>${esc(s.back)}</p></div>${verdictHtml(s.verdict)}`,
  facets:s=>`<div class="vs-facets">${card(s.center.label,s.center.text,' is-center')}<ol class="vs-facet-list" role="list">${s.facets.map((f,i)=>`<li class="vs-card"><p class="vs-card-label"><span class="vs-facet-number" aria-hidden="true">${i+1}</span>${esc(f.name)}</p>${f.example?`<p class="vs-card-text">${esc(f.example)}</p>`:''}</li>`).join('')}</ol></div>${verdictHtml(s.verdict)}`,
- voices:s=>`${objectHtml(s.object)}<div class="vs-voices"><p class="vs-subject"><strong>${esc(s.subject.role)}:</strong> ${esc(s.subject.text)}</p><div class="vs-voices-row">${card(s.speaker.role,s.speaker.text,' is-speaker')}<p class="vs-relation">${uiIcon('arrowRight')}<span>${esc(s.relation)}</span></p><div class="vs-card is-evoked"><p class="vs-card-label">${esc(s.evoked.role)}</p><p class="vs-example">${esc(s.evoked.text)}</p></div></div></div>`
+ voices:s=>`${objectHtml(s.object)}<div class="vs-voices"><p class="vs-subject"><strong>${esc(s.subject.role)}:</strong> ${esc(s.subject.text)}</p><section class="vs-enunciation" aria-label="Escena del enunciado"><p class="vs-scene-label">Escena del enunciado</p><div class="vs-locutor"><p class="vs-card-label">${esc(s.speaker.role)}</p><p class="vs-card-text">${esc(s.speaker.text)}</p></div><p class="vs-viewpoints-label">Puntos de vista puestos en escena por L</p><div class="vs-voices-row">${[s.evoked,s.assumed].map((v,i)=>`<div class="vs-card ${i?'is-assumed':'is-evoked'}"><p class="vs-card-label">E${i+1} · ${esc(v.role)}</p><p class="vs-example">${esc(v.text)}</p><p class="vs-stance">${esc(v.stance)}</p></div>`).join('')}</div></section></div>`
 };
 
-export function schemaHtml(id,{projected=false}={}){
+export function schemaHtml(id){
  const s=visualSchemas[id],render=s&&renderers[s.type];
  if(!render)return '';
  const task=s.task?`<p class="schema-task"><strong>${esc(s.task.label)}.</strong> ${esc(s.task.text)}</p>`:'';
  const caption=`<figcaption class="caption">${s.limit?`<span class="schema-limit">Límite: ${esc(s.limit)}</span> `:''}${esc(s.source)}</figcaption>`;
  // A theory model says whose model it is, so it is not read as one of the course's examples.
  const model=s.model?`<p class="vs-model">${esc(s.model)}</p>`:'';
- return `<figure class="visual-schema vs-${s.type}${s.type==='path'?' path-schema':''}${projected?' is-projected':''}" data-schema="${esc(id)}" aria-label="${esc(s.label)}">${model}${render(s)}${task}${caption}</figure>`;
+ return `<figure class="visual-schema vs-${s.type}${s.type==='path'?' path-schema':''}" data-schema="${esc(id)}" aria-label="${esc(s.label)}">${model}${render(s)}${task}${caption}</figure>`;
 }
 
 // Placement comes from the data: a `placed` schema belongs to the class and topic it names. One that
-// `replaces` the example takes the place of the topic's example block on the page and of its example
-// screen in Modo clase; one with `position:'after-example'` follows the example, which stays; the rest
+// `replaces` the example takes the place of the topic's example block on the page; one with
+// `position:'after-example'` follows the example, which stays; the rest
 // follow the topic's explanation.
 const placedIds=(sessionId,title)=>Object.keys(visualSchemas).filter(id=>{const s=visualSchemas[id];return s.placed&&s.planned===sessionId&&s.topic===title;});
 const position=id=>visualSchemas[id].replaces==='example'?'example':visualSchemas[id].position==='after-example'?'after':'lead';
-const placedAt=(where,sessionId,title,options)=>placedIds(sessionId,title).filter(id=>position(id)===where).map(id=>schemaHtml(id,options)).join('');
+const placedAt=(where,sessionId,title)=>placedIds(sessionId,title).filter(id=>position(id)===where).map(id=>schemaHtml(id)).join('');
 export const hasExampleSchema=(sessionId,title)=>placedIds(sessionId,title).some(id=>position(id)==='example');
-export const leadSchemas=(sessionId,title,options)=>placedAt('lead',sessionId,title,options);
-export const exampleSchemas=(sessionId,title,options)=>placedAt('example',sessionId,title,options);
-export const afterExampleSchemas=(sessionId,title,options)=>placedAt('after',sessionId,title,options);
-export const topicImages=(sessionId,title,options)=>Object.keys(visualImages).filter(id=>{const img=visualImages[id];return img.placed&&img.planned===sessionId&&img.topic===title;}).map(id=>imageHtml(id,options)).join('');
+export const leadSchemas=(sessionId,title)=>placedAt('lead',sessionId,title);
+export const exampleSchemas=(sessionId,title)=>placedAt('example',sessionId,title);
+export const afterExampleSchemas=(sessionId,title)=>placedAt('after',sessionId,title);
+export function topicImages(sessionId,title,options){
+ const ids=Object.keys(visualImages).filter(id=>{const img=visualImages[id];return img.placed&&img.planned===sessionId&&img.topic===title;});
+ const pair=visualImages[ids[0]]?.pair,html=ids.map(id=>imageHtml(id,options)).join('');
+ return pair&&ids.length>1&&ids.every(id=>visualImages[id].file&&visualImages[id].pair?.id===pair.id)
+  ?`<div class="visual-image-pair" role="group" aria-label="${esc(pair.label)}"><p class="vi-pair-intro">${esc(pair.intro)}</p>${html}</div>`:html;
+}
 
 // An image appears when its file exists; until then only the author view shows what to create.
 export function imageHtml(id,{author=authorMode}={}){
@@ -122,7 +127,9 @@ export function imageHtml(id,{author=authorMode}={}){
  if(!img)return '';
  if(img.file){
   const credit=[img.credit,img.ai?'Imagen generada con IA':''].filter(Boolean).join(' · ');
-  return `<figure class="visual-image" data-image="${esc(id)}"><div class="vi-frame"><img src="${esc(img.file)}" alt="${esc(img.alt)}" width="${img.width}" height="${img.height}" loading="lazy" decoding="async">${img.overlay?`<p class="vi-overlay">${esc(img.overlay)}</p>`:''}</div><figcaption class="caption">${esc(img.caption)}${credit?` <span class="vi-credit">${esc(credit)}</span>`:''}</figcaption></figure>`;
+  const source=img.source?`<a class="source-link vi-source" href="${esc(img.source.url)}" target="_blank" rel="noopener noreferrer">${esc(img.source.label)}<span class="sr-only"> (otra pestaña)</span></a><span class="vi-consulted">Consultado: ${esc(img.source.consulted)}.</span>`:'';
+  const reading=img.transcript?`<div class="vi-reading-tools"><a class="vi-document-link" href="${esc(img.file)}" target="_blank" rel="noopener noreferrer">Ampliar imagen<span class="sr-only"> (otra pestaña)</span></a><details class="vi-transcript"><summary>Leer el texto de la imagen</summary><div class="vi-transcript-text">${img.transcript.map(p=>`<p>${esc(p)}</p>`).join('')}</div></details></div>`:'';
+  return `<figure class="visual-image" data-image="${esc(id)}"><div class="vi-frame"><img src="${esc(img.file)}" alt="${esc(img.alt)}" width="${img.width}" height="${img.height}" loading="lazy" decoding="async">${img.overlay?`<p class="vi-overlay">${esc(img.overlay)}</p>`:''}</div>${reading}<figcaption class="caption">${esc(img.caption)}${credit?` <span class="vi-credit">${esc(credit)}</span>`:''}${source}</figcaption></figure>`;
  }
  if(!author)return '';
  const rows=[['Qué mostrar',img.show],['Archivo','dist/img/'+id+'.webp · unos '+img.width+' × '+img.height+' px · menos de 250 KB'],['Texto alternativo (borrador)',img.alt],['Pie',img.caption],...(img.ai?[['Instrucción para la IA',img.prompt]]:[]),['Después','Completa «file» y «credit» en visual-schema-data.js.']];

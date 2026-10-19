@@ -4,7 +4,7 @@ import {esc} from './export.js';
 // Precise support for categories not covered by the manual passages. Consultation is optional;
 // these references never join the activity's document list or the notebook's saved schema.
 const ideology=[
- {resource:'van-dijk-ideologia',selection:'PDF 5–6: creencias compartidas por grupos y posibilidad de ideologías de resistencia. Original inglés; apoyo docente de esta síntesis en español, no es una lectura obligatoria.'},
+ {resource:'van-dijk-ideologia',selection:'PDF 5–6: creencias compartidas por grupos y posibilidad de ideologías de resistencia. Consulta docente opcional en inglés, como apoyo de esta síntesis en español.'},
  {resource:'fairclough',selection:'Ideología y hegemonía: impresas 86–91 / PDF personal 92–97 del ejemplar consultado. Consulta docente.'}
 ];
 export const lessonReferences={3:{2:ideology}};

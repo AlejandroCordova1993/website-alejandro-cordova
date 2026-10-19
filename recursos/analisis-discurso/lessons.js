@@ -158,7 +158,7 @@ export const lessons={
   ],
   [
    "Dibujar una relación no la demuestra",
-   "En el gráfico de relaciones del cuaderno, una relación documentada requiere fuente y descripción del vínculo; una propuesta conserva su carácter de hipótesis o experimento. La posición de un nodo no mide poder y la semejanza temática no acredita circulación. Si tu pregunta exige recepción, necesitas evidencias del encuentro con lectores o públicos, más allá de que dos archivos estén publicados en la web."
+   "El «Mapa de relaciones · herramienta de la ficha 5» se abre en esa ficha y en la actividad de la semana 11, clase 2, y semana 12, clase 2. Una relación documentada requiere fuente y descripción del vínculo; una propuesta conserva su carácter de hipótesis o experimento. Las relaciones que añadas se reúnen también en «Mi trabajo». La posición de un nodo no mide poder y la semejanza temática no acredita circulación. Si tu pregunta exige recepción, necesitas evidencias del encuentro con lectores o públicos, más allá de que dos archivos estén publicados en la web."
   ]
  ],
  "6": [

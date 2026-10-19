@@ -1,234 +1,1286 @@
-import {unitForWeek} from './course.js';
-import {resourceById} from './resources.js';
-const agenda=(minutes,teacher,work,close)=>minutes===60?[[10,'Abrir el problema',teacher],[15,'Herramientas y lectura',work],[25,'Trabajo y contraste',close],[10,'Cierre y continuidad','Registrar un límite y la siguiente decisión.']]:[[10,'Retomar la pregunta',teacher],[35,'Taller de evidencia',work],[10,'Pausa','Retomar después con el mismo documento.'],[30,'Producción',close],[25,'Revisión entre lectores','Pedir un localizador, una alternativa y una corrección concreta.'],[10,'Cierre','Conservar versiones y anotar qué cambió.']];
-const rows=[
- ['Diagnóstico: ¿qué permite afirmar la evidencia?','¿Una omisión demuestra intención?','Contrastar y revisar una interpretación','¿Qué contexto cambia nuestra lectura?','agencia','agencia','Diagnóstico: interpretación inicial y revisada'],
- ['Enunciar y transcribir','¿Qué decide una transcripción?','Palabras, voz y cuerpo','¿Qué cambia entre leer y observar?','guia-1','drexler','Ficha oral en borrador'],
- ['Describir sin anticipar','¿Qué conserva o pierde nuestro registro?','Revisar el episodio oral','¿Qué lectura alternativa explica el mismo recurso?','caldiz','guia-1','Ficha 1 revisada'],
- ['Escritura y corpus','¿Quién actúa en este documento?','Norma y representación','¿Cómo se distribuyen las capacidades y condiciones?','guia-2','becas','Hito 1: pregunta y corpus'],
- ['Escribir para un lector','¿Qué conocimiento supone esta cláusula?','Interpretaciones y datos faltantes','¿Qué datos respaldan cada inferencia?','guia-2','becas','Registro de hipótesis'],
- ['Composición y lectura','¿Qué destaca y qué queda subordinado?','Reformular con controles','¿Qué cambia al conservar palabras y alterar su jerarquía?','guia-2','becas','Ficha 2 revisada'],
- ['Elegir el enfoque','¿Qué pregunta exige qué método?','Construir un dossier contextual','¿Qué dato contextual resuelve nuestra dificultad?','pardo','guia-3','Método y fuentes contextuales'],
- ['Contrastar y delimitar','¿Qué no permite concluir nuestro corpus?','Transferencia individual','¿Podemos explicar un caso nuevo con el método elegido?','guia-3','becas','Ficha 3 e hito 2'],
- ['Personas y destinatarios','¿A quién incluye este nosotros?','Dar voz y asumir responsabilidad','¿Quién se responsabiliza de esta proposición?','guia-4','marquez','Ficha 4 en borrador'],
- ['Perspectivas en tensión','¿Cómo se presenta una voz al citarla?','Revisar una atribución','¿Citar implica adherirse?','guia-4','marquez','Ficha 4 revisada'],
- ['Género, secuencia y medio','¿Qué acción hace reconocible este género?','Cambiar las condiciones de lectura','¿Qué seleccionamos al reformular para otro destinatario?','guia-5','becas','Ficha 5 en borrador'],
- ['Construir el argumento parcial','¿Cómo se relacionan nuestras evidencias?','Taller de análisis entre pares','¿Dónde hay un salto inferencial?','guia-5','becas','Ficha 5 e hito 3'],
- ['Organizaciones mixtas','¿Cómo se articulan las secuencias?','Narrar, describir y explicar','¿Qué transición necesita una justificación?','guia-6','becas','Matriz de secuencias'],
- ['Reconstruir una inferencia','¿Qué puente conecta premisa y conclusión?','Diálogo, objeción y evaluación','¿Qué modifica la respuesta del otro?','guia-6','bolivar','Ficha 6 y borrador'],
- ['Límites y contraejemplos','¿Qué nos obliga a restringir el argumento?','Probar una actividad docente','¿La consigna permite investigar o repetir?','guia-6','becas','Hito 4: revisión y mediación'],
- ['Defender una interpretación','¿Podemos explicar nuestras decisiones?','Cerrar el expediente','¿Qué sabemos ahora y qué sigue abierto?','guia-6','bolivar','Hito 4: informe y defensa']
+// Each class has one final definition. Edit its preparation, product and agenda here.
+// Identifiers, order and timing also support saved work and navigation.
+export const sessions=[
+  {
+    "id": "s1-e1",
+    "week": 1,
+    "encounter": 1,
+    "unit": 1,
+    "duration": 60,
+    "title": "Discurso y AD · Diagnóstico inicial",
+    "question": "Comprender qué es el discurso y reconocer qué información expresa cada versión del aviso de becas.",
+    "resource": "agencia",
+    "product": "Un párrafo con una observación respaldada por el texto, dos hipótesis y el dato necesario para contrastarlas.",
+    "agenda": [
+      [
+        15,
+        "Fundamentos: discurso y análisis del discurso",
+        "Sigue la explicación de discurso y AD a partir del aviso de la biblioteca que aparece en pantalla. Después lee la tabla con los conceptos de cinco autores. Las explicaciones están en «Teoría», arriba. El aviso ilustra los conceptos; el diagnóstico se realiza con las versiones A, B y C sobre becas."
+      ],
+      [
+        10,
+        "Tres versiones, un problema",
+        "Lee A, B y C en «Documento de análisis». En pareja, señala qué acción se formula, qué participante se nombra y qué información cambia. En C también cambia lo afirmado sobre las becas. En la clase 2 compararás tu interpretación con dos contextos."
+      ],
+      [
+        10,
+        "Separar descripción e interpretación",
+        "Elige una diferencia entre las versiones. Escribe qué palabras la muestran y separa esa observación de tu interpretación. No atribuyas una intención de ocultar solo porque no aparece un actor. El docente comentará un ejemplo; compara con tus notas."
+      ],
+      [
+        15,
+        "Formular hipótesis rivales",
+        "Con tu pareja, propón dos explicaciones posibles de la ausencia del órgano responsable en B. Para cada una, indica qué dato del documento o de su situación necesitarías. Guarda ambas hipótesis para compararlas con los contextos en la clase 2."
+      ],
+      [
+        10,
+        "Guardar mi lectura inicial",
+        "En «Mi lectura inicial», escribe individualmente un párrafo con la diferencia observada, tus dos hipótesis y los datos que faltan. Comprueba el aviso de guardado. Conserva esta primera lectura: la revisarás sin borrarla en la clase 2. El diagnóstico no se califica."
+      ]
+    ],
+    "preparation": "Sin lectura previa. Lee estos conceptos con la explicación del docente y después realiza el diagnóstico."
+  },
+  {
+    "id": "s1-e2",
+    "week": 1,
+    "encounter": 2,
+    "unit": 1,
+    "duration": 120,
+    "title": "Contrastar y revisar una interpretación",
+    "question": "¿Qué contexto cambia nuestra lectura?",
+    "resource": "agencia",
+    "product": "Diagnóstico: interpretación inicial y revisada",
+    "agenda": [
+      [
+        10,
+        "Retomar la interpretación",
+        "Lee «Mi lectura inicial». Recupera con tu pareja las dos hipótesis y los datos que faltaban; no reemplaces la primera versión."
+      ],
+      [
+        15,
+        "Distinguir palabras, acto e interpretación",
+        "Sigue la explicación de texto, enunciado y enunciación. Usa una frase de tu diagnóstico para distinguir observación, inferencia, explicación y valoración. Señala qué proviene de las palabras y qué supusiste sobre la situación."
+      ],
+      [
+        20,
+        "Aplicar dos conceptos al diagnóstico",
+        "Retoma A, B y C y las paráfrasis de Benveniste y Fairclough en «Recordatorio para la actividad: Benveniste y Fairclough», dentro de «Teoría». Primero distingue quién realiza la acción mencionada de quién publica el aviso: si falta un dato, señálalo sin inventarlo. Después describe cómo cada versión expresa la suspensión y sus participantes. Comenta con tu pareja qué información del contexto necesitas para explicar esas diferencias. Estas observaciones preparan la revisión del mismo diagnóstico; no abras nuevas fichas."
+      ],
+      [
+        10,
+        "Pausa",
+        "Conserva la lectura inicial y las observaciones; retomarás el mismo diagnóstico."
+      ],
+      [
+        35,
+        "Contrastar los contextos",
+        "Lee los dos contextos de contraste que aparecen en este paso. Dedica 10 minutos a leer ambos, 15 a explicar con tu pareja qué hipótesis gana o pierde apoyo y 10 a escribir individualmente «Mi lectura después del contraste». Usa los contextos como casos construidos, no como hechos reales."
+      ],
+      [
+        15,
+        "Demostración oral",
+        "Escucha al docente leer un mismo enunciado con dos énfasis distintos. Describe qué cambia en la voz y qué interpretación permite proponer. Identifica ambas realizaciones como demostraciones de aula, no como voces del documento original. Esto prepara la observación oral de la semana 2."
+      ],
+      [
+        15,
+        "Conservar el cambio",
+        "Completa «Qué cambió y qué evidencia falta». Explica qué dato modificó tu lectura y lo que aún no puedes afirmar. Comprueba el guardado sin borrar «Mi lectura inicial». En la semana 2 comenzarás una ficha oral distinta de este diagnóstico."
+      ]
+    ],
+    "preparation": "Retoma «Mi lectura inicial»: la interpretación que guardaste y sus dos hipótesis. Los conceptos de esta clase te ayudarán a contrastarlas."
+  },
+  {
+    "id": "s2-e1",
+    "week": 2,
+    "encounter": 1,
+    "unit": 1,
+    "duration": 60,
+    "title": "Enunciar y transcribir",
+    "question": "¿Qué decide una transcripción?",
+    "resource": "guia-1",
+    "product": "Ficha 1: pregunta, identificación del episodio y transcripción localizable.",
+    "agenda": [
+      [
+        5,
+        "Identificar la intervención",
+        "Abre la charla de Drexler indicada en «Documento de análisis». Reconoce autor, publicación y situación; la sección «Teoría» explica cómo describirlos. El documento que transcribes es la charla, no la explicación teórica."
+      ],
+      [
+        20,
+        "Visionado completo",
+        "Mira el original de 16:30; el bloque incluye margen de acceso. Observa la diferencia entre la conferencia presente y el diálogo pasado que narra. Este visionado contextualiza el episodio que analizarás durante la unidad."
+      ],
+      [
+        15,
+        "Transcribir el tramo",
+        "Vuelve al tramo común 00:39–01:47 (68 segundos). Ese será tu episodio de observación; puedes acotarlo a 30–68 segundos dentro del mismo tramo. Si usas otro episodio registrado en el taller, elige 30–90 segundos. Dentro del episodio, transcribe solo un fragmento de 20–30 segundos y añade una leyenda de marcas. Anota los dos intervalos: el del episodio completo y el del fragmento transcrito. Comprueba las palabras mediante escucha y marca las pausas que realmente oigas."
+      ],
+      [
+        12,
+        "Iniciar la ficha oral",
+        "En «Evidencias», conserva la transcripción con fuente y localizador. Indica el intervalo del episodio y el del fragmento transcrito; señala a cuál corresponden las palabras que copias. En «Pregunta de la ficha», escribe qué quieres explicar de ese episodio. Los recursos de voz y cuerpo se añadirán al mismo episodio en la siguiente clase."
+      ],
+      [
+        8,
+        "Conservar para continuar",
+        "Comprueba fuente, intervalo y leyenda. Conserva esos registros para la clase de palabras, voz y cuerpo; no necesitas elegir otra charla ni rehacer la transcripción desde cero."
+      ]
+    ],
+    "preparation": "Antes de la clase, lee «Lectura integrada para preparar esta clase», dentro de «Teoría». En clase verás la charla completa antes de elegir el episodio y transcribir un fragmento."
+  },
+  {
+    "id": "s2-e2",
+    "week": 2,
+    "encounter": 2,
+    "unit": 1,
+    "duration": 120,
+    "title": "Palabras, voz y cuerpo",
+    "question": "¿Qué cambia entre leer y observar?",
+    "resource": "drexler",
+    "product": "Ficha 1: registros de voz y de cuerpo cuando sea observable, y argumento en borrador con alternativa y límite del registro.",
+    "agenda": [
+      [
+        10,
+        "Retomar el episodio registrado",
+        "Abre la transcripción y la identificación de la situación que conservaste en la primera clase. Comprueba el intervalo y quién habla o qué voz se representa. En Drexler, distingue la conferencia presente del diálogo narrado."
+      ],
+      [
+        20,
+        "Reescucha dirigida del mismo tramo",
+        "Vuelve al intervalo guardado de tu episodio. Si usas Drexler, está dentro de 00:39–01:47; si usas un registro de taller, sigue su intervalo propio. Reescucha solo las partes necesarias para localizar voz y cuerpo; conserva el contexto observado en la primera clase."
+      ],
+      [
+        15,
+        "Comprobar la transcripción y las voces",
+        "Abre la transcripción que ya guardaste y comprueba sus palabras, intervalo y leyenda. Corrige solo las marcas que lo necesiten. Identifica una característica verbal del tramo, como una cita, un marcador o una forma personal, y señala quién habla o qué voz se representa. Guarda esa observación en «Evidencias» y explica su posible función en «Mi argumento»; no escribas otra transcripción completa."
+      ],
+      [
+        15,
+        "Escuchar y observar",
+        "Añade al registro de la ficha 1 dos recursos de voz, como pausa, énfasis, cambio de timbre o risa, y un recurso corporal cuando tu registro permita observarlo. Para cada uno, indica el intervalo y describe lo percibido antes de interpretar su función. Si tu episodio propio solo tiene audio, declara ese límite y no inventes un gesto."
+      ],
+      [
+        10,
+        "Pausa",
+        "Conserva las preparaciones y localizadores; no necesitas abrir una ficha nueva al retomar."
+      ],
+      [
+        15,
+        "Comparar con un intercambio de taller",
+        "Participa en una pregunta, respuesta y aclaración organizadas por el docente. Compara oralmente cómo una respuesta retoma la intervención anterior y distingue ese intercambio del diálogo que Drexler cuenta. Si necesitas guardar una nota de la comparación, añádela al final de «Mi argumento» con el título «Comparación de aula» y señala que es una producción de clase. No hace falta transcribir otro episodio ni empezar otra ficha."
+      ],
+      [
+        20,
+        "Contrastar en pareja",
+        "Pide a un compañero volver a un intervalo y comprobar tu descripción. Formula cada uno una explicación de la misma marca; comparen qué dato apoya o limita cada lectura."
+      ],
+      [
+        15,
+        "Escribir el argumento en borrador",
+        "En «Mi argumento» de la ficha 1, conserva una interpretación inicial, su alternativa y un límite. Anota qué necesitas comprobar para revisar esa lectura en la semana 3."
+      ]
+    ],
+    "preparation": "Retoma la charla, el intervalo y la transcripción guardados en la primera clase. La sección «Teoría» ayuda a interpretar las marcas. Ahora vuelve al tramo para añadir voz y cuerpo a la misma ficha."
+  },
+  {
+    "id": "s3-e1",
+    "week": 3,
+    "encounter": 1,
+    "unit": 1,
+    "duration": 60,
+    "title": "Explicar las marcas de voz",
+    "question": "¿Qué conserva o pierde nuestro registro?",
+    "resource": "caldiz",
+    "product": "Ficha 1: argumento que justifica las marcas ya registradas con la lectura integrada de «Teoría» y Caldiz; correcciones localizadas, sin iniciar otro episodio.",
+    "agenda": [
+      [
+        10,
+        "Abrir el problema",
+        "Retoma la pregunta «¿Qué conserva o pierde nuestro registro?» con el documento y la lectura integrada de «Teoría» indicados aquí. Identifica qué afirmación necesitas examinar antes de responder."
+      ],
+      [
+        15,
+        "Herramientas y lectura",
+        "Retoma la misma transcripción y las marcas guardadas. Usa la selección de Caldiz para justificar cómo anotas una pausa o un énfasis. Corrige el registro si hace falta. En «Mi argumento», nombra el concepto que tomas de la lectura, cita su página y explica cómo te ayuda a interpretar esa marca en tu episodio."
+      ],
+      [
+        25,
+        "Trabajo y contraste",
+        "En «Mi argumento», añade un apartado de justificación después de tu primera interpretación, sin borrar el borrador. Relaciona las marcas con su función posible y una alternativa; cita la lectura integrada de «Teoría» o la selección de Caldiz que realmente utilizaste. Conserva los localizadores y reserva la nueva interpretación completa para «Interpretación revisada»."
+      ],
+      [
+        10,
+        "Cierre y continuidad",
+        "Conserva las notas en «Tu trabajo», debajo de estas instrucciones. Anota un límite y qué necesitas retomar en la siguiente clase."
+      ]
+    ],
+    "preparation": "Lee la selección de Caldiz: PDF 6–9 y 13. Retoma tu pregunta, la transcripción y las marcas ya registradas; usarás la lectura para justificar o corregir esas marcas, sin elegir otro episodio."
+  },
+  {
+    "id": "s3-e2",
+    "week": 3,
+    "encounter": 2,
+    "unit": 1,
+    "duration": 120,
+    "title": "Revisar el episodio oral",
+    "question": "¿Qué lectura alternativa explica el mismo recurso?",
+    "resource": "guia-1",
+    "product": "Ficha 1: interpretación revisada y explicación del cambio.",
+    "agenda": [
+      [
+        10,
+        "Retomar la pregunta",
+        "Retoma la pregunta «¿Qué lectura alternativa explica el mismo recurso?» con el documento y la lectura integrada de «Teoría» indicados aquí. Identifica qué afirmación necesitas examinar antes de responder."
+      ],
+      [
+        35,
+        "Taller de evidencia",
+        "Con ayuda de la lectura integrada de «Teoría», vuelve a la pausa, énfasis o gesto del mismo episodio. Compara tu interpretación con otra explicación de esa marca y señala qué dato apoya cada una. No busques un nuevo corpus para hacer el contraste."
+      ],
+      [
+        10,
+        "Pausa",
+        "Retomar después con el mismo documento."
+      ],
+      [
+        30,
+        "Producción",
+        "En «Interpretación revisada» de la ficha 1, escribe la interpretación que mantienes o corriges y explica el cambio. No empieces otra ficha oral."
+      ],
+      [
+        25,
+        "Revisión entre lectores",
+        "Intercambia la ficha con otro lector. Pídele comprobar un localizador, proponer una alternativa y señalar una corrección concreta. Usa la objeción para ajustar «Interpretación revisada» y explica el cambio en «Qué cambió y por qué». Si mantienes la lectura, justifica por qué resiste el contraste."
+      ],
+      [
+        10,
+        "Cierre",
+        "Conserva las notas en «Tu trabajo», debajo de estas instrucciones. Anota un límite y qué necesitas retomar en la siguiente clase."
+      ]
+    ],
+    "preparation": "Retoma tu pregunta, transcripción, registros y borrador con la justificación añadida en la clase anterior (semana 3, clase 1). Relee solo los intervalos y la lectura integrada de «Teoría» que necesites para contrastar la interpretación; no se asigna otra lectura completa."
+  },
+  {
+    "id": "s4-e1",
+    "week": 4,
+    "encounter": 1,
+    "unit": 2,
+    "duration": 60,
+    "title": "Escritura y corpus",
+    "question": "¿Quién actúa en este documento?",
+    "resource": "guia-2",
+    "product": "Ficha 2: pregunta inicial. Hito 1 del expediente: pregunta y selección de 2–4 documentos o episodios.",
+    "agenda": [
+      [
+        10,
+        "Abrir el problema",
+        "Retoma la pregunta «¿Quién actúa en este documento?» con el documento y la lectura integrada de «Teoría» indicados aquí. Identifica qué afirmación necesitas examinar antes de responder."
+      ],
+      [
+        15,
+        "Herramientas y lectura",
+        "Con la lectura integrada de «Teoría», prepara el análisis de los artículos 1–3 del reglamento de becas. Distingue quién decide, acredita y recibe; formula una pregunta sobre esa representación."
+      ],
+      [
+        25,
+        "Trabajo y contraste",
+        "Guarda la pregunta inicial de la ficha 2. En el hito 1, registra la propuesta de 2–4 documentos o episodios que trajiste, sus localizadores disponibles y por qué responden al problema. Es una delimitación provisional: marca lo pendiente de comprobar y ajusta la selección en la siguiente clase; no tienes que localizar todo el corpus en estos 25 minutos."
+      ],
+      [
+        10,
+        "Cierre y continuidad",
+        "Conserva las notas en «Tu trabajo», debajo de estas instrucciones. Anota un límite y qué necesitas retomar en la siguiente clase."
+      ]
+    ],
+    "preparation": "Lee la lectura integrada de «Teoría», especialmente «La escritura organiza una acción». Consulta los artículos 1–3 del reglamento (PDF 1–2). Trae una pregunta provisional para la ficha 2 y una propuesta de 2–4 documentos o episodios para el hito 1; puedes ajustarlas en clase."
+  },
+  {
+    "id": "s4-e2",
+    "week": 4,
+    "encounter": 2,
+    "unit": 2,
+    "duration": 120,
+    "title": "Norma y representación",
+    "question": "¿Cómo se distribuyen las capacidades y condiciones?",
+    "resource": "becas",
+    "product": "Ficha 2: cláusulas localizadas con participantes, acciones y condiciones. Ajustes de pregunta y corpus en el hito 1.",
+    "agenda": [
+      [
+        10,
+        "Retomar la pregunta",
+        "Retoma la pregunta «¿Cómo se distribuyen las capacidades y condiciones?» con el documento y la lectura integrada de «Teoría» indicados aquí. Identifica qué afirmación necesitas examinar antes de responder."
+      ],
+      [
+        35,
+        "Taller de evidencia",
+        "En los artículos 1–3 del reglamento, localiza cláusulas que asignan capacidades o condiciones a los participantes. Registra las palabras exactas y distingue una disposición de su cumplimiento efectivo."
+      ],
+      [
+        10,
+        "Pausa",
+        "Retomar después con el mismo documento."
+      ],
+      [
+        30,
+        "Producción",
+        "Añade las evidencias a la ficha 2 y explica qué relación muestran entre participantes, acciones y condiciones. Revisa si tu pregunta y corpus del hito 1 permiten investigarla."
+      ],
+      [
+        25,
+        "Revisión entre lectores",
+        "Pide a otro lector comprobar un localizador y una interpretación del registro existente de la ficha 2. Corrige esa entrada o añade una aclaración al borrador; no registres otra copia de todo el documento."
+      ],
+      [
+        10,
+        "Cierre",
+        "Conserva las notas en «Tu trabajo», debajo de estas instrucciones. Anota un límite y qué necesitas retomar en la siguiente clase."
+      ]
+    ],
+    "preparation": "Retoma la pregunta de la ficha 2 y los artículos 1–3 (PDF 1–2). Ten abierto el hito 1 para ajustar pregunta y corpus después de localizar participantes, acciones y condiciones."
+  },
+  {
+    "id": "s5-e1",
+    "week": 5,
+    "encounter": 1,
+    "unit": 2,
+    "duration": 60,
+    "title": "Escribir para un lector",
+    "question": "¿Qué conocimiento supone esta cláusula?",
+    "resource": "guia-2",
+    "product": "Ficha 2: dos inferencias y sus fundamentos, con los datos que faltan.",
+    "agenda": [
+      [
+        10,
+        "Abrir el problema",
+        "Retoma la pregunta «¿Qué conocimiento supone esta cláusula?» con el documento y la lectura integrada de «Teoría» indicados aquí. Identifica qué afirmación necesitas examinar antes de responder."
+      ],
+      [
+        15,
+        "Herramientas y lectura",
+        "Retoma una cláusula de la ficha 2 y la lectura integrada de «Teoría». Distingue lo expresado por el texto de lo que el lector debe inferir y del conocimiento institucional que aporta."
+      ],
+      [
+        25,
+        "Trabajo y contraste",
+        "Anota dos inferencias, sus fundamentos y la información que permitiría contrastarlas. Pueden ser compatibles; si descartas una candidata, justifica por qué. Continúa el registro de la ficha 2."
+      ],
+      [
+        10,
+        "Cierre y continuidad",
+        "Conserva las notas en «Tu trabajo», debajo de estas instrucciones. Anota un límite y qué necesitas retomar en la siguiente clase."
+      ]
+    ],
+    "preparation": "Retoma una o dos cláusulas ya registradas. Relee «Planificar y leer desde conocimientos» de la lectura integrada de «Teoría»; no necesitas repetirla completa. Prepara dos inferencias y señala qué palabras o conocimientos las apoyan. Pueden ser compatibles; no necesitas inventar dos lecturas rivales."
+  },
+  {
+    "id": "s5-e2",
+    "week": 5,
+    "encounter": 2,
+    "unit": 2,
+    "duration": 120,
+    "title": "Interpretaciones y datos faltantes",
+    "question": "¿Qué datos respaldan cada inferencia?",
+    "resource": "becas",
+    "product": "Ficha 2: argumento que contrasta las inferencias, reconstruye el tema global y justifica su alcance.",
+    "agenda": [
+      [
+        10,
+        "Retomar la pregunta",
+        "Retoma la pregunta «¿Qué datos respaldan cada inferencia?» con el documento y la lectura integrada de «Teoría» indicados aquí. Identifica qué afirmación necesitas examinar antes de responder."
+      ],
+      [
+        35,
+        "Taller de evidencia",
+        "Contrasta esas dos inferencias con las cláusulas y condiciones de los artículos 1–3. Busca qué información está disponible y cuál sigue faltando; no atribuyas intenciones solo por una omisión."
+      ],
+      [
+        10,
+        "Pausa",
+        "Retomar después con el mismo documento."
+      ],
+      [
+        30,
+        "Producción",
+        "En «Mi argumento» de la ficha 2, conserva la interpretación inicial y añade dos apartados: inferencias con sus fundamentos y contraste —sin inventar lecturas rivales—; síntesis del tema global de los artículos 1–3. Explica qué información seleccionas, omites o integras sin perder participantes y condiciones. No confundas lo que la norma dispone con su cumplimiento efectivo."
+      ],
+      [
+        25,
+        "Revisión entre lectores",
+        "Pide a otro lector comprobar un localizador y una interpretación del registro existente de la ficha 2. Corrige esa entrada o añade una aclaración al borrador; no registres otra copia de todo el documento."
+      ],
+      [
+        10,
+        "Cierre",
+        "Conserva las notas en «Tu trabajo», debajo de estas instrucciones. Anota un límite y qué necesitas retomar en la siguiente clase."
+      ]
+    ],
+    "preparation": "Trae las dos inferencias y sus localizadores. Vuelve a las cláusulas necesarias de los artículos 1–3; consulta los artículos 8–9 (PDF 3) solo si el contraste depende de esos requisitos. Escribirás también la síntesis del tema global en el argumento."
+  },
+  {
+    "id": "s6-e1",
+    "week": 6,
+    "encounter": 1,
+    "unit": 2,
+    "duration": 60,
+    "title": "Composición y lectura",
+    "question": "¿Qué destaca y qué queda subordinado?",
+    "resource": "guia-2",
+    "product": "Ficha 2: descripción de la disposición original y de una alternativa visual propia que conserva las palabras.",
+    "agenda": [
+      [
+        10,
+        "Abrir el problema",
+        "Retoma la pregunta «¿Qué destaca y qué queda subordinado?» con el documento y la lectura integrada de «Teoría» indicados aquí. Identifica qué afirmación necesitas examinar antes de responder."
+      ],
+      [
+        15,
+        "Herramientas y lectura",
+        "Examina en el reglamento una decisión de tipografía o disposición. Describe qué destaca y qué queda subordinado; usa la lectura integrada de «Teoría» para separar observación y efecto supuesto."
+      ],
+      [
+        25,
+        "Trabajo y contraste",
+        "Prepara una jerarquía visual alternativa que conserve las palabras y explica qué quieres comparar. Identifícala como elaboración propia en la ficha 2."
+      ],
+      [
+        10,
+        "Cierre y continuidad",
+        "Conserva las notas en «Tu trabajo», debajo de estas instrucciones. Anota un límite y qué necesitas retomar en la siguiente clase."
+      ]
+    ],
+    "preparation": "Retoma el mismo documento y tu argumento de la ficha 2. Relee «La página también orienta» de la lectura integrada de «Teoría». Elige una decisión visual que puedas describir y un tramo cuyas palabras conservarás en la alternativa."
+  },
+  {
+    "id": "s6-e2",
+    "week": 6,
+    "encounter": 2,
+    "unit": 2,
+    "duration": 120,
+    "title": "Reformular con controles",
+    "question": "¿Qué cambia al conservar palabras y alterar su jerarquía?",
+    "resource": "becas",
+    "product": "Ficha 2: interpretación revisada tras el contraste visual y explicación del cambio.",
+    "agenda": [
+      [
+        10,
+        "Retomar la pregunta",
+        "Retoma la pregunta «¿Qué cambia al conservar palabras y alterar su jerarquía?» con el documento y la lectura integrada de «Teoría» indicados aquí. Identifica qué afirmación necesitas examinar antes de responder."
+      ],
+      [
+        35,
+        "Taller de evidencia",
+        "Compara el reglamento con tu alternativa visual. Mantén el contenido verbal y localiza los cambios de jerarquía; pide a otro lector explicar qué lee primero y por qué."
+      ],
+      [
+        10,
+        "Pausa",
+        "Retomar después con el mismo documento."
+      ],
+      [
+        30,
+        "Producción",
+        "Revisa la interpretación de la ficha 2 a partir de ese contraste. Registra sus límites: una disposición visual no demuestra por sí sola una intención ni un efecto general en todos los lectores."
+      ],
+      [
+        25,
+        "Revisión entre lectores",
+        "Comprueba la versión revisada con los mismos localizadores y la objeción. Haz el último ajuste en «Interpretación revisada» y «Qué cambió y por qué»; conserva el argumento anterior. No inicies otro análisis completo."
+      ],
+      [
+        10,
+        "Cierre",
+        "Conserva las notas en «Tu trabajo», debajo de estas instrucciones. Anota un límite y qué necesitas retomar en la siguiente clase."
+      ]
+    ],
+    "preparation": "Trae la disposición original y tu alternativa visual propia, con las mismas palabras y sus localizadores. Retoma la hipótesis sobre qué cambia en la lectura; no prepares otra maqueta ni una lectura completa nueva."
+  },
+  {
+    "id": "s7-e1",
+    "week": 7,
+    "encounter": 1,
+    "unit": 3,
+    "duration": 60,
+    "title": "Elegir el enfoque",
+    "question": "¿Qué pregunta exige qué método?",
+    "resource": "pardo",
+    "product": "Ficha 3: comparación de enfoques y elección justificada.",
+    "agenda": [
+      [
+        10,
+        "Abrir el problema",
+        "Retoma la pregunta «¿Qué pregunta exige qué método?» con el documento y la lectura integrada de «Teoría» indicados aquí. Identifica qué afirmación necesitas examinar antes de responder."
+      ],
+      [
+        15,
+        "Herramientas y lectura",
+        "Trabaja con la selección de Pardo y tu pregunta de investigación. Compara qué observarían las perspectivas sociocognitiva, dialéctico-relacional e histórico-discursiva; consulta la lectura integrada de «Teoría» para distinguirlas."
+      ],
+      [
+        25,
+        "Trabajo y contraste",
+        "En la ficha 3, justifica el enfoque y las categorías que responden a tu pregunta. Identifica los datos que necesitas sin sumar todas las etiquetas a un texto."
+      ],
+      [
+        10,
+        "Cierre y continuidad",
+        "Conserva las notas en «Tu trabajo», debajo de estas instrucciones. Anota un límite y qué necesitas retomar en la siguiente clase."
+      ]
+    ],
+    "preparation": "Lee la lectura integrada de «Teoría» y Pardo: páginas impresas 43–47 / PDF 3–7. Retoma la pregunta y el corpus del hito 1. La introducción de la semana 1 sirve de mapa; ahora compara categorías, evidencia necesaria y límites para justificar un enfoque provisional en la ficha 3."
+  },
+  {
+    "id": "s7-e2",
+    "week": 7,
+    "encounter": 2,
+    "unit": 3,
+    "duration": 120,
+    "title": "Construir un dossier contextual",
+    "question": "¿Qué dato contextual resuelve nuestra dificultad?",
+    "resource": "guia-3",
+    "product": "Ficha 3: tres datos contextuales con fuentes, localizadores y función en el análisis.",
+    "agenda": [
+      [
+        10,
+        "Retomar la pregunta",
+        "Retoma la pregunta «¿Qué dato contextual resuelve nuestra dificultad?» con el documento y la lectura integrada de «Teoría» indicados aquí. Identifica qué afirmación necesitas examinar antes de responder."
+      ],
+      [
+        35,
+        "Taller de evidencia",
+        "Retoma los tres datos contextuales traídos de la preparación. Verifica fuente, localizador y función de cada uno; la información del propio documento puede ser pertinente. Usa las fuentes disponibles y marca «pendiente de comprobar» cuando falte una. No conviertas el taller en una búsqueda ilimitada de nuevos enlaces."
+      ],
+      [
+        10,
+        "Pausa",
+        "Retomar después con el mismo documento."
+      ],
+      [
+        30,
+        "Producción",
+        "Añade el dossier contextual a la ficha 3. Distingue publicación, circulación y recepción, y señala qué afirmaciones todavía carecen de evidencia."
+      ],
+      [
+        25,
+        "Revisión entre lectores",
+        "Pide a otro lector comprobar un localizador y una interpretación del registro existente de la ficha 3. Corrige esa entrada o añade una aclaración al borrador; no registres otra copia de todo el documento."
+      ],
+      [
+        10,
+        "Cierre",
+        "Conserva las notas en «Tu trabajo», debajo de estas instrucciones. Anota un límite y qué necesitas retomar en la siguiente clase."
+      ]
+    ],
+    "preparation": "Retoma la dificultad y el enfoque provisional de la ficha 3. Busca tres datos pertinentes con fuentes y localizadores; si usas el reglamento, consulta la razón final (PDF 4) para su versión. Distingue información comprobada y pendiente; no tienes que reunir tres enlaces distintos."
+  },
+  {
+    "id": "s8-e1",
+    "week": 8,
+    "encounter": 1,
+    "unit": 3,
+    "duration": 60,
+    "title": "Contrastar y delimitar",
+    "question": "¿Qué no permite concluir nuestro corpus?",
+    "resource": "guia-3",
+    "product": "Ficha 3: revisión y límites. Hito 2 del expediente: método y contexto documentado.",
+    "agenda": [
+      [
+        10,
+        "Abrir el problema",
+        "Retoma la pregunta «¿Qué no permite concluir nuestro corpus?» con el documento y la lectura integrada de «Teoría» indicados aquí. Identifica qué afirmación necesitas examinar antes de responder."
+      ],
+      [
+        15,
+        "Herramientas y lectura",
+        "Contrasta en la ficha 3 tus categorías y datos contextuales con una interpretación alternativa. Busca un contraejemplo o una afirmación que el corpus no permita sostener."
+      ],
+      [
+        25,
+        "Trabajo y contraste",
+        "Revisa la ficha 3 y precisa en el hito 2 el método, las categorías y las fuentes del expediente. Esta preparación precede a la evaluación individual del encuentro 2."
+      ],
+      [
+        10,
+        "Cierre y continuidad",
+        "Conserva las notas en «Tu trabajo», debajo de estas instrucciones. Anota un límite y qué necesitas retomar en la siguiente clase."
+      ]
+    ],
+    "preparation": "Retoma el dossier y la elección provisional de la ficha 3. Relee «Triangular con propósito» y «Hacer visible la propia posición» de la lectura integrada de «Teoría»; prepara una alternativa o un límite. Ajustarás el mismo método en el hito 2."
+  },
+  {
+    "id": "s8-e2",
+    "week": 8,
+    "encounter": 2,
+    "unit": 3,
+    "duration": 120,
+    "title": "Transferencia individual",
+    "question": "¿Podemos explicar un caso nuevo con el método elegido?",
+    "resource": "becas",
+    "product": "Análisis individual del caso nuevo, entregado por el canal indicado por el docente. La ficha 3 y el método del hito 2 se conservan como preparación.",
+    "agenda": [
+      [
+        10,
+        "Precisar caso y condiciones",
+        "Lee el caso nuevo y las condiciones de la Sumativa 1 indicados por el docente. Confirma qué material puedes consultar y cómo debes entregar."
+      ],
+      [
+        35,
+        "Localizar y describir",
+        "Trabaja individualmente: formula la pregunta, selecciona segmentos localizables y describe las marcas relevantes antes de interpretarlas."
+      ],
+      [
+        10,
+        "Pausa",
+        "Conserva tu respuesta; retoma después el mismo caso."
+      ],
+      [
+        30,
+        "Sostener una interpretación",
+        "Justifica las categorías y el contexto pertinente. Relaciona las observaciones con una interpretación y explica una alternativa y un límite."
+      ],
+      [
+        25,
+        "Revisión individual",
+        "Comprueba que cada afirmación remita a evidencia localizable, que distingas descripción e inferencia y que las atribuciones sean precisas. Esta fase no es intercambio de respuestas entre pares."
+      ],
+      [
+        10,
+        "Entregar y conservar",
+        "Entrega por el canal indicado y conserva tu copia. No sustituyas la ficha 3 por esta respuesta; el cuaderno no envía trabajos al docente."
+      ]
+    ],
+    "preparation": "Revisa tu ficha 3 y el método del hito 2. El reglamento es material de preparación; el docente proporciona un caso nuevo acotado y precisa las condiciones y el canal de entrega de la Sumativa 1."
+  },
+  {
+    "id": "s9-e1",
+    "week": 9,
+    "encounter": 1,
+    "unit": 4,
+    "duration": 60,
+    "title": "Personas y destinatarios",
+    "question": "¿A quién incluye este nosotros?",
+    "resource": "guia-4",
+    "product": "Ficha 4: tres segmentos con marcas de personas o perspectivas y sus localizadores.",
+    "agenda": [
+      [
+        10,
+        "Abrir el problema",
+        "Identifica las dos situaciones: una lideresa indígena guatemalteca recibe el Nobel de la Paz en 1992; una lideresa afrodescendiente colombiana responde una entrevista en 2021. Observa cómo se presentan y a qué colectivos se refieren. Analizamos intervenciones concretas, no cómo habla toda una cultura."
+      ],
+      [
+        15,
+        "Herramientas y lectura",
+        "Lee los dos recortes enlazados de Menchú y Márquez: unas 360 palabras entre ambos. Selecciona tres segmentos en total: uno de Menchú con una marca personal o colectivo nombrado; otro de Márquez sobre diferencias entre mujeres; y un tercero donde Márquez atribuye una idea a Angela Davis. Los retomarás en las cuatro clases. Si tu ficha 4 ya tiene otro corpus, conserva sus segmentos y usa estos recortes para el contraste de la misma ficha."
+      ],
+      [
+        25,
+        "Trabajo y contraste",
+        "En «Evidencias» guarda tres segmentos en total, al menos uno de cada texto, con autora y localizador. En «Pregunta de la ficha» anota qué quieres explicar. Si aparece «nosotros», investiga su referencia. Si no aparece, usa las denominaciones o formas presentes. Si ya hay registros de otro corpus, continúa con ellos y usa el contraste para revisarlos; no los reemplaces."
+      ],
+      [
+        10,
+        "Cierre y continuidad",
+        "Conserva las notas en «Tu trabajo», debajo de estas instrucciones. Anota un límite y qué necesitas retomar en la siguiente clase."
+      ]
+    ],
+    "preparation": "Lee la lectura integrada de «Teoría» y los recortes indicados de Menchú y Márquez (unas 360 palabras en total). No se asignan los textos completos. En clase guardarás tres segmentos entre ambos, al menos uno de cada texto, en la ficha 4. Si ya la empezaste con otro corpus, conserva tus evidencias: usarás el contraste para revisarlas."
+  },
+  {
+    "id": "s9-e2",
+    "week": 9,
+    "encounter": 2,
+    "unit": 4,
+    "duration": 120,
+    "title": "Dar voz y asumir responsabilidad",
+    "question": "¿Quién se responsabiliza de esta proposición?",
+    "resource": "marquez",
+    "product": "Ficha 4: atribuciones y responsabilidad justificadas, con un caso seleccionado para contrastar.",
+    "agenda": [
+      [
+        10,
+        "Retomar la pregunta",
+        "Retoma la pregunta «¿Quién se responsabiliza de esta proposición?» con el documento y la lectura integrada de «Teoría» indicados aquí. Identifica qué afirmación necesitas examinar antes de responder."
+      ],
+      [
+        35,
+        "Taller de evidencia",
+        "Retoma los tres segmentos de la ficha 4. En la entrevista distingue la pregunta de las entrevistadoras, la respuesta de Márquez y la idea atribuida a Angela Davis. En Menchú distingue la experiencia individual y los colectivos mencionados. Compara marcas y destinatarios; no atribuyas a una cultura entera lo que dice una persona."
+      ],
+      [
+        10,
+        "Pausa",
+        "Retomar después con el mismo documento."
+      ],
+      [
+        30,
+        "Producción",
+        "En «Mi argumento» organiza el mapa como una lista o tabla que remita a tus tres evidencias. Explica las atribuciones y una semejanza o diferencia entre las formas de referirse a los colectivos. No copies otra vez los fragmentos ni trates a las autoras como representantes de todas las voces de su cultura. Elige una atribución para contrastar; si una sola atribución tiene apoyo, justifica por qué descartas la otra."
+      ],
+      [
+        25,
+        "Revisión entre lectores",
+        "Pide a otro lector comprobar un localizador y una interpretación del registro existente de la ficha 4. Corrige esa entrada o añade una aclaración al borrador; no registres otra copia de todo el documento."
+      ],
+      [
+        10,
+        "Cierre",
+        "Conserva las notas en «Tu trabajo», debajo de estas instrucciones. Anota un límite y qué necesitas retomar en la siguiente clase."
+      ]
+    ],
+    "preparation": "Retoma los tres segmentos y localizadores de la ficha 4, junto con los mismos recortes de Menchú y Márquez. Distinguirás quién habla y a quién atribuye una idea. No selecciones otros tres segmentos ni leas los textos completos."
+  },
+  {
+    "id": "s10-e1",
+    "week": 10,
+    "encounter": 1,
+    "unit": 4,
+    "duration": 60,
+    "title": "Perspectivas en tensión",
+    "question": "¿Cómo se presenta una voz al citarla?",
+    "resource": "guia-4",
+    "product": "Ficha 4: argumento con una atribución contrastada, las marcas que la sostienen y una alternativa examinada.",
+    "agenda": [
+      [
+        10,
+        "Abrir el problema",
+        "Retoma la pregunta «¿Cómo se presenta una voz al citarla?» con el documento y la lectura integrada de «Teoría» indicados aquí. Identifica qué afirmación necesitas examinar antes de responder."
+      ],
+      [
+        15,
+        "Herramientas y lectura",
+        "Retoma una atribución de tus tres registros. En el contraste común, vuelve a la idea atribuida a Davis y a cómo Márquez la usa en su respuesta. Localiza las marcas que permiten distinguir las voces y examina otra lectura posible. Si tu ficha ya usa otro corpus, haz esta revisión con una atribución de ese corpus; no busques un cuarto fragmento."
+      ],
+      [
+        25,
+        "Trabajo y contraste",
+        "Desarrolla en «Mi argumento» de la ficha 4 una interpretación y una alternativa. Justifica las atribuciones con marcas concretas."
+      ],
+      [
+        10,
+        "Cierre y continuidad",
+        "Conserva las notas en «Tu trabajo», debajo de estas instrucciones. Anota un límite y qué necesitas retomar en la siguiente clase."
+      ]
+    ],
+    "preparation": "Retoma el mapa de voces y una atribución de la ficha 4. Relee «Citar también encuadra» y «Hablar desde una experiencia y en nombre de otros» en la lectura integrada de «Teoría». Examinarás una lectura alternativa con los mismos fragmentos; no necesitas buscar otro texto ni inventar citas o negaciones."
+  },
+  {
+    "id": "s10-e2",
+    "week": 10,
+    "encounter": 2,
+    "unit": 4,
+    "duration": 120,
+    "title": "Revisar una atribución",
+    "question": "¿Citar implica adherirse?",
+    "resource": "marquez",
+    "product": "Ficha 4: atribución revisada y explicación de lo que cambia o se mantiene.",
+    "agenda": [
+      [
+        10,
+        "Retomar la pregunta",
+        "Retoma la pregunta «¿Citar implica adherirse?» con el documento y la lectura integrada de «Teoría» indicados aquí. Identifica qué afirmación necesitas examinar antes de responder."
+      ],
+      [
+        35,
+        "Taller de evidencia",
+        "Vuelve a la atribución que examinaste y al contraste Menchú–Márquez. Comprueba quién habla, a quién atribuye la idea y qué marca muestra adhesión o distancia. Distingue el texto del discurso Nobel, la pregunta de las entrevistadoras y la respuesta de Márquez. Explica qué alternativa sostienes o descartas. La entrevista no prueba las palabras originales de Davis, ni una intervención permite generalizar sobre toda una cultura."
+      ],
+      [
+        10,
+        "Pausa",
+        "Retomar después con el mismo documento."
+      ],
+      [
+        30,
+        "Producción",
+        "Revisa la misma ficha 4: corrige o restringe la atribución y explica qué evidencia motivó el cambio."
+      ],
+      [
+        25,
+        "Revisión entre lectores",
+        "Comprueba la versión revisada con los mismos localizadores y la objeción. Haz el último ajuste en «Interpretación revisada» y «Qué cambió y por qué»; conserva el argumento anterior. No inicies otro análisis completo."
+      ],
+      [
+        10,
+        "Cierre",
+        "Conserva las notas en «Tu trabajo», debajo de estas instrucciones. Anota un límite y qué necesitas retomar en la siguiente clase."
+      ]
+    ],
+    "preparation": "Retoma el argumento de la ficha 4, sus tres segmentos y la alternativa examinada. Volverás al contraste Menchú–Márquez para revisar una atribución y el alcance de tu conclusión. Conserva el argumento anterior; la nueva versión va en «Interpretación revisada». No empiezas otro mapa."
+  },
+  {
+    "id": "s11-e1",
+    "week": 11,
+    "encounter": 1,
+    "unit": 5,
+    "duration": 60,
+    "title": "Género, secuencia y medio",
+    "question": "¿Qué acción hace reconocible este género?",
+    "resource": "guia-5",
+    "product": "Ficha 5: primera pieza identificada y elección de una comparación documentada o un experimento propio.",
+    "agenda": [
+      [
+        10,
+        "Abrir el problema",
+        "Retoma la pregunta «¿Qué acción hace reconocible este género?» con el documento y la lectura integrada de «Teoría» indicados aquí. Identifica qué afirmación necesitas examinar antes de responder."
+      ],
+      [
+        15,
+        "Herramientas y lectura",
+        "Con la lectura integrada de «Teoría», identifica propósito, esfera social y destinatarios de un documento de tu corpus. Distingue su género de las secuencias que contiene y del soporte en que circula."
+      ],
+      [
+        25,
+        "Trabajo y contraste",
+        "Inicia la ficha 5 con esa distinción y sus evidencias. Elige otro documento cuya relación puedas documentar o prepara una reformulación propia claramente rotulada."
+      ],
+      [
+        10,
+        "Cierre y continuidad",
+        "Conserva las notas en «Tu trabajo», debajo de estas instrucciones. Anota un límite y qué necesitas retomar en la siguiente clase."
+      ]
+    ],
+    "preparation": "Lee la lectura integrada de «Teoría», especialmente género/secuencia y modo/medio/soporte. Retoma una pieza ya conocida y elige una sola ruta: comparación documentada o adaptación propia. Esa elección orientará la segunda pieza."
+  },
+  {
+    "id": "s11-e2",
+    "week": 11,
+    "encounter": 2,
+    "unit": 5,
+    "duration": 120,
+    "title": "Cambiar las condiciones de lectura",
+    "question": "¿Qué seleccionamos al reformular para otro destinatario?",
+    "resource": "becas",
+    "product": "Ficha 5: comparación de las dos piezas de la ruta elegida, con vínculo documentado o adaptación propia claramente identificados.",
+    "agenda": [
+      [
+        10,
+        "Retomar la pregunta",
+        "Retoma la pregunta «¿Qué seleccionamos al reformular para otro destinatario?» con el documento y la lectura integrada de «Teoría» indicados aquí. Identifica qué afirmación necesitas examinar antes de responder."
+      ],
+      [
+        35,
+        "Taller de evidencia",
+        "Continúa la ruta elegida para la ficha 5. Si comparas piezas documentadas, localiza el vínculo y los cambios de destinatario, función, información y soporte. Si eliges el experimento de taller, reformula un tramo del reglamento para otro destinatario y rotúlalo como adaptación propia. No necesitas realizar ambas rutas."
+      ],
+      [
+        10,
+        "Pausa",
+        "Retomar después con el mismo documento."
+      ],
+      [
+        30,
+        "Producción",
+        "En la ficha 5, explica qué cambia y qué se conserva. Distingue el vínculo que produces tú de una cadena de circulación documentada."
+      ],
+      [
+        25,
+        "Revisión entre lectores",
+        "Pide a otro lector comprobar un localizador y una interpretación del registro existente de la ficha 5. Corrige esa entrada o añade una aclaración al borrador; no registres otra copia de todo el documento."
+      ],
+      [
+        10,
+        "Cierre",
+        "Conserva las notas en «Tu trabajo», debajo de estas instrucciones. Anota un límite y qué necesitas retomar en la siguiente clase."
+      ]
+    ],
+    "preparation": "Retoma la ruta elegida. Si es documentada, trae las dos piezas y la fuente del vínculo. Si es de taller, elige un tramo del reglamento y el destinatario de tu aviso o explicación; podrás elaborar la adaptación en clase. No prepares ambas rutas."
+  },
+  {
+    "id": "s12-e1",
+    "week": 12,
+    "encounter": 1,
+    "unit": 5,
+    "duration": 60,
+    "title": "Construir el argumento parcial",
+    "question": "¿Cómo se relacionan nuestras evidencias?",
+    "resource": "guia-5",
+    "product": "Hito 3 del expediente: desarrollo parcial con evidencias, objeción y límite.",
+    "agenda": [
+      [
+        10,
+        "Abrir el problema",
+        "Retoma la pregunta «¿Cómo se relacionan nuestras evidencias?» con el documento y la lectura integrada de «Teoría» indicados aquí. Identifica qué afirmación necesitas examinar antes de responder."
+      ],
+      [
+        15,
+        "Herramientas y lectura",
+        "Retoma las evidencias de la ficha 5 y la lectura integrada de «Teoría». Comprueba qué relación entre documentos está documentada y cuál es una propuesta de análisis."
+      ],
+      [
+        25,
+        "Trabajo y contraste",
+        "Construye en «Desarrollo del análisis» del hito 3 un núcleo parcial con dos segmentos ya localizados: observación, categoría, contexto y relación con la pregunta. Añade una objeción y un límite. No redactes el informe completo en estos 25 minutos; ampliarás el desarrollo con las demás evidencias antes del taller siguiente."
+      ],
+      [
+        10,
+        "Cierre y continuidad",
+        "Conserva las notas en «Tu trabajo», debajo de estas instrucciones. Anota un límite y qué necesitas retomar en la siguiente clase."
+      ]
+    ],
+    "preparation": "Retoma las dos piezas, los registros y el borrador de la ficha 5, además de pregunta, corpus y método del expediente. Relee «Recontextualizar implica seleccionar» y «Dibujar una relación no la demuestra». Selecciona qué evidencia responde a la pregunta del informe."
+  },
+  {
+    "id": "s12-e2",
+    "week": 12,
+    "encounter": 2,
+    "unit": 5,
+    "duration": 120,
+    "title": "Taller de análisis entre pares",
+    "question": "¿Dónde hay un salto inferencial?",
+    "resource": "becas",
+    "product": "Ficha 5 revisada y desarrollo del hito 3 ajustado a las objeciones.",
+    "agenda": [
+      [
+        10,
+        "Retomar la pregunta",
+        "Retoma la pregunta «¿Dónde hay un salto inferencial?» con el documento y la lectura integrada de «Teoría» indicados aquí. Identifica qué afirmación necesitas examinar antes de responder."
+      ],
+      [
+        35,
+        "Taller de evidencia",
+        "Intercambia un núcleo de dos o tres párrafos de tu argumento parcial y sus dos segmentos de apoyo. Pide a otro lector comprobar un localizador, una relación documentada y un posible salto inferencial. Trabaja sobre ese recorte; no es una lectura completa de todos los expedientes."
+      ],
+      [
+        10,
+        "Pausa",
+        "Retomar después con el mismo documento."
+      ],
+      [
+        30,
+        "Producción",
+        "Revisa la ficha 5 y el argumento del hito 3 según las objeciones. Explica qué cambió; la ficha y el informe se conservan como textos distintos."
+      ],
+      [
+        25,
+        "Revisión entre lectores",
+        "Comprueba las fuentes y atribuciones del argumento ya ajustado: verifica localizadores, vínculo entre las piezas y límites. Corrige solo lo que esta comprobación detecte; no repitas el intercambio completo ni escribas un segundo informe."
+      ],
+      [
+        10,
+        "Cierre",
+        "Conserva las notas en «Tu trabajo», debajo de estas instrucciones. Anota un límite y qué necesitas retomar en la siguiente clase."
+      ]
+    ],
+    "preparation": "Trae el desarrollo parcial del hito 3 y la ficha 5 con sus fuentes. La revisión ajustará esos dos textos, cada uno en su campo; no prepara otro informe ni otra comparación completa."
+  },
+  {
+    "id": "s13-e1",
+    "week": 13,
+    "encounter": 1,
+    "unit": 6,
+    "duration": 60,
+    "title": "Organizaciones mixtas",
+    "question": "¿Cómo se articulan las secuencias?",
+    "resource": "guia-6",
+    "product": "Ficha 6: matriz escrita de segmentos, secuencias y transiciones.",
+    "agenda": [
+      [
+        10,
+        "Abrir el problema",
+        "Retoma la pregunta «¿Cómo se articulan las secuencias?» con el documento y la lectura integrada de «Teoría» indicados aquí. Identifica qué afirmación necesitas examinar antes de responder."
+      ],
+      [
+        15,
+        "Herramientas y lectura",
+        "Con la lectura integrada de «Teoría», segmenta un texto mixto de tu corpus. Justifica dónde aparecen narración, descripción, explicación, argumentación o diálogo; no asignes etiquetas solo por palabras aisladas."
+      ],
+      [
+        25,
+        "Trabajo y contraste",
+        "Inicia la ficha 6: escribe en «Mi argumento» una matriz de segmentos y localizadores. Explica cómo se articulan las secuencias."
+      ],
+      [
+        10,
+        "Cierre y continuidad",
+        "Conserva las notas en «Tu trabajo», debajo de estas instrucciones. Anota un límite y qué necesitas retomar en la siguiente clase."
+      ]
+    ],
+    "preparation": "Lee «Reconstruir organizaciones mixtas» y «Explicar, justificar y evaluar» de la lectura integrada de «Teoría». Retoma un texto ya conocido con sus localizadores; no necesitas reunir un corpus nuevo ni encontrar los cinco tipos en él."
+  },
+  {
+    "id": "s13-e2",
+    "week": 13,
+    "encounter": 2,
+    "unit": 6,
+    "duration": 120,
+    "title": "Narrar, describir y explicar",
+    "question": "¿Qué transición necesita una justificación?",
+    "resource": "becas",
+    "product": "Ficha 6: explicación de las secuencias efectivamente presentes y comparación con el texto mixto.",
+    "agenda": [
+      [
+        10,
+        "Retomar la pregunta",
+        "Retoma la pregunta «¿Qué transición necesita una justificación?» con el documento y la lectura integrada de «Teoría» indicados aquí. Identifica qué afirmación necesitas examinar antes de responder."
+      ],
+      [
+        35,
+        "Taller de evidencia",
+        "Busca en el reglamento las secuencias efectivamente presentes. Compáralas con tu texto mixto: no es necesario que un solo documento contenga los cinco tipos."
+      ],
+      [
+        10,
+        "Pausa",
+        "Retomar después con el mismo documento."
+      ],
+      [
+        30,
+        "Producción",
+        "Añade a la ficha 6 una explicación de las transiciones y de la relación entre secuencias. Distingue una explicación causal de una justificación normativa o moral."
+      ],
+      [
+        25,
+        "Revisión entre lectores",
+        "Pide a otro lector comprobar un localizador y una interpretación del registro existente de la ficha 6. Corrige esa entrada o añade una aclaración al borrador; no registres otra copia de todo el documento."
+      ],
+      [
+        10,
+        "Cierre",
+        "Conserva las notas en «Tu trabajo», debajo de estas instrucciones. Anota un límite y qué necesitas retomar en la siguiente clase."
+      ]
+    ],
+    "preparation": "Retoma la matriz escrita de la ficha 6 y el mismo texto. Consulta los considerandos y artículos pertinentes del reglamento como contraste. Identifica una transición cuya explicación necesite mejores marcas."
+  },
+  {
+    "id": "s14-e1",
+    "week": 14,
+    "encounter": 1,
+    "unit": 6,
+    "duration": 60,
+    "title": "Reconstruir una inferencia",
+    "question": "¿Qué puente conecta premisa y conclusión?",
+    "resource": "guia-6",
+    "product": "Ficha 6: premisa, regla de conexión, conclusión y objeción. Selección de evidencia para el borrador del expediente.",
+    "agenda": [
+      [
+        10,
+        "Abrir el problema",
+        "Retoma la pregunta «¿Qué puente conecta premisa y conclusión?» con el documento y la lectura integrada de «Teoría» indicados aquí. Identifica qué afirmación necesitas examinar antes de responder."
+      ],
+      [
+        15,
+        "Herramientas y lectura",
+        "Retoma una inferencia del corpus y la lectura integrada de «Teoría». Reconstruye premisa, conclusión y el puente que las relaciona; plantea una objeción pertinente."
+      ],
+      [
+        25,
+        "Trabajo y contraste",
+        "En «Mi argumento» de la ficha 6, explica qué dato obligaría a restringir la conclusión. Selecciona la evidencia que incorporarás al borrador del expediente."
+      ],
+      [
+        10,
+        "Cierre y continuidad",
+        "Conserva las notas en «Tu trabajo», debajo de estas instrucciones. Anota un límite y qué necesitas retomar en la siguiente clase."
+      ]
+    ],
+    "preparation": "Retoma la matriz y una inferencia de tu corpus. Relee «Una afirmación necesita un puente» de la lectura integrada de «Teoría». Prepara premisa, conclusión, regla de conexión y una objeción; conservarás lo anterior al añadir este apartado."
+  },
+  {
+    "id": "s14-e2",
+    "week": 14,
+    "encounter": 2,
+    "unit": 6,
+    "duration": 120,
+    "title": "Diálogo, objeción y evaluación",
+    "question": "¿Qué modifica la respuesta del otro?",
+    "resource": "bolivar",
+    "product": "Ficha 6 revisada y borrador del expediente que incorpora la objeción y sus límites.",
+    "agenda": [
+      [
+        10,
+        "Retomar la pregunta",
+        "Retoma la pregunta «¿Qué modifica la respuesta del otro?» con el documento y la lectura integrada de «Teoría» indicados aquí. Identifica qué afirmación necesitas examinar antes de responder."
+      ],
+      [
+        35,
+        "Taller de evidencia",
+        "Con la selección de Bolívar, examina cómo una respuesta retoma, modifica o evalúa la intervención anterior. Si el reglamento no contiene un intercambio observado, retoma un intercambio registrado de oralidad o una representación didáctica rotulada como tal. Conserva fuente y localizador, sin repetir toda la transcripción. Distingue ese episodio de apoyo de tu corpus principal."
+      ],
+      [
+        10,
+        "Pausa",
+        "Retomar después con el mismo documento."
+      ],
+      [
+        30,
+        "Producción",
+        "Revisa la ficha 6 e integra la objeción en el borrador del expediente. Conserva las fuentes y explica qué alcance tiene ahora tu conclusión."
+      ],
+      [
+        25,
+        "Revisión entre lectores",
+        "Comprueba la versión revisada con los mismos localizadores y la objeción. Haz el último ajuste en «Interpretación revisada» y «Qué cambió y por qué»; conserva el argumento anterior. No inicies otro análisis completo."
+      ],
+      [
+        10,
+        "Cierre",
+        "Conserva las notas en «Tu trabajo», debajo de estas instrucciones. Anota un límite y qué necesitas retomar en la siguiente clase."
+      ]
+    ],
+    "preparation": "Lee Bolívar: páginas impresas 96–102 y 105–107 / PDF 4–10 y 13–15. Retoma la inferencia y su objeción. Trae un intercambio registrado en oralidad o una representación identificada como tal si tu corpus no contiene diálogo; no transcribas otro episodio completo."
+  },
+  {
+    "id": "s15-e1",
+    "week": 15,
+    "encounter": 1,
+    "unit": 6,
+    "duration": 60,
+    "title": "Límites y contraejemplos",
+    "question": "¿Qué nos obliga a restringir el argumento?",
+    "resource": "guia-6",
+    "product": "Hito 4: «Conclusión revisada y límites» y «Registro de cambios» del expediente.",
+    "agenda": [
+      [
+        10,
+        "Abrir el problema",
+        "Abre tu expediente y retoma «¿Qué nos obliga a restringir el argumento?». Identifica la decisión del informe que vas a revisar en esta clase."
+      ],
+      [
+        15,
+        "Herramientas y lectura",
+        "Retoma el borrador y sus fuentes. Con la lectura integrada de «Teoría», identifica una afirmación que exceda el corpus y un contraejemplo que necesite respuesta."
+      ],
+      [
+        25,
+        "Trabajo y contraste",
+        "En el hito 4 del expediente, escribe la conclusión revisada y sus límites. Explica en el registro de cambios qué evidencia u objeción motivó cada corrección."
+      ],
+      [
+        10,
+        "Cierre y continuidad",
+        "Conserva conclusión y registro de cambios. Antes del siguiente encuentro, termina la microconsigna de 5 minutos en «Actividad de enseñanza» y el guion de defensa. Comprueba el turno que te corresponde; no son otra ficha ni otro informe."
+      ]
+    ],
+    "preparation": "Retoma el borrador del expediente, sus fuentes y las revisiones de las fichas. Señala en tu borrador una afirmación cuyo alcance necesites comprobar y prepara una objeción. Trabajarás conclusión y registro de cambios; no comienzas otra ficha 6. Ten también preparado un borrador del guion de defensa y confirma el turno asignado para los tres últimos encuentros."
+  },
+  {
+    "id": "s15-e2",
+    "week": 15,
+    "encounter": 2,
+    "unit": 6,
+    "duration": 120,
+    "title": "Probar la enseñanza y comenzar las defensas",
+    "question": "¿La consigna permite investigar o repetir?",
+    "resource": "becas",
+    "product": "Microconsigna probada y ajustada en el expediente; primeras 16 defensas individuales. El resto conserva su guion para el turno asignado.",
+    "agenda": [
+      [
+        5,
+        "Organizar tríos y turnos",
+        "Comprueba los materiales de la microconsigna y el turno de defensa. Cada trío distribuye autor, lector y observador; los papeles rotan."
+      ],
+      [
+        25,
+        "Probar la microconsigna en tríos",
+        "Reserva 4 minutos para organizarse. Cada integrante dispone de 5 minutos para que el lector realice su microconsigna y 2 minutos para recibir la observación sobre claridad y evidencia. Rota tres veces: 21 minutos de prueba y devolución. Los tríos trabajan simultáneamente; no repitas la actividad ante toda la clase."
+      ],
+      [
+        10,
+        "Pausa",
+        "Conserva el resultado de la prueba y vuelve con los mismos materiales."
+      ],
+      [
+        64,
+        "Defensas individuales · primer bloque",
+        "16 estudiantes defienden individualmente en turnos de 4 minutos: 2 minutos para explicar una decisión con evidencia localizable, 1 minuto para una pregunta del docente y la respuesta breve del estudiante, y 1 minuto para registrar la respuesta y cambiar de turno. El guion está preparado; no se lee el informe completo. Quienes no tienen turno revisan en silencio su consigna y las fuentes del expediente, sin interferir con la defensa. La rúbrica del curso se mantiene."
+      ],
+      [
+        8,
+        "Ajustar la consigna probada",
+        "En «Actividad de enseñanza», señala la dificultad observada y el cambio realizado. Identifica la aportación del lector y del observador; no presentes el resultado de una prueba breve como efecto general."
+      ],
+      [
+        8,
+        "Cierre y continuidad",
+        "Guarda los cambios, revisa el turno restante y conserva el guion. Puedes ajustar el informe tras las objeciones; prepara la entrega por el canal indicado por el docente."
+      ]
+    ],
+    "preparation": "Trae un borrador completo de la microconsigna que pueda realizarse en 5 minutos: problema, segmento breve accesible, dos o tres pasos, resultado y criterio de revisión. Conserva la versión en «Actividad de enseñanza». Prepara también «Guion de defensa» y comprueba si estás entre los primeros 16 turnos. La prueba se hará en tríos, no como 45 exposiciones ante toda la clase.",
+    "defensePlan": {
+      "slots": 16,
+      "slotMinutes": 4
+    }
+  },
+  {
+    "id": "s16-e1",
+    "week": 16,
+    "encounter": 1,
+    "unit": 6,
+    "duration": 60,
+    "title": "Defender una interpretación",
+    "question": "¿Podemos explicar nuestras decisiones?",
+    "resource": "guia-6",
+    "product": "Siguientes 14 defensas individuales y objeciones localizadas para revisar el expediente; ajustes sobre el mismo informe.",
+    "agenda": [
+      [
+        2,
+        "Confirmar el orden",
+        "Ten listo el guion, la evidencia y el turno asignado. La pauta es la misma de la clase anterior."
+      ],
+      [
+        56,
+        "Defensas individuales · segundo bloque",
+        "14 estudiantes defienden individualmente en turnos de 4 minutos: 2 minutos para explicar una decisión con evidencia localizable, 1 minuto para una pregunta del docente y la respuesta breve del estudiante, y 1 minuto para registrar la respuesta y cambiar de turno. El guion está preparado; no se lee el informe completo. Quienes no tienen turno trabajan en silencio en los ajustes del expediente o comprueban la evidencia para su turno. La rúbrica del curso se mantiene."
+      ],
+      [
+        2,
+        "Conservar la objeción",
+        "Anota la pregunta u objeción recibida y qué parte del informe revisarás. Conserva el trabajo y comprueba los turnos del encuentro final."
+      ]
+    ],
+    "preparation": "Trae el guion ya preparado, los segmentos localizables y el expediente. Confirma si te corresponde uno de los siguientes 14 turnos; no se reserva este bloque para preparar el guion desde cero. Quienes ya defendieron trabajan en las objeciones; quienes esperan comprueban su evidencia.",
+    "defensePlan": {
+      "slots": 14,
+      "slotMinutes": 4
+    }
+  },
+  {
+    "id": "s16-e2",
+    "week": 16,
+    "encounter": 2,
+    "unit": 6,
+    "duration": 120,
+    "title": "Completar las defensas y cerrar el expediente",
+    "question": "¿Qué sabemos ahora y qué sigue abierto?",
+    "resource": "bolivar",
+    "product": "Últimas 15 defensas; expediente ajustado, autoevaluación y entrega preparada con anexos pertinentes. JSON para conservar la edición.",
+    "agenda": [
+      [
+        5,
+        "Preparar el cierre",
+        "Abre la versión del expediente que vas a entregar, sus fuentes y los anexos. Comprueba el último bloque de turnos."
+      ],
+      [
+        60,
+        "Defensas individuales · último bloque",
+        "15 estudiantes defienden individualmente en turnos de 4 minutos: 2 minutos para explicar una decisión con evidencia localizable, 1 minuto para una pregunta del docente y la respuesta breve del estudiante, y 1 minuto para registrar la respuesta y cambiar de turno. El guion está preparado; no se lee el informe completo. Quienes no tienen turno comprueban en silencio referencias, localizadores y anexos de su expediente. La rúbrica del curso se mantiene."
+      ],
+      [
+        10,
+        "Pausa",
+        "Conserva el trabajo; retoma la misma versión para el ajuste final."
+      ],
+      [
+        20,
+        "Incorporar objeciones y autoevaluar",
+        "Ajusta «Conclusión revisada y límites» y «Registro de cambios» según la defensa. Completa la autoevaluación con ejemplos de las dimensiones de la rúbrica. Son ajustes de un informe ya escrito, no la redacción completa de 1800–2200 palabras."
+      ],
+      [
+        15,
+        "Comprobar la vista previa y los anexos",
+        "Comprueba portada, apartados, referencias y anexos elegidos. Guarda el PDF desde la impresión del navegador. Si falla el diálogo, conserva el JSON o texto y prepara el PDF cuando dispongas del equipo; el medio de entrega lo indica el docente."
+      ],
+      [
+        10,
+        "Cerrar y conservar",
+        "Guarda el respaldo JSON y entrega el PDF por el canal indicado. El docente confirma las entregas pendientes y comunica la evaluación."
+      ]
+    ],
+    "preparation": "Trae una versión completa del expediente y las referencias, no un texto que haya que redactar desde cero. Confirma si te corresponde uno de los últimos 15 turnos y prepara el guion con sus localizadores. Retoma las objeciones previas y elige los anexos. La consulta de Bolívar se limita al pasaje que ya utilizaste; no hay otra lectura completa.",
+    "defensePlan": {
+      "slots": 15,
+      "slotMinutes": 4
+    }
+  }
 ];
-export const sessions=rows.flatMap((r,i)=>[1,2].map(encounter=>{const week=i+1,unit=unitForWeek(week).id,title=encounter===1?r[0]:r[2],question=encounter===1?r[1]:r[3],resource=encounter===1?r[4]:r[5];return {id:`s${week}-e${encounter}`,week,encounter,unit,duration:encounter===1?60:120,title,question,resource,product:r[6],agenda:agenda(encounter===1?60:120,question,'Leer la guía de la unidad y localizar el segmento o preparar el registro pertinente.','Producir evidencia e interpretación para responder a la pregunta; contrastar con otra persona.'),preparation:''};}));
-sessions[0].agenda=[
- [10,'Tres versiones, un problema','Lee individualmente A, B y C en «Material central del encuentro». En cada versión, busca si se nombra a quien realiza la suspensión: ese es el agente representado. La formulación no demuestra por sí sola quién tomó la decisión. Escribe en «Mi lectura inicial» tres notas («A:…», «B:…», «C:…») con las palabras que respaldan tu respuesta. Si no aparece, indícalo.'],
- [15,'Separar descripción e interpretación','Compara tus notas con un compañero. Escriban dos observaciones sobre las palabras o construcciones de A, B y C y, por separado, una interpretación posible. Por ejemplo, «esta oración no nombra al responsable» describe una forma; «busca ocultarlo» atribuye una intención que todavía requiere pruebas. Señalen qué parte del texto respalda cada observación.'],
- [20,'Formular hipótesis rivales','En la pareja, formulen dos hipótesis distintas sobre por qué B y C no nombran a quien tomó la decisión. No elijan todavía una como verdadera. Para cada hipótesis, anoten qué información necesitarían y qué dato la debilitaría. Dejen cerrado «Contextos de contraste»: se consultará en el encuentro 2.'],
- [15,'Guardar mi lectura inicial','Escribe individualmente en «Mi lectura inicial» un párrafo que reúna una observación con las palabras que la sostienen, las dos hipótesis y el dato que necesitarías para decidir entre ellas. Tus notas se guardan automáticamente; este diagnóstico no lleva calificación. La revisión de esa lectura se realizará en el encuentro 2.']
-];
-sessions[0].product='Un párrafo con una observación respaldada por el texto, dos hipótesis y el dato necesario para contrastarlas.';
-for(const s of sessions){s.preparation=s.week===1?(s.encounter===1?'Sin lectura previa. Las tres versiones didácticas están en esta página; comienza por describir sus diferencias.':'Retoma tu interpretación inicial y las hipótesis del diagnóstico. Los contextos de contraste están en esta página; no necesitas una lectura externa previa.'):s.encounter===1?`Prepara el material central de este encuentro: ${resourceById[s.resource].title}. Su selección concreta aparece en la ficha de material; las referencias de apoyo se consultan cuando se indiquen.`:'Retoma el segmento y las notas del encuentro 1. El trabajo continúa con el material central indicado aquí; no tienes que leer toda la bibliografía de la unidad.';}
-sessions[1].product='Diagnóstico: interpretación inicial y revisada';
-sessions[1].agenda=[[10,'Retomar la interpretación','Lee individualmente «Mi lectura inicial» del encuentro anterior. En pareja, identifica las dos hipótesis y el dato que cada una requería; no reemplaces todavía la primera versión.'],[15,'Cuatro operaciones','Con una frase de sus notas, distingan: observación —qué forma aparece—; inferencia —qué concluyen a partir de ella—; explicación —por qué podría usarse—; valoración —cómo la juzgan—. Señalen qué afirmaciones aún necesitan evidencia.'],[25,'Volver a las tres versiones','Relean A, B y C en «Material central del encuentro». Durante 5 minutos recuperen las notas; en 10 localicen las palabras y construcciones; en los otros 10 comprueben si las dos hipótesis explican las mismas diferencias.'],[10,'Pausa','Mantén guardada «Mi lectura inicial»; la nueva interpretación se escribirá en los campos de revisión.'],[35,'Contrastar los contextos','Lee los dos contextos de contraste que aparecen en este paso. Dedica 10 minutos a leer ambos, 15 a explicar con tu pareja qué hipótesis gana o pierde apoyo en cada uno y 10 a escribir individualmente «Mi lectura después del contraste». Usa los contextos como casos construidos, no como hechos reales.'],[15,'Demostración oral','Escucha al docente leer el mismo enunciado con dos énfasis distintos. Describe qué cambia en la voz y qué lectura permite cada versión; identifícalas como demostraciones de aula, no como voces del documento original.'],[10,'Conservar el cambio','Completa «Qué cambió y qué evidencia falta» con el dato que modificó tu lectura y lo que aún no puedes afirmar. En la semana 2 comenzarás una ficha oral distinta de este diagnóstico.']];
-sessions[3].agenda=[[10,'Identificar la situación','Identifica a Drexler, el público de la conferencia y los destinatarios de su publicación digital. Distingue esa escena del diálogo pasado que relata.'],[20,'Visionado completo','Abre la charla de Drexler en el enlace del material central. Mira el original completo de 16:30; el bloque incluye margen para acceder. No tomes la transcripción editorial como registro de todos los gestos y pausas.'],[15,'Transcribir el tramo','Vuelve a 00:39–01:47. Comprueba las palabras de tu transcripción y conserva el intervalo y la leyenda de sus marcas. Señala las voces representadas en el relato, sin tratarlas como una grabación del diálogo pasado.'],[15,'Escuchar y observar','Registra en «Registrar evidencias» de la ficha 1 dos recursos de voz, como pausa, énfasis, cambio de timbre o risa, y uno no verbal, como gesto o mirada. Para cada uno, indica el intervalo y describe lo efectivamente percibido antes de explicar su función.'],[10,'Pausa','Conserva las preparaciones y localizadores; no necesitas abrir una ficha nueva al retomar.'],[15,'Comparar con un intercambio de taller','Participa en una pregunta, respuesta y aclaración organizadas por el docente. Compara oralmente cómo una respuesta retoma la intervención anterior y distingue ese intercambio del diálogo que Drexler cuenta. Si necesitas guardar una nota de la comparación, añádela al final de «Mi argumento» con el título «Comparación de aula» y señala que es una producción de clase. No hace falta transcribir otro episodio ni empezar otra ficha.'],[20,'Contrastar en pareja','Pide a un compañero volver a un intervalo y comprobar tu descripción. Formula cada uno una explicación de la misma marca; comparen qué dato apoya o limita cada lectura.'],[15,'Escribir el argumento en borrador','En «Escribir argumento» de la ficha 1, conserva una interpretación inicial, su alternativa y un límite. Anota qué necesitas comprobar para revisar esa lectura en la semana 3.']];
-// The same six records develop over several weeks; each class names its actual operation.
-const classTasks={
- 2:[['Con la guía de oralidad, elige el tramo común de Drexler de 00:39–01:47 (68 segundos), un recorte de 30–68 segundos dentro de él o un episodio registrado de taller de 30–90 segundos. Identifica fuente, intervalo, participantes y situación; transcribe un segmento breve con una leyenda de las marcas usadas.','Inicia la ficha 1: escribe la pregunta en «Escribir argumento» y conserva la transcripción en una evidencia de «Registrar evidencias». Escucharás y observarás el mismo episodio en el encuentro 2.']],
- 3:[['Retoma el episodio y la transcripción de la ficha 1. Usa el recorte de Caldiz para revisar cómo registras una pausa o un énfasis; separa lo escuchado de su interpretación.','Corrige el registro y formula una pregunta que pueda responderse con esas marcas. Indica qué se pierde al leer solo la transcripción.'],['En la guía de oralidad, retoma la misma pausa, énfasis o gesto de tu episodio. Compara tu interpretación con otra explicación plausible y localiza qué dato apoya cada una.','En «Revisar ficha» de la ficha 1, escribe la interpretación que mantienes o corriges y explica el cambio. No empieces otra ficha oral.']],
- 4:[['Con la guía de escritura, prepara el análisis de los artículos 1–3 del reglamento de becas. Distingue quién decide, acredita y recibe; formula una pregunta sobre esa representación.','Abre la ficha 2 y conserva la pregunta. En el hito 1 del expediente, delimita tu problema y selecciona 2–4 documentos o episodios con criterios y localizadores.'],['En los artículos 1–3 del reglamento, localiza cláusulas que asignan capacidades o condiciones a los participantes. Registra las palabras exactas y distingue una disposición de su cumplimiento efectivo.','Añade las evidencias a la ficha 2 y explica qué relación muestran entre participantes, acciones y condiciones. Revisa si tu pregunta y corpus del hito 1 permiten investigarla.']],
- 5:[['Retoma una cláusula de la ficha 2 y la guía de escritura. Distingue lo expresado por el texto de lo que el lector debe inferir y del conocimiento institucional que aporta.','Anota dos inferencias, sus fundamentos y la información que permitiría contrastarlas. Pueden ser compatibles; si descartas una candidata, justifica por qué. Continúa el registro de la ficha 2.'],['Contrasta esas dos inferencias con las cláusulas y condiciones de los artículos 1–3. Busca qué información está disponible y cuál sigue faltando; no atribuyas intenciones solo por una omisión.','En «Escribir argumento» de la ficha 2, explica la inferencia mejor sustentada y conserva la alternativa con el dato que permitiría decidir entre ambas.']],
- 6:[['Examina en el reglamento una decisión de tipografía o disposición. Describe qué destaca y qué queda subordinado; usa la guía de escritura para separar observación y efecto supuesto.','Prepara una jerarquía visual alternativa que conserve las palabras y explica qué quieres comparar. Identifícala como elaboración propia en la ficha 2.'],['Compara el reglamento con tu alternativa visual. Mantén el contenido verbal y localiza los cambios de jerarquía; pide a otro lector explicar qué lee primero y por qué.','Revisa la interpretación de la ficha 2 a partir de ese contraste. Registra sus límites: una disposición visual no demuestra por sí sola una intención ni un efecto general en todos los lectores.']],
- 7:[['Trabaja con la selección de Pardo y tu pregunta de investigación. Compara qué observarían las perspectivas sociocognitiva, dialéctico-relacional e histórico-discursiva; consulta la guía de contexto para distinguirlas.','En la ficha 3, justifica el enfoque y las categorías que responden a tu pregunta. Identifica los datos que necesitas sin sumar todas las etiquetas a un texto.'],['Con la guía de contexto, busca tres datos pertinentes para tu corpus. Registra para cada uno su fuente y localizador, y explica qué interpretación ayuda a sostener o discutir.','Añade el dossier contextual a la ficha 3. Distingue publicación, circulación y recepción, y señala qué afirmaciones todavía carecen de evidencia.']],
- 8:[['Contrasta en la ficha 3 tus categorías y datos contextuales con una interpretación alternativa. Busca un contraejemplo o una afirmación que el corpus no permita sostener.','Revisa la ficha 3 y precisa en el hito 2 el método, las categorías y las fuentes del expediente. Esta preparación precede a la evaluación individual del encuentro 2.']],
- 9:[['Lee los dos recortes enlazados de Menchú y Márquez: unas 360 palabras entre ambos. Selecciona tres segmentos en total: uno de Menchú con una marca personal o colectivo nombrado; otro de Márquez sobre diferencias entre mujeres; y un tercero donde Márquez atribuye una idea a Angela Davis. Los retomarás en las cuatro clases. Si tu ficha 4 ya tiene otro corpus, conserva sus segmentos y usa estos recortes para el contraste de la misma ficha.','Inicia la ficha 4 con los segmentos y sus localizadores. Explica a quién incluye una marca como «nosotros» en cada caso, sin asumir que siempre designa al mismo grupo.'],['Retoma los tres segmentos de la ficha 4. En la entrevista distingue la pregunta de las entrevistadoras, la respuesta de Márquez y la idea atribuida a Angela Davis. En Menchú distingue la experiencia individual y los colectivos mencionados. Compara marcas y destinatarios; no atribuyas a una cultura entera lo que dice una persona.','En «Mi argumento» de la ficha 4, organiza el mapa de voces y explica sus atribuciones. Reúne los tres segmentos en una lista o tabla; no los copies de nuevo. Examina una atribución con otro lector sin inventar ambigüedad.']],
- 10:[['Retoma una atribución de tus tres registros. En el contraste común, vuelve a la idea atribuida a Davis y a cómo Márquez la usa en su respuesta. Localiza las marcas que permiten distinguir las voces y examina otra lectura posible. Si tu ficha ya usa otro corpus, haz esta revisión con una atribución de ese corpus; no busques un cuarto fragmento.','Desarrolla en «Escribir argumento» de la ficha 4 una interpretación y una alternativa. Justifica las atribuciones con marcas concretas.'],['Retoma la atribución de tu ficha 4 y la comparación entre Menchú y Márquez. Examina qué marca permite atribuir palabras, sostener una idea o tomar distancia. Compara solo las intervenciones seleccionadas, sin generalizar sobre todas las personas de los colectivos.','Revisa la misma ficha 4: corrige o restringe la atribución y explica qué evidencia motivó el cambio.']],
- 11:[['Con la guía de géneros, identifica propósito, esfera social y destinatarios de un documento de tu corpus. Distingue su género de las secuencias que contiene y del soporte en que circula.','Inicia la ficha 5 con esa distinción y sus evidencias. Elige otro documento cuya relación puedas documentar o prepara una reformulación propia claramente rotulada.'],['Continúa la ruta elegida para la ficha 5. Si comparas piezas documentadas, localiza el vínculo y los cambios de destinatario, función, información y soporte. Si eliges el experimento de taller, reformula un tramo del reglamento para otro destinatario y rotúlalo como adaptación propia. No necesitas realizar ambas rutas.','En la ficha 5, explica qué cambia y qué se conserva. Distingue el vínculo que produces tú de una cadena de circulación documentada.']],
- 12:[['Retoma las evidencias de la ficha 5 y la guía de géneros. Comprueba qué relación entre documentos está documentada y cuál es una propuesta de análisis.','Construye en el hito 3 un argumento parcial del expediente: relaciona segmentos, contexto y categorías, e incluye una objeción y un límite.'],['Intercambia tu argumento parcial. Con el reglamento como caso de contraste, pide a otro lector un localizador, una relación insuficientemente documentada y un posible salto inferencial.','Revisa la ficha 5 y el argumento del hito 3 según las objeciones. Explica qué cambió; la ficha y el informe se conservan como textos distintos.']],
- 13:[['Con la guía de organización textual, segmenta un texto mixto de tu corpus. Justifica dónde aparecen narración, descripción, explicación, argumentación o diálogo; no asignes etiquetas solo por palabras aisladas.','Inicia la ficha 6 con una matriz de segmentos y localizadores. Explica cómo se articulan las secuencias.'],['Busca en el reglamento las secuencias efectivamente presentes. Compáralas con tu texto mixto: no es necesario que un solo documento contenga los cinco tipos.','Añade a la ficha 6 una explicación de las transiciones y de la relación entre secuencias. Distingue una explicación causal de una justificación normativa o moral.']],
- 14:[['Retoma una inferencia del corpus y la guía de argumentación. Reconstruye premisa, conclusión y el puente que las relaciona; plantea una objeción pertinente.','En «Escribir argumento» de la ficha 6, explica qué dato obligaría a restringir la conclusión. Selecciona la evidencia que incorporarás al borrador del expediente.'],['Usa la selección de Bolívar para examinar la relación entre diálogo, objeción y respuesta. Distingue una interacción observada de un diálogo representado o reconstruido en tu corpus.','Revisa la ficha 6 e integra la objeción en el borrador del expediente. Conserva las fuentes y explica qué alcance tiene ahora tu conclusión.']]
-};
-for(const [week,tasks] of Object.entries(classTasks))for(let i=0;i<tasks.length;i++){const s=sessions.find(s=>s.week===+week&&s.encounter===i+1),[work,production]=tasks[i];s.agenda=agenda(s.duration,`Retoma la pregunta «${s.question}» con el material central de esta página. Identifica qué afirmación necesitas examinar antes de responder.`,work,production);s.agenda[s.agenda.length-1][2]='Conserva las notas en el registro indicado bajo «En qué trabajo se integra esta clase». Anota un límite y qué necesitas retomar en el siguiente encuentro.';}
-const transfer=sessions.find(s=>s.week===8&&s.encounter===2);
-transfer.preparation='Revisa tu ficha 3 y el método del hito 2. El reglamento es material de preparación; el docente proporciona un caso nuevo acotado y precisa las condiciones y el canal de entrega de la Sumativa 1.';
-transfer.product='Análisis individual del caso nuevo, entregado por el canal indicado por el docente. La ficha 3 y el método del hito 2 se conservan como preparación.';
-transfer.agenda=[[10,'Precisar caso y condiciones','Lee el caso nuevo y las condiciones de la Sumativa 1 indicados por el docente. Confirma qué material puedes consultar y cómo debes entregar.'],[35,'Localizar y describir','Trabaja individualmente: formula la pregunta, selecciona segmentos localizables y describe las marcas relevantes antes de interpretarlas.'],[10,'Pausa','Conserva tu respuesta; retoma después el mismo caso.'],[30,'Sostener una interpretación','Justifica las categorías y el contexto pertinente. Relaciona las observaciones con una interpretación y explica una alternativa y un límite.'],[25,'Revisión individual','Comprueba que cada afirmación remita a evidencia localizable, que distingas descripción e inferencia y que las atribuciones sean precisas. Esta fase no es intercambio de respuestas entre pares.'],[10,'Entregar y conservar','Entrega por el canal indicado y conserva tu copia. No sustituyas la ficha 3 por esta respuesta; el cuaderno no envía trabajos al docente.']];
-const closing=[
- [15,1,'Retoma el borrador y sus fuentes. Con la guía de organización textual, identifica una afirmación que exceda el corpus y un contraejemplo que necesite respuesta.','En el hito 4 del expediente, escribe la conclusión revisada y sus límites. Explica en el registro de cambios qué evidencia u objeción motivó cada corrección.'],
- [15,2,'Presenta tu actividad de enseñanza a un compañero o grupo: problema, materiales, pasos, tiempo y criterio de revisión. Pídeles que la realicen para detectar instrucciones ambiguas.','En «Actividad de enseñanza» del expediente, registra el ajuste tras la prueba. La consigna debe permitir localizar, describir y revisar una interpretación.'],
- [16,1,'Con la guía de la unidad 6 y la rúbrica del expediente, prepara la defensa: pregunta, elección del método, evidencia decisiva, objeción y límite. Comprueba que puedes localizar los segmentos que mencionas.','Ensaya o realiza la defensa según la organización del docente. Conserva el guion en el expediente y registra las objeciones que afecten a la versión final.'],
- [16,2,'Retoma el informe, la selección de Bolívar y las objeciones de la defensa. Comprueba si la conclusión incorpora las respuestas y mantiene límites justificados.','Completa la autoevaluación del expediente con ejemplos de cada dimensión de la rúbrica. Prepara la entrega PDF con los anexos pertinentes y conserva el respaldo JSON para editar.']
-];
-for(const [week,encounter,work,production] of closing){const s=sessions.find(s=>s.week===week&&s.encounter===encounter);s.agenda=agenda(s.duration,`Abre tu expediente y retoma «${s.question}». Identifica la decisión del informe que vas a revisar en esta clase.`,work,production);s.agenda[s.agenda.length-1][2]='Conserva los cambios en el expediente. Preparar el PDF no equivale a entregarlo: usa el canal indicado por el docente.';}
-const results=[
- ['Ficha 1: pregunta, identificación del episodio y transcripción localizable.','Ficha 1: registros de voz y de cuerpo cuando sea observable, y argumento en borrador con alternativa y límite del registro.'],
- ['Ficha 1: transcripción comprobada y explicación de sus decisiones.','Ficha 1: interpretación revisada y explicación del cambio.'],
- ['Ficha 2: pregunta inicial. Hito 1 del expediente: pregunta y selección de 2–4 documentos o episodios.','Ficha 2: cláusulas localizadas con participantes, acciones y condiciones. Ajustes de pregunta y corpus en el hito 1.'],
- ['Ficha 2: dos inferencias y sus fundamentos, con los datos que faltan.','Ficha 2: argumento que contrasta las inferencias y justifica su alcance.'],
- ['Ficha 2: descripción de la disposición original y de una alternativa visual propia que conserva las palabras.','Ficha 2: interpretación revisada tras el contraste visual y explicación del cambio.'],
- ['Ficha 3: comparación de enfoques y elección justificada.','Ficha 3: tres datos contextuales con fuentes, localizadores y función en el análisis.'],
- ['Ficha 3: revisión y límites. Hito 2 del expediente: método y contexto documentado.',''],
- ['Ficha 4: tres segmentos con marcas de personas o perspectivas y sus localizadores.','Ficha 4: atribuciones y responsabilidad justificadas, con un caso ambiguo identificado.'],
- ['Ficha 4: argumento con dos lecturas del caso de atribución ambiguo.','Ficha 4: atribución revisada y explicación de lo que cambia o se mantiene.'],
- ['Ficha 5: primera pieza identificada y elección de una comparación documentada o un experimento propio.','Ficha 5: comparación de las dos piezas de la ruta elegida, con vínculo documentado o adaptación propia claramente identificados.'],
- ['Hito 3 del expediente: desarrollo parcial con evidencias, objeción y límite.','Ficha 5 revisada y desarrollo del hito 3 ajustado a las objeciones.'],
- ['Ficha 6: matriz escrita de segmentos, secuencias y transiciones.','Ficha 6: explicación de las secuencias efectivamente presentes y comparación con el texto mixto.'],
- ['Ficha 6: premisa, regla de conexión, conclusión y objeción. Selección de evidencia para el borrador del expediente.','Ficha 6 revisada y borrador del expediente que incorpora la objeción y sus límites.'],
- ['Hito 4: «Conclusión revisada y límites» y «Registro de cambios» del expediente.','Hito 4: «Actividad de enseñanza», con la dificultad detectada en su prueba y el ajuste realizado.'],
- ['«Guion de defensa» y objeciones pertinentes para el cierre del expediente.','Expediente final, autoevaluación y PDF con anexos elegidos; respaldo JSON para conservar la edición.']
-];
-for(const s of sessions){
- const result=results[s.week-2]?.[s.encounter-1];if(result)s.product=result;
- if(s.week===1||(s.week===8&&s.encounter===2))continue;
- const r=resourceById[s.resource],theory=r.kind==='teoria';
- s.preparation=s.week>=15?'Retoma tu expediente y el avance indicado en este encuentro. '+(theory?`Relee la selección de ${r.author} indicada en el material central; úsala para revisar el análisis, no para añadir una ficha nueva.`:'Consulta la guía de la unidad 6 para revisar las operaciones analíticas; trae los segmentos y materiales que usarás en la actividad o defensa.'):
- s.encounter===1?`Antes de clase, lee la selección indicada en «Material central del encuentro»: ${r.title}. Si es una guía, trabaja sus apartados de preparación; sus ejemplos no son entregas independientes. Retoma tu ficha si ya tiene notas.`:
- `Retoma el documento y las notas del encuentro 1. ${theory?`Prepara también la selección de ${r.author} indicada en el material central; no se asigna el texto completo.`:s.resource==='drexler'?'Ten disponible el enlace de la charla y tu transcripción; el visionado completo está previsto en clase.':'Relee el tramo del documento que indica el material central, manteniendo sus localizadores.'} No necesitas leer toda la bibliografía de la unidad.`;
-}
-const firstOral=sessions.find(s=>s.week===2&&s.encounter===1);
-firstOral.preparation='Lee la guía de oralidad antes de clase y ten disponible el enlace de Drexler. El visionado completo se hace en esta clase antes de seleccionar y transcribir el tramo.';
-firstOral.agenda=[
- [5,'Identificar la intervención','Abre la charla de Drexler indicada en «Documento de análisis». Reconoce autor, publicación y situación; la sección «Teoría» explica cómo describirlos. El documento que transcribes es la charla, no la explicación teórica.'],
- [20,'Visionado completo','Mira el original de 16:30; el bloque incluye margen de acceso. Observa la diferencia entre la conferencia presente y el diálogo pasado que narra. Este visionado contextualiza el episodio que analizarás durante la unidad.'],
- [15,'Transcribir el tramo','Vuelve al tramo común 00:39–01:47 (68 segundos). Trabaja con él o elige un recorte de 30–68 segundos. Transcribe un segmento breve y anota la leyenda de las marcas; no sustituyas la escucha por la puntuación del subtítulo. Si usas un episodio propio de taller, identifica su registro e intervalo.'],
- [12,'Iniciar la ficha oral','En «Registrar evidencias», conserva la transcripción con fuente e intervalo. En «Escribir argumento», anota una pregunta sobre ese episodio. Elige y registra ahora; los recursos de voz y cuerpo se añadirán al mismo episodio en la siguiente clase.'],
- [8,'Conservar para continuar','Comprueba fuente, intervalo y leyenda. Conserva esos registros para la clase de palabras, voz y cuerpo; no necesitas elegir otra charla ni rehacer la transcripción desde cero.']
-];
-const secondOral=sessions.find(s=>s.week===2&&s.encounter===2);
-secondOral.preparation='Retoma la charla, el intervalo y la transcripción guardados en la primera clase. La sección «Teoría» ayuda a interpretar las marcas. Ahora vuelve al tramo para añadir voz y cuerpo a la misma ficha.';
-secondOral.agenda[0][1]='Retomar el episodio registrado';
-secondOral.agenda[0][2]='Abre la transcripción y la identificación de la situación que conservaste en la primera clase. Comprueba el intervalo y quién habla o qué voz se representa. En Drexler, distingue la conferencia presente del diálogo narrado.';
-secondOral.agenda[1][1]='Reescucha dirigida del mismo tramo';
-secondOral.agenda[1][2]='Vuelve al intervalo guardado de tu episodio. Si usas Drexler, está dentro de 00:39–01:47; si usas un registro de taller, sigue su intervalo propio. Reescucha solo las partes necesarias para localizar voz y cuerpo; conserva el contexto observado en la primera clase.';
-secondOral.agenda[2][1]='Comprobar la transcripción y las voces';
-secondOral.agenda[2][2]='Abre la transcripción que ya guardaste y comprueba sus palabras, intervalo y leyenda. Corrige solo las marcas que lo necesiten. Identifica una característica verbal del tramo, como una cita, un marcador o una forma personal, y señala quién habla o qué voz se representa. Añade esa observación al registro o al argumento; no escribas otra transcripción completa.';
-secondOral.agenda[3][2]='Añade al registro de la ficha 1 dos recursos de voz, como pausa, énfasis, cambio de timbre o risa, y un recurso corporal cuando tu registro permita observarlo. Para cada uno, indica el intervalo y describe lo percibido antes de interpretar su función. Si tu episodio propio solo tiene audio, declara ese límite y no inventes un gesto.';
-const supportOral=sessions.find(s=>s.week===3&&s.encounter===1);
-supportOral.title='Explicar las marcas de voz';
-supportOral.product='Ficha 1: argumento que justifica las marcas ya registradas con la guía y Caldiz; correcciones localizadas, sin iniciar otro episodio.';
-supportOral.agenda[1][2]='Retoma la misma transcripción y las marcas guardadas. Usa la selección de Caldiz para justificar cómo anotas una pausa o un énfasis. Corrige solo el registro que lo necesite y explica qué aporta la categoría a su interpretación.';
-supportOral.agenda[2][2]='En «Escribir argumento», añade un apartado de justificación después de tu primera interpretación, sin borrar el borrador. Relaciona las marcas con su función posible y una alternativa; cita la guía o la selección de Caldiz que realmente utilizaste. Conserva los localizadores y reserva la nueva interpretación completa para «Revisar ficha».';
-const lastOral=sessions.find(s=>s.week===3&&s.encounter===2);
-lastOral.preparation='Retoma tu pregunta, transcripción, registros y borrador con la justificación añadida en la clase 3. Relee solo los intervalos y la guía que necesites para contrastar la interpretación; no se asigna otra lectura completa.';
-lastOral.agenda[1][2]='Con ayuda de la guía, vuelve a la pausa, énfasis o gesto del mismo episodio. Compara tu interpretación con otra explicación de esa marca y señala qué dato apoya cada una. No busques un nuevo corpus para hacer el contraste.';
-lastOral.agenda[4][2]='Intercambia la ficha con otro lector. Pídele comprobar un localizador, proponer una alternativa y señalar una corrección concreta. Usa la objeción para ajustar «Interpretación revisada» y explica el cambio en «Qué cambió y por qué». Si mantienes la lectura, justifica por qué resiste el contraste.';
-// Preparations name the new reading or the existing work needed next.
-const preparationBySession={
- 's4-e1':'Lee la guía de escritura, especialmente «La escritura organiza una acción». Consulta los artículos 1–3 del reglamento (PDF 1–2). Trae una pregunta provisional para la ficha 2 y una propuesta de 2–4 documentos o episodios para el hito 1; puedes ajustarlas en clase.',
- 's4-e2':'Retoma la pregunta de la ficha 2 y los artículos 1–3 (PDF 1–2). Ten abierto el hito 1 para ajustar pregunta y corpus después de localizar participantes, acciones y condiciones.',
- 's5-e1':'Retoma una o dos cláusulas ya registradas. Relee «Planificar y leer desde conocimientos» de la guía de escritura; no necesitas repetirla completa. Prepara dos inferencias y señala qué palabras o conocimientos las apoyan. Pueden ser compatibles; no necesitas inventar dos lecturas rivales.',
- 's5-e2':'Trae las dos inferencias y sus localizadores. Vuelve a las cláusulas necesarias de los artículos 1–3; consulta los artículos 8–9 (PDF 3) solo si el contraste depende de esos requisitos. Escribirás también la síntesis del tema global en el argumento.',
- 's6-e1':'Retoma el mismo documento y tu argumento de la ficha 2. Relee «La página también orienta» de la guía. Elige una decisión visual que puedas describir y un tramo cuyas palabras conservarás en la alternativa.',
- 's6-e2':'Trae la disposición original y tu alternativa visual propia, con las mismas palabras y sus localizadores. Retoma la hipótesis sobre qué cambia en la lectura; no prepares otra maqueta ni una lectura completa nueva.',
- 's7-e1':'Lee la guía de contexto y Pardo: impresas 43–47 / PDF 3–7. Retoma la pregunta y el corpus del hito 1. Elige una dificultad concreta para comparar los enfoques y proponer uno provisionalmente en la ficha 3.',
- 's7-e2':'Retoma la dificultad y el enfoque provisional de la ficha 3. Busca tres datos pertinentes con fuentes y localizadores; si usas el reglamento, consulta la razón final (PDF 4) para su versión. Distingue información comprobada y pendiente; no tienes que reunir tres enlaces distintos.',
- 's8-e1':'Retoma el dossier y la elección provisional de la ficha 3. Relee «Triangular con propósito» y «Hacer visible la propia posición» de la guía; prepara una alternativa o un límite. Ajustarás el mismo método en el hito 2.',
- 's9-e1':'Lee la teoría integrada y los recortes indicados de Menchú y Márquez (unas 360 palabras en total). No se asignan los textos completos. En clase guardarás tres segmentos entre ambos, al menos uno de cada texto, en la ficha 4. Si ya la empezaste con otro corpus, conserva tus evidencias: usarás el contraste para revisarlas.',
- 's9-e2':'Retoma los tres segmentos y localizadores de la ficha 4, junto con los mismos recortes de Menchú y Márquez. Distinguirás quién habla y a quién atribuye una idea. No selecciones otros tres segmentos ni leas los textos completos.',
- 's10-e1':'Retoma el mapa de voces y una atribución de la ficha 4. Relee «Citar también encuadra» y «Hablar desde una experiencia y en nombre de otros» en la teoría integrada. Examinarás una lectura alternativa con los mismos fragmentos; no necesitas buscar otro texto ni inventar citas o negaciones.',
- 's10-e2':'Retoma el argumento de la ficha 4, sus tres segmentos y la alternativa examinada. Volverás al contraste Menchú–Márquez para revisar una atribución y el alcance de tu conclusión. Conserva el argumento anterior; la nueva versión va en «Interpretación revisada». No empiezas otro mapa.',
- 's11-e1':'Lee la guía de géneros, especialmente género/secuencia y modo/medio/soporte. Retoma una pieza ya conocida y elige una sola ruta: comparación documentada o adaptación propia. Esa elección orientará la segunda pieza.',
- 's11-e2':'Retoma la ruta elegida. Si es documentada, trae las dos piezas y la fuente del vínculo. Si es de taller, elige un tramo del reglamento y el destinatario de tu aviso o explicación; podrás elaborar la adaptación en clase. No prepares ambas rutas.',
- 's12-e1':'Retoma las dos piezas, los registros y el borrador de la ficha 5, además de pregunta, corpus y método del expediente. Relee «Recontextualizar implica seleccionar» y «Dibujar una relación no la demuestra». Selecciona qué evidencia responde a la pregunta del informe.',
- 's12-e2':'Trae el desarrollo parcial del hito 3 y la ficha 5 con sus fuentes. La revisión ajustará esos dos textos, cada uno en su campo; no prepara otro informe ni otra comparación completa.',
- 's13-e1':'Lee «Reconstruir organizaciones mixtas» y «Explicar, justificar y evaluar» de la guía 6. Retoma un texto ya conocido con sus localizadores; no necesitas reunir un corpus nuevo ni encontrar los cinco tipos en él.',
- 's13-e2':'Retoma la matriz escrita de la ficha 6 y el mismo texto. Consulta los considerandos y artículos pertinentes del reglamento como contraste. Identifica una transición cuya explicación necesite mejores marcas.',
- 's14-e1':'Retoma la matriz y una inferencia de tu corpus. Relee «Una afirmación necesita un puente» de la guía. Prepara premisa, conclusión, regla de conexión y una objeción; conservarás lo anterior al añadir este apartado.',
- 's14-e2':'Lee Bolívar: impresas 96–102 y 105–107 / PDF 4–10 y 13–15. Retoma la inferencia y su objeción. Trae un intercambio registrado en oralidad o una representación identificada como tal si tu corpus no contiene diálogo; no transcribas otro episodio completo.',
- 's15-e1':'Retoma el borrador del expediente, sus fuentes y las revisiones de las fichas. Prepara una afirmación que exceda el corpus y una objeción. Trabajarás conclusión y registro de cambios; no comienzas otra ficha 6.',
- 's15-e2':'Trae un borrador de la consigna escrito en «Actividad de enseñanza»: destinatarios, problema, material accesible, pasos, tiempos, resultado y criterio de revisión. Prepara los segmentos para que otro lector pueda realizarla; en clase probarás y ajustarás esa misma consigna.',
- 's16-e1':'Retoma el expediente y la rúbrica. Prepara en «Guion de defensa» la pregunta, selección del corpus, método, evidencia decisiva, objeción y límite, con sus localizadores. La organización de las intervenciones se indicará en clase.',
- 's16-e2':'Retoma las objeciones de la defensa y la versión ajustada del expediente. Consulta solo el pasaje de Bolívar que usaste si ayuda a revisar la respuesta; no se asigna otra lectura completa. Decide los anexos pertinentes y prepara la autoevaluación con ejemplos de la rúbrica.'
-};
-for(const s of sessions){
- if(preparationBySession[s.id])s.preparation=preparationBySession[s.id];
- else if(s.week>1)s.preparation=s.preparation.replaceAll('«Material central del encuentro»','«Guía y lecturas de apoyo»').replaceAll('indicada en el material central','indicada en «Guía y lecturas de apoyo»').replaceAll('el visionado completo está previsto en clase','el visionado completo se hizo en la primera clase oral').replaceAll('que indica el material central','que trabajaste en el encuentro anterior');
- if(s.week>1)for(const item of s.agenda)item[2]=item[2].replaceAll('el material central de esta página','el documento y la guía indicados aquí');
-}
-const inferenceWriting=sessions.find(s=>s.week===5&&s.encounter===2);
-inferenceWriting.product='Ficha 2: argumento que contrasta las inferencias, reconstruye el tema global y justifica su alcance.';
-inferenceWriting.agenda[3][2]='En «Mi argumento» de la ficha 2, conserva la interpretación inicial y añade dos apartados: inferencias con sus fundamentos y contraste —sin inventar lecturas rivales—; síntesis del tema global de los artículos 1–3. Explica qué información seleccionas, omites o integras sin perder participantes y condiciones. No confundas lo que la norma dispone con su cumplimiento efectivo.';
-const firstVoices=sessions.find(s=>s.week===9&&s.encounter===1);
-firstVoices.agenda[0][2]='Identifica las dos situaciones: una lideresa indígena guatemalteca recibe el Nobel de la Paz en 1992; una lideresa afrodescendiente colombiana responde una entrevista en 2021. Observa cómo se presentan y a qué colectivos se refieren. Analizamos intervenciones concretas, no cómo habla toda una cultura.';
-firstVoices.agenda[2][2]='En «Evidencias» guarda tres segmentos en total, al menos uno de cada texto, con autora y localizador. En «Pregunta de la ficha» anota qué quieres explicar. Si aparece «nosotros», investiga su referencia. Si no aparece, usa las denominaciones o formas presentes. Si ya hay registros de otro corpus, continúa con ellos y usa el contraste para revisarlos; no los reemplaces.';
-sessions.find(s=>s.week===9&&s.encounter===2).agenda[3][2]='En «Mi argumento» organiza el mapa como una lista o tabla que remita a tus tres evidencias. Explica las atribuciones y una semejanza o diferencia entre las formas de referirse a los colectivos. No copies otra vez los fragmentos ni trates a las autoras como representantes de todas las voces de su cultura. Elige una atribución para contrastar; no inventes ambigüedad.';
-sessions.find(s=>s.week===10&&s.encounter===1).product='Ficha 4: argumento con una atribución contrastada, las marcas que la sostienen y una alternativa examinada.';
-sessions.find(s=>s.week===10&&s.encounter===2).agenda[1][2]='Vuelve a la atribución que examinaste y al contraste Menchú–Márquez. Comprueba quién habla, a quién atribuye la idea y qué marca muestra adhesión o distancia. Distingue el texto del discurso Nobel, la pregunta de las entrevistadoras y la respuesta de Márquez. Explica qué alternativa sostienes o descartas. La entrevista no prueba las palabras originales de Davis, ni una intervención permite generalizar sobre toda una cultura.';
-sessions.find(s=>s.week===9&&s.encounter===2).product='Ficha 4: atribuciones y responsabilidad justificadas, con un caso seleccionado para contrastar.';
-const dialogueClosing=sessions.find(s=>s.week===14&&s.encounter===2);
-dialogueClosing.agenda[1][2]='Con la selección de Bolívar, examina cómo una respuesta retoma, modifica o evalúa la intervención anterior. Si el reglamento no contiene un intercambio observado, retoma un intercambio registrado de oralidad o una representación didáctica rotulada como tal. Conserva fuente y localizador, sin repetir toda la transcripción. Distingue ese episodio de apoyo de tu corpus principal.';
-sessions.find(s=>s.week===15&&s.encounter===1).agenda[3][2]='Conserva los cambios en el expediente. Antes del siguiente encuentro, prepara el borrador de tu consigna en «Actividad de enseñanza» y los materiales que otro lector necesitará; no es otro informe.';
-for(const s of sessions.filter(s=>s.week>=4&&s.encounter===2&&!(s.week===8))){
- s.agenda[4][2]=s.week===12?'Comprueba las fuentes y atribuciones del argumento ya ajustado: verifica localizadores, vínculo entre las piezas y límites. Corrige solo lo que esta comprobación detecte; no repitas el intercambio completo ni escribas un segundo informe.':s.week===15?'Comprueba con otro lector un paso de la consigna ya ajustada: ¿puede encontrar el material y producir el resultado? Registra el último ajuste en «Actividad de enseñanza», sin repetir toda la microclase.':s.week===16?'Comprueba la vista previa: portada, apartados, referencias y anexos elegidos. Retira material ajeno al informe o notas que no deseas compartir. Guarda el PDF por el diálogo del navegador y conserva el JSON para editar.':s.week===6||s.week===10||s.week===14?'Comprueba la versión revisada con los mismos localizadores y la objeción. Haz el último ajuste en «Interpretación revisada» y «Qué cambió y por qué»; conserva el argumento anterior. No inicies otro análisis completo.':`Pide a otro lector comprobar un localizador y una interpretación del registro existente de la ficha ${s.unit}. Corrige esa entrada o añade una aclaración al borrador; no registres otra copia de todo el documento.`;
- if(s.week===16)s.agenda[4][1]='Comprobar la vista previa y los anexos';
-}
-// Operational limits keep classroom work inside the existing 60/120-minute blocks.
-const byId=id=>sessions.find(s=>s.id===id);
-byId('s2-e1').agenda[2][2]='Vuelve al tramo común 00:39–01:47 (68 segundos). Conserva ese intervalo o elige 30–68 segundos dentro de él; transcribe solo un segmento de 20–30 segundos y añade una leyenda de marcas. No necesitas transcribir los 68 segundos completos en estos 15 minutos. Comprueba las palabras mediante escucha, sin tomar la puntuación del subtítulo como pausa. Si usas un episodio propio de taller, identifica su registro e intervalo.';
-byId('s4-e1').agenda[2][2]='Guarda la pregunta inicial de la ficha 2. En el hito 1, registra la propuesta de 2–4 documentos o episodios que trajiste, sus localizadores disponibles y por qué responden al problema. Es una delimitación provisional: marca lo pendiente de comprobar y ajusta la selección en el siguiente encuentro; no tienes que localizar todo el corpus en estos 25 minutos.';
-byId('s7-e2').agenda[1][2]='Retoma los tres datos contextuales traídos de la preparación. Verifica fuente, localizador y función de cada uno; la información del propio documento puede ser pertinente. Usa las fuentes disponibles y marca «pendiente de comprobar» cuando falte una. No conviertas el taller en una búsqueda ilimitada de nuevos enlaces.';
-byId('s12-e1').agenda[2][2]='Construye en «Desarrollo del análisis» del hito 3 un núcleo parcial con dos segmentos ya localizados: observación, categoría, contexto y relación con la pregunta. Añade una objeción y un límite. No redactes el informe completo en estos 25 minutos; ampliarás el desarrollo con las demás evidencias antes del taller siguiente.';
-byId('s12-e2').agenda[1][2]='Intercambia un núcleo de dos o tres párrafos de tu argumento parcial y sus dos segmentos de apoyo. Pide a otro lector comprobar un localizador, una relación documentada y un posible salto inferencial. Trabaja sobre ese recorte; no es una lectura completa de todos los expedientes.';
-byId('s15-e1').preparation+=' Ten también preparado un borrador del guion de defensa y confirma el turno asignado para los tres últimos encuentros.';
-byId('s15-e1').agenda[3][2]='Conserva conclusión y registro de cambios. Antes del siguiente encuentro, termina la microconsigna de 5 minutos en «Actividad de enseñanza» y el guion de defensa. Comprueba el turno que te corresponde; no son otra ficha ni otro informe.';
-const defenseBlock=(slots,otherWork)=>`${slots} estudiantes defienden individualmente en turnos de 4 minutos: 2 minutos para explicar una decisión con evidencia localizable, 1 minuto para una pregunta del docente y la respuesta breve del estudiante, y 1 minuto para registrar la respuesta y cambiar de turno. El guion está preparado; no se lee el informe completo. Quienes no tienen turno ${otherWork}. La rúbrica del curso se mantiene.`;
-const teachingDefense=byId('s15-e2');
-teachingDefense.title='Probar la enseñanza y comenzar las defensas';
-teachingDefense.defensePlan={slots:16,slotMinutes:4};
-teachingDefense.preparation='Trae un borrador completo de la microconsigna que pueda realizarse en 5 minutos: problema, segmento breve accesible, dos o tres pasos, resultado y criterio de revisión. Conserva la versión en «Actividad de enseñanza». Prepara también «Guion de defensa» y comprueba si estás entre los primeros 16 turnos. La prueba se hará en tríos, no como 45 exposiciones ante toda la clase.';
-teachingDefense.agenda=[
- [5,'Organizar tríos y turnos','Comprueba los materiales de la microconsigna y el turno de defensa. Cada trío distribuye autor, lector y observador; los papeles rotan.'],
- [25,'Probar la microconsigna en tríos','Reserva 4 minutos para organizarse. Cada integrante dispone de 5 minutos para que el lector realice su microconsigna y 2 minutos para recibir la observación sobre claridad y evidencia. Rota tres veces: 21 minutos de prueba y devolución. Los tríos trabajan simultáneamente; no repitas la actividad ante toda la clase.'],
- [10,'Pausa','Conserva el resultado de la prueba y vuelve con los mismos materiales.'],
- [64,'Defensas individuales · primer bloque',defenseBlock(16,'revisan en silencio su consigna y las fuentes del expediente, sin interferir con la defensa')],
- [8,'Ajustar la consigna probada','En «Actividad de enseñanza», señala la dificultad observada y el cambio realizado. Identifica la aportación del lector y del observador; no presentes el resultado de una prueba breve como efecto general.'],
- [8,'Cierre y continuidad','Guarda los cambios, revisa el turno restante y conserva el guion. Puedes ajustar el informe tras las objeciones; la página no envía el trabajo al docente.']
-];
-teachingDefense.product='Microconsigna probada y ajustada en el expediente; primeras 16 defensas individuales. El resto conserva su guion para el turno asignado.';
-const defenseMeeting=byId('s16-e1');
-defenseMeeting.defensePlan={slots:14,slotMinutes:4};
-defenseMeeting.preparation='Trae el guion ya preparado, los segmentos localizables y el expediente. Confirma si te corresponde uno de los siguientes 14 turnos; no se reserva este bloque para preparar el guion desde cero. Quienes ya defendieron trabajan en las objeciones; quienes esperan comprueban su evidencia.';
-defenseMeeting.agenda=[
- [2,'Confirmar el orden','Ten listo el guion, la evidencia y el turno asignado. La pauta es la misma del encuentro anterior.'],
- [56,'Defensas individuales · segundo bloque',defenseBlock(14,'trabajan en silencio en los ajustes del expediente o comprueban la evidencia para su turno')],
- [2,'Conservar la objeción','Anota la pregunta u objeción recibida y qué parte del informe revisarás. Conserva el trabajo y comprueba los turnos del encuentro final.']
-];
-defenseMeeting.product='Siguientes 14 defensas individuales y objeciones localizadas para revisar el expediente; no es otro informe.';
-const finalMeeting=byId('s16-e2');
-finalMeeting.title='Completar las defensas y cerrar el expediente';
-finalMeeting.defensePlan={slots:15,slotMinutes:4};
-finalMeeting.preparation='Trae una versión completa del expediente y las referencias, no un texto que haya que redactar desde cero. Confirma si te corresponde uno de los últimos 15 turnos y prepara el guion con sus localizadores. Retoma las objeciones previas y elige los anexos. La consulta de Bolívar se limita al pasaje que ya utilizaste; no hay otra lectura completa.';
-finalMeeting.agenda=[
- [5,'Preparar el cierre','Abre la versión del expediente que vas a entregar, sus fuentes y los anexos. Comprueba el último bloque de turnos.'],
- [60,'Defensas individuales · último bloque',defenseBlock(15,'comprueban en silencio referencias, localizadores y anexos de su expediente')],
- [10,'Pausa','Conserva el trabajo; retoma la misma versión para el ajuste final.'],
- [20,'Incorporar objeciones y autoevaluar','Ajusta «Conclusión revisada y límites» y «Registro de cambios» según la defensa. Completa la autoevaluación con ejemplos de las dimensiones de la rúbrica. Son ajustes de un informe ya escrito, no la redacción completa de 1800–2200 palabras.'],
- [15,'Comprobar la vista previa y los anexos','Comprueba portada, apartados, referencias y anexos elegidos. Guarda el PDF desde la impresión del navegador. Si falla el diálogo, conserva el JSON o texto y prepara el PDF cuando dispongas del equipo; el medio de entrega lo indica el docente.'],
- [10,'Cerrar y conservar','Guarda respaldo JSON y entrega por el canal indicado. El docente confirma qué respuestas faltan; el cuaderno no envía la entrega ni asigna nota.']
-];
-finalMeeting.product='Últimas 15 defensas; expediente ajustado, autoevaluación y entrega preparada con anexos pertinentes. JSON para conservar la edición.';
-// Foundations precede the existing diagnosis; no additional encounter or notebook record.
-byId('s1-e1').title='Discurso y AD · Diagnóstico inicial';
-byId('s1-e1').preparation='Sin lectura previa. En clase se explican los fundamentos y el mapa de autores; después compararás A, B y C. La guía integrada permite volver a la explicación. Mantén cerrados los contextos hasta el encuentro 2.';
-byId('s1-e1').question='Comprender qué es el discurso y reconocer qué información expresa cada versión del aviso de becas.';
-byId('s1-e1').agenda=[
- [15,'Fundamentos: discurso y análisis del discurso','Sigue la explicación de discurso y AD a partir del aviso de la biblioteca que aparece en pantalla. Después lee la tabla con los conceptos de cinco autores. Las explicaciones están en «Fundamentos». El aviso ilustra los conceptos; el diagnóstico se realiza con las versiones A, B y C sobre becas.'],
- [10,'Tres versiones, un problema','Lee A, B y C en «Material central del encuentro». En pareja, señala qué acción se formula, qué participante se nombra y qué información cambia. En C también cambia lo afirmado sobre las becas. En la clase 2 compararás tu interpretación con dos contextos.'],
- [10,'Separar descripción e interpretación','Elige una diferencia entre las versiones. Escribe qué palabras la muestran y separa esa observación de tu interpretación. No atribuyas una intención de ocultar solo porque no aparece un actor. El docente comentará un ejemplo; compara con tus notas.'],
- [15,'Formular hipótesis rivales','Con tu pareja, propón dos explicaciones posibles de la ausencia del órgano responsable en B. Para cada una, indica qué dato del documento o de su situación necesitarías. Guarda ambas hipótesis para compararlas con los contextos en la clase 2.'],
- [10,'Guardar mi lectura inicial','En «Mi lectura inicial», escribe individualmente un párrafo con la diferencia observada, tus dos hipótesis y los datos que faltan. Comprueba el aviso de guardado. Conserva esta primera lectura: la revisarás sin borrarla en el encuentro 2. El diagnóstico no se califica.']
-];
-byId('s1-e2').preparation='Retoma tu interpretación inicial y sus dos hipótesis. Si necesitas recordar una perspectiva, consulta «Fundamentos · Semana 1»; no leas todavía la sección de oralidad ni todos los originales de los autores.';
-byId('s1-e2').agenda=[
- [10,'Retomar la interpretación','Lee «Mi lectura inicial». Recupera con tu pareja las dos hipótesis y los datos que faltaban; no reemplaces la primera versión.'],
- [15,'Distinguir palabras, acto e interpretación','Sigue la explicación de texto, enunciado y enunciación. Usa una frase de tu diagnóstico para distinguir observación, inferencia, explicación y valoración. Señala qué proviene de las palabras y qué supusiste sobre la situación.'],
- [20,'Aplicar dos conceptos al diagnóstico','Retoma A, B y C y las definiciones de Benveniste y Fairclough en «Fundamentos». Primero distingue quién realiza la acción mencionada de quién publica el aviso: si falta un dato, señálalo sin inventarlo. Después describe cómo cada versión expresa la suspensión y sus participantes. Comenta con tu pareja qué información del contexto necesitas para explicar esas diferencias. Estas observaciones preparan la revisión del mismo diagnóstico; no abras nuevas fichas.'],
- [10,'Pausa','Conserva la lectura inicial y las observaciones; retomarás el mismo diagnóstico.'],
- [35,'Contrastar los contextos','Lee los dos contextos de contraste que aparecen en este paso. Dedica 10 minutos a leer ambos, 15 a explicar con tu pareja qué hipótesis gana o pierde apoyo y 10 a escribir individualmente «Mi lectura después del contraste». Usa los contextos como casos construidos, no como hechos reales.'],
- [15,'Demostración oral','Escucha al docente leer un mismo enunciado con dos énfasis distintos. Describe qué cambia en la voz y qué interpretación permite proponer. Identifica ambas realizaciones como demostraciones de aula, no como voces del documento original. Esto prepara la observación oral de la semana 2.'],
- [15,'Conservar el cambio','Completa «Qué cambió y qué evidencia falta». Explica qué dato modificó tu lectura y lo que aún no puedes afirmar. Comprueba el guardado sin borrar «Mi lectura inicial». En la semana 2 comenzarás una ficha oral distinta de este diagnóstico.']
-];
-byId('s2-e1').preparation='Lee solo «Oralidad · Semanas 2–3» en la guía de la unidad 1 y ten disponible el enlace de Drexler. Aplica la enunciación ya introducida; no repitas el diagnóstico. El visionado completo se hace en esta clase antes de seleccionar y transcribir el tramo.';
-byId('s7-e1').preparation='Lee la guía de contexto y Pardo: impresas 43–47 / PDF 3–7. Retoma la pregunta y el corpus del hito 1. La introducción de la semana 1 sirve de mapa; ahora compara categorías, evidencia necesaria y límites para justificar un enfoque provisional en la ficha 3.';
 export const sessionById=Object.fromEntries(sessions.map(s=>[s.id,s]));
 export const getSession=(week,encounter)=>sessionById[`s${week}-e${encounter}`];
-

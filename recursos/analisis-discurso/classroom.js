@@ -69,30 +69,6 @@ export const projectInputs={
  selfAssessment:['Autoevaluación','Comenta las dimensiones de la rúbrica con ejemplos del informe. Identifica un logro y una mejora pendiente. Se incluye en el PDF solo si la seleccionas.',5]
 };
 
-// References to former workspaces now name the fields on this same page.
-export function classInstruction(text){
- return text
-  .replaceAll('«Registrar evidencias»','«Evidencias»')
-  .replaceAll('Añade esa observación al registro o al argumento;', 'Guarda esa observación en «Evidencias» y explica su posible función en «Mi argumento»;')
-  .replaceAll('explica qué aporta la categoría a su interpretación.', 'explica en «Mi argumento» cómo ayuda ese concepto a interpretar la marca.')
-  .replaceAll('«Interpretación que permite sostener»','«Mi argumento»')
-  .replaceAll('«Otra explicación o dato que falta»','«Mi argumento»')
-  .replaceAll('Inicia la ficha 6 con una matriz de segmentos y localizadores.','Inicia la ficha 6: escribe en «Mi argumento» una matriz de segmentos y localizadores.')
-  .replaceAll('«Escribir argumento»','«Mi argumento»')
-  .replaceAll('En «Mi argumento», anota una pregunta sobre ese episodio.','En «Pregunta de la ficha», anota una pregunta sobre ese episodio.')
-  .replaceAll('«Revisar ficha»','«Interpretación revisada»')
-  .replaceAll('«En qué trabajo se integra esta clase»','«Tu trabajo»')
-  .replaceAll('«Material central del encuentro»','«Documento de análisis»')
-  .replaceAll('del encuentro anterior','de la clase anterior')
-  .replaceAll('en el siguiente encuentro','en la siguiente clase')
-  .replaceAll('en el encuentro 2','en la clase 2')
-  .replaceAll('«Guía y lecturas de apoyo»','«Lectura para preparar esta clase»')
-  .replaceAll('Las explicaciones están en «Fundamentos».','Las explicaciones están en «Teoría», arriba.')
-  .replaceAll('en «Fundamentos»','en el recordatorio de autores de «Teoría»')
-  .replaceAll('en la guía de la unidad 1','en la lectura integrada de «Teoría»')
-  .replaceAll('en el registro indicado bajo «Tu trabajo»','en «Tu trabajo», debajo de estas instrucciones');
-}
-
 // Preparation remains in the class, with selected paragraphs of the existing guide.
 export const preparationLessons={
  's2-e1':[0,2,3],'s2-e2':[1,3],'s3-e1':[2,4],'s3-e2':[4],
