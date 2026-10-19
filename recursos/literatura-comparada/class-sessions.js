@@ -1,8 +1,8 @@
-import {weeks} from './schedule.js?v=lc-34d6660d15db';
-import {unitActivities} from './curriculum.js?v=lc-34d6660d15db';
-import {translationRows} from './corpus.js?v=lc-34d6660d15db';
-import {activityTitle} from './teaching.js?v=lc-34d6660d15db';
-import {encounterById,dayLabel} from './encounters.js?v=lc-34d6660d15db';
+import {weeks} from './schedule.js?v=lc-f1e4fe8c25fd';
+import {unitActivities} from './curriculum.js?v=lc-f1e4fe8c25fd';
+import {translationRows} from './corpus.js?v=lc-f1e4fe8c25fd';
+import {activityTitle} from './teaching.js?v=lc-f1e4fe8c25fd';
+import {encounterById,dayLabel} from './encounters.js?v=lc-f1e4fe8c25fd';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 // Teaching prompts are original syntheses. Texts and attributions are in Leer.
 const lessons={
@@ -13,7 +13,7 @@ const lessons={
  ],
  2:[
   ['Unidad de comparación','Compara narrador, violencia y empatía con pasajes de Palacio y Machado. Una unidad precisa evita que dos resúmenes sustituyan la comparación.','Elige un indicio en cada relato y explica una diferencia.'],
-  ['Tres modelos en Guillén','Distingue relaciones históricas, condiciones sociohistóricas comparables y problemas teóricos que justifican el contraste.','Guillén, pp. 93–95: detenerse al cierre del modelo C.'],
+  ['Tres modelos en Guillén','Distingue relaciones históricas, condiciones sociohistóricas comparables y problemas teóricos que justifican el contraste. Recupera el comentario de Palacio para explicar cómo una conjetura adquiere autoridad.','Guillén, pp. 93–95: detenerse al cierre del modelo C.'],
   ['De la matriz a la ficha 1','Pregunta → evidencia de cada texto → diferencia formal o contextual → conclusión y límite.','Ficha individual de 250–350 palabras.']
  ],
  3:[
@@ -34,13 +34,13 @@ const lessons={
  ],
  6:[
   ['Oralitura y contemporaneidad','La relación entre oralidad y escritura incluye decisiones actuales de autoría, edición y circulación. Evita tratarla solo como supervivencia del pasado.','Brígido-Corachán y Domínguez, pp. 84–87.'],
-  ['Takina / Poema: versiones y disposición','Observa voz, destinatario y organización del poema en sus dos versiones. Declara el alcance de tu conocimiento de las lenguas.','Conserva la reproducción visual de p. 85.'],
+  ['Takina / Poema: versiones y disposición','Observa voz, destinatario y organización del poema en sus dos versiones. Kowii permite preguntar por escucha y diálogo; su fragmento apoya el mismo cotejo.','Conserva la reproducción visual de p. 85. Kowii: p. 8, apartado sobre rimanakuy, leído en aula.'],
   ['Ficha 3 y primeros registros','Compara Guamán Poma–Chikangana con evidencias. Inicia registros de obras, mediadores, fechas y medios para la cartografía.','Ficha 3: 250–350 palabras.']
  ],
  7:[
   ['Autor, voz y movimiento','Distingue autoría literaria, persona representada e iniciativa colectiva. Una red necesita participantes, prácticas o publicaciones documentadas.','Guía local de iniciativa colectiva y capítulo de oralitura.'],
-  ['Globalización y medios','Compara Chikangana, Martínez y Ruiz Agila: lenguas, soportes, mediadores y accesos. Disponibilidad digital no demuestra una recepción mundial.','Registra dos circuitos de circulación y el alcance de cada fuente.'],
-  ['Temas y formas de una red','Identifica una iniciativa colectiva, sus temas y decisiones de edición o traducción. Delimita qué vincula sus participantes.','Cartografía grupal inicial; se revisa en tramo 13 y se califica una vez.']
+  ['Globalización y medios','Compara Chikangana, Martínez y Ruiz Agila: lenguas, soportes, mediadores y accesos. En la pieza de Esparza distingue secuencia, voz y nota de correspondencia.','Registra dos circuitos de circulación y el alcance de cada fuente; disponibilidad digital no demuestra recepción mundial.'],
+  ['Temas y formas de una red','Identifica una iniciativa colectiva, sus temas y decisiones de edición o traducción. Delimita qué vincula sus participantes.','Cartografía grupal inicial; se revisa en la semana 13 y se califica una vez.']
  ],
  8:[
   ['Problemas de representación','Pon a prueba categorías como apropiación, homogeneización y visibilidad con casos concretos del curso.','¿Qué evidencia te obliga a matizar la categoría de literatura subalterna?'],
@@ -50,7 +50,7 @@ const lessons={
  9:[
   ['Gadamer: comprender desde una historia','Los presupuestos permiten empezar a comprender y pueden revisarse en el encuentro con el texto. Identifica una expectativa propia y su efecto en la lectura.','Dossier local de hermenéutica, p. 1.'],
   ['Partes y conjunto','El sentido de un indicio depende de la lectura del relato, y un indicio puede transformar esa lectura. Explica el movimiento mediante pasajes.','Círculo hermenéutico; no basta afirmar que cambiaste de opinión.'],
-  ['Carrington / Bierce: poner a prueba la interpretación','En Carrington examina desde cuándo se acepta lo extraordinario y cómo se juzga la violencia; en Bierce, qué cambia al releer el tiempo y la información. Explica qué mantienes, precisas o cambias. Conserva las diferencias de narrador, tiempo, verosimilitud y contexto.','Ejercicio de tramo 9; la ficha 4 tiene su propio espacio en tramo 10.']
+  ['Carrington / Bierce: poner a prueba la interpretación','En Carrington examina desde cuándo se acepta lo extraordinario y cómo se juzga la violencia; en Bierce, qué cambia al releer el tiempo y la información. Explica qué mantienes, precisas o cambias. Conserva las diferencias de narrador, tiempo, verosimilitud y contexto.','Ejercicio de la semana 9; la ficha 4 tiene su propio espacio en la semana 10.']
  ],
  10:[
   ['Jauss: horizonte de expectativas','Reconstruye convenciones, géneros y valoraciones que documentos fechados permiten atribuir a lectores históricos.','Dos prólogos de 1614 y 1615: testigos situados de una polémica; no representan a todos los lectores.'],
@@ -72,7 +72,7 @@ const lessons={
   ['Weltliteratur en su contexto','Lee la conversación del 31 de enero de 1827: apertura al intercambio y persistencia de jerarquías de valoración.','Selección española local de Goethe/Eckermann; traducción didáctica mediada por el francés.'],
   ['Escalas que debemos definir','Explica los criterios de lo local, nacional y continental. Distingue lugar de producción y circulación documentada.','Una obra puede estudiarse en varias escalas; indica qué cambia al elegirlas.'],
   ['Circulación Sur–Sur','El caso América Latina–India permite examinar mediadores y transformaciones del testimonio.','Ortiz Wallner, pp. 132–135, lectura guiada de 20–25 min.'],
-  ['Revisar la misma cartografía','Recupera los registros de tramo 7. Justifica escalas, tensiones y cambios con fuentes.','Una sola cartografía grupal; inicia también la lectura de Borges.']
+  ['Revisar la misma cartografía','Recupera los registros de la semana 7. Justifica escalas, tensiones y cambios con fuentes.','Una sola cartografía grupal; inicia también la lectura de Borges.']
  ],
  14:[
   ['Genette: precisar la relación','Distingue presencia de un texto en otro, paratexto, comentario y transformación. Localiza qué relación demuestra cada pasaje.','Palimpsestos, capítulo I, pp. 9–17.'],
@@ -92,7 +92,7 @@ const lessons={
 };
 export function sessionSlides(week,day=null){
  const encounter=day&&encounterById[week+'-'+day];
- if(encounter)return [{title:encounter.title,text:encounter.aim,detail:`Tramo ${week} · ${dayLabel(day)}`},...encounter.stages.map(s=>({title:s.title,text:s.student,detail:`${s.minutes} min · Orientación docente: ${s.teacher}`})),{title:'Qué conservamos y cómo continuamos',text:encounter.output,detail:'Guarda evidencias, localizadores y decisiones en los espacios existentes del cuaderno.'}];
+ if(encounter)return [{title:encounter.title,text:encounter.aim,detail:`Semana ${week} · ${dayLabel(day)}`},...encounter.stages.map(s=>({title:s.title,text:s.student,detail:`${s.minutes} min · Orientación docente: ${s.teacher}`})),{title:'Qué conservamos y cómo continuamos',text:encounter.output,detail:'Guarda evidencias, localizadores y decisiones en los espacios existentes del cuaderno.'}];
  const w=weeks.find(w=>w.week===week);if(!w)return [];
  const slides=lessons[week].map(s=>Array.isArray(s)?{title:s[0],text:s[1],detail:s[2]}:s);
  const activities=unitActivities.filter(a=>a.module===Math.ceil(week/4)&&a.weeks.includes(week));

@@ -1,8 +1,8 @@
-import {modules,moduleById,history,schools} from './course.js?v=lc-34d6660d15db';
-import {resourceById} from './corpus.js?v=lc-34d6660d15db';
-import {weeks} from './schedule.js?v=lc-34d6660d15db';
-import {sessionSlides} from './class-sessions.js?v=lc-34d6660d15db';
-import {dayLabel} from './encounters.js?v=lc-34d6660d15db';
+import {modules,moduleById,history,schools} from './course.js?v=lc-f1e4fe8c25fd';
+import {resourceById} from './corpus.js?v=lc-f1e4fe8c25fd';
+import {weeks} from './schedule.js?v=lc-f1e4fe8c25fd';
+import {sessionSlides} from './class-sessions.js?v=lc-f1e4fe8c25fd';
+import {dayLabel} from './encounters.js?v=lc-f1e4fe8c25fd';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 export function createPresenter(dialog){
@@ -17,7 +17,7 @@ export function createPresenter(dialog){
  }
  function render(focus=false){
   const list=slides();index=Math.max(0,Math.min(index,list.length-1));const slide=list[index];
-  dialog.querySelector('.class-slide').innerHTML=`<p class="class-position">${week?'Tramo '+week+(day?' · '+dayLabel(day)+'':' · Panorama por tramos'):module?'Módulo '+module+' · Taller '+route:'Introducción'} · ${index+1} / ${list.length}</p><h2 id="class-title" tabindex="-1">${esc(slide.title)}</h2>${slide.html||`<p>${esc(slide.text)}</p>`}<div class="class-detail">${esc(slide.detail)}</div>`;
+  dialog.querySelector('.class-slide').innerHTML=`<p class="class-position">${week?'Semana '+week+(day?' · '+dayLabel(day)+'':' · Panorama por semanas'):module?'Módulo '+module+' · Taller '+route:'Introducción'} · ${index+1} / ${list.length}</p><h2 id="class-title" tabindex="-1">${esc(slide.title)}</h2>${slide.html||`<p>${esc(slide.text)}</p>`}<div class="class-detail">${esc(slide.detail)}</div>`;
   dialog.querySelector('[data-present=prev]').disabled=index===0;dialog.querySelector('[data-present=next]').disabled=index===list.length-1;
   dialog.querySelector('#class-live').textContent=`Diapositiva ${index+1} de ${list.length}`;
   if(focus)dialog.querySelector('#class-title').focus({preventScroll:true});
@@ -26,7 +26,7 @@ export function createPresenter(dialog){
  function routeOptions(){const select=dialog.querySelector('#class-route'),m=moduleById[module];select.innerHTML=m?Object.entries(m.routes).map(([id,r])=>`<option value="${id}">Taller ${id} · ${esc(r.label)}</option>`).join(''):'<option>Panorama histórico</option>';select.disabled=!!week||!m||Object.keys(m.routes).length<2;select.value=m?route:'Panorama histórico';select.closest('.class-picker').dataset.available=String(!!m&&!week&&Object.keys(m.routes).length>1);}
  // Once the teacher starts advancing, the content pickers fold away so the audience sees only the slide.
  function pickers(open){dialog.querySelectorAll('.class-picker').forEach(el=>el.hidden=!open||el.dataset.available==='false');const toggle=dialog.querySelector('[data-present=pickers]');toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'Ocultar selección':'Cambiar contenido';dialog.querySelector('.class-toolbar').classList.toggle('is-folded',!open);}
- function sessionOptions(){const select=dialog.querySelector('#class-session');select.innerHTML='<option value="taller">'+(module?'Taller comparativo':'Panorama histórico')+'</option>'+weeks.filter(w=>Math.ceil(w.week/4)===module).map(w=>`<optgroup label="Tramo ${w.week} · ${esc(w.title)}"><option value="${w.week}">Panorama del tramo ${w.week}</option><option value="${w.week}:lunes">Sesión 1</option><option value="${w.week}:miercoles">Sesión 2</option></optgroup>`).join('');select.disabled=!module;select.value=week?String(week)+(day?':'+day:''):'taller';select.closest('.class-picker').dataset.available=String(!!module);}
+ function sessionOptions(){const select=dialog.querySelector('#class-session');select.innerHTML='<option value="taller">'+(module?'Taller comparativo':'Panorama histórico')+'</option>'+weeks.filter(w=>Math.ceil(w.week/4)===module).map(w=>`<optgroup label="Semana ${w.week} · ${esc(w.title)}"><option value="${w.week}">Panorama de la semana ${w.week}</option><option value="${w.week}:lunes">Sesión 1</option><option value="${w.week}:miercoles">Sesión 2</option></optgroup>`).join('');select.disabled=!module;select.value=week?String(week)+(day?':'+day:''):'taller';select.closest('.class-picker').dataset.available=String(!!module);}
  function show(initialModule,initialRoute,step='',initialWeek=null,initialDay=null){module=initialModule;if(initialWeek===null&&module===3&&step==='traduccion')initialWeek=11;week=weeks.some(w=>w.week===initialWeek&&Math.ceil(w.week/4)===module)?initialWeek:null;day=week&&['lunes','miercoles'].includes(initialDay)?initialDay:null;route=moduleById[module]?.routes[initialRoute]?initialRoute:'A';index=week?0:stepIndex(step);
   dialog.innerHTML=`<div class="class-toolbar"><div class="class-picker"><label for="class-module">Contenido</label><select id="class-module"><option value="0">Introducción · Orígenes y escuelas</option>${modules.map(m=>`<option value="${m.id}">${m.id} · ${esc(m.title)}</option>`).join('')}</select></div><div class="class-picker"><label for="class-session">Sesión</label><select id="class-session"></select></div><div class="class-picker"><label for="class-route">Taller</label><select id="class-route"></select></div><button class="button light" data-present="pickers" aria-controls="class-module class-session class-route"></button><button class="button light" data-present="fullscreen" ${dialog.requestFullscreen?'':'hidden'}>Pantalla completa</button><button class="button light" data-present="close">Cerrar · Esc</button></div><div class="class-slide"></div><p id="class-live" class="sr-only" aria-live="polite"></p><div class="class-controls"><button class="button light" data-present="prev">Anterior</button><span>← → o Av Pág / Re Pág para avanzar · Inicio / Fin</span><button class="button light" data-present="next">Siguiente →</button></div>`;
   dialog.querySelector('#class-module').value=String(module);sessionOptions();routeOptions();pickers(true);render();dialog.showModal();dialog.querySelector('#class-title').focus();

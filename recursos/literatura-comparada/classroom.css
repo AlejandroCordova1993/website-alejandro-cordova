@@ -100,3 +100,10 @@
 .theory-development .theory-application{margin-top:24px;padding-top:18px;border-top:1px solid var(--line)}
 .theory-sources{margin-top:24px}.theory-sources a{overflow-wrap:anywhere}
 @media print{.class-section-nav,.class-pagination,.teacher-guide,#course-index-toggle,.project-stage-choice{display:none!important}.class-section{break-inside:auto}.work-preview details{display:block}.class-overview{display:block}}
+
+/* Vista de estudiante: la guía de clase y la proyección quedan para la vista docente (?docente). */
+body[data-role=estudiante] :is(.teacher-guide,#class-toggle){display:none!important}
+.module-sessions-note{margin:var(--space-3,12px) 0 0;color:var(--muted)}
+.ficha-delivery-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;margin:24px 0;padding:16px 20px;border:1px solid var(--activity-line);border-radius:var(--radius,8px);background:var(--activity-surface)}
+.ficha-delivery-row p{margin:0;color:var(--activity-ink);font-weight:600}
+@media print{.ficha-head{margin-bottom:8mm;padding-bottom:4mm;border-bottom:1px solid #aaa}.ficha-head p{font-size:10pt;margin:1mm 0}.ficha-delivery h1{font-size:20pt}.ficha-delivery h2{font-size:13pt;margin-top:5mm}}

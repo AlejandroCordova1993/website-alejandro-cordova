@@ -9,7 +9,7 @@ const regular=(opening,frame,work,discussion,closing)=>[
  stage(10,'Cerrar y preparar la continuidad',closing[0],closing[1])
 ];
 export const encounters=[
- meeting(1,'lunes','Orígenes, perspectivas y primera pregunta','Distinguir la práctica de comparar de la institucionalización de la disciplina.','Diagnóstico sin nota y primera pregunta comparativa.',regular(
+ meeting(1,'lunes','Orígenes, perspectivas y primera pregunta','Distinguir la práctica de comparar de la institucionalización de la disciplina.','Primera pregunta comparativa, después del diagnóstico sin nota de «Antes de comparar».',regular(
  ['Presenta el propósito del seminario y recoge experiencias lectoras.','Propón dos objetos y explica qué relación te interesa.'],
  ['Sitúa los orígenes y contrasta las dos tradiciones históricas con las perspectivas del Sur Global.','Formula una pregunta sobre evidencia o método; reconoce que los enfoques se cruzan.'],
  ['Facilita un pasaje de Palacio y modela cómo localizar una afirmación del narrador.','Distingue observación, conjetura y reconstrucción en el pasaje.'],
@@ -20,14 +20,14 @@ export const encounters=[
  ['Explica criterio común, diferencia contextual y prueba del contacto.','Distingue lo que observas de lo que requeriría documentación histórica.'],
  ['Presenta fragmentos guiados de Machado, con sus datos de edición.','Contrasta la explicación de la violencia en ambos narradores.'],
  ['Discute relaciones plausibles y pide que cada conclusión conserve una diferencia.','Construye una pequeña matriz de indicios e identifica una objeción posible.'],
- ['Precisa la lectura de Machado y los modelos de Guillén que se desarrollarán en tramo 2.','Reformula la pregunta sin dar por concluida la comparación.'])),
+ ['Precisa la lectura de Machado y los modelos de Guillén que se desarrollarán en la semana 2.','Reformula la pregunta sin dar por concluida la comparación.'])),
  meeting(2,'lunes','Criterio, corpus y modelos de comparación','Justificar qué relación permite comparar Palacio y Machado.','Matriz de pasajes y criterio provisional para la Ficha 1.',regular(
- ['Recupera la pregunta del tramo anterior.','Explica qué cambió tras leer Machado completo.'],
+ ['Recupera la pregunta de la semana anterior.','Explica qué cambió tras leer Machado completo.'],
  ['Sitúa los tres modelos de Guillén y sus distintos apoyos.','Relaciona una propuesta con el tipo de evidencia que necesita.'],
  ['Acompaña la selección y el cotejo de pasajes.','Registra indicios de narrador, violencia y empatía con localizador.'],
  ['Pide explicar una diferencia formal y otra histórica; confronta inferencias.','Contrasta resultados en parejas e inicia una conclusión argumentada.'],
  ['Delimita la Ficha 1 y sus criterios.','Elige los dos pasajes que desarrollarás y una duda por resolver.'])),
- meeting(2,'miercoles','Taller de la primera ficha','Transformar la matriz en un argumento que pueda discutirse.','Ficha 1 · borrador de 250–350 palabras, para revisar y cerrar antes del siguiente tramo.',regular(
+ meeting(2,'miercoles','Taller de la primera ficha','Transformar la matriz en un argumento que pueda discutirse.','Ficha 1 · borrador de 250–350 palabras, para revisar y cerrar antes de la siguiente semana.',regular(
  ['Recoge dudas sobre ediciones y localizadores.','Comprueba tus pasajes y tu criterio común.'],
  ['Modela el vínculo entre afirmación, evidencia y explicación.','Examina qué parte de un argumento de ejemplo está sustentada.'],
  ['Acompaña la escritura y plantea preguntas a cada pareja.','Escribe el núcleo de la ficha, conservando diferencias contextuales.'],
@@ -51,7 +51,7 @@ export const encounters=[
  ['Guía el uso del dossier y los datos editoriales ya consultados.','Relaciona una convención de lectura con la selección que propones.'],
  ['Discute criterios, acceso y límites de las propuestas.','Justifica tu selección y formula dos objetos posibles para el ensayo.'],
  ['Delimita el alcance de la Ficha 2.','Registra la pregunta del proyecto y la evidencia que usarás en la ficha.'])),
- meeting(4,'miercoles','Argumentar una selección docente','Sostener decisiones de canon y repertorio con razones y fuentes.','Ficha 2 · borrador de 250–350 palabras, para cerrar antes del siguiente tramo.',regular(
+ meeting(4,'miercoles','Argumentar una selección docente','Sostener decisiones de canon y repertorio con razones y fuentes.','Ficha 2 · borrador de 250–350 palabras, para cerrar antes de la siguiente semana.',regular(
  ['Recoge dudas sobre los cuatro tipos y sus superposiciones.','Comprueba agente, función y evidencia de tu selección.'],
  ['Modela cómo separar dato, inferencia y decisión propia.','Identifica esos tres componentes en una formulación breve.'],
  ['Acompaña la escritura de la Ficha 2.','Compara A/B, justifica una selección y nombra una convención del repertorio.'],
@@ -71,28 +71,28 @@ export const encounters=[
  ['Anticipa el contraste con oralitura contemporánea.','Anota qué diferencia histórica no debe borrarse al comparar.'])),
  meeting(6,'lunes','Oralitura y versiones lingüísticas','Leer Chikangana en su disposición original y sus mediaciones.','Pasajes y criterios para comparar Guamán Poma–Chikangana.',regular(
  ['Recupera las mediaciones de la crónica.','Explica qué esperas que cambie en un poema contemporáneo.'],
- ['Sitúa oralitura y el estudio de Brígido-Corachán y Domínguez.','Distingue práctica contemporánea y explicación automática por procedencia.'],
- ['Guía la lectura de pp. 84–87 y las dos versiones de Takina/Poema.','Examina voz, destinatario y disposición; declara el alcance de tu lectura del castellano.'],
+ ['Sitúa oralitura y el estudio de Brígido-Corachán y Domínguez; presenta a Kowii como una intervención situada desde Ecuador.','Distingue práctica contemporánea y explicación automática por procedencia.'],
+ ['Guía la lectura de pp. 84–87 y las versiones de Takina/Poema. Dentro del mismo tiempo de lectura, lee el apartado de Kowii sobre rimanakuy.','Examina voz, destinatario y disposición; usa la pregunta por escucha y diálogo como apoyo y declara el alcance de tu lectura del castellano.'],
  ['Confronta los procedimientos con la crónica colonial.','Construye una matriz con diferencias históricas, de género y reconocimiento.'],
  ['Delimita la Ficha 3 y los registros de circulación.','Selecciona evidencia y un mediador que puedas documentar.'])),
- meeting(6,'miercoles','Comparar sin homogeneizar las voces','Argumentar diferencias entre la crónica y el poema.','Ficha 3 · borrador de 250–350 palabras, para cerrar antes del siguiente tramo.',regular(
+ meeting(6,'miercoles','Comparar sin homogeneizar las voces','Argumentar diferencias entre la crónica y el poema.','Ficha 3 · borrador de 250–350 palabras, para cerrar antes de la siguiente semana.',regular(
  ['Recupera límites lingüísticos y preguntas de la primera sesión.','Comprueba atribuciones y localizadores de ambos objetos.'],
  ['Explica cómo sostener una relación de poder sin reducir las obras a identidades.','Pon a prueba una afirmación general con un pasaje.'],
  ['Acompaña la escritura de la Ficha 3.','Desarrolla una comparación de voz y destinatario con una diferencia relevante.'],
  ['Facilita objeciones entre pares y orientación sobre fuentes.','Revisa el argumento y registra una relación inicial para la cartografía.'],
- ['Aclara los materiales del tramo 7.','Guarda la revisión y conserva los datos de la mediación consultada.'])),
+ ['Aclara los materiales de la semana 7.','Guarda la revisión y conserva los datos de la mediación consultada.'])),
  meeting(7,'lunes','Autoría, testimonio y redes contemporáneas','Distinguir voces, autoría y mediación en poesía trans documental y crónica.','Comparación inicial y registros para la cartografía.',regular(
  ['Recupera Chikangana y sus condiciones de publicación.','Distingue un autor individual de una iniciativa colectiva.'],
  ['Sitúa Martínez/Fredes y Ruiz Agila/Esparza sin equiparar sus experiencias.','Identifica quién escribe, quién es representado y cómo se presenta la mediación.'],
- ['Guía las selecciones de Miriam Fredes y Ataúd en llamas.','Localiza un procedimiento de construcción de voz en cada objeto.'],
+ ['Guía las selecciones de Miriam Fredes y Ataúd en llamas; recupera el comentario sobre secuencia, voz testimonial y nota de correspondencia.','Localiza un procedimiento de construcción de voz en cada objeto y distingue observación, inferencia y mediación editorial.'],
  ['Discute edición, medios y alcance de las redes descritas.','Relaciona las formas con un circuito y conserva las diferencias históricas.'],
  ['Delimita fuentes, fechas y mediadores de la cartografía.','Selecciona dos registros verificables para trabajar la segunda sesión.'])),
- meeting(7,'miercoles','Taller de cartografía de circulación','Documentar vínculos y explicar sus asimetrías.','Cartografía inicial grupal; se revisará en el tramo 13 y tendrá una sola calificación.',regular(
+ meeting(7,'miercoles','Taller de cartografía de circulación','Documentar vínculos y explicar sus asimetrías.','Cartografía inicial grupal; se revisará en la semana 13 y tendrá una sola calificación.',regular(
  ['Recoge fuentes y dificultades de acceso.','Distingue relación documentada y comparación propuesta.'],
  ['Explica el alcance de un registro y una iniciativa colectiva, con la guía de oralitura.','Identifica participantes, medio, fecha y tema sin inventar un movimiento.'],
  ['Acompaña el mapa de obras y mediadores.','Construye vínculos con fuente, localizador y límite; usa la visualización como apoyo.'],
  ['Contrasta mapas y pregunta por acceso, edición y traducción.','Explica una asimetría y qué información falta para afirmaciones de circulación global.'],
- ['Establece la continuidad hacia la sumativa.','Conserva la cartografía y una pregunta de representación paral tramo 8.'])),
+ ['Establece la continuidad hacia la sumativa.','Conserva la cartografía y una pregunta de representación para la semana 8.'])),
  meeting(8,'lunes','Límites y futuros posibles de la categoría','Revisar apropiación, homogeneización y visibilidad con evidencia.','Esquema de la comparación individual; relecturas, sin corpus nuevo.',regular(
  ['Recupera problemas observados en las cartografías.','Identifica un límite de tu explicación de circulación.'],
  ['Discute futuros posibles vinculados con condiciones concretas.','Relaciona un problema de acceso o edición con una condición razonada de cambio.'],
@@ -122,19 +122,19 @@ export const encounters=[
  ['Guía los dos prólogos de recepción del dossier.','Registra autor, fecha, medio y criterio de valoración de cada documento.'],
  ['Acompaña el caso Tess, pp. 120–122 del manual, leído en aula.','Distingue relato mediado y observación directa; contrasta su alcance con los prólogos.'],
  ['Delimita la Ficha 4 y la evidencia pertinente.','Conserva una afirmación textual y otra histórica, con fuentes separadas.'])),
- meeting(10,'miercoles','Argumentar una recepción situada','Sostener una comparación de documentos y declarar su alcance.','Ficha 4 · borrador de 250–350 palabras, para cerrar antes del siguiente tramo.',regular(
+ meeting(10,'miercoles','Argumentar una recepción situada','Sostener una comparación de documentos y declarar su alcance.','Ficha 4 · borrador de 250–350 palabras, para cerrar antes de la siguiente semana.',regular(
  ['Recupera las fuentes y sus localizadores.','Comprueba autorías y fechas de los dos documentos.'],
  ['Modela cómo una polémica documenta posiciones interesadas.','Reconoce qué generalización requiere más testimonios.'],
  ['Acompaña la escritura de la Ficha 4.','Distingue lector implícito, respuesta propia y horizonte histórico.'],
  ['Discute objeciones sobre representatividad y coherencia.','Revisa afirmaciones y explicita lo que los documentos no permiten concluir.'],
- ['Anticipa el cotejo de traducciones.','Guarda la ficha y prepara las versiones breves del tramo 11.'])),
+ ['Anticipa el cotejo de traducciones.','Guarda la ficha y prepara las versiones breves de la semana 11.'])),
  meeting(11,'lunes','Versiones, testimonio y decisiones de traducción','Cotejar lugares precisos del original y las dos traducciones.','Tres diferencias observables y efectos iniciales.',regular(
  ['Recupera ediciones, atribuciones y lenguas de trabajo.','Describe la escena que imaginas en cada versión.'],
  ['Sitúa mediación, testimonio y alcance del control del francés.','Distingue observación en español y afirmación que necesita apoyo del original.'],
  ['Guía el cotejo de Baudelaire, Casal y Díez-Canedo.','Examina tres lugares: léxico, temporalidad, espacio o ritmo.'],
  ['Discute efectos y posibles explicaciones con evidencia.','Inicia el comentario y formula una duda que no pueda resolverse solo por semejanza.'],
  ['Delimita el uso del manual y la extensión final.','Conserva versiones y localizadores para continuar la segunda sesión.'])),
- meeting(11,'miercoles','Comentario de traducción y revisión','Transformar el cotejo en una explicación de decisiones y efectos.','Comentario · borrador de 400–500 palabras, para cerrar antes del siguiente tramo.',regular(
+ meeting(11,'miercoles','Comentario de traducción y revisión','Transformar el cotejo en una explicación de decisiones y efectos.','Comentario · borrador de 400–500 palabras, para cerrar antes de la siguiente semana.',regular(
  ['Recupera diferencias y dudas del cotejo.','Comprueba los cuatro lugares del taller en los testimonios consultados.'],
  ['Discute variante, decisión y error sin atribuir intenciones sin fuentes.','Formula qué información permitiría decidir entre explicaciones.'],
  ['Acompaña la redacción y la consulta del manual, pp. 133–136.','Desarrolla tres diferencias y sus efectos, con traductores y versiones identificados.'],
@@ -150,7 +150,7 @@ export const encounters=[
  stage(8,'Abrir la jornada','Recuerda objetivo, criterio y distribución de turnos.','Identifica la pregunta y la evidencia que observarás como participante.'),
  stage(80,'Microclases y discusión','Observa, registra criterios y facilita las transiciones entre grupos.','Los grupos asignados realizan 12 minutos de actividad y 8 de discusión; el público compara y argumenta. Se reserva margen para transiciones.'),
  stage(24,'Revisar método y mediación','Relaciona decisiones didácticas con el tipo de evidencia obtenido.','Revisa una consigna o el esquema del ensayo a partir de los resultados observados.'),
- stage(8,'Cerrar la continuidad','Precisa qué se retoma en la segunda jornada, sin duplicar evaluación.','Guarda mejoras; cada grupo presenta una sola vez, en tramo 12 o 15.')]),
+ stage(8,'Cerrar la continuidad','Precisa qué se retoma en la segunda jornada, sin duplicar evaluación.','Guarda mejoras; cada grupo presenta una sola vez, en la semana 12 o 15.')]),
  meeting(13,'lunes','Weltliteratur y escalas de lectura','Definir escalas sin reducir literatura mundial a una lista de obras.','Criterios de escala y preguntas para revisar la cartografía.',regular(
  ['Recupera circuitos de circulación ya documentados.','Distingue lugar de producción y alcance comprobado de circulación.'],
  ['Sitúa la conversación de Goethe/Eckermann y su mediación de traducción.','Examina apertura al intercambio y jerarquías de valoración en la selección.'],
@@ -160,21 +160,21 @@ export const encounters=[
  meeting(13,'miercoles','Revisar circulación y escalas','Justificar cambios en la cartografía con fuentes y límites.','Cartografía grupal revisada · una sola calificación del proceso.',regular(
  ['Recupera criterios y datos de la primera sesión.','Identifica qué vínculo necesita precisión de fecha, mediador o escala.'],
  ['Discute asimetrías de acceso, edición y traducción.','Distingue posición en el dibujo y relación de poder sustentada.'],
- ['Acompaña la revisión de la cartografía iniciada en tramo 7.','Revisa vínculos, fuentes y alcance; conserva qué cambió y por qué.'],
+ ['Acompaña la revisión de la cartografía iniciada en la semana 7.','Revisa vínculos, fuentes y alcance; conserva qué cambió y por qué.'],
  ['Contrasta mapas y conecta la circulación con la lectura de Borges.','Explica una tensión entre pertenencia y circulación, sin generalizar desde un único registro.'],
- ['Aclara el cierre del producto grupal y las lecturas delimitadas de tramo 14.','Guarda la cartografía y tu pregunta sobre cita, atribución y contexto.'])),
+ ['Aclara el cierre del producto grupal y las lecturas delimitadas de la semana 14.','Guarda la cartografía y tu pregunta sobre cita, atribución y contexto.'])),
  meeting(14,'lunes','Cita, mediadores y reescritura','Precisar qué relación textual demuestra cada pasaje.','Pasajes de Cervantes–Borges y categorías para la Ficha 5.',regular(
  ['Recupera las preguntas abiertas al iniciar Borges.','Distingue el proyecto de Menard de las valoraciones del narrador.'],
  ['Explica las relaciones transtextuales del capítulo I de Genette y recupera el repertorio como conjunto de modelos y convenciones.','Distingue copresencia, comentario y derivación con indicios concretos; reconoce una convención del diálogo entre textos.'],
  ['Guía los dos pasajes del capítulo IX del Quijote y su cita en Borges.','Reconstruye mediadores y localiza palabras, atribución y comentario.'],
  ['Discute cambio de contexto y escala España–Argentina.','Construye una explicación que no convierta relectura retrospectiva en influencia histórica inversa.'],
  ['Delimita la Ficha 5.','Selecciona evidencia y una objeción para escribir la segunda sesión.'])),
- meeting(14,'miercoles','Argumentar el diálogo entre textos','Explicar una relación textual y sus transformaciones de contexto.','Ficha 5 · borrador de 250–350 palabras, para cerrar antes del siguiente tramo.',regular(
+ meeting(14,'miercoles','Argumentar el diálogo entre textos','Explicar una relación textual y sus transformaciones de contexto.','Ficha 5 · borrador de 250–350 palabras, para cerrar antes de la siguiente semana.',regular(
  ['Recupera localizadores y categorías de la primera sesión.','Comprueba qué relación demuestra cada cita.'],
  ['Modela la articulación de forma, atribución y contexto.','Distingue qué añade el comentario del narrador a las mismas palabras.'],
  ['Acompaña la escritura de la Ficha 5.','Desarrolla el contraste Cervantes–Borges con un límite explícito.'],
  ['Facilita objeciones y conexión con el ensayo.','Revisa la ficha y decide qué evidencia sirve a la tesis de tu proyecto.'],
- ['Anticipa tematología y extensión intermedial.','Recupera pasajes ya leídos; el tramo 15 no añade lectura autónoma.'])),
+ ['Anticipa tematología y extensión intermedial.','Recupera pasajes ya leídos; la semana 15 no añade lectura autónoma.'])),
  meeting(15,'lunes','Tema, motivos y variación entre literaturas','Comparar primero el tema entre relatos y después extender el procedimiento a medios.','Matriz tematológica y revisión del borrador; relecturas, sin corpus autónomo nuevo.',[
  stage(10,'Recuperar pasajes y preguntas','Recupera Palacio–Machado y pide delimitar el problema.','Distingue tema amplio, motivo concreto y procedimiento observable.'),
  stage(20,'Encuadre con ejemplos','Sistematiza tema, motivo y variación histórica con Guillén.','Prueba las distinciones sobre los pasajes que ya seleccionaste.'),
@@ -185,7 +185,7 @@ export const encounters=[
  stage(10,'Abrir con criterios','Recupera los criterios de microclase y las dificultades del borrador.','Identifica qué observarás en la comparación realizada por el público.'),
  stage(80,'Microclases y discusión','Acompaña los turnos pendientes y registra evidencia de aprendizaje.','Los grupos asignados realizan 12 minutos de actividad y 8 de discusión; el público compara, objeta y revisa. Se reserva margen para transiciones.'),
  stage(20,'Revisión focalizada del ensayo','Orienta la relación entre tesis, pasajes y consigna didáctica.','Revisa un nudo argumental y anota el cambio que completarás en el trabajo autónomo.'),
- stage(10,'Preparar la defensa y cerrar','Aclara los criterios de ensayo, consigna y defensa del tramo 16.','Identifica dos evidencias decisivas y un límite; prepara la versión que defenderás.')]),
+ stage(10,'Preparar la defensa y cerrar','Aclara los criterios de ensayo, consigna y defensa de la semana 16.','Identifica dos evidencias decisivas y un límite; prepara la versión que defenderás.')]),
  meeting(16,'lunes','Defensas y revisión del recorrido','Defender una tesis comparativa y responder una pregunta con evidencia.','Defensas según turnos y revisión de ensayo, consigna y autoevaluación.',[
  stage(4,'Organizar el encuentro','Recuerda criterios y turnos; precisa el trabajo del público.','Prepara tesis, dos evidencias y un límite para intervenir.'),
  stage(108,'Defensas y trabajo de revisión','Escucha las defensas y plantea una pregunta; organiza transiciones.','Cada intervención dispone de 4 minutos y una pregunta de 1 minuto, con margen de transición. Quienes escuchan identifican argumento y evidencia y revisan su propio trabajo.'),
@@ -204,19 +204,19 @@ const a=(before,between,after)=>[
 ];
 export const autonomousPlan={
  1:a([0,'La introducción y el diagnóstico comienzan en clase; no exigen una lectura previa.'],[70,'Lee Palacio completo y Guillén, pp. 13–15; selecciona dos indicios.'],[50,'Consolida tu pregunta y tus localizadores a partir del contraste realizado.']),
- 2:a([75,'Lee Machado completo y Guillén, pp. 93–95 hasta cerrar el modelo C; recupera Palacio.'],[20,'Relee los pasajes elegidos y prepara una objeción.'],[25,'Revisa y cierra la Ficha 1 antes del siguiente tramo.']),
+ 2:a([75,'Lee Machado completo y Guillén, pp. 93–95 hasta cerrar el modelo C; recupera Palacio.'],[20,'Relee los pasajes elegidos y prepara una objeción.'],[25,'Revisa y cierra la Ficha 1 antes de la siguiente semana.']),
  3:a([70,'Lee las cuatro secciones del dossier de canon e identifica las listas y registros.'],[20,'Revisa una afirmación sobre selección o acceso y su fuente.'],[30,'Completa el cuadro y prepara una selección posible; no se piden libros nuevos.']),
- 4:a([40,'Recupera tipos de canon, repertorio y las fuentes ya trabajadas.'],[35,'Precisa tu selección docente y la pregunta provisional del ensayo.'],[45,'Revisa y cierra la Ficha 2 antes del siguiente tramo.']),
+ 4:a([40,'Recupera tipos de canon, repertorio y las fuentes ya trabajadas.'],[35,'Precisa tu selección docente y la pregunta provisional del ensayo.'],[45,'Revisa y cierra la Ficha 2 antes de la siguiente semana.']),
  5:a([75,'Examina los dos testimonios de Guamán Poma y lee Rivera, pp. 19–26.'],[20,'Vuelve al detalle que permite poner a prueba una afirmación de Rivera.'],[25,'Consolida el mapa de voces y su límite.']),
- 6:a([60,'Lee el estudio, pp. 84–87, que ya incluye Takina/Poema y ambas versiones.'],[30,'Relee el contraste con Guamán Poma y prepara tus localizadores.'],[30,'Revisa y cierra la Ficha 3 antes del siguiente tramo.']),
+ 6:a([60,'Lee el estudio, pp. 84–87, que ya incluye Takina/Poema y ambas versiones.'],[30,'Relee el contraste con Guamán Poma y prepara tus localizadores.'],[30,'Revisa y cierra la Ficha 3 antes de la siguiente semana.']),
  7:a([60,'Lee la presentación y bloques delimitados de Martínez y la pieza de Esparza, pp. 41–43.'],[30,'Comprueba con el grupo dos registros de circulación; no leas los libros completos de sus catálogos.'],[30,'Conserva la cartografía inicial y explica sus límites.']),
  8:a([45,'Elige dos objetos ya trabajados y recupera sus pasajes; no hay lectura nueva.'],[30,'Ordena las notas y localizadores para la sumativa en aula.'],[45,'Revisa el procedimiento utilizado y organiza tus materiales para las siguientes relecturas.']),
  9:a([80,'Lee Carrington, Bierce y el dossier de hermenéutica; registra indicios y expectativas.'],[15,'Relee el indicio elegido y una explicación rival.'],[25,'Consolida la hipótesis revisada y la razón del cambio.']),
- 10:a([60,'Lee el dossier de recepción y sus dos documentos; el caso Tess se guía en aula.'],[25,'Revisa qué evidencia necesita cada afirmación sobre el lector.'],[35,'Revisa y cierra la Ficha 4 antes del siguiente tramo.']),
- 11:a([40,'Lee los tres poemas breves y el manual, pp. 133–136 antes de Transducción.'],[40,'Desarrolla tres diferencias con sus efectos y revisa las versiones.'],[40,'Cierra el comentario de 400–500 palabras antes del siguiente tramo.']),
+ 10:a([60,'Lee el dossier de recepción y sus dos documentos; el caso Tess se guía en aula.'],[25,'Revisa qué evidencia necesita cada afirmación sobre el lector.'],[35,'Revisa y cierra la Ficha 4 antes de la siguiente semana.']),
+ 11:a([40,'Lee los tres poemas breves y el manual, pp. 133–136 antes de Transducción.'],[40,'Desarrolla tres diferencias con sus efectos y revisa las versiones.'],[40,'Cierra el comentario de 400–500 palabras antes de la siguiente semana.']),
  12:a([40,'Recupera pasajes para dos enfoques y la pregunta del proyecto; no hay lectura nueva.'],[40,'Prepara o revisa la microclase según tu turno y su consigna.'],[40,'Consolida el esquema del ensayo y las decisiones de método.']),
  13:a([40,'Lee la selección española de Goethe e inicia el cuento de Borges.'],[20,'Recupera fuentes y vínculos de la cartografía; Ortiz se trabaja en aula.'],[60,'Cierra la revisión de escalas y continúa Borges. La cartografía se califica una sola vez.']),
- 14:a([70,'Termina Borges; lee los pasajes de Cervantes y Genette, capítulo I, pp. 9–17.'],[20,'Revisa citas, categorías y localizadores para la ficha.'],[30,'Revisa y cierra la Ficha 5 antes del siguiente tramo.']),
+ 14:a([70,'Termina Borges; lee los pasajes de Cervantes y Genette, capítulo I, pp. 9–17.'],[20,'Revisa citas, categorías y localizadores para la ficha.'],[30,'Revisa y cierra la Ficha 5 antes de la siguiente semana.']),
  15:a([40,'Recupera Palacio, Machado y la crónica; selecciona materiales para el borrador, sin lectura nueva.'],[40,'Desarrolla el borrador y prepara la microclase solo si corresponde a tu turno.'],[40,'Revisa tesis, evidencia y objeción; prepara la versión que defenderás.']),
  16:a([70,'Revisa ensayo, referencias y consigna; organiza la defensa con pasajes ya trabajados.'],[35,'Completa atribuciones, autoevaluación y revisiones para el cierre.'],[15,'Conserva la entrega y el respaldo del cuaderno; no hay corpus nuevo.'])
 };

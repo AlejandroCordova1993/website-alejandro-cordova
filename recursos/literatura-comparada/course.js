@@ -1,12 +1,12 @@
 export const steps=[['orientar','Situar'],['leer','Leer'],['comparar','Contrastar'],['argumentar','Argumentar'],['revisar','Revisar']];
-export {courseModules as modules} from './curriculum.js?v=lc-34d6660d15db';
-import {courseModules as modules} from './curriculum.js?v=lc-34d6660d15db';
+export {courseModules as modules} from './curriculum.js?v=lc-f1e4fe8c25fd';
+import {courseModules as modules} from './curriculum.js?v=lc-f1e4fe8c25fd';
 export const moduleById=Object.fromEntries(modules.map(m=>[m.id,m]));
 export const history=[
  {label:'Antes de la disciplina',title:'Comparar precede al comparatismo',text:'Traducciones, imitaciones y disputas entre tradiciones existieron antes de que la literatura comparada se organizara como campo universitario. Es importante distinguir esas prácticas de la institucionalización de una disciplina.'},
- {label:'Siglo XIX',title:'Literaturas nacionales, relaciones internacionales',text:'La consolidación de literaturas nacionales convive con preguntas por intercambios, influencias y circulación. La idea de literatura mundial asociada a Goethe abre otro horizonte: pensar las relaciones que atraviesan las fronteras, sin convertir el mundo en una lista de obras.'},
- {label:'Siglo XX',title:'El método se vuelve una discusión',text:'Los enfoques que estudian contactos históricos coexisten y discuten con perspectivas sobre forma, recepción, artes y cultura. Las llamadas escuelas son una orientación historiográfica; no bloques homogéneos que se suceden sin tensiones.'},
- {label:'Desde América Latina',title:'Cambiar también el lugar de la pregunta',text:'Cornejo Polar y Santiago permiten interrogar conflictos culturales, mediaciones y relaciones de dependencia. No basta con añadir autores latinoamericanos a una lista: también se revisan los criterios con que se construye la comparación.'},
+ {label:'Siglo XIX',title:'Literaturas nacionales, relaciones internacionales',text:'La consolidación de literaturas nacionales convive con preguntas por intercambios, influencias y circulación. La idea de literatura mundial asociada a Goethe abre otro horizonte: pensar las relaciones que atraviesan las fronteras, sin convertir el mundo en una lista de obras. Lengua y nación tampoco coinciden necesariamente: compartir español no equivale a compartir instituciones o públicos; dentro de Ecuador coexisten distintas lenguas y prácticas literarias.'},
+ {label:'Siglo XX',title:'El método se vuelve una discusión',text:'¿Basta reconstruir un contacto para interpretar una obra? En su intervención de 1958, Wellek cuestionó que el rastreo de fuentes agotara el análisis literario. Eso no elimina la investigación histórica: obliga a explicar también cómo está organizada la obra. Remak amplió el campo de relaciones hacia otras artes y saberes. Son intervenciones diferentes; las llamadas escuelas orientan una historia de debates, no bloques homogéneos que se suceden sin tensiones.'},
+ {label:'Desde América Latina',title:'Cambiar también el lugar de la pregunta',text:'Cornejo Polar y Santiago permiten interrogar conflictos culturales, mediaciones y relaciones de dependencia. En nuestro recorrido, Palacio y Ruiz Agila sostienen preguntas desde Ecuador, y Kowii aporta una reflexión situada sobre palabra y diálogo. La perspectiva latinoamericana exige explicar qué cambia al leer desde esas posiciones, sin deducir una interpretación de la nacionalidad ni reunir voces diferentes en una identidad única.'},
  {label:'Nuestro recorrido',title:'Comparar es construir una relación',text:'En este curso justificaremos un corpus, localizaremos evidencia y declararemos límites. La traducción, el archivo y los medios aparecerán dentro de problemas concretos de lectura, no como casillas aisladas de una historia única.'}
 ];
 export const schools=[
@@ -19,4 +19,4 @@ export const diagnostic=[
  {title:'Un artista declara que se apropia de una crónica.',answer:'Hay una relación declarada que puedes documentar. Todavía debes explicar qué transforma y evitar atribuirle un modelo visual específico sin pruebas.'},
  {title:'Dos traducciones imaginan de manera distinta un espacio.',answer:'Puedes cotejar decisiones precisas, sus efectos y el original. Identifica las versiones y distingue interpretación de juicio automático sobre errores.'}
 ];
-export {writtenRubric as rubric} from './curriculum.js?v=lc-34d6660d15db';
+export {writtenRubric as rubric} from './curriculum.js?v=lc-f1e4fe8c25fd';

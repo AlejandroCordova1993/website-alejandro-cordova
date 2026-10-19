@@ -1,5 +1,5 @@
-import {encounters,autonomousPlan} from './encounters.js?v=lc-34d6660d15db';
-import {weeklyReadings} from './journey.js?v=lc-34d6660d15db';
+import {encounters,autonomousPlan} from './encounters.js?v=lc-f1e4fe8c25fd';
+import {weeklyReadings} from './journey.js?v=lc-f1e4fe8c25fd';
 
 export const classHref=e=>`#semana/${e.week}/${e.day==='lunes'?1:2}`;
 export function classFromHash(hash){
@@ -44,14 +44,14 @@ export function classReadingGroups(e){
  const p=weeklyReadings[e.week],first=e.day==='lunes',groups=[];
  if(e.week===1){
   return first?[
-   {title:'Durante esta sesión',rows:[['palacio','Solo el pasaje facilitado por el docente. El cuento completo se lee después de esta sesión.']]},
+   {title:'Durante esta sesión',rows:[['palacio','En esta sesión trabajas solo con el pasaje que entrega el docente. El enlace abre el cuento completo, que lees después de la sesión.']]},
    {title:'Después de esta sesión · para preparar la sesión 2',rows:[['guillen','«Primeras definiciones», pp. 13–15. Lee también Palacio completo, enlazado arriba.']]}
   ]:[
    {title:'Preparación ya realizada',rows:p.autonomous},
    {title:'Durante esta sesión',rows:p.classroom}
   ];
  }
- if(p.autonomous?.length)groups.push({title:first?'Preparación · antes de esta sesión':'Recuperar la preparación del tramo',rows:p.autonomous});
+ if(p.autonomous?.length)groups.push({title:first?'Preparación · antes de esta sesión':'Recuperar la preparación de la semana',rows:p.autonomous});
  if(p.classroom?.length){
   const session=({7:2,10:1,13:1,15:1})[e.week]||1;
   groups.push({title:session===(first?1:2)?'Durante esta sesión':session===2?'Para la sesión 2 · no requiere lectura previa':'Recuperar lo trabajado en la sesión 1',rows:p.classroom});

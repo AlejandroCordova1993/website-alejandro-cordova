@@ -28,7 +28,7 @@ export const weeks=[
   {
     "week": 6,
     "title": "Oralitura lengua y autorrepresentación",
-    "description": "Docencia: oralitura, contemporaneidad indígena, autorrepresentación y versiones lingüísticas. Práctica: comparar Guamán Poma y «Takina/Poema» por voz, destinatario y relación entre palabra e imagen; iniciar la ficha 3. Autónomo: Brígido-Corachán y Domínguez, pp. 84–87, con el poema completo, y terminación de la ficha. Se inicia la cartografía con sus registros de circulación."
+    "description": "Docencia: oralitura, contemporaneidad indígena, autorrepresentación y versiones lingüísticas; fragmento de Kowii sobre palabra y diálogo leído en aula. Práctica: comparar Guamán Poma y «Takina/Poema» por voz, destinatario y relación entre palabra e imagen; iniciar la ficha 3. Autónomo: Brígido-Corachán y Domínguez, pp. 84–87, con el poema completo, y terminación de la ficha. Se inicia la cartografía con sus registros de circulación."
   },
   {
     "week": 7,
