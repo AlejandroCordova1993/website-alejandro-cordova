@@ -126,7 +126,7 @@ export const sessions=[
         "Comprueba fuente, intervalo y leyenda. Conserva esos registros para la clase de palabras, voz y cuerpo; no necesitas elegir otra charla ni rehacer la transcripción desde cero."
       ]
     ],
-    "preparation": "Antes de la clase, lee «Lectura integrada para preparar esta clase», dentro de «Teoría». En clase verás la charla completa antes de elegir el episodio y transcribir un fragmento."
+    "preparation": "Antes de la clase, lee «Lectura para antes de clase», dentro de «Teoría». En clase verás la charla completa antes de elegir el episodio y transcribir un fragmento."
   },
   {
     "id": "s2-e2",

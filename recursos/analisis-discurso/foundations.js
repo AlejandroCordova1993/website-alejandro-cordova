@@ -1,7 +1,7 @@
 // Authored paraphrases shared by the guide and projection, not new assignments.
 export const openingNotice={
  title:'Un aviso concreto',
- context:'Ejemplo inventado: la biblioteca de una facultad pega este aviso en su puerta.',
+ context:'Ejemplo: la biblioteca de una facultad pega este aviso en su puerta.',
  text:'Desde mañana, la biblioteca atenderá solo a estudiantes con matrícula vigente.',
  reading:'El aviso delimita quién puede usar el servicio desde el día indicado. Para identificar ese día, necesitamos saber cuándo se pegó; para saber si cambia o recuerda una condición de acceso, necesitamos normas o avisos anteriores. Su significado depende de las palabras y de la situación en que se usan.',
  note:'Este ejemplo acompaña la explicación. El diagnóstico se realiza después con las versiones A, B y C sobre las becas.'

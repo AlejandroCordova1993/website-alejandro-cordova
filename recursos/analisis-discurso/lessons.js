@@ -5,7 +5,7 @@ export const lessons={
    "Retoma la [[enunciacion|enunciación]] introducida en la semana 1 para examinar ahora una realización oral concreta. Una conferencia preparada, una conversación espontánea y una interacción de aula organizan de manera diferente los derechos de intervención. Describe lo que ocurre antes de explicar su relación con una institución. En el enfoque de Calsamiglia y Tusón, la oralidad incluye realizaciones mediadas y diversos grados de planificación; no se define simplemente como hablar sin preparación.",
    [
     "Hablar también es actuar. Austin distingue lo que decimos con un significado —acto locutivo—, lo que hacemos al decirlo, como pedir o prometer —acto ilocutivo—, y sus efectos en otras personas —actos o efectos perlocutivos—. Son planos de un mismo uso, no tres pasos obligatorios.",
-    "Ejemplo inventado: «¿Puedes repetir la última frase?» tiene forma interrogativa y puede funcionar como petición en clase. La respuesta y el turno anterior ayudan a reconocer esa acción. Que el compañero repita o se niegue es un resultado que debe observarse, no una parte garantizada del significado.",
+    "Ejemplo: «¿Puedes repetir la última frase?» tiene forma interrogativa y puede funcionar como petición en clase. La respuesta y el turno anterior ayudan a reconocer esa acción. Que el compañero repita o se niegue es un resultado que debe observarse, no una parte garantizada del significado.",
     "Reconocer una petición no equivale a descubrir todos los motivos privados de quien habla. La enunciación designa la puesta en uso de la lengua; el acto de habla permite analizar qué acción se realiza en ese uso. El manual presenta aportaciones de Austin y Searle y las relaciona con la interacción."
    ]
   ],
@@ -66,7 +66,7 @@ export const lessons={
   ],
   [
    "Un contraste con controles",
-   "“La dirección suspendió las becas”, “Se suspendieron las becas” y “La suspensión de las becas…” cambian la presentación de un proceso. Son ejemplos inventados del taller, no hechos de la universidad. La omisión puede vincularse con una convención de género, un agente recuperable, desconocimiento o una estrategia de opacidad. Para decidir, necesitamos cotexto y datos; la forma por sí sola no demuestra manipulación."
+   "“La dirección suspendió las becas”, “Se suspendieron las becas” y “La suspensión de las becas…” cambian la presentación de un proceso. La omisión puede vincularse con una convención de género, un agente recuperable, desconocimiento o una estrategia de opacidad. Para decidir, necesitamos cotexto y datos; la forma por sí sola no demuestra manipulación."
   ]
  ],
  "3": [
@@ -118,7 +118,7 @@ export const lessons={
   ],
   [
    "Responsabilidad y punto de vista",
-   "Para esta ficha usamos la distinción de Ducrot presentada por Calsamiglia y Tusón. El sujeto hablante empírico produce materialmente el mensaje; el locutor es la figura presentada en el discurso como responsable de enunciarlo; los enunciadores son figuras o voces a las que se atribuyen puntos de vista puestos en escena por el locutor. No tienen que corresponder a personas que hayan pronunciado esas palabras. Estos términos no equivalen automáticamente a redactor, firmante o portavoz institucional. En una lectura [[polifonia|polifónica]] de «La medida no es un privilegio», se evoca y rechaza el punto de vista «la medida es un privilegio» sin identificar quién lo sostuvo. Este ejemplo docente de negación se apoya en Ducrot según Caldiz; no es un ejemplo tomado del manual ni la interpretación obligatoria de toda negación."
+   "Para esta ficha usamos la distinción de Ducrot presentada por Calsamiglia y Tusón. El sujeto hablante empírico produce materialmente el mensaje; el locutor es la figura presentada en el discurso como responsable de enunciarlo; los enunciadores son figuras o voces a las que se atribuyen puntos de vista puestos en escena por el locutor. No tienen que corresponder a personas que hayan pronunciado esas palabras. Estos términos no equivalen automáticamente a redactor, firmante o portavoz institucional. En una lectura [[polifonia|polifónica]] de «La medida no es un privilegio», se evoca y rechaza el punto de vista «la medida es un privilegio» sin identificar quién lo sostuvo. Este ejemplo de negación se apoya en Ducrot según Caldiz; no es un ejemplo tomado del manual ni la interpretación obligatoria de toda negación."
   ],
   [
    "Citar también encuadra",
@@ -175,7 +175,7 @@ export const lessons={
   ],
   [
    "Una afirmación necesita un puente",
-   "En [[argumentacion|argumentación]], separa los datos o premisas de partida, la conclusión y la regla que conecta ambos. La regla no es otro nombre para el dato. Calsamiglia y Tusón presentan la ley de paso, la posibilidad de argumentos implícitos y distintos órdenes de exposición: la conclusión también puede aparecer primero. Ejemplo docente: «La solicitud reúne los requisitos; debe admitirse». Dato: reúne los requisitos. Conclusión: debe admitirse. Regla reconstruida: las solicitudes que los cumplen deben admitirse, bajo las condiciones aplicables. Una objeción puede cuestionar el dato, la regla o una excepción. El [[topos|topos]] se profundiza con el enfoque histórico-discursivo: no equivale a un tema repetido ni a una palabra."
+   "En [[argumentacion|argumentación]], separa los datos o premisas de partida, la conclusión y la regla que conecta ambos. La regla no es otro nombre para el dato. Calsamiglia y Tusón presentan la ley de paso, la posibilidad de argumentos implícitos y distintos órdenes de exposición: la conclusión también puede aparecer primero. Ejemplo: «La solicitud reúne los requisitos; debe admitirse». Dato: reúne los requisitos. Conclusión: debe admitirse. Regla reconstruida: las solicitudes que los cumplen deben admitirse, bajo las condiciones aplicables. Una objeción puede cuestionar el dato, la regla o una excepción. El [[topos|topos]] se profundiza con el enfoque histórico-discursivo: no equivale a un tema repetido ni a una palabra."
   ],
   [
    "Explicar, justificar y evaluar",
