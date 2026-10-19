@@ -3,17 +3,17 @@
 // Cada bloque desarrolla una operación que ya exige la planificación aprobada.
 const local=(label,href)=>({label,href});
 const sources={
- canon:local('Dossier de canon: fundamentos y fuentes','./materiales/canon.html?v=lc-f1e4fe8c25fd'),
+ canon:local('Dossier de canon: fundamentos y fuentes','./materiales/canon.html?v=lc-b7e790f6c7ad'),
  repertorio:local('Even-Zohar · El sistema literario, § 2.5 (texto español)','https://www.tau.ac.il/~itamarez/works/papers/trabajos/EZ-sistema_literario.pdf'),
- oralitura:local('Brígido-Corachán y Domínguez · estudio del corpus, pp. 76–98','./materiales/world-literature-2019.pdf?v=lc-f1e4fe8c25fd#page=82'),
- hermeneutica:local('Dossier de hermenéutica: Gadamer, explicación y fuentes','./materiales/hermeneutica.html?v=lc-f1e4fe8c25fd'),
- recepcion:local('Dossier de recepción: Jauss, Iser y Eco','./materiales/recepcion.html?v=lc-f1e4fe8c25fd'),
- documentos:local('Prólogos de Avellaneda y Cervantes: recortes identificados','./materiales/recepcion-documentos.html?v=lc-f1e4fe8c25fd'),
+ oralitura:local('Brígido-Corachán y Domínguez · estudio del corpus, pp. 76–98','./materiales/world-literature-2019.pdf?v=lc-b7e790f6c7ad#page=82'),
+ hermeneutica:local('Dossier de hermenéutica: Gadamer, explicación y fuentes','./materiales/hermeneutica.html?v=lc-b7e790f6c7ad'),
+ recepcion:local('Dossier de recepción: Jauss, Iser y Eco','./materiales/recepcion.html?v=lc-b7e790f6c7ad'),
+ documentos:local('Prólogos de Avellaneda y Cervantes: recortes identificados','./materiales/recepcion-documentos.html?v=lc-b7e790f6c7ad'),
  rajewsky:local('Rajewsky · Intermedialidad, intertextualidad y remediación (traducción española)','https://www.vivomatografias.com/index.php/vmfs/article/view/278/314'),
- goethe:local('Goethe / Eckermann · selección y mediación de la traducción','./materiales/goethe.html?v=lc-f1e4fe8c25fd'),
+ goethe:local('Goethe / Eckermann · selección y mediación de la traducción','./materiales/goethe.html?v=lc-b7e790f6c7ad'),
  palacio:local('Palacio · cuento del corpus, pp. 25–42; pasajes del comentario, pp. 26–37','https://www.funcionjudicial.gob.ec/resources/pdf/publicaciones/unhombremuertoapuntapies.pdf#page=26'),
- ataud:local('Ruiz Agila / Esparza · selección del corpus, pp. 41–43','./materiales/ataud-en-llamas.pdf?v=lc-f1e4fe8c25fd#page=41'),
- kowii:local('Kowii · apartado sobre rimanakuy, p. 8 (página 9 del visor)','./materiales/kowii-2012.pdf?v=lc-f1e4fe8c25fd#page=9'),
+ ataud:local('Ruiz Agila / Esparza · selección del corpus, pp. 41–43','./materiales/ataud-en-llamas.pdf?v=lc-b7e790f6c7ad#page=41'),
+ kowii:local('Kowii · apartado sobre rimanakuy, p. 8 (página 9 del visor)','./materiales/kowii-2012.pdf?v=lc-b7e790f6c7ad#page=9'),
  candido:local('Antonio Candido · Dialética da malandragem, RIEB 8 (1970), pp. 67–89. Fuente crítica en portugués para preparación docente.','https://revistas.usp.br/rieb/en/article/view/69638'),
  wellek:local('René Wellek · Comparative Literature Today (1965), pp. 329–330. Aclaración posterior a su intervención de 1958; preparación docente.','https://komparativistika.uz/storage/article_files/files/14.%20Wellek-ComparativeLiteratureToday-1965.pdf#page=6')
 };
@@ -110,7 +110,7 @@ export const theoryNotes={
  ],exampleTitle:'Un mapa posible no es circulación probada',example:[
  'Un texto producido en una localidad puede publicarse en una editorial nacional y traducirse en otro continente. Cada vínculo exige su registro: lugar de edición, traductor, fecha, medio y destinatarios cuando consten. La disponibilidad de una web demuestra acceso potencial, no lectura efectiva en todos los lugares donde puede abrirse.',
  'Para revisar la cartografía, separa las relaciones documentadas de las conexiones que propones investigar. Un nodo grande en el dibujo no demuestra poder: necesitas explicar qué decisiones controla ese agente y con qué evidencia.'
- ],application:'Añade a una relación de tu mapa el criterio de escala y una limitación. Usa el caso de Ortiz Wallner para examinar qué cambia al mediar un testimonio entre circuitos.',limit:'No equipares procedencia nacional, lengua, pertenencia cultural y lugar de recepción.',sources:[sources.goethe,local('Ortiz Wallner · caso del corpus, pp. 132–135','./materiales/world-literature-2019.pdf?v=lc-f1e4fe8c25fd#page=138')]},
+ ],application:'Añade a una relación de tu mapa el criterio de escala y una limitación. Usa el caso de Ortiz Wallner para examinar qué cambia al mediar un testimonio entre circuitos.',limit:'No equipares procedencia nacional, lengua, pertenencia cultural y lugar de recepción.',sources:[sources.goethe,local('Ortiz Wallner · caso del corpus, pp. 132–135','./materiales/world-literature-2019.pdf?v=lc-b7e790f6c7ad#page=138')]},
  15:{title:'Del tema abstracto a sus realizaciones y transformaciones',paragraphs:[
  'Tema y motivo tienen delimitaciones distintas en la tradición comparatista. Para esta matriz llamaremos tema al problema de sentido que construimos al leer —por ejemplo, la justificación de la violencia— y motivo a una situación o elemento concreto que participa en su realización y puede reaparecer con otras funciones. Son distinciones operativas del curso, no una taxonomía universal.',
  'La variación se explica relacionando esa realización con voz, composición, género y contexto. No consiste en afirmar que «el mismo tema está en todas partes». Tampoco toda recurrencia demuestra influencia: primero hay que justificar la comparabilidad y conservar la diferencia.'
@@ -124,7 +124,18 @@ export const theoryNotes={
  ]}}
 };
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-export function theoryNoteHtml(week){
+const reviewNotes={
+ 2:{title:'Del comentario de Palacio a tu argumento',paragraphs:[
+  'Recupera tus pasajes de Palacio y Machado. Explica qué procedimiento sostiene la comparación, formula una lectura rival y conserva una diferencia histórica. El comentario de la sesión anterior modela el razonamiento; tu ficha debe desarrollar una conclusión propia con evidencias de ambos cuentos.',
+  'No necesitas releer el comentario completo para empezar a escribir. Consúltalo si debes revisar cómo pasas de un indicio a una explicación o cómo delimitas lo que puedes demostrar.'
+ ],label:'Consultar el comentario completo de Palacio'},
+ 7:{title:'Del testimonio a los registros de circulación',paragraphs:[
+  'Recupera en la pieza de Esparza una decisión de composición y distingue voz testimonial, paratexto e interpretación. Utiliza esa distinción para revisar los registros de la cartografía: identifica qué agente, medio y relación documenta cada fuente, y qué no permite afirmar.',
+  'Trabaja con los pasajes y registros que ya preparaste. El comentario completo queda disponible para consultar la secuencia temporal, la nota de correspondencia y los límites de las inferencias; no se añade otra lectura.'
+ ],label:'Consultar el comentario completo de Ruiz Agila / Esparza'}
+};
+export function theoryNoteHtml(week,{review=false}={}){
+ if(review&&reviewNotes[week]){const r=reviewNotes[week];return `<section class="theory-review"><h3>${esc(r.title)}</h3>${r.paragraphs.map(p=>`<p>${esc(p)}</p>`).join('')}<details class="theory-recovery"><summary>${esc(r.label)}</summary>${theoryNoteHtml(week)}</details></section>`;}
  const n=theoryNotes[week];if(!n)return '';
  const paragraphs=items=>items.map(p=>`<p>${esc(p)}</p>`).join('');
  const walkthrough=n.walkthrough?`<ol class="theory-reasoning">${n.walkthrough.map(s=>`<li><p><strong>${esc(s.title)}.</strong> ${esc(s.text)}</p></li>`).join('')}</ol>`:'';

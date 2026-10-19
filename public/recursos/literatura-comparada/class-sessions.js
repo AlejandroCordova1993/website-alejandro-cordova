@@ -1,8 +1,8 @@
-import {weeks} from './schedule.js?v=lc-f1e4fe8c25fd';
-import {unitActivities} from './curriculum.js?v=lc-f1e4fe8c25fd';
-import {translationRows} from './corpus.js?v=lc-f1e4fe8c25fd';
-import {activityTitle} from './teaching.js?v=lc-f1e4fe8c25fd';
-import {encounterById,dayLabel} from './encounters.js?v=lc-f1e4fe8c25fd';
+import {weeks} from './schedule.js?v=lc-b7e790f6c7ad';
+import {unitActivities} from './curriculum.js?v=lc-b7e790f6c7ad';
+import {translationRows} from './corpus.js?v=lc-b7e790f6c7ad';
+import {activityTitle} from './teaching.js?v=lc-b7e790f6c7ad';
+import {encounterById,dayLabel} from './encounters.js?v=lc-b7e790f6c7ad';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 // Teaching prompts are original syntheses. Texts and attributions are in Leer.
 const lessons={

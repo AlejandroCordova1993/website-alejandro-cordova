@@ -1,6 +1,6 @@
 export const steps=[['orientar','Situar'],['leer','Leer'],['comparar','Contrastar'],['argumentar','Argumentar'],['revisar','Revisar']];
-export {courseModules as modules} from './curriculum.js?v=lc-f1e4fe8c25fd';
-import {courseModules as modules} from './curriculum.js?v=lc-f1e4fe8c25fd';
+export {courseModules as modules} from './curriculum.js?v=lc-b7e790f6c7ad';
+import {courseModules as modules} from './curriculum.js?v=lc-b7e790f6c7ad';
 export const moduleById=Object.fromEntries(modules.map(m=>[m.id,m]));
 export const history=[
  {label:'Antes de la disciplina',title:'Comparar precede al comparatismo',text:'Traducciones, imitaciones y disputas entre tradiciones existieron antes de que la literatura comparada se organizara como campo universitario. Es importante distinguir esas prácticas de la institucionalización de una disciplina.'},
@@ -19,4 +19,4 @@ export const diagnostic=[
  {title:'Un artista declara que se apropia de una crónica.',answer:'Hay una relación declarada que puedes documentar. Todavía debes explicar qué transforma y evitar atribuirle un modelo visual específico sin pruebas.'},
  {title:'Dos traducciones imaginan de manera distinta un espacio.',answer:'Puedes cotejar decisiones precisas, sus efectos y el original. Identifica las versiones y distingue interpretación de juicio automático sobre errores.'}
 ];
-export {writtenRubric as rubric} from './curriculum.js?v=lc-f1e4fe8c25fd';
+export {writtenRubric as rubric} from './curriculum.js?v=lc-b7e790f6c7ad';
