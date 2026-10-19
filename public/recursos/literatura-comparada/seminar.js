@@ -1,6 +1,6 @@
-import {courseModules,taskNotes,optionalComparison} from './curriculum.js?v=lc-cd0dc247d723';
-import {resourceById} from './corpus.js?v=lc-cd0dc247d723';
-import {keyNames,fieldLabel,archivedKeys} from './state.js?v=lc-cd0dc247d723';
+import {courseModules,taskNotes,optionalComparison} from './curriculum.js?v=lc-6bfff45a9139';
+import {resourceById} from './corpus.js?v=lc-6bfff45a9139';
+import {keyNames,fieldLabel,archivedKeys} from './state.js?v=lc-6bfff45a9139';
 
 export const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function collectEvidence(state){
@@ -39,7 +39,8 @@ export function relationDiagram(relations){
  return `<div class="circuit-figure"><svg viewBox="0 0 800 ${h}" role="img" aria-label="Circuitos registrados: ${shown.length} vínculos. Descripción y fuentes en la lista de relaciones.">${shown.map((r,i)=>{const y=i*145+20,mid=r.mediator?.trim();const line=(a,b)=>`<path d="M${a} ${y+32}H${b}" stroke="#123c69" stroke-width="1.5" ${r.type==='propuesta'?'stroke-dasharray="6 5"':''} /><path d="M${b-7} ${y+28}L${b} ${y+32}L${b-7} ${y+36}" fill="#123c69"/>`;return `<g><title>${esc(r.from+' → '+(mid?mid+' → ':'')+r.to+'; '+r.type+'; '+r.evidence)}</title>${box(10,y,230,r.from,'Partida')}${mid?line(240,275)+box(280,y,240,mid,'Mediación')+line(520,555):line(240,555)}${box(560,y,230,r.to,'Destino')}<text x="10" y="${y+88}" class="map-kind">${esc((i+1)+'. '+(r.type==='documentada'?'Documentada':'Propuesta')+(r.date?' · '+r.date:'')+(r.medium?' · '+r.medium:''))}</text></g>`}).join('')}</svg></div><p class="caption">Línea continua: relación documentada. Línea discontinua: comparación propuesta. La posición en el dibujo no representa prestigio ni poder.${relations.length>12?' Se muestran los primeros 12 vínculos; la lista conserva todos.':''}</p>`;
 }
 function paragraphs(text){return text.trim().split(/\n\s*\n/).map(p=>p.trim().startsWith('>')?'<blockquote>'+esc(p.replace(/^>\s?/gm,''))+'</blockquote>':'<p class="preserve">'+esc(p)+'</p>').join('');}
-// Each ficha is delivered on its own: its fields, 250–350 words and a one-page sheet without a cover.
+// Delivery defaults to the argument and its recorded sources. Preparation is opt-in;
+// rendering either version never changes the notebook or the review requirements.
 const fichaRequired={comparison:['hypothesis','evidenceA','locatorA','evidenceB','locatorB','difference','argument'],task:['argument']};
 const fichaKind=key=>taskNotes[key]?'task':'comparison';
 const countWords=text=>text?.trim()?text.trim().split(/\s+/u).length:0;
@@ -53,9 +54,15 @@ export function fichaChecklist(state,key){
  return [...fichaRequired[fichaKind(key)].filter(f=>f!=='argument').map(f=>({field:f,label:fieldLabel(key,f),ok:!!n[f]?.trim()})),
   {field:'argument',label:`${fieldLabel(key,'argument')}: ${words} palabras · referencia: 250–350`,ok:words>=250&&words<=350}];
 }
-export function fichaHtml(state,key,title){
- const n=state.notes[key]||{},fields=[...fichaRequired[fichaKind(key)],'objection','revision','revisionReason'].filter((f,i,all)=>all.indexOf(f)===i&&n[f]?.trim());
- return `<article class="seminar-delivery ficha-delivery"><header class="ficha-head"><p>Literatura comparada · Alejandro Córdova</p><h1>${esc(title)}</h1><p>Nombre: ______________________________ · Fecha: ______________</p>${fichaChecklist(state,key).some(c=>!c.ok)?'<p>Borrador · revisión pendiente</p>':''}</header><section class="delivery-body"><h2>Consigna</h2><p>${esc(fichaPrompt(key))}</p>${fields.map(f=>`<h2>${esc(fieldLabel(key,f))}</h2>${paragraphs(n[f])}`).join('')||'<p>La ficha todavía está vacía.</p>'}<p class="caption">${esc(fieldLabel(key,'argument'))}: ${countWords(n.argument)} palabras.</p></section></article>`;
+export function fichaHtml(state,key,title,{includePreparation=false}={}){
+ const n=state.notes[key]||{},fields=[...fichaRequired[fichaKind(key)],'objection','revision','revisionReason'].filter((f,i,all)=>f!=='argument'&&all.indexOf(f)===i&&n[f]?.trim());
+ const route=courseModules.flatMap(m=>Object.values(m.routes)).find(r=>r.noteKey===key);
+ const references=['A','B'].flatMap((suffix,i)=>{
+  if(!n['locator'+suffix]?.trim())return [];
+  const r=route&&resourceById[route.texts[i]];
+  return `<p class="preserve">${r?esc(r.author+' · '+r.title)+': ':''}${esc(n['locator'+suffix])}</p>`;
+ }).join('');
+ return `<article class="seminar-delivery ficha-delivery"><header class="ficha-head"><p>Literatura comparada · Alejandro Córdova</p><h1>${esc(title)}</h1><p>Nombre: ______________________________ · Fecha: ______________</p>${fichaChecklist(state,key).some(c=>!c.ok)?'<p>Borrador · revisión pendiente</p>':''}</header><section class="delivery-body"><h2>Consigna</h2><p>${esc(fichaPrompt(key))}</p><h2>${esc(fieldLabel(key,'argument'))}</h2>${n.argument?.trim()?paragraphs(n.argument):'<p>El argumento todavía está vacío.</p>'}${references?'<h2>Fuentes y localizadores registrados</h2>'+references:''}<p class="caption">${esc(fieldLabel(key,'argument'))}: ${countWords(n.argument)} palabras.</p></section>${includePreparation?`<section class="delivery-annex ficha-preparation"><h2>Anexo · Preparación y revisión</h2>${fields.map(f=>`<h3>${esc(fieldLabel(key,f))}</h3>${paragraphs(n[f])}`).join('')||'<p>No hay preparación registrada para adjuntar.</p>'}</section>`:''}</article>`;
 }
 export function deliveryHtml(state){
  const n=state.notes.ensayo||{},d=state.delivery||{annexes:[]},passages=collectEvidence(state);

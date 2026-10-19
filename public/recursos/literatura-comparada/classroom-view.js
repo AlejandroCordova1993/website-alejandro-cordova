@@ -1,9 +1,9 @@
-import {encounters,dayLabel} from './encounters.js?v=lc-cd0dc247d723';
-import {taskNotes} from './curriculum.js?v=lc-cd0dc247d723';
-import {classHref,classPlan,classPreparation,classContinuation,classReadingGroups,fichaTitles} from './class-flow.js?v=lc-cd0dc247d723';
-import {toneHead} from './ui-icons.js?v=lc-cd0dc247d723';
-import {glossaryLinks,concepts} from './glossary.js?v=lc-cd0dc247d723';
-import {theoryNoteHtml} from './theory-notes.js?v=lc-cd0dc247d723';
+import {encounters,dayLabel} from './encounters.js?v=lc-6bfff45a9139';
+import {taskNotes} from './curriculum.js?v=lc-6bfff45a9139';
+import {classHref,classPlan,classPreparation,classContinuation,classReadingGroups,fichaTitles} from './class-flow.js?v=lc-6bfff45a9139';
+import {toneHead} from './ui-icons.js?v=lc-6bfff45a9139';
+import {glossaryLinks,concepts} from './glossary.js?v=lc-6bfff45a9139';
+import {theoryNoteHtml} from './theory-notes.js?v=lc-6bfff45a9139';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 export function renderClassPage(e,ctx){

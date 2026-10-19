@@ -1,8 +1,8 @@
-import {modules,moduleById,history,schools} from './course.js?v=lc-cd0dc247d723';
-import {resourceById} from './corpus.js?v=lc-cd0dc247d723';
-import {weeks} from './schedule.js?v=lc-cd0dc247d723';
-import {sessionSlides} from './class-sessions.js?v=lc-cd0dc247d723';
-import {dayLabel} from './encounters.js?v=lc-cd0dc247d723';
+import {modules,moduleById,history,schools} from './course.js?v=lc-6bfff45a9139';
+import {resourceById} from './corpus.js?v=lc-6bfff45a9139';
+import {weeks} from './schedule.js?v=lc-6bfff45a9139';
+import {sessionSlides} from './class-sessions.js?v=lc-6bfff45a9139';
+import {dayLabel} from './encounters.js?v=lc-6bfff45a9139';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 export function createPresenter(dialog){

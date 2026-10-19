@@ -139,3 +139,15 @@ dialog.reading-dialog[open]{display:flex;flex-direction:column}
 @media(max-width:740px){.reading-sequence{grid-template-columns:1fr;gap:16px}.reading-sequence>li+li{padding-top:16px;border-top:1px solid var(--line)}.reading-distinctions>div{grid-template-columns:1fr;gap:8px}.reading-dialog>.dialog-heading{padding:16px;gap:12px}.reading-dialog>.dialog-heading h2{font-size:22px}.reading-dialog>.dialog-body{padding:20px 16px}.reading-document img{max-height:360px}}
 @media print{.reading-sequence{display:block}.reading-sequence>li{break-inside:avoid;margin-bottom:12px}.worked-example{break-inside:auto}.example-development{display:block}.reading-document img{max-height:95mm}}
 @media print{.ficha-head{margin-bottom:8mm;padding-bottom:4mm;border-bottom:1px solid #aaa}.ficha-head p{font-size:10pt;margin:1mm 0}.ficha-delivery h1{font-size:20pt}.ficha-delivery h2{font-size:13pt;margin-top:5mm}}
+/* Keep the final argument compact; optional working notes begin on a new page. */
+.ficha-preparation{border-top:1px solid var(--line);margin-top:24px}
+@media print{
+ .ficha-delivery{font:11pt/1.35 var(--serif)}
+ .ficha-delivery .ficha-head{margin-bottom:4mm;padding-bottom:3mm}
+ .ficha-delivery .ficha-head h1{margin:3mm 0}
+ .ficha-delivery .delivery-body{padding:0}
+ .ficha-delivery .delivery-body h2{font-size:12pt;margin:4mm 0 2mm}
+ .ficha-delivery .delivery-body p,.ficha-delivery .delivery-body blockquote{font:inherit;margin:2mm 0;max-width:none}
+ .ficha-delivery .delivery-body .caption{font:9pt/1.4 var(--sans)}
+ .ficha-preparation{border:0;margin:0}
+}
