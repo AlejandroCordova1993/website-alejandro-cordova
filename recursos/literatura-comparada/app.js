@@ -1,20 +1,20 @@
-import {taskNotes,optionalComparison} from './curriculum.js?v=lc-341113c05c62';
-import {encounters,dayLabel} from './encounters.js?v=lc-341113c05c62';
-import {classHref,classFromHash,resumeHref,projectPhases,suggestedProjectPhase,workDestination,fichaTitles} from './class-flow.js?v=lc-341113c05c62';
-import {renderClassPage} from './classroom-view.js?v=lc-341113c05c62';
-import {weeks} from './schedule.js?v=lc-341113c05c62';
-import {essayMilestones} from './journey.js?v=lc-341113c05c62';
-import {collectEvidence,insertPassage,projectDesk,relationDiagram,deliveryHtml,deliveryChecklist,annexOptions,alertHtml,fichaChecklist,fichaHtml} from './seminar.js?v=lc-341113c05c62';
-import {glossaryLinks,conceptHtml,conceptById} from './glossary.js?v=lc-341113c05c62';
-import {teachingPlan,evaluationView,activityLinks} from './teaching.js?v=lc-341113c05c62';
-import {resources,resourceById,translationRows} from './corpus.js?v=lc-341113c05c62';
-import {modules,moduleById,steps,history,schools,diagnostic,rubric} from './course.js?v=lc-341113c05c62';
-import {STORAGE_KEY,freshState,loadState,writeNote,markReviewed,workStatus,hasWork,wordCount,exportMarkdown,validateState,fileName,moduleKeys,moduleWorkStatus,fieldNames,keyNames,routeKey,noteDestination,activityProgress,archivedKeys,fieldLabel,reviewFields} from './state.js?v=lc-341113c05c62';
+import {taskNotes,optionalComparison} from './curriculum.js?v=lc-f88c9564086a';
+import {encounters,dayLabel} from './encounters.js?v=lc-f88c9564086a';
+import {classHref,classFromHash,resumeHref,projectPhases,suggestedProjectPhase,workDestination,fichaTitles} from './class-flow.js?v=lc-f88c9564086a';
+import {renderClassPage} from './classroom-view.js?v=lc-f88c9564086a';
+import {weeks} from './schedule.js?v=lc-f88c9564086a';
+import {essayMilestones} from './journey.js?v=lc-f88c9564086a';
+import {collectEvidence,insertPassage,projectDesk,relationDiagram,deliveryHtml,deliveryChecklist,annexOptions,alertHtml,fichaChecklist,fichaHtml} from './seminar.js?v=lc-f88c9564086a';
+import {glossaryLinks,conceptHtml,conceptById} from './glossary.js?v=lc-f88c9564086a';
+import {teachingPlan,evaluationView,activityLinks} from './teaching.js?v=lc-f88c9564086a';
+import {resources,resourceById,translationRows} from './corpus.js?v=lc-f88c9564086a';
+import {modules,moduleById,steps,history,schools,diagnostic,rubric} from './course.js?v=lc-f88c9564086a';
+import {STORAGE_KEY,freshState,loadState,writeNote,markReviewed,workStatus,hasWork,wordCount,exportMarkdown,validateState,fileName,moduleKeys,moduleWorkStatus,fieldNames,keyNames,routeKey,noteDestination,activityProgress,archivedKeys,fieldLabel,reviewFields} from './state.js?v=lc-f88c9564086a';
 
-import {createPresenter} from './presenter.js?v=lc-341113c05c62';
-import {createSession} from './session.js?v=lc-341113c05c62';
-import {uiIcon,toneHead,toneSummary} from './ui-icons.js?v=lc-341113c05c62';
-import {readingDocumentHtml} from './reading-examples.js?v=lc-341113c05c62';
+import {createPresenter} from './presenter.js?v=lc-f88c9564086a';
+import {createSession} from './session.js?v=lc-f88c9564086a';
+import {uiIcon,toneHead,toneSummary} from './ui-icons.js?v=lc-f88c9564086a';
+import {readingDocumentHtml} from './reading-examples.js?v=lc-f88c9564086a';
 const $=s=>document.querySelector(s);
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let storage;try{storage=window.localStorage;}catch{storage={getItem(){throw Error();},setItem(){throw Error();}};}
@@ -26,7 +26,7 @@ let teacherView=false;try{const q=new URLSearchParams(location.search);if(q.has(
 document.body.dataset.role=teacherView?'docente':'estudiante';
 const roleSwitch=$('[data-role-switch]');if(roleSwitch){roleSwitch.textContent=teacherView?'Vista de estudiante':'Vista docente';roleSwitch.addEventListener('click',()=>{roleSwitch.href=(teacherView?'?estudiante':'?docente')+location.hash;});}
 // In the catalogue installation the return is relative; standalone local work uses its local preview.
-const catalogHref=location.pathname.includes('/recursos/literatura-comparada/')?'../../recursos.html?v=lc-341113c05c62':/^(127\.0\.0\.1|localhost)$/.test(location.hostname)?'http://127.0.0.1:4184/recursos.html':null;
+const catalogHref=location.pathname.includes('/recursos/literatura-comparada/')?'../../recursos.html?v=lc-f88c9564086a':/^(127\.0\.0\.1|localhost)$/.test(location.hostname)?'http://127.0.0.1:4184/recursos.html':null;
 document.querySelectorAll('[data-catalog-link]').forEach(a=>{if(!catalogHref){a.hidden=true;return;}a.href=catalogHref;if(!location.pathname.includes('/recursos/literatura-comparada/')){a.target='_blank';a.rel='noopener noreferrer';a.setAttribute('aria-label',a.textContent+' (abre en otra pestaña)');}});
 const lock=navigator.locks?fn=>navigator.locks.request('lc-cuaderno-write',fn):null;
 let session=createSession({storage,lock,initialRaw:loaded.raw}),savePhase=storageBlocked?'unavailable':'saved',pendingSaves=0,saveAnnouncement,lastAnnounced='',relationEdit=-1,mutationBusy=false;
@@ -193,9 +193,22 @@ function render({keep=false}={}){
  (main.querySelector('h1')||main).setAttribute('tabindex','-1');
  if(!keep){window.scrollTo({top:0,behavior:'instant'});(main.querySelector('h1')||main).focus({preventScroll:true});}
  if(!keep&&current.page==='biblioteca')window.scrollTo({top:libraryView.scroll,behavior:'instant'});
- scrollHints(main.querySelector('.step-nav'));updateSaveStatus();if(justFinished&&current.page==='inicio')$('#done-title')?.focus({preventScroll:true});
+ updateClassSectionNav();scrollHints(main.querySelector('.step-nav'));updateSaveStatus();if(justFinished&&current.page==='inicio')$('#done-title')?.focus({preventScroll:true});
  if(pendingFocus){const target=document.getElementById(pendingFocus);pendingFocus='';if(target){if(target.closest('.essay-writing-main')){essayView='draft';applyEssayView();}let parent=target.parentElement;while(parent){if(parent.tagName==='DETAILS')parent.open=true;parent=parent.parentElement;}if(target.closest('[hidden]')&&current.page==='proyecto'){projectPhase='todo';applyProjectPhase();$('#project-stage').value='todo';}target.scrollIntoView({block:'center',behavior:'instant'});target.focus({preventScroll:true});}}
 }
+
+// The class links follow the section being read; they do not switch or hide content.
+let classNavFrame=0;
+function updateClassSectionNav(){
+ const nav=main.querySelector('.class-section-nav');if(!nav)return;
+ const links=[...nav.querySelectorAll('[data-class-anchor]')],offset=(parseFloat(getComputedStyle(nav).top)||0)+nav.getBoundingClientRect().height+16;
+ nav.closest('.class-page').style.setProperty('--class-section-offset',Math.max(0,offset-(parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop)||0))+'px');
+ const currentLink=links.filter(a=>document.getElementById(a.dataset.classAnchor)?.getBoundingClientRect().top<=offset+2).at(-1)||links[0];
+ for(const link of links){if(link===currentLink)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');}
+}
+function queueClassSectionNav(){if(classNavFrame)return;classNavFrame=requestAnimationFrame(()=>{classNavFrame=0;updateClassSectionNav();});}
+window.addEventListener('scroll',queueClassSectionNav,{passive:true});
+window.addEventListener('resize',queueClassSectionNav);
 
 let pendingFocus='',finishAfterClear=false,justFinished=false;
 // Horizontal strips on narrow screens: keep the current item visible and show when more items are hidden.

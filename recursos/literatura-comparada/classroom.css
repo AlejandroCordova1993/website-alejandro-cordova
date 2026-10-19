@@ -20,10 +20,13 @@
 .class-overview>section{border-top:1px solid var(--line);padding-top:18px}
 .class-overview h2{font:600 16px/1.5 var(--sans);margin:0 0 8px}
 .class-overview p{font-size:16px;margin:0}
-.class-section-nav{display:flex;gap:28px;position:sticky;top:calc(88px + var(--warning-h,0px));z-index:8;background:var(--paper);border-bottom:1px solid var(--line);margin:0 0 28px;padding:8px 0}
-.class-section-nav a{display:inline-flex;align-items:center;min-height:44px;font-weight:600;font-size:15px;text-decoration:none}
-.class-section-nav a:hover{text-decoration:underline}
-.class-section{scroll-margin-top:calc(80px + var(--warning-h,0px));margin-bottom:28px}
+.class-section-nav{display:flex;gap:12px;position:sticky;top:calc(88px + var(--warning-h,0px));z-index:8;background:var(--paper);border-bottom:1px solid var(--line);margin:0 0 28px;padding:10px 0}
+.class-section-nav a{display:inline-flex;align-items:center;gap:10px;min-height:56px;padding:12px 16px;border:1px solid transparent;border-radius:10px;color:var(--tone-ink);font:400 18px/1.4 var(--sans);text-decoration:none;white-space:nowrap}
+.class-section-nav a .ui-icon{width:22px;height:22px}
+.class-section-nav a:hover{background:var(--tone-surface);text-decoration:none}
+.class-section-nav a[aria-current=location]{background:var(--tone-surface);border-color:var(--tone-line);font-weight:600}
+.class-section-nav a:focus-visible{outline:2px solid var(--tone-ink);outline-offset:2px}
+.class-section{scroll-margin-top:var(--class-section-offset,calc(180px + var(--warning-h,0px)));margin-bottom:28px}
 .class-section>.tone-body>section+section{margin-top:28px}
 .class-section .tone-body>h3,.class-section .tone-body>section>h3{margin:0 0 12px}
 .class-agenda{padding-left:24px;margin:0 0 36px}
@@ -87,8 +90,9 @@
  .sidebar-top,.sidebar-bottom{display:block;padding:0;margin:12px 0}
  .side-unit{min-width:0}.side-unit>summary{padding-inline:4px}
  .side-unit li a{padding:12px}.side-intro{padding:12px 4px}
- .class-section-nav{top:calc(120px + var(--warning-h,0px));gap:24px;padding:4px 0;margin-bottom:20px}
- .class-section{scroll-margin-top:calc(80px + var(--warning-h,0px))}
+ .class-section-nav{top:calc(120px + var(--warning-h,0px));gap:4px;padding:8px 0;margin-bottom:20px}
+ .class-section-nav a{flex:1;justify-content:center;gap:6px;min-height:48px;padding:10px 6px;font-size:14px}
+ .class-section-nav a .ui-icon{width:19px;height:19px}
  .class-page .comparison-workshop>.tone-body,.class-page .translation-workshop>.tone-body,.class-page .relations-section>.tone-body{padding-inline:0}
  .class-page .comparison-workshop>.tone-head,.class-page .translation-workshop>.tone-head,.class-page .relations-section>.tone-head{padding-inline:0}
  .class-page .comparison-document{padding:16px}

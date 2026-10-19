@@ -1,20 +1,20 @@
 // Síntesis y aplicaciones docentes. Reutilizan los productos acordados.
 // Kowii es un apoyo breve de lectura en aula; no añade un objeto a la ficha 3.
 // Cada bloque desarrolla una operación que ya exige la planificación aprobada.
-import {workedExampleHtml} from './reading-examples.js?v=lc-341113c05c62';
+import {workedExampleHtml} from './reading-examples.js?v=lc-f88c9564086a';
 const local=(label,href)=>({label,href});
 const sources={
- canon:local('Dossier de canon: fundamentos y fuentes','./materiales/canon.html?v=lc-341113c05c62'),
+ canon:local('Dossier de canon: fundamentos y fuentes','./materiales/canon.html?v=lc-f88c9564086a'),
  repertorio:local('Even-Zohar · El sistema literario, § 2.5 (visor 14)','https://www.tau.ac.il/~itamarez/works/papers/trabajos/EZ-sistema_literario.pdf#page=14'),
- oralitura:local('Brígido-Corachán y Domínguez · estudio, pp. 76–98 (inicio en visor 82)','./materiales/world-literature-2019.pdf?v=lc-341113c05c62#page=82'),
- hermeneutica:local('Dossier de hermenéutica: Gadamer, explicación y fuentes','./materiales/hermeneutica.html?v=lc-341113c05c62'),
- recepcion:local('Dossier de recepción: Jauss, Iser y Eco','./materiales/recepcion.html?v=lc-341113c05c62'),
- documentos:local('Prólogos de Avellaneda y Cervantes: recortes identificados','./materiales/recepcion-documentos.html?v=lc-341113c05c62'),
+ oralitura:local('Brígido-Corachán y Domínguez · estudio, pp. 76–98 (inicio en visor 82)','./materiales/world-literature-2019.pdf?v=lc-f88c9564086a#page=82'),
+ hermeneutica:local('Dossier de hermenéutica: Gadamer, explicación y fuentes','./materiales/hermeneutica.html?v=lc-f88c9564086a'),
+ recepcion:local('Dossier de recepción: Jauss, Iser y Eco','./materiales/recepcion.html?v=lc-f88c9564086a'),
+ documentos:local('Prólogos de Avellaneda y Cervantes: recortes identificados','./materiales/recepcion-documentos.html?v=lc-f88c9564086a'),
  rajewsky:local('Rajewsky · Intermedialidad, intertextualidad y remediación (traducción española)','https://www.vivomatografias.com/index.php/vmfs/article/download/278/314#page=9'),
- goethe:local('Goethe / Eckermann · selección y mediación de la traducción','./materiales/goethe.html?v=lc-341113c05c62'),
+ goethe:local('Goethe / Eckermann · selección y mediación de la traducción','./materiales/goethe.html?v=lc-f88c9564086a'),
  palacio:local('Palacio · cuento del corpus, pp. 25–42; pasajes del comentario, pp. 26–37','https://www.funcionjudicial.gob.ec/resources/pdf/publicaciones/unhombremuertoapuntapies.pdf#page=26'),
- ataud:local('Ruiz Agila / Esparza · selección ligera, pp. 41–43 originales (visor 1–3)','./materiales/ruiz-agila-esparza-41-43.pdf?v=lc-341113c05c62#page=1'),
- kowii:local('Kowii · apartado sobre rimanakuy, p. 8 (página 9 del visor)','./materiales/kowii-2012.pdf?v=lc-341113c05c62#page=9'),
+ ataud:local('Ruiz Agila / Esparza · selección ligera, pp. 41–43 originales (visor 1–3)','./materiales/ruiz-agila-esparza-41-43.pdf?v=lc-f88c9564086a#page=1'),
+ kowii:local('Kowii · apartado sobre rimanakuy, p. 8 (página 9 del visor)','./materiales/kowii-2012.pdf?v=lc-f88c9564086a#page=9'),
  candido:local('Antonio Candido · Dialética da malandragem, RIEB 8 (1970), pp. 67–89. Fuente crítica en portugués para preparación docente.','https://revistas.usp.br/rieb/en/article/view/69638'),
  wellek:local('René Wellek · Comparative Literature Today (1965), pp. 329–330. Aclaración posterior a su intervención de 1958; preparación docente.','https://komparativistika.uz/storage/article_files/files/14.%20Wellek-ComparativeLiteratureToday-1965.pdf#page=6')
 };
@@ -60,7 +60,7 @@ export const theoryNotes={
  ],exampleTitle:'Del facsímil a «Takina/Poema»',example:[
  'En Guamán Poma registraste una interlocución verbal y visual. En la página de Chikangana observa la disposición de las versiones y localiza una marca de voz en castellano. Ese par permite comparar destinatarios y presentación de la palabra; no demuestra una continuidad inalterada de cuatro siglos.',
  'Una conclusión defendible precisa qué mediación cambia entre los objetos y conserva la diferencia entre crónica colonial y poema contemporáneo. Decir solamente que ambos «recuperan una voz indígena» omite las operaciones que debías demostrar.'
- ],application:'Para la ficha 3, conecta un indicio de cada obra con una mediación y una diferencia histórica. Declara expresamente qué no puedes establecer sobre la otra lengua.',limit:'Reconocimiento editorial y autonomía para definir las condiciones del intercambio son cuestiones relacionadas, pero distintas.',sources:[local('Brígido-Corachán y Domínguez · selección del estudio, pp. 84–87 (visor 90–93)','./materiales/world-literature-2019.pdf?v=lc-341113c05c62#page=90'),sources.kowii],extra:{title:'Kowii: una pregunta desde Ecuador',paragraphs:[
+ ],application:'Para la ficha 3, conecta un indicio de cada obra con una mediación y una diferencia histórica. Declara expresamente qué no puedes establecer sobre la otra lengua.',limit:'Reconocimiento editorial y autonomía para definir las condiciones del intercambio son cuestiones relacionadas, pero distintas.',sources:[local('Brígido-Corachán y Domínguez · selección del estudio, pp. 84–87 (visor 90–93)','./materiales/world-literature-2019.pdf?v=lc-f88c9564086a#page=90'),sources.kowii],extra:{title:'Kowii: una pregunta desde Ecuador',paragraphs:[
  'El fragmento sobre rimanakuy vincula palabra, escucha y construcción compartida del conocimiento. Su intervención permite preguntar quiénes participan y cómo se presenta la relación con otros. Es una elaboración situada de Kowii; no una definición universal de lo indígena ni una equivalencia entre kichwa y ruma simi.',
  'Durante la lectura del poema, contrasta esa pregunta con un indicio de voz o destinatario. El ensayo no prueba la intención de Chikangana ni documenta por sí mismo una relación histórica con él. En la ficha se conservan Guamán Poma y Chikangana como los dos objetos; Kowii apoya la discusión dentro de la misma actividad.'
  ]}},
@@ -111,7 +111,7 @@ export const theoryNotes={
  ],exampleTitle:'Un mapa posible no es circulación probada',example:[
  'Un texto producido en una localidad puede publicarse en una editorial nacional y traducirse en otro continente. Cada vínculo exige su registro: lugar de edición, traductor, fecha, medio y destinatarios cuando consten. La disponibilidad de una web demuestra acceso potencial, no lectura efectiva en todos los lugares donde puede abrirse.',
  'Para revisar la cartografía, separa las relaciones documentadas de las conexiones que propones investigar. Un nodo grande en el dibujo no demuestra poder: necesitas explicar qué decisiones controla ese agente y con qué evidencia.'
- ],application:'Añade a una relación de tu mapa el criterio de escala y una limitación. Usa el caso de Ortiz Wallner para examinar qué cambia al mediar un testimonio entre circuitos.',limit:'No equipares procedencia nacional, lengua, pertenencia cultural y lugar de recepción.',sources:[sources.goethe,local('Ortiz Wallner · caso del corpus, pp. 132–135','./materiales/world-literature-2019.pdf?v=lc-341113c05c62#page=138')]},
+ ],application:'Añade a una relación de tu mapa el criterio de escala y una limitación. Usa el caso de Ortiz Wallner para examinar qué cambia al mediar un testimonio entre circuitos.',limit:'No equipares procedencia nacional, lengua, pertenencia cultural y lugar de recepción.',sources:[sources.goethe,local('Ortiz Wallner · caso del corpus, pp. 132–135','./materiales/world-literature-2019.pdf?v=lc-f88c9564086a#page=138')]},
  15:{title:'Del tema abstracto a sus realizaciones y transformaciones',paragraphs:[
  'Tema y motivo tienen delimitaciones distintas en la tradición comparatista. Para esta matriz llamaremos tema al problema de sentido que construimos al leer —por ejemplo, la justificación de la violencia— y motivo a una situación o elemento concreto que participa en su realización y puede reaparecer con otras funciones. Son distinciones operativas del curso, no una taxonomía universal.',
  'La variación se explica relacionando esa realización con voz, composición, género y contexto. No consiste en afirmar que «el mismo tema está en todas partes». Tampoco toda recurrencia demuestra influencia: primero hay que justificar la comparabilidad y conservar la diferencia.'
