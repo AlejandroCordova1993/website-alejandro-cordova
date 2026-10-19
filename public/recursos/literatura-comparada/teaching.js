@@ -1,28 +1,31 @@
-import {weeks,minimumContents} from './schedule.js?v=lc-f88c9564086a';
-import {taskNotes,assessments,unitActivities} from './curriculum.js?v=lc-f88c9564086a';
-import {weeklyReadings,essayMilestones} from './journey.js?v=lc-f88c9564086a';
-import {resourceById} from './corpus.js?v=lc-f88c9564086a';
-import {courseModules} from './curriculum.js?v=lc-f88c9564086a';
-import {encounters,autonomousPlan,dayLabel} from './encounters.js?v=lc-f88c9564086a';
-import {toneHead} from './ui-icons.js?v=lc-f88c9564086a';
+import {weeks,minimumContents} from './schedule.js?v=lc-15bf851a851d';
+import {taskNotes,assessments,unitActivities} from './curriculum.js?v=lc-15bf851a851d';
+import {weeklyReadings,essayMilestones} from './journey.js?v=lc-15bf851a851d';
+import {resourceById} from './corpus.js?v=lc-15bf851a851d';
+import {courseModules} from './curriculum.js?v=lc-15bf851a851d';
+import {encounters,autonomousPlan,dayLabel} from './encounters.js?v=lc-15bf851a851d';
+import {classHref,classReadingGroups} from './class-flow.js?v=lc-15bf851a851d';
+import {toneHead} from './ui-icons.js?v=lc-15bf851a851d';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function weekLabel(value){
  const text=Array.isArray(value)?value.join(' y '):String(value).replace('; retorno ',' y ').replace('; transversal','').replace('; anticipación ',' y ');
  return (/^\d+$/.test(text)?'Semana ':'Semanas ')+text;
 }
 export function activityTitle(a){const key=a.field.slice(0,a.field.lastIndexOf('-'));if(taskNotes[key])return taskNotes[key].title;return a.title;}
-export function readingDestination(id,module){
- if(['baudelaire','casal','diez'].includes(id))return {href:'#modulo/3/traduccion',field:'recurso-'+id};
- const renders=m=>[...m.theory,...(m.common||[]),...(m.support||[]),...Object.values(m.routes).flatMap(r=>r.texts)].includes(id);
- const owner=courseModules.find(m=>m.id===module&&renders(m))||courseModules.find(renders);
+export function readingDestination(id,module,week){
+ const contains=e=>classReadingGroups(e).some(g=>g.rows.some(([resource])=>resource===id));
+ const available=encounters.filter(contains);
+ const encounter=available.find(e=>e.week===week)||available.find(e=>Math.ceil(e.week/4)===module)||available[0];
+ if(!encounter)return {href:'#biblioteca',field:'recurso-'+id};
+ const owner=courseModules.find(m=>m.id===Math.ceil(encounter.week/4));
  const route=Object.entries(owner.routes).find(([,r])=>r.texts.includes(id))?.[0];
- return {href:`#modulo/${owner.id}/leer`,field:'recurso-'+id,module:owner.id,...(route?{route:`${owner.id}-${route}`}:{})};
+ return {href:classHref(encounter),field:'recurso-'+id,module:owner.id,...(route?{route:`${owner.id}-${route}`}:{})};
 }
 // Lecturas de la semana: tarjeta ocre; «extra» añade dentro la selección que facilita el docente.
 export function studentReadings(week,module,extra=''){
  const plan=weeklyReadings[week];
  const groups=[['autonomous','Lecturas de la semana · consulta abajo cuándo trabajarlas'],['classroom','Materiales que se trabajan en clase'],['revisit','Relecturas y materiales ya trabajados']];
- return `<section class="week-readings tone-card" data-tone="lecturas" aria-label="Lecturas de la semana ${week}">${toneHead('readings','Lecturas y materiales',{level:'h3'})}<div class="tone-body">${groups.filter(([key])=>plan[key]?.length).map(([key,title])=>`<h4>${title}</h4><ul>${plan[key].map(([id,selection,source])=>{const r={...resourceById[id],...source},dest=source?.url?{href:source.url}:readingDestination(id,module);return `<li><a href="${dest.href}"${dest.field?` data-goto-field="${dest.field}"`:''}${dest.route?` data-route-note="${dest.route}"`:''}>${esc(r.author)} · ${esc(r.title)}</a><p class="caption">${esc(selection)}${dest.module&&dest.module!==module?` · Recuperar en M${dest.module}`:''}${!r.url?' · Selección facilitada por el docente':''}${r.access==='Biblioteca'?' · Ejemplar gestionado por el docente':''}</p></li>`;}).join('')}</ul>`).join('')}${plan.note?`<p class="week-reading-note">${esc(plan.note)}</p>`:''}${extra}</div></section>`;
+ return `<section class="week-readings tone-card" data-tone="lecturas" aria-label="Lecturas de la semana ${week}">${toneHead('readings','Lecturas y materiales',{level:'h3'})}<div class="tone-body">${groups.filter(([key])=>plan[key]?.length).map(([key,title])=>`<h4>${title}</h4><ul>${plan[key].map(([id,selection,source])=>{const r={...resourceById[id],...source},dest=source?.url?{href:source.url}:readingDestination(id,module,week);return `<li><a href="${dest.href}"${dest.field?` data-goto-field="${dest.field}"`:''}${dest.route?` data-route-note="${dest.route}"`:''}>${esc(r.author)} · ${esc(r.title)}</a><p class="caption">${esc(selection)}${dest.module&&dest.module!==module?` · Recuperar en M${dest.module}`:''}${!r.url?' · Selección facilitada por el docente':''}${r.access==='Biblioteca'?' · Ejemplar gestionado por el docente':''}</p></li>`;}).join('')}</ul>`).join('')}${plan.note?`<p class="week-reading-note">${esc(plan.note)}</p>`:''}${extra}</div></section>`;
 }
 function milestone(week){const m=essayMilestones[week];return m?`<section class="essay-milestone tone-card" data-tone="taller">${toneHead('essay','Hito del ensayo',{level:'h3'})}<div class="tone-body"><p>${esc(m.description)}</p><a href="#proyecto" data-goto-field="${m.field}">${esc(m.title)}</a></div></section>`:'';}
 function weekNavigation(week){return `<nav class="week-navigation" aria-label="Continuar el recorrido por semanas"><a href="${week===1?'#introduccion':'#semana/'+(week-1)}">${week===1?'Volver a la introducción':'Semana '+(week-1)+' · Anterior'}</a><a href="${week===16?'#proyecto':'#semana/'+(week+1)}">${week===16?'Revisar y exportar el ensayo':'Semana '+(week+1)+' · Continuar'}</a></nav>`;}

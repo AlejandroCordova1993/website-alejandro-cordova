@@ -38,22 +38,22 @@ for(const m of courseModules)for(const [route,r] of Object.entries(m.routes))r.w
 
 // Direct destinations reuse the existing notebook keys and preserve all saved notes.
 export const unitActivities=[
- {module:1,weeks:[1],title:'Diagnóstico y pregunta inicial',href:'#introduccion',field:'intro-intro'},
- {module:1,weeks:[2],title:'Ficha 1 · Palacio / Machado',href:'#modulo/1/argumentar',field:'1-A-argument'},
- {module:1,weeks:[3,4],title:'Canonización y ficha 2 · Canon y repertorio',href:'#modulo/1/orientar',field:'1-canon-argument'},
- {module:2,weeks:[5,6],title:'Ficha 3 · Guamán Poma / Chikangana',href:'#modulo/2/argumentar',field:'2-oralitura-argument'},
- {module:2,weeks:[7],title:'Cartografía de circulación · Primera versión',href:'#modulo/2/orientar',field:'2-cartografia-argument'},
- {module:2,weeks:[8],title:'Sumativa 1 · Análisis comparativo en aula',href:'#modulo/2/orientar',field:'2-sumativa-argument'},
- {module:3,weeks:[9],title:'Ejercicio de hermenéutica · Carrington / Bierce',href:'#modulo/3/argumentar',field:'3-hermeneutica-argument'},
- {module:3,weeks:[10],title:'Ficha 4 · Recepción y límites',href:'#modulo/3/orientar',field:'3-recepcion-argument'},
- {module:3,weeks:[11],title:'Comentario de traducción · 400–500 palabras',href:'#modulo/3/traduccion',field:'3-traduccion-translation'},
- {module:3,weeks:[12],title:'Matriz de métodos',href:'#modulo/3/orientar',field:'3-metodos-argument'},
- {module:3,weeks:[12],title:'Microclase grupal · Se presenta en la semana 12 o 15',href:'#modulo/3/orientar',field:'3-microclase-argument'},
- {module:4,weeks:[13],title:'Cartografía de circulación · Revisión de escalas',href:'#modulo/2/orientar',field:'2-cartografia-argument'},
- {module:4,weeks:[14],title:'Ficha 5 · Cervantes / Borges',href:'#modulo/4/argumentar',field:'4-intertexto-argument',route:'4-A'},
- {module:4,weeks:[15],title:'Matriz tematológica · Palacio / Machado',href:'#modulo/4/orientar',field:'4-temas-argument'},
- {module:4,weeks:[15],title:'Extensión intermedial · Memoria y medios',href:'#modulo/4/argumentar',field:'4-medios-argument',route:'4-B'},
- {module:4,weeks:[15],title:'Microclase grupal · Segunda jornada',href:'#modulo/3/orientar',field:'3-microclase-argument'},
+ {module:1,weeks:[1],title:'Diagnóstico y pregunta inicial',href:'#semana/1/1',field:'intro-intro'},
+ {module:1,weeks:[2],title:'Ficha 1 · Palacio / Machado',href:'#semana/2/2',field:'1-A-argument'},
+ {module:1,weeks:[3,4],title:'Canonización y ficha 2 · Canon y repertorio',href:'#semana/4/2',field:'1-canon-argument'},
+ {module:2,weeks:[5,6],title:'Ficha 3 · Guamán Poma / Chikangana',href:'#semana/6/2',field:'2-oralitura-argument'},
+ {module:2,weeks:[7],title:'Cartografía de circulación · Primera versión',href:'#semana/7/2',field:'2-cartografia-argument'},
+ {module:2,weeks:[8],title:'Sumativa 1 · Análisis comparativo en aula',href:'#semana/8/2',field:'2-sumativa-argument'},
+ {module:3,weeks:[9],title:'Ejercicio de hermenéutica · Carrington / Bierce',href:'#semana/9/2',field:'3-hermeneutica-argument'},
+ {module:3,weeks:[10],title:'Ficha 4 · Recepción y límites',href:'#semana/10/2',field:'3-recepcion-argument'},
+ {module:3,weeks:[11],title:'Comentario de traducción · 400–500 palabras',href:'#semana/11/1',field:'3-traduccion-translation'},
+ {module:3,weeks:[12],title:'Matriz de métodos',href:'#semana/12/1',field:'3-metodos-argument'},
+ {module:3,weeks:[12],title:'Microclase grupal · Se presenta en la semana 12 o 15',href:'#semana/12/2',field:'3-microclase-argument'},
+ {module:4,weeks:[13],title:'Cartografía de circulación · Revisión de escalas',href:'#semana/13/2',field:'2-cartografia-argument'},
+ {module:4,weeks:[14],title:'Ficha 5 · Cervantes / Borges',href:'#semana/14/2',field:'4-intertexto-argument',route:'4-A'},
+ {module:4,weeks:[15],title:'Matriz tematológica · Palacio / Machado',href:'#semana/15/1',field:'4-temas-argument'},
+ {module:4,weeks:[15],title:'Extensión intermedial · Memoria y medios',href:'#semana/15/1',field:'4-medios-argument',route:'4-B'},
+ {module:4,weeks:[15],title:'Microclase grupal · Segunda jornada',href:'#semana/15/2',field:'3-microclase-argument'},
  {module:4,weeks:[16],title:'Ensayo final, consigna didáctica y defensa',href:'#proyecto',field:'ensayo-argument'}
 ];
 
