@@ -1,11 +1,11 @@
-import {encounters,dayLabel} from './encounters.js?v=lc-104967f85789';
-import {taskNotes} from './curriculum.js?v=lc-104967f85789';
-import {classHref,classPlan,classPreparation,classContinuation,classReadingGroups,fichaTitles} from './class-flow.js?v=lc-104967f85789';
-import {toneHead,uiIcon} from './ui-icons.js?v=lc-104967f85789';
-import {glossaryLinks,concepts} from './glossary.js?v=lc-104967f85789';
-import {theoryNoteHtml} from './theory-notes.js?v=lc-104967f85789';
-import {learningFor,sessionTheoryHtml,sessionActivityHtml} from './session-learning.js?v=lc-104967f85789';
-import {activityProducts} from './seminar.js?v=lc-104967f85789';
+import {encounters,dayLabel} from './encounters.js?v=lc-8b2222d0e928';
+import {taskNotes} from './curriculum.js?v=lc-8b2222d0e928';
+import {classHref,classPlan,classPreparation,classContinuation,classReadingGroups,fichaTitles} from './class-flow.js?v=lc-8b2222d0e928';
+import {toneHead,uiIcon} from './ui-icons.js?v=lc-8b2222d0e928';
+import {glossaryLinks,concepts} from './glossary.js?v=lc-8b2222d0e928';
+import {theoryNoteHtml} from './theory-notes.js?v=lc-8b2222d0e928';
+import {learningFor,sessionTheoryHtml,sessionActivityHtml} from './session-learning.js?v=lc-8b2222d0e928';
+import {activityProducts} from './seminar.js?v=lc-8b2222d0e928';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 export function renderClassPage(e,ctx){
@@ -33,7 +33,7 @@ export function renderClassPage(e,ctx){
   const t=taskNotes[plan.key];
   const finalBrief=['borrador','redaccion'].includes(learning.stage)?`<p class="task-final-prompt">${esc(t.prompt)}</p>`:`<details class="task-final-brief"><summary>Consultar la consigna completa del producto</summary><p>${esc(t.prompt)}</p></details>`;
   const preparing=learning.stage==='preparacion';
-  const hint=preparing?'Organiza aquí los registros o el esquema de los pasos. Este espacio conserva la preparación por separado del argumento final. Añade las revisiones sin borrar los registros que quieras conservar; no hay historial automático de ediciones.':'Escribe el resultado de esta sesión con fuentes y localizadores. La preparación registrada en su espacio propio permanece disponible en el desplegable; no necesitas reemplazarla para redactar aquí.';
+  const hint=preparing?'Organiza aquí los registros o el esquema de los pasos. Este espacio conserva la preparación por separado del argumento final. Añade las revisiones sin borrar los registros que quieras conservar; no hay historial automático de ediciones.':state.notes[plan.key]?.preparation?.trim()?'Escribe el resultado de esta sesión con fuentes y localizadores. La preparación registrada en su espacio propio permanece disponible en el desplegable; no necesitas reemplazarla para redactar aquí.':'Escribe aquí el resultado indicado en los pasos, con fuentes y localizadores. Puedes corregir el texto guardado en este campo; no hay historial automático de sus versiones.';
   const kept=preparing?(state.notes[plan.key]?.argument?.trim()?`<details class="previous-work"><summary>Consultar el texto guardado anteriormente</summary><p>Este texto permanece en su campo original. No lo clasificamos ni lo trasladamos automáticamente: puede ser una preparación o un argumento. Si quieres conservarlo como preparación independiente, copia lo pertinente al espacio de preparación sin borrar el original.</p>${field(plan.key,'argument','Mi texto guardado anteriormente','Corrige este texto solo si quieres modificar el original. La nueva preparación se guarda por separado.',7,{finalFicha:false})}</details>`:''):(state.notes[plan.key]?.preparation?.trim()?`<details class="preparation-notes"><summary>Consultar o corregir mi preparación conservada</summary>${field(plan.key,'preparation','Mi preparación conservada','Consulta tus registros y desarrolla el argumento en su campo propio. Editar aquí cambia la preparación; no existe un historial automático.',7,{finalFicha:false})}</details>`:'');
   workspace=`<section class="class-task" id="task-${plan.key}"><h3>${preparing?'Preparación · ':''}${esc(t.title)}</h3>${finalBrief}${kept}${field(plan.key,preparing?'preparation':'argument',learning.fieldLabel||'Mi desarrollo',hint,8,{finalFicha:learning.finalFicha})}${field(plan.key,'revisionReason',preparing?'Decisiones de esta sesión':'Cambios y decisiones de revisión',preparing?'Si es tu primer registro, explica una elección o una duda. Si revisas trabajo previo, indica qué precisas y con qué apoyo.':'Explica qué corriges, precisas o mantienes y qué pasaje, fuente o respuesta apoya la decisión.',4)}${learning.finalFicha&&['1-canon','3-recepcion'].includes(plan.key)?taskReview(plan.key):''}</section>`;
   if(plan.map)workspace+='<p class="group-work-guidance">La cartografía es grupal. Acuerden quién conserva la versión común del mapa y el comentario en su cuaderno, revisen juntos los vínculos y utilicen esa misma versión para la entrega de la semana 13. La aplicación no sincroniza cuadernos entre integrantes. El JSON permite trasladar el cuaderno completo a otro equipo; al recuperarlo reemplaza el cuaderno de destino, no fusiona varias copias.</p>'+relationsWorkshop();

@@ -1,20 +1,20 @@
-import {taskNotes,optionalComparison} from './curriculum.js?v=lc-104967f85789';
-import {encounters,dayLabel} from './encounters.js?v=lc-104967f85789';
-import {classHref,classFromHash,resumeHref,projectPhases,suggestedProjectPhase,workDestination,fichaTitles} from './class-flow.js?v=lc-104967f85789';
-import {renderClassPage} from './classroom-view.js?v=lc-104967f85789';
-import {weeks} from './schedule.js?v=lc-104967f85789';
-import {essayMilestones} from './journey.js?v=lc-104967f85789';
-import {collectEvidence,insertPassage,projectDesk,relationDiagram,deliveryHtml,deliveryChecklist,annexOptions,alertHtml,fichaChecklist,fichaHtml,activityProducts,activityChecklist,activityHtml} from './seminar.js?v=lc-104967f85789';
-import {glossaryLinks,conceptHtml,conceptById} from './glossary.js?v=lc-104967f85789';
-import {teachingPlan,evaluationView,activityLinks} from './teaching.js?v=lc-104967f85789';
-import {resources,resourceById,translationRows} from './corpus.js?v=lc-104967f85789';
-import {modules,moduleById,steps,history,schools,diagnostic,rubric} from './course.js?v=lc-104967f85789';
-import {STORAGE_KEY,freshState,loadState,writeNote,markReviewed,workStatus,hasWork,wordCount,exportMarkdown,validateState,fileName,moduleKeys,moduleWorkStatus,fieldNames,keyNames,routeKey,noteDestination,activityProgress,archivedKeys,fieldLabel,reviewFields} from './state.js?v=lc-104967f85789';
+import {taskNotes,optionalComparison} from './curriculum.js?v=lc-8b2222d0e928';
+import {encounters,dayLabel} from './encounters.js?v=lc-8b2222d0e928';
+import {classHref,classFromHash,resumeHref,projectPhases,suggestedProjectPhase,workDestination,fichaTitles} from './class-flow.js?v=lc-8b2222d0e928';
+import {renderClassPage} from './classroom-view.js?v=lc-8b2222d0e928';
+import {weeks} from './schedule.js?v=lc-8b2222d0e928';
+import {essayMilestones} from './journey.js?v=lc-8b2222d0e928';
+import {collectEvidence,insertPassage,projectDesk,relationDiagram,deliveryHtml,deliveryChecklist,annexOptions,alertHtml,fichaChecklist,fichaHtml,activityProducts,activityChecklist,activityHtml,projectTextHtml} from './seminar.js?v=lc-8b2222d0e928';
+import {glossaryLinks,conceptHtml,conceptById} from './glossary.js?v=lc-8b2222d0e928';
+import {teachingPlan,evaluationView,activityLinks} from './teaching.js?v=lc-8b2222d0e928';
+import {resources,resourceById,translationRows} from './corpus.js?v=lc-8b2222d0e928';
+import {modules,moduleById,steps,history,schools,diagnostic,rubric} from './course.js?v=lc-8b2222d0e928';
+import {STORAGE_KEY,freshState,loadState,writeNote,markReviewed,workStatus,hasWork,wordCount,exportMarkdown,validateState,fileName,moduleKeys,moduleWorkStatus,fieldNames,keyNames,routeKey,noteDestination,activityProgress,archivedKeys,fieldLabel,reviewFields} from './state.js?v=lc-8b2222d0e928';
 
-import {createPresenter} from './presenter.js?v=lc-104967f85789';
-import {createSession} from './session.js?v=lc-104967f85789';
-import {uiIcon,toneHead,toneSummary} from './ui-icons.js?v=lc-104967f85789';
-import {readingDocumentHtml} from './reading-examples.js?v=lc-104967f85789';
+import {createPresenter} from './presenter.js?v=lc-8b2222d0e928';
+import {createSession} from './session.js?v=lc-8b2222d0e928';
+import {uiIcon,toneHead,toneSummary} from './ui-icons.js?v=lc-8b2222d0e928';
+import {readingDocumentHtml} from './reading-examples.js?v=lc-8b2222d0e928';
 const $=s=>document.querySelector(s);
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let storage;try{storage=window.localStorage;}catch{storage={getItem(){throw Error();},setItem(){throw Error();}};}
@@ -26,7 +26,7 @@ let teacherView=false;try{const q=new URLSearchParams(location.search);if(q.has(
 document.body.dataset.role=teacherView?'docente':'estudiante';
 const roleSwitch=$('[data-role-switch]');if(roleSwitch){roleSwitch.textContent=teacherView?'Vista de estudiante':'Vista docente';roleSwitch.addEventListener('click',()=>{roleSwitch.href=(teacherView?'?estudiante':'?docente')+location.hash;});}
 // In the catalogue installation the return is relative; standalone local work uses its local preview.
-const catalogHref=location.pathname.includes('/recursos/literatura-comparada/')?'../../recursos.html?v=lc-104967f85789':/^(127\.0\.0\.1|localhost)$/.test(location.hostname)?'http://127.0.0.1:4184/recursos.html':null;
+const catalogHref=location.pathname.includes('/recursos/literatura-comparada/')?'../../recursos.html?v=lc-8b2222d0e928':/^(127\.0\.0\.1|localhost)$/.test(location.hostname)?'http://127.0.0.1:4184/recursos.html':null;
 document.querySelectorAll('[data-catalog-link]').forEach(a=>{if(!catalogHref){a.hidden=true;return;}a.href=catalogHref;if(!location.pathname.includes('/recursos/literatura-comparada/')){a.target='_blank';a.rel='noopener noreferrer';a.setAttribute('aria-label',a.textContent+' (abre en otra pestaña)');}});
 const lock=navigator.locks?fn=>navigator.locks.request('lc-cuaderno-write',fn):null;
 let session=createSession({storage,lock,initialRaw:loaded.raw}),savePhase=storageBlocked?'unavailable':'saved',pendingSaves=0,saveAnnouncement,lastAnnounced='',relationEdit=-1,mutationBusy=false;
@@ -159,7 +159,7 @@ function evidenceDesk(key,r,m){return `<aside class="evidence-desk" aria-label="
 function nextWorkshop(m,route){const theme=m.id===4&&route==='A'?'<a href="#semana/15" class="text-link">Continuar la semana 15: matriz temática y después medios</a>':'';const done=k=>['Revisado','Modificado después de revisar'].includes(workStatus(state,k)),other=route==='A'?'B':'A';return `<div class="next-workshop">${theme}${m.id===4&&!done(routeKey(m,other))?`<a href="#modulo/4/comparar" data-route-note="4-${other}" data-goto-field="${routeKey(m,other)}-hypothesis" class="text-link">${other==='B'?'Extensión intermedial · Semana 15':'Volver a Cervantes / Borges · Semana 14'} ${icon}</a>`:m.id<4?`<a href="#modulo/${m.id+1}/orientar" class="text-link">Después de las actividades de la unidad: ${moduleById[m.id+1].title} ${icon}</a>`:`<a href="#proyecto" class="text-link">Desarrollar mi pregunta en el ensayo final ${icon}</a>`}</div>`;}
 function projectSynthesis(){return `<details class="project-synthesis"><summary>Recuperar el recorrido de mis hipótesis</summary>${modules.map(m=>{const keys=moduleKeys(m).filter(k=>m.both||k===routeKey(m,state.routes[m.id])||workStatus(state,k)!=='Sin empezar');return keys.map(key=>`<section><h3>${keyNames[key]}</h3><p class="work-status">${statusChip(keyStatus(key))}</p><div class="hypothesis-pair"><div><h4>Al empezar</h4><p class="preserve">${escape(note(key,'hypothesis'))||'Sin hipótesis inicial.'}</p></div><div><h4>Después del contraste</h4><p class="preserve">${escape(note(key,'revision'))||'Sin revisión todavía.'}</p></div></div><p class="preserve">${escape(note(key,'revisionReason'))}</p><a class="text-link" href="${noteDestination(key).href}" data-goto-field="${noteDestination(key).field}" data-route-note="${noteDestination(key)?.route||''}">Retomar esta revisión ${icon}</a></section>`).join('');}).join('')}<section><h3>Un puerto, dos traducciones</h3><p class="preserve">${escape(note('3-traduccion','translation'))||'Sin comentario todavía.'}</p><a class="text-link" href="#semana/11/1" data-goto-field="3-traduccion-translation">Volver al cotejo ${icon}</a></section></details>`;}
 
-function projectWork(){const keys=Object.keys(taskNotes).filter(key=>Object.values(state.notes[key]||{}).some(v=>v.trim()));return `<details class="project-work"><summary>Recuperar mis fichas, cartografía y matrices</summary><p>Selecciona el trabajo que ayuda a tu pregunta. El ensayo desarrolla un argumento; las fichas y matrices son materiales de partida, no apartados que debas reunir íntegramente.</p>${keys.length?keys.map(key=>{const dest=noteDestination(key);return `<section><h3>${escape(taskNotes[key].title)}</h3><p class="preserve">${escape(note(key,'argument'))||'Consulta las decisiones de revisión.'}</p>${note(key,'revisionReason')?`<p class="caption preserve">${escape(note(key,'revisionReason'))}</p>`:''}<a href="${dest.href}" data-goto-field="${dest.field}">Volver a esta actividad</a></section>`;}).join(''):'<p>Al escribir las actividades por semanas, podrás recuperarlas aquí. Por ahora puedes formular tu pregunta provisional y seleccionar dos objetos.</p>'}</details>`;}
+function projectWork(){const keys=Object.keys(taskNotes).filter(key=>Object.values(state.notes[key]||{}).some(v=>v.trim()));return `<details class="project-work"><summary>Recuperar mis fichas, cartografía y matrices</summary><p>Selecciona el trabajo que ayuda a tu pregunta. El ensayo desarrolla un argumento; las fichas y matrices son materiales de partida, no apartados que debas reunir íntegramente.</p>${keys.length?keys.map(key=>{const dest=noteDestination(key);return `<section><h3>${escape(taskNotes[key].title)}</h3>${projectTextHtml(state,key)||'<p>Consulta las decisiones de revisión.</p>'}${note(key,'revisionReason')?`<p class="caption preserve">${escape(note(key,'revisionReason'))}</p>`:''}<a href="${dest.href}" data-goto-field="${dest.field}">Volver a esta actividad</a></section>`;}).join(''):'<p>Al escribir las actividades por semanas, podrás recuperarlas aquí. Por ahora puedes formular tu pregunta provisional y seleccionar dos objetos.</p>'}</details>`;}
 function notebookEntry(key,n,archived=false){const dest=workDestination(key,noteDestination(key)),preview=n.argument||n.translation||n.revision||n.hypothesis||Object.values(n).find(v=>v.trim())||'';return `<section class="notebook-entry work-preview"><div class="work-preview-heading"><h2>${escape(fichaTitles[key]||keyNames[key])}</h2>${archived?'<span class="archive-status">Archivada</span>':statusChip(keyStatus(key),{key})}</div><p class="work-preview-text preserve">${escape(preview.slice(0,240))}${preview.length>240?'…':''}</p><details><summary>Consultar el contenido guardado</summary>${Object.entries(n).filter(([,v])=>v.trim()).map(([f,v])=>`<h3>${escape(fieldLabel(key,f))}</h3><p class="preserve">${escape(v)}</p>`).join('')}</details>${!archived&&dest?`<a href="${dest.href}" class="text-link" data-route-note="${dest.route||''}" ${dest.field?`data-goto-field="${dest.field}"`:''}>Editar este trabajo</a>`:''}${!archived&&(fichaTitles[key]||activityProducts[key])?button('prepare-ficha','Preparar para entregar','text-button',`data-ficha="${key}"`):''}</section>`;}
 
 function notebook(){
