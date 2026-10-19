@@ -1,6 +1,6 @@
-import {courseModules,taskNotes,optionalComparison} from './curriculum.js?v=lc-df8c80f869b0';
-import {resourceById} from './corpus.js?v=lc-df8c80f869b0';
-import {keyNames,fieldLabel,archivedKeys} from './state.js?v=lc-df8c80f869b0';
+import {courseModules,taskNotes,optionalComparison} from './curriculum.js?v=lc-104967f85789';
+import {resourceById} from './corpus.js?v=lc-104967f85789';
+import {keyNames,fieldLabel,archivedKeys} from './state.js?v=lc-104967f85789';
 
 export const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function collectEvidence(state){
@@ -55,7 +55,7 @@ export function fichaChecklist(state,key){
   {field:'argument',label:`${fieldLabel(key,'argument')}: ${words} palabras · referencia: 250–350`,ok:words>=250&&words<=350}];
 }
 export function fichaHtml(state,key,title,{includePreparation=false}={}){
- const n=state.notes[key]||{},fields=[...fichaRequired[fichaKind(key)],'objection','revision','revisionReason'].filter((f,i,all)=>f!=='argument'&&all.indexOf(f)===i&&n[f]?.trim());
+ const n=state.notes[key]||{},fields=['preparation',...fichaRequired[fichaKind(key)],'objection','revision','revisionReason'].filter((f,i,all)=>f!=='argument'&&all.indexOf(f)===i&&n[f]?.trim());
  const route=courseModules.flatMap(m=>Object.values(m.routes)).find(r=>r.noteKey===key);
  const references=['A','B'].flatMap((suffix,i)=>{
   if(!n['locator'+suffix]?.trim())return [];
@@ -63,6 +63,21 @@ export function fichaHtml(state,key,title,{includePreparation=false}={}){
   return `<p class="preserve">${r?esc(r.author+' · '+r.title)+': ':''}${esc(n['locator'+suffix])}</p>`;
  }).join('');
  return `<article class="seminar-delivery ficha-delivery"><header class="ficha-head"><p>Literatura comparada · Alejandro Córdova</p><h1>${esc(title)}</h1><p>Nombre: ______________________________ · Fecha: ______________</p>${fichaChecklist(state,key).some(c=>!c.ok)?'<p>Borrador · revisión pendiente</p>':''}</header><section class="delivery-body"><h2>Consigna</h2><p>${esc(fichaPrompt(key))}</p><h2>${esc(fieldLabel(key,'argument'))}</h2>${n.argument?.trim()?paragraphs(n.argument):'<p>El argumento todavía está vacío.</p>'}${references?'<h2>Fuentes y localizadores registrados</h2>'+references:''}<p class="caption">${esc(fieldLabel(key,'argument'))}: ${countWords(n.argument)} palabras.</p></section>${includePreparation?`<section class="delivery-annex ficha-preparation"><h2>Anexo · Preparación y revisión</h2>${fields.map(f=>`<h3>${esc(fieldLabel(key,f))}</h3>${paragraphs(n[f])}`).join('')||'<p>No hay preparación registrada para adjuntar.</p>'}</section>`:''}</article>`;
+}
+export const activityProducts={
+ '2-sumativa':{title:'Análisis comparativo en aula',field:'argument',min:600,max:800},
+ '3-traduccion':{title:'Comentario de traducción',field:'translation',min:400,max:500},
+ '2-cartografia':{title:'Cartografía de circulación · Entrega grupal',field:'argument',map:true}
+};
+export function activityChecklist(state,key){
+ const p=activityProducts[key];if(!p)throw Error('Producto desconocido');
+ const n=state.notes[key]||{},words=countWords(n[p.field]);
+ return [{field:p.field,label:p.min?`${p.title}: ${words} palabras · referencia: ${p.min}–${p.max}`:'Comentario de la cartografía con fuentes y límites',ok:p.min?words>=p.min&&words<=p.max:!!n[p.field]?.trim()},...(p.map?[{field:'map',label:'Mapa con relaciones guardadas y sus fuentes',ok:state.relations.length>0}]:[])];
+}
+export function activityHtml(state,key,{includePreparation=false}={}){
+ const p=activityProducts[key];if(!p)throw Error('Producto desconocido');
+ const n=state.notes[key]||{},prompt=key==='3-traduccion'?'En 400–500 palabras, desarrolla tres diferencias entre las versiones de Baudelaire, Casal y Díez-Canedo con sus localizadores, efectos y una duda para el cotejo del francés.':taskNotes[key].prompt;
+ return `<article class="seminar-delivery ficha-delivery"><header class="ficha-head"><p>Literatura comparada · Alejandro Córdova</p><h1>${esc(p.title)}</h1><p>${p.map?'Integrantes del grupo':'Nombre'}: ${esc(n.student||'______________________________')}</p>${activityChecklist(state,key).some(c=>!c.ok)?'<p>Borrador · revisión pendiente</p>':''}</header><section class="delivery-body"><h2>Consigna</h2><p>${esc(prompt)}</p><h2>${p.map?'Comentario de la cartografía':esc(p.title)}</h2>${n[p.field]?.trim()?paragraphs(n[p.field]):'<p>El texto todavía está vacío.</p>'}</section>${p.map?`<section class="delivery-annex"><h2>Mapa y fuentes</h2>${relationDiagram(state.relations)}${state.relations.map(r=>`<h3>${esc(r.from+' → '+r.to)}</h3><p>${esc(r.type==='documentada'?'Relación documentada':'Comparación propuesta')}${r.mediator?' · Mediación: '+esc(r.mediator):''}${r.date?' · Fecha: '+esc(r.date):''}${r.medium?' · Medio: '+esc(r.medium):''}</p>${paragraphs(r.evidence)}`).join('')}</section>`:''}${includePreparation?`<section class="delivery-annex"><h2>Anexo · Preparación y revisión</h2>${['preparation','initialTranslation','revisionReason'].filter(f=>n[f]?.trim()).map(f=>`<h3>${esc(fieldLabel(key,f))}</h3>${paragraphs(n[f])}`).join('')||'<p>No hay preparación registrada para adjuntar.</p>'}</section>`:''}</article>`;
 }
 export function deliveryHtml(state){
  const n=state.notes.ensayo||{},d=state.delivery||{annexes:[]},passages=collectEvidence(state);

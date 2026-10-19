@@ -1,7 +1,7 @@
-import {taskNotes,courseModules,unitActivities} from './curriculum.js?v=lc-df8c80f869b0';
-import {workDestination} from './class-flow.js?v=lc-df8c80f869b0';
+import {taskNotes,courseModules,unitActivities} from './curriculum.js?v=lc-104967f85789';
+import {workDestination} from './class-flow.js?v=lc-104967f85789';
 export const STORAGE_KEY='lc-cuaderno-v1';
-export const fields=['hypothesis','evidenceA','locatorA','evidenceB','locatorB','difference','objection','argument','revision','revisionReason','translation','initialTranslation','title','question','corpus','method','mediation','credits','reflection','intro','student','deliveryDate','defense','selfAssessment'];
+export const fields=['hypothesis','evidenceA','locatorA','evidenceB','locatorB','difference','objection','argument','revision','revisionReason','translation','initialTranslation','title','question','corpus','method','mediation','credits','reflection','intro','student','deliveryDate','defense','selfAssessment','preparation'];
 export const notebookKeys=['intro','1-A','2-A','2-B','3-A','3-B','3-traduccion','4-A','4-B','proyecto','2-oralitura','3-hermeneutica','4-intertexto','4-medios','ensayo','2-ampliacion',...Object.keys(taskNotes)];
 export function freshState(){return {version:1,updatedAt:null,routes:{2:'A',3:'A',4:'A'},notes:{},relations:[],relationDraft:null,delivery:{annexes:[],includeMap:false,includeAssessment:false},completed:[],modified:[],reviewedAt:{},reviewedModules:[],lastLocation:'#introduccion'};}
 export function validateState(input){
@@ -62,6 +62,8 @@ const keyNames={intro:'Introducción','1-A':'M1 · Palacio / Machado','2-A':'M2 
 for(const k of ['2-A','2-B','3-A','3-B','4-A','4-B','proyecto'])keyNames[k]+=' · versión anterior';
 Object.assign(keyNames,{'2-ampliacion':'Ampliación · Sor Juana / Castellanos','2-oralitura':'M2 · Guamán Poma / Chikangana','3-hermeneutica':'M3 · Carrington / Bierce','4-intertexto':'M4 · Cervantes / Borges','4-medios':'M4 · Memoria y medios (una crónica)',ensayo:'Ensayo final'},Object.fromEntries(Object.entries(taskNotes).map(([k,t])=>[k,t.title])));
 export function fieldLabel(key,field){
+ if(field==='preparation')return 'Preparación conservada por separado';
+ if(key==='2-cartografia'&&field==='student')return 'Integrantes del grupo';
  if(taskNotes[key])return ({argument:'Mi desarrollo',revisionReason:'Cambios y decisiones de revisión'})[field]||fieldNames[field];
  if(key==='ensayo')return ({argument:'Borrador del ensayo',title:'Título de mi ensayo final',credits:'Referencias y atribuciones'})[field]||fieldNames[field];
  return fieldNames[field];

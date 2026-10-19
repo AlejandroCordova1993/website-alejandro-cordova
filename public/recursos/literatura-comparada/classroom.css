@@ -161,6 +161,9 @@ dialog.reading-dialog[open]{display:flex;flex-direction:column}
 @media print{.ficha-head{margin-bottom:8mm;padding-bottom:4mm;border-bottom:1px solid #aaa}.ficha-head p{font-size:10pt;margin:1mm 0}.ficha-delivery h1{font-size:20pt}.ficha-delivery h2{font-size:13pt;margin-top:5mm}}
 /* Keep the final argument compact; optional working notes begin on a new page. */
 .ficha-preparation{border-top:1px solid var(--line);margin-top:24px}
+.next-preparation{border-top:1px solid var(--line);margin-top:24px;padding-top:20px}
+.preparation-notes,.previous-work{margin:20px 0}
+.translation-reading-location{margin-bottom:24px}
 @media print{
  .ficha-delivery{font:11pt/1.35 var(--serif)}
  .ficha-delivery .ficha-head{margin-bottom:4mm;padding-bottom:3mm}
