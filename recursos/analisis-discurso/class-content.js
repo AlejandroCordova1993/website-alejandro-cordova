@@ -1,7 +1,7 @@
 import {foundations,distinctions} from './foundations.js';
 // Exposition accompanies an existing agenda block; it adds no assignments or minutes.
 // Examples are authored illustrations, not quotations or new empirical corpus.
-const topic=(block,title,explanation,points,example,reading,prompt,source,lesson)=>({block,title,explanation,points,example,reading,prompt,source,lesson});
+const topic=(block,title,explanation,points,example,reading,prompt,source,lesson,projectionDetails=false)=>({block,title,explanation,points,example,reading,prompt,source,lesson,projectionDetails});
 export const classContent={
  's1-e1':[
   ...foundations.map(item=>({...item,block:0})),
@@ -37,10 +37,10 @@ export const classContent={
    ['Palabras: deixis para situar referencias; marcadores para orientar la relación con lo anterior; reparación para resolver dificultades de decir, oír o entender.','Voz: prosodia —entonación, ritmo, pausas— y elementos paraverbales —calidad vocal, risa, suspiro—. Cuerpo: mirada, gesto, postura y distancia.'],
    '«Esa es mi propuesta» puede acompañarse de una pausa y de una mirada al público.','La transcripción de palabras permite examinar la formulación. El audio permitiría comprobar la pausa; el video, la mirada. Su coordinación puede estudiarse conservando intervalos.',
    '¿Qué observación cambia si disponemos solo de audio?','calsamiglia',1),
-  topic(4,'El género organiza la intervención','Una intervención larga puede ser esperable en una conferencia. En una conversación, su relación con turnos, respuestas y oportunidades de oposición puede ser diferente. La duración aislada no acredita dominación.',
+  topic(5,'El género organiza la intervención','Una intervención larga puede ser esperable en una conferencia. En una conversación, su relación con turnos, respuestas y oportunidades de oposición puede ser diferente. La duración aislada no acredita dominación.',
    ['Heteroselección: quien habla elige al siguiente. Autoselección: alguien empieza sin ser elegido. Observa qué respuestas son posibles.','El público presente y el público digital no participan del mismo modo.'],
    'Un docente explica durante cinco minutos; después abre preguntas y retoma una objeción.','Para estudiar control de la interacción interesa la secuencia completa y la posibilidad de respuesta, no solo contar los minutos del docente.',
-   '¿Qué evidencia mostraría una restricción de participación en este género?','guia-1',4)
+   '¿Qué evidencia mostraría una restricción de participación en este género?','guia-1',4,true)
  ],
  's3-e1':[
   topic(1,'Una marca de voz necesita contraste','Una pausa, una altura tonal o un énfasis puede contribuir a organizar el discurso. Su función se argumenta en relación con la secuencia y se contrasta con otros casos.',
@@ -57,7 +57,7 @@ export const classContent={
  's4-e1':[
   topic(1,'Escribir configura una acción social','Un texto escrito construye emisor, destinatario y condiciones de lectura. En una norma, las formulaciones distribuyen capacidades, obligaciones y condiciones; su existencia no demuestra su ejecución.',
    ['Distingue quien dispone, quien acredita una condición y quien recibe un beneficio.','La pregunta y los criterios de selección delimitan qué documentos necesitamos.'],
-   '«La comisión verificará los requisitos antes de resolver la solicitud».','Se representa una acción futura y condicionada. El enunciado permite analizar esa distribución; para afirmar que se cumplió habría que investigar la aplicación.',
+   '«La comisión verificará los requisitos antes de resolver la solicitud».','Se representa una acción futura y un orden del procedimiento: primero se verifican los requisitos y después se resuelve. El enunciado permite analizar esa distribución; para afirmar que se cumplió habría que investigar la aplicación.',
    '¿Qué regula el texto y qué necesitaríamos para estudiar su cumplimiento?','calsamiglia',0)
  ],
  's4-e2':[
@@ -68,9 +68,9 @@ export const classContent={
  ],
  's5-e1':[
   topic(1,'El lector aporta conocimientos','Comprender relaciona expresiones del texto con información disponible para el lector. Una inferencia necesita explicitar qué aporta cada componente y qué lectura alternativa sigue siendo posible.',
-   ['Flower y Hayes, según el manual: planificar, textualizar y revisar son procesos que se alternan. Textualizar es poner las ideas por escrito; revisar puede llevar a cambiar el plan.','El conocimiento que el analista supone no coincide necesariamente con el de los lectores reales.','En Grice según Escandell, «Algunos grupos entregaron» puede sugerir «no todos». «Algunos; de hecho, todos» cancela esa implicatura. El supuesto de una entrega anterior en «nuevamente» funciona de otra manera.'],
+   ['Flower y Hayes, según el manual, describen los procesos de quien escribe: planificar, textualizar y revisar son procesos que se alternan. Textualizar es poner las ideas por escrito; revisar puede llevar a cambiar el plan. No forman un circuito fijo: cada proceso puede activar los otros.','El conocimiento que el analista supone no coincide necesariamente con el de los lectores reales.','En Grice según Escandell, «Algunos grupos entregaron» puede sugerir «no todos». «Algunos; de hecho, todos» cancela esa implicatura. El supuesto de una entrega anterior en «nuevamente» funciona de otra manera.'],
    '«Adjunte nuevamente el certificado».','«Nuevamente» presenta una acción anterior como información dada por supuesta: una presuposición, según el tratamiento de Calsamiglia y Tusón y Brown y Yule. No prueba que esa acción haya ocurrido. Identificar el certificado exige otras referencias. La lectura integrada distingue este caso de una implicatura.',
-   '¿Qué aporta la expresión y qué conocimiento estamos añadiendo?','escandell',1)
+   '¿Qué aporta la expresión y qué conocimiento estamos añadiendo?','escandell',1,true)
  ],
  's5-e2':[
   topic(1,'Poner a prueba una inferencia','Una interpretación se fortalece cuando mostramos su fundamento y un dato que podría confirmarla o hacerla cambiar. No toda cláusula es ambigua ni toda inferencia necesita una rival igualmente plausible. La interpretación del lector, la intención atribuida y el efecto observado deben identificarse por separado.',
@@ -79,7 +79,7 @@ export const classContent={
    '¿Qué información resolvería la discrepancia sin adivinar lo que quiso decir quien escribió?','brown-yule',1),
   topic(1,'Del significado local al tema global','La macroestructura organiza el sentido global que se reconstruye desde las proposiciones del texto. Seleccionar conserva información pertinente; generalizar sustituye casos por una categoría común; integrar reúne pasos en una acción global. Estas operaciones requieren conservar las condiciones que sostienen la síntesis. La lectura integrada muestra ejemplos y sus pérdidas de información.',
    ['Una síntesis puede omitir detalles; debe justificar su selección.','Cambiar una condición o introducir una conclusión ajena altera el contenido que se representa.'],
-   'Texto: «La ayuda exige matrícula vigente y acreditación de ingresos». Síntesis: «La ayuda está condicionada a matrícula e ingresos».','La síntesis conserva las dos condiciones. «La ayuda se ofrece a todos» añade una generalización que el fragmento no sostiene.',
+   'Texto: «La ayuda exige matrícula vigente y acreditación de ingresos». Síntesis: «La ayuda está condicionada a matrícula e ingresos».','Esta condensación reúne las dos condiciones, pero pierde «vigente» y «acreditación»: hay que revisarla porque puede cambiar lo que se exige. Acortar dos requisitos no ejemplifica por sí solo generalizar; la lectura integrada muestra una generalización mediante una categoría común. «La ayuda se ofrece a todos» va más lejos: añade una generalización que el fragmento no sostiene.',
    '¿Qué condición perderíamos con una síntesis demasiado amplia?','van-dijk',2)
  ],
  's6-e1':[
@@ -102,7 +102,7 @@ export const classContent={
  ],
  's7-e2':[
   topic(1,'Contextualizar exige fuentes y función','El contexto se documenta para resolver una dificultad interpretativa. Una fecha, una institución o una circunstancia importa cuando explicamos cómo afecta la lectura y de qué fuente procede. El contexto también se construye con indicios del propio discurso: tratamientos, referencias, turnos, gestos o prosodia. Vuelve al fragmento para comprobar cómo se presenta la situación.',
-   ['La fecha de una carpeta digital no equivale a la fecha de reforma del documento.','Un procedimiento normativo no acredita cómo fue aplicado o experimentado.'],
+   ['Goodwin y Duranti, según el manual, distinguen cuatro dimensiones del contexto: la localización o marco socioespacial, como una fecha o una institución; el comportamiento no verbal, como los gestos; la lengua como contexto, con tratamientos y referencias; y el contexto extrasituacional, los conocimientos previos que permiten reconocer qué está pasando. Se estudian por separado, pero actúan conjuntamente.','La fecha de una carpeta digital no equivale a la fecha de reforma del documento.','Un procedimiento normativo no acredita cómo fue aplicado o experimentado.'],
    'Una norma se aloja en una carpeta «2024», pero su razón final consigna una reforma anterior.','Podemos describir ambos datos con sus fuentes. La carpeta no autoriza a fechar la reforma en 2024 ni demuestra vigencia o ejecución actual.',
    '¿Qué afirmación cambia con este dato y cuál sigue pendiente?','guia-3',0),
   topic(1,'De una formulación a un problema social','El análisis crítico relaciona marcas, categorías y condiciones sociales. Poder es capacidad situada de orientar acciones y acceso a recursos. Legitimar es presentar una decisión como aceptable o autorizada. La ideología exige estudiar relaciones entre creencias, significados y grupos; no se identifica por una palabra aislada.',
@@ -124,12 +124,12 @@ export const classContent={
  ],
  's9-e1':[
   topic(1,'Personas y destinatarios se reconstruyen','Las marcas personales y las denominaciones construyen posiciones en el discurso. La referencia de «nosotros» depende del pasaje y puede variar; el destinatario construido no identifica a todos los lectores reales.',
-   ['Distingue quien enuncia, los participantes representados y los destinatarios.','Persona gramatical y papel comunicativo no siempre coinciden: «los solicitantes» puede designar a los destinatarios. Busca también nombres, posesivos y terminaciones verbales.'],
+   ['Distingue quien enuncia, los participantes representados y los destinatarios.','Persona gramatical y papel comunicativo no siempre coinciden: «los solicitantes» puede designar a los destinatarios, y una institución puede nombrarse a sí misma, como «esta comisión». La forma por sí sola no decide a quién incluye. Busca también nombres, posesivos y terminaciones verbales.'],
    'Paráfrasis del curso: Menchú relaciona el reconocimiento individual con una conquista colectiva. Márquez plantea que la unidad exige reconocer diferencias entre las mujeres.','Vuelve a los recortes enlazados en la actividad y localiza las marcas que sostienen esta comparación. Las autoras intervienen desde posiciones y situaciones distintas: recibir un premio y responder una entrevista. Sus palabras no representan automáticamente a todas las personas indígenas o afrodescendientes. Guarda tus propios fragmentos del original, no esta paráfrasis.',
    '¿Qué marca sostiene la inclusión que estamos proponiendo?','calsamiglia',0)
  ],
  's9-e2':[
-  topic(1,'Responsabilidad y perspectiva','En la distinción de Ducrot presentada por el manual, el sujeto empírico produce el mensaje; el locutor es la figura responsable de enunciarlo; los enunciadores son figuras o voces a las que atribuye puntos de vista. No equivalen automáticamente a personas, redactores o firmantes.',
+  topic(1,'Responsabilidad y perspectiva','En la distinción de Ducrot presentada por el manual, el sujeto hablante (ser empírico) produce el mensaje; el locutor es la figura responsable de enunciarlo; los enunciadores son figuras o voces a las que atribuye puntos de vista. No equivalen automáticamente a personas, redactores o firmantes.',
    ['Para esta ficha usamos esas definiciones de Ducrot. No las trasladamos automáticamente a otros modelos de enunciación.','Negar una proposición puede evocar una perspectiva sin identificar un hablante empírico.'],
    '«La medida no es un privilegio».','Ejemplo docente de una lectura polifónica de la negación, apoyada en Ducrot según Caldiz: se evoca «la medida es un privilegio» y se lo rechaza. El enunciado aislado no identifica a quien lo habría sostenido. El cotexto permite precisar si se responde a algo dicho o se previene una objeción.',
    '¿Podemos atribuir la perspectiva a alguien o solo describir que se evoca?','caldiz',1)
@@ -155,7 +155,7 @@ export const classContent={
  's11-e2':[
   topic(1,'Recontextualizar implica seleccionar','Al incorporar un material a otra situación se pueden conservar, omitir o reformular elementos. La relación se estudia con fuentes; una adaptación propia se identifica como experimento didáctico.',
    ['Documenta el vínculo entre piezas antes de hablar de circulación.','Cambiar destinatario y propósito exige examinar qué condiciones se conservan.'],
-   'Transformamos una cláusula normativa en una explicación para estudiantes de primer semestre.','La nueva pieza puede aclarar vocabulario y ordenar pasos. Debe conservar condiciones pertinentes y declararse adaptación propia; no es una comunicación oficial de la institución.',
+   'Transformamos una cláusula normativa en una explicación para estudiantes de primer semestre.','La nueva pieza puede aclarar vocabulario y ordenar la información. Debe conservar condiciones pertinentes y su alcance y declararse adaptación propia; no es una comunicación oficial de la institución.',
    '¿Qué transformación facilita la comprensión y cuál podría alterar una condición?','fairclough',3)
  ],
  's12-e1':[
@@ -167,7 +167,7 @@ export const classContent={
  's12-e2':[
   topic(1,'Un salto inferencial necesita un puente','Entre la observación y una conclusión debe poder reconstruirse una relación justificada. La revisión entre lectores busca el dato, el criterio o la condición que permite sostener ese paso.',
    ['Una relación dibujada no demuestra circulación histórica.','Una semejanza temática puede sostener una comparación sin probar dependencia entre piezas.'],
-   '«Ambos avisos hablan de becas; por eso uno deriva del otro».','El tema compartido no acredita derivación. Necesitamos una cita, un enlace, una identificación de versión u otra fuente que documente el vínculo.',
+   '«Ambos avisos hablan de becas; por eso uno deriva del otro».','El tema compartido no acredita derivación. La conclusión descansa en una ley de paso implícita —si dos avisos comparten tema, uno deriva del otro— que no se sostiene. Para investigar el vínculo necesitamos otro dato: una cita, un enlace, una identificación de versión u otra fuente que documente el vínculo.',
    '¿Qué dato falta entre la observación y la conclusión?','guia-5',4)
  ],
  's13-e1':[
@@ -183,15 +183,15 @@ export const classContent={
    '¿Qué premisa adicional conecta la explicación con la decisión?','calsamiglia',2)
  ],
  's14-e1':[
-  topic(1,'El argumento necesita una regla de paso','Un razonamiento vincula premisas y conclusión mediante una garantía o regla. Reconstruirla permite examinar condiciones, excepciones y objeciones, aunque no se formule explícitamente.',
-   ['Un topos es una regla de conexión; no equivale a un tema o una palabra frecuente.','La objeción debe afectar la inferencia que se sostiene.'],
-   '«La medida beneficia a muchos estudiantes; debemos mantenerla».','La regla propuesta es que una medida beneficiosa merece mantenerse. Hay que discutir cómo se acredita el beneficio y qué costes o exclusiones podrían restringir esa regla.',
+  topic(1,'El argumento necesita una regla de paso','Un razonamiento vincula premisas y conclusión mediante una ley de paso: la regla que permite pasar de unas a otra y que puede apoyarse en una garantía. Reconstruirla permite examinar condiciones, excepciones y objeciones, aunque no se formule explícitamente.',
+   ['Un topos es una regla de conexión; no equivale a un tema o una palabra frecuente.','Términos: en el manual (Plantin y Toulmin), la ley de paso es la regla y la garantía, su apoyo. En Wodak, el topos funciona como esa regla de conexión.','La objeción debe afectar la inferencia que se sostiene.'],
+   '«La medida beneficia a muchos estudiantes; debemos mantenerla».','La regla propuesta es que una medida beneficiosa merece mantenerse. Para apoyarla, adoptamos como criterio que las políticas deben favorecer al estudiantado: es un criterio construido para el ejemplo, no una política real de la UCE. Por separado hay que discutir cómo se acredita el beneficio (prueba de la premisa) y qué costes o exclusiones podrían restringir esa regla.',
    '¿Bajo qué condición dejaría de ser aceptable este paso?','wodak',1)
  ],
  's14-e2':[
   topic(1,'Una respuesta modifica la interacción','El manual estudia intervenciones que se relacionan en intercambios, como pregunta y respuesta. Bolívar profundiza en diálogo, evaluación y cambio con un método propio. Examina qué hace una respuesta con lo anterior: retoma, reformula, objeta o evalúa; no todo diálogo exige una evaluación explícita.',
    ['La evaluación se construye en relaciones entre intervenciones.','Distingue interacción registrada de diálogo reconstruido dentro de un relato.'],
-   'A: «El trámite es accesible». B: «¿Accesible también para quien no tiene conexión?». A: «Entonces debemos precisar esa condición».','La respuesta cuestiona el alcance de «accesible» y provoca una reformulación. La secuencia permite describir ese cambio; no prueba un efecto general en toda la institución.',
+   'A: «El trámite es accesible». B: «¿Accesible también para quien no tiene conexión?». A: «Entonces debemos precisar esa condición».','La respuesta cuestiona el alcance de «accesible». A reconoce que debe precisar la condición, pero todavía no ofrece una nueva formulación. La secuencia permite describir ese cambio; no prueba un efecto general en toda la institución.',
    '¿Qué modifica la respuesta y dónde se observa la modificación?','bolivar',3)
  ],
  's15-e1':[
