@@ -16,6 +16,22 @@
 .side-unit .unit-reference{display:flex;align-items:center;min-height:44px;margin:4px 12px 12px;font-size:13px}
 .sidebar-bottom .text-button{margin-top:14px;display:flex;align-items:center;min-height:44px}
 .class-page .page-heading{margin-bottom:28px}
+.session-concepts{margin-bottom:28px}
+.session-concepts>h3,.session-guide>h3{font:600 21px/1.4 var(--sans);margin:0 0 12px}
+.session-concepts>dl{margin:20px 0}
+.session-concepts>dl>div{display:grid;grid-template-columns:minmax(150px,1fr) minmax(0,3fr);gap:24px;padding:16px 0;border-bottom:1px solid var(--line)}
+.session-concepts dt{font-weight:600;color:var(--theory-ink)}
+.session-concepts dd{margin:0;min-width:0}
+.session-example{padding:16px 0;margin:20px 0;border-bottom:1px solid var(--line)}
+.session-stage{padding-bottom:16px;margin:0 0 24px;border-bottom:1px solid var(--line)}
+.session-guide{margin-bottom:28px}
+.session-steps{padding-left:25px;margin:16px 0 24px}
+.session-steps li{padding-left:5px;margin-bottom:14px}
+.session-check{margin:18px 0 0}
+.task-final-brief{margin:16px 0 24px}
+.task-final-brief>summary{min-height:44px}
+.session-concepts+.theory-recovery{margin-top:24px}
+@media(max-width:740px){.session-concepts>dl>div{grid-template-columns:1fr;gap:8px;padding:16px 0}.session-concepts>h3,.session-guide>h3{font-size:20px}.session-steps{padding-left:22px}.session-steps li{padding-left:3px}}
 .class-overview{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px}
 .class-overview>section{border-top:1px solid var(--line);padding-top:18px}
 .class-overview h2{font:600 16px/1.5 var(--sans);margin:0 0 8px}
