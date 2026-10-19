@@ -1,10 +1,10 @@
-import {weeks,minimumContents} from './schedule.js?v=lc-6bfff45a9139';
-import {taskNotes,assessments,unitActivities} from './curriculum.js?v=lc-6bfff45a9139';
-import {weeklyReadings,essayMilestones} from './journey.js?v=lc-6bfff45a9139';
-import {resourceById} from './corpus.js?v=lc-6bfff45a9139';
-import {courseModules} from './curriculum.js?v=lc-6bfff45a9139';
-import {encounters,autonomousPlan,dayLabel} from './encounters.js?v=lc-6bfff45a9139';
-import {toneHead} from './ui-icons.js?v=lc-6bfff45a9139';
+import {weeks,minimumContents} from './schedule.js?v=lc-341113c05c62';
+import {taskNotes,assessments,unitActivities} from './curriculum.js?v=lc-341113c05c62';
+import {weeklyReadings,essayMilestones} from './journey.js?v=lc-341113c05c62';
+import {resourceById} from './corpus.js?v=lc-341113c05c62';
+import {courseModules} from './curriculum.js?v=lc-341113c05c62';
+import {encounters,autonomousPlan,dayLabel} from './encounters.js?v=lc-341113c05c62';
+import {toneHead} from './ui-icons.js?v=lc-341113c05c62';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function weekLabel(value){
  const text=Array.isArray(value)?value.join(' y '):String(value).replace('; retorno ',' y ').replace('; transversal','').replace('; anticipación ',' y ');
