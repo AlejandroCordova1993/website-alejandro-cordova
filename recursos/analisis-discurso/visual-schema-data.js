@@ -190,6 +190,15 @@ export const visualSchemas={
  },
  'intercambio-accesible':{
   type:'turns',planned:'s14-e2',topic:'Una respuesta modifica la interacción',placed:true,replaces:'example',
+  comic:{
+   file:'img/vineta-inscripcion-acceso.webp',width:2172,height:724,ai:true,
+   credit:'Ilustración original generada con IA · OpenAI',
+   panels:[
+    {speaker:'Organización',alt:'Un organizador junto a un portátil conversa con una estudiante que sostiene un teléfono.'},
+    {speaker:'Estudiante',alt:'La misma estudiante interviene con el teléfono en la mano; el organizador la escucha.'},
+    {speaker:'Organización',alt:'El organizador señala el espacio de atención en el campus mientras continúa la conversación con la estudiante.'}
+   ]
+  },
   label:'Un intercambio en el que una objeción desplaza el foco de la respuesta',
   turns:[
    {speaker:'A',text:'«La inscripción al taller de lectura es accesible: se completa en línea».',move:'Presenta la inscripción en línea como razón para valorar el acceso.'},
@@ -258,7 +267,15 @@ export const visualSchemas={
  },
  'presuposicion-certificado':{
   type:'annotated',planned:'s5-e1',topic:'El lector aporta conocimientos',placed:true,replaces:'example',
-  label:'Lo que el enunciado da por supuesto',
+  label:'Presuposición e implicatura en dos escenas',
+  comic:{
+   file:'img/vineta-presuposicion-implicatura.webp',width:1774,height:887,ai:true,
+   credit:'Ilustración original generada con IA · OpenAI',
+   panels:[
+    {label:'Presuposición',speaker:'Asesora',alt:'Una asesora habla con un estudiante que sostiene un certificado junto a una mesa de consulta.'},
+    {label:'Implicatura',speaker:'Docente',alt:'Una docente comenta las entregas con dos estudiantes sentados en una mesa de trabajo.',text:'«Algunos grupos entregaron».',continuation:'«De hecho, todos».',note:'La primera frase puede sugerir «no todos». La continuación cancela esa implicatura: aclara que entregaron todos los grupos.'}
+   ]
+  },
   text:'«Adjunte nuevamente el certificado».',
   marks:[
    {words:'nuevamente',label:'Presuposición',note:'presenta una entrega anterior como dada por supuesta; no prueba que haya ocurrido.'},

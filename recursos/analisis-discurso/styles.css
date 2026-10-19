@@ -717,6 +717,25 @@ dialog p{font-size:var(--text-md)}
  .vs-speaker{grid-row:auto}
  .visual-schema .vs-turns .vs-card-text{grid-column:3;margin-top:0}
 }
+/* Viñetas originales: los dibujos acompañan al mismo ejemplo; el diálogo es texto HTML. */
+.vs-comic{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--space-4);margin:0;padding:0;list-style:none}
+.visual-schema .vs-comic>li{display:block;min-width:0;margin:0;padding:0;background:var(--paper-pure);border:1px solid var(--theory-line);border-radius:var(--radius);overflow:hidden}
+.comic-scene{position:relative;aspect-ratio:1;width:min(100%,18rem);margin:0 auto;overflow:hidden}
+.comic-scene img{position:absolute;top:0;left:0;display:block;width:200%;height:100%;max-width:none}
+.is-trio .comic-scene img{width:300%}
+.comic-scene.is-panel-1 img{left:-100%}
+.comic-scene.is-panel-2 img{left:-200%}
+.visual-schema .comic-concept{padding:var(--space-3) var(--space-4);border-bottom:1px solid var(--theory-line);color:var(--theory-ink);font-size:var(--text-md);font-weight:700}
+.comic-copy{padding:var(--space-3) var(--space-4)}
+.visual-schema .comic-speaker{margin:0 0 var(--space-2);color:var(--theory-ink);font-size:var(--text-md);font-weight:700}
+.visual-schema .comic-copy .vs-example{font-family:var(--serif);font-size:var(--text-lg);line-height:1.5}
+.visual-schema .comic-continuation{margin-top:var(--space-3);color:var(--muted);font-size:var(--text-md)}
+.visual-schema .comic-reading,.visual-schema .vs-comic .vs-card-text{margin:var(--space-3) 0 0;font-size:var(--text-md);line-height:1.6}
+.visual-schema .vs-comic .vs-notes{grid-template-columns:minmax(0,1fr);margin-top:var(--space-3);gap:var(--space-3)}
+.visual-schema .comic-credit{display:block;margin-top:var(--space-2);color:var(--muted)}
+@container (min-width:36rem){.vs-comic.is-pair{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@container (min-width:46rem){.vs-comic.is-trio{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media print{.vs-comic>li{break-inside:avoid}}
 /* E12v · Voces */
 .vs-voices{display:grid;gap:var(--space-3)}
 .visual-schema .vs-subject{padding:var(--space-2) var(--space-3);border:1px dashed var(--theory-line);border-radius:var(--radius);color:var(--muted);font-size:var(--text-md);line-height:1.5}
