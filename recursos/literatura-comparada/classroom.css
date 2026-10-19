@@ -106,4 +106,36 @@ body[data-role=estudiante] :is(.teacher-guide,#class-toggle){display:none!import
 .module-sessions-note{margin:var(--space-3,12px) 0 0;color:var(--muted)}
 .ficha-delivery-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;margin:24px 0;padding:16px 20px;border:1px solid var(--activity-line);border-radius:var(--radius,8px);background:var(--activity-surface)}
 .ficha-delivery-row p{margin:0;color:var(--activity-ink);font-weight:600}
+
+/* Ejemplos vinculados a la lectura: relaciones rotuladas y texto que se adapta al ancho. */
+.worked-example{margin:24px 0;padding:20px 0;border-block:1px solid var(--line)}
+.worked-example>figcaption{font:600 20px/1.4 var(--sans);margin:0 0 16px}
+.worked-example h5{font:600 18px/1.4 var(--sans);margin:0 0 12px}
+.reading-sequence{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;padding:0;list-style:none;counter-reset:reading;margin:20px 0}
+.reading-sequence>li{min-width:0;counter-increment:reading}
+.reading-sequence h5:before{content:counter(reading) '. ';color:var(--theory-ink,var(--ink))}
+.reading-sequence p{margin:0 0 12px}.reading-sequence q{font-family:var(--serif);font-size:20px}
+.reading-distinctions{margin:20px 0}.reading-distinctions>div{display:grid;grid-template-columns:minmax(130px,1fr) minmax(0,4fr);gap:24px;padding:18px 0;border-bottom:1px solid var(--line)}
+.reading-distinctions dt{font-weight:600}.reading-distinctions dd{margin:0;min-width:0}.reading-distinctions p{margin:0 0 12px}
+.reading-distinctions blockquote{margin:0 0 12px;padding:0;font:400 21px/1.5 var(--serif)}
+.example-source{margin:18px 0 0;overflow-wrap:anywhere}.example-source a{display:inline-flex;min-height:44px;align-items:center}
+.example-development{margin:16px 0 24px}.example-development summary{min-height:44px}
+.reading-document{margin:20px 0}.reading-document>a{display:flex;flex-direction:column;align-items:flex-start;gap:12px;min-height:44px}
+.reading-document img{display:block;max-width:100%;width:auto;height:auto;max-height:420px;object-fit:contain}
+.reading-document figcaption{font-size:13px;line-height:1.6;margin:14px 0;color:var(--muted)}
+.worked-example .caption a,.reading-document figcaption a{display:inline-flex;align-items:center;min-height:44px;max-width:100%;overflow-wrap:anywhere}
+.reading-document span{display:inline-flex;align-items:center;min-height:44px}.reading-document p{margin:12px 0}
+
+/* El título y el cierre se conservan fuera de la zona que se desplaza. */
+dialog.reading-dialog{padding:0!important;overflow:hidden!important;max-height:calc(100dvh - 32px)}
+dialog.reading-dialog[open]{display:flex;flex-direction:column}
+.reading-dialog>.dialog-heading{flex:none;margin:0;padding:20px 24px;align-items:center;background:var(--surface);border-bottom:1px solid var(--line);gap:16px}
+.reading-dialog>.dialog-heading h2{margin:0;font-size:27px;overflow-wrap:anywhere;min-width:0}
+.reading-dialog>.dialog-heading :is(button,.button){flex:none;min-height:44px;min-width:44px}
+.reading-dialog>.dialog-body{min-height:0;overflow:auto;overscroll-behavior:contain;padding:24px 30px}
+.dialog-body>p{margin:0 0 18px}.dialog-body>h3{margin:24px 0 12px}
+.dialog-body>:last-child{margin-bottom:0}
+#class-dialog .class-toolbar{position:sticky;top:0;z-index:2;background:var(--paper)}
+@media(max-width:740px){.reading-sequence{grid-template-columns:1fr;gap:16px}.reading-sequence>li+li{padding-top:16px;border-top:1px solid var(--line)}.reading-distinctions>div{grid-template-columns:1fr;gap:8px}.reading-dialog>.dialog-heading{padding:16px;gap:12px}.reading-dialog>.dialog-heading h2{font-size:22px}.reading-dialog>.dialog-body{padding:20px 16px}.reading-document img{max-height:360px}}
+@media print{.reading-sequence{display:block}.reading-sequence>li{break-inside:avoid;margin-bottom:12px}.worked-example{break-inside:auto}.example-development{display:block}.reading-document img{max-height:95mm}}
 @media print{.ficha-head{margin-bottom:8mm;padding-bottom:4mm;border-bottom:1px solid #aaa}.ficha-head p{font-size:10pt;margin:1mm 0}.ficha-delivery h1{font-size:20pt}.ficha-delivery h2{font-size:13pt;margin-top:5mm}}

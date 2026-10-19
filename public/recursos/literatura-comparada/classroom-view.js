@@ -1,9 +1,9 @@
-import {encounters,dayLabel} from './encounters.js?v=lc-b7e790f6c7ad';
-import {taskNotes} from './curriculum.js?v=lc-b7e790f6c7ad';
-import {classHref,classPlan,classPreparation,classContinuation,classReadingGroups,fichaTitles} from './class-flow.js?v=lc-b7e790f6c7ad';
-import {toneHead} from './ui-icons.js?v=lc-b7e790f6c7ad';
-import {glossaryLinks,concepts} from './glossary.js?v=lc-b7e790f6c7ad';
-import {theoryNoteHtml} from './theory-notes.js?v=lc-b7e790f6c7ad';
+import {encounters,dayLabel} from './encounters.js?v=lc-cd0dc247d723';
+import {taskNotes} from './curriculum.js?v=lc-cd0dc247d723';
+import {classHref,classPlan,classPreparation,classContinuation,classReadingGroups,fichaTitles} from './class-flow.js?v=lc-cd0dc247d723';
+import {toneHead} from './ui-icons.js?v=lc-cd0dc247d723';
+import {glossaryLinks,concepts} from './glossary.js?v=lc-cd0dc247d723';
+import {theoryNoteHtml} from './theory-notes.js?v=lc-cd0dc247d723';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 export function renderClassPage(e,ctx){
@@ -16,7 +16,7 @@ export function renderClassPage(e,ctx){
  const lenses=m.lenses.filter(([title])=>!labels.includes(title.toLowerCase())).map(([title,text,source])=>`<dt>${esc(title)}</dt><dd>${esc(text)} <span class="caption">${esc(source)}</span></dd>`).join('');
  const tools=`<details class="class-concepts"><summary>Herramientas de consulta de la unidad</summary><dl>${lenses}</dl>${glossaryLinks(m.id)}</details>`;
  let workspace='';
- if(plan.kind==='intro')workspace=field('intro','intro','Mi primera pregunta comparativa','Propón dos obras, un aspecto observable y un límite de la comparación.',4);
+ if(plan.kind==='intro')workspace=field('intro','intro','Mi primera pregunta comparativa','Parte del pasaje de Palacio: identifica un procedimiento y pregunta qué te interesaría contrastar con otra obra. El segundo objeto puede quedar por elegir; señala qué falta comprobar.',4);
  if(plan.kind==='comparison'){
   const desk=comparison(m,plan.key,route,{advance:false,documents:plan.documents});
   workspace=plan.writeArgument?`<details class="previous-work"><summary>Consultar o corregir mis pasajes y mi hipótesis inicial</summary>${desk}</details>${argumentReview(m,plan.key,route)}`:desk;
@@ -33,7 +33,7 @@ export function renderClassPage(e,ctx){
   if(e.week===12)workspace+=`<p>Hito del ensayo: <a class="text-link" href="#proyecto" data-project-target="esquema">organizar el esquema y las fuentes</a>.</p>`;
   if(e.week===15)workspace+=`<p>Hito del ensayo: <a class="text-link" href="#proyecto" data-project-target="borrador">ensamblar y revisar el borrador</a>.</p>`;
  }
- if(plan.kind==='project')workspace=`<p>Revisa el mismo ensayo que vienes construyendo. El atril conserva las fichas y los pasajes para contrastarlos con el borrador.</p>${field('ensayo','defense','Guion de defensa oral','4 minutos de exposición y una pregunta de 1 minuto. Conserva los localizadores.',6)}${e.day==='miercoles'?field('ensayo','reflection','Reflexión final','Identifica una revisión decisiva y una pregunta abierta.',4):''}<a class="button primary" href="#proyecto" data-project-target="${e.day==='lunes'?'borrador':'cierre'}">${e.day==='lunes'?'Revisar mi ensayo':'Preparar mi entrega'}</a>`;
+ if(plan.kind==='project')workspace=`<p>Revisa el mismo ensayo que vienes construyendo. En la mesa del ensayo puedes consultar tus fichas y pasajes mientras redactas.</p>${field('ensayo','defense','Guion de defensa oral','Prepara 4 minutos de exposición; después dispondrás de 1 minuto para responder una pregunta del docente. Conserva los localizadores.',6)}${e.day==='miercoles'?field('ensayo','reflection','Reflexión final','Identifica una revisión decisiva y una pregunta abierta.',4):''}<a class="button primary" href="#proyecto" data-project-target="${e.day==='lunes'?'borrador':'cierre'}">${e.day==='lunes'?'Revisar mi ensayo':'Preparar mi entrega'}</a>`;
  const groups=classReadingGroups(e).map(g=>({...g,rows:g.rows.filter(([id])=>plan.kind!=='translation'||!['baudelaire','casal','diez'].includes(id))})).filter(g=>g.rows.length);
  const readings=groups.length?groups.map(g=>`<section class="class-reading-group"><h3>${esc(g.title)}</h3>${g.rows.map(([id,selection,source])=>`<div class="class-reading">${resourceCard(id,true,selection,source)}</div>`).join('')}</section>`).join(''):`<p>${e.week===11?'El original y las dos traducciones están juntos en el taller, debajo.':'Recupera tus pasajes, fichas y fuentes ya trabajados. Esta clase no añade una lectura nueva.'}</p>`;
  const dueFicha=fichaTitles[plan.key]&&e.day==='miercoles'&&[2,4,6,10,14].includes(e.week)?`<div class="ficha-delivery-row"><p>Prepara aquí el PDF de la ${esc(fichaTitles[plan.key])}. Revisa, cierra y entrega la versión final antes de la siguiente semana, por el canal que indique el docente.</p>${button('prepare-ficha','Preparar la ficha para entregar','button',`data-ficha="${plan.key}"`)}</div>`:'';

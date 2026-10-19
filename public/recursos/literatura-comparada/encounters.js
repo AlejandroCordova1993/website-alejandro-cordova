@@ -10,7 +10,7 @@ const regular=(opening,frame,work,discussion,closing)=>[
 ];
 export const encounters=[
  meeting(1,'lunes','Orígenes, perspectivas y primera pregunta','Distinguir la práctica de comparar de la institucionalización de la disciplina.','Primera pregunta comparativa, después del diagnóstico sin nota de «Antes de comparar».',regular(
- ['Presenta el propósito del seminario y recoge experiencias lectoras.','Propón dos objetos y explica qué relación te interesa.'],
+ ['Presenta el propósito del seminario y recoge experiencias lectoras.','Comparte una relación posible entre dos lecturas que conozcas; puede quedar como pregunta por investigar.'],
  ['Sitúa los orígenes y contrasta las dos tradiciones históricas con las perspectivas del Sur Global.','Formula una pregunta sobre evidencia o método; reconoce que los enfoques se cruzan.'],
  ['Facilita un pasaje de Palacio y modela cómo localizar una afirmación del narrador.','Distingue observación, conjetura y reconstrucción en el pasaje.'],
  ['Acompaña el diagnóstico y discute comparaciones temáticas demasiado amplias.','En parejas, convierte una semejanza temática en una pregunta sobre un procedimiento; registra un límite.'],
@@ -105,12 +105,12 @@ export const encounters=[
  stage(15,'Revisión individual','Recuerda criterios y tiempo disponible.','Comprueba localizadores, diferencias y alcance de las conclusiones.'),
  stage(5,'Entrega y cierre','Recoge el producto e identifica la continuidad del curso.','Entrega el análisis y conserva tus materiales para las relecturas posteriores.')]),
  meeting(9,'lunes','Presupuestos y comprensión','Relacionar partes y conjunto desde supuestos que pueden revisarse.','Hipótesis inicial y pasajes de Carrington–Bierce.',regular(
- ['Recupera una interpretación que cambió durante el curso.','Identifica qué evidencia exigió el cambio.'],
+ ['Recupera una interpretación que hayas puesto a prueba durante el curso.','Identifica qué evidencia te llevó a cambiarla, precisarla o mantenerla.'],
  ['Sitúa Gadamer, historicidad y círculo hermenéutico.','Distingue un presupuesto propio de una propiedad demostrada del texto.'],
  ['Orienta la lectura de Carrington y Bierce con el dossier.','En Carrington localiza cómo se acepta lo extraordinario y se orienta el juicio; en Bierce relee tiempo e información a partir del cierre.'],
  ['Discute cómo cambia la relación entre parte y conjunto.','Contrasta los procedimientos e inicia una explicación con dos pasajes.'],
  ['Delimita la revisión de hipótesis.','Anota una lectura rival del indicio elegido.'])),
- meeting(9,'miercoles','Revisar una interpretación con evidencia','Responder una objeción y explicar qué cambió en la comprensión.','Interpretación comparada y revisión argumentada del taller.',regular(
+ meeting(9,'miercoles','Revisar una interpretación con evidencia','Responder una objeción y justificar qué cambia, se precisa o se mantiene en la comprensión.','Interpretación comparada y revisión argumentada del taller.',regular(
  ['Recupera hipótesis iniciales y dificultades del relato.','Muestra un pasaje que hayas usado para cambiar, precisar o sostener tu interpretación.'],
  ['Precisa justificación, coherencia y resistencia del texto.','Distingue una revisión sustentada de una preferencia por otro desenlace.'],
  ['Acompaña el cotejo de presupuestos y evidencias.','Formula una objeción que explique el mismo indicio de otra manera.'],
@@ -135,7 +135,7 @@ export const encounters=[
  ['Discute efectos y posibles explicaciones con evidencia.','Inicia el comentario y formula una duda que no pueda resolverse solo por semejanza.'],
  ['Delimita el uso del manual y la extensión final.','Conserva versiones y localizadores para continuar la segunda sesión.'])),
  meeting(11,'miercoles','Comentario de traducción y revisión','Transformar el cotejo en una explicación de decisiones y efectos.','Comentario · borrador de 400–500 palabras, para cerrar antes de la siguiente semana.',regular(
- ['Recupera diferencias y dudas del cotejo.','Comprueba los cuatro lugares del taller en los testimonios consultados.'],
+ ['Recupera diferencias y dudas del cotejo.','Comprueba en los testimonios los tres lugares que elegiste entre los cuatro del taller.'],
  ['Discute variante, decisión y error sin atribuir intenciones sin fuentes.','Formula qué información permitiría decidir entre explicaciones.'],
  ['Acompaña la redacción y la consulta del manual, pp. 133–136.','Desarrolla tres diferencias y sus efectos, con traductores y versiones identificados.'],
  ['Guía revisión por pares y límites lingüísticos.','Revisa el comentario y relaciona traducción con los métodos ya trabajados.'],
@@ -143,7 +143,7 @@ export const encounters=[
  meeting(12,'lunes','Contrastar métodos y organizar el ensayo','Aplicar dos enfoques a objetos y pasajes ya trabajados.','Matriz de métodos y esquema provisional del ensayo.',regular(
  ['Recupera resultados del cotejo y la recepción.','Explica qué pregunta permitió responder cada procedimiento.'],
  ['Sitúa históricamente análisis formal, hermenéutica contextual y recepción.','Distingue objeto, procedimiento, evidencia y límites.'],
- ['Acompaña la aplicación de dos enfoques a pasajes conocidos.','Compara resultados y evalúa una explicación automática o sin fuentes.'],
+ ['Acompaña la aplicación de dos enfoques a pasajes conocidos.','Compara resultados y evalúa la afirmación simulada de Teoría, identificando el salto entre semejanza e influencia.'],
  ['Discute límites y orienta la estructura argumental.','Registra tesis provisional, tres nudos de evidencia y una objeción en el proyecto.'],
  ['Aclara el dispositivo de microclase y la continuidad.','Prepara o revisa la actividad grupal sin añadir lecturas completas.'])),
  meeting(12,'miercoles','Microclases: comparar para enseñar','Hacer que el público compare evidencias y discuta sus interpretaciones.','Microclases según turnos; matriz y esquema revisados, sin lectura nueva.',[
@@ -188,7 +188,7 @@ export const encounters=[
  stage(10,'Preparar la defensa y cerrar','Aclara los criterios de ensayo, consigna y defensa de la semana 16.','Identifica dos evidencias decisivas y un límite; prepara la versión que defenderás.')]),
  meeting(16,'lunes','Defensas y revisión del recorrido','Defender una tesis comparativa y responder una pregunta con evidencia.','Defensas según turnos y revisión de ensayo, consigna y autoevaluación.',[
  stage(4,'Organizar el encuentro','Recuerda criterios y turnos; precisa el trabajo del público.','Prepara tesis, dos evidencias y un límite para intervenir.'),
- stage(108,'Defensas y trabajo de revisión','Escucha las defensas y plantea una pregunta; organiza transiciones.','Cada intervención dispone de 4 minutos y una pregunta de 1 minuto, con margen de transición. Quienes escuchan identifican argumento y evidencia y revisan su propio trabajo.'),
+  stage(108,'Defensas y trabajo de revisión','Escucha las defensas y plantea una pregunta; organiza transiciones.','Cada estudiante dispone de 4 minutos de exposición y 1 minuto adicional para responder una pregunta del docente, con margen de transición. Quienes escuchan identifican argumento y evidencia y revisan su propio trabajo.'),
  stage(8,'Síntesis y continuidad','Recupera un problema común de método y explica el cierre de la segunda sesión.','Registra una revisión o un límite y conserva el guion de tu defensa.')]),
  meeting(16,'miercoles','Defensas y cierre del seminario','Integrar canon, interpretación, mediación y escalas en una reflexión sustentada.','Defensas pendientes, ensayo final de 1500–1800 palabras, consigna y respaldo del cuaderno.',[
  stage(4,'Organizar el cierre','Recuerda criterios y turnos pendientes.','Prepara fuentes y evidencias para la intervención o la revisión.'),
@@ -211,9 +211,9 @@ export const autonomousPlan={
  6:a([60,'Lee el estudio, pp. 84–87, que ya incluye Takina/Poema y ambas versiones.'],[30,'Relee el contraste con Guamán Poma y prepara tus localizadores.'],[30,'Revisa y cierra la Ficha 3 antes de la siguiente semana.']),
  7:a([60,'Lee la presentación y bloques delimitados de Martínez y la pieza de Esparza, pp. 41–43.'],[30,'Comprueba con el grupo dos registros de circulación; no leas los libros completos de sus catálogos.'],[30,'Conserva la cartografía inicial y explica sus límites.']),
  8:a([45,'Elige dos objetos ya trabajados y recupera sus pasajes; no hay lectura nueva.'],[30,'Ordena las notas y localizadores para la sumativa en aula.'],[45,'Revisa el procedimiento utilizado y organiza tus materiales para las siguientes relecturas.']),
- 9:a([80,'Lee Carrington, Bierce y el dossier de hermenéutica; registra indicios y expectativas.'],[15,'Relee el indicio elegido y una explicación rival.'],[25,'Consolida la hipótesis revisada y la razón del cambio.']),
+ 9:a([80,'Lee Carrington, Bierce y el dossier de hermenéutica; registra indicios y expectativas.'],[15,'Relee el indicio elegido y una explicación rival.'],[25,'Consolida la hipótesis revisada y justifica qué cambias, precisas o mantienes.']),
  10:a([60,'Lee el dossier de recepción y sus dos documentos; el caso Tess se guía en aula.'],[25,'Revisa qué evidencia necesita cada afirmación sobre el lector.'],[35,'Revisa y cierra la Ficha 4 antes de la siguiente semana.']),
- 11:a([40,'Lee los tres poemas breves y el manual, pp. 133–136 antes de Transducción.'],[40,'Desarrolla tres diferencias con sus efectos y revisa las versiones.'],[40,'Cierra el comentario de 400–500 palabras antes de la siguiente semana.']),
+ 11:a([40,'Lee el poema de Baudelaire en francés y sus dos traducciones, junto con el manual, pp. 133–136 antes de Transducción.'],[40,'Desarrolla tres diferencias con sus efectos y revisa las versiones.'],[40,'Cierra el comentario de 400–500 palabras antes de la siguiente semana.']),
  12:a([40,'Recupera pasajes para dos enfoques y la pregunta del proyecto; no hay lectura nueva.'],[40,'Prepara o revisa la microclase según tu turno y su consigna.'],[40,'Consolida el esquema del ensayo y las decisiones de método.']),
  13:a([40,'Lee la selección española de Goethe e inicia el cuento de Borges.'],[20,'Recupera fuentes y vínculos de la cartografía; Ortiz se trabaja en aula.'],[60,'Cierra la revisión de escalas y continúa Borges. La cartografía se califica una sola vez.']),
  14:a([70,'Termina Borges; lee los pasajes de Cervantes y Genette, capítulo I, pp. 9–17.'],[20,'Revisa citas, categorías y localizadores para la ficha.'],[30,'Revisa y cierra la Ficha 5 antes de la siguiente semana.']),

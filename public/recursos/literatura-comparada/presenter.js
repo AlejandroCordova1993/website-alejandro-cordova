@@ -1,8 +1,8 @@
-import {modules,moduleById,history,schools} from './course.js?v=lc-b7e790f6c7ad';
-import {resourceById} from './corpus.js?v=lc-b7e790f6c7ad';
-import {weeks} from './schedule.js?v=lc-b7e790f6c7ad';
-import {sessionSlides} from './class-sessions.js?v=lc-b7e790f6c7ad';
-import {dayLabel} from './encounters.js?v=lc-b7e790f6c7ad';
+import {modules,moduleById,history,schools} from './course.js?v=lc-cd0dc247d723';
+import {resourceById} from './corpus.js?v=lc-cd0dc247d723';
+import {weeks} from './schedule.js?v=lc-cd0dc247d723';
+import {sessionSlides} from './class-sessions.js?v=lc-cd0dc247d723';
+import {dayLabel} from './encounters.js?v=lc-cd0dc247d723';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 export function createPresenter(dialog){
@@ -12,7 +12,7 @@ export function createPresenter(dialog){
   if(!module){const list=history.map(h=>({title:h.title,text:h.text,detail:h.label}));list.splice(3,0,...schools.map(s=>({title:s.title,text:s.question,detail:`${s.focus}. Evidencia: ${s.evidence} Límite: ${s.limit}`})));return list;}
   const m=moduleById[module],r=m.routes[route];
   const pair=r.texts.map((id,i)=>{const a=resourceById[id];return `<section><span>Documento ${i?'B':'A'}</span><h3>${esc(a.title)}</h3><p>${esc(a.author)}</p><p>${esc(r.prompts[i])}</p></section>`;}).join('');
-  const list=[{title:m.question,text:m.intro,detail:m.title},{title:'Leer y situar',text:r.question,detail:r.texts.map(id=>resourceById[id].author+' · '+resourceById[id].title).join(' / ')},{title:'Confrontar evidencia',html:`<div class="class-pair">${pair}</div>`,detail:'Cada afirmación necesita un pasaje y un localizador.'},{title:r.workshop.title,text:r.workshop.text,detail:r.prompts[2]},{title:'Revisar la lectura',text:m.review,detail:'Explica qué cambió y por qué.'}];
+  const list=[{title:m.question,text:m.intro,detail:m.title},{title:'Leer y situar',text:r.question,detail:r.texts.map(id=>resourceById[id].author+' · '+resourceById[id].title).join(' / ')},{title:'Confrontar evidencia',html:`<div class="class-pair">${pair}</div>`,detail:'Cada afirmación necesita un pasaje y un localizador.'},{title:r.workshop.title,text:r.workshop.text,detail:r.prompts[2]},{title:'Revisar la lectura',text:m.review,detail:'Explica qué revisaste y por qué.'}];
   return list;
  }
  function render(focus=false){

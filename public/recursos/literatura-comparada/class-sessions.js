@@ -1,8 +1,8 @@
-import {weeks} from './schedule.js?v=lc-b7e790f6c7ad';
-import {unitActivities} from './curriculum.js?v=lc-b7e790f6c7ad';
-import {translationRows} from './corpus.js?v=lc-b7e790f6c7ad';
-import {activityTitle} from './teaching.js?v=lc-b7e790f6c7ad';
-import {encounterById,dayLabel} from './encounters.js?v=lc-b7e790f6c7ad';
+import {weeks} from './schedule.js?v=lc-cd0dc247d723';
+import {unitActivities} from './curriculum.js?v=lc-cd0dc247d723';
+import {translationRows} from './corpus.js?v=lc-cd0dc247d723';
+import {activityTitle} from './teaching.js?v=lc-cd0dc247d723';
+import {encounterById,dayLabel} from './encounters.js?v=lc-cd0dc247d723';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 // Teaching prompts are original syntheses. Texts and attributions are in Leer.
 const lessons={
@@ -82,11 +82,11 @@ const lessons={
  15:[
   ['Tematología entre literaturas','Compara violencia y deshumanización en Palacio–Machado. Distingue tema, motivos, recursos formales y variación histórica.','Matriz tematológica: pasaje, procedimiento, contexto y límite.'],
   ['Una extensión entre medios','Coteja Ataúd en llamas e Historia de un oso: ausencia y memoria mediante testimonio, escritura, imagen y sonido.','El cortometraje no adapta la crónica; delimita la comparación.'],
-  ['Microclases y ensayo','Segunda jornada de microclases y revisión del borrador: tesis, evidencias, objeción y consigna didáctica.','Lunes: tematología, extensión intermedial y borrador. Miércoles: microclases y revisión del ensayo.']
+  ['Microclases y ensayo','Segunda jornada de microclases y revisión del borrador: tesis, evidencias, objeción y consigna didáctica.','Sesión 1: tematología, extensión intermedial y borrador. Sesión 2: microclases y revisión del ensayo.']
  ],
  16:[
-  ['Defender una relación','Presenta tesis, evidencia decisiva y límite del contraste. Responde una pregunta vinculada con tu método o interpretación.','Defensa individual: 4 min + 1 pregunta de 1 min.'],
-  ['Ensayo final y consigna didáctica','Explica las mediaciones, responde una objeción e incorpora una consigna para que otro público compare pasajes.','Ensayo de 1500–1800 palabras; referencias y matriz como anexos.'],
+  ['Defender una relación','Presenta tesis, evidencia decisiva y límite del contraste. Responde una pregunta vinculada con tu método o interpretación.','Defensa individual: 4 min de exposición + 1 min para responder una pregunta del docente.'],
+  ['Ensayo final y consigna didáctica','Explica las mediaciones, responde una objeción e incorpora una consigna para que otro público compare pasajes.','Ensayo de 1500–1800 palabras; consigna y referencias por separado. Selecciona los anexos pertinentes.'],
   ['Recuperar las revisiones','Identifica qué cambió en tu manera de comparar y qué evidencias produjeron esa revisión.','Síntesis de canon, mediación y escalas; sin corpus nuevo.']
  ]
 };

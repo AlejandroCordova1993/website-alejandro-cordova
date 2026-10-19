@@ -1,5 +1,5 @@
-import {encounters,autonomousPlan} from './encounters.js?v=lc-b7e790f6c7ad';
-import {weeklyReadings} from './journey.js?v=lc-b7e790f6c7ad';
+import {encounters,autonomousPlan} from './encounters.js?v=lc-cd0dc247d723';
+import {weeklyReadings} from './journey.js?v=lc-cd0dc247d723';
 
 export const classHref=e=>`#semana/${e.week}/${e.day==='lunes'?1:2}`;
 export function classFromHash(hash){
