@@ -225,18 +225,20 @@ export const visualSchemas={
   anchors:['La medida no es un privilegio','la medida es un privilegio','el sujeto hablante (ser empírico) produce el mensaje','el locutor es la figura responsable de enunciarlo','si se responde a algo dicho o se previene una objeción']
  },
  'operaciones-analisis':{
-  type:'annotated',planned:'s1-e2',topic:'Cuatro operaciones del análisis',placed:true,replaces:'example',
-  label:'Tres afirmaciones con fundamentos distintos en una misma frase',
-  text:'«El aviso no identifica al responsable; quizá supone que ya lo conocemos; eso dificulta exigir una respuesta».',
-  marks:[
-   {words:'El aviso no identifica al responsable',label:'Describe',note:'una marca que otro lector puede comprobar en el texto.'},
-   {words:'quizá supone que ya lo conocemos',label:'Propone una explicación',note:'relaciona la omisión con un conocimiento que habría que documentar.'},
-   {words:'eso dificulta exigir una respuesta',label:'Atribuye una dificultad',note:'necesita contrastarse con lectores y condiciones concretas.'}
+  type:'matrix',planned:'s1-e2',topic:'Cuatro operaciones del análisis',placed:true,replaces:'example',
+  label:'Cuatro operaciones aplicadas al aviso B del diagnóstico',
+  object:{label:'Aviso B del diagnóstico',text:'Se suspendieron las becas de cuarenta estudiantes.'},
+  columns:['Ejemplo de análisis','En qué se apoya y qué falta comprobar'],
+  rows:[
+   {head:'Observar',cells:['El aviso dice «Se suspendieron» y no nombra a quien tomó la decisión.','Se comprueba leyendo las palabras del aviso B.']},
+   {head:'Inferir',cells:['Entiendo que esos estudiantes tenían una ayuda y que ahora se interrumpe.','Relaciono «suspendieron las becas» con lo que sé de esas ayudas. La resolución permitiría comprobar el alcance de la suspensión.']},
+   {head:'Explicar',cells:['Quizá se omite al responsable porque ya aparece en otra parte del documento.','Es una explicación posible. Hay que leer el documento completo y comprobar si identifica al responsable.']},
+   {head:'Valorar',cells:['Como aviso aislado para saber ante quién reclamar, ofrece información insuficiente.','Criterio: identificar al órgano al que dirigirse. El aviso B no lo nombra; el documento completo podría aportar ese dato.']}
   ],
-  verdict:'¿Qué dato permitiría comprobar cada afirmación?',
+  verdict:'Distingue lo que puedes comprobar en el aviso, lo que interpretas y los datos que necesitas para sostenerlo.',
   task:{label:'En tu diagnóstico',text:'Toma una frase de tu lectura inicial y separa qué proviene de las palabras y qué supusiste sobre la situación.'},
   source:'Ejemplo y operaciones de esta clase, síntesis del curso.',
-  anchors:['El aviso no identifica al responsable; quizá supone que ya lo conocemos; eso dificulta exigir una respuesta','La primera afirmación describe; la segunda propone una explicación; la tercera atribuye una dificultad que necesita contrastarse con lectores y condiciones concretas','¿Qué dato permitiría comprobar cada afirmación?']
+  anchors:['Se suspendieron las becas de cuarenta estudiantes','Observar: el aviso dice «Se suspendieron»','Inferir: entiendo que esos estudiantes tenían una ayuda','Explicar: quizá se omite al responsable','Valorar: como aviso aislado para saber ante quién reclamar','Distingue lo que puedes comprobar en el aviso, lo que interpretas y los datos que necesitas para sostenerlo.']
  },
  'transcripcion-marcas':{
   type:'contrast',planned:'s2-e1',topic:'Transcribir implica seleccionar',placed:true,replaces:'example',
