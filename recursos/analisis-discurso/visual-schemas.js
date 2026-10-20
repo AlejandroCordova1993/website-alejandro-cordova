@@ -2,6 +2,7 @@ import {visualSchemas,visualImages} from './visual-schema-data.js';
 import {esc} from './export.js';
 import {uiIcon} from './ui-icons.js';
 import {getSession} from './encounters.js';
+import {imageExpansionHtml} from './image-expansion.js';
 
 export {visualSchemas,visualImages};
 
@@ -61,7 +62,7 @@ function marked(text,marks,{numbered=false}={}){
 const annotationNotes=s=>`<ol class="vs-notes" role="list">${s.marks.map((m,i)=>`<li><span class="vs-note-number" aria-hidden="true">${i+1}</span><span><strong>${m.words.length<=24?`«${esc(m.words)}» · `:''}${esc(m.label)}:</strong> ${esc(m.note)}</span></li>`).join('')}</ol>`;
 // Each bitmap is one original strip. CSS exposes the relevant panel at any screen width;
 // the dialogue stays in HTML, in the same order as the pictures and the analysis.
-const comicScene=(comic,i)=>`<div class="comic-scene is-panel-${i}"><img src="${esc(comic.file)}" alt="${esc(comic.panels[i].alt)}" width="${comic.width}" height="${comic.height}" loading="lazy" decoding="async"></div>`;
+const comicScene=(comic,i)=>imageExpansionHtml(`<span class="comic-scene is-panel-${i}"><img src="${esc(comic.file)}" alt="${esc(comic.panels[i].alt)}" width="${comic.width}" height="${comic.height}" loading="lazy" decoding="async"></span>`,comic.panels[i].label||`Escena ${i+1}: ${comic.panels[i].speaker}`);
 function comicContrast(s){
  const c=s.comic,[first,second]=c.panels;
  return `<ol class="vs-comic is-pair" role="list"><li><p class="comic-concept">${esc(first.label)}</p>${comicScene(c,0)}<div class="comic-copy"><p class="comic-speaker">${esc(first.speaker)}</p><p class="vs-annotated">${marked(s.text,s.marks,{numbered:true})}</p>${annotationNotes(s)}</div></li><li><p class="comic-concept">${esc(second.label)}</p>${comicScene(c,1)}<div class="comic-copy"><p class="comic-speaker">${esc(second.speaker)}</p><p class="vs-example">${esc(second.text)}</p><p class="comic-continuation">Continúa:</p><p class="vs-example">${esc(second.continuation)}</p><p class="comic-reading">${esc(second.note)}</p></div></li></ol>`;
@@ -140,8 +141,9 @@ export function imageHtml(id,{author=authorMode}={}){
  if(img.file){
   const credit=[img.credit,img.ai?'Imagen generada con IA':''].filter(Boolean).join(' · ');
   const source=img.source?`<a class="source-link vi-source" href="${esc(img.source.url)}" target="_blank" rel="noopener noreferrer">${esc(img.source.label)}<span class="sr-only"> (otra pestaña)</span></a><span class="vi-consulted">Consultado: ${esc(img.source.consulted)}.</span>`:'';
-  const reading=img.transcript?`<div class="vi-reading-tools"><a class="vi-document-link" href="${esc(img.file)}" target="_blank" rel="noopener noreferrer">Ampliar imagen<span class="sr-only"> (otra pestaña)</span></a><details class="vi-transcript"><summary>Leer el texto de la imagen</summary><div class="vi-transcript-text">${img.transcript.map(p=>`<p>${esc(p)}</p>`).join('')}</div></details></div>`:'';
-  return `<figure class="visual-image" data-image="${esc(id)}"><div class="vi-frame"><img src="${esc(img.file)}" alt="${esc(img.alt)}" width="${img.width}" height="${img.height}" loading="lazy" decoding="async">${img.overlay?`<p class="vi-overlay">${esc(img.overlay)}</p>`:''}</div>${reading}<figcaption class="caption">${esc(img.caption)}${credit?` <span class="vi-credit">${esc(credit)}</span>`:''}${source}</figcaption></figure>`;
+  const reading=img.transcript?`<div class="vi-reading-tools"><details class="vi-transcript"><summary>Leer el texto de la imagen</summary><div class="vi-transcript-text">${img.transcript.map(p=>`<p>${esc(p)}</p>`).join('')}</div></details></div>`:'';
+  const image=`<span class="vi-frame"><img src="${esc(img.file)}" alt="${esc(img.alt)}" width="${img.width}" height="${img.height}" loading="lazy" decoding="async">${img.overlay?`<span class="vi-overlay">${esc(img.overlay)}</span>`:''}</span>`;
+  return `<figure class="visual-image" data-image="${esc(id)}">${imageExpansionHtml(image,img.caption.split(' · ')[0])}${reading}<figcaption class="caption">${esc(img.caption)}${credit?` <span class="vi-credit">${esc(credit)}</span>`:''}${source}</figcaption></figure>`;
  }
  if(!author)return '';
  const rows=[['Qué mostrar',img.show],['Archivo','dist/img/'+id+'.webp · unos '+img.width+' × '+img.height+' px · menos de 250 KB'],['Texto alternativo (borrador)',img.alt],['Pie',img.caption],...(img.ai?[['Instrucción para la IA',img.prompt]]:[]),['Después','Completa «file» y «credit» en visual-schema-data.js.']];

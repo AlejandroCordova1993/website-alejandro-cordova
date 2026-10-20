@@ -247,6 +247,19 @@ footer a,.consult-links a,.compact-reference a{display:inline-flex;align-items:c
 .cafe-zoom[open]>.cafe-thumbnail{width:100%;cursor:zoom-out}
 .cafe-zoom:not([open]) .cafe-reduce-label,.cafe-zoom[open] .cafe-expand-label{display:none}
 @media(max-width:520px){.cafe-zoom:not([open])>.cafe-thumbnail{width:90%}}
+/* Images expand in place; the entire image remains a touch and keyboard control. */
+.image-zoom-toggle{display:block;width:min(100%,17rem);padding:0;list-style:none;cursor:zoom-in}
+.image-zoom-toggle::-webkit-details-marker{display:none}
+.image-zoom[open]>.image-zoom-toggle{width:100%;cursor:zoom-out}
+.image-zoom:not([open]) .image-reduce-label,.image-zoom[open] .image-expand-label{display:none}
+.image-zoom .vi-frame,.image-zoom .vi-overlay{display:block}
+.visual-image-pair>.visual-image:has(>.image-zoom[open]){grid-column:1/-1}
+.vs-comic .image-zoom-toggle{width:100%}
+.vs-comic .image-zoom .vi-document-link{padding-inline:var(--space-4)}
+.vs-comic .comic-scene{display:block}
+.visual-schema .vs-comic>li:has(>.image-zoom[open]){grid-column:1/-1}
+.vs-comic .image-zoom[open] .comic-scene{width:min(100%,36rem)}
+@media(max-width:520px){.image-zoom:not([open])>.image-zoom-toggle{width:90%}.vs-comic .image-zoom:not([open])>.image-zoom-toggle{margin-inline:auto}}
 .theory-example .caption,.notice-example .caption{color:var(--muted)}
 .notice-example{margin:1rem 0 1.4rem;padding-left:1rem;border-left:1px solid var(--blue)}
 .notice-example blockquote{margin:.6rem 0;font-size:1.3em;line-height:1.4;color:var(--navy)}
