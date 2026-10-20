@@ -12,7 +12,7 @@ export const classContent={
    '¿Qué parte de nuestra afirmación puede verificar otro lector en la oración?','guia-2',4)
  ],
  's1-e2':[
-  {...distinctions,block:1},
+  {...distinctions,block:1,example:null,cafeExample:true},
   topic(1,'Cuatro operaciones del análisis','Estas cuatro operaciones ayudan a distinguir qué afirmas y en qué te apoyas. Pueden combinarse: al proponer una explicación también hacemos inferencias. El ejemplo retoma el aviso B del diagnóstico.',
    ['Observar: señalar palabras presentes o información ausente. Inferir: llegar a una conclusión relacionando esas palabras con conocimientos pertinentes.','Explicar: proponer por qué se usó esa formulación en esa situación y buscar datos que apoyen la explicación. Valorar: juzgar si el aviso cumple un propósito, indicando el criterio utilizado.'],
    'Aviso B del diagnóstico: «Se suspendieron las becas de cuarenta estudiantes».','Observar: el aviso dice «Se suspendieron» y no nombra a quien tomó la decisión. Inferir: entiendo que esos estudiantes tenían una ayuda y que ahora se interrumpe; la resolución permitiría comprobar su alcance. Explicar: quizá se omite al responsable porque ya aparece en otra parte del documento; habría que leerlo completo. Valorar: como aviso aislado para saber ante quién reclamar, ofrece información insuficiente; el criterio es que identifique al órgano al que dirigirse.',

@@ -234,6 +234,14 @@ footer a,.consult-links a,.compact-reference a{display:inline-flex;align-items:c
 .theory-example,.class-page .notice-example{margin:var(--space-6) 0;padding:var(--space-4) var(--space-6);background:var(--paper);border:0;border-radius:var(--radius)}
 .theory-example blockquote{margin:.5rem 0 1rem;font-family:var(--serif);font-size:var(--text-3xl);line-height:1.5}
 .theory-example p:last-child{margin-bottom:0}
+.cafe-example{margin-top:var(--space-6)}
+.cafe-transcript{margin:var(--space-4) 0;padding:var(--space-4);background:var(--theory-surface);border-radius:var(--radius)}
+.cafe-transcript h5{margin:0 0 var(--space-3);font-size:var(--text-lg);color:var(--theory-ink)}
+.cafe-transcript dl{display:grid;gap:var(--space-3);margin:0}
+.cafe-transcript dt{font-weight:700;color:var(--theory-ink)}
+.cafe-transcript dd{margin:var(--space-2) 0 0;font-family:var(--serif);font-size:var(--text-lg);line-height:1.5}
+.cafe-version{margin-top:var(--space-6)}
+.cafe-version .visual-image{margin-top:var(--space-3)}
 .theory-example .caption,.notice-example .caption{color:var(--muted)}
 .notice-example{margin:1rem 0 1.4rem;padding-left:1rem;border-left:1px solid var(--blue)}
 .notice-example blockquote{margin:.6rem 0;font-size:1.3em;line-height:1.4;color:var(--navy)}
