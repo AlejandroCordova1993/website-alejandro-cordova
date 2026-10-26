@@ -1,11 +1,11 @@
-import {weeks,minimumContents} from './schedule.js?v=lc-8b2222d0e928';
-import {taskNotes,assessments,unitActivities} from './curriculum.js?v=lc-8b2222d0e928';
-import {weeklyReadings,essayMilestones} from './journey.js?v=lc-8b2222d0e928';
-import {resourceById} from './corpus.js?v=lc-8b2222d0e928';
-import {courseModules} from './curriculum.js?v=lc-8b2222d0e928';
-import {encounters,autonomousPlan,dayLabel} from './encounters.js?v=lc-8b2222d0e928';
-import {classHref,classReadingGroups} from './class-flow.js?v=lc-8b2222d0e928';
-import {toneHead} from './ui-icons.js?v=lc-8b2222d0e928';
+import {weeks,minimumContents} from './schedule.js?v=lc-5712d9105e87';
+import {taskNotes,assessments,unitActivities} from './curriculum.js?v=lc-5712d9105e87';
+import {weeklyReadings,essayMilestones} from './journey.js?v=lc-5712d9105e87';
+import {resourceById} from './corpus.js?v=lc-5712d9105e87';
+import {courseModules} from './curriculum.js?v=lc-5712d9105e87';
+import {encounters,autonomousPlan,dayLabel} from './encounters.js?v=lc-5712d9105e87';
+import {classHref,classReadingGroups} from './class-flow.js?v=lc-5712d9105e87';
+import {toneHead} from './ui-icons.js?v=lc-5712d9105e87';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function weekLabel(value){
  const text=Array.isArray(value)?value.join(' y '):String(value).replace('; retorno ',' y ').replace('; transversal','').replace('; anticipación ',' y ');

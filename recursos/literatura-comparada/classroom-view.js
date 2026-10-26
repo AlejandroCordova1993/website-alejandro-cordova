@@ -1,11 +1,12 @@
-import {encounters,dayLabel} from './encounters.js?v=lc-8b2222d0e928';
-import {taskNotes} from './curriculum.js?v=lc-8b2222d0e928';
-import {classHref,classPlan,classPreparation,classContinuation,classReadingGroups,fichaTitles} from './class-flow.js?v=lc-8b2222d0e928';
-import {toneHead,uiIcon} from './ui-icons.js?v=lc-8b2222d0e928';
-import {glossaryLinks,concepts} from './glossary.js?v=lc-8b2222d0e928';
-import {theoryNoteHtml} from './theory-notes.js?v=lc-8b2222d0e928';
-import {learningFor,sessionTheoryHtml,sessionActivityHtml} from './session-learning.js?v=lc-8b2222d0e928';
-import {activityProducts} from './seminar.js?v=lc-8b2222d0e928';
+import {encounters,dayLabel} from './encounters.js?v=lc-5712d9105e87';
+import {taskNotes} from './curriculum.js?v=lc-5712d9105e87';
+import {classHref,classPlan,classPreparation,classContinuation,classReadingGroups,fichaTitles} from './class-flow.js?v=lc-5712d9105e87';
+import {toneHead,uiIcon} from './ui-icons.js?v=lc-5712d9105e87';
+import {glossaryLinks,concepts} from './glossary.js?v=lc-5712d9105e87';
+import {theoryNoteHtml} from './theory-notes.js?v=lc-5712d9105e87';
+import {learningFor,sessionTheoryHtml,sessionActivityHtml} from './session-learning.js?v=lc-5712d9105e87';
+import {activityProducts} from './seminar.js?v=lc-5712d9105e87';
+import {weekTwoGuideHtml} from './week-two-learning.js?v=lc-5712d9105e87';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 export function renderClassPage(e,ctx){
@@ -13,7 +14,7 @@ export function renderClassPage(e,ctx){
  const m=modules.find(m=>m.id===Math.ceil(e.week/4)),plan=classPlan(e),next=encounters[encounters.indexOf(e)+1],previous=encounters[encounters.indexOf(e)-1];
  const route=Object.values(m.routes).find(r=>r.noteKey===plan.key)||m.routes.A,learning=learningFor(e);
  const section=(id,icon,title,tone,body)=>`<section id="class-${id}" class="class-section tone-card" data-tone="${tone}" aria-labelledby="class-${id}-title">${toneHead(icon,title,{id:`class-${id}-title`})}<div class="tone-body">${body}</div></section>`;
- const developedTheory=e.week===1?(e.day==='lunes'?`<p>Para situar la disciplina, consulta <a href="#introduccion">Antes de comparar</a>. La actividad de hoy parte del pasaje de Palacio entregado en clase; las lecturas completas se indican para después de esta sesión.</p><details><summary>Recuperar los fundamentos de la introducción</summary>${theoryNoteHtml(1)}</details>`:`<p>En la sesión 1 formulaste una primera pregunta. Hoy la conviertes en una relación: qué comparas, con qué criterio y qué indicio del pasaje la sostiene. Una semejanza no prueba una influencia; afirmar un contacto exige documentos.</p>${m.sections[0]?`<section><h3>${esc(m.sections[0][0])}</h3><p>${esc(m.sections[0][1])}</p></section>`:''}<details><summary>Recuperar los fundamentos de la introducción</summary>${theoryNoteHtml(1)}</details>`):theoryNoteHtml(e.week,{review:e.day==='miercoles'})||plan.concepts.map(i=>m.sections[i]).filter(Boolean).map(([title,text])=>`<section><h3>${esc(title)}</h3><p>${esc(text)}</p></section>`).join('');
+ const developedTheory=e.week===2?weekTwoGuideHtml(e.day==='lunes'?1:2)+`<details class="week-two-depth"><summary>Profundizar en Palacio · comentario y fuentes</summary>${theoryNoteHtml(2,{review:e.day==='miercoles'})}</details>`:e.week===1?(e.day==='lunes'?`<p>Para situar la disciplina, consulta <a href="#introduccion">Antes de comparar</a>. La actividad de hoy parte del pasaje de Palacio entregado en clase; las lecturas completas se indican para después de esta sesión.</p><details><summary>Recuperar los fundamentos de la introducción</summary>${theoryNoteHtml(1)}</details>`:`<p>En la sesión 1 formulaste una primera pregunta. Hoy la conviertes en una relación: qué comparas, con qué criterio y qué indicio del pasaje la sostiene. Una semejanza no prueba una influencia; afirmar un contacto exige documentos.</p>${m.sections[0]?`<section><h3>${esc(m.sections[0][0])}</h3><p>${esc(m.sections[0][1])}</p></section>`:''}<details><summary>Recuperar los fundamentos de la introducción</summary>${theoryNoteHtml(1)}</details>`):theoryNoteHtml(e.week,{review:e.day==='miercoles'})||plan.concepts.map(i=>m.sections[i]).filter(Boolean).map(([title,text])=>`<section><h3>${esc(title)}</h3><p>${esc(text)}</p></section>`).join('');
  const recovery=[12,15].includes(e.week)&&e.day==='miercoles';
  const theory=sessionTheoryHtml(e)+(recovery?`<details class="theory-recovery"><summary>Recuperar el desarrollo teórico de la semana</summary>${developedTheory}</details>`:developedTheory);
  const labels=concepts.filter(c=>c.modules.includes(m.id)).map(c=>c.label.toLowerCase());
@@ -22,9 +23,9 @@ export function renderClassPage(e,ctx){
  let workspace='';
  if(plan.kind==='intro')workspace=field('intro','intro','Mi primera pregunta comparativa','Registra en este espacio un fragmento breve, tu observación y la pregunta que quieres investigar. Si el segundo relato queda por elegir, indícalo y señala qué necesitas comprobar.',4);
  if(plan.kind==='comparison'){
-  const sessionRoute=learning.prompts?{...route,prompts:learning.prompts}:route;
+  const sessionRoute=learning.prompts?{...route,prompts:learning.prompts,fieldHints:learning.fieldHints}:route;
   const desk=comparison(m,plan.key,sessionRoute,{advance:false,documents:plan.documents,preparing:!plan.writeArgument});
-  workspace=plan.writeArgument?`<details class="previous-work"><summary>Consultar o corregir mis pasajes y mi hipótesis inicial</summary>${desk}</details>${argumentReview(m,plan.key,route)}`:desk;
+  workspace=plan.writeArgument?`<details class="previous-work"><summary>Consultar o corregir mis pasajes y mi hipótesis inicial</summary>${desk}</details>${argumentReview(m,plan.key,sessionRoute)}`:desk;
   if(!plan.writeArgument&&state.notes[plan.key]?.argument?.trim())workspace+=`<details><summary>Consultar o corregir mi argumento guardado</summary>${field(plan.key,'argument','Mi argumento guardado','Este texto se conserva mientras trabajas en tus pasajes.',9)}</details>`;
  }
  if(e.week===1&&e.day==='miercoles')workspace=field('intro','intro','Mi primera pregunta comparativa · sesión 1','La escribiste en la sesión 1. Ajústala si el pasaje te obliga a precisar el criterio o el límite.',3)+workspace;

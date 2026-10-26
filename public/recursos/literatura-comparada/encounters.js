@@ -25,11 +25,11 @@ export const encounters=[
  ['Recupera la pregunta de la semana anterior.','Explica qué cambió tras leer Machado completo.'],
  ['Sitúa los tres modelos de Guillén y sus distintos apoyos.','Relaciona una propuesta con el tipo de evidencia que necesita.'],
  ['Acompaña la selección y el cotejo de pasajes.','Registra indicios de narrador, violencia y empatía con localizador.'],
- ['Pide explicar una diferencia formal y otra histórica; confronta inferencias.','Contrasta resultados en parejas e inicia una conclusión argumentada.'],
+ ['Pide explicar una diferencia formal o contextual relevante para el criterio; confronta inferencias.','Contrasta resultados en parejas e inicia una conclusión argumentada.'],
  ['Delimita la Ficha 1 y sus criterios.','Elige los dos pasajes que desarrollarás y una duda por resolver.'])),
  meeting(2,'miercoles','Taller de la primera ficha','Transformar la matriz en un argumento que pueda discutirse.','Ficha 1 · borrador de 250–350 palabras, para revisar y cerrar antes de la siguiente semana.',regular(
  ['Recoge dudas sobre ediciones y localizadores.','Comprueba tus pasajes y tu criterio común.'],
- ['Modela el vínculo entre afirmación, evidencia y explicación.','Examina qué parte de un argumento de ejemplo está sustentada.'],
+ ['Trabaja el argumento comentado de Teoría y modela el vínculo entre tesis, evidencia, explicación y respuesta a una objeción.','Examina el modelo comentado de Teoría: identifica tesis, análisis de ambos relatos, diferencia, objeción, respuesta y límite.'],
  ['Acompaña la escritura y plantea preguntas a cada pareja.','Escribe el núcleo de la ficha, conservando diferencias contextuales.'],
  ['Facilita revisión entre pares con criterios; interviene sobre inferencias débiles.','Formula una objeción al argumento de otro lector y revisa el tuyo.'],
  ['Aclara el cierre de la ficha y la próxima lectura de canon.','Registra qué cambiaste y qué revisión finalizarás en el trabajo autónomo.'])),

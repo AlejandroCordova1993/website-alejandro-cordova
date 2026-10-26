@@ -22,6 +22,22 @@
 .session-concepts>dl>div{display:grid;grid-template-columns:minmax(150px,1fr) minmax(0,3fr);gap:24px;padding:16px 0;border-bottom:1px solid var(--line)}
 .session-concepts dt{font-weight:600;color:var(--theory-ink)}
 .session-concepts dd{margin:0;min-width:0}
+.session-concepts .concept-example{margin:12px 0 0}
+.week-two-guide{margin-top:28px}
+.week-two-models{margin:20px 0}
+.week-two-models>div{padding:20px 0;border-top:1px solid var(--line)}
+.week-two-models dt{font-weight:600;color:var(--theory-ink);margin-bottom:10px}
+.week-two-models dd{margin:0}
+.week-two-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin:20px 0}
+.week-two-pair>section{min-width:0}
+.week-two-pair ol{padding-left:24px}
+.week-two-pair li{padding-left:4px;margin-bottom:12px}
+.week-two-argument{padding-left:26px;margin:24px 0}
+.week-two-argument>li{padding:0 0 18px 6px;margin:0 0 20px;border-bottom:1px solid var(--line)}
+.week-two-argument h4{margin-top:0}
+.week-two-argument .model-prose{font-family:var(--serif);font-size:20px;line-height:1.75}
+.week-two-depth{margin-top:28px}
+@media(max-width:740px){.week-two-pair{grid-template-columns:1fr;gap:12px}.week-two-argument{padding-left:22px}.week-two-argument>li{padding-left:3px}.week-two-argument .model-prose{font-size:19px}}
 .session-example{padding:16px 0;margin:20px 0;border-bottom:1px solid var(--line)}
 .session-stage{padding-bottom:16px;margin:0 0 24px;border-bottom:1px solid var(--line)}
 .session-guide{margin-bottom:28px}

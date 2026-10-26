@@ -1,4 +1,4 @@
-import {reviseResources} from './corpus-v2.js?v=lc-8b2222d0e928';
+import {reviseResources} from './corpus-v2.js?v=lc-5712d9105e87';
 const uv1='https://www.uv.mx/bdh/files/2014/08/Libro-1-literatura-comparada.pdf';
 const uv2='https://www.uv.mx/bdh/files/2014/09/Libro-Literatura-comparada-II.pdf';
 const originalResources=[
