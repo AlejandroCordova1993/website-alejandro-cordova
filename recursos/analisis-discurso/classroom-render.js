@@ -40,7 +40,7 @@ export function createClassroomRenderer({field,button,link,resourceCard,prose,re
   return `<nav class="class-bar" aria-label="Partes de la clase"><div class="class-bar-links">${[['teoria','theory','Teoría'],['actividad','activity','Actividad'],['recursos','resources','Recursos']].map(([tone,icon,label])=>button('focus-section',`${uiIcon(icon)}<span>${label}</span>`,`data-section-tone="${tone}" data-target="${icon}-title"`)).join('')}</div>${recap}<span class="class-bar-status" data-save-mirror aria-hidden="true"></span></nav>`;
  }
  // The integrated reading starts open when «Antes de esta clase» asks the student to read it.
- function asksForGuide(s,guide){const text=preparationFor(s);return /lectura integrada|teoría integrada|\bLee la guía\b/i.test(text)||guide.some(([title])=>text.includes(`«${title}»`));}
+ function asksForGuide(s,guide){const text=preparationFor(s);return /lectura integrada|lectura para antes de clase|teoría integrada|\bLee la guía\b/i.test(text)||guide.some(([title])=>text.includes(`«${title}»`));}
  const hasConcept=text=>/\[\[[a-z-]+/.test(String(text||''));
  const glossaryHint=`<p class="glossary-hint">${uiIcon('glossary')}<span>Las palabras con subrayado punteado abren su definición del glosario.</span></p>`;
  function theory(s){
@@ -67,7 +67,7 @@ export function createClassroomRenderer({field,button,link,resourceCard,prose,re
   const saved=entries.length?`<div class="saved-evidence">${entries.map(e=>`<details><summary>${esc(e.locator||'Sin localizador')} · ${esc(e.source||'Documento de trabajo')}</summary>${evidenceHtml(e)}<div class="actions">${editable?button('edit-evidence','Editar evidencia',`data-id="${esc(e.id)}"`)+button('delete-evidence','Eliminar evidencia',`data-id="${esc(e.id)}"`):''}</div></details>`).join('')}</div>`:'';
   return `<section class="inline-evidence" data-ficha-stage="evidencias"><h3>1. Evidencias: ${review?'consulta y comprueba tus registros':'guarda lo que encuentras'}</h3>${saved}${entries.length||review?`<details class="evidence-entry" ${open||draft?'open':''}><summary>${review?'Añadir o recuperar una evidencia si la revisión lo requiere':'Formulario de evidencia'}</summary>${form}</details>`:form}</section>`;
  }
- function fichaQuestion(unit,state,editable){return field(state,`ficha-${unit}`,'question','Pregunta de la ficha',unitActivities[unit].questionHelp,3,editable);}
+ function fichaQuestion(unit,state,editable,sessionId=''){const help=sessionId==='s2-e1'?'Antes de transcribir, escribe qué quieres entender del episodio. Por ejemplo: «¿Cómo distingue Drexler sus propias palabras de las que atribuye a Joaquín Sabina?». Elige después un fragmento que ayude a responderla. La pregunta se guarda al escribir y puedes ajustarla más adelante.':unitActivities[unit].questionHelp;return field(state,`ficha-${unit}`,'question','Pregunta de la ficha',help,3,editable);}
  function fichaFields(unit,state,editable,{review=false,all=false,showArgument=false,argumentNext='',includeQuestion=true,sessionId=''}={}){
   const key=`ficha-${unit}`,a=unitActivities[unit];
   const guidance=unit===1?{
@@ -92,7 +92,7 @@ export function createClassroomRenderer({field,button,link,resourceCard,prose,re
   const work=classWork(s);
   if(work.diagnosis)return diagnosis(s,state,editable);
   if(work.assessment)return `<section class="class-workspace"><h3>Tu trabajo · Evaluación individual (Sumativa 1)</h3><p>Realiza el análisis del caso nuevo y entrégalo por el medio indicado por el docente. La ficha 3 queda como preparación: no sustituyas su texto por la respuesta de evaluación.</p><details><summary>Consultar mi ficha 3 como preparación</summary>${noteFields(state,'ficha-3',['question','argument','revision','revisionReason'])}${evidenceList(state,3)}</details></section>`;
-  return `${work.evidence?`<div class="class-workspace" data-work-key="ficha-${s.unit}"><h3>Tu trabajo · Ficha ${s.unit}</h3>${workNotice(editable)}<p class="caption">Continúa esta misma ficha durante las clases de la unidad.${editable?' La pregunta, el argumento y la revisión se guardan al escribir. Para guardar cada fragmento, completa su formulario y pulsa «Añadir evidencia». Todo aparece en «Mi trabajo».':''}</p>${work.review?'':fichaQuestion(s.unit,state,editable)}${records(s.unit,state,editable,{open:work.step==='analizar'&&!state.evidence.some(e=>e.unit===s.unit),session:s,review:work.review})}${fichaFields(s.unit,state,editable,{review:work.review,showArgument:work.argument,argumentNext:work.argumentNext,includeQuestion:work.review,sessionId:s.id})}${work.relations?relations(state,editable):''}</div>`:''}${projectWork(s,state,editable,work)}`;
+  return `${work.evidence?`<div class="class-workspace" data-work-key="ficha-${s.unit}"><h3>Tu trabajo · Ficha ${s.unit}</h3>${workNotice(editable)}<p class="caption">Continúa esta misma ficha durante las clases de la unidad.${editable?(s.id==='s2-e1'?' La pregunta se guarda al escribir.':' La pregunta, el argumento y la revisión se guardan al escribir.')+' Para guardar cada fragmento, completa su formulario y pulsa «Añadir evidencia». Todo aparece en «Mi trabajo».':''}</p>${work.review?'':fichaQuestion(s.unit,state,editable,s.id)}${records(s.unit,state,editable,{open:work.step==='analizar'&&!state.evidence.some(e=>e.unit===s.unit),session:s,review:work.review})}${fichaFields(s.unit,state,editable,{review:work.review,showArgument:work.argument,argumentNext:work.argumentNext,includeQuestion:work.review,sessionId:s.id})}${work.relations?relations(state,editable):''}</div>`:''}${projectWork(s,state,editable,work)}`;
  }
  function classPage(route,state,editable){
   const s=getSession(route.week,route.encounter),position=sessions.indexOf(s),previous=sessions[position-1],next=sessions[position+1],material=sessionMaterials(s);
@@ -109,3 +109,5 @@ export function createClassroomRenderer({field,button,link,resourceCard,prose,re
  }
  return {index,classPage,ficha,myWork};
 }
+
+

@@ -249,7 +249,7 @@ export const visualSchemas={
    {label:'Transcripción con leyenda',text:'«No [pausa] aceptamos esa explicación».',marks:['[pausa]'],note:'La marca declara una pausa que habría que comprobar en el audio; la leyenda explica la convención.'}
   ],
   verdict:'Su función requiere escuchar el entorno: no basta cambiar la puntuación para atribuir una intención.',
-  task:{label:'Al transcribir el tramo de Drexler',text:'Dentro del episodio elegido, transcribe un fragmento de 20–30 segundos. Anota ambos intervalos en el localizador: episodio observado y fragmento transcrito. Toma las marcas de la escucha y añade una leyenda.'},
+  task:{label:'Al transcribir el tramo de Drexler',text:'Usa tu pregunta provisional para elegir 20–30 segundos dentro de 00:39–01:47. Anota ambos intervalos en el localizador: episodio observado y fragmento transcrito. Toma las marcas de la escucha y añade una leyenda.'},
   source:'Representación didáctica del curso. Transcripción: Calsamiglia y Tusón (2012, apéndice, §1.2 · PDF 358–361).',
   anchors:['No [pausa] aceptamos esa explicación','la puntuación del subtítulo no demuestra prosodia','La marca declara una pausa que habría que comprobar en el audio','no basta cambiar la puntuación para atribuir una intención']
  },

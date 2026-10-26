@@ -28,7 +28,7 @@ export const classContent={
    'En un taller: «Hoy les propongo revisar nuestra primera explicación».','«Hoy», «les» y «nuestra» construyen tiempo, destinatario y pertenencia. Para identificar sus referencias necesitamos esa situación de aula.',
    '¿Qué participantes podemos identificar en la escena observada y cuáles aparecen solo en el relato?','calsamiglia',0),
   topic(2,'Transcribir implica seleccionar','Una transcripción conserva algunas dimensiones de la realización oral y deja fuera otras. Su utilidad depende de la pregunta, las convenciones elegidas y la posibilidad de volver al registro original.',
-   ['Las palabras y las marcas de pausa o énfasis deben proceder de la escucha.','Una leyenda explica las convenciones; la puntuación del subtítulo no demuestra prosodia.'],
+   ['Las palabras y las marcas de pausa o énfasis deben proceder de la escucha.','Una leyenda explica las convenciones; la puntuación del subtítulo no demuestra prosodia.','En esta práctica puedes usar [pausa] para una pausa audible, [énfasis: palabra] para una palabra destacada por la voz y [inaudible] si no entiendes algo tras reescucharlo. Usa las marcas que necesite tu fragmento y explica su significado en la leyenda.'],
    'Representación didáctica: «No [pausa] aceptamos esa explicación».','La marca declara una pausa que habría que comprobar en el audio. Su función requiere escuchar el entorno: no basta cambiar la puntuación para atribuir una intención.',
    '¿Qué dimensión necesita nuestra pregunta y qué dimensión no registra esta transcripción?','calsamiglia',2)
  ],

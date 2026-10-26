@@ -98,35 +98,40 @@ export const sessions=[
     "title": "Enunciar y transcribir",
     "question": "¿Qué decide una transcripción?",
     "resource": "guia-1",
-    "product": "Ficha 1: pregunta, identificación del episodio y transcripción localizable.",
+    "product": "Ficha 1: pregunta provisional y una evidencia guardada con fuente, situación, intervalos, transcripción y leyenda.",
     "agenda": [
       [
         5,
         "Identificar la intervención",
-        "Abre la charla de Drexler indicada en «Documento de análisis». Reconoce autor, publicación y situación; la sección «Teoría» explica cómo describirlos. El documento que transcribes es la charla, no la explicación teórica."
+        "Abre «Poesía, música e identidad», en «Documento de análisis». Identifica a Jorge Drexler como quien habla ante el público de TED. Distingue ese público de las personas de la conversación pasada que cuenta."
       ],
       [
         20,
         "Visionado completo",
-        "Mira el original de 16:30; el bloque incluye margen de acceso. Observa la diferencia entre la conferencia presente y el diálogo pasado que narra. Este visionado contextualiza el episodio que analizarás durante la unidad."
+        "Mira la charla completa de 16:30. Observa cómo Drexler cuenta la conversación con Joaquín Sabina y cómo introduce sus palabras. Después trabajarás con el episodio 00:39–01:47. Los 20 minutos incluyen el acceso y la reproducción."
+      ],
+      [
+        5,
+        "Ver una demostración y escribir la pregunta",
+        "El docente reproduce 5–10 segundos del episodio 00:39–01:47 y muestra cómo escribir las palabras escuchadas y una leyenda. Usa [pausa] para una pausa audible; [énfasis: palabra] para señalar una palabra destacada por la voz; [inaudible] si no logras entender algo tras reescucharlo. Registra solo lo que percibas. Después escribe una pregunta provisional en «Pregunta de la ficha», debajo de estos pasos. Por ejemplo: «¿Cómo distingue Drexler sus propias palabras de las que atribuye a Joaquín Sabina?». Puedes ajustarla al revisar tu fragmento."
       ],
       [
         15,
-        "Transcribir el tramo",
-        "Vuelve al tramo común 00:39–01:47 (68 segundos). Ese será tu episodio de observación; puedes acotarlo a 30–68 segundos dentro del mismo tramo. Si usas otro episodio registrado en el taller, elige 30–90 segundos. Dentro del episodio, transcribe solo un fragmento de 20–30 segundos y añade una leyenda de marcas. Anota los dos intervalos: el del episodio completo y el del fragmento transcrito. Comprueba las palabras mediante escucha y marca las pausas que realmente oigas."
+        "Transcribir el fragmento",
+        "Trabaja con el episodio común 00:39–01:47 (68 segundos). Elige dentro de él un fragmento de 20–30 segundos que ayude a responder tu pregunta. Reescúchalo y escribe sus palabras en «Fragmento o descripción observable», dentro del formulario de evidencia. Añade al final la leyenda de tus marcas. Si consultas la transcripción de TED, compruébala con el audio. Si ya guardaste tu transcripción, abre esa evidencia y pulsa «Editar evidencia» para continuarla."
       ],
       [
-        12,
-        "Iniciar la ficha oral",
-        "En «Evidencias», conserva la transcripción con fuente y localizador. Indica el intervalo del episodio y el del fragmento transcrito; señala a cuál corresponden las palabras que copias. En «Pregunta de la ficha», escribe qué quieres explicar de ese episodio. Los recursos de voz y cuerpo se añadirán al mismo episodio en la siguiente clase."
+        10,
+        "Guardar la evidencia en la ficha 1",
+        "En el mismo formulario, comprueba la «Fuente». En «Localizador» escribe «Episodio observado: 00:39–01:47; fragmento transcrito: …» y sustituye los puntos por el inicio y el final reales de tu fragmento. En «Contexto documentado y su fuente», identifica quién habla, a quién y dónde; indica que usas la charla de TED de 2017. Comprueba la transcripción y su leyenda. Pulsa «Añadir evidencia» para un registro nuevo o «Guardar cambios» si estás editando uno anterior. Comprueba que aparezca guardado. La pregunta se guarda al escribir."
       ],
       [
-        8,
-        "Conservar para continuar",
-        "Comprueba fuente, intervalo y leyenda. Conserva esos registros para la clase de palabras, voz y cuerpo; no necesitas elegir otra charla ni rehacer la transcripción desde cero."
+        5,
+        "Comprobar en pareja y continuar",
+        "Muestra tu evidencia guardada a un compañero. Pídele localizar el fragmento con tus tiempos y entender las marcas con tu leyenda. Para corregirla, abre la entrada guardada, pulsa «Editar evidencia» y, al terminar, «Guardar cambios». Conserva la pregunta y esta transcripción: en la siguiente clase añadirás observaciones de voz y cuerpo y escribirás la primera explicación."
       ]
     ],
-    "preparation": "Antes de la clase, lee «Lectura para antes de clase», dentro de «Teoría». En clase verás la charla completa antes de elegir el episodio y transcribir un fragmento."
+    "preparation": "Lee los tres apartados de «Lectura para antes de clase», dentro de «Teoría»: «Una realización situada», «La transcripción ya interpreta» y «La escena y la escena narrada». Verás la charla completa en clase. Ten disponible la ficha 1 para escribir y guardar el trabajo."
   },
   {
     "id": "s2-e2",
@@ -142,22 +147,22 @@ export const sessions=[
       [
         10,
         "Retomar el episodio registrado",
-        "Abre la transcripción y la identificación de la situación que conservaste en la primera clase. Comprueba el intervalo y quién habla o qué voz se representa. En Drexler, distingue la conferencia presente del diálogo narrado."
+        "Abre la evidencia con la transcripción guardada en la ficha 1 y lee tu pregunta provisional. Mantén el episodio de la primera clase. La revisión tendrá tres momentos: localizar marcas, comprobar las palabras y guardar las nuevas observaciones."
       ],
       [
         20,
-        "Reescucha dirigida del mismo tramo",
-        "Vuelve al intervalo guardado de tu episodio. Si usas Drexler, está dentro de 00:39–01:47; si usas un registro de taller, sigue su intervalo propio. Reescucha solo las partes necesarias para localizar voz y cuerpo; conserva el contexto observado en la primera clase."
+        "Localizar las marcas del episodio",
+        "Primer momento de la revisión: vuelve al episodio 00:39–01:47 y localiza dos recursos de voz, como pausas, énfasis, cambios de timbre o risa, y un gesto o una mirada visible. Anota sus tiempos para volver a encontrarlos. Describe lo que oyes y ves; su posible función se explicará en «Mi argumento». Si el docente indicó otro registro en la primera clase, usa su intervalo propio."
       ],
       [
         15,
         "Comprobar la transcripción y las voces",
-        "Abre la transcripción que ya guardaste y comprueba sus palabras, intervalo y leyenda. Corrige solo las marcas que lo necesiten. Identifica una característica verbal del tramo, como una cita, un marcador o una forma personal, y señala quién habla o qué voz se representa. Guarda esa observación en «Evidencias» y explica su posible función en «Mi argumento»; no escribas otra transcripción completa."
+        "Segundo momento de la misma revisión: compara tu transcripción con el audio. Comprueba palabras, intervalo y leyenda; corrige la evidencia mediante «Editar evidencia» y «Guardar cambios» si lo necesita. Identifica también una característica verbal, como una cita, un marcador o una forma personal. Señala sus palabras y quién habla o qué voz se representa. Conserva esta observación en una evidencia; la transcripción anterior sigue siendo tu registro de base."
       ],
       [
         15,
-        "Escuchar y observar",
-        "Añade al registro de la ficha 1 dos recursos de voz, como pausa, énfasis, cambio de timbre o risa, y un recurso corporal cuando tu registro permita observarlo. Para cada uno, indica el intervalo y describe lo percibido antes de interpretar su función. Si tu episodio propio solo tiene audio, declara ese límite y no inventes un gesto."
+        "Guardar los recursos de voz y cuerpo",
+        "Tercer momento de la misma revisión: guarda los recursos que acabas de localizar. Añade una evidencia por recurso con su intervalo exacto y una descripción breve: dos de voz y una de cuerpo cuando sea observable. Si una marca ya tiene una evidencia propia, edita esa entrada en vez de añadirla otra vez. El contexto común ya está en la transcripción. Si tu registro solo tiene audio, deja indicado que no permite observar el cuerpo."
       ],
       [
         10,
@@ -180,7 +185,7 @@ export const sessions=[
         "En «Mi argumento» de la ficha 1, conserva una interpretación inicial, su alternativa y un límite. Anota qué necesitas comprobar para revisar esa lectura en la semana 3."
       ]
     ],
-    "preparation": "Retoma la charla, el intervalo y la transcripción guardados en la primera clase. La sección «Teoría» ayuda a interpretar las marcas. Ahora vuelve al tramo para añadir voz y cuerpo a la misma ficha."
+    "preparation": "Lee «Tres planos de observación» en «Lectura para antes de clase», dentro de «Teoría», y repasa «La escena y la escena narrada». Ten a mano la pregunta y la transcripción guardadas en la ficha 1. En clase añadirás voz y cuerpo al mismo episodio."
   },
   {
     "id": "s3-e1",
@@ -1284,3 +1289,4 @@ export const sessions=[
 ];
 export const sessionById=Object.fromEntries(sessions.map(s=>[s.id,s]));
 export const getSession=(week,encounter)=>sessionById[`s${week}-e${encounter}`];
+
