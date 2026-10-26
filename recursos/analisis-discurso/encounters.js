@@ -107,7 +107,7 @@ export const sessions=[
       ],
       [
         20,
-        "Visionado completo",
+        "Ver la charla completa",
         "Mira la charla completa de 16:30. Observa cómo Drexler cuenta la conversación con Joaquín Sabina y cómo introduce sus palabras. Después trabajarás con el episodio 00:39–01:47. Los 20 minutos incluyen el acceso y la reproducción."
       ],
       [
@@ -1289,4 +1289,5 @@ export const sessions=[
 ];
 export const sessionById=Object.fromEntries(sessions.map(s=>[s.id,s]));
 export const getSession=(week,encounter)=>sessionById[`s${week}-e${encounter}`];
+
 
