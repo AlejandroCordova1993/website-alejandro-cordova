@@ -321,6 +321,25 @@ footer a,.consult-links a,.compact-reference a{display:inline-flex;align-items:c
 .writing-steps>li{padding-left:.25rem;margin-bottom:.75rem}
 .writing-steps>li::marker{font-weight:600;color:var(--activity-ink)}
 .class-writing-focus{font-weight:600;color:var(--activity-ink)}
+.side-class-list .side-activity{display:flex;align-items:center;gap:.6rem;color:var(--activity-ink)}
+.side-activity .ui-icon{flex-shrink:0}
+.activity-phases{padding-left:1.5rem}
+.activity-phases>li{padding-left:.5rem;margin-bottom:2rem}
+.activity-phases>li::marker{color:var(--activity-ink);font-weight:700}
+.activity-phases h3{color:var(--activity-ink);margin-bottom:.7rem}
+.activity-work-part{border-top:1px solid var(--line);padding-block:.6rem}
+.activity-work-part>summary{font-size:var(--text-lg);color:var(--activity-ink)}
+.continuous-activity .class-materials{margin-block:2rem}
+.teacher-agenda{margin-top:2rem}
+/* From the written-text unit onward: instructions once, fewer competing boxes. */
+.class-page[data-simple-work] .class-materials{padding:0;background:transparent;border:0;border-radius:0}
+.class-page[data-simple-work] .class-agenda>li{padding-bottom:1rem;margin-bottom:1rem;border:0}
+.class-page[data-simple-work] .agenda-heading>span{padding:0;background:transparent;font-weight:500}
+.class-page[data-simple-work] .class-workspace .inline-evidence{border:0}
+.class-page[data-simple-work] .record-mode{max-width:28rem}
+.class-page[data-simple-work] .evidence-settings,.class-page[data-simple-work] .evidence-context,.class-page[data-simple-work] .saved-question{margin:.6rem 0}
+.class-page[data-simple-work] .inline-review>p{padding:0;background:transparent}
+.class-page[data-simple-work] .ficha-guidance li{margin-block:.6rem}
 .previous-evidence-notes{border-top:1px solid var(--line);margin:1.5rem 0}
 .inline-review{margin-top:1.7rem;padding-top:1.4rem}
 .inline-review>p{padding:var(--space-4);background:var(--activity-surface);color:var(--activity-ink);border-radius:var(--radius);font-size:var(--text-md)}
@@ -864,3 +883,5 @@ dialog p{font-size:var(--text-md)}
 @media (max-width:520px){.visual-schema{padding:var(--space-3)}.path-schema .schema-step,.vs-card,.vs-column{padding:var(--space-3)}}
 @media print{.visual-schema,.visual-image{break-inside:avoid}.schema-quote,.path-schema .schema-step,.vs-card,.vs-column,.vs-segments>li,.vs-scale>li,.vs-table td,.vs-turns>li,.vs-branch-root{border:1px solid var(--theory-line)}.visual-image.is-pending{display:none}}
 /* Fin de esquemas visuales */
+
+.class-page[data-simple-work] .class-overview dl{grid-template-columns:1fr}

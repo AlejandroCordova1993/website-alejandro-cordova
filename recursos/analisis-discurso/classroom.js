@@ -31,19 +31,113 @@ const argumentLater={
  's9-e1':'En la próxima clase, «Dar voz y asumir responsabilidad», explicarás las voces y los colectivos de estos segmentos.'
 };
 export const classWriting={
- 's4-e2':{focus:'Hoy explica quién puede hacer qué y bajo qué condiciones. Empieza el argumento de la ficha 2 con las evidencias que acabas de guardar.',steps:[0,4],help:'Relaciona participante, acción y condición con las palabras del reglamento. Distingue lo que dispone la norma de su cumplimiento.'},
- 's5-e1':{focus:'Hoy añade dos inferencias debajo de tu explicación anterior. Conserva el texto que ya escribiste.',steps:[1],help:'Para cada inferencia, anota las palabras del texto, el conocimiento que aportas y la conclusión. Señala qué información falta comprobar.'},
- 's5-e2':{focus:'Hoy contrasta las inferencias que ya escribiste y añade una síntesis del tema de los artículos 1–3.',steps:[2,5],help:'Añade el contraste y la síntesis al mismo borrador. Conserva la explicación anterior y señala qué datos apoyan o limitan cada inferencia.'},
- 's6-e1':{focus:'Hoy prepara una disposición visual alternativa y explica qué quieres comparar con el original. Conserva las mismas palabras.',steps:[3],help:'Identifica la alternativa como elaboración propia. Describe sus cambios de tamaño, posición o agrupación y la comparación que propones; los resultados se revisan en la próxima clase.'},
- 's7-e1':{focus:'Hoy propón un enfoque para tu pregunta y justifica qué observarías con él. Los datos contextuales se comprueban en la próxima clase.',steps:[0,2,4],help:'Compara las preguntas de los tres enfoques, elige provisionalmente uno y señala qué datos necesitas. Todavía no des esos datos por comprobados.'},
- 's7-e2':{focus:'Hoy amplía tu argumento con los tres datos contextuales comprobados. Explica qué aporta cada dato a tu pregunta y a la elección del enfoque.',steps:[1,3,5],help:'Remite a las evidencias guardadas, distingue publicación, circulación y recepción, y marca lo que sigue pendiente de comprobar.'},
- 's9-e2':{focus:'Hoy organiza las voces de tus tres segmentos en una lista o tabla y explica una semejanza o diferencia entre los colectivos mencionados.',steps:[0,1,3],help:'Usa los localizadores guardados. Distingue la voz que habla de las palabras que atribuye a otra persona. No copies otra vez los fragmentos.'},
- 's10-e1':{focus:'Hoy amplía el mismo argumento examinando una atribución y otra explicación posible.',steps:[2,4,5],help:'Señala las marcas que apoyan la atribución y sus límites. Conserva el mapa anterior; no necesitas buscar otro fragmento ni inventar ambigüedad.'},
- 's11-e1':{focus:'Hoy empieza con un documento: explica su propósito, sus destinatarios, su género y las secuencias que contiene. Prepara la segunda pieza para la próxima clase.',steps:[],help:'Apoya la distinción entre género, secuencia y soporte en tus evidencias. Anota qué otra pieza compararás o qué reformulación propia prepararás.'},
- 's11-e2':{focus:'Hoy compara las dos piezas de la ruta elegida y amplía la explicación que ya comenzaste.',steps:[0,1,2,3,4,5],help:'Realiza una sola ruta: documentos relacionados o adaptación propia. Explica qué cambia y qué se conserva; el mapa es un apoyo opcional de esta comparación.'},
- 's13-e1':{focus:'Hoy inicia una matriz de segmentos y localizadores. Explica qué secuencias aparecen y cómo se articulan.',steps:[0,1],help:'Escribe una lista o tabla con segmento, localizador, secuencia, marcas y función. La reconstrucción de inferencias se trabaja después.'},
- 's13-e2':{focus:'Hoy amplía la matriz con una explicación de las transiciones entre secuencias.',steps:[0,1],help:'Retoma los mismos segmentos y explica el paso entre ellos. Distingue una explicación causal de una justificación normativa o moral.'},
- 's14-e1':{focus:'Hoy añade la reconstrucción de una inferencia y una objeción al argumento que ya escribiste.',steps:[2,3],help:'Escribe premisa, conclusión y la regla que permite pasar de una a otra. Explica qué dato o excepción obligaría a limitar la conclusión.'}
+  "s4-e2": {
+    "focus": "Explica quién actúa y bajo qué condiciones.",
+    "steps": [
+      0,
+      4
+    ],
+    "help": "Empieza el argumento de la ficha 2 con tus evidencias del reglamento."
+  },
+  "s5-e1": {
+    "focus": "Añade dos inferencias al argumento anterior.",
+    "steps": [
+      1
+    ],
+    "help": "Para cada una: palabras, conocimiento que aportas y conclusión. Señala lo pendiente de comprobar."
+  },
+  "s5-e2": {
+    "focus": "Contrasta tus inferencias y resume los artículos 1–3.",
+    "steps": [
+      2,
+      5
+    ],
+    "help": "Añade el contraste y la síntesis al mismo borrador."
+  },
+  "s6-e1": {
+    "focus": "Explica tu alternativa visual y qué compararás.",
+    "steps": [
+      3
+    ],
+    "help": "Conserva las palabras e identifica los cambios de diseño. La próxima clase comprobarás la lectura con un compañero."
+  },
+  "s7-e1": {
+    "focus": "Propón un enfoque para responder tu pregunta.",
+    "steps": [
+      0,
+      2,
+      4
+    ],
+    "help": "Compara los tres enfoques y elige uno provisionalmente. Indica los datos que buscarás."
+  },
+  "s7-e2": {
+    "focus": "Usa tres datos de contexto para revisar tu enfoque.",
+    "steps": [
+      1,
+      3,
+      5
+    ],
+    "help": "Remite a tus fuentes. Distingue publicación, circulación y recepción; marca los datos aún pendientes."
+  },
+  "s9-e2": {
+    "focus": "Organiza las voces de tus tres segmentos.",
+    "steps": [
+      0,
+      1,
+      3
+    ],
+    "help": "Escribe una lista o tabla y compara los colectivos mencionados. Usa los localizadores guardados."
+  },
+  "s10-e1": {
+    "focus": "Examina una atribución y otra lectura posible.",
+    "steps": [
+      2,
+      4,
+      5
+    ],
+    "help": "Continúa el mapa anterior. Justifica con marcas qué lectura sostienes o descartas."
+  },
+  "s11-e1": {
+    "focus": "Explica el propósito y los destinatarios del primer documento.",
+    "steps": [],
+    "help": "Distingue género, secuencias y soporte con evidencias. Indica la segunda pieza que compararás o adaptarás."
+  },
+  "s11-e2": {
+    "focus": "Compara las dos piezas y amplía tu explicación.",
+    "steps": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "help": "Continúa el mismo borrador con la ruta elegida: documentos vinculados o adaptación propia."
+  },
+  "s13-e1": {
+    "focus": "Organiza los segmentos y sus secuencias.",
+    "steps": [
+      0,
+      1
+    ],
+    "help": "Escribe una lista o tabla con localizadores, marcas y función."
+  },
+  "s13-e2": {
+    "focus": "Explica las transiciones entre tus secuencias.",
+    "steps": [
+      0,
+      1
+    ],
+    "help": "Amplía la misma tabla. Distingue explicar una causa de justificar una norma o un juicio moral."
+  },
+  "s14-e1": {
+    "focus": "Añade una inferencia y una objeción al argumento.",
+    "steps": [
+      2,
+      3
+    ],
+    "help": "Explica qué dato o excepción limitaría la conclusión."
+  }
 };
 export function classWork(s){
  const work=sessionWork(s);
@@ -55,18 +149,66 @@ export function classEvidenceOptions(s){
 }
 
 export const projectInputs={
- title:['Título del expediente','Nombra el problema y el corpus que estudias.',2],
- student:['Nombre para la entrega','Se incluirá en la portada del PDF.',2],
- question:['Pregunta de investigación','Delimita una relación que puedas investigar en 2–4 documentos o episodios. Identifica el problema sin dar por demostrada una intención.',3],
- corpus:['Corpus y criterios de selección','Identifica los 2–4 documentos o episodios, sus autores, versiones, ubicaciones y recortes. Explica por qué responden a tu pregunta. Los 6–10 segmentos se seleccionan en total de ese conjunto.',5],
- method:['Método y contexto documentado','Justifica el enfoque, la unidad de análisis y las categorías. Añade los datos contextuales pertinentes con fuente y localizador; distingue lo comprobado de lo pendiente.',6],
- argument:['Desarrollo del análisis','Relaciona observaciones, categorías y contexto con tu pregunta. Conserva los localizadores y considera una explicación alternativa, una objeción y un límite. Amplía el mismo borrador según el avance indicado en esta clase.',12],
- credits:['Referencias y atribuciones','Identifica solo las fuentes utilizadas: autor, título, fecha, versión y enlace cuando exista. Atribuye los capítulos a sus autores e identifica las adaptaciones propias.',5],
- revision:['Conclusión revisada y límites','Responde a tu pregunta con el análisis realizado. Explica qué permite afirmar el corpus y qué no permite generalizar.',5],
- revisionReason:['Registro de cambios','Explica qué afirmación cambiaste o mantuviste, qué evidencia u objeción motivó esa decisión y cómo quedó.',4],
- mediation:['Actividad de enseñanza','Escribe la microconsigna de 5 minutos: destinatarios, problema, segmento y materiales, dos o tres pasos, resultado y criterio de revisión. Después de probarla en tríos, anota la dificultad y el ajuste realizado.',6],
- defense:['Guion de defensa','Prepara pregunta, corpus, enfoque, una evidencia decisiva, objeción y límite. Tras tu turno, registra la pregunta recibida y tu respuesta. El guion queda fuera del cuerpo del PDF.',5],
- selfAssessment:['Autoevaluación','Comenta las dimensiones de la rúbrica con ejemplos del informe. Identifica un logro y una mejora pendiente. Se incluye en el PDF solo si la seleccionas.',5]
+  "title": [
+    "Título del expediente",
+    "Nombra el problema y el corpus que estudias.",
+    2
+  ],
+  "student": [
+    "Nombre para la entrega",
+    "Este nombre aparecerá en la portada del PDF.",
+    2
+  ],
+  "question": [
+    "Pregunta de investigación",
+    "Escribe una pregunta que puedas responder con 2–4 documentos o episodios. Plantea el problema sin asumir intenciones.",
+    3
+  ],
+  "corpus": [
+    "Corpus y criterios de selección",
+    "Identifica 2–4 documentos o episodios: autor, versión, ubicación y recorte. Justifica su selección; de este conjunto elegirás 6–10 segmentos en total.",
+    5
+  ],
+  "method": [
+    "Método y contexto documentado",
+    "Justifica enfoque, unidad de análisis y categorías. Añade los datos de contexto con fuente y localizador; marca lo pendiente.",
+    6
+  ],
+  "argument": [
+    "Desarrollo del análisis",
+    "Responde tu pregunta con evidencias, conceptos y contexto. Conserva localizadores e incluye otra explicación posible, una objeción y un límite.",
+    12
+  ],
+  "credits": [
+    "Referencias y atribuciones",
+    "Anota autor, título, fecha, versión y enlace de las fuentes usadas. Atribuye cada capítulo a su autor e identifica tus adaptaciones.",
+    5
+  ],
+  "revision": [
+    "Conclusión revisada y límites",
+    "Responde tu pregunta con el análisis realizado. Explica qué puedes afirmar y hasta dónde puedes generalizar.",
+    5
+  ],
+  "revisionReason": [
+    "Registro de cambios",
+    "Indica qué afirmación mantuviste o cambiaste, qué evidencia u objeción motivó la decisión y cómo quedó.",
+    4
+  ],
+  "mediation": [
+    "Actividad de enseñanza",
+    "Prepara una actividad de 5 minutos: destinatarios, problema, segmento, materiales, 2–3 pasos, resultado y criterio de revisión. Tras probarla en tríos, anota dificultad y ajuste.",
+    6
+  ],
+  "defense": [
+    "Guion de defensa",
+    "Prepara pregunta, corpus, enfoque, evidencia, objeción y límite. Después, registra la pregunta recibida y tu respuesta; este guion queda fuera del cuerpo del PDF.",
+    5
+  ],
+  "selfAssessment": [
+    "Autoevaluación",
+    "Valora cada dimensión de la rúbrica con ejemplos de tu informe. Señala un logro y una mejora pendiente; puedes incluir esta autoevaluación al preparar el PDF.",
+    5
+  ]
 };
 
 // Preparation remains in the class, with selected paragraphs of the existing guide.
