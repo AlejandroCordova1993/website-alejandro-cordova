@@ -13,12 +13,12 @@ export const weeks=[
   {
     "week": 3,
     "title": "Canon y procesos de canonización",
-    "description": "Docencia: epistemología del canon, historicidad del valor y diferencia entre juicio estético y explicación de la consagración; contraste de Bloom, Bourdieu y Guillory. Práctica: comparar dos selecciones o paratextos, identificando afirmaciones, criterios y pruebas. Autónomo: dossier de 4 secciones y los dos documentos. Evidencia: cuadro de teorías, agentes y exclusiones."
+    "description": "Docencia: epistemología del canon, historicidad del valor y diferencia entre juicio estético y explicación de la consagración; contraste de Bloom, Bourdieu y Guillory. Práctica: comparar dos selecciones o paratextos, identificando afirmaciones, criterios y pruebas. Autónomo: dossier de 4 secciones y los dos documentos. Evidencia: notas sobre los enfoques y los documentos para la misma ficha."
   },
   {
     "week": 4,
     "title": "Tipos de canon y repertorios",
-    "description": "Docencia: canon personal, escolar, crítico y editorial; repertorio de modelos, formas y convenciones, y su relación con selección y canonización. Práctica: justificar una selección docente e identificar una convención que la escuela o la edición legitiman. Autónomo: revisar Palacio–Machado con circulación y repertorio. Evidencia: ficha 2 y pregunta del proyecto."
+    "description": "Docencia: canon personal, escolar, crítico y editorial; repertorio de modelos, formas y convenciones, y su relación con selección y canonización. Práctica: justificar una selección docente e identificar una convención que la escuela o la edición legitiman. Autónomo: recuperar pasajes ya leídos si sirven a la selección docente; no se pide investigar su circulación. Evidencia: ficha 2 y pregunta del proyecto."
   },
   {
     "week": 5,

@@ -1,5 +1,6 @@
-import {taskNotes,courseModules,unitActivities} from './curriculum.js?v=lc-5712d9105e87';
-import {workDestination} from './class-flow.js?v=lc-5712d9105e87';
+import {activityFromHash} from './activities.js?v=lc-d9384f7befa0';
+import {taskNotes,courseModules,unitActivities} from './curriculum.js?v=lc-d9384f7befa0';
+import {workDestination} from './class-flow.js?v=lc-d9384f7befa0';
 export const STORAGE_KEY='lc-cuaderno-v1';
 export const fields=['hypothesis','evidenceA','locatorA','evidenceB','locatorB','difference','objection','argument','revision','revisionReason','translation','initialTranslation','title','question','corpus','method','mediation','credits','reflection','intro','student','deliveryDate','defense','selfAssessment','preparation'];
 export const notebookKeys=['intro','1-A','2-A','2-B','3-A','3-B','3-traduccion','4-A','4-B','proyecto','2-oralitura','3-hermeneutica','4-intertexto','4-medios','ensayo','2-ampliacion',...Object.keys(taskNotes)];
@@ -30,6 +31,7 @@ export function validateState(input){
  if(Array.isArray(input.reviewedModules))clean.reviewedModules=[...new Set(input.reviewedModules.filter(n=>[1,2,3,4].includes(n)))];
  for(const key of notebookKeys)if(typeof input.reviewedAt?.[key]==='string'&&Number.isFinite(Date.parse(input.reviewedAt[key])))clean.reviewedAt[key]=input.reviewedAt[key];
  if(typeof input.lastLocation==='string'&&/^#(introduccion|proyecto|ampliacion|semana\/(?:[1-9]|1[0-6])(?:\/[12])?|modulo\/[1-4]\/(orientar|leer|comparar|traduccion|argumentar|revisar))$/.test(input.lastLocation))clean.lastLocation=input.lastLocation;
+ if(activityFromHash(input.lastLocation))clean.lastLocation=input.lastLocation;
  if(typeof input.updatedAt==='string')clean.updatedAt=input.updatedAt;
  return clean;
 }

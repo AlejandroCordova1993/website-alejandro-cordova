@@ -190,3 +190,40 @@ dialog.reading-dialog[open]{display:flex;flex-direction:column}
  .ficha-delivery .delivery-body .caption{font:9pt/1.4 var(--sans)}
  .ficha-preparation{border:0;margin:0}
 }
+
+/* Desde semana 3: una consigna y un espacio de escritura por etapa. */
+.activity-page .activity-instructions{margin:28px 0}
+.activity-page .activity-instructions>p{margin-bottom:20px}
+.activity-page .activity-work{margin:32px 0;padding-top:24px;border-top:1px solid var(--line)}
+.activity-page .activity-work>h2,.activity-page .activity-delivery>h2{margin:0 0 16px}
+.activity-page .activity-delivery{padding:24px 0;border-top:1px solid var(--line)}
+.activity-page .activity-progress li{margin:0 0 16px}
+.activity-page .activity-readings ul{padding-left:20px}
+.activity-page .activity-readings a{font-size:16px;white-space:normal}
+.class-activity-entry>h3{font:600 23px/1.4 var(--sans);margin:0 0 12px}
+.class-activity-entry>.button{margin:12px 0 4px}
+.class-page--focused .class-overview{grid-template-columns:1fr}
+.class-page--focused .session-guide{margin-bottom:20px}
+.class-page--focused .session-steps{margin-bottom:20px}
+.class-page--focused .session-result{margin:0;padding:16px 0;border-block:1px solid var(--line)}
+.class-page--focused .activity-step{border:0;border-bottom:1px solid var(--line);border-radius:0;background:none;padding:0;margin:0}
+.class-page--focused .activity-step>summary{display:flex;align-items:center;min-height:56px;padding:16px 30px 16px 0;font-size:18px;font-weight:600;color:var(--activity-ink)}
+.class-page--focused .activity-step>summary:after{top:15px;color:var(--activity-ink)}
+.class-page--focused .activity-step-body{padding:0 0 16px}
+.class-page--focused .activity-passages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+.class-page--focused .activity-passages:has(>.activity-passage:only-child){grid-template-columns:1fr}
+.class-page--focused .activity-passage{min-width:0}
+.class-page--focused .activity-passage h4{font:600 18px/1.5 var(--sans);margin:12px 0 4px}
+.class-page--focused .activity-passage>.text-link{font-size:15px}
+.class-page--focused .activity-support,.class-page--focused .activity-map,.class-page--focused .task-final-brief,.class-page--focused .previous-work,.class-page--focused .preparation-notes{margin:20px 0;padding:8px 0;border:0;border-block:1px solid var(--line);border-radius:0;background:none}
+.class-page--focused :is(.activity-support,.activity-map,.task-final-brief,.previous-work,.preparation-notes)>summary{min-height:44px;padding-top:10px;padding-bottom:10px}
+.class-page--focused .activity-step p,.class-page--focused .task-final-brief p{font-size:16px}
+.class-page--focused .activity-step .field-hint{font-size:14px;margin:6px 0 10px}
+.class-page--focused .class-task>.field:first-child,.class-page--focused .focused-argument>.field:first-child{margin-top:0}
+.class-page--focused .ficha-delivery-row{background:none;border:0;border-top:1px solid var(--line);border-radius:0;padding:20px 0}
+.class-page--focused .ficha-delivery-row p{font-weight:400;color:var(--ink)}
+.class-page--focused :is(.translation-workshop,.relations-section){background:none;margin:20px 0}
+.class-page--focused :is(.translation-workshop,.relations-section)>.tone-head{padding-inline:0}
+.class-page--focused :is(.translation-workshop,.relations-section)>.tone-body{padding-inline:0}
+@media(max-width:980px){.class-page--focused .activity-passages{grid-template-columns:1fr;gap:12px}.class-page--focused .activity-passage+.activity-passage{border-top:1px solid var(--line);padding-top:16px}}
+@media(max-width:740px){.class-page--focused .activity-step>summary{font-size:16px}.class-page--focused .activity-step p{font-size:16px}}

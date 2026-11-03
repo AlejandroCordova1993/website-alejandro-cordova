@@ -1,17 +1,18 @@
-import {weeks,minimumContents} from './schedule.js?v=lc-5712d9105e87';
-import {taskNotes,assessments,unitActivities} from './curriculum.js?v=lc-5712d9105e87';
-import {weeklyReadings,essayMilestones} from './journey.js?v=lc-5712d9105e87';
-import {resourceById} from './corpus.js?v=lc-5712d9105e87';
-import {courseModules} from './curriculum.js?v=lc-5712d9105e87';
-import {encounters,autonomousPlan,dayLabel} from './encounters.js?v=lc-5712d9105e87';
-import {classHref,classReadingGroups} from './class-flow.js?v=lc-5712d9105e87';
-import {toneHead} from './ui-icons.js?v=lc-5712d9105e87';
+import {activityByKey} from './activities.js?v=lc-d9384f7befa0';
+import {weeks,minimumContents} from './schedule.js?v=lc-d9384f7befa0';
+import {taskNotes,assessments,unitActivities} from './curriculum.js?v=lc-d9384f7befa0';
+import {weeklyReadings,essayMilestones} from './journey.js?v=lc-d9384f7befa0';
+import {resourceById} from './corpus.js?v=lc-d9384f7befa0';
+import {courseModules} from './curriculum.js?v=lc-d9384f7befa0';
+import {encounters,autonomousPlan,dayLabel} from './encounters.js?v=lc-d9384f7befa0';
+import {classHref,classReadingGroups} from './class-flow.js?v=lc-d9384f7befa0';
+import {toneHead} from './ui-icons.js?v=lc-d9384f7befa0';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function weekLabel(value){
  const text=Array.isArray(value)?value.join(' y '):String(value).replace('; retorno ',' y ').replace('; transversal','').replace('; anticipación ',' y ');
  return (/^\d+$/.test(text)?'Semana ':'Semanas ')+text;
 }
-export function activityTitle(a){const key=a.field.slice(0,a.field.lastIndexOf('-'));if(taskNotes[key])return taskNotes[key].title;return a.title;}
+export function activityTitle(a){const key=a.field.slice(0,a.field.lastIndexOf('-'));if(activityByKey[key])return activityByKey[key].title;if(taskNotes[key])return taskNotes[key].title;return a.title;}
 export function readingDestination(id,module,week){
  const contains=e=>classReadingGroups(e).some(g=>g.rows.some(([resource])=>resource===id));
  const available=encounters.filter(contains);
