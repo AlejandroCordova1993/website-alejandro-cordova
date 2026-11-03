@@ -1,9 +1,9 @@
-import {encounters,dayLabel} from './encounters.js?v=lc-394d7d24d342';
-import {classHref} from './class-flow.js?v=lc-394d7d24d342';
-import {activityAdvance,activityHref} from './activities.js?v=lc-394d7d24d342';
-import {focusedComparison,focusedArgument} from './activity-workspace.js?v=lc-394d7d24d342';
-import {fichaTitles} from './class-flow.js?v=lc-394d7d24d342';
-import {activityProducts} from './seminar.js?v=lc-394d7d24d342';
+import {encounters,dayLabel} from './encounters.js?v=lc-d5db1064feea';
+import {classHref} from './class-flow.js?v=lc-d5db1064feea';
+import {activityAdvance,activityHref} from './activities.js?v=lc-d5db1064feea';
+import {focusedComparison,focusedArgument} from './activity-workspace.js?v=lc-d5db1064feea';
+import {fichaTitles} from './class-flow.js?v=lc-d5db1064feea';
+import {activityProducts} from './seminar.js?v=lc-d5db1064feea';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 export function activityReviewHtml(activity){

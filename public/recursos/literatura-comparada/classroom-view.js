@@ -1,19 +1,19 @@
-import {encounters,dayLabel} from './encounters.js?v=lc-394d7d24d342';
-import {classHref,classPlan,classPreparation,classContinuation,classReadingGroups,fichaTitles} from './class-flow.js?v=lc-394d7d24d342';
-import {toneHead,uiIcon} from './ui-icons.js?v=lc-394d7d24d342';
-import {glossaryLinks,concepts} from './glossary.js?v=lc-394d7d24d342';
-import {theoryNoteHtml} from './theory-notes.js?v=lc-394d7d24d342';
-import {learningFor,sessionTheoryHtml,sessionActivityHtml} from './session-learning.js?v=lc-394d7d24d342';
-import {weekTwoGuideHtml} from './week-two-learning.js?v=lc-394d7d24d342';
-import {activityBriefFor} from './activity-briefs.js?v=lc-394d7d24d342';
-import {activityForEncounter,activityAdvance,activityHref} from './activities.js?v=lc-394d7d24d342';
+import {encounters,dayLabel} from './encounters.js?v=lc-d5db1064feea';
+import {classHref,classPlan,classPreparation,classContinuation,classReadingGroups,fichaTitles} from './class-flow.js?v=lc-d5db1064feea';
+import {toneHead,uiIcon} from './ui-icons.js?v=lc-d5db1064feea';
+import {glossaryLinks,concepts} from './glossary.js?v=lc-d5db1064feea';
+import {theoryNoteHtml} from './theory-notes.js?v=lc-d5db1064feea';
+import {learningFor,sessionTheoryHtml,sessionActivityHtml} from './session-learning.js?v=lc-d5db1064feea';
+import {weekTwoGuideHtml} from './week-two-learning.js?v=lc-d5db1064feea';
+import {activityBriefFor} from './activity-briefs.js?v=lc-d5db1064feea';
+import {activityForEncounter,activityAdvance,activityHref} from './activities.js?v=lc-d5db1064feea';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 const canonReadings={
- '3-lunes':{url:'./materiales/canon.html?v=lc-394d7d24d342#fundamentos',label:'Leer fundamentos y listas A/B',selection:'Lee la distinción entre valor y selección, Bloom y Bourdieu. Después examina las listas A/B. Guillory se trabaja en la sesión 2.'},
- '3-miercoles':{url:'./materiales/canon.html?v=lc-394d7d24d342#transmision',label:'Leer transmisión y registros C/D',selection:'Lee «Guillory: transmisión y acceso a la lectura» y los registros C/D. La reseña de Trujillo es opcional.'},
- '4-lunes':{url:'./materiales/canon.html?v=lc-394d7d24d342#tipos',label:'Leer tipos de canon y repertorio',selection:'Lee los ámbitos de selección y «Del procedimiento a la decisión docente». Recupera A/B y C o D para esbozar tu propuesta.'},
- '4-miercoles':{url:'./materiales/canon.html?v=lc-394d7d24d342#ficha2',label:'Consultar la consigna de la ficha 2',selection:'Revisa la consigna y tus fuentes. El modelo comentado está en Teoría de esta sesión; no hay lecturas nuevas.'}
+ '3-lunes':{url:'./materiales/canon.html?v=lc-d5db1064feea#fundamentos',label:'Leer fundamentos y listas A/B',selection:'Lee la distinción entre valor y selección, Bloom y Bourdieu. Después examina las listas A/B. Guillory se trabaja en la sesión 2.'},
+ '3-miercoles':{url:'./materiales/canon.html?v=lc-d5db1064feea#transmision',label:'Leer transmisión y registros C/D',selection:'Lee «Guillory: transmisión y acceso a la lectura» y los registros C/D. La reseña de Trujillo es opcional.'},
+ '4-lunes':{url:'./materiales/canon.html?v=lc-d5db1064feea#tipos',label:'Leer tipos de canon y repertorio',selection:'Lee los ámbitos de selección y «Del procedimiento a la decisión docente». Recupera A/B y C o D para esbozar tu propuesta.'},
+ '4-miercoles':{url:'./materiales/canon.html?v=lc-d5db1064feea#ficha2',label:'Consultar la consigna de la ficha 2',selection:'Revisa la consigna y tus fuentes. El modelo comentado está en Teoría de esta sesión; no hay lecturas nuevas.'}
 };
 
 export function renderClassPage(e,ctx){
@@ -24,7 +24,7 @@ export function renderClassPage(e,ctx){
  const section=(id,icon,title,tone,body)=>`<section id="class-${id}" class="class-section tone-card" data-tone="${tone}" aria-labelledby="class-${id}-title">${toneHead(icon,title,{id:`class-${id}-title`})}<div class="tone-body">${body}</div></section>`;
  const developedTheory=e.week===2?weekTwoGuideHtml(e.day==='lunes'?1:2)+`<details class="week-two-depth"><summary>Profundizar en Palacio · comentario y fuentes</summary>${theoryNoteHtml(2,{review:e.day==='miercoles'})}</details>`:e.week===1?(e.day==='lunes'?`<p>Para situar la disciplina, consulta <a href="#introduccion">Antes de comparar</a>. La actividad de hoy parte del pasaje de Palacio entregado en clase; las lecturas completas se indican para después de esta sesión.</p><details><summary>Recuperar los fundamentos de la introducción</summary>${theoryNoteHtml(1)}</details>`:`<p>En la sesión 1 formulaste una primera pregunta. Hoy la conviertes en una relación: qué comparas, con qué criterio y qué indicio del pasaje la sostiene. Una semejanza no prueba una influencia; afirmar un contacto exige documentos.</p>${m.sections[0]?`<section><h3>${esc(m.sections[0][0])}</h3><p>${esc(m.sections[0][1])}</p></section>`:''}<details><summary>Recuperar los fundamentos de la introducción</summary>${theoryNoteHtml(1)}</details>`):theoryNoteHtml(e.week,{review:e.day==='miercoles'})||plan.concepts.map(i=>m.sections[i]).filter(Boolean).map(([title,text])=>`<section><h3>${esc(title)}</h3><p>${esc(text)}</p></section>`).join('');
  const recovery=[12,15].includes(e.week)&&e.day==='miercoles';
- const theory=sessionTheoryHtml(e)+(recovery?`<details class="theory-recovery"><summary>Recuperar el desarrollo teórico de la semana</summary>${developedTheory}</details>`:developedTheory);
+ const theory=[3,4].includes(e.week)?`<section class="session-concepts">${developedTheory}</section>`:sessionTheoryHtml(e)+(recovery?`<details class="theory-recovery"><summary>Recuperar el desarrollo teórico de la semana</summary>${developedTheory}</details>`:developedTheory);
  const labels=concepts.filter(c=>c.modules.includes(m.id)).map(c=>c.label.toLowerCase());
  const lenses=m.lenses.filter(([title])=>!labels.includes(title.toLowerCase())).map(([title,text,source])=>`<dt>${esc(title)}</dt><dd>${esc(text)} <span class="caption">${esc(source)}</span></dd>`).join('');
  const tools=`<details class="class-concepts"><summary>Herramientas de consulta de la unidad</summary><dl>${lenses}</dl>${glossaryLinks(m.id)}</details>`;
