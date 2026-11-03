@@ -1,8 +1,8 @@
-import {weeks} from './schedule.js?v=lc-d9384f7befa0';
-import {unitActivities} from './curriculum.js?v=lc-d9384f7befa0';
-import {translationRows} from './corpus.js?v=lc-d9384f7befa0';
-import {activityTitle} from './teaching.js?v=lc-d9384f7befa0';
-import {encounterById,dayLabel} from './encounters.js?v=lc-d9384f7befa0';
+import {weeks} from './schedule.js?v=lc-73bda40b9da5';
+import {unitActivities} from './curriculum.js?v=lc-73bda40b9da5';
+import {translationRows} from './corpus.js?v=lc-73bda40b9da5';
+import {activityTitle} from './teaching.js?v=lc-73bda40b9da5';
+import {encounterById,dayLabel} from './encounters.js?v=lc-73bda40b9da5';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 // Teaching prompts are original syntheses. Texts and attributions are in Leer.
 const lessons={
@@ -20,12 +20,12 @@ const lessons={
   ['Bloom: defender un juicio de valor','La discusión de la fuerza estética y la originalidad requiere explicar qué recursos de una obra sustentan el juicio. Una preferencia no demuestra por sí sola consagración institucional.','¿Qué pasaje o procedimiento respalda el valor que atribuyes?'],
   ['Bourdieu: estudiar la consagración','Relaciona posiciones de autores, editoriales, crítica y enseñanza. Investiga qué agentes y condiciones de producción y circulación hacen posible el reconocimiento.','¿Qué documento permite identificar al agente y su intervención?'],
   ['Guillory: acceso y transmisión escolar','Pregunta quién accede a las prácticas y saberes que la enseñanza distribuye. Una lista de autores no basta para explicar las oportunidades de lectura.','¿Qué condiciones de acceso supone cada selección?'],
-  ['Un caso, tres preguntas','Contrasta las dos listas y los dos registros del dossier. Separa juicio estético, consagración y transmisión educativa.','Dossier local de canon, cuatro secciones. Cuadro: teoría, pregunta, dato y límite.']
+  ['Un caso, tres preguntas','Contrasta las dos listas y los dos registros del dossier. Separa juicio estético, consagración y transmisión educativa.','Notas de preparación: pregunta, enfoque, evidencia y límite. Bloom/Bourdieu y A/B en la primera sesión; Guillory y C/D en la segunda.']
  ],
  4:[
   ['Tipos de canon','Compara selecciones personales, escolares, críticas y editoriales. Sus agentes, destinatarios y criterios pueden coincidir parcialmente.','No conviertas una lista individual en prueba de todo el canon de una institución.'],
   ['Repertorio y canonización','Una selección puede legitimar obras y también convenciones: géneros, formas narrativas o modos de valorar. Explica qué convención enseña tu propuesta.','Distingue una lista de títulos de un repertorio de posibilidades literarias.'],
-  ['Una selección docente argumentada','Justifica qué incluirías, para qué público y con qué carga. Usa las listas y los registros identificados del dossier.','Ficha 2: 250–350 palabras; fuentes, convención y evidencia de legitimación.']
+  ['Una selección docente argumentada','Justifica qué incluirías, para qué público y con qué carga. Usa las listas y los registros identificados del dossier.','Ficha 2: 250–350 palabras con referencias, una convención y contraste de selección o difusión con C o D.']
  ],
  5:[
   ['Centro y periferia son relaciones','Indica respecto de qué institución, lengua, mercado o circuito una posición es central o periférica. La identidad de un autor no demuestra automáticamente subalternidad.','¿Qué acceso o reconocimiento está en disputa?'],

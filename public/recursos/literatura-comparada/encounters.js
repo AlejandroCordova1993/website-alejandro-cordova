@@ -33,29 +33,29 @@ export const encounters=[
  ['Acompaña la escritura y plantea preguntas a cada pareja.','Escribe el núcleo de la ficha, conservando diferencias contextuales.'],
  ['Facilita revisión entre pares con criterios; interviene sobre inferencias débiles.','Formula una objeción al argumento de otro lector y revisa el tuyo.'],
  ['Aclara el cierre de la ficha y la próxima lectura de canon.','Registra qué cambiaste y qué revisión finalizarás en el trabajo autónomo.'])),
- meeting(3,'lunes','Valoración y consagración','Distinguir una defensa del valor de la explicación de su reconocimiento.','Cuadro inicial: pregunta teórica, evidencia y límite.',regular(
+ meeting(3,'lunes','Valoración y consagración','Distinguir una defensa del valor de la explicación de su reconocimiento.','Notas de preparación con preguntas, evidencia y límites.',regular(
  ['Recupera decisiones de selección de las fichas.','Distingue una preferencia de una afirmación comprobable.'],
  ['Presenta Bloom y Bourdieu con sus preguntas y límites.','Relaciona un juicio estético con un pasaje y un dato editorial con su registro.'],
  ['Guía el análisis de las listas simuladas A/B del dossier.','Identifica criterios declarados, coincidencias y diferencias; no trates el caso como dato institucional real.'],
- ['Contrasta explicaciones y solicita pruebas para inferencias de consagración.','Construye dos hipótesis distintas y precisa qué información falta.'],
- ['Anticipa las condiciones de transmisión y acceso en Guillory.','Guarda el cuadro inicial y una pregunta sobre acceso a la lectura.'])),
- meeting(3,'miercoles','Acceso, transmisión y pruebas de legitimación','Relacionar selección, instituciones y oportunidades de lectura.','Cuadro revisado de teorías y contraste de los registros C/D.',regular(
- ['Recupera las hipótesis de la primera sesión.','Identifica una inferencia que todavía necesita evidencia.'],
- ['Desarrolla Guillory y compara sus preguntas con Bloom y Bourdieu.','Distingue inclusión de títulos y condiciones de apropiación de saberes.'],
+ ['Contrasta explicaciones y solicita pruebas para inferencias de consagración.','Formula las dos preguntas y precisa qué información falta y precisa qué información falta.'],
+ ['Anticipa las condiciones de transmisión y acceso en Guillory.','Guarda tus notas de preparación y señala qué información falta para responderlas.'])),
+ meeting(3,'miercoles','Acceso, transmisión y difusión','Relacionar selección, instituciones y oportunidades de lectura.','Notas de preparación revisadas y contraste de los registros C/D.',regular(
+ ['Recupera las preguntas y notas de la primera sesión.','Identifica una inferencia que todavía necesita evidencia.'],
+ ['Desarrolla Guillory y compara sus preguntas con Bloom y Bourdieu.','Añade a tus notas una pregunta sobre acceso y aprendizaje; distingue disponer del libro y aprender a leerlo.'],
  ['Orienta la consulta de ASALE y CLACSO/Ayacucho.','Registra agentes, destinatarios y razones declaradas con fuente.'],
  ['Confronta la simulación escolar con los documentos reales.','Explica qué demuestra cada registro y qué recepción falta investigar.'],
- ['Conecta estos resultados con tipos de canon y repertorio.','Revisa el cuadro y prepara una selección docente posible.'])),
- meeting(4,'lunes','Tipos de canon y repertorio','Precisar quién selecciona, con qué función y qué modelos legitima.','Selección docente razonada y pregunta provisional del ensayo.',regular(
+ ['Conecta estos resultados con tipos de canon y repertorio.','Amplía tus notas de preparación y propone una selección docente posible.'])),
+ meeting(4,'lunes','Tipos de canon y repertorio','Precisar quién selecciona, con qué función y qué lectura propone enseñar.','Selección docente razonada y pregunta provisional del ensayo.',regular(
  ['Recupera una selección y su agente.','Explica por qué no basta identificar el soporte del documento.'],
  ['Distingue canon personal, escolar, crítico y editorial; explica repertorio con Even-Zohar.','Asocia una selección con su función y una convención concreta.'],
  ['Guía el uso del dossier y los datos editoriales ya consultados.','Relaciona una convención de lectura con la selección que propones.'],
- ['Discute criterios, acceso y límites de las propuestas.','Justifica tu selección y formula dos objetos posibles para el ensayo.'],
- ['Delimita el alcance de la Ficha 2.','Registra la pregunta del proyecto y la evidencia que usarás en la ficha.'])),
+ ['Discute criterios, acceso y límites de las propuestas.','Justifica la función de cada texto elegido; como referencia, trabaja con dos textos conocidos.'],
+ ['Delimita el alcance de la Ficha 2.','Conserva la evidencia de la ficha. Guarda aparte, en Proyecto, la pregunta provisional del ensayo.'])),
  meeting(4,'miercoles','Argumentar una selección docente','Sostener decisiones de canon y repertorio con razones y fuentes.','Ficha 2 · borrador de 250–350 palabras, para cerrar antes de la siguiente semana.',regular(
  ['Recoge dudas sobre los cuatro tipos y sus superposiciones.','Comprueba agente, función y evidencia de tu selección.'],
  ['Modela cómo separar dato, inferencia y decisión propia.','Identifica esos tres componentes en una formulación breve.'],
- ['Acompaña la escritura de la Ficha 2.','Compara A/B, justifica una selección y nombra una convención del repertorio.'],
- ['Orienta la revisión por criterios y discute objeciones.','Relaciona una afirmación con C o D y declara el límite de la fuente.'],
+ ['Acompaña la escritura de la Ficha 2.','Compara A/B, justifica tu selección y explica una convención mediante un pasaje representativo.'],
+ ['Orienta la revisión por criterios y discute objeciones.','Contrasta una decisión de selección o difusión con C o D e integra la fuente y su localizador en la ficha.'],
  ['Conecta el canon con las relaciones de poder de la siguiente unidad.','Guarda la revisión y la pregunta provisional del ensayo.'])),
  meeting(5,'lunes','Leer relaciones verbales y visuales','Examinar voz, destinatario y posición de los cuerpos en Guamán Poma.','Mapa inicial de voces, destinatarios y mediaciones.',regular(
  ['Recupera preguntas sobre selección y reconocimiento.','Formula una hipótesis sobre la lámina y su destinatario.'],
@@ -205,8 +205,8 @@ const a=(before,between,after)=>[
 export const autonomousPlan={
  1:a([0,'La introducción y el diagnóstico comienzan en clase; no exigen una lectura previa.'],[70,'Lee Palacio completo y Guillén, pp. 13–15; selecciona dos indicios.'],[50,'Consolida tu pregunta y tus localizadores a partir del contraste realizado.']),
  2:a([75,'Lee Machado completo y Guillén, pp. 93–95 hasta cerrar el modelo C; recupera Palacio.'],[20,'Relee los pasajes elegidos y prepara una objeción.'],[25,'Revisa y cierra la Ficha 1 antes de la siguiente semana.']),
- 3:a([70,'Lee las cuatro secciones del dossier de canon e identifica las listas y registros.'],[20,'Revisa una afirmación sobre selección o acceso y su fuente.'],[30,'Completa el cuadro y prepara una selección posible; no se piden libros nuevos.']),
- 4:a([40,'Recupera tipos de canon, repertorio y las fuentes ya trabajadas.'],[35,'Precisa tu selección docente y la pregunta provisional del ensayo.'],[45,'Revisa y cierra la Ficha 2 antes de la siguiente semana.']),
+ 3:a([70,'Lee los fundamentos sobre Bloom y Bourdieu y las listas A/B del dossier.'],[20,'Lee la explicación de Guillory y consulta los registros C/D del dossier.'],[30,'Amplía tus notas de preparación y propone una selección posible con textos conocidos.']),
+ 4:a([40,'Lee tipos de canon y repertorio; recupera A/B, C/D y tus notas de preparación.'],[35,'Consulta la consigna de la ficha 2 y el modelo comentado de la sesión 4·2. Precisa tu selección; la pregunta del ensayo se guarda aparte, en Proyecto.'],[45,'Revisa y cierra la Ficha 2 con sus referencias dentro del texto. El anexo de preparación es opcional.']),
  5:a([75,'Examina los dos testimonios de Guamán Poma y lee Rivera, pp. 19–26.'],[20,'Vuelve al detalle que permite poner a prueba una afirmación de Rivera.'],[25,'Consolida el mapa de voces y su límite.']),
  6:a([60,'Lee el estudio, pp. 84–87, que ya incluye Takina/Poema y ambas versiones.'],[30,'Relee el contraste con Guamán Poma y prepara tus localizadores.'],[30,'Revisa y cierra la Ficha 3 antes de la siguiente semana.']),
  7:a([60,'Lee la presentación y bloques delimitados de Martínez y la pieza de Esparza, pp. 41–43.'],[30,'Comprueba con el grupo dos registros de circulación; no leas los libros completos de sus catálogos.'],[30,'Conserva la cartografía inicial y explica sus límites.']),

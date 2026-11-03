@@ -1,18 +1,25 @@
-import {encounters,dayLabel} from './encounters.js?v=lc-d9384f7befa0';
-import {classHref,classPlan,classPreparation,classContinuation,classReadingGroups,fichaTitles} from './class-flow.js?v=lc-d9384f7befa0';
-import {toneHead,uiIcon} from './ui-icons.js?v=lc-d9384f7befa0';
-import {glossaryLinks,concepts} from './glossary.js?v=lc-d9384f7befa0';
-import {theoryNoteHtml} from './theory-notes.js?v=lc-d9384f7befa0';
-import {learningFor,sessionTheoryHtml,sessionActivityHtml} from './session-learning.js?v=lc-d9384f7befa0';
-import {weekTwoGuideHtml} from './week-two-learning.js?v=lc-d9384f7befa0';
-import {activityBriefFor} from './activity-briefs.js?v=lc-d9384f7befa0';
-import {activityForEncounter,activityAdvance,activityHref} from './activities.js?v=lc-d9384f7befa0';
+import {encounters,dayLabel} from './encounters.js?v=lc-73bda40b9da5';
+import {classHref,classPlan,classPreparation,classContinuation,classReadingGroups,fichaTitles} from './class-flow.js?v=lc-73bda40b9da5';
+import {toneHead,uiIcon} from './ui-icons.js?v=lc-73bda40b9da5';
+import {glossaryLinks,concepts} from './glossary.js?v=lc-73bda40b9da5';
+import {theoryNoteHtml} from './theory-notes.js?v=lc-73bda40b9da5';
+import {learningFor,sessionTheoryHtml,sessionActivityHtml} from './session-learning.js?v=lc-73bda40b9da5';
+import {weekTwoGuideHtml} from './week-two-learning.js?v=lc-73bda40b9da5';
+import {activityBriefFor} from './activity-briefs.js?v=lc-73bda40b9da5';
+import {activityForEncounter,activityAdvance,activityHref} from './activities.js?v=lc-73bda40b9da5';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+const canonReadings={
+ '3-lunes':{url:'./materiales/canon.html?v=lc-73bda40b9da5#fundamentos',label:'Leer fundamentos y listas A/B',selection:'Lee la distinción entre valor y selección, Bloom y Bourdieu. Después examina las listas A/B. Guillory se trabaja en la sesión 2.'},
+ '3-miercoles':{url:'./materiales/canon.html?v=lc-73bda40b9da5#transmision',label:'Leer transmisión y registros C/D',selection:'Lee «Guillory: transmisión y acceso a la lectura» y los registros C/D. La reseña de Trujillo es opcional.'},
+ '4-lunes':{url:'./materiales/canon.html?v=lc-73bda40b9da5#tipos',label:'Leer tipos de canon y repertorio',selection:'Lee los ámbitos de selección y «Del procedimiento a la decisión docente». Recupera A/B y C o D para esbozar tu propuesta.'},
+ '4-miercoles':{url:'./materiales/canon.html?v=lc-73bda40b9da5#ficha2',label:'Consultar la consigna de la ficha 2',selection:'Revisa la consigna y tus fuentes. El modelo comentado está en Teoría de esta sesión; no hay lecturas nuevas.'}
+};
 
 export function renderClassPage(e,ctx){
  const {modules,header,field,resourceCard,comparison,translation,argumentReview,relationsWorkshop,film,button,state,saveLabel,taskReview}=ctx;
  const m=modules.find(m=>m.id===Math.ceil(e.week/4)),plan=classPlan(e),next=encounters[encounters.indexOf(e)+1],previous=encounters[encounters.indexOf(e)-1];
- const activity=activityForEncounter(e);
+ const activity=activityForEncounter(e),canonReading=canonReadings[e.id];
  const route=Object.values(m.routes).find(r=>r.noteKey===plan.key)||m.routes.A,learning=learningFor(e),brief=activityBriefFor(e);
  const section=(id,icon,title,tone,body)=>`<section id="class-${id}" class="class-section tone-card" data-tone="${tone}" aria-labelledby="class-${id}-title">${toneHead(icon,title,{id:`class-${id}-title`})}<div class="tone-body">${body}</div></section>`;
  const developedTheory=e.week===2?weekTwoGuideHtml(e.day==='lunes'?1:2)+`<details class="week-two-depth"><summary>Profundizar en Palacio · comentario y fuentes</summary>${theoryNoteHtml(2,{review:e.day==='miercoles'})}</details>`:e.week===1?(e.day==='lunes'?`<p>Para situar la disciplina, consulta <a href="#introduccion">Antes de comparar</a>. La actividad de hoy parte del pasaje de Palacio entregado en clase; las lecturas completas se indican para después de esta sesión.</p><details><summary>Recuperar los fundamentos de la introducción</summary>${theoryNoteHtml(1)}</details>`:`<p>En la sesión 1 formulaste una primera pregunta. Hoy la conviertes en una relación: qué comparas, con qué criterio y qué indicio del pasaje la sostiene. Una semejanza no prueba una influencia; afirmar un contacto exige documentos.</p>${m.sections[0]?`<section><h3>${esc(m.sections[0][0])}</h3><p>${esc(m.sections[0][1])}</p></section>`:''}<details><summary>Recuperar los fundamentos de la introducción</summary>${theoryNoteHtml(1)}</details>`):theoryNoteHtml(e.week,{review:e.day==='miercoles'})||plan.concepts.map(i=>m.sections[i]).filter(Boolean).map(([title,text])=>`<section><h3>${esc(title)}</h3><p>${esc(text)}</p></section>`).join('');
@@ -22,7 +29,7 @@ export function renderClassPage(e,ctx){
  const lenses=m.lenses.filter(([title])=>!labels.includes(title.toLowerCase())).map(([title,text,source])=>`<dt>${esc(title)}</dt><dd>${esc(text)} <span class="caption">${esc(source)}</span></dd>`).join('');
  const tools=`<details class="class-concepts"><summary>Herramientas de consulta de la unidad</summary><dl>${lenses}</dl>${glossaryLinks(m.id)}</details>`;
  let workspace='';
- if(e.week>=3)workspace=activity?`<div class="class-activity-entry"><h3>${esc(activity.title)}</h3><p>${esc(activityAdvance(e))}</p><p class="caption">Continúas el mismo trabajo durante sus sesiones; el borrador y las notas están reunidos en su página.</p><a class="button primary" href="${activityHref(activity.key)}">Continuar esta actividad</a></div>`:`<div class="class-activity-entry"><h3>Ensayo final, consigna y defensa</h3><p>${e.day==='lunes'?'Continúa el guion de defensa y revisa el ensayo con sus evidencias y referencias.':'Completa las defensas pendientes y prepara la entrega del ensayo, la consigna y las referencias.'}</p><a class="button primary" href="#proyecto" data-project-target="cierre">Continuar el ensayo final</a></div>`;
+ if(e.week>=3)workspace=activity?`<div class="class-activity-entry"><h3>${esc(activity.title)}</h3><p>${esc(activityAdvance(e))}</p><p class="caption">Continúas el mismo trabajo durante sus sesiones; el borrador y las notas están reunidos en su página.</p><a class="button primary" href="${activityHref(activity.key)}"${activity.key==='1-canon'?` data-goto-field="1-canon-${e.week===3?'preparation':'argument'}"`:''}>Continuar esta actividad</a></div>`:`<div class="class-activity-entry"><h3>Ensayo final, consigna y defensa</h3><p>${e.day==='lunes'?'Continúa el guion de defensa y revisa el ensayo con sus evidencias y referencias.':'Completa las defensas pendientes y prepara la entrega del ensayo, la consigna y las referencias.'}</p><a class="button primary" href="#proyecto" data-project-target="cierre">Continuar el ensayo final</a></div>`;
  if(e.week<=2&&plan.kind==='intro')workspace=field('intro','intro','Mi primera pregunta comparativa','Registra en este espacio un fragmento breve, tu observación y la pregunta que quieres investigar. Si el segundo relato queda por elegir, indícalo y señala qué necesitas comprobar.',4);
  if(e.week<=2&&plan.kind==='comparison'){
   const sessionRoute=learning.prompts?{...route,prompts:learning.prompts,fieldHints:learning.fieldHints}:route;
@@ -32,7 +39,7 @@ export function renderClassPage(e,ctx){
  }
  if(e.week===1&&e.day==='miercoles')workspace=field('intro','intro','Mi primera pregunta comparativa · sesión 1','La escribiste en la sesión 1. Ajústala si el pasaje te obliga a precisar el criterio o el límite.',3)+workspace;
  const groups=classReadingGroups(e).map(g=>({...g,rows:g.rows.filter(([id])=>plan.kind!=='translation'||!['baudelaire','casal','diez'].includes(id))})).filter(g=>g.rows.length);
- const readings=(e.week===11?'<p class="translation-reading-location">Desde Lecturas puedes acceder a los tres testimonios: el original de Baudelaire y las versiones de Casal y Díez-Canedo están reunidos en <a href="#actividad/3-traduccion">Actividad · Un puerto, dos traducciones</a>. Abre la página de esa actividad para leer los tres poemas completos. A continuación se indica la selección del manual.</p>':'')+(groups.length?groups.map(g=>`<section class="class-reading-group"><h3>${esc(g.title)}</h3>${g.rows.map(([id,selection,source])=>`<div class="class-reading">${resourceCard(id,true,selection,source)}</div>`).join('')}</section>`).join(''):'<p>Recupera tus pasajes, fichas y fuentes ya trabajados. Esta clase no añade una lectura nueva.</p>');
+ const readings=(e.week===11?'<p class="translation-reading-location">Desde Lecturas puedes acceder a los tres testimonios: el original de Baudelaire y las versiones de Casal y Díez-Canedo están reunidos en <a href="#actividad/3-traduccion">Actividad · Un puerto, dos traducciones</a>. Abre la página de esa actividad para leer los tres poemas completos. A continuación se indica la selección del manual.</p>':'')+(groups.length?groups.map(g=>`<section class="class-reading-group"><h3>${esc(g.title)}</h3>${g.rows.map(([id,selection,source])=>`<div class="class-reading">${resourceCard(id,true,id==='canon'&&canonReading?canonReading.selection:selection,id==='canon'&&canonReading?canonReading:source)}</div>`).join('')}</section>`).join(''):'<p>Recupera tus pasajes, fichas y fuentes ya trabajados. Esta clase no añade una lectura nueva.</p>');
  const dueFicha=fichaTitles[plan.key]&&e.day==='miercoles'&&e.week===2?`<div class="ficha-delivery-row"><p>Prepara aquí el PDF de la ${esc(fichaTitles[plan.key])}. Revisa, cierra y entrega la versión final antes de la siguiente semana, por el canal que indique el docente.</p>${button('prepare-ficha','Preparar la ficha para entregar','button',`data-ficha="${plan.key}"`)}</div>`:'';
  const after=classContinuation(e);
  const upcoming=next&&e.day==='miercoles'?`<div class="next-preparation"><h3>Para el próximo encuentro · semana ${next.week}, sesión 1</h3><p>${esc(classPreparation(next))}</p><p class="caption">Es la preparación ya prevista para el próximo encuentro, dentro del trabajo autónomo de esa semana; no añade otra tarea ni otro bloque de tiempo.</p></div>`:'';

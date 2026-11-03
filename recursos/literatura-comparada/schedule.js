@@ -13,12 +13,12 @@ export const weeks=[
   {
     "week": 3,
     "title": "Canon y procesos de canonización",
-    "description": "Docencia: epistemología del canon, historicidad del valor y diferencia entre juicio estético y explicación de la consagración; contraste de Bloom, Bourdieu y Guillory. Práctica: comparar dos selecciones o paratextos, identificando afirmaciones, criterios y pruebas. Autónomo: dossier de 4 secciones y los dos documentos. Evidencia: notas sobre los enfoques y los documentos para la misma ficha."
+    "description": "Docencia: epistemología del canon, historicidad del valor y diferencia entre juicio estético y explicación de la consagración; contraste de Bloom, Bourdieu y Guillory. Práctica: comparar dos selecciones o paratextos, identificando afirmaciones, criterios y pruebas. Autónomo: fundamentos de Bloom/Bourdieu y A/B para la primera sesión; Guillory y C/D para la segunda. Evidencia: notas de preparación sobre los enfoques y los documentos para la misma ficha."
   },
   {
     "week": 4,
     "title": "Tipos de canon y repertorios",
-    "description": "Docencia: canon personal, escolar, crítico y editorial; repertorio de modelos, formas y convenciones, y su relación con selección y canonización. Práctica: justificar una selección docente e identificar una convención que la escuela o la edición legitiman. Autónomo: recuperar pasajes ya leídos si sirven a la selección docente; no se pide investigar su circulación. Evidencia: ficha 2 y pregunta del proyecto."
+    "description": "Docencia: canon personal, escolar, crítico y editorial; repertorio de modelos, formas y convenciones, y su relación con selección y canonización. Práctica: justificar una selección docente, explicar una convención mediante un pasaje y contrastar una decisión de selección o difusión con C o D. Autónomo: tipos de canon y repertorio para la primera sesión; consigna de la ficha y modelo comentado para la segunda. Recuperar pasajes ya leídos; no se pide investigar su circulación. Evidencia: ficha 2 con referencias dentro del texto y, por separado, pregunta del proyecto."
   },
   {
     "week": 5,
@@ -104,7 +104,7 @@ export const minimumContents=[
     "module": 1,
     "title": "El repertorio y la canonización de la literatura",
     "weeks": "4; retorno 14",
-    "evidence": "Ficha 2: vincular una convención del repertorio con selección y legitimación institucional."
+    "evidence": "Ficha 2: explicar una convención en la selección docente y contrastar una decisión de selección o difusión con un registro institucional, delimitando su alcance."
   },
   {
     "module": 2,

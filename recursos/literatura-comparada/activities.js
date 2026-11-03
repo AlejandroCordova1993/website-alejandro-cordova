@@ -2,10 +2,12 @@
 // sin crear productos, campos ni claves de almacenamiento adicionales.
 export const activities=[
  {key:'1-canon',module:1,title:'Seleccionar lecturas y justificar la elección',kind:'task',
-  prompt:'En 250–350 palabras justifica una selección docente breve para un público y un propósito. Contrasta las listas escolares simuladas A/B del dossier, sus agentes y criterios de selección; identifica el ámbito de canon en que intervienen. Explica una convención del repertorio y qué lectura enseñarías con ella. Usa C o D para contrastar una decisión de selección o difusión; aclara qué documenta esa fuente y qué no prueba sobre tu propuesta. Puedes seleccionar textos ya leídos, como Palacio y Machado.',
+  prompt:'En 250–350 palabras justifica una selección docente para un público y un propósito. Como referencia, elige dos textos conocidos, como Palacio y Machado, y explica qué aporta cada uno. Contrasta los agentes y criterios de selección de las listas simuladas A/B e identifica su ámbito de canon. Explica una convención del repertorio mediante un pasaje representativo y qué enseñarías a leer. Usa C o D para contrastar una decisión de selección o difusión y delimita qué documenta. Integra las referencias y localizadores en el texto final; las notas preparatorias son opcionales en el PDF.',
   product:'Ficha 2 individual de 250–350 palabras. Las notas preparan una única entrega; se adjuntan al PDF solo si lo eliges.',
   steps:['Examina el dossier con Bloom, Bourdieu y Guillory: valor, reconocimiento y acceso. Registra lo que puedes responder y la información faltante.','Propón qué leería tu grupo y para qué; relaciona la elección con una convención y un dato del dossier.','Redacta la ficha, comprueba sus fuentes y revisa la justificación antes de preparar el PDF.'],
-  encounters:[[3,1],[3,2],[4,1],[4,2]],label:'Mi ficha 2 · Canon y repertorio',hint:'Relaciona público, propósito, procedimiento literario y lectura que enseñarías. A/B permiten comparar criterios; C o D, contrastar una intervención institucional con su límite.'},
+  preparationGuide:'Durante la semana 3 escribe en las notas de preparación. En la semana 4 organiza y redacta la ficha en el campo principal.',
+  reviewCriteria:['Justifico qué aporta cada texto al propósito y al público elegidos, y contrasto los criterios escolares de A/B.','Explico una convención mediante un pasaje y la operación de lectura que enseñaría.','Distingo lo que documenta C o D de mi propuesta. Las referencias y localizadores utilizados están dentro de la ficha, aunque no adjunte las notas.'],
+  encounters:[[3,1],[3,2],[4,1],[4,2]],label:'Mi ficha 2 · Canon y repertorio',hint:'Incluye las referencias junto a las afirmaciones que sostienen. Ejemplo: (CLACSO, presentación de Biblioteca Ayacucho, párr. 3). Las fuentes guardadas solo en las notas no aparecen en el PDF sin anexo.'},
  {key:'2-oralitura',module:2,title:'Comparar voces: Guamán Poma y Chikangana',kind:'comparison',
   prompt:'Compara cómo Guamán Poma y Chikangana presentan voces, destinatarios y mediaciones verbales o visuales. Parte de un detalle localizado de cada objeto y explica una diferencia de época, género o mediación. Justifica con evidencia cualquier relación de poder que nombres. Integra una objeción y tu respuesta; delimita las afirmaciones que permiten las fuentes y tu conocimiento de las lenguas. Rivera y Kowii apoyan la discusión, sin convertirse en nuevos objetos obligatorios de la ficha.',
   product:'Ficha 3 individual de 250–350 palabras. Los registros de ambos objetos y la revisión alimentan una única entrega.',
@@ -72,10 +74,10 @@ export function activityForEncounter(e){
  return activities.find(a=>a.key!=='4-medios'&&a.encounters.some(([w,d])=>w===e.week&&d===day));
 }
 const advances={
- '3/1':'Tras el ejemplo de Palacio, registra una pregunta de valoración, otra de reconocimiento y otra de acceso educativo. Relaciónalas con los autores del dossier e indica qué evidencia necesitarías.',
- '3/2':'Continúa las mismas notas: contrasta C/D, sus agentes, destinatarios y razones. Registra fuentes y localizadores, e identifica el alcance de cada documento.',
- '4/1':'Elige textos que conozcas, un público y un propósito. Explica un procedimiento literario y cómo enseñarías a leerlo. Esboza la ficha y guarda la pregunta provisional del ensayo.',
- '4/2':'Redacta y revisa la ficha de 250–350 palabras a partir de tus notas; prepara su única entrega.',
+ '3/1':'En las notas de preparación registra una pregunta de valoración y otra de reconocimiento, con su evidencia disponible o faltante. Relaciónalas con Bloom y Bourdieu. La pregunta de acceso se incorpora en la sesión 2.',
+ '3/2':'Añade a las mismas notas una pregunta sobre acceso y aprendizaje desde Guillory. Contrasta C/D, sus agentes, propósitos y límites. Conserva fuente y localizador para citarlos después en la ficha.',
+ '4/1':'Recupera tus preguntas para elegir textos, público, propósito y apoyos de lectura. Como referencia, selecciona dos textos y explica qué aporta cada uno. Esboza la ficha; la pregunta del ensayo se guarda aparte, en Proyecto.',
+ '4/2':'Redacta y revisa la ficha de 250–350 palabras. Integra las referencias y localizadores en el texto final; después prepara su única entrega.',
  '5/1':'Empieza con Guamán Poma: registra una voz o figura, su destinatario y un detalle con folio; relaciónalo con Rivera.',
  '5/2':'Comprueba la misma interpretación en el facsímil y Rivera; precisa qué observas, qué infieres y qué límite debes conservar.',
  '6/1':'Incorpora Chikangana a la comparación y registra el criterio común y una diferencia. Kowii apoya la discusión; conserva el corpus de dos objetos.',
