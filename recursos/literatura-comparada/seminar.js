@@ -1,6 +1,6 @@
-import {courseModules,taskNotes,optionalComparison} from './curriculum.js?v=lc-73bda40b9da5';
-import {resourceById} from './corpus.js?v=lc-73bda40b9da5';
-import {keyNames,fieldLabel,archivedKeys} from './state.js?v=lc-73bda40b9da5';
+import {courseModules,taskNotes,optionalComparison} from './curriculum.js?v=lc-394d7d24d342';
+import {resourceById} from './corpus.js?v=lc-394d7d24d342';
+import {keyNames,fieldLabel,archivedKeys} from './state.js?v=lc-394d7d24d342';
 
 export const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function collectEvidence(state){
@@ -60,13 +60,16 @@ export function fichaChecklist(state,key){
 }
 export function fichaHtml(state,key,title,{includePreparation=false}={}){
  const n=state.notes[key]||{},fields=['preparation',...fichaRequired[fichaKind(key)],'objection','revision','revisionReason'].filter((f,i,all)=>f!=='argument'&&all.indexOf(f)===i&&n[f]?.trim());
+ const pending=fichaChecklist(state,key).filter(c=>!c.ok), missingFields=pending.some(c=>c.field!=='argument'), missingArgument=pending.some(c=>c.field==='argument');
+ const argumentIssue=n.argument?.trim()?'extensión por revisar':'argumento pendiente';
+ const pendingLabel=missingFields?(missingArgument?'campos y '+argumentIssue:'campos por completar'):(missingArgument?argumentIssue:'');
  const route=courseModules.flatMap(m=>Object.values(m.routes)).find(r=>r.noteKey===key);
  const references=['A','B'].flatMap((suffix,i)=>{
   if(!n['locator'+suffix]?.trim())return [];
   const r=route&&resourceById[route.texts[i]];
   return `<p class="preserve">${r?esc(r.author+' · '+r.title)+': ':''}${esc(n['locator'+suffix])}</p>`;
  }).join('');
- return `<article class="seminar-delivery ficha-delivery"><header class="ficha-head"><p>Literatura comparada · Alejandro Córdova</p><h1>${esc(title)}</h1><p>Nombre: ______________________________ · Fecha: ______________</p>${fichaChecklist(state,key).some(c=>!c.ok)?'<p>Borrador · revisión pendiente</p>':''}</header><section class="delivery-body"><h2>Consigna</h2><p>${esc(fichaPrompt(key))}</p><h2>${esc(fieldLabel(key,'argument'))}</h2>${n.argument?.trim()?paragraphs(n.argument):'<p>El argumento todavía está vacío.</p>'}${references?'<h2>Fuentes y localizadores registrados</h2>'+references:''}<p class="caption">${esc(fieldLabel(key,'argument'))}: ${countWords(n.argument)} palabras.</p></section>${includePreparation?`<section class="delivery-annex ficha-preparation"><h2>Anexo · Preparación y revisión</h2>${fields.map(f=>`<h3>${esc(fieldLabel(key,f))}</h3>${paragraphs(n[f])}`).join('')||'<p>No hay preparación registrada para adjuntar.</p>'}</section>`:''}</article>`;
+ return `<article class="seminar-delivery ficha-delivery"><header class="ficha-head"><p>Literatura comparada · Alejandro Córdova</p><h1>${esc(title)}</h1><p>Nombre: ______________________________ · Fecha: ______________</p>${pendingLabel?'<p>Borrador · '+pendingLabel+'</p>':''}</header><section class="delivery-body"><h2>Consigna</h2><p>${esc(fichaPrompt(key))}</p><h2>${esc(fieldLabel(key,'argument'))}</h2>${n.argument?.trim()?paragraphs(n.argument):'<p>El argumento todavía está vacío.</p>'}${references?'<h2>Fuentes y localizadores registrados</h2>'+references:''}<p class="caption">${esc(fieldLabel(key,'argument'))}: ${countWords(n.argument)} palabras.</p></section>${includePreparation?`<section class="delivery-annex ficha-preparation"><h2>Anexo · Preparación y revisión</h2>${fields.map(f=>`<h3>${esc(fieldLabel(key,f))}</h3>${paragraphs(n[f])}`).join('')||'<p>No hay preparación registrada para adjuntar.</p>'}</section>`:''}</article>`;
 }
 export const activityProducts={
  '2-sumativa':{title:'Análisis comparativo en aula',field:'argument',min:600,max:800},

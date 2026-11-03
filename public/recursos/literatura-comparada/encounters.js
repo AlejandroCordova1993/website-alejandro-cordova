@@ -37,7 +37,7 @@ export const encounters=[
  ['Recupera decisiones de selección de las fichas.','Distingue una preferencia de una afirmación comprobable.'],
  ['Presenta Bloom y Bourdieu con sus preguntas y límites.','Relaciona un juicio estético con un pasaje y un dato editorial con su registro.'],
  ['Guía el análisis de las listas simuladas A/B del dossier.','Identifica criterios declarados, coincidencias y diferencias; no trates el caso como dato institucional real.'],
- ['Contrasta explicaciones y solicita pruebas para inferencias de consagración.','Formula las dos preguntas y precisa qué información falta y precisa qué información falta.'],
+ ['Contrasta explicaciones y solicita pruebas para inferencias de consagración.','Formula las dos preguntas y precisa qué información falta.'],
  ['Anticipa las condiciones de transmisión y acceso en Guillory.','Guarda tus notas de preparación y señala qué información falta para responderlas.'])),
  meeting(3,'miercoles','Acceso, transmisión y difusión','Relacionar selección, instituciones y oportunidades de lectura.','Notas de preparación revisadas y contraste de los registros C/D.',regular(
  ['Recupera las preguntas y notas de la primera sesión.','Identifica una inferencia que todavía necesita evidencia.'],

@@ -1,4 +1,4 @@
-import {activityByKey,activityHref} from './activities.js?v=lc-73bda40b9da5';
+import {activityByKey,activityHref} from './activities.js?v=lc-394d7d24d342';
 // Course decisions approved in Planificación versión 2 revisada (11 October 2026).
 // Stable notebook keys identify the actual task, independently of its screen position.
 export const courseModules = [

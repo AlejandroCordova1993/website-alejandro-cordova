@@ -1,22 +1,22 @@
-import {activityFromHash,activityByKey} from './activities.js?v=lc-73bda40b9da5';
-import {renderActivityPage,activityReviewHtml} from './activity-view.js?v=lc-73bda40b9da5';
-import {taskNotes,optionalComparison} from './curriculum.js?v=lc-73bda40b9da5';
-import {encounters,dayLabel} from './encounters.js?v=lc-73bda40b9da5';
-import {classHref,classFromHash,resumeHref,projectPhases,suggestedProjectPhase,workDestination,fichaTitles} from './class-flow.js?v=lc-73bda40b9da5';
-import {renderClassPage} from './classroom-view.js?v=lc-73bda40b9da5';
-import {weeks} from './schedule.js?v=lc-73bda40b9da5';
-import {essayMilestones} from './journey.js?v=lc-73bda40b9da5';
-import {collectEvidence,insertPassage,projectDesk,relationDiagram,deliveryHtml,deliveryChecklist,annexOptions,alertHtml,fichaChecklist,fichaHtml,activityProducts,activityChecklist,activityHtml,projectTextHtml} from './seminar.js?v=lc-73bda40b9da5';
-import {glossaryLinks,conceptHtml,conceptById} from './glossary.js?v=lc-73bda40b9da5';
-import {teachingPlan,evaluationView,activityLinks} from './teaching.js?v=lc-73bda40b9da5';
-import {resources,resourceById,translationRows} from './corpus.js?v=lc-73bda40b9da5';
-import {modules,moduleById,steps,history,schools,diagnostic,rubric} from './course.js?v=lc-73bda40b9da5';
-import {STORAGE_KEY,freshState,loadState,writeNote,markReviewed,workStatus,hasWork,wordCount,exportMarkdown,validateState,fileName,moduleKeys,moduleWorkStatus,fieldNames,keyNames,routeKey,noteDestination,activityProgress,archivedKeys,fieldLabel,reviewFields} from './state.js?v=lc-73bda40b9da5';
+import {activityFromHash,activityByKey} from './activities.js?v=lc-394d7d24d342';
+import {renderActivityPage,activityReviewHtml} from './activity-view.js?v=lc-394d7d24d342';
+import {taskNotes,optionalComparison} from './curriculum.js?v=lc-394d7d24d342';
+import {encounters,dayLabel} from './encounters.js?v=lc-394d7d24d342';
+import {classHref,classFromHash,resumeHref,projectPhases,suggestedProjectPhase,workDestination,fichaTitles} from './class-flow.js?v=lc-394d7d24d342';
+import {renderClassPage} from './classroom-view.js?v=lc-394d7d24d342';
+import {weeks} from './schedule.js?v=lc-394d7d24d342';
+import {essayMilestones} from './journey.js?v=lc-394d7d24d342';
+import {collectEvidence,insertPassage,projectDesk,relationDiagram,deliveryHtml,deliveryChecklist,annexOptions,alertHtml,fichaChecklist,fichaHtml,activityProducts,activityChecklist,activityHtml,projectTextHtml} from './seminar.js?v=lc-394d7d24d342';
+import {glossaryLinks,conceptHtml,conceptById} from './glossary.js?v=lc-394d7d24d342';
+import {teachingPlan,evaluationView,activityLinks} from './teaching.js?v=lc-394d7d24d342';
+import {resources,resourceById,translationRows} from './corpus.js?v=lc-394d7d24d342';
+import {modules,moduleById,steps,history,schools,diagnostic,rubric} from './course.js?v=lc-394d7d24d342';
+import {STORAGE_KEY,freshState,loadState,writeNote,markReviewed,workStatus,hasWork,wordCount,exportMarkdown,validateState,fileName,moduleKeys,moduleWorkStatus,fieldNames,keyNames,routeKey,noteDestination,activityProgress,archivedKeys,fieldLabel,reviewFields} from './state.js?v=lc-394d7d24d342';
 
-import {createPresenter} from './presenter.js?v=lc-73bda40b9da5';
-import {createSession} from './session.js?v=lc-73bda40b9da5';
-import {uiIcon,toneHead,toneSummary} from './ui-icons.js?v=lc-73bda40b9da5';
-import {readingDocumentHtml} from './reading-examples.js?v=lc-73bda40b9da5';
+import {createPresenter} from './presenter.js?v=lc-394d7d24d342';
+import {createSession} from './session.js?v=lc-394d7d24d342';
+import {uiIcon,toneHead,toneSummary} from './ui-icons.js?v=lc-394d7d24d342';
+import {readingDocumentHtml} from './reading-examples.js?v=lc-394d7d24d342';
 const $=s=>document.querySelector(s);
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let storage;try{storage=window.localStorage;}catch{storage={getItem(){throw Error();},setItem(){throw Error();}};}
@@ -28,7 +28,7 @@ let teacherView=false;try{const q=new URLSearchParams(location.search);if(q.has(
 document.body.dataset.role=teacherView?'docente':'estudiante';
 const roleSwitch=$('[data-role-switch]');if(roleSwitch){roleSwitch.textContent=teacherView?'Vista de estudiante':'Vista docente';roleSwitch.addEventListener('click',()=>{roleSwitch.href=(teacherView?'?estudiante':'?docente')+location.hash;});}
 // In the catalogue installation the return is relative; standalone local work uses its local preview.
-const catalogHref=location.pathname.includes('/recursos/literatura-comparada/')?'../../recursos.html?v=lc-73bda40b9da5':/^(127\.0\.0\.1|localhost)$/.test(location.hostname)?'http://127.0.0.1:4184/recursos.html':null;
+const catalogHref=location.pathname.includes('/recursos/literatura-comparada/')?'../../recursos.html?v=lc-394d7d24d342':/^(127\.0\.0\.1|localhost)$/.test(location.hostname)?'http://127.0.0.1:4184/recursos.html':null;
 document.querySelectorAll('[data-catalog-link]').forEach(a=>{if(!catalogHref){a.hidden=true;return;}a.href=catalogHref;if(!location.pathname.includes('/recursos/literatura-comparada/')){a.target='_blank';a.rel='noopener noreferrer';a.setAttribute('aria-label',a.textContent+' (abre en otra pestaña)');}});
 const lock=navigator.locks?fn=>navigator.locks.request('lc-cuaderno-write',fn):null;
 let session=createSession({storage,lock,initialRaw:loaded.raw}),savePhase=storageBlocked?'unavailable':'saved',pendingSaves=0,saveAnnouncement,lastAnnounced='',relationEdit=-1,mutationBusy=false;
@@ -252,7 +252,7 @@ function reviewButton(key){const [label,cls]=reviewLabel(key);return button('rev
 function stepHasWork(m,key,id){const n=state.notes[key]||{},has=f=>!!n[f]?.trim();if(id==='comparar')return ['hypothesis','evidenceA','locatorA','evidenceB','locatorB','difference'].some(has);if(id==='argumentar')return ['objection','argument'].some(has);if(id==='revisar')return ['revision','revisionReason'].some(has)||state.completed.includes(key);if(id==='traduccion')return Object.values(state.notes['3-traduccion']||{}).some(v=>v.trim());return false;}
 function stepLinks(m,key){return moduleSteps(m.id).map(([id,title],i)=>`<a href="#modulo/${m.id}/${id}" ${id===current.step?'aria-current="step"':''}><span class="step-number">0${i+1}</span>${title}${stepHasWork(m,key,id)?'<svg viewBox="0 0 24 24" aria-hidden="true" class="icon step-mark"><circle cx="12" cy="12" r="3.5" fill="currentColor"/></svg><span class="sr-only"> (con notas)</span>':''}</a>`).join('');}
 function clearFieldError(el){el.removeAttribute('aria-invalid');const err=document.getElementById(el.id+'-error');if(err)err.textContent='';}
-function reviewError(key){const missing=reviewFields(key).filter(f=>!note(key,f).trim());if(!missing.length)return false;$('#review-error').innerHTML=`<p>Para registrar la revisión falta:</p><ul>${missing.map(f=>`<li><a href="${f==='argument'&&current.page!=='clase'?'#modulo/'+current.module+'/argumentar':location.hash}" ${f==='argument'&&current.page!=='clase'?'data-goto-field="'+key+'-argument"':'data-focus-field="'+key+'-'+f+'"'}>${f==='argument'?'Escribir mi argumento':fieldNames[f]}</a></li>`).join('')}</ul>`;for(const f of missing){const el=document.getElementById(key+'-'+f);if(el){el.setAttribute('aria-invalid','true');document.getElementById(el.id+'-error').innerHTML='<span><strong>Falta:</strong> completa este apartado antes de registrar la revisión.</span>';}}const target=document.getElementById(key+'-'+missing[0]);if(target){for(let parent=target.parentElement;parent;parent=parent.parentElement)if(parent.tagName==='DETAILS')parent.open=true;target.focus();}else $('#review-error a').focus();return true;}
+function reviewError(key){const missing=reviewFields(key).filter(f=>!note(key,f).trim());if(!missing.length)return false;$('#review-error').innerHTML=`<p>Para registrar la revisión falta:</p><ul>${missing.map(f=>`<li><a href="${f==='argument'&&current.page!=='clase'&&current.page!=='actividad'?'#modulo/'+current.module+'/argumentar':location.hash}" ${f==='argument'&&current.page!=='clase'&&current.page!=='actividad'?'data-goto-field="'+key+'-argument"':'data-focus-field="'+key+'-'+f+'"'}>${f==='argument'?'Escribir mi argumento':fieldNames[f]}</a></li>`).join('')}</ul>`;for(const f of missing){const el=document.getElementById(key+'-'+f);if(el){el.setAttribute('aria-invalid','true');document.getElementById(el.id+'-error').innerHTML='<span><strong>Falta:</strong> completa este apartado antes de registrar la revisión.</span>';}}const target=document.getElementById(key+'-'+missing[0]);if(target){for(let parent=target.parentElement;parent;parent=parent.parentElement)if(parent.tagName==='DETAILS')parent.open=true;target.focus();}else $('#review-error a').focus();return true;}
 function resetRelationForm(){
  relationEdit=-1;state.relationDraft=null;$('#relation-form')?.reset();
  if($('#relation-submit'))$('#relation-submit').innerHTML='Añadir relación '+icon;
