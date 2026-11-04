@@ -12,6 +12,26 @@ p{margin:14px 0}.meta,.sources,.caption{font:14px/1.65 var(--sans)}.meta{color:v
 table{width:100%;border-collapse:collapse;font:15px/1.6 var(--sans)}th,td{border-bottom:1px solid var(--line);padding:10px;text-align:left;vertical-align:top;overflow-wrap:anywhere}th{background:var(--paper);color:var(--resources-ink)}
 .columns{display:grid;grid-template-columns:1fr 1fr;gap:25px}.columns ul{padding-left:20px}.page-footer{border-top:1px solid var(--line);padding-top:14px;margin-top:30px;font:13px/1.6 var(--sans);color:var(--muted)}
 .canon-dossier .table-wrap{overflow-x:auto}
+/* El tipo encabeza cada fila; las tres columnas explican la distinción. */
+#tipos .canon-types{table-layout:fixed;min-width:0}
+.canon-types col{width:28%}
+.canon-types .canon-types-name{width:16%}
+.canon-types caption{text-align:left;font:500 16px/1.5 var(--sans);margin:20px 0 12px;color:var(--ink)}
+.canon-types :is(th,td){padding:16px 12px;overflow-wrap:normal;word-break:normal;line-height:1.6}
+.canon-types thead th{font-size:14px;font-weight:600}
+.canon-types tbody th{background:transparent;color:var(--ink);font-weight:600;white-space:nowrap}
+@media screen and (max-width:760px){
+ #tipos .table-wrap{overflow:visible}
+ #tipos .canon-types{display:block}
+ .canon-types colgroup{display:none}
+ .canon-types caption{display:block;margin-bottom:8px}
+ .canon-types thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+ .canon-types tbody{display:block}
+ .canon-types tr{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;padding:24px 0;border-bottom:1px solid var(--line)}
+ .canon-types :is(th,td){display:block;border:0;padding:0;font-size:15px}
+ .canon-types tbody th{font-size:20px;line-height:1.4;color:var(--blue)}
+ .canon-types td::before{content:attr(data-label);display:block;margin-bottom:4px;font-size:13px;font-weight:600;color:var(--resources-ink)}
+}
 @media(max-width:650px){.canon-dossier .table-wrap table{min-width:650px}}
 @media(max-width:650px){body{font-size:18px}.sheet{margin:0;padding:30px 16px;border:0;border-bottom:1px solid var(--line);border-radius:0}h1,.sheet-title{font-size:32px}.columns{grid-template-columns:1fr;gap:0}nav{padding:0 16px;flex-wrap:wrap}.sources{font-size:14px}table{font-size:14px}th,td{padding:8px}}
 @page{size:A4;margin:18mm}
