@@ -6,7 +6,7 @@ const briefs={
    'Lee las explicaciones de Bloom y Bourdieu del dossier y compara los criterios de sus listas A/B: son selecciones escolares simuladas.',
    'Relee Palacio, pp. 34–35. Señala una conclusión del narrador y contrástala con sus apoyos; explica el efecto de esa manera de narrar.',
    'Explica por qué ese efecto merece atención: estás argumentando un valor literario, no solo nombrando un recurso.',
-   'En la página legal del PDF, visor 6, identifica quién edita y cómo distribuye el libro. Guarda la explicación y el dato editorial en las mismas notas, con sus localizadores.'
+   'En la página legal del PDF, visor 6, identifica quién edita y cómo distribuye el libro. Escribe la explicación y el dato editorial en tu cuaderno, con sus localizadores.'
   ],
   result:'Notas sobre el pasaje, la edición y A/B para preparar la ficha 2. Hoy no entregas la ficha ni necesitas escribir 250–350 palabras.',
   label:'Mis notas sobre el pasaje y la edición',
@@ -16,13 +16,13 @@ const briefs={
  '3/2':{
   steps:[
    'Recupera tus notas y lee la explicación de Guillory y los documentos C/D del dossier.',
-   'Para cada documento, anota qué institución interviene, qué ofrece y con qué propósito. Conserva fuente y localizador.',
-   'Propón una ayuda para leer un pasaje conocido; por ejemplo, contrastar las afirmaciones del narrador de Palacio con sus apoyos. Explica qué permitiría comprender.',
-   'Añade estos registros y el apoyo de lectura a las mismas notas; servirán para planificar el acceso a los textos y su trabajo en clase.'
+   'Compara una intervención concreta de C y D: qué seleccionan y qué ofrecen al lector. Apoya una diferencia en una frase de cada presentación.',
+   'Recupera el trabajo con Palacio: explica qué aprendiste a observar y qué explicación, relectura o discusión te ayudó.',
+   'Conserva ambas observaciones en tu cuaderno: servirán para elegir textos y planificar su lectura en la semana 4.'
   ],
   result:'Notas ampliadas con el contraste C/D. Las usarás para tu selección docente en la semana 4; todavía no entregas la ficha 2.',
   label:'Mis notas sobre los documentos C/D',
-  hint:'Conserva qué ofrece cada institución y tu propuesta para acompañar una lectura. Disponibilidad y aprendizaje son decisiones relacionadas, pero distintas.',
+  hint:'Conserva la diferencia entre las intervenciones de C/D y lo que aprendiste al trabajar Palacio. Disponer del texto y aprender a leerlo son logros distintos.',
   check:'El público declarado de un catálogo no demuestra quién consiguió o leyó sus libros.'
  },
  '4/1':{
@@ -39,12 +39,12 @@ const briefs={
  },
  '4/2':{
   steps:[
-   'Consulta tu preparación y redacta la ficha en el espacio principal, sin reemplazar las notas anteriores.',
+   'Consulta tu preparación y redacta la ficha a mano, conservando los apuntes anteriores.',
    'Contrasta los criterios de A/B, ambas selecciones escolares. Justifica tu elección para un público: explica con un pasaje la convención, su efecto, por qué merece atención y qué enseñarías a leer.',
    'Usa C o D para contrastar una decisión de selección o difusión. Ese documento no certifica tu propuesta; explica qué permite afirmar.',
-   'Revisa el argumento y registra un cambio o una decisión que mantienes. Prepara el PDF de la ficha.'
+   'Revisa el argumento y registra un cambio o una decisión que mantienes. Prepara la ficha para entregar.'
   ],
-  result:'Una ficha 2 de 250–350 palabras. Revisa y entrega el PDF antes de la siguiente semana por el canal docente; adjuntar la preparación es opcional.',
+  result:'Una ficha 2 de 250–350 palabras. Revisa y entrega la ficha escrita a mano antes de la siguiente semana, como indique el docente. Conserva la preparación en tu cuaderno.',
   label:'Mi ficha 2 · Canon y repertorio',
   hint:'Escribe un texto continuo: comparación A/B, selección para tu público, convención y apoyo C o D. La preparación se consulta aparte.',
   check:'A/B son simulaciones escolares; C/D documentan otras selecciones reales. No atribuyas a sus instituciones las decisiones de los docentes ficticios.'
@@ -90,9 +90,9 @@ const briefs={
    'Consulta los pasajes guardados y comprueba quién habla, la fuente y el localizador de cada uno.',
    'Redacta la comparación de voz, destinatario y mediación con evidencia de ambos objetos. Explica una diferencia de género o época.',
    'Si analizas una relación de poder, identifica la autoridad o el circuito y el detalle que la sostiene. Integra una objeción y tu respuesta en el argumento.',
-   'Revisa los límites históricos y lingüísticos. En la revisión, registra qué precisas o mantienes; después prepara el PDF.'
+   'Revisa los límites históricos y lingüísticos. En la revisión, registra qué precisas o mantienes; después prepara la ficha para entregar.'
   ],
-  result:'Una ficha 3 de 250–350 palabras. Revisa y entrega el PDF antes de la siguiente semana por el canal docente; adjuntar la preparación es opcional.',
+  result:'Una ficha 3 de 250–350 palabras. Revisa y entrega la ficha escrita a mano antes de la siguiente semana, como indique el docente. Conserva la preparación en tu cuaderno.',
   label:'Mi ficha 3 · Guamán Poma / Chikangana',
   hint:'Relaciona los dos pasajes; explica la diferencia y responde una objeción dentro del mismo argumento.',
   check:'Cada afirmación sobre una voz, una lengua o una relación de poder necesita un apoyo identificable.'
@@ -111,15 +111,15 @@ const briefs={
  },
  '7/2':{
   steps:[
-   'Recuperen los registros anteriores y lean la guía de iniciativa colectiva. Acuerden qué cuaderno conservará el mapa común.',
-   'En el mapa, completen partida, destino, tipo y evidencia de cada vínculo. Añadan mediador, fecha o medio cuando consten; pulsen «Añadir relación».',
+   'Recuperen los registros anteriores y lean la guía de iniciativa colectiva. Trabajen en una hoja común para conservar el mapa del grupo.',
+   'Dibujen cada vínculo e identifiquen partida, destino, tipo y fuente. Añadan mediador, fecha o medio cuando consten.',
    'Escriban un comentario sobre la red o iniciativa documentada, sus temas y una asimetría apoyada en fuentes. Conserven este comentario en la preparación.',
    'Comprueben los vínculos añadidos y anoten qué falta documentar. En la revisión, expliquen un ajuste.'
   ],
   result:'Primera versión grupal del mapa y su comentario. Se conservará para la revisión de la semana 13; todavía no se entrega otra cartografía independiente.',
   label:'Comentario de la primera cartografía',
   hint:'Explica qué iniciativa conectan los vínculos, qué temas reúne y qué desigualdad documentan sus fuentes. Este comentario inicial se conserva como preparación.',
-  check:'El formulario guarda un borrador; el vínculo entra al mapa al pulsar «Añadir relación». Distingan relaciones comprobadas y propuestas.'
+  check:'Cada vínculo trazado debe identificar sus elementos y su fuente. Distingan relaciones comprobadas y propuestas.'
  },
  '8/1':{
   steps:[
@@ -138,9 +138,9 @@ const briefs={
    'Recupera el esquema, los textos y las notas autorizados para el trabajo en aula.',
    'Redacta 600–800 palabras que respondan a tu pregunta con evidencia de los dos objetos y una diferencia pertinente.',
    'Explica el problema de representación e integra la condición de circulación futura, su agente y su límite.',
-   'Revisa voces, fuentes y alcance. Registra la decisión principal de revisión y prepara el archivo para el canal docente.'
+   'Revisa voces, fuentes y alcance. Registra la decisión principal de revisión y prepara el texto manuscrito para entregarlo como indique el docente.'
   ],
-  result:'Análisis comparativo individual en aula de 600–800 palabras. Entrega su PDF por el canal docente; es un producto independiente del ensayo final.',
+  result:'Análisis comparativo individual en aula de 600–800 palabras. Entrega el texto escrito a mano como indique el docente; es un producto independiente del ensayo final.',
   label:'Mi análisis comparativo',
   hint:'Relaciona ambos objetos en un texto continuo. Distingue la evidencia de los textos, tu interpretación y la propuesta de circulación.',
   check:'La condición futura es una propuesta razonada, no un hecho ya ocurrido ni una predicción comprobada.'
@@ -186,16 +186,16 @@ const briefs={
    'Consulta tu preparación y elige un pasaje de cada prólogo.',
    'Redacta 250–350 palabras que comparen sus criterios de valoración. Identifica autor, fecha, medio y localizador de cada testimonio.',
    'Distingue testimonio histórico, lector implícito y respuesta personal; recupera Carrington o Bierce solo si ayuda a explicarlo.',
-   'Delimita lo que permiten concluir esas fuentes. Registra una decisión de revisión y prepara el PDF.'
+   'Delimita lo que permiten concluir esas fuentes. Registra una decisión de revisión y prepara la ficha para entregar.'
   ],
-  result:'Una ficha 4 de 250–350 palabras. Revisa y entrega el PDF antes de la siguiente semana por el canal docente; adjuntar la preparación es opcional.',
+  result:'Una ficha 4 de 250–350 palabras. Revisa y entrega la ficha escrita a mano antes de la siguiente semana, como indique el docente. Conserva la preparación en tu cuaderno.',
   label:'Mi ficha 4 · Recepción y límites',
   hint:'Compara las valoraciones de los prólogos y atribúyelas a sus autores. Explica qué puedes concluir y qué requeriría otros documentos.',
   check:'Una posición documentada no equivale al horizonte de todo un público; el lector implícito tampoco es una persona histórica.'
  },
  '11/1':{
   steps:[
-   'Lee el original y las dos versiones identificadas. En «Antes de cotejar», registra qué escena y observador imaginas.',
+   'Lee el original y las dos versiones identificadas. En tu cuaderno, registra qué escena y observador imaginas.',
    'Compara los cuatro lugares de la tabla y elige tres diferencias que puedas localizar.',
    'Para cada diferencia, anota versión, palabras, localizador, relación con el pasaje y efecto posible. Señala qué falta comprobar.',
    'Distingue lo que sostienes desde el castellano de lo que requiere apoyo del francés. Conserva esas dudas para el comentario.'
@@ -210,9 +210,9 @@ const briefs={
    'Recupera la observación inicial y comprueba las tres diferencias en los testimonios del taller.',
    'Redacta 400–500 palabras: explica cada diferencia con su localizador, relación con el pasaje y efecto en escena, ritmo o posición del observador.',
    'Integra una duda para el cotejo del francés. Delimita cualquier afirmación sobre la intención o el proyecto histórico de un traductor.',
-   'Revisa qué cambió en la escena o el observador que imaginabas. Completa el comentario durante el trabajo autónomo y prepara su PDF.'
+   'Revisa qué cambió en la escena o el observador que imaginabas. Completa el comentario durante el trabajo autónomo y prepara el texto manuscrito para entregar.'
   ],
-  result:'Comentario de traducción de 400–500 palabras, con tres diferencias y una duda fundamentada. Entrégalo por el canal docente; la preparación permanece guardada aparte.',
+  result:'Comentario de traducción de 400–500 palabras, con tres diferencias y una duda fundamentada. Entrégalo por el canal docente; conserva la preparación en tu cuaderno.',
   label:'Mi comentario de traducción',
   hint:'Explica las tres diferencias dentro del conjunto del poema. Incluye localizadores, efectos y la duda que necesitas contrastar con el francés.',
   check:'No conviertas toda diferencia en error; fundamenta el efecto en el segmento y en el conjunto.'
@@ -256,13 +256,13 @@ const briefs={
  '13/2':{
   steps:[
    'Consulten el mapa y el comentario inicial conservado. Revisen también cualquier texto anterior antes de editarlo.',
-   'Corrijan los vínculos que necesiten precisión de mediador, fecha, medio o evidencia. Confirmen cada edición para incorporarla al mapa.',
+   'Corrijan los vínculos que necesiten precisión de mediador, fecha, medio o evidencia. Señalen los cambios en el mapa en papel.',
    'Redacten el comentario final: criterio de escala, una tensión de circulación y alcance de las fuentes. Mantengan el comentario inicial en la preparación.',
-   'Registren qué cambió y qué conexiones siguen siendo propuestas. Identifiquen a los integrantes y preparen un PDF de la versión común.'
+   'Registren qué cambió y qué conexiones siguen siendo propuestas. Identifiquen a los integrantes y preparen la versión común en papel.'
   ],
-  result:'Cartografía grupal revisada, comentario y fuentes. Entreguen un PDF por grupo; el proceso iniciado en la semana 7 recibe una sola calificación.',
+  result:'Cartografía grupal revisada, comentario y fuentes. Entreguen un mapa y comentario por grupo; el proceso iniciado en la semana 7 recibe una sola calificación.',
   label:'Mi cartografía: versión revisada',
-  hint:'Explica escala, tensión de circulación y alcance de las fuentes. La preparación conserva el comentario inicial; editar este texto no genera un historial.',
+  hint:'Explica escala, tensión de circulación y alcance de las fuentes. Conserven el comentario inicial para poder explicar los cambios de la versión revisada.',
   check:'Comprueben que las relaciones documentadas tienen fuente y las propuestas siguen identificadas como tales.'
  },
  '14/1':{
@@ -282,9 +282,9 @@ const briefs={
    'Recupera las citas, los comentarios y los mediadores registrados en la sesión anterior.',
    'Redacta 250–350 palabras sobre el cambio de atribución y contexto, relacionando evidencia de Cervantes y Borges.',
    'Sitúa el diálogo entre los ámbitos español y argentino y explica la diferencia pertinente. Integra una lectura rival y tu respuesta apoyada en un pasaje.',
-   'Delimita la conclusión. En la revisión, explica qué precisas o mantienes; prepara el PDF de la ficha.'
+   'Delimita la conclusión. En la revisión, explica qué precisas o mantienes; prepara la ficha para entregar.'
   ],
-  result:'Una ficha 5 de 250–350 palabras. Revisa y entrega el PDF antes de la siguiente semana por el canal docente; adjuntar la preparación es opcional.',
+  result:'Una ficha 5 de 250–350 palabras. Revisa y entrega la ficha escrita a mano antes de la siguiente semana, como indique el docente. Conserva la preparación en tu cuaderno.',
   label:'Mi ficha 5 · Cervantes / Borges',
   hint:'Relaciona cita, atribución y contexto. Incluye la diferencia y responde una objeción dentro del mismo argumento.',
   check:'Explica qué transforma la lectura posterior sin convertir nacionalidad en explicación automática ni afirmar contactos no documentados.'
@@ -293,10 +293,10 @@ const briefs={
   steps:[
    'Recupera pasajes ya trabajados de Palacio y Machado sobre violencia y deshumanización; no necesitas otra lectura autónoma.',
    'Organiza la matriz en cinco apartados: tema, situación o motivo, procedimiento, contexto y variación explicada. Incluye evidencia localizada de ambos relatos, una diferencia y un límite.',
-   'Después, abre la extensión intermedial. Compara Esparza/Ruiz Agila con una secuencia del cortometraje: explica cómo palabra, imagen y sonido construyen ausencia. Guarda el ejercicio en su espacio.',
+   'Después, abre la extensión intermedial. Compara Esparza/Ruiz Agila con una secuencia del cortometraje: explica cómo palabra, imagen y sonido construyen ausencia. Escribe el ejercicio en tu cuaderno.',
    'Retoma el borrador del ensayo e identifica un ajuste que estas comparaciones permitan realizar.'
   ],
-  result:'Matriz tematológica, contraste entre medios y ajuste para el ensayo. Son ejercicios de práctica con espacios separados; no añaden una sexta ficha evaluada.',
+  result:'Matriz tematológica, contraste entre medios y ajuste para el ensayo. Son ejercicios de práctica que conservas en tu cuaderno; no añaden una sexta ficha evaluada.',
   label:'Mi matriz tematológica · Palacio / Machado',
   hint:'Usa cinco apartados, no necesitas dibujar una tabla. Explica la variación con pasajes, forma y contexto; conserva un límite de la comparación.',
   check:'No fuerces motivos idénticos ni presentes la relación entre crónica y cine como adaptación o influencia sin documentación.'

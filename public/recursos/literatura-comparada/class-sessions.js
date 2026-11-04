@@ -1,8 +1,8 @@
-import {weeks} from './schedule.js?v=lc-d55455d88964';
-import {unitActivities} from './curriculum.js?v=lc-d55455d88964';
-import {translationRows} from './corpus.js?v=lc-d55455d88964';
-import {activityTitle} from './teaching.js?v=lc-d55455d88964';
-import {encounterById,dayLabel} from './encounters.js?v=lc-d55455d88964';
+import {weeks} from './schedule.js?v=lc-f5bb8d10e9c6';
+import {unitActivities} from './curriculum.js?v=lc-f5bb8d10e9c6';
+import {translationRows} from './corpus.js?v=lc-f5bb8d10e9c6';
+import {activityTitle} from './teaching.js?v=lc-f5bb8d10e9c6';
+import {encounterById,dayLabel} from './encounters.js?v=lc-f5bb8d10e9c6';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 // Teaching prompts are original syntheses. Texts and attributions are in Leer.
 const lessons={
@@ -19,8 +19,8 @@ const lessons={
  3:[
   ['Bloom: defender un juicio de valor','Para argumentar un valor literario, localiza cómo está escrito un pasaje, explica qué efecto produce y por qué ese efecto merece atención. Demostrar originalidad histórica requiere compararlo con una tradición.','Palacio, pp. 34–35: contrasta las conclusiones del narrador con sus apoyos y explica por qué esa tensión resulta significativa.'],
   ['Bourdieu: estudiar la consagración','Relaciona posiciones de autores, editoriales, crítica y enseñanza. Una intervención editorial documentada permite reconocer a un agente; la consagración duradera exige estudiar un proceso más amplio.','Página legal de Palacio, visor 6: identifica al Consejo de la Judicatura y la distribución gratuita. Distingue esa intervención de tu valoración del cuento.'],
-  ['Guillory: acceso y transmisión escolar','La enseñanza distribuye prácticas y saberes que permiten leer. Ofrecer un libro y acompañar su lectura son decisiones relacionadas, pero distintas.','Consulta las iniciativas C/D y propone un apoyo concreto: por ejemplo, contrastar afirmaciones y pruebas del narrador.'],
-  ['De las observaciones a la selección docente','Conserva una valoración del pasaje, el dato editorial y el contraste A/B. Después añade C/D y un apoyo de lectura. Estos registros preparan las razones de tu elección.','Mismas notas durante ambas sesiones: Bloom/Bourdieu y A/B en la primera; Guillory y C/D en la segunda.']
+  ['Guillory: acceso y transmisión escolar','La enseñanza distribuye prácticas y saberes que permiten leer. Ofrecer un libro y aprender a interpretarlo son logros relacionados, pero distintos.','Compara una intervención de C/D y recupera qué aprendiste al trabajar Palacio y qué ayuda te permitió hacerlo.'],
+  ['De las observaciones a la selección docente','Conserva una valoración del pasaje, el dato editorial y el contraste A/B. Después añade la comparación C/D y tu experiencia de aprendizaje. Estos apuntes preparan las razones de tu elección.','Trabaja en el mismo cuaderno durante ambas sesiones: Bloom/Bourdieu y A/B en la primera; Guillory y C/D en la segunda.']
  ],
  4:[
   ['Tipos de canon','Compara selecciones personales, escolares, críticas y editoriales. Sus agentes, destinatarios y criterios pueden coincidir parcialmente.','No conviertas una lista individual en prueba de todo el canon de una institución.'],
@@ -92,7 +92,7 @@ const lessons={
 };
 export function sessionSlides(week,day=null){
  const encounter=day&&encounterById[week+'-'+day];
- if(encounter)return [{title:encounter.title,text:encounter.aim,detail:`Semana ${week} · ${dayLabel(day)}`},...encounter.stages.map(s=>({title:s.title,text:s.student,detail:`${s.minutes} min · Orientación docente: ${s.teacher}`})),{title:'Qué conservamos y cómo continuamos',text:encounter.output,detail:'Guarda evidencias, localizadores y decisiones en los espacios existentes del cuaderno.'}];
+ if(encounter)return [{title:encounter.title,text:encounter.aim,detail:`Semana ${week} · ${dayLabel(day)}`},...encounter.stages.map(s=>({title:s.title,text:s.student,detail:`${s.minutes} min · Orientación docente: ${s.teacher}`})),{title:'Qué conservamos y cómo continuamos',text:encounter.output,detail:'Conserva evidencias, localizadores y decisiones en tus apuntes. El ensayo final se trabaja en su mesa digital.'}];
  const w=weeks.find(w=>w.week===week);if(!w)return [];
  const slides=lessons[week].map(s=>Array.isArray(s)?{title:s[0],text:s[1],detail:s[2]}:s);
  const activities=unitActivities.filter(a=>a.module===Math.ceil(week/4)&&a.weeks.includes(week));

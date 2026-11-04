@@ -13,7 +13,7 @@ export const weeks=[
   {
     "week": 3,
     "title": "Canon y procesos de canonización",
-    "description": "Docencia: epistemología del canon, historicidad del valor y diferencia entre juicio estético y explicación de la consagración; contraste de Bloom, Bourdieu y Guillory. Práctica: releer Palacio para relacionar procedimiento, efecto y valoración; distinguir ese juicio de la información editorial y contrastar A/B y C/D. Autónomo: fundamentos de Bloom/Bourdieu y A/B para la primera sesión; Guillory y C/D para la segunda. Evidencia: observaciones del cuento, datos editoriales y una propuesta de acompañamiento lector en las mismas notas de preparación."
+    "description": "Docencia: epistemología del canon, historicidad del valor y diferencia entre juicio estético y explicación de la consagración; contraste de Bloom, Bourdieu y Guillory. Práctica: releer Palacio para relacionar procedimiento, efecto y valoración; distinguir ese juicio de la información editorial y contrastar A/B y C/D. Autónomo: fundamentos de Bloom/Bourdieu y A/B para la primera sesión; Guillory y C/D para la segunda. Evidencia: observaciones del cuento, comparación de intervenciones editoriales y reflexión sobre el aprendizaje de lectura, en el mismo cuaderno."
   },
   {
     "week": 4,
