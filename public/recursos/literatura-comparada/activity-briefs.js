@@ -3,33 +3,33 @@
 const briefs={
  '3/1':{
   steps:[
-   'Lee el dossier de canon. A/B son listas escolares simuladas; C/D son documentos reales de otras instituciones.',
-   'Apóyate en el ejemplo de Palacio para plantear tres preguntas: valoración, reconocimiento y acceso educativo. Relaciónalas con Bloom, Bourdieu y Guillory.',
-   'En tus notas indica qué dato o pasaje permite responder cada pregunta y qué información falta. Son énfasis que se relacionan, no métodos excluyentes.',
-   'Añade una pregunta pendiente. En la revisión, explica una elección de tus registros.'
+   'Lee las explicaciones de Bloom y Bourdieu del dossier y compara los criterios de sus listas A/B: son selecciones escolares simuladas.',
+   'Relee Palacio, pp. 34–35. Señala una conclusión del narrador y contrástala con sus apoyos; explica el efecto de esa manera de narrar.',
+   'Explica por qué ese efecto merece atención: estás argumentando un valor literario, no solo nombrando un recurso.',
+   'En la página legal del PDF, visor 6, identifica quién edita y cómo distribuye el libro. Guarda la explicación y el dato editorial en las mismas notas, con sus localizadores.'
   ],
-  result:'Notas de tres enfoques para preparar la ficha 2. Hoy no entregas la ficha ni necesitas escribir 250–350 palabras.',
-  label:'Mis notas sobre valor, reconocimiento y acceso',
-  hint:'Un párrafo por enfoque: pregunta, dato disponible y fuente que falta. Las listas no permiten juzgar la calidad de cuentos que no has leído.',
-  check:'Distingue valor de la obra, reconocimiento y acceso. Si falta evidencia, señala qué necesitarías.'
+  result:'Notas sobre el pasaje, la edición y A/B para preparar la ficha 2. Hoy no entregas la ficha ni necesitas escribir 250–350 palabras.',
+  label:'Mis notas sobre el pasaje y la edición',
+  hint:'Conserva tu explicación del efecto y su valor, el dato editorial y el contraste A/B. Usarás estas observaciones para justificar tu selección docente.',
+  check:'La valoración se apoya en el pasaje; el dato editorial, en la página legal. La publicación no demuestra por sí sola calidad literaria.'
  },
  '3/2':{
   steps:[
-   'Recupera tus notas de la sesión 1 y consulta los documentos C/D del dossier.',
-   'Para cada documento, escribe quién selecciona, a quién se dirige y qué razón declara. Registra fuente y localizador.',
-   'Añade qué permite afirmar ese documento y qué necesitarías para saber si el público accedió realmente a las lecturas.',
-   'Propón una decisión docente que puedas discutir con esos datos. En la revisión, explica qué ajustaste.'
+   'Recupera tus notas y lee la explicación de Guillory y los documentos C/D del dossier.',
+   'Para cada documento, anota qué institución interviene, qué ofrece y con qué propósito. Conserva fuente y localizador.',
+   'Propón una ayuda para leer un pasaje conocido; por ejemplo, contrastar las afirmaciones del narrador de Palacio con sus apoyos. Explica qué permitiría comprender.',
+   'Añade estos registros y el apoyo de lectura a las mismas notas; servirán para planificar el acceso a los textos y su trabajo en clase.'
   ],
   result:'Notas ampliadas con el contraste C/D. Las usarás para tu selección docente en la semana 4; todavía no entregas la ficha 2.',
   label:'Mis notas sobre los documentos C/D',
-  hint:'Añade los dos registros debajo de tus notas anteriores: agente, público, razón, fuente y alcance. Conserva lo que te sirva para la semana 4.',
+  hint:'Conserva qué ofrece cada institución y tu propuesta para acompañar una lectura. Disponibilidad y aprendizaje son decisiones relacionadas, pero distintas.',
   check:'El público declarado de un catálogo no demuestra quién consiguió o leyó sus libros.'
  },
  '4/1':{
   steps:[
    'Recupera A/B, C/D y tus notas. Identifica quién selecciona, para quién y con qué criterio.',
    'Elige textos que conozcas, como Palacio y Machado. Indica el público, su nivel y qué aprendería con esa lectura.',
-   'Explica un procedimiento literario y cómo enseñarías a leerlo. Contrasta una decisión de selección o difusión con C o D, indicando su alcance.',
+   'En un pasaje, identifica una convención, explica su efecto y por qué la valoras. Indica cómo enseñarías a leerlo y contrasta una decisión de selección o difusión con C o D.',
    'Abre el hito del ensayo y guarda allí tu pregunta provisional.'
   ],
   result:'Selección docente y esquema de la ficha 2; pregunta del ensayo en su espacio propio. El texto final se escribe en la sesión 2.',
@@ -40,7 +40,7 @@ const briefs={
  '4/2':{
   steps:[
    'Consulta tu preparación y redacta la ficha en el espacio principal, sin reemplazar las notas anteriores.',
-   'Contrasta los criterios de A/B, ambas selecciones escolares. Justifica tu elección para un público y explica la convención y la lectura que enseñarías.',
+   'Contrasta los criterios de A/B, ambas selecciones escolares. Justifica tu elección para un público: explica con un pasaje la convención, su efecto, por qué merece atención y qué enseñarías a leer.',
    'Usa C o D para contrastar una decisión de selección o difusión. Ese documento no certifica tu propuesta; explica qué permite afirmar.',
    'Revisa el argumento y registra un cambio o una decisión que mantienes. Prepara el PDF de la ficha.'
   ],

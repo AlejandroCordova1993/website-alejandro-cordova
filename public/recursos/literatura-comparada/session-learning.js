@@ -1,7 +1,7 @@
 // Orientaciones docentes para las mismas actividades y claves del cuaderno.
 // Definiciones de trabajo, no citas ni sustitutos de las fuentes del curso.
-import {activityBriefFor} from './activity-briefs.js?v=lc-d5db1064feea';
-import {weekTwoConcepts,weekTwoPrompts,weekTwoFieldHints} from './week-two-learning.js?v=lc-d5db1064feea';
+import {activityBriefFor} from './activity-briefs.js?v=lc-d55455d88964';
+import {weekTwoConcepts,weekTwoPrompts,weekTwoFieldHints} from './week-two-learning.js?v=lc-d55455d88964';
 const concepts={
  procedimiento:['Procedimiento narrativo','Una manera concreta de construir el relato: ordenar hechos, repetir una expresión, ocultar información o presentar una suposición como certeza. Identificarlo exige describir qué hace la escritura en un pasaje.'],
  indicio:['Observación e indicio textual','Observar es señalar palabras, una disposición o un detalle verificable del texto. Ese detalle funciona como indicio cuando explicas qué interpretación permite fundamentar; una cita aislada todavía no constituye una explicación.'],
@@ -99,27 +99,27 @@ const sessions={
  check:'El argumento debe responder a una pregunta con análisis de ambos relatos, explicar una diferencia formal o contextual y responder una objeción pertinente. No atribuyas al autor lo dicho por narrador o personaje ni afirmes un contacto no documentado.'},
  '3/1':{key:'1-canon',stage:'preparacion',concepts:['canon','valor','consagracion'],
  example:'A y B son selecciones escolares: las dos declaran un propósito y un público. B explicita además la inclusión de escritoras. Ese contraste describe criterios docentes; no compara la calidad de cuentos que el caso no reproduce.',
- steps:['Lee los fundamentos sobre Bloom y Bourdieu y las listas A/B del dossier.','A partir del ejemplo de Palacio, plantea una pregunta sobre valor y otra sobre reconocimiento.','En tus notas relaciona esas preguntas con Bloom y Bourdieu; señala qué evidencia permite responderlas y qué información falta.','Conserva esas notas para continuar la misma actividad.'],
- result:'Notas de preparación con preguntas, evidencia y límites; todavía no es la ficha 2.',
+ steps:['Lee las explicaciones de Bloom y Bourdieu del dossier y compara los criterios declarados en sus listas A/B.','Relee Palacio, pp. 34–35. Señala una conclusión del narrador, comprueba qué la sostiene y explica el efecto del contraste entre certeza y apoyos.','Explica por qué esa manera de narrar merece atención: esta es tu valoración literaria, apoyada en el pasaje. Puedes discutir el ejemplo de Teoría.','Consulta la página legal del PDF, visor 6: anota quién edita y cómo distribuye el libro. Guarda tu explicación y este dato con sus localizadores en las mismas notas.'],
+ result:'Notas con una valoración del pasaje, el dato editorial y el contraste A/B; todavía no es la ficha 2.',
  delivery:'Escribe hoy en Notas para preparar el trabajo. La ficha final tendrá 250–350 palabras; ese requisito no corresponde a las notas.',
- check:'Distingue una afirmación sobre valor de otra sobre reconocimiento, e identifica qué fuente necesita cada una.',
- fieldLabel:'Mis notas de preparación · enfoques, evidencia y límites'},
+ check:'La valoración explica por qué merece atención la forma del pasaje; el dato editorial identifica una intervención institucional. Uno no demuestra automáticamente el otro.',
+ fieldLabel:'Mis notas de preparación · pasaje y edición'},
  '3/2':{key:'1-canon',stage:'preparacion',concepts:['transmision','dato'],
  example:'Dos estudiantes reciben el mismo PDF de Palacio. Uno ha practicado cómo distinguir narrador y autor; el otro aún confunde sus voces. Es un caso didáctico: compartir el archivo no iguala las oportunidades de aprender esa lectura.',
- steps:['Recupera tus notas y lee a Guillory en el dossier. Añade una pregunta sobre acceso y aprendizaje; consulta C/D.','Registra quién interviene, para quién y con qué propósito declarado; conserva fuente y localizador.','Añade qué documenta cada registro y qué necesitarías para investigar lectura y aprendizaje efectivos.','Propón una decisión docente que puedas contrastar con estos datos. Continúa las mismas notas.'],
+ steps:['Recupera tus notas y lee la explicación de Guillory y los registros C/D del dossier.','En cada registro anota qué institución interviene, qué ofrece y con qué propósito. Conserva fuente y localizador.','Propón una ayuda concreta para leer un pasaje conocido; por ejemplo, contrastar las afirmaciones del narrador de Palacio con sus apoyos. Explica qué permitiría comprender.','Añade esos registros y tu apoyo de lectura a las mismas notas: servirán para planificar cómo acceder a los textos y cómo trabajarlos.'],
  result:'Notas de preparación revisadas con el contraste documentado de C/D para la selección docente.',
  delivery:'No se pide cerrar todavía la ficha 2 ni ajustarla a 250–350 palabras. Conserva las notas para la semana 4.',
  check:'Evita convertir el propósito declarado de un documento en prueba de que todo su público accedió a la lectura.',
  fieldLabel:'Mis notas de preparación · registros C/D'},
  '4/1':{key:'1-canon',stage:'preparacion',concepts:['canon','repertorio','seleccion'],
  example:'Elegir Palacio porque permite contrastar las afirmaciones del narrador con sus pruebas expresa un criterio pedagógico. Preferirlo porque su ironía produce un efecto que valoras expresa un juicio estético que debes argumentar con un pasaje.',
- steps:['Lee tipos de canon y repertorio; recupera A/B, C/D y tus notas de preparación.','Como referencia, elige dos textos conocidos para un público y un propósito. Explica brevemente qué aporta cada uno.','Explica una convención mediante un pasaje representativo y cómo enseñarías a leerlo. Contrasta una decisión de selección o difusión con C o D.','Esboza la ficha. Guarda aparte, en Proyecto, la pregunta provisional del ensayo; puede recuperar esta selección o elegir otros dos objetos del corpus común.'],
+ steps:['Lee tipos de canon y repertorio; recupera A/B, C/D y tus observaciones de las notas.','Como referencia, elige dos textos conocidos para un público y un propósito. Explica brevemente qué aporta cada uno.','En un pasaje, identifica una convención, explica su efecto y por qué la valoras. Indica cómo enseñarías a leerlo y contrasta una decisión de selección o difusión con C o D.','Esboza la ficha. Guarda aparte, en Proyecto, la pregunta provisional del ensayo; puede recuperar esta selección o elegir otros dos objetos del corpus común.'],
  result:'Selección docente razonada y esquema de la ficha 2; pregunta provisional del ensayo en su espacio propio.',
  delivery:'Es una preparación del texto final. La ficha se redacta y revisa en la sesión 2. La pregunta del ensayo se guarda en Proyecto y no forma parte de las 250–350 palabras.',
  check:'Explica qué convención enseña tu selección; nombrar solo un género o enumerar títulos no basta.',fieldLabel:'Mi selección y esquema de la ficha 2'},
  '4/2':{key:'1-canon',stage:'borrador',finalFicha:true,concepts:['justificacion','dato'],
  example:'El registro D documenta una iniciativa de acceso abierto. Puedes contrastarla con tu decisión de facilitar una lectura a tu grupo. La pertinencia de enseñar ese texto se justifica mediante su procedimiento y tu propósito, no por el respaldo de CLACSO.',
- steps:['Consulta la consigna y el modelo comentado de Teoría. Redacta 250–350 palabras en el campo principal a partir de tus notas.','Contrasta los criterios de A/B: ambas intervienen en el ámbito escolar. Justifica tu selección para un público y un propósito.','Relaciona una convención con la lectura que enseñarías. Contrasta tu decisión con una intervención de C o D y delimita lo documentado.','Integra fuentes y localizadores en la ficha; no los dejes solo en las notas. Registra qué revisaste antes de preparar el PDF.'],
+ steps:['Consulta la consigna y el modelo comentado de Teoría. Redacta 250–350 palabras en el campo principal a partir de tus notas.','Contrasta los criterios de A/B: ambas intervienen en el ámbito escolar. Justifica tu selección para un público y un propósito.','Con un pasaje, explica una convención, su efecto, por qué merece atención y qué enseñarías a leer. Contrasta tu decisión con C o D y delimita lo documentado.','Integra fuentes y localizadores en la ficha; no los dejes solo en las notas. Registra qué revisaste antes de preparar el PDF.'],
  result:'Borrador de la ficha 2 con selección docente, convención y respaldo documental.',
  delivery:'Revisa y cierra la ficha antes de la siguiente semana. Las 250–350 palabras incluyen las referencias utilizadas; el anexo de preparación es opcional.',
  check:'Deben ser reconocibles público, criterio, convención, registro utilizado y límite de la conclusión.',fieldLabel:'Mi argumento de la ficha 2'},

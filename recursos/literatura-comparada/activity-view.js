@@ -1,9 +1,9 @@
-import {encounters,dayLabel} from './encounters.js?v=lc-d5db1064feea';
-import {classHref} from './class-flow.js?v=lc-d5db1064feea';
-import {activityAdvance,activityHref} from './activities.js?v=lc-d5db1064feea';
-import {focusedComparison,focusedArgument} from './activity-workspace.js?v=lc-d5db1064feea';
-import {fichaTitles} from './class-flow.js?v=lc-d5db1064feea';
-import {activityProducts} from './seminar.js?v=lc-d5db1064feea';
+import {encounters,dayLabel} from './encounters.js?v=lc-d55455d88964';
+import {classHref} from './class-flow.js?v=lc-d55455d88964';
+import {activityAdvance,activityHref} from './activities.js?v=lc-d55455d88964';
+import {focusedComparison,focusedArgument} from './activity-workspace.js?v=lc-d55455d88964';
+import {fichaTitles} from './class-flow.js?v=lc-d55455d88964';
+import {activityProducts} from './seminar.js?v=lc-d55455d88964';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 export function activityReviewHtml(activity){

@@ -1,8 +1,8 @@
-import {weeks} from './schedule.js?v=lc-d5db1064feea';
-import {unitActivities} from './curriculum.js?v=lc-d5db1064feea';
-import {translationRows} from './corpus.js?v=lc-d5db1064feea';
-import {activityTitle} from './teaching.js?v=lc-d5db1064feea';
-import {encounterById,dayLabel} from './encounters.js?v=lc-d5db1064feea';
+import {weeks} from './schedule.js?v=lc-d55455d88964';
+import {unitActivities} from './curriculum.js?v=lc-d55455d88964';
+import {translationRows} from './corpus.js?v=lc-d55455d88964';
+import {activityTitle} from './teaching.js?v=lc-d55455d88964';
+import {encounterById,dayLabel} from './encounters.js?v=lc-d55455d88964';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 // Teaching prompts are original syntheses. Texts and attributions are in Leer.
 const lessons={
@@ -17,14 +17,14 @@ const lessons={
   ['De la matriz a la ficha 1','Pregunta → evidencia de cada texto → diferencia formal o contextual → conclusión y límite.','Ficha individual de 250–350 palabras.']
  ],
  3:[
-  ['Bloom: defender un juicio de valor','La discusión de la fuerza estética y la originalidad requiere explicar qué recursos de una obra sustentan el juicio. Una preferencia no demuestra por sí sola consagración institucional.','¿Qué pasaje o procedimiento respalda el valor que atribuyes?'],
-  ['Bourdieu: estudiar la consagración','Relaciona posiciones de autores, editoriales, crítica y enseñanza. Investiga qué agentes y condiciones de producción y circulación hacen posible el reconocimiento.','¿Qué documento permite identificar al agente y su intervención?'],
-  ['Guillory: acceso y transmisión escolar','Pregunta quién accede a las prácticas y saberes que la enseñanza distribuye. Una lista de autores no basta para explicar las oportunidades de lectura.','¿Qué condiciones de acceso supone cada selección?'],
-  ['Un caso, tres preguntas','Contrasta las dos listas y los dos registros del dossier. Separa juicio estético, consagración y transmisión educativa.','Notas de preparación: pregunta, enfoque, evidencia y límite. Bloom/Bourdieu y A/B en la primera sesión; Guillory y C/D en la segunda.']
+  ['Bloom: defender un juicio de valor','Para argumentar un valor literario, localiza cómo está escrito un pasaje, explica qué efecto produce y por qué ese efecto merece atención. Demostrar originalidad histórica requiere compararlo con una tradición.','Palacio, pp. 34–35: contrasta las conclusiones del narrador con sus apoyos y explica por qué esa tensión resulta significativa.'],
+  ['Bourdieu: estudiar la consagración','Relaciona posiciones de autores, editoriales, crítica y enseñanza. Una intervención editorial documentada permite reconocer a un agente; la consagración duradera exige estudiar un proceso más amplio.','Página legal de Palacio, visor 6: identifica al Consejo de la Judicatura y la distribución gratuita. Distingue esa intervención de tu valoración del cuento.'],
+  ['Guillory: acceso y transmisión escolar','La enseñanza distribuye prácticas y saberes que permiten leer. Ofrecer un libro y acompañar su lectura son decisiones relacionadas, pero distintas.','Consulta las iniciativas C/D y propone un apoyo concreto: por ejemplo, contrastar afirmaciones y pruebas del narrador.'],
+  ['De las observaciones a la selección docente','Conserva una valoración del pasaje, el dato editorial y el contraste A/B. Después añade C/D y un apoyo de lectura. Estos registros preparan las razones de tu elección.','Mismas notas durante ambas sesiones: Bloom/Bourdieu y A/B en la primera; Guillory y C/D en la segunda.']
  ],
  4:[
   ['Tipos de canon','Compara selecciones personales, escolares, críticas y editoriales. Sus agentes, destinatarios y criterios pueden coincidir parcialmente.','No conviertas una lista individual en prueba de todo el canon de una institución.'],
-  ['Repertorio y canonización','Una selección puede legitimar obras y también convenciones: géneros, formas narrativas o modos de valorar. Explica qué convención enseña tu propuesta.','Distingue una lista de títulos de un repertorio de posibilidades literarias.'],
+  ['Repertorio y canonización','El repertorio comprende posibilidades compartidas de escritura y lectura. En un pasaje, relaciona una convención con su realización concreta, su efecto y el valor que argumentas. Después explica cómo enseñarías a leerlo.','Distingue el valor literario de la utilidad docente: una misma obra puede enseñarse con propósitos distintos.'],
   ['Una selección docente argumentada','Justifica qué incluirías, para qué público y con qué carga. Usa las listas y los registros identificados del dossier.','Ficha 2: 250–350 palabras con referencias, una convención y contraste de selección o difusión con C o D.']
  ],
  5:[
