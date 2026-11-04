@@ -1,8 +1,8 @@
 // Orientaciones docentes para las mismas actividades y claves del cuaderno.
 // Definiciones de trabajo, no citas ni sustitutos de las fuentes del curso.
-import {paperSessionGuides} from './paper-activities.js?v=lc-9c0263823d2c';
-import {activityBriefFor} from './activity-briefs.js?v=lc-9c0263823d2c';
-import {weekTwoConcepts,weekTwoPrompts,weekTwoFieldHints} from './week-two-learning.js?v=lc-9c0263823d2c';
+import {paperSessionGuides} from './paper-activities.js?v=lc-85a33f7d2f3f';
+import {activityBriefFor} from './activity-briefs.js?v=lc-85a33f7d2f3f';
+import {weekTwoConcepts,weekTwoPrompts,weekTwoFieldHints} from './week-two-learning.js?v=lc-85a33f7d2f3f';
 const concepts={
  procedimiento:['Procedimiento narrativo','Una manera concreta de construir el relato: ordenar hechos, repetir una expresión, ocultar información o presentar una suposición como certeza. Identificarlo exige describir qué hace la escritura en un pasaje.'],
  indicio:['Observación e indicio textual','Observar es señalar palabras, una disposición o un detalle verificable del texto. Ese detalle funciona como indicio cuando explicas qué interpretación permite fundamentar; una cita aislada todavía no constituye una explicación.'],
@@ -106,10 +106,10 @@ const sessions={
  ...paperSessionGuides["3/2"],delivery:paperSessionGuides["3/2"].result,check:"Comprueba qué facilita cada institución y qué aprendiste mediante la práctica de lectura."},
  '4/1':{key:'1-canon',stage:'preparacion',concepts:['canon','repertorio','seleccion'],
  example:'Elegir Palacio porque permite contrastar las afirmaciones del narrador con sus pruebas expresa un criterio pedagógico. Preferirlo porque su ironía produce un efecto que valoras expresa un juicio estético que debes argumentar con un pasaje.',
- ...paperSessionGuides["4/1"],delivery:paperSessionGuides["4/1"].result,check:"El contraste de A/B debe explicar la elección del equipo para ese grupo."},
- '4/2':{key:'1-canon',stage:'borrador',concepts:['justificacion','dato'],
- example:'Una edición anotada puede aclarar referencias del pasaje. En el aula, el equipo aún debe proponer qué observar y cómo explicarlo con evidencia.',
- ...paperSessionGuides["4/2"],delivery:paperSessionGuides["4/2"].result,check:"Comprueben que la consigna trabaje el recurso del pasaje y que las fuentes estén identificadas."},
+ ...paperSessionGuides["4/1"],delivery:paperSessionGuides["4/1"].result,check:"Cada selección reúne cuatro obras; al menos tres conceptos deben ayudar a explicar decisiones del conjunto."},
+ '4/2':{key:'1-canon',stage:'presentacion',concepts:['justificacion','dato'],
+ example:'Una misma obra puede elegirse por la extrañeza de su narración y proponerse para una institución por la lectura crítica que permite practicar. Esas razones se comparan en un apartado propio; sus apoyos deben identificarse.',
+ ...paperSessionGuides["4/2"],delivery:paperSessionGuides["4/2"].result,check:"Comprueben reseñas, justificaciones y fuentes, tres conceptos aplicados y una comparación independiente."},
  '5/1':{key:'2-oralitura',stage:'preparacion',concepts:['representacion','voz','destinatario','mediacion','subalternidad'],
  example:'Identificar figuras, rótulos y posiciones en la lámina permite estudiar cómo se representa una interlocución. No prueba que la audiencia ocurriera. Distingue ese registro de una interpretación sobre la relación con la autoridad.',
  steps:['Abre la lámina 961 [975], el inicio de 962 [976] y la selección de Rivera indicada en Lecturas.','En tus apuntes describe un detalle verbal o visual y registra su folio. Distingue autoría, figuras representadas y destinatario.','Relaciona una afirmación de Rivera con ese detalle: indica qué la sostiene o qué pregunta abre.','En tu cuaderno organiza el mapa por líneas: voz o figura, destinatario, detalle con folio e interpretación provisional. En tus apuntes, anota qué contraste investigarás después; no necesitas describir todavía el segundo objeto.'],
@@ -265,7 +265,7 @@ const canonConcepts={
  transmision:['Capital cultural y transmisión','Son saberes y competencias que reciben valor social, como argumentar una interpretación o usar una edición crítica. Guillory estudia su distribución desigual mediante la educación. Disponer del libro ayuda, pero aprender esas prácticas requiere oportunidades y acompañamiento.'],
  repertorio:['Repertorio: producir y comprender','En Even-Zohar, reúne materiales, reglas y modelos disponibles. Incluye formas de construir una obra y formas de comprenderla: una voz narrativa que oculta datos y la lectura que reconstruye lo omitido se relacionan, pero son operaciones distintas.'],
  seleccion:['Criterio de selección','Es la razón para elegir un texto: su forma, el aprendizaje que permite, su disponibilidad u otra finalidad explícita. Un criterio de comparación, en cambio, establece qué aspecto relacionas entre objetos. Puedes seleccionar dos cuentos para comparar cómo justifican la violencia.'],
- justificacion:['Justificación de una selección','Relaciona la elección de textos con el público, el propósito y la lectura que enseñarías. El ejemplo literario sostiene esa pertinencia; el documento institucional permite contrastar una decisión de selección o difusión. Explica qué prueba cada apoyo.']
+ justificacion:['Justificación de una selección','Explica por qué una obra merece estar en una selección. Un detalle de su escritura apoya la valoración; en la selección institucional también cuentan público, propósito y condiciones de lectura. Los conceptos ayudan a argumentar esas razones. La comparación examina después los criterios de ambas selecciones.']
 };
 export function conceptsFor(e){if(e.week===2)return weekTwoConcepts(e.day==='lunes'?1:2);return learningFor(e).concepts.map(id=>{const c=([3,4].includes(e.week)&&canonConcepts[id])||concepts[id];return {id,label:c[0],definition:c[1]};});}
 export function sessionTheoryHtml(e){const l=learningFor(e);return `<section class="session-concepts" aria-labelledby="session-concepts-title"><h3 id="session-concepts-title">Conceptos para esta actividad</h3><p class="caption">Definiciones de trabajo del curso. Las lecturas y el desarrollo teórico que siguen permiten examinarlas con mayor profundidad.</p><dl>${conceptsFor(e).map(c=>`<div><dt>${esc(c.label)}</dt><dd>${esc(c.definition)}${c.example?`<p class="concept-example"><strong>Ejemplo.</strong> ${esc(c.example)}</p>`:''}</dd></div>`).join('')}</dl><p class="session-example"><strong>Ejemplo de aplicación.</strong> ${esc(l.example)}</p></section>`;}

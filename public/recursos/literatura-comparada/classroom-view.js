@@ -1,20 +1,20 @@
-import {encounters,dayLabel} from './encounters.js?v=lc-9c0263823d2c';
-import {classHref,classPlan,classPreparation,classContinuation,classReadingGroups} from './class-flow.js?v=lc-9c0263823d2c';
-import {toneHead,uiIcon} from './ui-icons.js?v=lc-9c0263823d2c';
-import {glossaryLinks,concepts} from './glossary.js?v=lc-9c0263823d2c';
-import {theoryNoteHtml} from './theory-notes.js?v=lc-9c0263823d2c';
-import {sessionTheoryHtml} from './session-learning.js?v=lc-9c0263823d2c';
-import {weekTwoGuideHtml} from './week-two-learning.js?v=lc-9c0263823d2c';
-import {activityBriefFor} from './activity-briefs.js?v=lc-9c0263823d2c';
-import {activityForEncounter,activityHref} from './activities.js?v=lc-9c0263823d2c';
-import {paperSessionGuides,paperActivityAdvance} from './paper-activities.js?v=lc-9c0263823d2c';
+import {encounters,dayLabel} from './encounters.js?v=lc-85a33f7d2f3f';
+import {classHref,classPlan,classPreparation,classContinuation,classReadingGroups} from './class-flow.js?v=lc-85a33f7d2f3f';
+import {toneHead,uiIcon} from './ui-icons.js?v=lc-85a33f7d2f3f';
+import {glossaryLinks,concepts} from './glossary.js?v=lc-85a33f7d2f3f';
+import {theoryNoteHtml} from './theory-notes.js?v=lc-85a33f7d2f3f';
+import {sessionTheoryHtml} from './session-learning.js?v=lc-85a33f7d2f3f';
+import {weekTwoGuideHtml} from './week-two-learning.js?v=lc-85a33f7d2f3f';
+import {activityBriefFor} from './activity-briefs.js?v=lc-85a33f7d2f3f';
+import {activityForEncounter,activityHref} from './activities.js?v=lc-85a33f7d2f3f';
+import {paperSessionGuides,paperActivityAdvance} from './paper-activities.js?v=lc-85a33f7d2f3f';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 const canonReadings={
- '3-lunes':{url:'./materiales/canon.html?v=lc-9c0263823d2c#fundamentos',label:'Leer fundamentos y listas A/B',selection:'Lee la distinción entre valor y selección, Bloom y Bourdieu. Después examina las listas A/B. Guillory se trabaja en la sesión 2.'},
- '3-miercoles':{url:'./materiales/canon.html?v=lc-9c0263823d2c#transmision',label:'Leer transmisión y registros C/D',selection:'Lee «Guillory: transmisión y acceso a la lectura» y los registros C/D. La reseña de Trujillo es opcional.'},
- '4-lunes':{url:'./materiales/canon.html?v=lc-9c0263823d2c#tipos',label:'Leer tipos de canon y repertorio',selection:'Lee los ámbitos de selección y «Del procedimiento a la decisión docente». Recupera A/B y C o D para esbozar tu propuesta.'},
- '4-miercoles':{url:'./materiales/canon.html?v=lc-9c0263823d2c#ficha2',label:'Consultar la consigna de la propuesta grupal',selection:'Revisen la consigna y sus fuentes. El modelo comentado está en Teoría de esta sesión; no hay lecturas nuevas.'}
+ '3-lunes':{url:'./materiales/canon.html?v=lc-85a33f7d2f3f#fundamentos',label:'Leer fundamentos y listas A/B',selection:'Lee la distinción entre valor y selección, Bloom y Bourdieu. Después examina las listas A/B. Guillory se trabaja en la sesión 2.'},
+ '3-miercoles':{url:'./materiales/canon.html?v=lc-85a33f7d2f3f#transmision',label:'Leer transmisión y registros C/D',selection:'Lee «Guillory: transmisión y acceso a la lectura» y los registros C/D. La reseña de Trujillo es opcional.'},
+ '4-lunes':{url:'./materiales/canon.html?v=lc-85a33f7d2f3f#tipos',label:'Leer tipos de canon y repertorio',selection:'Lee los ámbitos de selección y «Del procedimiento a la decisión docente». Recupera A/B y C/D como ejemplos para revisar las decisiones de tus dos selecciones.'},
+ '4-miercoles':{url:'./materiales/canon.html?v=lc-85a33f7d2f3f#ficha2',label:'Consultar la consigna de las dos selecciones',selection:'Revisen la consigna y sus fuentes. El ejemplo comentado está en Teoría; revisen las obras que eligieron. El dossier no añade otra lectura teórica.'}
 };
 
 export function renderClassPage(e,ctx){
@@ -30,7 +30,7 @@ export function renderClassPage(e,ctx){
  const lenses=m.lenses.filter(([title])=>!labels.includes(title.toLowerCase())).map(([title,text,source])=>`<dt>${esc(title)}</dt><dd>${esc(text)} <span class="caption">${esc(source)}</span></dd>`).join('');
  const tools=`<details class="class-concepts"><summary>Herramientas de consulta de la unidad</summary><dl>${lenses}</dl>${glossaryLinks(m.id)}</details>`;
  let workspace='';
- if(e.week>=3)workspace=activity?`<div class="class-activity-entry"><h3>${esc(activity.title)}</h3><p>${esc(paperActivityAdvance(e))}</p><p class="caption">Trabaja a mano y continúa en las mismas notas. Los avances preparan un solo producto.</p><a class="text-link" href="${activityHref(activity.key)}">Ver instrucciones del trabajo</a></div>`:`<div class="class-activity-entry"><h3>Ensayo final, consigna y defensa</h3><p>${e.day==='lunes'?'Continúa el guion de defensa y revisa el ensayo digital con sus evidencias y referencias.':'Completa las defensas pendientes y prepara la entrega digital del ensayo, la consigna y las referencias.'}</p><a class="button primary" href="#proyecto" data-project-target="cierre">Continuar el ensayo final</a></div>`;
+ if(e.week>=3)workspace=activity?`<div class="class-activity-entry"><h3>${esc(activity.title)}</h3><p>${esc(paperActivityAdvance(e))}</p><p class="caption">${activity.key==='1-canon'?'Los apuntes pueden hacerse a mano. El producto grupal es de formato libre, físico o digital.':'Trabaja a mano y continúa en las mismas notas. Los avances preparan un solo producto.'}</p><a class="text-link" href="${activityHref(activity.key)}">Ver instrucciones del trabajo</a></div>`:`<div class="class-activity-entry"><h3>Ensayo final, consigna y defensa</h3><p>${e.day==='lunes'?'Continúa el guion de defensa y revisa el ensayo digital con sus evidencias y referencias.':'Completa las defensas pendientes y prepara la entrega digital del ensayo, la consigna y las referencias.'}</p><a class="button primary" href="#proyecto" data-project-target="cierre">Continuar el ensayo final</a></div>`;
  if(e.week<=2)workspace=`<section class="paper-session"><p>Trabaja a mano en tu cuaderno o en hojas que puedas conservar juntas.</p><ol class="paper-steps">${paperGuide.steps.map(t=>`<li>${esc(t)}</li>`).join('')}</ol><p><strong>Al terminar:</strong> ${esc(paperGuide.result)}</p></section>`;
  const groups=classReadingGroups(e).map(g=>({...g,rows:g.rows.filter(([id])=>plan.kind!=='translation'||!['baudelaire','casal','diez'].includes(id))})).filter(g=>g.rows.length);
  const readings=(e.week===11?'<p class="translation-reading-location">Desde Lecturas puedes acceder a los tres testimonios: el original de Baudelaire y las versiones de Casal y Díez-Canedo están reunidos en <a href="#actividad/3-traduccion">Actividad · Un puerto, dos traducciones</a>. Abre la página de esa actividad para leer los tres poemas completos. A continuación se indica la selección del manual.</p>':'')+(groups.length?groups.map(g=>`<section class="class-reading-group"><h3>${esc(g.title)}</h3>${g.rows.map(([id,selection,source])=>`<div class="class-reading">${resourceCard(id,true,id==='canon'&&canonReading?canonReading.selection:selection,id==='canon'&&canonReading?canonReading:source)}</div>`).join('')}</section>`).join(''):'<p>Recupera tus pasajes, fichas y fuentes ya trabajados. Esta clase no añade una lectura nueva.</p>');

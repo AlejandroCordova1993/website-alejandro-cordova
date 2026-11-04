@@ -1,11 +1,11 @@
 // Brief instructions for the remaining course. Existing note keys and products
 // stay in class-flow/session-learning; weeks 1 and 2 keep their current wording.
-import {paperSessionGuides} from './paper-activities.js?v=lc-9c0263823d2c';
+import {paperSessionGuides} from './paper-activities.js?v=lc-85a33f7d2f3f';
 const briefs={
- "3/1":{...paperSessionGuides["3/1"],hint:"Lleva tus notas de Palacio y de A/B a la conversación del equipo."},
+ "3/1":{...paperSessionGuides["3/1"],hint:"Formen el equipo e inicien sus dos selecciones."},
  "3/2":{...paperSessionGuides["3/2"],hint:"Distingue la disponibilidad del texto de las ayudas para aprender a interpretarlo."},
- "4/1":{...paperSessionGuides["4/1"],hint:"Guarden las razones de su elección junto al esquema."},
- "4/2":{...paperSessionGuides["4/2"],hint:"Comprueben que la propuesta se pueda usar con el grupo elegido."},
+ "4/1":{...paperSessionGuides["4/1"],hint:"Conserven las razones de su elección junto al borrador del producto."},
+ "4/2":{...paperSessionGuides["4/2"],hint:"Comprueben las dos selecciones y el apartado independiente de comparación."},
  '5/1':{
   steps:[
    'Abre la lámina 961 [975], el inicio de 962 [976] y el fragmento de Rivera indicado en Lecturas.',

@@ -1,13 +1,13 @@
-import {paperActivityAdvance,paperActivityGuide} from './paper-activities.js?v=lc-9c0263823d2c';
+import {paperActivityAdvance,paperActivityGuide} from './paper-activities.js?v=lc-85a33f7d2f3f';
 // Cada entrada reúne un trabajo completo. Las sesiones orientan sus avances,
 // sin crear productos, campos ni claves de almacenamiento adicionales.
 export const activities=[
- {key:'1-canon',module:1,title:"Propuesta grupal de lectura",kind:'task',
-  prompt:"En equipo, elijan las lecturas que consideren pertinentes, del curso o de otras fuentes accesibles. Presenten en una página escrita a mano qué leerían con un grupo concreto, por qué y cómo enseñarían a leer un pasaje. Usen el contraste entre los criterios escolares de A y B para justificar su elección. Expliquen qué efecto produce el pasaje y por qué merece atención, formulen una consigna y expliquen qué facilita a sus lectores una acción documentada en C o D. Identifiquen las fuentes que usaron.",
+ {key:'1-canon',module:1,title:"Dos selecciones de lectura: personal e institucional",kind:'task',
+  prompt:paperActivityGuide('1-canon').prompt,
   product:paperActivityGuide('1-canon').product,
   steps:paperActivityGuide('1-canon').steps,
-  preparationGuide:'En la semana 3, reúne apuntes. En la semana 4, comparte tus observaciones con el equipo y preparen una propuesta común.',
-  reviewCriteria:["Explicamos cómo el contraste de los criterios escolares A/B orientó la elección para nuestro grupo.","Localizamos un pasaje y conectamos su forma, su efecto y nuestra valoración.","La consigna enseña a leer ese recurso. Distinguimos el apoyo que proponemos de lo que documenta el caso C o D e identificamos las fuentes."],
+  preparationGuide:'En la semana 3, formen el equipo e inicien las selecciones. En la semana 4, revisen las razones, organicen el producto y preséntenlo.',
+  reviewCriteria:["Cada selección contiene cuatro obras, con autor, título, reseña breve y justificación apoyada en un detalle de lectura y su fuente.","Identificamos a quien propone cada elección personal y definimos institución, público y propósito para la selección institucional.","Aplicamos al menos tres conceptos teóricos diferentes en el conjunto: explicamos cómo ayudan a justificar o revisar decisiones y citamos las fuentes.","La comparación tiene un espacio independiente y explica cambios de criterio, coincidencias o diferencias y una decisión discutida por el equipo.","El formato permite comprender las selecciones y sus razones. Identificamos integrantes y fuentes; se valora la claridad, no el dominio de una herramienta de diseño."],
   encounters:[[3,1],[3,2],[4,1],[4,2]],label:'Notas digitales · Canon y repertorio',hint:'Reúne observaciones, ideas del equipo y sus fuentes.'},
  {key:'2-oralitura',module:2,title:'Comparar voces: Guamán Poma y Chikangana',kind:'comparison',
   prompt:'Compara cómo Guamán Poma y Chikangana presentan voces, destinatarios y mediaciones verbales o visuales. Parte de un detalle localizado de cada objeto y explica una diferencia de época, género o mediación. Justifica con evidencia cualquier relación de poder que nombres. Integra una objeción y tu respuesta; delimita las afirmaciones que permiten las fuentes y tu conocimiento de las lenguas. Rivera y Kowii apoyan la discusión, sin convertirse en nuevos objetos obligatorios de la ficha.',

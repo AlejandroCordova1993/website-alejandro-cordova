@@ -13,12 +13,12 @@ export const weeks=[
   {
     "week": 3,
     "title": "Canon y procesos de canonización",
-    "description": "Docencia: epistemología del canon, historicidad del valor y diferencia entre juicio estético y explicación de la consagración; contraste de Bloom, Bourdieu y Guillory. Práctica: releer Palacio para relacionar procedimiento, efecto y valoración; distinguir ese juicio de la información editorial y contrastar A/B y C/D. Autónomo: fundamentos de Bloom/Bourdieu y A/B para la primera sesión; Guillory y C/D para la segunda. Evidencia: observaciones del cuento, comparación de intervenciones editoriales y reflexión sobre el aprendizaje de lectura, en el mismo cuaderno."
+    "description": "Docencia: epistemología del canon, historicidad del valor y diferencia entre juicio estético y explicación de la consagración; contraste de Bloom, Bourdieu y Guillory. Práctica: releer Palacio para relacionar procedimiento, efecto y valoración; distinguir ese juicio de la información editorial y contrastar A/B y C/D. Autónomo: fundamentos de Bloom/Bourdieu y A/B para la primera sesión; Guillory y C/D para la segunda. Evidencia: observaciones del cuento, comparación de intervenciones editoriales y reflexión sobre el aprendizaje de lectura, en el mismo cuaderno. Se forma el equipo y se inician las selecciones personal e institucional."
   },
   {
     "week": 4,
     "title": "Tipos de canon y repertorios",
-    "description": "Docencia: canon personal, escolar, crítico y editorial; repertorio de modelos, formas y convenciones, y su relación con selección y canonización. Práctica: justificar en equipo una selección libre de lecturas a partir de A/B, valorar un pasaje y diseñar una consigna con un apoyo relacionado con C o D. Autónomo: tipos de canon y repertorio, consigna y modelo comentado. Evidencia: una propuesta grupal de una página y, por separado, pregunta individual del proyecto."
+    "description": "Docencia: canon personal, escolar, crítico y editorial; repertorio de modelos, formas y convenciones, y su relación con selección y canonización. Práctica: revisar y presentar un producto visual grupal de formato libre: cuatro obras por selección, reseñas y justificaciones, al menos tres conceptos aplicados y comparación en un espacio independiente. Autónomo: tipos de canon y repertorio, revisión de las obras elegidas y del producto iniciado en la semana 3. Evidencia: una presentación grupal y, por separado, pregunta individual del proyecto."
   },
   {
     "week": 5,
@@ -104,7 +104,7 @@ export const minimumContents=[
     "module": 1,
     "title": "El repertorio y la canonización de la literatura",
     "weeks": "4; retorno 14",
-    "evidence": "Propuesta grupal de lectura: justificar la selección con A/B, valorar un pasaje, formular una consigna y relacionar un apoyo con una acción de C o D."
+    "evidence": "Dos selecciones de lectura: justificar cuatro obras por selección, aplicar al menos tres conceptos y comparar los criterios en un espacio independiente del producto grupal de formato libre."
   },
   {
     "module": 2,

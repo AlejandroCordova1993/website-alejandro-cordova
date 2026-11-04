@@ -1,8 +1,8 @@
-import {weeks} from './schedule.js?v=lc-9c0263823d2c';
-import {unitActivities} from './curriculum.js?v=lc-9c0263823d2c';
-import {translationRows} from './corpus.js?v=lc-9c0263823d2c';
-import {activityTitle} from './teaching.js?v=lc-9c0263823d2c';
-import {encounterById,dayLabel} from './encounters.js?v=lc-9c0263823d2c';
+import {weeks} from './schedule.js?v=lc-85a33f7d2f3f';
+import {unitActivities} from './curriculum.js?v=lc-85a33f7d2f3f';
+import {translationRows} from './corpus.js?v=lc-85a33f7d2f3f';
+import {activityTitle} from './teaching.js?v=lc-85a33f7d2f3f';
+import {encounterById,dayLabel} from './encounters.js?v=lc-85a33f7d2f3f';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 // Teaching prompts are original syntheses. Texts and attributions are in Leer.
 const lessons={
@@ -20,12 +20,12 @@ const lessons={
   ['Bloom: defender un juicio de valor','Para argumentar un valor literario, localiza cómo está escrito un pasaje, explica qué efecto produce y por qué ese efecto merece atención. Demostrar originalidad histórica requiere compararlo con una tradición.','Palacio, pp. 34–35: contrasta las conclusiones del narrador con sus apoyos y explica por qué esa tensión resulta significativa.'],
   ['Bourdieu: estudiar la consagración','Relaciona posiciones de autores, editoriales, crítica y enseñanza. Una intervención editorial documentada permite reconocer a un agente; la consagración duradera exige estudiar un proceso más amplio.','Página legal de Palacio (página 6 del visor de PDF): identifica al Consejo de la Judicatura y la distribución gratuita. Distingue esa intervención de tu valoración del cuento.'],
   ['Guillory: acceso y transmisión escolar','La enseñanza distribuye prácticas y saberes que permiten leer. Ofrecer un libro y aprender a interpretarlo son logros relacionados, pero distintos.','Compara una intervención de C/D y recupera qué aprendiste al trabajar Palacio y qué ayuda te permitió hacerlo.'],
-  ['De las observaciones a la selección docente','Conserva una valoración del pasaje, el dato editorial y el contraste A/B. Después añade la comparación C/D y tu experiencia de aprendizaje. Estos apuntes preparan las razones de tu elección.','Trabaja en el mismo cuaderno durante ambas sesiones: Bloom/Bourdieu y A/B en la primera; Guillory y C/D en la segunda.']
+  ['De las observaciones a dos selecciones','La valoración del pasaje, el dato editorial y los casos A/B y C/D permiten distinguir razones de elección. En la selección personal cuentan las trayectorias lectoras; en la institucional, también las funciones y condiciones de lectura.','Trabaja en el mismo cuaderno durante ambas sesiones: Bloom/Bourdieu y A/B en la primera; Guillory y C/D en la segunda.']
  ],
  4:[
   ['Tipos de canon','Compara selecciones personales, escolares, críticas y editoriales. Sus agentes, destinatarios y criterios pueden coincidir parcialmente.','No conviertas una lista individual en prueba de todo el canon de una institución.'],
   ['Repertorio y canonización','El repertorio comprende posibilidades compartidas de escritura y lectura. En un pasaje, relaciona una convención con su realización concreta, su efecto y el valor que argumentas. Después explica cómo enseñarías a leerlo.','Distingue el valor literario de la utilidad docente: una misma obra puede enseñarse con propósitos distintos.'],
-  ['Una selección docente argumentada','Justifica qué incluirías, para qué público y con qué carga. Usa las listas y los registros identificados del dossier.','Entreguen una propuesta de una página por equipo, con un pasaje, una consigna de lectura y el apoyo que motiva el caso C o D.']
+  ['Dos selecciones argumentadas','La selección personal y la institucional pueden compartir obras con razones diferentes. Los conceptos permiten explicar cómo cambian los criterios.','El trabajo grupal reúne cuatro obras por selección, reseñas, justificaciones y al menos tres conceptos aplicados. La comparación ocupa su propio espacio; el formato es libre.']
  ],
  5:[
   ['Centro y periferia son relaciones','Indica respecto de qué institución, lengua, mercado o circuito una posición es central o periférica. La identidad de un autor no demuestra automáticamente subalternidad.','¿Qué acceso o reconocimiento está en disputa?'],
