@@ -1,6 +1,6 @@
 // Brief instructions for the remaining course. Existing note keys and products
 // stay in class-flow/session-learning; weeks 1 and 2 keep their current wording.
-import {paperSessionGuides} from './paper-activities.js?v=lc-85a33f7d2f3f';
+import {paperSessionGuides} from './paper-activities.js?v=lc-2e516dbef4d7';
 const briefs={
  "3/1":{...paperSessionGuides["3/1"],hint:"Formen el equipo e inicien sus dos selecciones."},
  "3/2":{...paperSessionGuides["3/2"],hint:"Distingue la disponibilidad del texto de las ayudas para aprender a interpretarlo."},

@@ -1,10 +1,10 @@
-import {encounters,dayLabel} from './encounters.js?v=lc-85a33f7d2f3f';
-import {classHref} from './class-flow.js?v=lc-85a33f7d2f3f';
-import {activityAdvance,activityHref} from './activities.js?v=lc-85a33f7d2f3f';
-import {focusedComparison,focusedArgument} from './activity-workspace.js?v=lc-85a33f7d2f3f';
-import {fichaTitles} from './class-flow.js?v=lc-85a33f7d2f3f';
-import {activityProducts} from './seminar.js?v=lc-85a33f7d2f3f';
-import {paperActivityGuide,paperActivityAdvance} from './paper-activities.js?v=lc-85a33f7d2f3f';
+import {encounters,dayLabel} from './encounters.js?v=lc-2e516dbef4d7';
+import {classHref} from './class-flow.js?v=lc-2e516dbef4d7';
+import {activityAdvance,activityHref} from './activities.js?v=lc-2e516dbef4d7';
+import {focusedComparison,focusedArgument} from './activity-workspace.js?v=lc-2e516dbef4d7';
+import {fichaTitles} from './class-flow.js?v=lc-2e516dbef4d7';
+import {activityProducts} from './seminar.js?v=lc-2e516dbef4d7';
+import {paperActivityGuide,paperActivityAdvance} from './paper-activities.js?v=lc-2e516dbef4d7';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 export function activityReviewHtml(activity){

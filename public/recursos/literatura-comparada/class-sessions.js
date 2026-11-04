@@ -1,8 +1,8 @@
-import {weeks} from './schedule.js?v=lc-85a33f7d2f3f';
-import {unitActivities} from './curriculum.js?v=lc-85a33f7d2f3f';
-import {translationRows} from './corpus.js?v=lc-85a33f7d2f3f';
-import {activityTitle} from './teaching.js?v=lc-85a33f7d2f3f';
-import {encounterById,dayLabel} from './encounters.js?v=lc-85a33f7d2f3f';
+import {weeks} from './schedule.js?v=lc-2e516dbef4d7';
+import {unitActivities} from './curriculum.js?v=lc-2e516dbef4d7';
+import {translationRows} from './corpus.js?v=lc-2e516dbef4d7';
+import {activityTitle} from './teaching.js?v=lc-2e516dbef4d7';
+import {encounterById,dayLabel} from './encounters.js?v=lc-2e516dbef4d7';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 // Teaching prompts are original syntheses. Texts and attributions are in Leer.
 const lessons={
@@ -24,7 +24,7 @@ const lessons={
  ],
  4:[
   ['Tipos de canon','Compara selecciones personales, escolares, críticas y editoriales. Sus agentes, destinatarios y criterios pueden coincidir parcialmente.','No conviertas una lista individual en prueba de todo el canon de una institución.'],
-  ['Repertorio y canonización','El repertorio comprende posibilidades compartidas de escritura y lectura. En un pasaje, relaciona una convención con su realización concreta, su efecto y el valor que argumentas. Después explica cómo enseñarías a leerlo.','Distingue el valor literario de la utilidad docente: una misma obra puede enseñarse con propósitos distintos.'],
+  ['Repertorio y canonización','El repertorio comprende posibilidades compartidas de escritura y lectura. En un pasaje, relaciona una convención con su realización concreta, su efecto y el valor que argumentas. Esa valoración puede sostener una preferencia personal o una elección para una institución y sus lectores.','Distingue valoración y criterio de selección: una misma obra puede incluirse por razones distintas según público y propósito.'],
   ['Dos selecciones argumentadas','La selección personal y la institucional pueden compartir obras con razones diferentes. Los conceptos permiten explicar cómo cambian los criterios.','El trabajo grupal reúne cuatro obras por selección, reseñas, justificaciones y al menos tres conceptos aplicados. La comparación ocupa su propio espacio; el formato es libre.']
  ],
  5:[

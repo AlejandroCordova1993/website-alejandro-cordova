@@ -1,4 +1,4 @@
-import {paperActivityAdvance,paperActivityGuide} from './paper-activities.js?v=lc-85a33f7d2f3f';
+import {paperActivityAdvance,paperActivityGuide} from './paper-activities.js?v=lc-2e516dbef4d7';
 // Cada entrada reúne un trabajo completo. Las sesiones orientan sus avances,
 // sin crear productos, campos ni claves de almacenamiento adicionales.
 export const activities=[
