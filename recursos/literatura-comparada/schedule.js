@@ -18,7 +18,7 @@ export const weeks=[
   {
     "week": 4,
     "title": "Tipos de canon y repertorios",
-    "description": "Docencia: canon personal, escolar, crítico y editorial; repertorio de modelos, formas y convenciones, y su relación con selección y canonización. Práctica: justificar una selección docente, explicar una convención mediante un pasaje y contrastar una decisión de selección o difusión con C o D. Autónomo: tipos de canon y repertorio para la primera sesión; consigna de la ficha y modelo comentado para la segunda. Recuperar pasajes ya leídos; no se pide investigar su circulación. Evidencia: ficha 2 con referencias dentro del texto y, por separado, pregunta del proyecto."
+    "description": "Docencia: canon personal, escolar, crítico y editorial; repertorio de modelos, formas y convenciones, y su relación con selección y canonización. Práctica: justificar en equipo una selección libre de lecturas a partir de A/B, valorar un pasaje y diseñar una consigna con un apoyo relacionado con C o D. Autónomo: tipos de canon y repertorio, consigna y modelo comentado. Evidencia: una propuesta grupal de una página y, por separado, pregunta individual del proyecto."
   },
   {
     "week": 5,
@@ -104,7 +104,7 @@ export const minimumContents=[
     "module": 1,
     "title": "El repertorio y la canonización de la literatura",
     "weeks": "4; retorno 14",
-    "evidence": "Ficha 2: explicar una convención en la selección docente y contrastar una decisión de selección o difusión con un registro institucional, delimitando su alcance."
+    "evidence": "Propuesta grupal de lectura: justificar la selección con A/B, valorar un pasaje, formular una consigna y relacionar un apoyo con una acción de C o D."
   },
   {
     "module": 2,

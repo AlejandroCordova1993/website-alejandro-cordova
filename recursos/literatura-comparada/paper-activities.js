@@ -13,11 +13,11 @@ export const paperActivities={
   steps:['Elige un aspecto que puedas observar en ambos relatos, como las razones que ofrecen sus narradores para explicar la violencia. Plantea qué quieres comparar y una respuesta provisional.','Reúne dos indicios de cada cuento: cita o detalle, página o párrafo y explicación. Identifica edición y traducción; conserva una diferencia formal o histórica.','Relaciona al menos un pasaje de cada obra para sostener tu respuesta. Discute un pasaje que pueda cuestionarla y explica qué precisas o mantienes.','Redacta la ficha: pregunta y respuesta, comparación de pasajes, diferencia, objeción con respuesta y conclusión limitada. Integra sus referencias.'],
   product:'Ficha 1 individual de 250–350 palabras. Las notas de las semanas 1 y 2 preparan una sola entrega en papel.'
  },
- '1-canon':{
-  purpose:'Justificar qué textos elegirías para enseñar, distinguiendo su valor literario, las decisiones institucionales y las condiciones de lectura.',
-  materials:['Dossier Valor, selección y consagración: fundamentos, tipos de canon, listas simuladas A/B y registros C/D.','Palacio, pp. 34–35; página legal de la edición del curso, página 6 del visor de PDF.','Pasajes ya leídos de los textos que elijas, como Palacio y Machado.'],
-  steps:['Explica con un pasaje cómo narra la obra, qué efecto produce y por qué lo valoras. Distingue esa valoración del dato sobre quién la publica.','Compara las razones de selección de A/B e identifica su ámbito escolar. Examina una intervención concreta de C/D y recupera qué aprendiste al leer Palacio y qué apoyo te ayudó.','Define público y propósito; como referencia, elige dos textos conocidos. Explica qué aporta cada uno y cómo enseñarías a reconocer una convención narrativa.','Redacta 250–350 palabras: justifica la selección, contrasta A/B y C o D, y conecta pasaje, efecto, valoración y enseñanza. Incluye las fuentes y sus localizadores.'],
-  product:'Ficha 2 individual de 250–350 palabras. Las semanas 3 y 4 preparan una misma ficha; las notas de cada sesión no son entregas separadas.'
+ "1-canon":{
+  purpose:"Elegir lecturas en equipo y justificar cómo los criterios de selección cambian lo que se lee y se aprende a leer.",
+  materials:["Dossier Valor, selección y consagración: listas escolares A/B y registros institucionales C/D.","Las lecturas que elija el equipo, del curso o de otras fuentes accesibles. Palacio y la página legal de su edición (página 6 del visor de PDF) son materiales de preparación."],
+  steps:["¿Qué leerían, con quién y para qué? Indiquen el grupo y qué quieren que aprenda. Comparen los criterios de las listas escolares A y B y expliquen cómo ese contraste orientó las lecturas que eligieron.","¿Qué merece atención en uno de los textos? Elijan un pasaje breve y anoten su página o párrafo. Expliquen cómo está escrito, qué efecto produce esa forma de escribir y por qué les parece literariamente significativo.","¿Cómo ayudarían al grupo a leer el pasaje? Escriban la consigna exacta que darían para observar y explicar ese recurso. Elijan una acción concreta de C o D, expliquen qué facilita a sus lectores y relaciónenla con un apoyo que ofrecerían a su grupo."],
+  product:"Una propuesta de una página, escrita a mano y firmada por el equipo, con las fuentes del pasaje y del dossier. Entreguen una sola hoja por equipo."
  },
  '2-oralitura':{
   purpose:'Comparar cómo se presentan voces y destinatarios sin borrar las diferencias históricas, lingüísticas y de mediación.',
@@ -115,19 +115,19 @@ export const paperSessionGuides={
  },
  '3/1':{
   steps:['Relee Palacio, pp. 34–35: contrasta una conclusión del narrador con la razón que ofrece. Explica su efecto y por qué lo valoras.','Consulta la página legal (página 6 del visor de PDF). Anota quién publica y cómo distribuye para distinguir ese dato de tu valoración literaria.','En las listas A/B del dossier, compara las razones de selección de ambos docentes. Anota las fuentes junto a tus observaciones.'],
-  result:'Conserva la valoración, el dato editorial y el contraste A/B en tus notas. Preparan la ficha 2 de las semanas 3 y 4.'
+  result:'Conserva la valoración, el dato editorial y el contraste A/B en tus notas. Preparan la propuesta grupal de la semana 4.'
  },
  '3/2':{
   steps:['Compara C y D: señala una intervención de cada institución para seleccionar, difundir o acompañar la lectura. Apoya la diferencia en sus presentaciones.','Recupera el trabajo con Palacio: explica qué aprendiste a observar y qué explicación o ejercicio te ayudó a hacerlo.','Relaciona ambas observaciones: disponer de una obra y aprender a interpretarla requieren condiciones distintas. Anota las fuentes de C/D.'],
-  result:'Añade estas observaciones a tus notas de la ficha 2. En la semana 4 servirán para elegir textos y prever su lectura.'
+  result:'Añade estas observaciones a tus notas. Las compartirás con el equipo para elegir lecturas y planificar cómo trabajarlas.'
  },
- '4/1':{
-  steps:['Recupera tus observaciones y define a quién enseñarías y qué debería aprender. Como referencia, elige dos textos conocidos y explica qué aporta cada uno.','Con un pasaje, explica una convención narrativa, su efecto y por qué lo valoras. Indica qué harías observar al grupo para reconocerlo.','Contrasta tus decisiones con A/B y C o D, y prepara el esquema de la ficha. La pregunta del ensayo se registra aparte, en Proyecto.'],
-  result:'Conserva la selección y el esquema de la ficha 2. Redactarás la misma ficha en la siguiente sesión.'
+ "4/1":{
+  steps:["En equipo, definan a qué grupo enseñarían y qué quieren que aprenda. Elijan lecturas del curso o de otras fuentes accesibles, en la cantidad que consideren adecuada.","Contrasten los criterios escolares de A y B y acuerden cómo ese contraste orienta su selección. Elijan un pasaje que les permita explicar un efecto de la escritura.","Esbocen la consigna para leer el pasaje. Recuperen una acción de C o D como referencia para decidir qué apoyo ofrecerían."],
+  result:"Conserven un esquema por equipo. Prepararán la propuesta final en la sesión 2. Registren aparte, en Proyecto, la pregunta individual del ensayo."
  },
- '4/2':{
-  steps:['Recupera el esquema y redacta la ficha 2 de 250–350 palabras. Justifica textos, público y propósito.','Identifica el ámbito escolar de A/B y contrasta sus criterios. Integra el análisis de una convención y su valor, la lectura que enseñarías y una intervención de C o D.','Revisa que las referencias estén junto a las afirmaciones que sostienen. Precisa qué documenta cada fuente y qué propones tú.'],
-  result:'Entrega una sola ficha 2 revisada en papel. La preparación permanece en tu cuaderno; la pregunta del ensayo pertenece al proyecto digital.'
+ "4/2":{
+  steps:["¿Qué leerían, con quién y para qué? Indiquen el grupo y qué quieren que aprenda. Comparen los criterios de las listas escolares A y B y expliquen cómo ese contraste orientó las lecturas que eligieron.","¿Qué merece atención en uno de los textos? Elijan un pasaje breve y anoten su página o párrafo. Expliquen cómo está escrito, qué efecto produce esa forma de escribir y por qué les parece literariamente significativo.","¿Cómo ayudarían al grupo a leer el pasaje? Escriban la consigna exacta que darían para observar y explicar ese recurso. Elijan una acción concreta de C o D, expliquen qué facilita a sus lectores y relaciónenla con un apoyo que ofrecerían a su grupo."],
+  result:"Una propuesta de una página, escrita a mano y firmada por el equipo, con las fuentes del pasaje y del dossier. Entreguen una sola hoja por equipo."
  },
  '5/1':{
   steps:['Observa la lámina 961 [975] y el inicio de 962 [976]. Describe una voz o figura, a quién se dirige y un detalle con su folio.','Contrasta ese detalle con una afirmación de Rivera, pp. 19–26. Distingue lo visible en el manuscrito de tu interpretación.','Explica una primera relación entre voz, autoridad y destinatario.'],
@@ -224,10 +224,10 @@ const sessionAdvances={
  '1/2':'Retoma tu pregunta y lee los fragmentos de Machado. Anota un pasaje de cada relato, un aspecto común y una diferencia por examinar. Ajusta la pregunta y ensaya una respuesta. Continúa en el cuaderno: estás preparando la ficha 1.',
  '2/1':'Reúne en el cuaderno dos indicios de Palacio y dos de Machado, con fuentes, localizadores y explicación. Examínalos con el mismo criterio y precisa una respuesta, una diferencia y un límite. Selecciona los pasajes que usarás para redactar la ficha 1 en la siguiente sesión.',
  '2/2':'Redacta a mano la ficha 1 de 250–350 palabras con pasajes de ambos cuentos, una diferencia, una objeción y tu respuesta. Revisa la conclusión y las referencias. Entrega esta única ficha; conserva las notas que prepararon el argumento.',
- '3/1':'En tu cuaderno, explica cómo narra Palacio, qué efecto produce y por qué lo valoras, con apoyo en las pp. 34–35. Distingue esa valoración del dato editorial de la página legal (página 6 del visor de PDF). Compara después las razones de las listas A/B. Son notas para la misma ficha 2.',
- '3/2':'Compara una intervención de C y D, apoyándote en sus presentaciones. Después recuerda qué aprendiste al observar Palacio y qué explicación o ejercicio te ayudó. Anota la diferencia entre disponer del texto y aprender a interpretarlo, con las fuentes de C/D. Continúas preparando la ficha 2 en tu cuaderno.',
- '4/1':'Con tus notas, elige textos, público y propósito; como referencia, bastan dos textos conocidos. Explica qué valoras en su escritura y qué harías observar para enseñarlos. Contrasta A/B y C o D, y esboza la ficha 2 a mano. La pregunta del ensayo se registra aparte, en Proyecto.',
- '4/2':'Redacta a mano la ficha 2 de 250–350 palabras: selección para un público, ámbito y criterios escolares de A/B, pasaje con efecto y valoración, enseñanza y una intervención de C o D. Integra las referencias y revisa qué demuestra cada fuente. Entrega una sola ficha.',
+ '3/1':'En tu cuaderno, explica cómo narra Palacio, qué efecto produce y por qué lo valoras, con apoyo en las pp. 34–35. Distingue esa valoración del dato editorial de la página legal (página 6 del visor de PDF). Compara después las razones de las listas A/B. Son apuntes para la propuesta grupal.',
+ '3/2':'Compara una intervención de C y D, apoyándote en sus presentaciones. Después recuerda qué aprendiste al observar Palacio y qué explicación o ejercicio te ayudó. Anota la diferencia entre disponer del texto y aprender a interpretarlo, con las fuentes de C/D. Lleva estos apuntes a la discusión con tu equipo.',
+ '4/1':'En equipo, decidan a quién enseñarían, qué quieren que aprenda y qué lecturas elegirían. Usen A/B para justificar su criterio. Elijan un pasaje y esbocen una consigna. Guarden la pregunta individual del ensayo aparte, en Proyecto.',
+ '4/2':'Redacten en equipo una página a mano. Justifiquen la selección a partir de A/B, expliquen qué hace valioso un pasaje y propongan cómo enseñarlo a leer. Relacionen un apoyo con una acción de C o D. Incluyan sus fuentes y entreguen una hoja firmada por equipo.',
  '5/1':'En tu cuaderno, describe una voz o figura de Guamán Poma, su destinatario y un detalle con folio. Contrástalo con una afirmación de Rivera y explica qué observas y qué interpretas. Estas notas preparan la ficha 3; Chikangana se incorpora en la semana 6.',
  '5/2':'Relee el manuscrito y Rivera. Señala qué detalle sostiene o dificulta la explicación y precisa tu interpretación de voz, autoridad y destinatario. Anota su límite en las mismas páginas del cuaderno. Continúas preparando la comparación, sin una entrega nueva.',
  '6/1':'Añade al cuaderno un detalle de voz o destinatario de Chikangana con su localizador. Compáralo con Guamán Poma y explica una diferencia histórica o de mediación. Kowii apoya la discusión; no añade un tercer objeto. Conserva estos registros para la ficha 3.',

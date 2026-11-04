@@ -1,4 +1,4 @@
-import {STORAGE_KEY} from './state.js?v=lc-b3ebd55f035a';
+import {STORAGE_KEY} from './state.js?v=lc-fced8c0376bc';
 
 // All writers use the same browser lock. The raw baseline detects edits made
 // since this tab loaded, including imports and deletion in another tab.

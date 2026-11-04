@@ -1,6 +1,6 @@
-import {courseModules,taskNotes,optionalComparison} from './curriculum.js?v=lc-b3ebd55f035a';
-import {resourceById} from './corpus.js?v=lc-b3ebd55f035a';
-import {keyNames,fieldLabel,archivedKeys} from './state.js?v=lc-b3ebd55f035a';
+import {courseModules,taskNotes,optionalComparison} from './curriculum.js?v=lc-fced8c0376bc';
+import {resourceById} from './corpus.js?v=lc-fced8c0376bc';
+import {keyNames,fieldLabel,archivedKeys} from './state.js?v=lc-fced8c0376bc';
 
 export const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function collectEvidence(state){
@@ -55,6 +55,7 @@ export function fichaPrompt(key){
 }
 export function fichaChecklist(state,key){
  const n=state.notes[key]||{},words=countWords(n.argument);
+ if(key==='1-canon')return [{field:'argument',label:'Texto registrado',ok:words>0}];
  return [...fichaRequired[fichaKind(key)].filter(f=>f!=='argument').map(f=>({field:f,label:fieldLabel(key,f),ok:!!n[f]?.trim()})),
   {field:'argument',label:`${fieldLabel(key,'argument')}: ${words} palabras · referencia: 250–350`,ok:words>=250&&words<=350}];
 }

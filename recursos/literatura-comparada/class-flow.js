@@ -1,6 +1,6 @@
-import {activityByKey,activityFromHash,activityHref} from './activities.js?v=lc-b3ebd55f035a';
-import {encounters,autonomousPlan} from './encounters.js?v=lc-b3ebd55f035a';
-import {weeklyReadings} from './journey.js?v=lc-b3ebd55f035a';
+import {activityByKey,activityFromHash,activityHref} from './activities.js?v=lc-fced8c0376bc';
+import {encounters,autonomousPlan} from './encounters.js?v=lc-fced8c0376bc';
+import {weeklyReadings} from './journey.js?v=lc-fced8c0376bc';
 
 export const classHref=e=>`#semana/${e.week}/${e.day==='lunes'?1:2}`;
 export function classFromHash(hash){
@@ -68,7 +68,7 @@ export function resumeHref(state){
  return ['#proyecto','#ampliacion'].includes(hash)?hash:'#introduccion';
 }
 const workClasses={intro:[1,1],'1-A':[2,2],'1-canon':[4,2],'2-oralitura':[6,2],'2-cartografia':[13,2],'2-sumativa':[8,2],'3-hermeneutica':[9,2],'3-recepcion':[10,2],'3-traduccion':[11,2],'3-metodos':[12,1],'3-microclase':[12,2],'4-intertexto':[14,2],'4-temas':[15,1],'4-medios':[15,1]};
-export const fichaTitles={'1-A':'Ficha 1 · Palacio / Machado','1-canon':'Ficha 2 · Canon y repertorio','2-oralitura':'Ficha 3 · Guamán Poma / Chikangana','3-recepcion':'Ficha 4 · Recepción y límites','4-intertexto':'Ficha 5 · Cervantes / Borges'};
+export const fichaTitles={'1-A':'Ficha 1 · Palacio / Machado','1-canon':'Propuesta grupal de lectura','2-oralitura':'Ficha 3 · Guamán Poma / Chikangana','3-recepcion':'Ficha 4 · Recepción y límites','4-intertexto':'Ficha 5 · Cervantes / Borges'};
 export function workDestination(key,fallback){
  if(activityByKey[key])return {href:activityHref(key),field:key==='3-traduccion'?'3-traduccion-translation':key+'-argument'};
  const position=workClasses[key];

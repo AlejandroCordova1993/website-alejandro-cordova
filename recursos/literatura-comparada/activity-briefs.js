@@ -1,54 +1,11 @@
 // Brief instructions for the remaining course. Existing note keys and products
 // stay in class-flow/session-learning; weeks 1 and 2 keep their current wording.
+import {paperSessionGuides} from './paper-activities.js?v=lc-fced8c0376bc';
 const briefs={
- '3/1':{
-  steps:[
-   'Lee las explicaciones de Bloom y Bourdieu del dossier y compara los criterios de sus listas A/B: son selecciones escolares simuladas.',
-   'Relee Palacio, pp. 34–35. Señala una conclusión del narrador y contrástala con sus apoyos; explica el efecto de esa manera de narrar.',
-   'Explica por qué ese efecto merece atención: estás argumentando un valor literario, no solo nombrando un recurso.',
-   'En la página legal (página 6 del visor de PDF), identifica quién edita y cómo distribuye el libro. Escribe la explicación y el dato editorial en tu cuaderno, con sus localizadores.'
-  ],
-  result:'Notas sobre el pasaje, la edición y A/B para preparar la ficha 2. Hoy no entregas la ficha ni necesitas escribir 250–350 palabras.',
-  label:'Mis notas sobre el pasaje y la edición',
-  hint:'Conserva tu explicación del efecto y su valor, el dato editorial y el contraste A/B. Usarás estas observaciones para justificar tu selección docente.',
-  check:'La valoración se apoya en el pasaje; el dato editorial, en la página legal. La publicación no demuestra por sí sola calidad literaria.'
- },
- '3/2':{
-  steps:[
-   'Recupera tus notas y lee la explicación de Guillory y los documentos C/D del dossier.',
-   'Compara una intervención concreta de C y D: qué seleccionan y qué ofrecen al lector. Apoya una diferencia en una frase de cada presentación.',
-   'Recupera el trabajo con Palacio: explica qué aprendiste a observar y qué explicación, relectura o discusión te ayudó.',
-   'Conserva ambas observaciones en tu cuaderno: servirán para elegir textos y planificar su lectura en la semana 4.'
-  ],
-  result:'Notas ampliadas con el contraste C/D. Las usarás para tu selección docente en la semana 4; todavía no entregas la ficha 2.',
-  label:'Mis notas sobre los documentos C/D',
-  hint:'Conserva la diferencia entre las intervenciones de C/D y lo que aprendiste al trabajar Palacio. Disponer del texto y aprender a leerlo son logros distintos.',
-  check:'El público declarado de un catálogo no demuestra quién consiguió o leyó sus libros.'
- },
- '4/1':{
-  steps:[
-   'Recupera A/B, C/D y tus notas. Identifica quién selecciona, para quién y con qué criterio.',
-   'Elige textos que conozcas, como Palacio y Machado. Indica el público, su nivel y qué aprendería con esa lectura.',
-   'En un pasaje, identifica una convención, explica su efecto y por qué la valoras. Indica cómo enseñarías a leerlo y contrasta una decisión de selección o difusión con C o D.',
-   'Abre el hito del ensayo y guarda allí tu pregunta provisional.'
-  ],
-  result:'Selección docente y esquema de la ficha 2; pregunta del ensayo en su espacio propio. El texto final se escribe en la sesión 2.',
-  label:'Mi selección docente y esquema',
-  hint:'Indica público, lecturas elegidas, propósito, convención que enseñarás y apoyo del dossier. Conserva debajo las notas que quieras recuperar.',
-  check:'Explica cómo se leerían los textos; enumerar títulos o nombrar un género no explica la convención.'
- },
- '4/2':{
-  steps:[
-   'Consulta tu preparación y redacta la ficha a mano, conservando los apuntes anteriores.',
-   'Contrasta los criterios de A/B, ambas selecciones escolares. Justifica tu elección para un público: explica con un pasaje la convención, su efecto, por qué merece atención y qué enseñarías a leer.',
-   'Usa C o D para contrastar una decisión de selección o difusión. Ese documento no certifica tu propuesta; explica qué permite afirmar.',
-   'Revisa el argumento y registra un cambio o una decisión que mantienes. Prepara la ficha para entregar.'
-  ],
-  result:'Una ficha 2 de 250–350 palabras. Revisa y entrega la ficha escrita a mano antes de la siguiente semana, como indique el docente. Conserva la preparación en tu cuaderno.',
-  label:'Mi ficha 2 · Canon y repertorio',
-  hint:'Escribe un texto continuo: comparación A/B, selección para tu público, convención y apoyo C o D. La preparación se consulta aparte.',
-  check:'A/B son simulaciones escolares; C/D documentan otras selecciones reales. No atribuyas a sus instituciones las decisiones de los docentes ficticios.'
- },
+ "3/1":{...paperSessionGuides["3/1"],hint:"Lleva tus notas de Palacio y de A/B a la conversación del equipo."},
+ "3/2":{...paperSessionGuides["3/2"],hint:"Distingue la disponibilidad del texto de las ayudas para aprender a interpretarlo."},
+ "4/1":{...paperSessionGuides["4/1"],hint:"Guarden las razones de su elección junto al esquema."},
+ "4/2":{...paperSessionGuides["4/2"],hint:"Comprueben que la propuesta se pueda usar con el grupo elegido."},
  '5/1':{
   steps:[
    'Abre la lámina 961 [975], el inicio de 962 [976] y el fragmento de Rivera indicado en Lecturas.',

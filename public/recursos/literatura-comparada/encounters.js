@@ -45,18 +45,18 @@ export const encounters=[
  ['Orienta la consulta de ASALE y CLACSO/Ayacucho.','Compara una intervención de C y D: qué seleccionan y qué ofrecen al lector. Apoya una diferencia con una frase de cada presentación.'],
  ['Relaciona las condiciones de acceso con la experiencia de aprendizaje del grupo.','Recupera el trabajo con Palacio: explica qué aprendiste a observar y qué explicación, relectura o discusión te ayudó. C/D documentan intervenciones editoriales, no ese aprendizaje.'],
  ['Conecta estos resultados con tipos de canon y repertorio.','Conserva ambas observaciones en tu cuaderno; las usarás para elegir textos y planificar su lectura en la semana 4.'])),
- meeting(4,'lunes','Tipos de canon y repertorio','Precisar quién selecciona, con qué función y qué lectura propone enseñar.','Selección docente razonada y pregunta provisional del ensayo.',regular(
+ meeting(4,'lunes','Tipos de canon y repertorio','Precisar quién selecciona, con qué función y qué lectura propone enseñar.','Esquema de la propuesta grupal y pregunta individual del ensayo.',regular(
  ['Recupera una selección y su agente.','Explica por qué no basta identificar el soporte del documento.'],
  ['Distingue canon personal, escolar, crítico y editorial; explica repertorio con Even-Zohar.','Asocia una selección con su función y una convención concreta.'],
  ['Guía el uso del dossier y de las observaciones preparadas.','En un pasaje, identifica cómo narra, explica su efecto y por qué lo valoras; relaciona ese procedimiento con una convención del repertorio.'],
- ['Discute criterios, acceso y apoyos de las propuestas.','Como referencia, elige dos textos conocidos. Explica qué aporta cada uno y qué harías para enseñar a leerlos al público elegido.'],
- ['Delimita el alcance de la Ficha 2.','Conserva la evidencia de la ficha. Guarda aparte, en Proyecto, la pregunta provisional del ensayo.'])),
- meeting(4,'miercoles','Argumentar una selección docente','Sostener decisiones de canon y repertorio con razones y fuentes.','Ficha 2 · borrador de 250–350 palabras, para cerrar antes de la siguiente semana.',regular(
+ ['Discute criterios, acceso y apoyos de las propuestas.','En equipo, acuerden el grupo, el propósito y las lecturas que consideren adecuadas. Expliquen cómo A/B orienta su criterio.'],
+ ['Delimita el alcance de la propuesta grupal.','Conserven el esquema del equipo. Guarden aparte, en Proyecto, su pregunta individual del ensayo.'])),
+ meeting(4,'miercoles','Argumentar una selección docente','Sostener decisiones de canon y repertorio con razones y fuentes.','Una propuesta de lectura de una página, escrita a mano y firmada por el equipo.',regular(
  ['Recoge dudas sobre los cuatro tipos y sus superposiciones.','Comprueba agente, función y evidencia de tu selección.'],
  ['Modela cómo separar dato, inferencia y decisión propia.','Identifica esos tres componentes en una formulación breve.'],
- ['Acompaña la escritura de la Ficha 2.','Compara A/B y justifica tu selección: explica, con un pasaje, una convención, su efecto, por qué merece atención y qué enseñarías a leer.'],
- ['Orienta la revisión por criterios y discute objeciones.','Contrasta una decisión de selección o difusión con C o D e integra la fuente y su localizador en la ficha.'],
- ['Conecta el canon con las relaciones de poder de la siguiente unidad.','Guarda la revisión y la pregunta provisional del ensayo.'])),
+ ['Acompaña la escritura en equipo.','Expliquen cómo A/B orienta la selección. Justifiquen el valor de un pasaje y escriban la consigna para enseñarlo a leer.'],
+ ['Orienta la revisión por criterios y discute objeciones.','Relacionen un apoyo que ofrecerían con una acción documentada en C o D. Anoten las fuentes.'],
+ ['Conecta el canon con las relaciones de poder de la siguiente unidad.','Entreguen una sola hoja por equipo. Cada estudiante conserva su pregunta del ensayo en Proyecto.'])),
  meeting(5,'lunes','Leer relaciones verbales y visuales','Examinar voz, destinatario y posición de los cuerpos en Guamán Poma.','Mapa inicial de voces, destinatarios y mediaciones.',regular(
  ['Recupera preguntas sobre selección y reconocimiento.','Formula una hipótesis sobre la lámina y su destinatario.'],
  ['Sitúa manuscrito, contexto colonial y la diferencia entre escena figurada y acontecimiento probado.','Distingue lo que muestra el archivo de una conclusión histórica que requiere otra fuente.'],
@@ -206,7 +206,7 @@ export const autonomousPlan={
  1:a([0,'La introducción y el diagnóstico comienzan en clase; no exigen una lectura previa.'],[70,'Lee Palacio completo y Guillén, pp. 13–15; selecciona dos indicios.'],[50,'Consolida tu pregunta y tus localizadores a partir del contraste realizado.']),
  2:a([75,'Lee Machado completo y Guillén, pp. 93–95 hasta cerrar el modelo C; recupera Palacio.'],[20,'Relee los pasajes elegidos y prepara una objeción.'],[25,'Revisa y cierra la Ficha 1 antes de la siguiente semana.']),
  3:a([70,'Lee los fundamentos sobre Bloom y Bourdieu y las listas A/B del dossier.'],[20,'Lee la explicación de Guillory y consulta los registros C/D del dossier.'],[30,'Conserva en tu cuaderno la comparación C/D y lo que aprendiste al leer Palacio; prepara así la selección de la semana 4.']),
- 4:a([40,'Lee tipos de canon y repertorio; recupera A/B, C/D y tus notas de preparación.'],[35,'Consulta la consigna de la ficha 2 y el modelo comentado de la sesión 4·2. Precisa tu selección; la pregunta del ensayo se guarda aparte, en Proyecto.'],[45,'Revisa y cierra la Ficha 2 con sus referencias dentro del texto. La preparación permanece en tu cuaderno.']),
+ 4:a([40,'Lee tipos de canon y repertorio; recupera A/B, C/D y tus notas de preparación.'],[35,'Consulta la consigna de la propuesta grupal y el modelo comentado de la sesión 4·2. Lleva al equipo ideas de selección. Guarda aparte la pregunta individual del ensayo en Proyecto.'],[45,'Revisen la hoja común y sus referencias. Entreguen una propuesta firmada por equipo.']),
  5:a([75,'Examina los dos testimonios de Guamán Poma y lee Rivera, pp. 19–26.'],[20,'Vuelve al detalle que permite poner a prueba una afirmación de Rivera.'],[25,'Consolida el mapa de voces y su límite.']),
  6:a([60,'Lee el estudio, pp. 84–87, que ya incluye Takina/Poema y ambas versiones.'],[30,'Relee el contraste con Guamán Poma y prepara tus localizadores.'],[30,'Revisa y cierra la Ficha 3 antes de la siguiente semana.']),
  7:a([60,'Lee la presentación y bloques delimitados de Martínez y la pieza de Esparza, pp. 41–43.'],[30,'Comprueba con el grupo dos registros de circulación; no leas los libros completos de sus catálogos.'],[30,'Conserva la cartografía inicial y explica sus límites.']),

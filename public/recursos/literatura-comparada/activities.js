@@ -1,14 +1,14 @@
-import {paperActivityAdvance} from './paper-activities.js?v=lc-b3ebd55f035a';
+import {paperActivityAdvance,paperActivityGuide} from './paper-activities.js?v=lc-fced8c0376bc';
 // Cada entrada reúne un trabajo completo. Las sesiones orientan sus avances,
 // sin crear productos, campos ni claves de almacenamiento adicionales.
 export const activities=[
- {key:'1-canon',module:1,title:'Seleccionar lecturas y justificar la elección',kind:'task',
-  prompt:'En 250–350 palabras justifica una selección docente para un público y un propósito. Como referencia, elige dos textos conocidos, como Palacio y Machado, y explica qué aporta cada uno. Contrasta los agentes y criterios de selección de las listas simuladas A/B e identifica su ámbito de canon. Explica con un pasaje una convención del repertorio, su efecto y por qué lo valoras; indica qué enseñarías a leer. Usa C o D para contrastar una decisión de selección o difusión y delimita qué documenta. Integra las referencias y localizadores en el texto final. Conserva la preparación en tu cuaderno.',
-  product:'Ficha 2 individual de 250–350 palabras. Las notas en papel preparan una única entrega.',
-  steps:['Relee el pasaje de Palacio indicado en Teoría: señala cómo narra, explica su efecto y por qué lo valoras. Consulta su página legal y el dossier para distinguir esa valoración de las decisiones de publicación y acceso.','Elige qué leería tu grupo y para qué. Usa tus observaciones del texto y el contraste de A/B y C/D para justificar la selección y cómo acompañarías la lectura.','Redacta la ficha, comprueba sus fuentes y revisa la justificación antes de entregar el trabajo.'],
-  preparationGuide:'Durante la semana 3 prepara tus observaciones en el cuaderno. En la semana 4 organiza y redacta la ficha a mano.',
-  reviewCriteria:['Justifico qué aporta cada texto al propósito y al público elegidos, y contrasto los criterios escolares de A/B.','Explico con un pasaje cómo una convención produce un efecto, por qué lo valoro y qué enseñaría a leer.','Distingo lo que documenta C o D de mi propuesta. Las referencias y localizadores utilizados están dentro de la ficha, aunque no adjunte las notas.'],
-  encounters:[[3,1],[3,2],[4,1],[4,2]],label:'Mi ficha 2 · Canon y repertorio',hint:'Incluye las referencias junto a las afirmaciones que sostienen. Ejemplo: (CLACSO, presentación de Biblioteca Ayacucho, párr. 3). Las fuentes guardadas solo en las notas no aparecen en el PDF sin anexo.'},
+ {key:'1-canon',module:1,title:"Propuesta grupal de lectura",kind:'task',
+  prompt:"En equipo, elijan las lecturas que consideren pertinentes, del curso o de otras fuentes accesibles. Presenten en una página escrita a mano qué leerían con un grupo concreto, por qué y cómo enseñarían a leer un pasaje. Usen el contraste entre los criterios escolares de A y B para justificar su elección. Expliquen qué efecto produce el pasaje y por qué merece atención, formulen una consigna y expliquen qué facilita a sus lectores una acción documentada en C o D. Identifiquen las fuentes que usaron.",
+  product:paperActivityGuide('1-canon').product,
+  steps:paperActivityGuide('1-canon').steps,
+  preparationGuide:'En la semana 3, reúne apuntes. En la semana 4, comparte tus observaciones con el equipo y preparen una propuesta común.',
+  reviewCriteria:["Explicamos cómo el contraste de los criterios escolares A/B orientó la elección para nuestro grupo.","Localizamos un pasaje y conectamos su forma, su efecto y nuestra valoración.","La consigna enseña a leer ese recurso. Distinguimos el apoyo que proponemos de lo que documenta el caso C o D e identificamos las fuentes."],
+  encounters:[[3,1],[3,2],[4,1],[4,2]],label:'Notas digitales · Canon y repertorio',hint:'Reúne observaciones, ideas del equipo y sus fuentes.'},
  {key:'2-oralitura',module:2,title:'Comparar voces: Guamán Poma y Chikangana',kind:'comparison',
   prompt:'Compara cómo Guamán Poma y Chikangana presentan voces, destinatarios y mediaciones verbales o visuales. Parte de un detalle localizado de cada objeto y explica una diferencia de época, género o mediación. Justifica con evidencia cualquier relación de poder que nombres. Integra una objeción y tu respuesta; delimita las afirmaciones que permiten las fuentes y tu conocimiento de las lenguas. Rivera y Kowii apoyan la discusión, sin convertirse en nuevos objetos obligatorios de la ficha.',
   product:'Ficha 3 individual de 250–350 palabras. Los registros de ambos objetos y la revisión alimentan una única entrega.',

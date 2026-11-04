@@ -1,8 +1,8 @@
-import {weeks} from './schedule.js?v=lc-b3ebd55f035a';
-import {unitActivities} from './curriculum.js?v=lc-b3ebd55f035a';
-import {translationRows} from './corpus.js?v=lc-b3ebd55f035a';
-import {activityTitle} from './teaching.js?v=lc-b3ebd55f035a';
-import {encounterById,dayLabel} from './encounters.js?v=lc-b3ebd55f035a';
+import {weeks} from './schedule.js?v=lc-fced8c0376bc';
+import {unitActivities} from './curriculum.js?v=lc-fced8c0376bc';
+import {translationRows} from './corpus.js?v=lc-fced8c0376bc';
+import {activityTitle} from './teaching.js?v=lc-fced8c0376bc';
+import {encounterById,dayLabel} from './encounters.js?v=lc-fced8c0376bc';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 // Teaching prompts are original syntheses. Texts and attributions are in Leer.
 const lessons={
@@ -25,7 +25,7 @@ const lessons={
  4:[
   ['Tipos de canon','Compara selecciones personales, escolares, críticas y editoriales. Sus agentes, destinatarios y criterios pueden coincidir parcialmente.','No conviertas una lista individual en prueba de todo el canon de una institución.'],
   ['Repertorio y canonización','El repertorio comprende posibilidades compartidas de escritura y lectura. En un pasaje, relaciona una convención con su realización concreta, su efecto y el valor que argumentas. Después explica cómo enseñarías a leerlo.','Distingue el valor literario de la utilidad docente: una misma obra puede enseñarse con propósitos distintos.'],
-  ['Una selección docente argumentada','Justifica qué incluirías, para qué público y con qué carga. Usa las listas y los registros identificados del dossier.','Ficha 2: 250–350 palabras con referencias, una convención y contraste de selección o difusión con C o D.']
+  ['Una selección docente argumentada','Justifica qué incluirías, para qué público y con qué carga. Usa las listas y los registros identificados del dossier.','Entreguen una propuesta de una página por equipo, con un pasaje, una consigna de lectura y el apoyo que motiva el caso C o D.']
  ],
  5:[
   ['Centro y periferia son relaciones','Indica respecto de qué institución, lengua, mercado o circuito una posición es central o periférica. La identidad de un autor no demuestra automáticamente subalternidad.','¿Qué acceso o reconocimiento está en disputa?'],

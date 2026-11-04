@@ -1,14 +1,14 @@
-import {encounters,dayLabel} from './encounters.js?v=lc-b3ebd55f035a';
-import {classHref} from './class-flow.js?v=lc-b3ebd55f035a';
-import {activityAdvance,activityHref} from './activities.js?v=lc-b3ebd55f035a';
-import {focusedComparison,focusedArgument} from './activity-workspace.js?v=lc-b3ebd55f035a';
-import {fichaTitles} from './class-flow.js?v=lc-b3ebd55f035a';
-import {activityProducts} from './seminar.js?v=lc-b3ebd55f035a';
-import {paperActivityGuide,paperActivityAdvance} from './paper-activities.js?v=lc-b3ebd55f035a';
+import {encounters,dayLabel} from './encounters.js?v=lc-fced8c0376bc';
+import {classHref} from './class-flow.js?v=lc-fced8c0376bc';
+import {activityAdvance,activityHref} from './activities.js?v=lc-fced8c0376bc';
+import {focusedComparison,focusedArgument} from './activity-workspace.js?v=lc-fced8c0376bc';
+import {fichaTitles} from './class-flow.js?v=lc-fced8c0376bc';
+import {activityProducts} from './seminar.js?v=lc-fced8c0376bc';
+import {paperActivityGuide,paperActivityAdvance} from './paper-activities.js?v=lc-fced8c0376bc';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 export function activityReviewHtml(activity){
- return activity?.reviewCriteria?.length?`<h3>Revisar el contenido de la ficha</h3><ul>${activity.reviewCriteria.map(text=>`<li>${esc(text)}</li>`).join('')}</ul>`:'';
+ return activity?.reviewCriteria?.length?`<h3>${activity.key==='1-canon'?'Revisar la propuesta del equipo':'Revisar el contenido de la ficha'}</h3><ul>${activity.reviewCriteria.map(text=>`<li>${esc(text)}</li>`).join('')}</ul>`:'';
 }
 
 export function renderDigitalActivityPage(a,ctx){
@@ -44,5 +44,5 @@ export function renderActivityPage(a,ctx){
  const companion=a.key==='4-temas'?`<p>Después de este contraste, continúa con <a class="text-link" href="${activityHref('4-medios')}">Memoria y medios</a>.</p>`:a.key==='4-medios'?`<p><a class="text-link" href="${activityHref('4-temas')}">Volver a Palacio y Machado</a>.</p>`:'';
  const media=a.kind==='translation'?translation({readOnly:true}):a.key==='4-medios'?film():'';
  const delivery=fichaTitles[a.key]||activityProducts[a.key]?`<p>La versión final se prepara al cierre: semana ${closing.week}, ${dayLabel(closing.day)}. Entrega el trabajo escrito según indique el docente.</p>`:'';
- return `<article class="class-page class-page--focused activity-page paper-activity" data-activity="${esc(a.key)}">${header('Trabajo en clase',esc(a.title),esc(guide.purpose))}<p class="activity-timing">${esc(timing)} Trabaja a mano en tu cuaderno o en hojas que puedas conservar juntas.</p><section class="activity-materials"><h2>Con qué trabajar</h2><ul>${guide.materials.map(t=>`<li>${esc(t)}</li>`).join('')}</ul><details class="activity-support activity-readings"><summary>Consultar lecturas y teoría</summary><ul>${sessions.map(e=>`<li><a class="text-link" href="${classHref(e)}">Semana ${e.week} · ${dayLabel(e.day)} · ${esc(e.title)}</a></li>`).join('')}</ul></details></section>${media}<section class="activity-instructions" aria-labelledby="activity-prompt"><h2 id="activity-prompt">Cómo hacerlo</h2><ol class="paper-steps">${guide.steps.map(t=>`<li>${esc(t)}</li>`).join('')}</ol></section><section class="activity-delivery"><h2>Qué debe quedar al terminar</h2><p>${esc(guide.product)}</p>${delivery}${a.reviewCriteria?.length?`<details class="activity-support"><summary>Comprobar mi ficha antes de entregar</summary>${activityReviewHtml(a)}</details>`:''}</section><details class="activity-support activity-progress"><summary>Avances de este mismo trabajo</summary><p>Continúa en las mismas notas de papel. Los avances preparan el producto; no son entregas separadas.</p><ol>${sessions.map(e=>`<li><strong>Semana ${e.week} · ${dayLabel(e.day)}.</strong> ${esc(paperActivityAdvance(e))}</li>`).join('')}</ol></details>${companion}<p class="caption">Las notas digitales anteriores siguen disponibles en <a href="#cuaderno">Mi trabajo</a>. El <a href="#proyecto">ensayo final</a> se redacta en la aplicación.</p></article>`;
+ return `<article class="class-page class-page--focused activity-page paper-activity" data-activity="${esc(a.key)}">${header('Trabajo en clase',esc(a.title),esc(guide.purpose))}<p class="activity-timing">${esc(timing)} Trabaja a mano en tu cuaderno o en hojas que puedas conservar juntas.</p><section class="activity-materials"><h2>Con qué trabajar</h2><ul>${guide.materials.map(t=>`<li>${esc(t)}</li>`).join('')}</ul><details class="activity-support activity-readings"><summary>Consultar lecturas y teoría</summary><ul>${sessions.map(e=>`<li><a class="text-link" href="${classHref(e)}">Semana ${e.week} · ${dayLabel(e.day)} · ${esc(e.title)}</a></li>`).join('')}</ul></details></section>${media}<section class="activity-instructions" aria-labelledby="activity-prompt"><h2 id="activity-prompt">Cómo hacerlo</h2><ol class="paper-steps">${guide.steps.map(t=>`<li>${esc(t)}</li>`).join('')}</ol></section><section class="activity-delivery"><h2>Qué debe quedar al terminar</h2><p>${esc(guide.product)}</p>${delivery}${a.reviewCriteria?.length?`<details class="activity-support"><summary>${a.key==='1-canon'?'Comprobar la propuesta antes de entregar':'Comprobar mi ficha antes de entregar'}</summary>${activityReviewHtml(a)}</details>`:''}</section><details class="activity-support activity-progress"><summary>Avances de este mismo trabajo</summary><p>Continúa en las mismas notas de papel. Los avances preparan el producto; no son entregas separadas.</p><ol>${sessions.map(e=>`<li><strong>Semana ${e.week} · ${dayLabel(e.day)}.</strong> ${esc(paperActivityAdvance(e))}</li>`).join('')}</ol></details>${companion}<p class="caption">Las notas digitales anteriores siguen disponibles en <a href="#cuaderno">Mi trabajo</a>. El <a href="#proyecto">ensayo final</a> se redacta en la aplicación.</p></article>`;
 }
