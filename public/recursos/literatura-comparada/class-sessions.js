@@ -1,8 +1,8 @@
-import {weeks} from './schedule.js?v=lc-f5bb8d10e9c6';
-import {unitActivities} from './curriculum.js?v=lc-f5bb8d10e9c6';
-import {translationRows} from './corpus.js?v=lc-f5bb8d10e9c6';
-import {activityTitle} from './teaching.js?v=lc-f5bb8d10e9c6';
-import {encounterById,dayLabel} from './encounters.js?v=lc-f5bb8d10e9c6';
+import {weeks} from './schedule.js?v=lc-b3ebd55f035a';
+import {unitActivities} from './curriculum.js?v=lc-b3ebd55f035a';
+import {translationRows} from './corpus.js?v=lc-b3ebd55f035a';
+import {activityTitle} from './teaching.js?v=lc-b3ebd55f035a';
+import {encounterById,dayLabel} from './encounters.js?v=lc-b3ebd55f035a';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 // Teaching prompts are original syntheses. Texts and attributions are in Leer.
 const lessons={
@@ -18,7 +18,7 @@ const lessons={
  ],
  3:[
   ['Bloom: defender un juicio de valor','Para argumentar un valor literario, localiza cómo está escrito un pasaje, explica qué efecto produce y por qué ese efecto merece atención. Demostrar originalidad histórica requiere compararlo con una tradición.','Palacio, pp. 34–35: contrasta las conclusiones del narrador con sus apoyos y explica por qué esa tensión resulta significativa.'],
-  ['Bourdieu: estudiar la consagración','Relaciona posiciones de autores, editoriales, crítica y enseñanza. Una intervención editorial documentada permite reconocer a un agente; la consagración duradera exige estudiar un proceso más amplio.','Página legal de Palacio, visor 6: identifica al Consejo de la Judicatura y la distribución gratuita. Distingue esa intervención de tu valoración del cuento.'],
+  ['Bourdieu: estudiar la consagración','Relaciona posiciones de autores, editoriales, crítica y enseñanza. Una intervención editorial documentada permite reconocer a un agente; la consagración duradera exige estudiar un proceso más amplio.','Página legal de Palacio (página 6 del visor de PDF): identifica al Consejo de la Judicatura y la distribución gratuita. Distingue esa intervención de tu valoración del cuento.'],
   ['Guillory: acceso y transmisión escolar','La enseñanza distribuye prácticas y saberes que permiten leer. Ofrecer un libro y aprender a interpretarlo son logros relacionados, pero distintos.','Compara una intervención de C/D y recupera qué aprendiste al trabajar Palacio y qué ayuda te permitió hacerlo.'],
   ['De las observaciones a la selección docente','Conserva una valoración del pasaje, el dato editorial y el contraste A/B. Después añade la comparación C/D y tu experiencia de aprendizaje. Estos apuntes preparan las razones de tu elección.','Trabaja en el mismo cuaderno durante ambas sesiones: Bloom/Bourdieu y A/B en la primera; Guillory y C/D en la segunda.']
  ],

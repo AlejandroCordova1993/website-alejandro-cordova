@@ -1,24 +1,24 @@
-import {activityFromHash,activityByKey} from './activities.js?v=lc-f5bb8d10e9c6';
-import {renderActivityPage,renderDigitalActivityPage,activityReviewHtml} from './activity-view.js?v=lc-f5bb8d10e9c6';
-import {taskNotes,optionalComparison} from './curriculum.js?v=lc-f5bb8d10e9c6';
-import {encounters,dayLabel} from './encounters.js?v=lc-f5bb8d10e9c6';
-import {classHref,classFromHash,resumeHref,projectPhases,suggestedProjectPhase,workDestination,fichaTitles} from './class-flow.js?v=lc-f5bb8d10e9c6';
-import {renderClassPage} from './classroom-view.js?v=lc-f5bb8d10e9c6';
-import {weeks} from './schedule.js?v=lc-f5bb8d10e9c6';
-import {essayMilestones} from './journey.js?v=lc-f5bb8d10e9c6';
-import {collectEvidence,insertPassage,projectDesk,relationDiagram,deliveryHtml,deliveryChecklist,annexOptions,alertHtml,fichaChecklist,fichaHtml,activityProducts,activityChecklist,activityHtml,projectTextHtml} from './seminar.js?v=lc-f5bb8d10e9c6';
-import {glossaryLinks,conceptHtml,conceptById} from './glossary.js?v=lc-f5bb8d10e9c6';
-import {teachingPlan,evaluationView,activityLinks} from './teaching.js?v=lc-f5bb8d10e9c6';
-import {resources,resourceById,translationRows} from './corpus.js?v=lc-f5bb8d10e9c6';
-import {modules,moduleById,steps,history,schools,diagnostic,rubric} from './course.js?v=lc-f5bb8d10e9c6';
-import {STORAGE_KEY,freshState,loadState,writeNote,markReviewed,workStatus,hasWork,wordCount,exportMarkdown,validateState,fileName,moduleKeys,moduleWorkStatus,fieldNames,keyNames,routeKey,noteDestination,activityProgress,archivedKeys,fieldLabel,reviewFields,notebookKeys} from './state.js?v=lc-f5bb8d10e9c6';
+import {activityFromHash,activityByKey} from './activities.js?v=lc-b3ebd55f035a';
+import {renderActivityPage,renderDigitalActivityPage,activityReviewHtml} from './activity-view.js?v=lc-b3ebd55f035a';
+import {taskNotes,optionalComparison} from './curriculum.js?v=lc-b3ebd55f035a';
+import {encounters,dayLabel} from './encounters.js?v=lc-b3ebd55f035a';
+import {classHref,classFromHash,resumeHref,projectPhases,suggestedProjectPhase,workDestination,fichaTitles} from './class-flow.js?v=lc-b3ebd55f035a';
+import {renderClassPage} from './classroom-view.js?v=lc-b3ebd55f035a';
+import {weeks} from './schedule.js?v=lc-b3ebd55f035a';
+import {essayMilestones} from './journey.js?v=lc-b3ebd55f035a';
+import {collectEvidence,insertPassage,projectDesk,relationDiagram,deliveryHtml,deliveryChecklist,annexOptions,alertHtml,fichaChecklist,fichaHtml,activityProducts,activityChecklist,activityHtml,projectTextHtml} from './seminar.js?v=lc-b3ebd55f035a';
+import {glossaryLinks,conceptHtml,conceptById} from './glossary.js?v=lc-b3ebd55f035a';
+import {teachingPlan,evaluationView,activityLinks} from './teaching.js?v=lc-b3ebd55f035a';
+import {resources,resourceById,translationRows} from './corpus.js?v=lc-b3ebd55f035a';
+import {modules,moduleById,steps,history,schools,diagnostic,rubric} from './course.js?v=lc-b3ebd55f035a';
+import {STORAGE_KEY,freshState,loadState,writeNote,markReviewed,workStatus,hasWork,wordCount,exportMarkdown,validateState,fileName,moduleKeys,moduleWorkStatus,fieldNames,keyNames,routeKey,noteDestination,activityProgress,archivedKeys,fieldLabel,reviewFields,notebookKeys} from './state.js?v=lc-b3ebd55f035a';
 
-import {createPresenter} from './presenter.js?v=lc-f5bb8d10e9c6';
-import {createSession} from './session.js?v=lc-f5bb8d10e9c6';
-import {uiIcon,toneHead,toneSummary} from './ui-icons.js?v=lc-f5bb8d10e9c6';
-import {readingDocumentHtml} from './reading-examples.js?v=lc-f5bb8d10e9c6';
-import {renderSavedNotebook,renderStoredNotes} from './digital-notes-view.js?v=lc-f5bb8d10e9c6';
-import {paperActivityGuide} from './paper-activities.js?v=lc-f5bb8d10e9c6';
+import {createPresenter} from './presenter.js?v=lc-b3ebd55f035a';
+import {createSession} from './session.js?v=lc-b3ebd55f035a';
+import {uiIcon,toneHead,toneSummary} from './ui-icons.js?v=lc-b3ebd55f035a';
+import {readingDocumentHtml} from './reading-examples.js?v=lc-b3ebd55f035a';
+import {renderSavedNotebook,renderStoredNotes} from './digital-notes-view.js?v=lc-b3ebd55f035a';
+import {paperActivityGuide} from './paper-activities.js?v=lc-b3ebd55f035a';
 const $=s=>document.querySelector(s);
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let storage;try{storage=window.localStorage;}catch{storage={getItem(){throw Error();},setItem(){throw Error();}};}
@@ -30,7 +30,7 @@ let teacherView=false;try{const q=new URLSearchParams(location.search);if(q.has(
 document.body.dataset.role=teacherView?'docente':'estudiante';
 const roleSwitch=$('[data-role-switch]');if(roleSwitch){roleSwitch.textContent=teacherView?'Vista de estudiante':'Vista docente';roleSwitch.addEventListener('click',()=>{roleSwitch.href=(teacherView?'?estudiante':'?docente')+location.hash;});}
 // In the catalogue installation the return is relative; standalone local work uses its local preview.
-const catalogHref=location.pathname.includes('/recursos/literatura-comparada/')?'../../recursos.html?v=lc-f5bb8d10e9c6':/^(127\.0\.0\.1|localhost)$/.test(location.hostname)?'http://127.0.0.1:4184/recursos.html':null;
+const catalogHref=location.pathname.includes('/recursos/literatura-comparada/')?'../../recursos.html?v=lc-b3ebd55f035a':/^(127\.0\.0\.1|localhost)$/.test(location.hostname)?'http://127.0.0.1:4184/recursos.html':null;
 document.querySelectorAll('[data-catalog-link]').forEach(a=>{if(!catalogHref){a.hidden=true;return;}a.href=catalogHref;if(!location.pathname.includes('/recursos/literatura-comparada/')){a.target='_blank';a.rel='noopener noreferrer';a.setAttribute('aria-label',a.textContent+' (abre en otra pestaña)');}});
 const lock=navigator.locks?fn=>navigator.locks.request('lc-cuaderno-write',fn):null;
 let session=createSession({storage,lock,initialRaw:loaded.raw}),savePhase=storageBlocked?'unavailable':'saved',pendingSaves=0,saveAnnouncement,lastAnnounced='',relationEdit=-1,mutationBusy=false;

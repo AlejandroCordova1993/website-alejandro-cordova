@@ -15,7 +15,7 @@ export const paperActivities={
  },
  '1-canon':{
   purpose:'Justificar qué textos elegirías para enseñar, distinguiendo su valor literario, las decisiones institucionales y las condiciones de lectura.',
-  materials:['Dossier Valor, selección y consagración: fundamentos, tipos de canon, listas simuladas A/B y registros C/D.','Palacio, pp. 34–35; página legal de la edición del curso, página 6 del visor.','Pasajes ya leídos de los textos que elijas, como Palacio y Machado.'],
+  materials:['Dossier Valor, selección y consagración: fundamentos, tipos de canon, listas simuladas A/B y registros C/D.','Palacio, pp. 34–35; página legal de la edición del curso, página 6 del visor de PDF.','Pasajes ya leídos de los textos que elijas, como Palacio y Machado.'],
   steps:['Explica con un pasaje cómo narra la obra, qué efecto produce y por qué lo valoras. Distingue esa valoración del dato sobre quién la publica.','Compara las razones de selección de A/B e identifica su ámbito escolar. Examina una intervención concreta de C/D y recupera qué aprendiste al leer Palacio y qué apoyo te ayudó.','Define público y propósito; como referencia, elige dos textos conocidos. Explica qué aporta cada uno y cómo enseñarías a reconocer una convención narrativa.','Redacta 250–350 palabras: justifica la selección, contrasta A/B y C o D, y conecta pasaje, efecto, valoración y enseñanza. Incluye las fuentes y sus localizadores.'],
   product:'Ficha 2 individual de 250–350 palabras. Las semanas 3 y 4 preparan una misma ficha; las notas de cada sesión no son entregas separadas.'
  },
@@ -114,7 +114,7 @@ export const paperSessionGuides={
   result:'Entrega una sola ficha 1 revisada en papel. Las notas anteriores preparan el argumento y se conservan en tu cuaderno.'
  },
  '3/1':{
-  steps:['Relee Palacio, pp. 34–35: contrasta una conclusión del narrador con la razón que ofrece. Explica su efecto y por qué lo valoras.','Consulta la página legal, visor 6. Anota quién publica y cómo distribuye para distinguir ese dato de tu valoración literaria.','En las listas A/B del dossier, compara las razones de selección de ambos docentes. Anota las fuentes junto a tus observaciones.'],
+  steps:['Relee Palacio, pp. 34–35: contrasta una conclusión del narrador con la razón que ofrece. Explica su efecto y por qué lo valoras.','Consulta la página legal (página 6 del visor de PDF). Anota quién publica y cómo distribuye para distinguir ese dato de tu valoración literaria.','En las listas A/B del dossier, compara las razones de selección de ambos docentes. Anota las fuentes junto a tus observaciones.'],
   result:'Conserva la valoración, el dato editorial y el contraste A/B en tus notas. Preparan la ficha 2 de las semanas 3 y 4.'
  },
  '3/2':{
@@ -224,7 +224,7 @@ const sessionAdvances={
  '1/2':'Retoma tu pregunta y lee los fragmentos de Machado. Anota un pasaje de cada relato, un aspecto común y una diferencia por examinar. Ajusta la pregunta y ensaya una respuesta. Continúa en el cuaderno: estás preparando la ficha 1.',
  '2/1':'Reúne en el cuaderno dos indicios de Palacio y dos de Machado, con fuentes, localizadores y explicación. Examínalos con el mismo criterio y precisa una respuesta, una diferencia y un límite. Selecciona los pasajes que usarás para redactar la ficha 1 en la siguiente sesión.',
  '2/2':'Redacta a mano la ficha 1 de 250–350 palabras con pasajes de ambos cuentos, una diferencia, una objeción y tu respuesta. Revisa la conclusión y las referencias. Entrega esta única ficha; conserva las notas que prepararon el argumento.',
- '3/1':'En tu cuaderno, explica cómo narra Palacio, qué efecto produce y por qué lo valoras, con apoyo en las pp. 34–35. Distingue esa valoración del dato editorial de la página legal, visor 6. Compara después las razones de las listas A/B. Son notas para la misma ficha 2.',
+ '3/1':'En tu cuaderno, explica cómo narra Palacio, qué efecto produce y por qué lo valoras, con apoyo en las pp. 34–35. Distingue esa valoración del dato editorial de la página legal (página 6 del visor de PDF). Compara después las razones de las listas A/B. Son notas para la misma ficha 2.',
  '3/2':'Compara una intervención de C y D, apoyándote en sus presentaciones. Después recuerda qué aprendiste al observar Palacio y qué explicación o ejercicio te ayudó. Anota la diferencia entre disponer del texto y aprender a interpretarlo, con las fuentes de C/D. Continúas preparando la ficha 2 en tu cuaderno.',
  '4/1':'Con tus notas, elige textos, público y propósito; como referencia, bastan dos textos conocidos. Explica qué valoras en su escritura y qué harías observar para enseñarlos. Contrasta A/B y C o D, y esboza la ficha 2 a mano. La pregunta del ensayo se registra aparte, en Proyecto.',
  '4/2':'Redacta a mano la ficha 2 de 250–350 palabras: selección para un público, ámbito y criterios escolares de A/B, pasaje con efecto y valoración, enseñanza y una intervención de C o D. Integra las referencias y revisa qué demuestra cada fuente. Entrega una sola ficha.',

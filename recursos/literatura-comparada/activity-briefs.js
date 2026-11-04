@@ -6,7 +6,7 @@ const briefs={
    'Lee las explicaciones de Bloom y Bourdieu del dossier y compara los criterios de sus listas A/B: son selecciones escolares simuladas.',
    'Relee Palacio, pp. 34–35. Señala una conclusión del narrador y contrástala con sus apoyos; explica el efecto de esa manera de narrar.',
    'Explica por qué ese efecto merece atención: estás argumentando un valor literario, no solo nombrando un recurso.',
-   'En la página legal del PDF, visor 6, identifica quién edita y cómo distribuye el libro. Escribe la explicación y el dato editorial en tu cuaderno, con sus localizadores.'
+   'En la página legal (página 6 del visor de PDF), identifica quién edita y cómo distribuye el libro. Escribe la explicación y el dato editorial en tu cuaderno, con sus localizadores.'
   ],
   result:'Notas sobre el pasaje, la edición y A/B para preparar la ficha 2. Hoy no entregas la ficha ni necesitas escribir 250–350 palabras.',
   label:'Mis notas sobre el pasaje y la edición',

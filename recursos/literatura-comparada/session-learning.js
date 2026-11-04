@@ -1,7 +1,7 @@
 // Orientaciones docentes para las mismas actividades y claves del cuaderno.
 // Definiciones de trabajo, no citas ni sustitutos de las fuentes del curso.
-import {activityBriefFor} from './activity-briefs.js?v=lc-f5bb8d10e9c6';
-import {weekTwoConcepts,weekTwoPrompts,weekTwoFieldHints} from './week-two-learning.js?v=lc-f5bb8d10e9c6';
+import {activityBriefFor} from './activity-briefs.js?v=lc-b3ebd55f035a';
+import {weekTwoConcepts,weekTwoPrompts,weekTwoFieldHints} from './week-two-learning.js?v=lc-b3ebd55f035a';
 const concepts={
  procedimiento:['Procedimiento narrativo','Una manera concreta de construir el relato: ordenar hechos, repetir una expresión, ocultar información o presentar una suposición como certeza. Identificarlo exige describir qué hace la escritura en un pasaje.'],
  indicio:['Observación e indicio textual','Observar es señalar palabras, una disposición o un detalle verificable del texto. Ese detalle funciona como indicio cuando explicas qué interpretación permite fundamentar; una cita aislada todavía no constituye una explicación.'],
@@ -99,7 +99,7 @@ const sessions={
  check:'El argumento debe responder a una pregunta con análisis de ambos relatos, explicar una diferencia formal o contextual y responder una objeción pertinente. No atribuyas al autor lo dicho por narrador o personaje ni afirmes un contacto no documentado.'},
  '3/1':{key:'1-canon',stage:'preparacion',concepts:['canon','valor','consagracion'],
  example:'A y B son selecciones escolares: las dos declaran un propósito y un público. B explicita además la inclusión de escritoras. Ese contraste describe criterios docentes; no compara la calidad de cuentos que el caso no reproduce.',
- steps:['Lee las explicaciones de Bloom y Bourdieu del dossier y compara los criterios declarados en sus listas A/B.','Relee Palacio, pp. 34–35. Señala una conclusión del narrador, comprueba qué la sostiene y explica el efecto del contraste entre certeza y apoyos.','Explica por qué esa manera de narrar merece atención: esta es tu valoración literaria, apoyada en el pasaje. Puedes discutir el ejemplo de Teoría.','Consulta la página legal del PDF, visor 6: anota quién edita y cómo distribuye el libro. Escribe tu explicación y este dato con sus localizadores en tu cuaderno.'],
+ steps:['Lee las explicaciones de Bloom y Bourdieu del dossier y compara los criterios declarados en sus listas A/B.','Relee Palacio, pp. 34–35. Señala una conclusión del narrador, comprueba qué la sostiene y explica el efecto del contraste entre certeza y apoyos.','Explica por qué esa manera de narrar merece atención: esta es tu valoración literaria, apoyada en el pasaje. Puedes discutir el ejemplo de Teoría.','Consulta la página legal (página 6 del visor de PDF): anota quién edita y cómo distribuye el libro. Escribe tu explicación y este dato con sus localizadores en tu cuaderno.'],
  result:'Notas con una valoración del pasaje, el dato editorial y el contraste A/B; todavía no es la ficha 2.',
  delivery:'Trabaja hoy en tu cuaderno. La ficha final tendrá 250–350 palabras; ese requisito no corresponde a las notas.',
  check:'La valoración explica por qué merece atención la forma del pasaje; el dato editorial identifica una intervención institucional. Uno no demuestra automáticamente el otro.',

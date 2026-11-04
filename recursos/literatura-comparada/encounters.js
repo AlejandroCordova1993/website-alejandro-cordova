@@ -36,7 +36,7 @@ export const encounters=[
  meeting(3,'lunes','Valoración y consagración','Distinguir una defensa del valor de la explicación de su reconocimiento.','Notas de preparación con una valoración del pasaje y un dato de su edición.',regular(
  ['Recupera la lectura de Palacio de las sesiones anteriores.','Relee las pp. 34–35: señala una conclusión del narrador y comprueba qué la sostiene.'],
  ['Explica con Bloom cómo pasar del procedimiento y su efecto a un juicio de valor.','Explica cómo el tono de certeza contrasta con los apoyos de la pesquisa y por qué ese contraste merece atención.'],
- ['Distingue, con Bourdieu, la valoración del cuento de las intervenciones que le dan reconocimiento.','Consulta la página legal del PDF, visor 6. Anota quién edita y cómo se distribuye; conserva la fuente.'],
+ ['Distingue, con Bourdieu, la valoración del cuento de las intervenciones que le dan reconocimiento.','Consulta la página legal (página 6 del visor de PDF). Anota quién edita y cómo se distribuye; conserva la fuente.'],
  ['Guía el contraste de las listas simuladas A/B.','Compara sus razones de selección: propósito, disponibilidad e inclusión de escritoras. Las listas no permiten juzgar cuentos que no has leído.'],
  ['Anticipa la diferencia entre ofrecer un libro y acompañar su lectura.','Escribe tu explicación del pasaje, el dato editorial y el contraste A/B en tu cuaderno; servirán para justificar tu selección.'])),
  meeting(3,'miercoles','Acceso, transmisión y difusión','Relacionar selección, instituciones y oportunidades de lectura.','Notas de preparación revisadas y contraste de los registros C/D.',regular(
