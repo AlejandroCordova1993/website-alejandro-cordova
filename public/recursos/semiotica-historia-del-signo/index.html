@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f5f3ec">
+  <meta name="description" content="Historia interactiva del signo. Un recorrido de Grecia a Peirce, Barthes, Greimas y Eco con ejemplos, modelos y preguntas para Semiótica UCE.">
+  <title>La vida de los signos · Semiótica UCE</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#recorrido">Ir al contenido</a>
+  <header class="masthead">
+    <a class="brand" href="#inicio" aria-label="Volver al inicio"><span class="brand-mark" aria-hidden="true">s.</span><span>SEMIÓTICA<span class="brand-sub">Universidad Central del Ecuador · 7.º semestre</span></span></a>
+    <nav class="tools" aria-label="Herramientas"><button id="basics">Antes de empezar</button><button id="sources">Lecturas</button><button id="present" aria-pressed="false">Modo proyección <span aria-hidden="true">↗</span></button></nav>
+  </header>
+  <section class="intro" id="inicio">
+    <div><p class="eyebrow">UN RECORRIDO POR LA HISTORIA DE LA SEMIÓTICA</p><h1>La vida de <em>los signos.</em></h1></div>
+    <div class="intro-right"><p class="lead">¿Cómo algo llega a significar algo para alguien?</p><p>Explora las preguntas que cambiaron nuestra manera de entender el lenguaje, las imágenes y la cultura.</p><div class="intro-meta"><span id="total"></span><span>Ejemplos + práctica</span></div></div>
+    <svg class="hero-lines" viewBox="0 0 180 190" aria-hidden="true"><path d="M25 160L90 35L155 160Z"/><circle cx="90" cy="35" r="11"/><circle cx="25" cy="160" r="11"/><circle cx="155" cy="160" r="11"/><path d="M90 80V122M70 102H110"/></svg>
+  </section>
+  <main>
+    <section class="explorer" aria-label="Explorar la línea de tiempo">
+      <div class="toolbar" id="recorrido" tabindex="-1"><div class="filters" role="group" aria-label="Filtrar por tema"><button data-unit="all" aria-pressed="true">Todo el recorrido</button><button data-unit="1" aria-pressed="false">Historia</button><button data-unit="2" aria-pressed="false">Modelos del signo</button><button data-unit="3" aria-pressed="false">Barthes</button><button data-unit="4" aria-pressed="false">Greimas y Eco</button><button data-unit="0" aria-pressed="false">Ampliaciones</button></div><label class="search"><span aria-hidden="true">⌕</span><input type="search" id="search" placeholder="Buscar autor o concepto" aria-label="Buscar autor o concepto"></label></div>
+
+      <div class="map-heading"><div><p class="eyebrow">EL RECORRIDO</p><h2>Una historia, muchas formas de pensar.</h2></div><p>Haz clic en un punto o en su ficha.<br>Dentro encontrarás una idea, un caso y una pregunta.</p></div>
+      <div class="overview-shell"><div class="overview-label"><span>IR A UNA ÉPOCA</span><span id="result-count" aria-live="polite"></span></div><nav class="overview" id="overview" aria-label="Saltar a una época"></nav></div>
+      <div class="timeline-controls"><p id="visible-range" aria-live="off"></p><div class="zoom"><span>Espaciado</span><button id="zoom-out" aria-label="Reducir espaciado">−</button><output id="zoom-value">100%</output><button id="zoom-in" aria-label="Ampliar espaciado">+</button><button id="zoom-reset" aria-label="Restablecer espaciado">Restablecer</button></div></div>
+      <div class="timeline-shell"><div class="timeline-viewport" id="timeline-viewport" role="region" aria-label="Línea de tiempo horizontal" aria-describedby="timeline-help" tabindex="0"><div id="milestones" class="timeline-track"></div></div></div>
+      <div class="timeline-navigation"><button id="pan-left" aria-label="Desplazar la línea hacia atrás">← <span>Anterior</span></button><label class="scrubber"><span class="sr-only">Desplazarse por la línea de tiempo</span><input id="timeline-position" type="range" min="0" max="1000" value="0" aria-label="Desplazarse por la línea de tiempo"></label><button id="pan-right" aria-label="Desplazar la línea hacia adelante"><span>Avanzar</span> →</button></div>
+      <div class="timeline-notes"><p id="timeline-help">Desliza la línea, usa las flechas o elige una época. Con el teclado, usa ← → para recorrer las fichas y Enter para abrirlas.</p><p>Fechas de obras y desarrollos. Distancias esquemáticas, sin escala temporal proporcional. Las fichas alternan arriba y abajo para facilitar la lectura.</p></div>
+    </section>
+    <section class="course-map"><div><p class="eyebrow">DE LA HISTORIA AL ANÁLISIS</p><h2>Preguntas<br>que se conectan.</h2><p>Usa los filtros para acompañar cada clase.<br>La vista completa permite volver sobre las relaciones.</p></div><ol><li><button data-unit="1"><div><strong>Definición e historia</strong><small>Naturaleza y cultura · Grecia · Medioevo · Descartes y Port Royal</small></div><b>↗</b></button></li><li><button data-unit="2"><div><strong>Modelos del signo</strong><small>Peirce · ícono, índice, símbolo · otros modelos</small></div><b>↗</b></button></li><li><button data-unit="3"><div><strong>Roland Barthes</strong><small>Signo · retórica de la imagen · estructura del relato</small></div><b>↗</b></button></li><li><button data-unit="4"><div><strong>Greimas y Umberto Eco</strong><small>Actantes · enunciados · fuerzas temáticas · hiperrealidad</small></div><b>↗</b></button></li></ol></section>
+  </main>
+  <footer class="site-footer"><span>Semiótica · Recurso para docencia UCE</span><span>Síntesis didácticas y casos de elaboración propia · <button id="method">Criterios de lectura</button></span></footer>
+  <dialog id="event-dialog" aria-labelledby="title"><div class="event-dialog-top"><span>FICHA DEL RECORRIDO</span><div><button id="modal-present" aria-pressed="false">Ampliar lectura ↗</button><button id="close-event" aria-label="Cerrar ficha y volver a la línea">Volver a la línea ×</button></div></div>        <article id="study" tabindex="-1">
+          <div class="article-top"><span id="scope" class="scope"></span><span id="position"></span></div>
+          <div class="heading-row"><div><p id="date" class="date"></p><p id="author" class="author"></p></div><span class="chapter-number" id="chapter" aria-hidden="true"></span></div>
+          <h2 id="title" tabindex="-1"></h2><p id="concept" class="concept"></p>
+          <div class="tabs" role="tablist" aria-label="Contenido del hito"><button role="tab" id="tab-idea" aria-controls="panel" aria-selected="true" data-tab="idea">La idea</button><button role="tab" id="tab-example" aria-controls="panel" aria-selected="false" tabindex="-1" data-tab="example">Un caso</button><button role="tab" id="tab-practice" aria-controls="panel" aria-selected="false" tabindex="-1" data-tab="practice">Ponte a prueba</button></div>
+          <div class="learning-layout"><div id="panel" role="tabpanel" aria-labelledby="tab-idea" tabindex="0"></div><aside id="diagram" class="diagram" aria-label="Esquema del enfoque"></aside></div>
+          <div class="reading" id="reading"></div>
+          <footer class="article-footer"><button id="prev">← Anterior</button><button id="compare" class="compare">Comparar autores ⇄</button><button id="next">Siguiente →</button></footer>
+        </article></dialog>
+  <dialog id="dialog" aria-label="Cuaderno de consulta"><div class="dialog-top"><span>CUADERNO DE CONSULTA</span><button id="close-dialog" aria-label="Cerrar ventana">Cerrar ×</button></div><div id="dialog-content"></div></dialog>
+  <noscript>Activa JavaScript para explorar las fichas y los ejercicios de esta línea de tiempo.</noscript>
+  <script src="content.js"></script><script src="app.js"></script>
+</body>
+</html>
