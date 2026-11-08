@@ -12,7 +12,7 @@ export const weeklyPath=[
  {title:'Contexto: límites y transferencia',steps:['revisar','assessment'],advance:'Revisar la ficha 3, precisar el método del expediente y aplicar el enfoque a un caso acotado.',milestone:2},
  {title:'Voces: personas y responsabilidad',steps:['analizar','argumentar'],advance:'Comenzar la ficha 4 con tres segmentos en total del contraste Menchú–Márquez; identificar participantes, voces y responsabilidad. Si ya la empezaste, continúa tus registros.'},
  {title:'Voces: perspectivas y atribuciones',steps:['argumentar','revisar'],advance:'Revisar la misma ficha 4 mediante una atribución contrastada y una alternativa examinada.'},
- {title:'Géneros: acciones y circulación',steps:['analizar','argumentar'],advance:'Comenzar la ficha 5 con dos piezas y una relación documentada o una adaptación propia claramente identificada.'},
+ {title:'Géneros: acciones y circulación',steps:['analizar','argumentar'],advance:'En la clase 1, registrar la primera pieza y elegir la segunda. En la clase 2, recuperar el documento vinculado o preparar la adaptación, registrar la segunda pieza y comparar ambas.'},
  {title:'Géneros: contraste y argumento parcial',steps:['project','revisar'],advance:'Revisar la ficha 5 e integrar un análisis parcial en el expediente.',milestone:3},
  {title:'Organización textual: secuencias',steps:['analizar','argumentar'],advance:'Comenzar la ficha 6: localizar secuencias y explicar cómo se articulan.'},
  {title:'Argumentación: inferencias y objeciones',steps:['argumentar','revisar'],advance:'Revisar la ficha 6 y utilizar sus evidencias en el borrador del expediente.'},

@@ -213,9 +213,9 @@ export const projectInputs={
 
 // Preparation remains in the class, with selected paragraphs of the existing guide.
 export const preparationLessons={
- 's2-e1':[0,2,3],'s2-e2':[1,3],'s3-e1':[2,4],'s3-e2':[4],
+ 's2-e1':[0,2,3],'s2-e2':[1,3],'s3-e1':[5,2,4],'s3-e2':[4],
  's4-e1':[0],'s4-e2':[0,4],'s5-e1':[1],'s5-e2':[1,2],'s6-e1':[3],'s6-e2':[3],
- 's7-e1':[1,2],'s7-e2':[0,2],'s8-e1':[3,4],'s8-e2':[],
+ 's7-e1':[0,1,2],'s7-e2':[0,2],'s8-e1':[3,4],'s8-e2':[],
  's9-e1':[0,1],'s9-e2':[1,2],'s10-e1':[2,3],'s10-e2':[4],
  's11-e1':[0,1,2],'s11-e2':[3],'s12-e1':[3,4],'s12-e2':[4],
  's13-e1':[0,2],'s13-e2':[0,2],'s14-e1':[1],'s14-e2':[3],

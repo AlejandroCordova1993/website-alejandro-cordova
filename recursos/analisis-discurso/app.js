@@ -83,8 +83,11 @@ function evidenceOptions(){return route.page==='semana'?classEvidenceOptions(get
 function resetEvidence(){const form=$('#evidence-form');if(form){notebook.removeDraft('evidence',+form.dataset.unit);form.outerHTML=evidenceForm(+form.dataset.unit,newEvidenceSource(+form.dataset.unit,notebook.state.evidence),notebook.editable(),evidenceOptions());}editingEvidence=null;draftForm=false;}
 function refreshLibrary(){$('#library-results').innerHTML=libraryResults(Object.fromEntries(new FormData($('#library-filters'))));}
 function capturePreparation(form){if(!form)return;draftForm=true;notebook.draft(form.getAttribute('id')==='evidence-form'?'evidence':'relation',+form.dataset.unit||1,Object.fromEntries(new FormData(form)));saveLocation();}
-document.addEventListener('input',event=>{const el=event.target;if(el.dataset.note){if(notebook.note(el.dataset.note,el.dataset.field,el.value)){saveLocation();refreshStatus();}}else capturePreparation(el.closest('#evidence-form,#relation-form'));if(el.closest('#library-filters'))refreshLibrary();});
-document.addEventListener('change',event=>{const el=event.target;if(el.closest('#library-filters'))refreshLibrary();if(el.id==='e-resource'){const r=resourceById[el.value];$('#e-source').value=r?`${r.author} · ${r.title} · ${r.year}`:'';}capturePreparation(el.closest('#evidence-form,#relation-form'));
+document.addEventListener('input',event=>{const el=event.target;if(el.id==='library-query'){refreshLibrary();return;}if(el.dataset.note){if(notebook.note(el.dataset.note,el.dataset.field,el.value)){saveLocation();refreshStatus();}}else capturePreparation(el.closest('#evidence-form,#relation-form'));});
+document.addEventListener('change',event=>{const el=event.target;
+ // The search field has already updated on input. Replacing results on blur can interrupt a click on a filter button.
+ if(el.matches('#library-filters select')){refreshLibrary();return;}
+ if(el.id==='e-resource'){const r=resourceById[el.value];$('#e-source').value=r?`${r.author} · ${r.title} · ${r.year}`:'';}capturePreparation(el.closest('#evidence-form,#relation-form'));
  if(el.dataset.annex||el.dataset.delivery){notebook.mutate(state=>{if(el.dataset.annex){const key=el.dataset.annex;state.delivery.annexes=el.checked?[...new Set([...state.delivery.annexes,key])]:state.delivery.annexes.filter(k=>k!==key);}else state.delivery[el.dataset.delivery]=el.checked;});$('#delivery-preview').innerHTML=deliveryHtml(notebook.state);}
 });
 document.addEventListener('submit',event=>{event.preventDefault();const form=event.target;if(form.getAttribute('id')==='library-filters'){refreshLibrary();return;}if(!notebook.editable()){toast('Continúa tu trabajo para registrar evidencias.');return;}try{

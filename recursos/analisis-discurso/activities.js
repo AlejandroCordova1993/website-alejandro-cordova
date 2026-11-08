@@ -137,15 +137,15 @@ export const unitActivities={
   "steps": [
     [
       "Elegir una ruta",
-      "Elige una ruta: dos documentos con una fuente que pruebe su vínculo, o el reglamento y tu adaptación para estudiantes de primer semestre. Escribe «Pregunta de la ficha» sobre esas dos piezas."
+      "Elige un documento vinculado al primero y una fuente que permita comprobar el vínculo, o decide qué tramo del reglamento adaptarás para estudiantes de primer semestre. Escribe «Pregunta de la ficha» sobre la comparación que harás."
     ],
     [
-      "Identificar las piezas",
-      "Guarda cada pieza con «Añadir evidencia» y comprueba su fuente en «Cambiar documento de trabajo». Para tu versión, usa «Otro documento elegido por mí» y fuente «Adaptación didáctica propia». Escribe la adaptación en «Fragmento o descripción observable» o identifica el archivo y el tramo transformado. Conserva el archivo contigo."
+      "Registrar la primera pieza",
+      "Si usas otro documento, selecciónalo en «Cambiar documento de trabajo». Comprueba la fuente de la primera pieza y guarda sus fragmentos con «Añadir evidencia». Explica en «Mi argumento» qué muestran sobre su género, sus secuencias y su soporte."
     ],
     [
-      "Comparar las condiciones",
-      "En «Mi argumento», compara género, propósito, destinatario, organización y soporte. Explica qué información conservas, omites o reformulas y qué podría cambiar para el lector."
+      "Registrar la segunda pieza y comparar",
+      "Recupera el documento vinculado o prepara tu adaptación y registra la segunda pieza con «Añadir evidencia». Para tu versión, usa «Otro documento elegido por mí» y la fuente «Adaptación didáctica propia». Escribe la adaptación en «Fragmento o descripción observable» o identifica el archivo y el tramo transformado. Conserva el archivo contigo. En «Mi argumento», compara género, propósito, destinatario, organización y soporte. Explica qué información se conserva, se omite o se reformula y qué podría cambiar para el lector."
     ],
     [
       "Explicar el vínculo",
@@ -153,10 +153,10 @@ export const unitActivities={
     ],
     [
       "Revisar la comparación",
-      "Pide a un compañero comprobar las diferencias y el vínculo. Completa «Interpretación revisada» y «Qué cambió y por qué», conservando el argumento anterior. Usa lo pertinente para ajustar «Desarrollo del análisis» del expediente."
+      "Comparte fragmentos localizables con un compañero y comprueben las diferencias y el vínculo. Completa «Interpretación revisada» y conserva el argumento anterior. En «Qué cambió y por qué», indica con quién trabajaste, qué evidencia u objeción aportó cada persona y qué ajustaste o mantuviste. Usa lo pertinente para ajustar «Desarrollo del análisis» del expediente."
     ]
   ],
-  "questionHelp": "Nombra las dos piezas y pregunta qué cambia con el destinatario o el propósito. Indica si el vínculo está documentado o si creaste la segunda pieza.",
+  "questionHelp": "Nombra la primera pieza e indica qué documento vinculado elegiste o qué adaptación planeas preparar. Pregunta qué cambia con el destinatario o el propósito. Cuando tengas ambas piezas, indica si el vínculo está documentado o si hiciste la adaptación.",
   "argumentHelp": "Escribe aquí la comparación. Cita las evidencias que muestran los cambios.",
   "contextHelp": "Indica quién publica cada pieza, para quién y dónde circula. Cita la fuente del vínculo o identifica tu «Adaptación didáctica propia».",
   "argumentSteps": [

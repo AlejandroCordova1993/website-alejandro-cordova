@@ -206,7 +206,7 @@ export const sessions=[
       [
         15,
         "Herramientas y lectura",
-        "Retoma la misma transcripción y las marcas guardadas. Usa la selección de Caldiz para justificar cómo anotas una pausa o un énfasis. Corrige el registro si hace falta. En «Mi argumento», nombra el concepto que tomas de la lectura, cita su página y explica cómo te ayuda a interpretar esa marca en tu episodio."
+        "Retoma la transcripción y comprueba tus marcas escuchando el episodio. Usa Caldiz para explicar cómo se relaciona un recurso de voz con las palabras que lo rodean. En «Mi argumento», nombra el concepto, cita su página y justifica su aplicación a tu fragmento."
       ],
       [
         25,
@@ -219,7 +219,7 @@ export const sessions=[
         "Conserva las notas en «Tu trabajo», debajo de estas instrucciones. Anota un límite y qué necesitas retomar en la siguiente clase."
       ]
     ],
-    "preparation": "Lee la selección de Caldiz: PDF 6–9 y 13. Retoma tu pregunta, la transcripción y las marcas ya registradas; usarás la lectura para justificar o corregir esas marcas, sin elegir otro episodio."
+    "preparation": "Lee «Antes de leer a Caldiz», en «Teoría», y después Caldiz: PDF 6–9 y 13. Retoma tu pregunta, transcripción y marcas del mismo episodio; usarás la lectura para explicar su función."
   },
   {
     "id": "s3-e2",
@@ -840,7 +840,7 @@ export const sessions=[
       [
         10,
         "Cierre y continuidad",
-        "Comprueba el guardado de la ficha 5. Prepara la segunda pieza siguiendo la ruta elegida."
+        "Comprueba el guardado de la primera pieza y deja elegida la segunda pieza o la adaptación que podrás preparar en la próxima clase."
       ]
     ],
     "preparation": "Lee en «Teoría» las distinciones género/secuencia y modo/medio/soporte. Retoma un documento conocido y elige una ruta: compararlo con otro vinculado o crear una adaptación propia."
@@ -859,12 +859,12 @@ export const sessions=[
       [
         10,
         "Retomar la pregunta",
-        "Identifica las dos piezas de tu comparación y la ruta elegida. Explica a quién se dirige cada una."
+        "Recupera la primera pieza y la ruta elegida. Identifica la segunda pieza o el tramo y el destinatario de la adaptación que prepararás."
       ],
       [
         35,
         "Taller de evidencia",
-        "Ruta documentada: comprueba el vínculo entre las piezas. Ruta de taller: reformula el tramo para el destinatario elegido y rotúlalo «Adaptación didáctica propia»; en ambos casos, localiza cambios de función, información y soporte."
+        "Si recuperas un documento vinculado, comprueba la fuente de su vínculo. Si adaptas un tramo, reformúlalo para el destinatario elegido y rotúlalo «Adaptación didáctica propia». Guarda la segunda pieza con «Añadir evidencia» y comienza a contrastar los cambios de función, información y soporte."
       ],
       [
         10,
@@ -952,7 +952,7 @@ export const sessions=[
       [
         30,
         "Producción",
-        "Revisa la ficha 5 en «Interpretación revisada» y «Qué cambió y por qué». Ajusta también «Desarrollo del análisis» del expediente con las objeciones pertinentes a ese informe."
+        "Revisa la ficha 5 en «Interpretación revisada». En «Qué cambió y por qué», identifica a tu compañero, las evidencias u objeciones que aportó cada persona y qué ajustaste o mantuviste. Ajusta también «Desarrollo del análisis» del expediente con las objeciones pertinentes a ese informe."
       ],
       [
         25,
@@ -1191,7 +1191,7 @@ export const sessions=[
       [
         8,
         "Ajustar la consigna probada",
-        "En «Actividad de enseñanza», anota la dificultad observada, los comentarios del lector y del observador, y el ajuste realizado. Limita la conclusión a esta prueba."
+        "En «Actividad de enseñanza», identifica quién hizo de autor, lector y observador en el turno de tu consigna y qué aportó cada persona. Anota la dificultad observada y el ajuste realizado. Limita la conclusión a esta prueba."
       ],
       [
         8,

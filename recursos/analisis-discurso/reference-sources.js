@@ -7,7 +7,11 @@ const ideology=[
  {resource:'van-dijk-ideologia',selection:'PDF 5–6: creencias compartidas por grupos y posibilidad de ideologías de resistencia. Consulta docente opcional en inglés, como apoyo de esta síntesis en español.'},
  {resource:'fairclough',selection:'Ideología y hegemonía: impresas 86–91 / PDF personal 92–97 del ejemplar consultado. Consulta docente.'}
 ];
-export const lessonReferences={3:{2:ideology}};
+export const lessonReferences={
+ 1:{5:[{resource:'caldiz',selection:'PDF 7: prominencia, tono y nivel tonal; PDF 8–9 y 13: análisis de marcadores y relación con el segmento siguiente. Los ejemplos de la explicación son del curso.'}]},
+ 3:{2:ideology},
+ 6:{3:[{resource:'bolivar',selection:'Páginas impresas 99–100 / PDF 7–8: evaluación, relaciones entre intervenciones y escalas del cambio. Síntesis aplicada al diálogo del curso.'}]}
+};
 export const classReferences={'s7-e2':ideology};
 export const conceptReferences={
  'discurso-referido':[{resource:'gallucci',selection:'Representación y recontextualización: impresas 201–202 / PDF 2–3; cita directa, indirecta y literalidad histórica: impresas 206–207 / PDF 7–8. Consulta complementaria.'}],
