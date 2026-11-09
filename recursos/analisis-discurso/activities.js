@@ -18,7 +18,7 @@ export const unitActivities={
   reviewFocus:"Vuelve a escuchar o mirar cada pausa, énfasis o gesto. Comprueba su intervalo. Explica qué respuesta resiste mejor la comparación y por qué; las dos deben hablar de las mismas marcas."
  },
  2:{
-   "material": "Reglamento de becas, artículos 1–3 (páginas 1–2 del PDF). Usa el mismo tramo para el análisis y la comparación visual.",
+   "material": "Reglamento de becas, artículos 1–3 (páginas 1–2 del archivo). Usa el mismo tramo para el análisis y la comparación visual.",
    "product": "Una explicación de cómo el reglamento comunica una condición, revisada después de probar dos formas de presentarla.",
    "steps": [
      [
@@ -102,7 +102,7 @@ export const unitActivities={
    "steps": [
      [
        "Recupera la primera pieza · semana 11, clase 1",
-       "Indica qué quieres comparar. Si ya analizaste el tramo, remite a la ficha y al lugar donde aparece, por ejemplo «Ficha 2, art. 3, PDF p. 2». Si es nuevo, anota el fragmento, la fuente y dónde encontrarlo."
+       "Indica qué quieres comparar. Si ya analizaste el tramo, remite a la ficha y al lugar donde aparece, por ejemplo «Ficha 2, art. 3, página 2 del archivo». Si es nuevo, anota el fragmento, la fuente y dónde encontrarlo."
      ],
      [
        "Prepara o recupera la segunda pieza · semana 11, clase 2",

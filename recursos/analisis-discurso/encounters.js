@@ -297,7 +297,7 @@ export const sessions=[
         "Comprueba que la pregunta de la ficha 2 y la propuesta del expediente estén guardadas. Comenta qué dato necesitas completar para la próxima clase."
       ]
     ],
-    "preparation": "Lee «La escritura organiza una acción» en «Teoría» y los artículos 1–3 del reglamento (PDF 1–2). Trae una pregunta para la ficha 2 y una propuesta de 2–4 documentos o episodios para el expediente."
+    "preparation": "Lee «La escritura organiza una acción» en «Teoría» y los artículos 1–3 del reglamento (páginas 1–2 del archivo). Trae una pregunta para la ficha 2 y una propuesta de 2–4 documentos o episodios para el expediente."
   },
   {
     "id": "s4-e2",
@@ -341,7 +341,7 @@ export const sessions=[
         "Comprueba el guardado de la ficha 2 y del hito 1. Elige qué frase retomarás para estudiar sus inferencias."
       ]
     ],
-    "preparation": "Retoma tu pregunta de la ficha 2 y los artículos 1–3 (PDF 1–2). Ten disponibles la pregunta y el corpus que propusiste para el expediente."
+    "preparation": "Retoma tu pregunta de la ficha 2 y los artículos 1–3 (páginas 1–2 del archivo). Ten disponibles la pregunta y el corpus que propusiste para el expediente."
   },
   {
     "id": "s5-e1",
@@ -419,7 +419,7 @@ export const sessions=[
         "Guarda el argumento. Elige la frase que usarás para probar un cambio de presentación."
       ]
     ],
-    "preparation": "Lee «Del significado local al global» en «Teoría». Retoma tu inferencia y su localizador. Revisa los artículos 1–3. Consulta los artículos 8–9 (PDF 3) si necesitas comprobar esos requisitos."
+    "preparation": "Lee «Del significado local al global» en «Teoría». Retoma tu inferencia y su localizador. Revisa los artículos 1–3. Consulta los artículos 8–9 (página 3 del archivo) si necesitas comprobar esos requisitos."
   },
   {
     "id": "s6-e1",
@@ -531,7 +531,7 @@ export const sessions=[
         "Guarda tu elección. Para la próxima clase, busca un dato de contexto que ayude a comprobarla."
       ]
     ],
-    "preparation": "Lee «Teoría» y Pardo: páginas impresas 43–47 / PDF 3–7. Retoma la pregunta y el corpus del hito 1."
+    "preparation": "Lee «Teoría» y Pardo: páginas impresas 43–47 (páginas 3–7 del archivo). Retoma la pregunta y el corpus del hito 1."
   },
   {
     "id": "s7-e2",
@@ -575,7 +575,7 @@ export const sessions=[
         "Guarda la evidencia y su explicación para la revisión de la ficha 3."
       ]
     ],
-    "preparation": "Relee «Del texto a una explicación crítica» en «Teoría». Busca un dato de contexto con fuente y localizador. Si usas el reglamento, consulta su versión en la razón final (PDF 4)."
+    "preparation": "Relee «Del texto a una explicación crítica» en «Teoría». Busca un dato de contexto con fuente y localizador. Si usas el reglamento, consulta su versión en la razón final (página 4 del archivo)."
   },
   {
     "id": "s8-e1",
@@ -1121,7 +1121,7 @@ export const sessions=[
         "Comprueba que la revisión quede en la ficha 6 y que el expediente incluya el hallazgo que responde a su pregunta."
       ]
     ],
-    "preparation": "Lee «El diálogo hace algo con la evaluación» en «Teoría» y Bolívar: páginas impresas 96–102 y 105–107 / PDF 4–10 y 13–15. Trae tu objeción y un intercambio ya registrado, como el que tuviste al probar el aviso. Si usas una representación didáctica, identifícala como tal."
+    "preparation": "Lee «El diálogo hace algo con la evaluación» en «Teoría» y Bolívar: páginas impresas 96–102 y 105–107 (páginas 4–10 y 13–15 del archivo). Trae tu objeción y un intercambio ya registrado, como el que tuviste al probar el aviso. Si usas una representación didáctica, identifícala como tal."
   },
   {
     "id": "s15-e1",

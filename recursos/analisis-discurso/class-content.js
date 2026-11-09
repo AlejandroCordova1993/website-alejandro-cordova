@@ -129,7 +129,7 @@ export const classContent={
     "title": "Escribir configura una acción social",
     "explanation": "Un escrito interviene en una relación entre participantes. Un reglamento establece quién puede recibir una ayuda, quién acredita condiciones y quién administra el procedimiento. Las denominaciones y las obligaciones construyen esas posiciones dentro de la institución. La enunciación escrita se reconstruye mediante huellas del emisor, el destinatario y el momento de producción: quien aparece dentro de una cláusula puede tener un papel diferente de quien dicta el documento.",
     "points": [
-      "En el reglamento, el encabezado del Consejo Universitario y «RESUELVE» identifican la voz que dispone (PDF 1); los artículos 1–2 nombran al estudiantado y a la instancia administradora (PDF 2). La razón final registra la reforma de septiembre de 2022 y la certificación de la Secretaría General (PDF 4). Estas huellas sitúan emisor, destinatarios y ejemplar.",
+      "En el reglamento, el encabezado del Consejo Universitario y «RESUELVE» identifican la voz que dispone (página 1 del archivo); los artículos 1–2 nombran al estudiantado y a la instancia administradora (página 2 del archivo). La razón final registra la reforma de septiembre de 2022 y la certificación de la Secretaría General (página 4 del archivo). Estas huellas sitúan emisor, destinatarios y ejemplar.",
       "Distingue quien dispone, quien acredita una condición y quien recibe un beneficio.",
       "Relaciona la formulación con la acción que permite: solicitar, verificar o resolver.",
       "Corpus es el conjunto seleccionado para responder una pregunta. En esta ficha, el documento es una pieza del corpus y cada cláusula o tramo examinado es una unidad de análisis; guardar su localizador permite relacionarlo con el conjunto."
@@ -251,8 +251,8 @@ export const classContent={
       "La fecha de una carpeta digital no equivale a la fecha de reforma del documento.",
       "Un procedimiento normativo no acredita cómo fue aplicado o experimentado."
     ],
-    "example": "Fragmento: «Se deberá destinar el 65% de las becas para excelencia académica y el 35 % por vulnerabilidad» (artículo 3, PDF 2). Dificultad: ¿el «2024» de la carpeta identifica la reforma de este ejemplar?",
-    "reading": "Dato y fuente: la razón final del mismo Reglamento de Becas, PDF 4, consigna reformas de 7 de diciembre de 2021 y 20 de septiembre de 2022. Función: permite identificar el ejemplar en que analizamos la obligación. La lectura pasa de «reparto en una norma reformada en 2024» a «reparto en un ejemplar que registra reforma de 2022»; la carpeta informa dónde se consulta. El encabezado del Consejo Universitario y «RESUELVE» (PDF 1) aportan otro dato: quién presenta la disposición. Fecha e instancia explican aspectos diferentes del mismo fragmento. Para saber qué cambió exactamente en el artículo haría falta comparar versiones.",
+    "example": "Fragmento: «Se deberá destinar el 65% de las becas para excelencia académica y el 35 % por vulnerabilidad» (artículo 3, página 2 del archivo). Dificultad: ¿el «2024» de la carpeta identifica la reforma de este ejemplar?",
+    "reading": "Dato y fuente: la razón final del mismo Reglamento de Becas, página 4 del archivo, consigna reformas de 7 de diciembre de 2021 y 20 de septiembre de 2022. Función: permite identificar el ejemplar en que analizamos la obligación. La lectura pasa de «reparto en una norma reformada en 2024» a «reparto en un ejemplar que registra reforma de 2022»; la carpeta informa dónde se consulta. El encabezado del Consejo Universitario y «RESUELVE» (página 1 del archivo) aportan otro dato: quién presenta la disposición. Fecha e instancia explican aspectos diferentes del mismo fragmento. Para saber qué cambió exactamente en el artículo haría falta comparar versiones.",
     "prompt": "¿Qué afirmación cambia con este dato y cuál sigue pendiente?",
     "source": "guia-3",
     "lesson": 0

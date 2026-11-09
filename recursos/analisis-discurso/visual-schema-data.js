@@ -17,7 +17,7 @@ export const visualSchemas={
   scale:'Adaptación didáctica de Fairclough: describir, interpretar y explicar son operaciones; texto, práctica discursiva y práctica social son dimensiones relacionadas. Vuelve a las marcas y a los datos entre operaciones: no es una secuencia fija ni un método universal del AD.',
   task:{label:'En el diagnóstico',text:'Con A, B y C: una observación que otro lector pueda comprobar (paso 1), dos hipótesis (pasos 2 y 3) y el dato que te permitiría decidir entre ellas.'},
   limit:'describir ya supone categorías; ninguna fase es descripción pura (Fairclough, 1992: 199). Para estudiar intenciones o efectos, reúne datos de producción y recepción.',
-  source:'Fuentes: Fairclough (1992: 73 y 198–199). Uso lingüístico contextualizado: Calsamiglia y Tusón (2012, §1.1 · PDF 12).',
+  source:'Fuentes: Fairclough (1992: 73 y 198–199). Uso lingüístico contextualizado: Calsamiglia y Tusón (2012, §1.1 · página 12 del archivo).',
   anchors:[openingNotice.text]
  },
  'contexto-versiones':{
@@ -30,7 +30,7 @@ export const visualSchemas={
   ],
   verdict:'Con cotexto, la cancelación puede leerse como resultado de una medida del comité; aislada, comunica el resultado sin identificar quién decidió. Ninguna de las dos demuestra por sí sola una finalidad de ocultamiento.',
   task:{label:'Al contrastar los contextos',text:'Explica qué hipótesis de tu lectura inicial gana o pierde apoyo, y por qué.'},
-  source:'Ejemplo. Cotexto: Calsamiglia y Tusón (2012, §4.2 · PDF 110, entre los factores del contexto; §8.2.2 · PDF 238, referencias dentro del texto).',
+  source:'Ejemplo. Cotexto: Calsamiglia y Tusón (2012, §4.2 · página 110 del archivo, entre los factores del contexto; §8.2.2 · página 238 del archivo, referencias dentro del texto).',
   anchors:['El comité adoptó la medida. Se canceló la reunión','candidato recuperable en el cotexto','Ninguna de las dos demuestra por sí sola una finalidad de ocultamiento']
  },
  'revision-pausa':{
@@ -41,7 +41,7 @@ export const visualSchemas={
   after:{label:'Lectura revisada',text:'La pausa coincide con el paso de las ventajas a los límites de la misma propuesta y puede ayudar a distinguir esas partes.'},
   reason:'«Ventajas», «límites» y «en cuanto a» permiten reconocer el cambio de subtema. La pausa se sitúa en esa frontera en la realización propuesta para el ejemplo. Esa relación sostiene una función organizativa; respirar también puede contribuir a la pausa. La inseguridad requeriría otros indicios.',
   task:{label:'En la ficha 1',text:'Conserva la primera lectura y explica qué dato justificó el cambio y qué evidencia falta todavía.'},
-  source:'Ejemplo del curso: [pausa] indica la interrupción prevista en su realización. Prosodia: Calsamiglia y Tusón (2012, §2.8.1 · PDF 57); organización temática: §2.8.4 · PDF 60–64; transcripción: apéndice, §1.2 · PDF 358–361.',
+  source:'Ejemplo del curso: [pausa] indica la interrupción prevista en su realización. Prosodia: Calsamiglia y Tusón (2012, §2.8.1 · página 57 del archivo); organización temática: §2.8.4 · páginas 60–64 del archivo; transcripción: apéndice, §1.2 · páginas 358–361 del archivo.',
   anchors:['la pausa expresa inseguridad','La propuesta tiene dos ventajas','En cuanto a sus límites','cambio de subtema']
  },
  'deixis-taller':{
@@ -56,7 +56,7 @@ export const visualSchemas={
   ],
   verdict:'Para identificar estas referencias necesitamos la situación de aula.',
   task:{label:'Con la charla de Drexler',text:'Antes de transcribir, reconoce quién habla, a quién se dirige y en qué situación.'},
-  source:'Ejemplo. Situación de enunciación: Calsamiglia y Tusón (2012, §2.1 · PDF 29–30). Deixis de persona, posesivos incluidos, y de tiempo: §4.2.1 · PDF 117–122.',
+  source:'Ejemplo. Situación de enunciación: Calsamiglia y Tusón (2012, §2.1 · páginas 29–30 del archivo). Deixis de persona, posesivos incluidos, y de tiempo: §4.2.1 · páginas 117–122 del archivo.',
   anchors:['Hoy les propongo revisar nuestra primera explicación','construyen tiempo, destinatario y pertenencia']
  },
  'secuencias-solicitud':{
@@ -69,7 +69,7 @@ export const visualSchemas={
   ],
   verdict:'El conjunto presenta una práctica docente como valiosa: relata una mejora, sitúa los recursos y recomienda mantener el intercambio. Esa organización sostiene una propuesta; comprobar que el intercambio causó la mejora requiere otros datos.',
   task:{label:'En la ficha 6',text:'Explica qué hace cada tramo y qué marcas muestran la transición.'},
-  source:'Ejemplo. Textos heterogéneos y secuencia dominante: Calsamiglia y Tusón (2012, §9.2.2 · PDF 266–268). Narración, descripción y argumentación: §10.1 · PDF 270–274; §10.2 · PDF 280–282; §10.3 · PDF 295–300.',
+  source:'Ejemplo. Textos heterogéneos y secuencia dominante: Calsamiglia y Tusón (2012, §9.2.2 · páginas 266–268 del archivo). Narración, descripción y argumentación: §10.1 · páginas 270–274 del archivo; §10.2 · páginas 280–282 del archivo; §10.3 · páginas 295–300 del archivo.',
   anchors:['En el primer taller de lectura, el grupo entregó respuestas muy breves','El curso reúne a treinta estudiantes','Conviene mantener el intercambio para contrastar interpretaciones','Cada tramo adquiere función en esa intervención completa']
  },
  'agencia-escala':{
@@ -84,7 +84,7 @@ export const visualSchemas={
   ],
   limit:'para distinguir quién actúa y quién decide, contrasta la formulación con otros pasajes o documentos sobre la decisión.',
   task:{label:'En la ficha 2',text:'Localiza en el reglamento cláusulas con participantes, acciones y condiciones, y anota dónde queda el agente.'},
-  source:'Ejemplos. Pasiva sin agente y nominalización: Fairclough (1992: 178–179). Impersonales y pasivas sin agente que borran al locutor: Calsamiglia y Tusón (2012, §5.1.1 · PDF 138).',
+  source:'Ejemplos. Pasiva sin agente y nominalización: Fairclough (1992: 178–179). Impersonales y pasivas sin agente que borran al locutor: Calsamiglia y Tusón (2012, §5.1.1 · página 138 del archivo).',
   anchors:['La comisión revisó las solicitudes','Las solicitudes fueron revisadas por la comisión','Se revisaron las solicitudes','«La revisión» convierte el proceso en un nombre','El agente realiza la acción; la autoridad que la decide puede ser otra','La omisión se interpreta junto con los participantes identificados en el documento']
  },
  'personas-cuadrante':{
@@ -99,7 +99,7 @@ export const visualSchemas={
   },
   limit:'la forma por sí sola no decide a quién incluye: «la comisión» cambia de casilla según quién enuncia. El destinatario construido no identifica a todos los lectores reales.',
   task:{label:'En la ficha 4',text:'Localiza tres segmentos con marcas de persona; busca también nombres, posesivos y terminaciones verbales.'},
-  source:'Formas de persona: Calsamiglia y Tusón (2012, §§5.1.1–5.1.4 · PDF 138–143); receptor nombrado como «estudiante» o «usuario», PDF 139; «nosotros» inclusivo y su ejemplo, PDF 141; el locutor que se nombra a sí mismo, como «este departamento», PDF 143. El cuadrante es síntesis del curso.',
+  source:'Formas de persona: Calsamiglia y Tusón (2012, §§5.1.1–5.1.4 · páginas 138–143 del archivo); receptor nombrado como «estudiante» o «usuario», página 139 del archivo; «nosotros» inclusivo y su ejemplo, página 141 del archivo; el locutor que se nombra a sí mismo, como «este departamento», página 143 del archivo. El cuadrante es síntesis del curso.',
   anchors:['nosotros','«los solicitantes» puede designar a los destinatarios','una institución puede nombrarse a sí misma, como «esta comisión»','La forma por sí sola no decide a quién incluye','Distingue quien enuncia, los participantes representados y los destinatarios','nombres, posesivos y terminaciones verbales']
  },
  'enfoques-matriz':{
@@ -129,7 +129,7 @@ export const visualSchemas={
   verdict:'La transcripción de palabras permite examinar la formulación. El audio permitiría comprobar la pausa; el video, la mirada. Conservar intervalos permite estudiar su coordinación.',
   limit:'demostración inventada: los tiempos son ilustrativos, no una medición.',
   task:{label:'En la ficha 1',text:'Registra voz y cuerpo del mismo episodio con su intervalo, cuando sean observables.'},
-  source:'Ejemplo. Mirada, entre los elementos cinésicos: Calsamiglia y Tusón (2012, §2.6.2 · PDF 50–52). Pausas: §2.8.1 · PDF 57.',
+  source:'Ejemplo. Mirada, entre los elementos cinésicos: Calsamiglia y Tusón (2012, §2.6.2 · páginas 50–52 del archivo). Pausas: §2.8.1 · página 57 del archivo.',
   anchors:['Esa es mi propuesta','una pausa y de una mirada al público','La transcripción de palabras permite examinar la formulación','conservando intervalos']
  },
  'tema-global':{
@@ -142,7 +142,7 @@ export const visualSchemas={
   rejected:{label:'No la sostiene el texto',text:'«La ayuda se ofrece a todos».',note:'Añade una generalización que elimina las condiciones.'},
   limit:'el tema global es una reconstrucción de quien interpreta. Una síntesis puede omitir detalles si justifica su selección; cambiar una condición altera el contenido.',
   task:{label:'En la ficha 2',text:'Reconstruye el tema global y justifica qué seleccionaste, generalizaste o integraste.'},
-  source:'Ejemplo. Macroestructura y macrorreglas: Calsamiglia y Tusón (2012, §8.1.2 · PDF 225–226). Generalización y operaciones selectivas y constructivas: van Dijk (1980: 216–217).',
+  source:'Ejemplo. Macroestructura y macrorreglas: Calsamiglia y Tusón (2012, §8.1.2 · páginas 225–226 del archivo). Generalización y operaciones selectivas y constructivas: van Dijk (1980: 216–217).',
   anchors:['La ayuda exige matrícula vigente y acreditación de ingresos','La ayuda está condicionada a matrícula e ingresos','las condiciones conservadas determinan cómo se representa el acceso a la ayuda','generalizar reúne casos bajo una categoría','pierde «vigente»','Una síntesis puede omitir detalles; debe justificar su selección','Cambiar una condición o introducir una conclusión ajena altera el contenido']
  },
  'regla-de-paso':{
@@ -155,7 +155,7 @@ export const visualSchemas={
   reserve:{label:'Reserva',connector:'a menos que',text:'produzca costes o exclusiones que restrinjan la regla'},
   limit:'en este esquema la garantía apoya la ley de paso, que es la regla entre premisa y conclusión. El criterio está construido para el ejemplo, no es una política real de la UCE; comprobar el beneficio exige datos para la premisa.',
   task:{label:'En la ficha 6',text:'Escribe premisa, regla de conexión, conclusión y una objeción que afecte la inferencia.'},
-  source:'Ejemplo. Esquema de Plantin (1996: 38) con garantía y reserva de Toulmin (1958), en Calsamiglia y Tusón (2012, §10.3 · PDF 297–298).',
+  source:'Ejemplo. Esquema de Plantin (1996: 38) con garantía y reserva de Toulmin (1958), en Calsamiglia y Tusón (2012, §10.3 · páginas 297–298 del archivo).',
   anchors:['La medida beneficia a muchos estudiantes; debemos mantenerla','una medida beneficiosa merece mantenerse','El beneficio estudiantil funciona como criterio de legitimación','la prueba del beneficio','costes o exclusiones']
  },
  'triangulacion-fuentes':{
@@ -208,7 +208,7 @@ export const visualSchemas={
   note:'A valora la inscripción como «accesible» porque se realiza en línea. B cuestiona ese criterio al introducir a quienes carecen de conexión. A responde con atención presencial: cambia la solución ofrecida y añade lugar y horario. Seguir las tres intervenciones permite ver qué valoración se discute y cómo se reajusta la respuesta.',
   limit:'para estudiar un cambio en la atención institucional, compara otros intercambios y prácticas a lo largo del tiempo.',
   task:{label:'En el borrador del expediente',text:'Incorpora la objeción y muestra dónde se observa la modificación.'},
-  source:'Ejemplo. Intervenciones e intercambios: Calsamiglia y Tusón (2012, §10.5 · PDF 319–323). Diálogo, evaluación y escalas de cambio: Bolívar (2024: 99–100 / PDF 7–8).',
+  source:'Ejemplo. Intervenciones e intercambios: Calsamiglia y Tusón (2012, §10.5 · páginas 319–323 del archivo). Diálogo, evaluación y escalas de cambio: Bolívar (2024: 99–100 / páginas 7–8 del archivo).',
   anchors:['La inscripción al taller de lectura es accesible: se completa en línea','¿Y cómo se inscribe quien no tiene conexión?','Por eso ofrecemos un punto de atención en el campus, de ocho a doce','compara otros intercambios y prácticas a lo largo del tiempo']
  },
  'negacion-voces':{
@@ -221,7 +221,7 @@ export const visualSchemas={
   assumed:{role:'Enunciador asumido',text:'«La medida no es un privilegio».',stance:'L asume este rechazo'},
   limit:'el enunciado aislado no identifica a quien habría sostenido esa perspectiva; el cotexto dirá si se responde a algo dicho o se previene una objeción.',
   task:{label:'En la ficha 4',text:'Distingue cuándo puedes atribuir una perspectiva a alguien y cuándo solo puedes describir que se evoca.'},
-  source:'Ejemplo. Sujeto hablante («ser empírico»), locutor y enunciador: Ducrot (1984), en Calsamiglia y Tusón (2012, §5.2 · PDF 150). Negación polifónica: Ducrot, en Caldiz (2014, PDF 5).',
+  source:'Ejemplo. Sujeto hablante («ser empírico»), locutor y enunciador: Ducrot (1984), en Calsamiglia y Tusón (2012, §5.2 · página 150 del archivo). Negación polifónica: Ducrot, en Caldiz (2014, página 5 del archivo).',
   anchors:['La medida no es un privilegio','la medida es un privilegio','el sujeto hablante (ser empírico) produce el mensaje','el locutor es la figura responsable de enunciarlo','si se responde a algo dicho o se previene una objeción']
  },
  'operaciones-analisis':{
@@ -250,7 +250,7 @@ export const visualSchemas={
   ],
   verdict:'Escucha qué se dice antes y después para explicar la función de la pausa.',
   task:{label:'Al transcribir el tramo de Drexler',text:'Usa tu pregunta provisional para elegir 20–30 segundos dentro de 00:39–01:47. Anota ambos intervalos en el localizador: episodio observado y fragmento transcrito. Toma las marcas de la escucha y añade una leyenda.'},
-  source:'Representación didáctica del curso. Transcripción: Calsamiglia y Tusón (2012, apéndice, §1.2 · PDF 358–361).',
+  source:'Representación didáctica del curso. Transcripción: Calsamiglia y Tusón (2012, apéndice, §1.2 · páginas 358–361 del archivo).',
   anchors:['No [pausa] aceptamos esa explicación','La puntuación de un subtítulo es una decisión de escritura que debe contrastarse con el audio','La leyenda precisa qué representa cada marca y la escucha decide dónde corresponde','su posible función requiere las palabras próximas y la continuación']
  },
  'accion-clausula':{
@@ -264,7 +264,7 @@ export const visualSchemas={
   ],
   verdict:'La cláusula presenta a la comisión como responsable de tramitar la solicitud y ordena su actuación: verificar antes de resolver. Así organiza la relación entre quien solicita y quien decide; para afirmar que se cumplió habría que investigar la aplicación.',
   task:{label:'En la ficha 2',text:'Formula tu pregunta inicial: qué regula el texto y qué documentos necesitarías para estudiar su cumplimiento.'},
-  source:'Ejemplo. Prácticas escritas en los ámbitos de la vida social, entre ellos el institucional: Calsamiglia y Tusón (2012, §3.2 · PDF 76).',
+  source:'Ejemplo. Prácticas escritas en los ámbitos de la vida social, entre ellos el institucional: Calsamiglia y Tusón (2012, §3.2 · página 76 del archivo).',
   anchors:['La comisión verificará los requisitos antes de resolver la solicitud','Relaciona la formulación con la acción que permite: solicitar, verificar o resolver','qué necesitaríamos para estudiar su cumplimiento','su aplicación se estudia con otros datos']
  },
  'presuposicion-certificado':{
@@ -285,7 +285,7 @@ export const visualSchemas={
   ],
   verdict:'«Adjunte nuevamente» pide repetir una entrega y trata la anterior como información compartida: sitúa al estudiante en un trámite ya iniciado. «Algunos grupos entregaron» puede sugerir «no todos»; «de hecho, todos» cancela esa implicatura. La entrega previa presupuesta por «nuevamente» no queda demostrada por la orden.',
   task:{label:'En la ficha 2',text:'Explica una inferencia con las palabras que la apoyan y el conocimiento que aporta el lector.'},
-  source:'Ejemplo. Presuposición: Calsamiglia y Tusón (2012, §7.2.1 · PDF 191–192) y Brown y Yule (1983: 28–31). Implicatura y su cancelación: Grice, en Escandell (1996: 86–87).',
+  source:'Ejemplo. Presuposición: Calsamiglia y Tusón (2012, §7.2.1 · páginas 191–192 del archivo) y Brown y Yule (1983: 28–31). Implicatura y su cancelación: Grice, en Escandell (1996: 86–87).',
   anchors:['Adjunte nuevamente el certificado','presenta una acción anterior como información dada por supuesta','comprobar la entrega anterior exige consultar el expediente','Un lector nuevo necesitaría recuperar esa información','«Algunos grupos entregaron» puede sugerir «no todos»','cancela esa implicatura']
  },
  'composicion-aviso':{
@@ -303,7 +303,7 @@ export const visualSchemas={
   ],
   verdict:'La primera disposición destaca la convocatoria y la entrega; la segunda presenta primero las condiciones de acceso. Las mismas palabras proponen así distintas prioridades al destinatario.',
   task:{label:'En la ficha 2',text:'Describe la disposición original de tu documento y propone una alternativa que conserve las mismas palabras.'},
-  source:'Aviso inventado para este esquema. Tipografía y diseño gráfico: Calsamiglia y Tusón (2012, §3.5 · PDF 86). Valor informativo, prominencia y encuadre: Kress y van Leeuwen (2021: 181–182).',
+  source:'Aviso inventado para este esquema. Tipografía y diseño gráfico: Calsamiglia y Tusón (2012, §3.5 · página 86 del archivo). Valor informativo, prominencia y encuadre: Kress y van Leeuwen (2021: 181–182).',
   anchors:['«Requisitos» aparece en letra pequeña','conserva las mismas palabras y gana tamaño y posición inicial','Tamaño, posición, agrupación y encuadre proponen jerarquías','Para saber qué leen primero los destinatarios, compara las versiones con lectores','Para comparar disposición, conserva el mismo contenido verbal']
  },
  'diseno-lectura':{
@@ -317,7 +317,7 @@ export const visualSchemas={
   verdict:'El lector localizó el título, pero omitió una condición. Destacar «Requisitos» no bastó para reconocer todo lo exigido en esta lectura. La agrupación es una explicación posible que se puede comprobar; también pueden influir la formulación y los conocimientos del lector.',
   limit:'ejemplo construido de revisión: en tu ficha usa la respuesta que realmente obtuviste.',
   task:{label:'En la ficha 2',text:'Revisa tu interpretación tras el contraste visual y explica qué cambió.'},
-  source:'Ejemplo construido del curso. Tipografía y diseño gráfico: Calsamiglia y Tusón (2012, §3.5 · PDF 86). El lector, sujeto activo de la lectura: §3.4.2 · PDF 83–84.',
+  source:'Ejemplo construido del curso. Tipografía y diseño gráfico: Calsamiglia y Tusón (2012, §3.5 · página 86 del archivo). El lector, sujeto activo de la lectura: §3.4.2 · páginas 83–84 del archivo.',
   anchors:['al destacar «Requisitos», será más fácil localizar las condiciones','Un compañero encuentra el título, pero omite una condición ubicada debajo','Revisar la agrupación permite poner a prueba si contribuyó a esa omisión','No conviertas una respuesta en una regla para todos','En la ficha se contrasta con la respuesta realmente obtenida']
  },
  'recorrido-reparto':{
@@ -346,7 +346,7 @@ export const visualSchemas={
   ],
   verdict:'La proposición atribuida se conserva; el verbo cambia su encuadre. «Aseguró» presenta una afirmación firme; «admitió», un reconocimiento que puede leerse como concesión. Quien cita construye así una posición para el portavoz; el cotexto permite precisar ante qué discusión.',
   task:{label:'En la ficha 4',text:'Contrasta una atribución de tu corpus: qué verbo la introduce, qué marcas la sostienen y qué lectura alternativa examinaste.'},
-  source:'Ejemplo. Verbo que anuncia la cita (verba dicendi) e indica el acto de habla atribuido: Calsamiglia y Tusón (2012, §5.2.1 · PDF 152).',
+  source:'Ejemplo. Verbo que anuncia la cita (verba dicendi) e indica el acto de habla atribuido: Calsamiglia y Tusón (2012, §5.2.1 · página 152 del archivo).',
   anchors:['El portavoz aseguró que la medida era necesaria','El portavoz admitió que la medida era necesaria','quien refiere las palabras orienta la imagen del portavoz y de su posición','El cotexto permite precisar esa lectura','verbos introductores']
  },
  'genero-piezas':{
@@ -360,7 +360,7 @@ export const visualSchemas={
   ],
   verdict:'La resolución da forma a una decisión autorizada; el aviso la hace pertinente para quienes deben actuar. El género organiza esa relación entre institución y destinatarios. Compartir tema tampoco demuestra un vínculo entre sus versiones.',
   task:{label:'En la ficha 5',text:'Identifica tu primera pieza por la acción que realiza y elige una comparación documentada o un experimento propio.'},
-  source:'Ejemplo. Géneros de cada esfera de actividad: Bajtín, en Calsamiglia y Tusón (2012, §9.1.2 · PDF 258–259). Rasgos para describir un género: §9.1.4 · PDF 261–263.',
+  source:'Ejemplo. Géneros de cada esfera de actividad: Bajtín, en Calsamiglia y Tusón (2012, §9.1.2 · páginas 258–259 del archivo). Rasgos para describir un género: §9.1.4 · páginas 261–263 del archivo.',
   anchors:['Una resolución y un aviso de convocatoria pueden referirse a las mismas ayudas','la resolución aprueba bases y cronograma; el aviso comunica la decisión y orienta la postulación','En las piezas UNAE enlazadas, la disposición de publicar y el aviso permiten estudiar ese vínculo documentado','Disponer realiza una acción institucional','un aviso escrito puede cambiar de género sin cambiar de medio']
  },
  'puente-faltante':{
@@ -372,7 +372,7 @@ export const visualSchemas={
   verdict:'Para investigar el vínculo hace falta otro dato: una cita, un enlace, una identificación de versión u otra fuente que documente el vínculo. En la semana 14, clase 1 el esquema se completa con garantía y reserva.',
   limit:'la semejanza temática ofrece un punto de partida para comparar los avisos.',
   task:{label:'En la revisión entre pares',text:'Busca en el desarrollo de tu compañero el dato, el criterio o la condición que sostiene cada paso.'},
-  source:'Ejemplo. Premisa, ley de paso y conclusión: Plantin (1996: 38), en Calsamiglia y Tusón (2012, §10.3 · PDF 297); pasos implícitos, PDF 298.',
+  source:'Ejemplo. Premisa, ley de paso y conclusión: Plantin (1996: 38), en Calsamiglia y Tusón (2012, §10.3 · página 297 del archivo); pasos implícitos, página 298 del archivo.',
   anchors:['Ambos avisos hablan de becas; por eso uno deriva del otro','La conclusión se apoya en una regla implícita que habría que justificar','una cita, un enlace, una identificación de versión u otra fuente que documente el vínculo','Una semejanza temática sirve para comparar las piezas']
  },
  'evidencias-argumento':{
@@ -384,7 +384,7 @@ export const visualSchemas={
   rejected:{label:'Excede los datos',text:'«La adaptación hizo que se entendiera mejor».',note:'Atribuir efectos exige otras evidencias de lectura.'},
   limit:'dos evidencias necesitan una relación explicada; una lista de citas no constituye ese desarrollo.',
   task:{label:'En el hito 3',text:'Explica qué muestra cada segmento, cómo se relacionan, qué objeción afecta a la conclusión y hasta dónde llega.'},
-  source:'Ejemplo de esta clase; la conclusión que excede los datos se escribió para este esquema. Efectos y evidencias de lectura: apartado «Dibujar una relación no la demuestra» de la lectura integrada de «Teoría» y de la guía de la unidad 5. Procesos de lectura: Calsamiglia y Tusón (2012, §3.4.2 · PDF 83–85).',
+  source:'Ejemplo de esta clase; la conclusión que excede los datos se escribió para este esquema. Efectos y evidencias de lectura: apartado «Dibujar una relación no la demuestra» de la lectura integrada de «Teoría» y de la guía de la unidad 5. Procesos de lectura: Calsamiglia y Tusón (2012, §3.4.2 · páginas 83–85 del archivo).',
   anchors:['una condición se formula en la norma','esa condición se reformula en una adaptación propia','La conclusión relaciona el cambio verbal con una nueva posición del lector','Para estudiar si esa orientación fue comprendida, se contrasta con su respuesta','Las evidencias y las categorías sostienen esa interpretación']
  },
  'explicar-justificar':{
@@ -397,7 +397,7 @@ export const visualSchemas={
   ],
   verdict:'La frase justifica una ampliación a partir de cómo representa el retraso. Un criterio posible sería no perjudicar a quien sufrió un fallo ajeno; hay que declararlo y discutirlo. Comprender una causa no obliga a aceptar una medida.',
   task:{label:'En la ficha 6',text:'Explica las secuencias efectivamente presentes en tu texto y compáralas con el texto mixto.'},
-  source:'Ejemplo. Explicación y argumentación: Calsamiglia y Tusón (2012, §10.4 · PDF 308–312; §10.3 · PDF 295–300).',
+  source:'Ejemplo. Explicación y argumentación: Calsamiglia y Tusón (2012, §10.4 · páginas 308–312 del archivo; §10.3 · páginas 295–300 del archivo).',
   anchors:['El retraso se produjo por un fallo del sistema; por tanto, debemos ampliar el plazo','La causa atribuida al sistema representa el retraso como un problema ajeno al solicitante','el criterio de que ese fallo no debe perjudicar su acceso al trámite','comprender una causa no obliga a aceptar una medida','¿Qué premisa adicional conecta la explicación con la decisión?']
  },
  'alcance-conclusion':{
@@ -412,7 +412,7 @@ export const visualSchemas={
   ],
   limit:'el corpus pequeño permite afirmaciones delimitadas. La revisión debe indicar qué evidencia afectó qué afirmación.',
   task:{label:'En el hito 4',text:'Escribe tu conclusión revisada con su alcance y registra qué evidencia cambió qué afirmación.'},
-  source:'Ejemplo de esta clase; las dos formulaciones más amplias se escribieron para este esquema. Corpus pequeño y explicación acotada: apartado «Hacer visible la propia posición» de la lectura integrada de «Teoría» y de la guía de la unidad 3. Selección de corpus: Calsamiglia y Tusón (2012, apéndice, §4 · PDF 368–370).',
+  source:'Ejemplo de esta clase; las dos formulaciones más amplias se escribieron para este esquema. Corpus pequeño y explicación acotada: apartado «Hacer visible la propia posición» de la lectura integrada de «Teoría» y de la guía de la unidad 3. Selección de corpus: Calsamiglia y Tusón (2012, apéndice, §4 · páginas 368–370 del archivo).',
   anchors:['En los tres avisos analizados no se identifica al órgano responsable','los avisos comunican las decisiones sin vincularlas allí con un órgano responsable','Investigar una estrategia sistemática o las respuestas efectivas de los lectores ampliaría el problema y las evidencias necesarias','El corpus delimitado permite explicar relaciones concretas entre formulaciones, participantes y contexto','La revisión debe indicar qué evidencia afectó qué afirmación']
  },
  'revision-atribucion':{
@@ -424,7 +424,7 @@ export const visualSchemas={
   reason:'La persona citada no es automáticamente el locutor del texto que la cita. La corrección permite ver la disputa: el locutor retoma la evaluación institucional del plazo para someterla a revisión.',
   limit:'no sabemos qué ocurrió después con el plazo, e identificar al productor empírico requiere la fuente del documento.',
   task:{label:'En la ficha 4',text:'Revisa tu atribución y explica qué cambia o se mantiene, con apoyo en las mismas marcas.'},
-  source:'Ejemplo; la primera atribución, un error frecuente, se escribió para este esquema. Sujeto hablante y locutor: Ducrot, en Calsamiglia y Tusón (2012, §5.2 · PDF 150). Estilo indirecto: §5.2.1 · PDF 152.',
+  source:'Ejemplo; la primera atribución, un error frecuente, se escribió para este esquema. Sujeto hablante y locutor: Ducrot, en Calsamiglia y Tusón (2012, §5.2 · página 150 del archivo). Estilo indirecto: §5.2.1 · página 152 del archivo.',
   anchors:['La comisión informó que el plazo era suficiente; considero que esa afirmación debe revisarse','«Informó que» atribuye a la comisión la suficiencia del plazo','El «yo» de «considero» asume el cuestionamiento','Una revisión puede corregir a quién se atribuye una idea','la autoridad citada pasa a ser objeto de examen','Identificar al productor empírico requiere la fuente del documento']
  },
  'recorrido-consigna':{
@@ -455,7 +455,7 @@ export const visualSchemas={
   ],
   verdict:'Observa qué respuestas son posibles. La duración aislada no acredita dominación.',
   task:{label:'En la ficha 1',text:'Si tu episodio incluye un intercambio, anota cómo se asigna el turno y qué respuestas quedaban abiertas.'},
-  source:'Mecanismos del cambio de turno: Calsamiglia y Tusón (2012, §2.2 · PDF 32–33). El manual explica también cuándo puede producirse el relevo entre hablantes: los «lugares apropiados para la transición» (PDF 33).',
+  source:'Mecanismos del cambio de turno: Calsamiglia y Tusón (2012, §2.2 · páginas 32–33 del archivo). El manual explica también cuándo puede producirse el relevo entre hablantes: los «lugares apropiados para la transición» (página 33 del archivo).',
   anchors:['Heteroselección: quien habla elige al siguiente','Autoselección: alguien empieza sin ser elegido','Para explicar la participación interesa la secuencia completa y las posibilidades de responder','examinar oportunidades negadas o intervenciones que se impiden, además de la duración del turno']
  },
  'escritura-procesos':{
@@ -469,7 +469,7 @@ export const visualSchemas={
   ],
   back:'No forman un circuito fijo: cada proceso puede activar los otros, y revisar puede llevar a cambiar el plan.',
   task:{label:'En la ficha 2',text:'Si al revisar una inferencia deja de sostenerse, vuelve al plan: conserva la primera versión y explica el cambio.'},
-  source:'Modelo de Flower y Hayes (1980, 1981), en Calsamiglia y Tusón (2012, §3.4.1 · PDF 81). En el modelo completo, un «monitor» coordina cuándo planificar, poner las ideas por escrito o revisar.',
+  source:'Modelo de Flower y Hayes (1980, 1981), en Calsamiglia y Tusón (2012, §3.4.1 · página 81 del archivo). En el modelo completo, un «monitor» coordina cuándo planificar, poner las ideas por escrito o revisar.',
   anchors:['describen los procesos de quien escribe','planificar, textualizar y revisar son procesos que se alternan','Textualizar es poner las ideas por escrito','revisar puede llevar a cambiar el plan','No forman un circuito fijo: cada proceso puede activar los otros']
  },
  'contexto-dimensiones':{
@@ -484,7 +484,7 @@ export const visualSchemas={
    {name:'Contexto extrasituacional',example:'Conocer la práctica ayuda a reconocer una solicitud, una decisión o una objeción.'}
   ],
   task:{label:'En la ficha 3',text:'Al revisar tu dato de contexto, indica qué dimensión te ayuda a explicar.'},
-  source:'Cuatro dimensiones del contexto: Goodwin y Duranti (1992), en Calsamiglia y Tusón (2012, §4.3 · PDF 127–128).',
+  source:'Cuatro dimensiones del contexto: Goodwin y Duranti (1992), en Calsamiglia y Tusón (2012, §4.3 · páginas 127–128 del archivo).',
   anchors:['distinguen cuatro dimensiones del contexto','la localización o marco socioespacial, como una fecha o una institución','el comportamiento no verbal, como los gestos','la lengua como contexto, con tratamientos y referencias','el contexto extrasituacional, los conocimientos previos que permiten reconocer qué está pasando','Se estudian por separado, pero actúan conjuntamente']
  }
 };
@@ -527,7 +527,7 @@ export const visualImages={
   alt:'Resolución UNAE: bajo el rótulo RESUELVE, el artículo 1 aprueba las bases y el cronograma de becas de grado IS2023. Después se ordena su publicación. Es un recorte de la página 5.',
   caption:'Resolución 001-UNAE-CBAEEE-002-2023 (4 de mayo de 2023) · recorte de la p. 5. El artículo 1 aprueba las bases y el cronograma de postulación; la disposición general ordena su publicación.',
   pair:unaeBecasPair,
-  source:{url:'https://unae.edu.ec/wp-content/uploads/2023/05/resoluciO%CC%81n_no._001-unae-cbaeee-002-2023-signed-signed-1.pdf#page=5',label:'Fuente: resolución original · PDF, p. 5',consulted:'18 de octubre de 2026'},
+  source:{url:'https://unae.edu.ec/wp-content/uploads/2023/05/resoluciO%CC%81n_no._001-unae-cbaeee-002-2023-signed-signed-1.pdf#page=5',label:'Fuente: resolución original · página 5 del archivo',consulted:'18 de octubre de 2026'},
   transcript:[
    'En ejercicio de las atribuciones que le confiere la Constitución de la República del Ecuador, Ley Orgánica de Educación Superior, Reglamento de Becas, Ayudas Económicas y Estímulos Económicos para los Estudiantes de la Universidad Nacional de Educación, y demás normativa aplicable:',
    'RESUELVE:',
