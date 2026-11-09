@@ -32,111 +32,56 @@ const argumentLater={
 };
 export const classWriting={
   "s4-e2": {
-    "focus": "Explica quién actúa y bajo qué condiciones.",
-    "steps": [
-      0,
-      4
-    ],
-    "help": "Empieza el argumento de la ficha 2 con tus evidencias del reglamento."
+    "focus": "Explica quién actúa y qué condición exige el reglamento.",
+    "help": "Empieza con la frase que guardaste."
   },
   "s5-e1": {
-    "focus": "Añade dos inferencias al argumento anterior.",
-    "steps": [
-      1
-    ],
-    "help": "Para cada una: palabras, conocimiento que aportas y conclusión. Señala lo pendiente de comprobar."
+    "focus": "Añade una inferencia al argumento.",
+    "help": "Relaciona la frase, lo que sabe el lector y lo que concluye."
   },
   "s5-e2": {
-    "focus": "Contrasta tus inferencias y resume los artículos 1–3.",
-    "steps": [
-      2,
-      5
-    ],
-    "help": "Añade el contraste y la síntesis al mismo borrador."
+    "focus": "Sitúa tu inferencia en el conjunto del reglamento.",
+    "help": "Amplía el mismo párrafo con lo que comprobaste."
   },
   "s6-e1": {
-    "focus": "Explica tu alternativa visual y qué compararás.",
-    "steps": [
-      3
-    ],
-    "help": "Conserva las palabras e identifica los cambios de diseño. La próxima clase comprobarás la lectura con un compañero."
+    "focus": "Prepara la versión visual del fragmento.",
+    "help": "Mantén las mismas palabras y explica qué esperas que el lector vea primero."
   },
   "s7-e1": {
-    "focus": "Propón un enfoque para responder tu pregunta.",
-    "steps": [
-      0,
-      2,
-      4
-    ],
-    "help": "Compara los tres enfoques y elige uno provisionalmente. Indica los datos que buscarás."
+    "focus": "Propón un enfoque que ayude a responder tu pregunta.",
+    "help": "Indica qué marca observarás y cita la lectura."
   },
   "s7-e2": {
-    "focus": "Usa tres datos de contexto para revisar tu enfoque.",
-    "steps": [
-      1,
-      3,
-      5
-    ],
-    "help": "Remite a tus fuentes. Distingue publicación, circulación y recepción; marca los datos aún pendientes."
+    "focus": "Explica qué aclara tu dato de contexto.",
+    "help": "Remite al dato y a su fuente."
   },
   "s9-e2": {
-    "focus": "Organiza las voces de tus tres segmentos.",
-    "steps": [
-      0,
-      1,
-      3
-    ],
-    "help": "Escribe una lista o tabla y compara los colectivos mencionados. Usa los localizadores guardados."
+    "focus": "Explica quién sostiene cada idea.",
+    "help": "Señala las palabras que apoyan tu atribución."
   },
   "s10-e1": {
-    "focus": "Examina una atribución y otra lectura posible.",
-    "steps": [
-      2,
-      4,
-      5
-    ],
-    "help": "Continúa el mapa anterior. Justifica con marcas qué lectura sostienes o descartas."
+    "focus": "Explica qué hace esa voz en el texto.",
+    "help": "Retoma la atribución y su localizador."
   },
   "s11-e1": {
-    "focus": "Explica el propósito y los destinatarios del primer documento.",
-    "steps": [],
-    "help": "Distingue género, secuencias y soporte con evidencias. Indica la segunda pieza que compararás o adaptarás."
+    "focus": "Explica para quién y para qué se escribió la primera pieza.",
+    "help": "Usa un tramo que ya conozcas."
   },
   "s11-e2": {
-    "focus": "Compara las dos piezas y amplía tu explicación.",
-    "steps": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5
-    ],
-    "help": "Continúa el mismo borrador con la ruta elegida: documentos vinculados o adaptación propia."
+    "focus": "Compara lo que entiende el lector de cada pieza.",
+    "help": "Muestra una decisión de redacción, organización o presentación."
   },
   "s13-e1": {
-    "focus": "Organiza los segmentos y sus secuencias.",
-    "steps": [
-      0,
-      1
-    ],
-    "help": "Escribe una lista o tabla con localizadores, marcas y función."
+    "focus": "Explica qué hace cada tramo.",
+    "help": "Usa los localizadores que ya guardaste."
   },
   "s13-e2": {
-    "focus": "Explica las transiciones entre tus secuencias.",
-    "steps": [
-      0,
-      1
-    ],
-    "help": "Amplía la misma tabla. Distingue explicar una causa de justificar una norma o un juicio moral."
+    "focus": "Explica cómo se conectan los tramos.",
+    "help": "Amplía tu explicación con el contraste que hiciste en clase."
   },
   "s14-e1": {
-    "focus": "Añade una inferencia y una objeción al argumento.",
-    "steps": [
-      2,
-      3
-    ],
-    "help": "Explica qué dato o excepción limitaría la conclusión."
+    "focus": "Reconstruye un razonamiento y formula una objeción.",
+    "help": "Explica qué dato o excepción cambiaría la conclusión."
   }
 };
 export function classWork(s){
@@ -156,27 +101,27 @@ export const projectInputs={
   ],
   "student": [
     "Nombre para la entrega",
-    "Este nombre aparecerá en la portada del PDF.",
+    "Este nombre aparece en la portada del PDF.",
     2
   ],
   "question": [
     "Pregunta de investigación",
-    "Escribe una pregunta que puedas responder con 2–4 documentos o episodios. Plantea el problema sin asumir intenciones.",
+    "Retoma una pregunta de tus fichas si encaja con tu tema. Delimítala para poder responderla con 2–4 documentos o episodios.",
     3
   ],
   "corpus": [
     "Corpus y criterios de selección",
-    "Identifica 2–4 documentos o episodios: autor, versión, ubicación y recorte. Justifica su selección; de este conjunto elegirás 6–10 segmentos en total.",
+    "Identifica cada pieza con autor, título, versión y ubicación. Explica por qué la elegiste. Selecciona 6–10 segmentos en total.",
     5
   ],
   "method": [
     "Método y contexto documentado",
-    "Justifica enfoque, unidad de análisis y categorías. Añade los datos de contexto con fuente y localizador; marca lo pendiente.",
+    "Retoma la decisión de la ficha 3. Explica qué herramienta elegiste, qué tramos y marcas vas a observar y qué contexto necesitas. Cita la lectura y la fuente del dato.",
     6
   ],
   "argument": [
     "Desarrollo del análisis",
-    "Responde tu pregunta con evidencias, conceptos y contexto. Conserva localizadores e incluye otra explicación posible, una objeción y un límite.",
+    "Usa las evidencias guardadas para explicar qué hace el discurso en esa situación. Agrupa los segmentos que apoyan la misma idea. Incluye una objeción y explica hasta dónde llega tu respuesta.",
     12
   ],
   "credits": [
@@ -186,38 +131,46 @@ export const projectInputs={
   ],
   "revision": [
     "Conclusión revisada y límites",
-    "Responde tu pregunta con el análisis realizado. Explica qué puedes afirmar y hasta dónde puedes generalizar.",
+    "Responde tu pregunta con los hallazgos y delimita qué puedes afirmar sobre el corpus.",
     5
   ],
   "revisionReason": [
     "Registro de cambios",
-    "Indica qué afirmación mantuviste o cambiaste, qué evidencia u objeción motivó la decisión y cómo quedó.",
+    "Explica qué mantuviste o cambiaste y qué evidencia u objeción motivó tu decisión.",
     4
   ],
   "mediation": [
     "Actividad de enseñanza",
-    "Prepara una actividad de 5 minutos: destinatarios, problema, segmento, materiales, 2–3 pasos, resultado y criterio de revisión. Tras probarla en tríos, anota dificultad y ajuste.",
+    "Prepara una consigna de 5 minutos con un fragmento que ya explicaste. Si tu informe analiza el aviso, puedes mostrarlo junto al original y preguntar qué acción entiende el lector. Después de probar la consigna en el trío, anota quién hizo cada papel, qué aportó y qué ajustaste.",
     6
   ],
   "defense": [
     "Guion de defensa",
-    "Prepara pregunta, corpus, enfoque, evidencia, objeción y límite. Después, registra la pregunta recibida y tu respuesta; este guion queda fuera del cuerpo del PDF.",
+    "Prepara una decisión del análisis y la evidencia que la sostiene. Después de tu turno, anota la pregunta y tu respuesta en el mismo guion.",
     5
   ],
   "selfAssessment": [
     "Autoevaluación",
-    "Valora cada dimensión de la rúbrica con ejemplos de tu informe. Señala un logro y una mejora pendiente; puedes incluir esta autoevaluación al preparar el PDF.",
+    "Usa la rúbrica para señalar un logro y una mejora pendiente con ejemplos del informe. Puedes incluir la autoevaluación en el PDF.",
     5
   ]
 };
 
 // Preparation remains in the class, with selected paragraphs of the existing guide.
 export const preparationLessons={
- 's2-e1':[0,2,3],'s2-e2':[1,3],'s3-e1':[5,2,4],'s3-e2':[4],
+ 's2-e1':[0,2,3],'s2-e2':[1,3],'s3-e1':[5],'s3-e2':[4],
  's4-e1':[0],'s4-e2':[0,4],'s5-e1':[1],'s5-e2':[1,2],'s6-e1':[3],'s6-e2':[3],
  's7-e1':[0,1,2],'s7-e2':[0,2],'s8-e1':[3,4],'s8-e2':[],
  's9-e1':[0,1],'s9-e2':[1,2],'s10-e1':[2,3],'s10-e2':[4],
  's11-e1':[0,1,2],'s11-e2':[3],'s12-e1':[3,4],'s12-e2':[4],
- 's13-e1':[0,2],'s13-e2':[0,2],'s14-e1':[1],'s14-e2':[3],
+ 's13-e1':[0],'s13-e2':[2],'s14-e1':[1],'s14-e2':[3],
  's15-e1':[4],'s15-e2':[4],'s16-e1':[],'s16-e2':[]
 };
+
+// Assigned readings and requested reviews open independently of the preparation wording.
+// Other readings remain available for consultation through the same disclosure.
+export const preparationReadingOpen=new Set([
+ 's2-e1','s2-e2','s3-e1','s3-e2','s4-e1','s5-e1','s5-e2','s6-e1',
+ 's7-e1','s7-e2','s8-e1','s9-e1','s9-e2','s10-e1','s11-e1','s12-e1',
+ 's13-e1','s13-e2','s14-e1','s14-e2'
+]);

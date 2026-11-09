@@ -18,193 +18,134 @@ export const unitActivities={
   reviewFocus:"Vuelve a escuchar o mirar cada pausa, énfasis o gesto. Comprueba su intervalo. Explica qué respuesta resiste mejor la comparación y por qué; las dos deben hablar de las mismas marcas."
  },
  2:{
-  "material": "Reglamento de becas: artículos 1–3, PDF páginas 1–2. Usa la misma versión durante esta ficha.",
-  "product": "Una ficha sobre el reglamento: quién actúa, dos inferencias, un resumen y una comparación de su presentación visual.",
-  "steps": [
-    [
-      "Identificar acciones y participantes",
-      "Lee los artículos 1–3 y escribe tu pregunta en «Pregunta de la ficha». Copia las frases que te ayuden a responderla en «Fragmento o descripción observable», indica página y artículo y pulsa «Añadir evidencia». En «Mi argumento», explica quién actúa y bajo qué condiciones."
-    ],
-    [
-      "Explicar dos inferencias",
-      "Continúa «Mi argumento» con dos inferencias: qué concluyes, qué palabras te apoyan y qué conocimiento aportas. Comprueba qué respalda o limita cada una; pueden ser compatibles."
-    ],
-    [
-      "Resumir el tema",
-      "Al final del mismo argumento, resume los artículos 1–3: qué regulan, a quiénes incluyen y qué condiciones establecen. Explica qué seleccionaste u omitiste; distingue la norma de su cumplimiento."
-    ],
-    [
-      "Comparar la disposición visual",
-      "Elige un fragmento de esos artículos. En papel o en un archivo, cambia su tamaño de letra, posición o agrupación conservando las mismas palabras. Guarda esa versión contigo. Registra una evidencia con fuente «Elaboración propia», nombre del archivo o hoja y artículo original; describe los cambios. Añade a «Mi argumento» qué esperas que cambie al leerlo."
-    ],
-    [
-      "Revisar con otro lector",
-      "Muestra el fragmento original y tu versión a un compañero: pídele decir qué lee primero y qué condición identifica. En «Interpretación revisada», escribe qué explicación sostienes después de escucharlo. En «Qué cambió y por qué», señala qué mantuviste o corregiste y qué comentario te ayudó. Conserva el primer argumento para compararlos."
-    ]
-  ],
-  "questionHelp": "Pregunta qué quieres entender sobre quién actúa, qué condición se exige o cómo se presenta esa información en el reglamento.",
-  "argumentHelp": "Continúa aquí tu explicación, en párrafos o en una tabla. Cita las evidencias por su localizador.",
-  "contextHelp": "Indica versión y artículo. Si añades un dato sobre la aplicación de la norma, cita la fuente que lo comprueba.",
-  "argumentSteps": [
-    "Explica quién decide, acredita una condición o recibe el beneficio. Distingue a quien se nombra de quien identificas mediante otra parte del reglamento.",
-    "Explica dos inferencias: palabras del texto, conocimiento que aportas y conclusión. Pueden ser compatibles; justifica las lecturas que descartes.",
-    "Resume el tema y conserva las personas y condiciones importantes. Explica qué información seleccionaste u omitiste.",
-    "Compara el original con tu alternativa visual: mismas palabras, cambios de tamaño, posición o agrupación y posible efecto en la lectura.",
-    "Cita el concepto y la lectura que utilizas. Puedes organizar: localizador, participante, acción, condición e interpretación.",
-    "Comprueba qué apoya o debilita cada inferencia. Distingue lo que ordena la norma de su cumplimiento; compara las inferencias como rivales solo si se contradicen."
-  ],
-  "reviewFocus": "Usa la respuesta de tu compañero para revisar tu explicación del diseño. Distingue palabras, inferencias y hechos comprobados; una respuesta representa a ese lector."
-},
+   "material": "Reglamento de becas, artículos 1–3 (páginas 1–2 del PDF). Usa el mismo tramo para el análisis y la comparación visual.",
+   "product": "Una explicación de cómo el reglamento comunica una condición, revisada después de probar dos formas de presentarla.",
+   "steps": [
+     [
+       "Analiza una condición · semanas 4 y 5",
+       "Lee los artículos 1–3. Guarda una frase con su página y artículo. En «Mi argumento», explica quién actúa, qué condición se exige y qué puede inferir un lector. Sitúa esa condición en el conjunto de los artículos."
+     ],
+     [
+       "Prepara dos formas de leerla · semana 6, clase 1",
+       "Cambia el tamaño o la ubicación del mismo fragmento y conserva las mismas palabras. Guarda las dos versiones juntas. En «Mi argumento», indica qué esperas que el lector encuentre primero."
+     ],
+     [
+       "Comprueba tu explicación · semana 6, clase 2",
+       "Muestra las dos versiones a un compañero. Pregúntale qué leyó primero y qué condición entendió. Escribe tu respuesta final en «Interpretación revisada» y el motivo en «Qué cambió y por qué»."
+     ]
+   ],
+   "questionHelp": "Escribe qué quieres entender sobre una condición del reglamento o sobre cómo se presenta.",
+   "argumentHelp": "Explica la condición y cómo se la comunica al lector. Usa la frase guardada y su localizador.",
+   "contextHelp": "Indica la versión del reglamento. Si explicas cómo se aplica, cita el dato que lo comprueba.",
+   "argumentSteps": [
+     "Explica una inferencia con las palabras del texto, el conocimiento que aporta el lector y la conclusión. Distingue lo que dispone la norma de su aplicación.",
+     "Resume en una frase qué regulan los artículos 1–3 y explica cómo la condición elegida encaja en ese conjunto.",
+     "Compara el original y tu versión visual. Relaciona el cambio con lo que el lector puede encontrar primero."
+   ],
+   "reviewFocus": "Usa la respuesta de tu compañero para decir qué explicación sostienes sobre la presentación de la condición."
+ },
  3:{
-  "material": "Usa un documento de tu corpus o el reglamento de becas. Si usas otro texto, selecciónalo en «Cambiar documento de trabajo» y comprueba la fuente. Prepara «Teoría» y la selección de Pardo de la semana 7, clase 1.",
-  "product": "Ficha 3: pregunta, tres datos de contexto con fuentes y elección justificada de un enfoque.",
-  "steps": [
-    [
-      "Precisar la dificultad",
-      "En «Pregunta de la ficha», indica qué fragmento quieres explicar y qué información de su situación necesitas."
-    ],
-    [
-      "Comparar y elegir un enfoque",
-      "Con «Teoría» y la selección de Pardo de la semana 7, clase 1, compara qué estudiaría cada enfoque: sociocognitivo, dialéctico-relacional e histórico-discursivo. Propón uno en «Mi argumento» e indica los datos que necesitarás."
-    ],
-    [
-      "Buscar tres datos",
-      "Busca tres datos que ayuden a responder tu pregunta. Localiza una fuente para cada uno; marca «pendiente de comprobar» si aún falta respaldo."
-    ],
-    [
-      "Guardar los datos",
-      "Guarda el segmento como evidencia; si ya está guardado, abre «Editar evidencia». En «Contexto documentado y su fuente», reúne los tres datos y sus referencias. Pulsa «Añadir evidencia» o «Guardar cambios». Continúa «Mi argumento» explicando cómo ayuda cada dato a responder tu pregunta."
-    ],
-    [
-      "Revisar el método",
-      "En «Interpretación revisada», explica qué puedes concluir y qué falta saber; en «Qué cambió y por qué», justifica el ajuste. Conserva el argumento anterior. Lleva el método elegido a «Método y contexto documentado» del expediente. La evaluación de la semana 8, clase 2, usa otro caso y se entrega por el canal del docente."
-    ]
-  ],
-  "questionHelp": "Indica el fragmento, qué quieres entender y qué dato de su situación te falta.",
-  "argumentHelp": "Continúa aquí tu explicación. Remite a los datos ya guardados mediante sus fuentes y localizadores.",
-  "contextHelp": "Para cada dato, anota qué sabes, fuente y página o enlace. Marca «pendiente de comprobar» cuando falte respaldo; registra cada dato una sola vez.",
-  "argumentSteps": [
-    "Presenta el fragmento y tu pregunta. Explica qué información de la situación necesitas para responder.",
-    "Explica cómo ayuda cada uno de los tres datos guardados. Remite a su fuente y localizador.",
-    "Con la guía y Pardo, compara qué observarían los enfoques sociocognitivo, dialéctico-relacional e histórico-discursivo.",
-    "Elige uno de los tres enfoques y justifica por qué permite analizar tus evidencias.",
-    "Nombra las categorías que usarás, qué observarás con ellas y la lectura de donde las tomas.",
-    "Distingue los datos comprobados de lo pendiente y de cómo el texto presenta la situación. Señala una conclusión aún sin respaldo y qué dato permitiría revisarla."
-  ],
-  "reviewFocus": "Comprueba la fuente y la utilidad de cada dato. Explica si las evidencias respaldan el enfoque elegido y qué falta saber."
-},
+   "material": "Retoma un fragmento de tu expediente o del reglamento de becas. Prepara «Teoría» y la selección de Pardo de la semana 7, clase 1.",
+   "product": "Una explicación que usa un dato de contexto para responder una pregunta y justificar el método del expediente.",
+   "steps": [
+     [
+       "Elige cómo analizar · semana 7, clase 1",
+       "Escribe qué quieres explicar del fragmento en «Pregunta de la ficha». En clase compararás los enfoques de Pardo. En «Mi argumento», elige un enfoque ya estudiado y explica qué te ayuda a observar."
+     ],
+     [
+       "Comprueba un dato · semana 7, clase 2",
+       "Busca un dato de contexto que ayude a responder tu pregunta. En la evidencia del fragmento, anota el dato, su fuente y dónde encontrarlo en «Contexto documentado y su fuente». En «Mi argumento», explica qué aclara."
+     ],
+     [
+       "Revisa y usa tu decisión · semana 8, clase 1",
+       "Completa «Interpretación revisada» y «Qué cambió y por qué». Retoma esa decisión en «Método y contexto documentado» del expediente. La evaluación de la clase 2 usa otro caso y se entrega por el canal del docente."
+     ]
+   ],
+   "questionHelp": "Identifica el fragmento y escribe qué quieres entender de él.",
+   "argumentHelp": "Explica qué enfoque elegiste y cómo el dato de contexto te ayuda a responder.",
+   "contextHelp": "Anota el dato, su fuente y su página o enlace. Añade otro dato si tu pregunta lo necesita.",
+   "argumentSteps": [
+     "Nombra el enfoque o concepto que usas, cita la lectura y explica qué marca permite analizar.",
+     "Explica qué aporta el dato de contexto. Señala qué parte de tu interpretación queda pendiente de comprobar."
+   ],
+   "reviewFocus": "Explica qué puedes concluir con el dato comprobado y hasta dónde llega tu respuesta."
+ },
  4:{
-  "material": "Lee los recortes de Menchú y Márquez: unas 360 palabras. Trabaja con tres segmentos en total durante la ficha 4; si ya usas otro corpus, conserva sus registros y utiliza este contraste al revisar.",
-  "product": "Ficha 4: tres segmentos, mapa de voces y revisión de una atribución.",
-  "steps": [
-    [
-      "Guardar tres segmentos",
-      "Escribe «Pregunta de la ficha». Elige tres segmentos: uno de Menchú con personas o colectivos, uno de Márquez sobre diferencias entre mujeres y otro con la idea atribuida a Angela Davis. Guarda cada uno con «Añadir evidencia». Al pasar a Márquez, usa «Cambiar documento de trabajo» y comprueba fuente y localizador."
-    ],
-    [
-      "Identificar personas y perspectivas",
-      "Empieza el mapa en «Mi argumento»: quién habla, a quién se dirige y a quién atribuye palabras. Señala nombres, pronombres, posesivos o formas verbales y explica a quién se refieren."
-    ],
-    [
-      "Explicar adhesión o distancia",
-      "Señala comillas, verbos, negaciones o reformulaciones. Explica en «Mi argumento» si el texto acepta, discute o toma distancia de una idea; una cita puede cumplir distintas funciones."
-    ],
-    [
-      "Organizar el mapa de voces",
-      "Organiza esa misma explicación como lista o tabla en «Mi argumento»: segmento, localizador, voz o perspectiva, marca textual, quién responde por la idea y adhesión o distancia."
-    ],
-    [
-      "Revisar una atribución",
-      "Compara una atribución de tu mapa con otra lectura propuesta por un compañero. En «Interpretación revisada», explica qué marcas apoyan cada lectura y cuál mantienes; justifica si descartas la alternativa. En «Qué cambió y por qué», señala el motivo del ajuste. Conserva el mapa anterior."
-    ]
-  ],
-  "questionHelp": "Elige una marca personal, cita o negación. Pregunta a quién remite, quién responde por la idea o a quién se dirige.",
-  "argumentHelp": "Organiza el mapa y su explicación aquí. Remite a los tres segmentos que ya guardaste.",
-  "contextHelp": "Identifica hablante, publicación y situación: discurso Nobel de 1992 o entrevista de 2021. Cita la fuente de cualquier dato adicional.",
-  "argumentSteps": [
-    "Con los tres segmentos, escribe una lista o tabla: localizador, voz o perspectiva, marca textual, responsabilidad y adhesión o distancia.",
-    "Explica quién habla, a quién se dirige y a quién remiten las marcas personales. Compara los colectivos mencionados en ambas intervenciones.",
-    "Justifica con comillas, verbos, negaciones o reformulaciones si el texto acepta o discute una idea. En la entrevista, distingue entrevistadoras, Márquez y la idea atribuida a Davis.",
-    "Cita el concepto y el autor que usas. Distingue forma gramatical, papel comunicativo y perspectiva; esta última puede aparecer sin un hablante identificado.",
-    "Examina una atribución y otra lectura posible: marca que apoya cada una y dato que falta. Justifica si una sola tiene respaldo.",
-    "Explica quién responde por las ideas y qué limita tu conclusión. La entrevista muestra la atribución a Davis; sus palabras originales requieren otra fuente."
-  ],
-  "reviewFocus": "Comprueba cada atribución con una marca localizada. Distingue autor, persona citada y perspectiva evocada; limita las conclusiones a estas intervenciones."
-},
+   "material": "Lee los recortes de Menchú y Márquez, unas 360 palabras. Si ya empezaste con otro corpus, continúa sus registros y usa estos textos para el contraste.",
+   "product": "Una explicación de cómo las voces contribuyen a la posición que defiende cada intervención.",
+   "steps": [
+     [
+       "Reúne las voces · semana 9, clase 1",
+       "Anota tres segmentos y dónde encontrarlos. Toma uno de Menchú sobre un colectivo y dos de Márquez, sobre diferencias entre mujeres y sobre la idea atribuida a Davis. Escribe tu pregunta sobre esas voces."
+     ],
+     [
+       "Explica qué hacen · semana 9, clase 2, y semana 10, clase 1",
+       "En «Mi argumento», señala quién sostiene cada idea y qué palabras lo muestran. Explica cómo esas voces ayudan a defender una posición o a construir un colectivo. Puedes partir del ejemplo de «Teoría» y justificar tu lectura."
+     ],
+     [
+       "Comprueba una atribución · semana 10, clase 2",
+       "Pide a un compañero comprobar una atribución. Escribe la lectura que puedes sostener en «Interpretación revisada». En «Qué cambió y por qué», indica la marca o el comentario que motivó tu decisión."
+     ]
+   ],
+   "questionHelp": "Pregunta qué aporta una voz a la posición que defiende el texto.",
+   "argumentHelp": "Escribe tu explicación como párrafo o lista. Remite a los localizadores guardados.",
+   "contextHelp": "Identifica quién habla, en qué situación y dónde se publicó.",
+   "argumentSteps": [
+     "Señala las palabras que permiten distinguir a quien habla, al grupo mencionado y a quien se atribuye la idea.",
+     "Explica si el texto se apoya en esa idea, la discute o se distancia de ella. Si solo una lectura tiene respaldo, muestra por qué."
+   ],
+   "reviewFocus": "Justifica con una marca quién sostiene la idea y cómo interviene en la posición del texto."
+ },
  5:{
-  "material": "Compara dos piezas vinculadas. La ruta común usa el reglamento y una explicación o aviso que tú prepares para estudiantes de primer semestre; aquí puedes reformular las palabras.",
-  "product": "Ficha 5: comparación de dos piezas, cambios de destinatario y función, y explicación de su vínculo.",
-  "steps": [
-    [
-      "Elegir una ruta",
-      "Elige un documento vinculado al primero y una fuente que permita comprobar el vínculo, o decide qué tramo del reglamento adaptarás para estudiantes de primer semestre. Escribe «Pregunta de la ficha» sobre la comparación que harás."
-    ],
-    [
-      "Registrar la primera pieza",
-      "Si usas otro documento, selecciónalo en «Cambiar documento de trabajo». Comprueba la fuente de la primera pieza y guarda sus fragmentos con «Añadir evidencia». Explica en «Mi argumento» qué muestran sobre su género, sus secuencias y su soporte."
-    ],
-    [
-      "Registrar la segunda pieza y comparar",
-      "Recupera el documento vinculado o prepara tu adaptación y registra la segunda pieza con «Añadir evidencia». Para tu versión, usa «Otro documento elegido por mí» y la fuente «Adaptación didáctica propia». Escribe la adaptación en «Fragmento o descripción observable» o identifica el archivo y el tramo transformado. Conserva el archivo contigo. En «Mi argumento», compara género, propósito, destinatario, organización y soporte. Explica qué información se conserva, se omite o se reformula y qué podría cambiar para el lector."
-    ],
-    [
-      "Explicar el vínculo",
-      "En el mismo argumento, explica el vínculo y un límite de la comparación. Si usas el mapa opcional, elige «Relación documentada» con una fuente o «Propuesta de análisis» para una hipótesis o adaptación propia."
-    ],
-    [
-      "Revisar la comparación",
-      "Comparte fragmentos localizables con un compañero y comprueben las diferencias y el vínculo. Completa «Interpretación revisada» y conserva el argumento anterior. En «Qué cambió y por qué», indica con quién trabajaste, qué evidencia u objeción aportó cada persona y qué ajustaste o mantuviste. Usa lo pertinente para ajustar «Desarrollo del análisis» del expediente."
-    ]
-  ],
-  "questionHelp": "Nombra la primera pieza e indica qué documento vinculado elegiste o qué adaptación planeas preparar. Pregunta qué cambia con el destinatario o el propósito. Cuando tengas ambas piezas, indica si el vínculo está documentado o si hiciste la adaptación.",
-  "argumentHelp": "Escribe aquí la comparación. Cita las evidencias que muestran los cambios.",
-  "contextHelp": "Indica quién publica cada pieza, para quién y dónde circula. Cita la fuente del vínculo o identifica tu «Adaptación didáctica propia».",
-  "argumentSteps": [
-    "Presenta la ruta elegida: dos documentos vinculados o el reglamento y tu adaptación.",
-    "Compara propósito, destinatario, género, secuencias internas, recursos de significado y soporte. Apoya las diferencias en fragmentos guardados.",
-    "Explica qué información se conserva, omite o reformula y qué podría cambiar para el lector.",
-    "Cita la fuente que acredita el vínculo. Si hiciste la adaptación, identifícala como propia.",
-    "Explica cómo los conceptos de la lectura ayudan a comparar y cita su fuente. Usa el mapa de relaciones solo si te resulta útil.",
-    "Examina otra lectura posible y un límite. Estudia los cambios de propósito, destinatario y género, además de la disposición visual."
-  ],
-  "reviewFocus": "Comprueba las diferencias y el vínculo con ambas piezas. Distingue semejanza temática de relación documentada; identifica la adaptación propia y explica tu ajuste."
-},
+   "material": "Retoma una pieza conocida. En la ruta común, convierte una condición analizada en la ficha 2 en un aviso para estudiantes de primer semestre. Aquí puedes reformular las palabras. También puedes comparar dos piezas con un vínculo verificable.",
+   "product": "Una comparación que explica cómo cambia el mensaje al dirigirse a otro lector o cumplir otro propósito.",
+   "steps": [
+     [
+       "Recupera la primera pieza · semana 11, clase 1",
+       "Indica qué quieres comparar. Si ya analizaste el tramo, remite a la ficha y al lugar donde aparece, por ejemplo «Ficha 2, art. 3, PDF p. 2». Si es nuevo, anota el fragmento, la fuente y dónde encontrarlo."
+     ],
+     [
+       "Prepara o recupera la segunda pieza · semana 11, clase 2",
+       "Escribe el aviso con la condición original y la acción que debe entender el nuevo lector. Si elegiste documentos vinculados, recupera la segunda pieza y su fuente. Conserva esa pieza en la ficha y explica qué cambia para el lector y qué se conserva."
+     ],
+     [
+       "Contrasta la comparación · semana 12, clase 2",
+       "Muestra los fragmentos a un compañero y pídele señalar qué entiende o haría en cada caso. Ajusta «Interpretación revisada». En «Qué cambió y por qué», indica con quién trabajaste, qué aportó cada persona y qué ajustaste."
+     ]
+   ],
+   "questionHelp": "Pregunta qué cambia al dirigirse a otro lector o al cumplir otro propósito.",
+   "argumentHelp": "Explica cómo el cambio de destinatario o propósito se refleja en las dos piezas.",
+   "contextHelp": "Cita la fuente del vínculo o identifica tu versión como «Adaptación didáctica propia».",
+   "argumentSteps": [
+     "Usa un fragmento de cada pieza. Identifica el género y explica qué decisión de redacción, organización o presentación responde al propósito o al destinatario.",
+     "Identifica tu aviso como «Adaptación didáctica propia». Si comparas documentos, cita la fuente que acredita su vínculo."
+   ],
+   "reviewFocus": "Explica qué muestra la comparación después de la lectura de tu compañero."
+ },
  6:{
-  "material": "Usa un texto de tu corpus o el reglamento. Si usas otro texto, selecciónalo en «Cambiar documento de trabajo» y comprueba la fuente. Para analizar diálogo, retoma un intercambio registrado o un diálogo representado e indica su procedencia.",
-  "product": "Ficha 6: secuencias justificadas, inferencia, objeción y revisión para el expediente.",
-  "steps": [
-    [
-      "Localizar secuencias",
-      "Escribe «Pregunta de la ficha» sobre tu texto. Guarda sus tramos con fuente, localizador y «Añadir evidencia». Identifica dónde se narra, describe, explica, argumenta o representa diálogo; el documento puede contener solo algunos tipos."
-    ],
-    [
-      "Organizar las secuencias",
-      "En «Mi argumento», escribe una lista o tabla: segmento, secuencia, marcas, función y paso al tramo siguiente. Justifica las clasificaciones y las combinaciones."
-    ],
-    [
-      "Reconstruir una inferencia",
-      "Retoma una evidencia con un razonamiento, o guarda el tramo que falta. Continúa «Mi argumento» con su premisa, conclusión y regla de paso. Añade una objeción y la condición o excepción que limitaría la conclusión."
-    ],
-    [
-      "Analizar una respuesta",
-      "Retoma un intercambio registrado o un diálogo representado, identificado como tal. Guarda sus intervenciones juntas como evidencia, con fuente y localizador. Con «Teoría» y Bolívar de la semana 14, clase 2, añade a «Mi argumento» cómo la respuesta retoma, modifica o evalúa lo anterior."
-    ],
-    [
-      "Revisar e integrar",
-      "Completa «Interpretación revisada» y «Qué cambió y por qué» con lo que sostienes tras examinar la objeción y el diálogo. Conserva el argumento anterior. Selecciona las evidencias útiles para continuar el mismo expediente en las semanas 15–16."
-    ]
-  ],
-  "questionHelp": "Señala un razonamiento, un cambio entre partes del texto o una respuesta. Pregunta qué quieres explicar de ese fragmento.",
-  "argumentHelp": "Continúa aquí la tabla y tu explicación. Usa los localizadores de las evidencias guardadas.",
-  "contextHelp": "Identifica el documento y su situación. Para el diálogo, indica si es grabado, producido en el taller o representado, y cita su fuente.",
-  "argumentSteps": [
-    "Organiza una lista o tabla: segmento y localizador, secuencia, marcas, función y paso al siguiente tramo. Justifica cada clasificación.",
-    "Identifica dónde se narra, describe, explica, argumenta o representa diálogo. Justifica las combinaciones; el texto puede contener solo algunos tipos.",
-    "Reconstruye el razonamiento: idea de partida (premisa), idea final (conclusión) y regla que permite pasar de una a otra.",
-    "Formula una objeción: qué condición, excepción o dato obligaría a limitar esa conclusión.",
-    "Explica cómo una respuesta retoma, modifica o evalúa la intervención anterior. Identifica si analizas un intercambio registrado o un diálogo representado.",
-    "Cita los conceptos y lecturas utilizados; usa Bolívar al analizar diálogo. Distingue lo observado, tu explicación y lo pendiente de comprobar."
-  ],
-  "reviewFocus": "Comprueba las marcas de cada secuencia y si la objeción afecta el razonamiento. Explica qué cambia tras el contraste y qué clase de diálogo analizaste."
-}
+   "material": "Retoma un texto de tus fichas, del expediente o el reglamento. Para estudiar una respuesta, usa un intercambio ya disponible e identifica su procedencia.",
+   "product": "Una explicación revisada sobre cómo se organiza y se sostiene un texto, con evidencias útiles para el expediente.",
+   "steps": [
+     [
+       "Explica la organización · semanas 13 y 14, clase 1",
+       "Escribe tu pregunta y retoma los localizadores que la ayudan a responder. Guarda los tramos que falten. En «Mi argumento», explica qué hace cada tramo y cómo se conecta con el siguiente. Reconstruye un razonamiento y señala una objeción."
+     ],
+     [
+       "Examina una respuesta · semana 14, clase 2",
+       "Retoma una intervención y su respuesta. Puedes usar el intercambio sobre el aviso si ya anotaste la pregunta y lo que respondió tu compañero. Con Bolívar, explica en «Mi argumento» cómo la respuesta retoma, modifica o valora lo anterior. Indica dónde está registrado."
+     ],
+     [
+       "Revisa e integra · semana 14, clase 2",
+       "Completa «Interpretación revisada» y «Qué cambió y por qué». En el expediente, cita el fragmento y usa el hallazgo para responder tu pregunta. Puedes usar ese material en la microconsigna del cierre."
+     ]
+   ],
+   "questionHelp": "Pregunta cómo se conectan dos tramos, cómo se sostiene una idea o qué cambia con una respuesta.",
+   "argumentHelp": "Usa un párrafo, lista o tabla para explicar la organización y el razonamiento del texto.",
+   "contextHelp": "Identifica la situación. Si analizas un diálogo, indica si es registrado o representado.",
+   "argumentSteps": [
+     "Cita una marca por cada tramo que analices y explica qué función cumple en el conjunto.",
+     "Señala la premisa, la conclusión y la regla que las conecta. Explica cómo una objeción o una respuesta cambia lo que puedes sostener."
+   ],
+   "reviewFocus": "Explica qué sostienes después de examinar la objeción y la respuesta."
+ }
 };

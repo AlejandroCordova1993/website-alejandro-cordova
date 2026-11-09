@@ -14,6 +14,7 @@ export const manualPassages={
  modality:'§6.4 · PDF 175–183',
  ethos:'§6.4.3, ethos y fiabilidad del locutor · impresa 172 / PDF 183',
  implicit:'cap. 7, interpretación mediante inferencias · PDF 184–187; §7.2.1 · PDF 191–192',
+ implicatures:'§7.2.3, principio de cooperación e implicaturas conversacionales · PDF 201–204',
  speechActs:'§7.2.2 · PDF 196–201',
  intentions:'cap. 7, intención e interpretación, metas y productos · PDF 184–190',
  materiality:'§3.5 · PDF 85–90',
@@ -55,6 +56,7 @@ export const classManualSources={
 };
 export const conceptManualSources={
  discurso:['foundations'],'analisis-discurso':['foundations'],enunciado:['foundations'],enunciacion:['foundations','deixis'],
+ 'acto-habla':['speechActs'],deixis:['deixis'],cotexto:['cotext'],modalidad:['modality'],presuposicion:['implicit'],implicatura:['implicatures'],
  paraverbal:['voice'],inferencia:['processes','implicit'],macroestructura:['texture'],contexto:['context','deixis'],
  reflexividad:['position'],persona:['persons'],polifonia:['voices'],'discurso-referido':['voices'],
  ethos:['ethos'],genero:['genres'],secuencia:['sequences'],argumentacion:['argument'],dialogo:['dialogue']

@@ -8,18 +8,26 @@ const ideology=[
  {resource:'fairclough',selection:'Ideología y hegemonía: impresas 86–91 / PDF personal 92–97 del ejemplar consultado. Consulta docente.'}
 ];
 export const lessonReferences={
- 1:{5:[{resource:'caldiz',selection:'PDF 7: prominencia, tono y nivel tonal; PDF 8–9 y 13: análisis de marcadores y relación con el segmento siguiente. Los ejemplos de la explicación son del curso.'}]},
+ 1:{5:[{resource:'caldiz',selection:'Las páginas corresponden al contador del archivo, con la portada como primera página.',pages:[[13,'Abrir el ejemplo 18 en la página 13'],[8,'Abrir los ejemplos 1 y 2 en la página 8']]}]},
  3:{2:ideology},
  6:{3:[{resource:'bolivar',selection:'Páginas impresas 99–100 / PDF 7–8: evaluación, relaciones entre intervenciones y escalas del cambio. Síntesis aplicada al diálogo del curso.'}]}
 };
 export const classReferences={'s7-e2':ideology};
 export const conceptReferences={
  'discurso-referido':[{resource:'gallucci',selection:'Representación y recontextualización: impresas 201–202 / PDF 2–3; cita directa, indirecta y literalidad histórica: impresas 206–207 / PDF 7–8. Consulta complementaria.'}],
+ 'nivel-tonal':[{resource:'caldiz',selection:'El ejemplo 18 compara la altura de dos grupos sucesivos de una misma voz.',pages:[[13,'Ver el ejemplo 18']]}],
  topos:[{resource:'wodak',selection:'Ruth Wodak, «El enfoque histórico del discurso», en Wodak y Meyer (comps., 2003), impresa 115 / PDF personal 59. Definición de topos como regla de conexión; consulta docente.'}]
 };
 export function referenceNotes(references=[]){
- return references.map(({resource,selection})=>{
+ return references.map(({resource,selection,pages})=>{
   const r=resourceById[resource],href=resourceHref(r);
-  return `<p class="caption manual-source">Apoyo: ${esc(r.author)} (${esc(r.year)}). <cite>${esc(r.title)}</cite>. ${esc(selection)}${href?` <a href="${esc(href)}" target="_blank" rel="noopener noreferrer">Consultar selección<span class="sr-only">: ${esc(r.title)} (otra pestaña)</span></a>`:''}</p>`;
+  let links=[];
+  if(href&&pages?.length&&r.format==='pdf'){
+   links=pages.map(([page,label])=>[href.replace(/#.*$/,'')+`#page=${page}`,label]);
+  }else if(href){
+   links=[[href,'Consultar selección']];
+  }
+  const anchors=links.map(([url,label])=>`<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)}<span class="sr-only">: ${esc(r.title)} (otra pestaña)</span></a>`).join(' · ');
+  return `<p class="caption manual-source">Apoyo: ${esc(r.author)} (${esc(r.year)}). <cite>${esc(r.title)}</cite>. ${esc(selection)}${anchors?` ${anchors}`:''}</p>`;
  }).join('');
 }

@@ -16,7 +16,7 @@ export const visualSchemas={
   ],
   scale:'Adaptación didáctica de Fairclough: describir, interpretar y explicar son operaciones; texto, práctica discursiva y práctica social son dimensiones relacionadas. Vuelve a las marcas y a los datos entre operaciones: no es una secuencia fija ni un método universal del AD.',
   task:{label:'En el diagnóstico',text:'Con A, B y C: una observación que otro lector pueda comprobar (paso 1), dos hipótesis (pasos 2 y 3) y el dato que te permitiría decidir entre ellas.'},
-  limit:'describir ya supone categorías; ninguna fase es descripción pura (Fairclough, 1992: 199). La forma sola no demuestra intenciones ni efectos.',
+  limit:'describir ya supone categorías; ninguna fase es descripción pura (Fairclough, 1992: 199). Para estudiar intenciones o efectos, reúne datos de producción y recepción.',
   source:'Fuentes: Fairclough (1992: 73 y 198–199). Uso lingüístico contextualizado: Calsamiglia y Tusón (2012, §1.1 · PDF 12).',
   anchors:[openingNotice.text]
  },
@@ -68,7 +68,7 @@ export const visualSchemas={
    {text:'Conviene mantener el intercambio para contrastar interpretaciones, pero habrá que comprobar quiénes participan y qué cambia en cada escrito antes de atribuirle la mejora.',label:'Argumentación',note:'Convierte el contraste de interpretaciones en una razón para mantener la práctica y deja su eficacia por comprobar.'}
   ],
   verdict:'El conjunto presenta una práctica docente como valiosa: relata una mejora, sitúa los recursos y recomienda mantener el intercambio. Esa organización sostiene una propuesta; comprobar que el intercambio causó la mejora requiere otros datos.',
-  task:{label:'En la ficha 6',text:'Arma tu matriz de segmentos, secuencias y transiciones con la marca y la función de cada tramo.'},
+  task:{label:'En la ficha 6',text:'Explica qué hace cada tramo y qué marcas muestran la transición.'},
   source:'Ejemplo. Textos heterogéneos y secuencia dominante: Calsamiglia y Tusón (2012, §9.2.2 · PDF 266–268). Narración, descripción y argumentación: §10.1 · PDF 270–274; §10.2 · PDF 280–282; §10.3 · PDF 295–300.',
   anchors:['En el primer taller de lectura, el grupo entregó respuestas muy breves','El curso reúne a treinta estudiantes','Conviene mantener el intercambio para contrastar interpretaciones','Cada tramo adquiere función en esa intervención completa']
  },
@@ -82,7 +82,7 @@ export const visualSchemas={
    {head:'Con «se», sin agente',cells:['«Se revisaron las solicitudes».','No aquí: informa la revisión realizada sin nombrar a quien revisó; el cotexto puede identificarlo.']},
    {head:'Nominalización',sub:'el proceso como nombre',cells:['«La revisión de las solicitudes».','No: convierte la acción en un asunto nombrado, sin indicar aquí quién revisa ni cuándo.']}
   ],
-  limit:'el cuadro describe la forma; el cambio por sí solo no prueba una estrategia de ocultamiento, y nombrar a quien actúa no demuestra quién decidió.',
+  limit:'para distinguir quién actúa y quién decide, contrasta la formulación con otros pasajes o documentos sobre la decisión.',
   task:{label:'En la ficha 2',text:'Localiza en el reglamento cláusulas con participantes, acciones y condiciones, y anota dónde queda el agente.'},
   source:'Ejemplos. Pasiva sin agente y nominalización: Fairclough (1992: 178–179). Impersonales y pasivas sin agente que borran al locutor: Calsamiglia y Tusón (2012, §5.1.1 · PDF 138).',
   anchors:['La comisión revisó las solicitudes','Las solicitudes fueron revisadas por la comisión','Se revisaron las solicitudes','«La revisión» convierte el proceso en un nombre','El agente realiza la acción; la autoridad que la decide puede ser otra','La omisión se interpreta junto con los participantes identificados en el documento']
@@ -113,7 +113,7 @@ export const visualSchemas={
    {head:'Wodak y colaboradores',sub:'histórico-discursivo',cells:['«Estudiantes» nombra un grupo; «que no cuenten con recursos económicos suficientes» le atribuye una condición que delimita beneficiarios.','Los considerandos vinculan la ayuda con la continuidad de estudios y aportan una razón para incluir a ese grupo. Versiones comparables permitirían investigar cambios.']}
   ],
   verdict:'La matriz orienta preguntas y procedimientos posibles ante el mismo problema. Las fuentes pueden servir a más de un enfoque; la elección se justifica por la relación que queremos explicar y los datos con que podemos sostenerla.',
-  task:{label:'En la ficha 3',text:'Compara qué dato necesitaría cada enfoque y elige el que puedas documentar.'},
+  task:{label:'En la ficha 3',text:'Usa la comparación hecha en clase para elegir un enfoque pertinente para tu pregunta.'},
   source:'Aplicación del curso al reglamento de becas y al ejemplo de solicitud de un certificado. Fairclough (1992: 73–75), dimensiones, y en Wodak y Meyer (2003: 184–185), enfoque dialéctico-relacional; van Dijk (1999: 124–125), modelos de contexto y de acontecimiento; Wodak (2003: 113–115), estrategias discursivas; Pardo (2012: 48).',
   anchors:['condición de acceso a una ayuda en una norma y en su explicación pública','obligaciones, denominaciones, autoridad y condiciones de producción','representaciones del asunto tratado e interpretaciones de la situación comunicativa','denominaciones, atributos y argumentos en contexto','versiones comparables','Estudiar los conocimientos que median interpretaciones requiere datos adecuados de participantes']
  },
@@ -138,7 +138,7 @@ export const visualSchemas={
   leaves:[{label:'Proposición',text:'La ayuda exige matrícula vigente.'},{label:'Proposición',text:'La ayuda exige acreditación de ingresos.'}],
   operation:{label:'Condensar y comprobar qué se pierde',text:'Las dos exigencias construyen un acceso condicionado. «Vigente» delimita la matrícula válida y «acreditación» exige demostrar los ingresos: conservarlas permite explicar qué se pide al solicitante.'},
   top:{label:'Síntesis que hay que revisar',text:'«La ayuda está condicionada a matrícula e ingresos».'},
-  loss:{label:'Qué se pierde',items:['«vigente»: no cualquier matrícula sirve.','«acreditación»: no basta tener ingresos; hay que demostrarlos.'],question:'¿Cómo cambia lo que el lector entiende que necesita para acceder a la ayuda?'},
+  loss:{label:'Qué se pierde',items:['«vigente»: no cualquier matrícula sirve.','«acreditación» exige presentar pruebas de los ingresos.'],question:'¿Cómo cambia lo que el lector entiende que necesita para acceder a la ayuda?'},
   rejected:{label:'No la sostiene el texto',text:'«La ayuda se ofrece a todos».',note:'Añade una generalización que elimina las condiciones.'},
   limit:'el tema global es una reconstrucción de quien interpreta. Una síntesis puede omitir detalles si justifica su selección; cambiar una condición altera el contenido.',
   task:{label:'En la ficha 2',text:'Reconstruye el tema global y justifica qué seleccionaste, generalizaste o integraste.'},
@@ -163,14 +163,14 @@ export const visualSchemas={
   label:'Tres fuentes que responden a preguntas relacionadas, pero no equivalentes',
   center:{label:'Conclusión',text:'Relaciona lo que se exige, cómo se comunica y cómo lo interpreta un participante.'},
   vertices:[
-   {label:'Norma',gives:'Fija el procedimiento.',limit:'No muestra cómo se comunicó ni cómo se leyó.'},
-   {label:'Aviso',gives:'Informa una convocatoria.',limit:'No acredita cumplimiento.'},
-   {label:'Respuesta registrada',gives:'Muestra cómo fue interpretada.',limit:'No representa a todo el alumnado.'}
+   {label:'Norma',gives:'Fija el procedimiento.',limit:'Consulta el aviso para estudiar cómo se comunicó.'},
+   {label:'Aviso',gives:'Informa una convocatoria.',limit:'Consulta registros de aplicación para estudiar el cumplimiento.'},
+   {label:'Respuesta registrada',gives:'Muestra cómo fue interpretada.',limit:'Compara otras respuestas si investigas cómo leyó el grupo.'}
   ],
-  verdict:'El contraste permite explicar qué condición de la norma se vuelve visible en el aviso y cuál reconoce la respuesta registrada. Una diferencia puede precisar dónde cambia la representación del trámite. Repetir una afirmación en varios documentos no asegura evidencias independientes.',
-  task:{label:'En la ficha 3',text:'Explica qué permite conocer cada fuente, qué no permite y qué relación entre ellas sostiene tu conclusión.'},
+  verdict:'El contraste permite explicar qué condición de la norma se vuelve visible en el aviso y cuál reconoce la respuesta registrada. Una diferencia puede precisar dónde cambia la representación del trámite. Comprueba si las fuentes aportan datos obtenidos por separado.',
+  task:{label:'En la ficha 3',text:'Explica qué pregunta responde cada fuente y cómo se complementan sus aportes.'},
   source:'Ejemplo. Principio de triangulación: Wodak, en Wodak y Meyer (comps., 2003: 104).',
-  anchors:['Una norma fija el procedimiento','un aviso informa una convocatoria','una respuesta registrada muestra cómo fue interpretada','lo dispuesto, lo comunicado y lo interpretado','La conclusión se refiere a esas piezas y esa respuesta','no asegura evidencias independientes']
+  anchors:['Una norma fija el procedimiento','un aviso informa una convocatoria','una respuesta registrada muestra cómo fue interpretada','lo dispuesto, lo comunicado y lo interpretado','La conclusión se refiere a esas piezas y esa respuesta','aportan datos obtenidos por separado']
  },
  'recontextualizar-clausula':{
   type:'transform',planned:'s11-e2',topic:'Recontextualizar implica seleccionar',placed:true,replaces:'example',
@@ -206,10 +206,10 @@ export const visualSchemas={
    {speaker:'A',text:'«Por eso ofrecemos un punto de atención en el campus, de ocho a doce».',move:'Desplaza el foco hacia una alternativa presencial con horario limitado.'}
   ],
   note:'A valora la inscripción como «accesible» porque se realiza en línea. B cuestiona ese criterio al introducir a quienes carecen de conexión. A responde con atención presencial: cambia la solución ofrecida y añade lugar y horario. Seguir las tres intervenciones permite ver qué valoración se discute y cómo se reajusta la respuesta.',
-  limit:'la secuencia permite describir ese cambio; no prueba un efecto general en toda la institución.',
+  limit:'para estudiar un cambio en la atención institucional, compara otros intercambios y prácticas a lo largo del tiempo.',
   task:{label:'En el borrador del expediente',text:'Incorpora la objeción y muestra dónde se observa la modificación.'},
   source:'Ejemplo. Intervenciones e intercambios: Calsamiglia y Tusón (2012, §10.5 · PDF 319–323). Diálogo, evaluación y escalas de cambio: Bolívar (2024: 99–100 / PDF 7–8).',
-  anchors:['La inscripción al taller de lectura es accesible: se completa en línea','¿Y cómo se inscribe quien no tiene conexión?','Por eso ofrecemos un punto de atención en el campus, de ocho a doce','no prueba un efecto general en toda la institución']
+  anchors:['La inscripción al taller de lectura es accesible: se completa en línea','¿Y cómo se inscribe quien no tiene conexión?','Por eso ofrecemos un punto de atención en el campus, de ocho a doce','compara otros intercambios y prácticas a lo largo del tiempo']
  },
  'negacion-voces':{
   type:'voices',planned:'s9-e2',topic:'Responsabilidad y perspectiva',placed:true,replaces:'example',
@@ -245,10 +245,10 @@ export const visualSchemas={
   label:'Las mismas palabras como subtítulo y como transcripción',
   question:'¿Qué registra cada versión de la realización oral?',
   columns:[
-   {label:'Subtítulo',text:'«No aceptamos esa explicación».',note:'La puntuación del subtítulo no demuestra prosodia: no dice si hubo pausa.'},
+   {label:'Subtítulo',text:'«No aceptamos esa explicación».',note:'La puntuación organiza la frase escrita. Escucha la grabación para localizar la pausa.'},
    {label:'Transcripción con leyenda',text:'«No [pausa] aceptamos esa explicación».',marks:['[pausa]'],note:'La marca declara una pausa que habría que comprobar en el audio; la leyenda explica la convención.'}
   ],
-  verdict:'Su función requiere escuchar el entorno: no basta cambiar la puntuación para atribuir una intención.',
+  verdict:'Escucha qué se dice antes y después para explicar la función de la pausa.',
   task:{label:'Al transcribir el tramo de Drexler',text:'Usa tu pregunta provisional para elegir 20–30 segundos dentro de 00:39–01:47. Anota ambos intervalos en el localizador: episodio observado y fragmento transcrito. Toma las marcas de la escucha y añade una leyenda.'},
   source:'Representación didáctica del curso. Transcripción: Calsamiglia y Tusón (2012, apéndice, §1.2 · PDF 358–361).',
   anchors:['No [pausa] aceptamos esa explicación','La puntuación de un subtítulo es una decisión de escritura que debe contrastarse con el audio','La leyenda precisa qué representa cada marca y la escucha decide dónde corresponde','su posible función requiere las palabras próximas y la continuación']
@@ -284,7 +284,7 @@ export const visualSchemas={
    {words:'el certificado',label:'Referencia',note:'identificarlo exige otras referencias del texto o de la situación.'}
   ],
   verdict:'«Adjunte nuevamente» pide repetir una entrega y trata la anterior como información compartida: sitúa al estudiante en un trámite ya iniciado. «Algunos grupos entregaron» puede sugerir «no todos»; «de hecho, todos» cancela esa implicatura. La entrega previa presupuesta por «nuevamente» no queda demostrada por la orden.',
-  task:{label:'En la ficha 2',text:'Escribe dos inferencias con sus fundamentos y los datos que faltan.'},
+  task:{label:'En la ficha 2',text:'Explica una inferencia con las palabras que la apoyan y el conocimiento que aporta el lector.'},
   source:'Ejemplo. Presuposición: Calsamiglia y Tusón (2012, §7.2.1 · PDF 191–192) y Brown y Yule (1983: 28–31). Implicatura y su cancelación: Grice, en Escandell (1996: 86–87).',
   anchors:['Adjunte nuevamente el certificado','presenta una acción anterior como información dada por supuesta','comprobar la entrega anterior exige consultar el expediente','Un lector nuevo necesitaría recuperar esa información','«Algunos grupos entregaron» puede sugerir «no todos»','cancela esa implicatura']
  },
@@ -301,10 +301,10 @@ export const visualSchemas={
    {label:'Prominencia · tamaño y grosor',values:['Los requisitos, en letra pequeña.','Los requisitos ganan tamaño y peso.']},
    {label:'Encuadre · separación y agrupación',values:['Sin recuadro: los requisitos quedan junto al pie.','Un recuadro separa los requisitos del resto.']}
   ],
-  verdict:'La primera disposición destaca la convocatoria y la entrega; la segunda presenta primero las condiciones de acceso. Las mismas palabras proponen así distintas prioridades al destinatario. La prominencia propone una lectura; no demuestra un efecto universal.',
+  verdict:'La primera disposición destaca la convocatoria y la entrega; la segunda presenta primero las condiciones de acceso. Las mismas palabras proponen así distintas prioridades al destinatario.',
   task:{label:'En la ficha 2',text:'Describe la disposición original de tu documento y propone una alternativa que conserve las mismas palabras.'},
   source:'Aviso inventado para este esquema. Tipografía y diseño gráfico: Calsamiglia y Tusón (2012, §3.5 · PDF 86). Valor informativo, prominencia y encuadre: Kress y van Leeuwen (2021: 181–182).',
-  anchors:['«Requisitos» aparece en letra pequeña','conserva las mismas palabras y gana tamaño y posición inicial','Tamaño, posición, agrupación y encuadre proponen jerarquías','La prominencia propone una lectura; no demuestra un efecto universal','Para comparar disposición, conserva el mismo contenido verbal']
+  anchors:['«Requisitos» aparece en letra pequeña','conserva las mismas palabras y gana tamaño y posición inicial','Tamaño, posición, agrupación y encuadre proponen jerarquías','Para saber qué leen primero los destinatarios, compara las versiones con lectores','Para comparar disposición, conserva el mismo contenido verbal']
  },
  'diseno-lectura':{
   type:'contrast',planned:'s6-e2',topic:'Distinguir diseño propuesto y lectura observada',placed:true,replaces:'example',
@@ -331,8 +331,8 @@ export const visualSchemas={
    {verb:'Explicar',dimension:'la práctica social',question:'¿Qué relación social mantiene o cambia?',claim:'La norma organiza el acceso mediante dos fundamentos de asignación y da mayor peso numérico a la excelencia. Evaluar su relación con la equidad exige explicitar un criterio y examinar a quién abarca cada categoría.',evidence:'artículo 3, definición de beneficiarios y fines invocados; para estudiar los resultados, datos de adjudicación.'}
   ],
   scale:'Adaptación de Fairclough: texto, práctica discursiva y práctica social se relacionan y sus fronteras no son tajantes. Los fines invocados orientan la lectura de los porcentajes; volver a las marcas del texto y a sus condiciones permite examinar cómo se justifica la distribución.',
-  task:{label:'En la ficha 3',text:'Reúne tres datos contextuales con fuente, localizador y función en tu análisis.'},
-  limit:'el ejemplar no demuestra por sí solo quién recibió las ayudas ni una discriminación efectiva.',
+  task:{label:'En la ficha 3',text:'Comprueba un dato de contexto y explica qué aclara sobre el fragmento.'},
+  limit:'para saber quién recibió las ayudas, consulta registros de adjudicación y contrasta su aplicación con los criterios del reglamento.',
   source:'Paráfrasis del curso del artículo 3 del Reglamento de Becas (2022). Tres dimensiones del análisis: Fairclough (1992: 73).',
   anchors:['65 % para excelencia académica y 35 % por vulnerabilidad','El documento organiza a los beneficiarios mediante dos criterios y asigna distinto peso a cada uno','Los considerandos sitúan esa distribución bajo fines de inclusión y equidad','conocer los beneficiarios efectivos requiere datos de adjudicación','quién los establece y qué razones invoca']
  },
@@ -370,10 +370,10 @@ export const visualSchemas={
   conclusion:{label:'Conclusión',connector:'por eso',text:'uno deriva del otro'},
   law:{label:'Ley de paso implícita, sin justificar',text:'si dos avisos comparten tema, uno deriva del otro',missing:true},
   verdict:'Para investigar el vínculo hace falta otro dato: una cita, un enlace, una identificación de versión u otra fuente que documente el vínculo. En la semana 14, clase 1 el esquema se completa con garantía y reserva.',
-  limit:'una semejanza temática puede sostener una comparación sin probar dependencia entre piezas.',
+  limit:'la semejanza temática ofrece un punto de partida para comparar los avisos.',
   task:{label:'En la revisión entre pares',text:'Busca en el desarrollo de tu compañero el dato, el criterio o la condición que sostiene cada paso.'},
   source:'Ejemplo. Premisa, ley de paso y conclusión: Plantin (1996: 38), en Calsamiglia y Tusón (2012, §10.3 · PDF 297); pasos implícitos, PDF 298.',
-  anchors:['Ambos avisos hablan de becas; por eso uno deriva del otro','El tema compartido no acredita derivación','si dos avisos comparten tema, uno deriva del otro','una cita, un enlace, una identificación de versión u otra fuente que documente el vínculo','Una semejanza temática puede sostener una comparación sin probar dependencia entre piezas']
+  anchors:['Ambos avisos hablan de becas; por eso uno deriva del otro','La conclusión se apoya en una regla implícita que habría que justificar','una cita, un enlace, una identificación de versión u otra fuente que documente el vínculo','Una semejanza temática sirve para comparar las piezas']
  },
  'evidencias-argumento':{
   type:'tree',planned:'s12-e1',topic:'De las evidencias al argumento parcial',placed:true,replaces:'example',
@@ -406,7 +406,7 @@ export const visualSchemas={
   question:'¿Qué sabemos después del análisis y qué pregunta permanece abierta?',
   axis:{from:'Lo que el corpus sostiene',to:'Lo que exige otros datos'},
   items:[
-   {text:'«En los tres avisos analizados no se identifica al órgano responsable».',label:'Fija conjunto y observación: esos avisos, por sí solos, no permiten saber a qué órgano atribuir la actuación.'},
+   {text:'«En los tres avisos analizados no se identifica al órgano responsable».',label:'Delimita la observación a los tres avisos. Busca el órgano responsable en el documento que registra la actuación.'},
    {text:'«Los avisos de la institución no identifican al órgano responsable».',label:'Generaliza a todos los avisos: un corpus pequeño no representa a todos.'},
    {text:'«La institución oculta sistemáticamente a sus responsables».',label:'Atribuye una estrategia: necesitaría criterios y fuentes adicionales.'}
   ],
@@ -434,11 +434,11 @@ export const visualSchemas={
   claimLabel:'Qué observar',
   steps:[
    {verb:'Redactar',dimension:'la consigna',question:'¿Qué pide y sobre qué material?',claim:'Material («estas dos cláusulas»), operación («subraya», «explica») y resultado.',evidence:'un segmento que el lector pueda localizar.'},
-   {verb:'Probar',dimension:'con un lector',question:'¿Qué respuesta produce?',claim:'Una respuesta inesperada revisa la consigna; no prueba que el lector no comprendiera.',evidence:'una respuesta examinable.'},
+   {verb:'Probar',dimension:'con un lector',question:'¿Qué respuesta produce?',claim:'Si la respuesta sorprende, pregunta cómo leyó la consigna y ajusta las instrucciones a partir de esa explicación.',evidence:'una respuesta examinable.'},
    {verb:'Ajustar',dimension:'la instrucción',question:'¿Qué hay que cambiar?',claim:'¿La dificultad procede del concepto, del material o de la instrucción?',evidence:'la respuesta observada y el criterio de revisión.'}
   ],
   scale:'Probar la consigna revisa la instrucción, no solo al lector.',
-  task:{label:'En el expediente',text:'Prueba tu microconsigna con un compañero y registra qué ajustaste y por qué.'},
+  task:{label:'En el expediente',text:'Usa un fragmento de tu informe para guiar la lectura y ajusta la consigna después de probarla en el trío.'},
   limit:'la consigna admite interpretaciones discrepantes que se justifiquen con evidencia.',
   source:'Consigna y criterios propios del curso. Probar la consigna y admitir lecturas discrepantes justificadas: apartado «Transformar un análisis en enseñanza» de la lectura integrada de «Teoría» y de la guía de la unidad 6. No se atribuyen estos criterios a un autor externo.',
   anchors:['En estas dos cláusulas, subraya quién realiza la acción','Material accesible y criterios claros hacen examinable ese razonamiento','La revisión ajusta la enseñanza a esa dificultad concreta','¿La dificultad observada procede del concepto, del material o de la instrucción?','producir una respuesta examinable','Admite interpretaciones discrepantes que se justifiquen con evidencia']
@@ -483,7 +483,7 @@ export const visualSchemas={
    {name:'La lengua como contexto',example:'Los tratamientos proponen una relación; las referencias conectan la intervención con lo ya dicho.'},
    {name:'Contexto extrasituacional',example:'Conocer la práctica ayuda a reconocer una solicitud, una decisión o una objeción.'}
   ],
-  task:{label:'En la ficha 3',text:'Al revisar tus tres datos, indica qué dimensión aporta cada uno.'},
+  task:{label:'En la ficha 3',text:'Al revisar tu dato de contexto, indica qué dimensión te ayuda a explicar.'},
   source:'Cuatro dimensiones del contexto: Goodwin y Duranti (1992), en Calsamiglia y Tusón (2012, §4.3 · PDF 127–128).',
   anchors:['distinguen cuatro dimensiones del contexto','la localización o marco socioespacial, como una fecha o una institución','el comportamiento no verbal, como los gestos','la lengua como contexto, con tratamientos y referencias','el contexto extrasituacional, los conocimientos previos que permiten reconocer qué está pasando','Se estudian por separado, pero actúan conjuntamente']
  }

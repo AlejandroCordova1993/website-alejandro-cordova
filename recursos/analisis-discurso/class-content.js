@@ -18,7 +18,7 @@ export const classContent={
    'Aviso B del diagnóstico: «Se suspendieron las becas de cuarenta estudiantes».','Observar: el aviso dice «Se suspendieron» y no nombra a quien tomó la decisión. Inferir: entiendo que esos estudiantes tenían una ayuda y que ahora se interrumpe; la resolución permitiría comprobar su alcance. Explicar: quizá se omite al responsable porque ya aparece en otra parte del documento; habría que leerlo completo. Valorar: como aviso aislado para saber ante quién reclamar, ofrece información insuficiente; el criterio es que identifique al órgano al que dirigirse.',
    'Distingue lo que puedes comprobar en el aviso, lo que interpretas y los datos que necesitas para sostenerlo.','guia-3',0),
   topic(4,'El contexto pone a prueba una lectura','Una interpretación puede ganar apoyo cuando el cotexto identifica un participante omitido. También puede debilitarse si esa información no aparece. La información adicional modifica el alcance de lo que podemos afirmar.',
-   ['Cotexto: palabras e intervenciones que rodean el segmento.','El contexto también incluye situación, institución, conocimientos e indicios de la propia actuación. En el manual, el entorno verbal forma parte del contexto; distinguimos su procedencia para analizarlo.'],
+   ['[[cotexto|Cotexto]]: palabras e intervenciones que rodean el segmento.','El contexto también incluye situación, institución, conocimientos e indicios de la propia actuación. En el manual, el entorno verbal forma parte del contexto; distinguimos su procedencia para analizarlo.'],
    'Versión 1: «El comité adoptó la medida. Se canceló la reunión». Versión 2: «Se canceló la reunión» como aviso aislado.','En la primera versión hay un candidato recuperable en el cotexto. En la segunda falta ese dato. Ninguna de las dos demuestra por sí sola una finalidad de ocultamiento.',
    '¿Qué cambió en la evidencia y qué sigue siendo una hipótesis?','guia-3',0)
  ],
@@ -30,7 +30,7 @@ export const classContent={
     "points": [
       "La conferencia presente, el diálogo pasado que relata y la publicación digital son escenas diferentes, con participantes y condiciones de acceso propias.",
       "Situar el episodio requiere relacionar lugar y momento, actividad y participantes, convenciones pertinentes y conocimientos tratados como compartidos. Las palabras próximas aportan el cotexto; las respuestas ayudan a contrastar qué se comprendió.",
-      "Actos de habla: distingue lo dicho, la acción realizada al decirlo —pedir, proponer, prometer— y sus efectos observados. La respuesta y la situación ayudan a reconocer la acción.",
+      "[[acto-habla|Actos de habla]]: distingue lo dicho, la acción realizada al decirlo —pedir, proponer, prometer— y sus efectos observados. La respuesta y la situación ayudan a reconocer la acción.",
       "Asunto e idea principal: «nuestra primera explicación» nombra aquello sobre lo que se propone trabajar; «revisarla» expresa la acción propuesta. Seguir qué se dice sobre el asunto permite reconocer su desarrollo."
     ],
     "example": "En un taller: «Hoy les propongo revisar nuestra primera explicación».",
@@ -44,7 +44,7 @@ export const classContent={
     "title": "Transcribir implica seleccionar",
     "explanation": "Una transcripción conserva dimensiones de la realización oral seleccionadas según una pregunta. El registro original permite comprobarlas y la leyenda explica cómo se representan. La función discursiva se argumenta después relacionando esas marcas con la secuencia.",
     "points": [
-      "La pausa es una interrupción audible del habla. La prominencia es el destaque de una sílaba o palabra mediante altura, duración o intensidad respecto de las próximas; aquí se registra con la etiqueta práctica «énfasis».",
+      "La pausa es una interrupción audible del habla. Para registrar la [[prominencia|prominencia]], anota con «énfasis» la sílaba o palabra que destaca y describe qué oíste, por ejemplo una mayor duración.",
       "En esta práctica puedes usar [pausa], [énfasis: palabra] e [inaudible]. La leyenda precisa qué representa cada marca y la escucha decide dónde corresponde. La puntuación de un subtítulo es una decisión de escritura que debe contrastarse con el audio.",
       "Anotar qué parámetro se percibe —por ejemplo, una mayor duración— permite revisar con más precisión la etiqueta «énfasis». Una marca conserva una observación seleccionada; su posible función requiere las palabras próximas y la continuación."
     ],
@@ -61,9 +61,9 @@ export const classContent={
     "title": "Palabras, voz y cuerpo",
     "explanation": "Palabras, voz y cuerpo se coordinan para señalar referentes, organizar información y relacionarse con el público. La lectura previa desarrolla cómo reconocerlos; al escuchar o mirar importa describir el cambio concreto y su coincidencia con las palabras.",
     "points": [
-      "En la voz, altura es el nivel grave o agudo; contorno es el recorrido melódico; intensidad es la fuerza o volumen; timbre es la calidad vocal, como una voz más aireada. Una palabra prominente puede destacar por altura, duración o intensidad. Describir el parámetro evita llamar «tono» a cualquier diferencia.",
+      "Al escuchar, distingue la [[nivel-tonal|altura tonal]] (grave o aguda), el [[contorno-entonativo|contorno entonativo]] (cómo cambia la altura) y la [[intensidad|intensidad]] (qué tan fuerte o suave suena). El timbre es la calidad de la voz, como una voz más aireada.",
       "Rapidez es la velocidad de articulación; ritmo es la organización de duraciones, prominencias y pausas. Una pausa interrumpe el habla. Risa y suspiro son vocalizaciones que se sitúan respecto de las palabras y las respuestas. Modulación reúne variaciones de la voz a lo largo de la intervención.",
-      "En el cuerpo se describe forma y dirección del gesto, orientación visible de la mirada, postura y disposición espacial. «Extiende el índice hacia el dibujo mientras dice “esa”» permite relacionar gesto y referencia. La inteligibilidad de las palabras, por su parte, depende de articulación, escucha y condiciones del registro; un acento no determina por sí solo falta de claridad.",
+      "En el cuerpo se describe forma y dirección del gesto, orientación visible de la mirada, postura y disposición espacial. «Extiende el índice hacia el dibujo mientras dice “esa”» permite relacionar gesto y referencia. Para identificar las palabras, toma en cuenta la articulación, la familiaridad con la variedad y las condiciones del registro.",
       "Las elecciones de persona, tiempo, léxico, marcadores y reparaciones organizan lo dicho. Un relato, ejemplo o cita puede apoyar una idea: explicar esa relación es distinto de demostrar que persuadió al público. Son dimensiones lingüísticas, semióticas y retóricas de la misma intervención."
     ],
     "example": "«Esa es mi propuesta» puede acompañarse de una pausa y de una mirada al público. En esta demostración escrita se estipula una pausa después de «propuesta» y una orientación del rostro hacia la audiencia al terminar la frase.",
@@ -94,13 +94,13 @@ export const classContent={
     "title": "Una marca de voz necesita contraste",
     "explanation": "Una función vocal se explica relacionando la realización, su posición y lo dicho antes y después. La leyenda responde cómo se anota lo oído; el análisis responde qué relación organiza. Caldiz ofrece una investigación para pensar ese segundo problema y revisar hipótesis.",
     "points": [
-      "«El café está bueno» atribuye una cualidad; «Bueno, pasemos al siguiente punto» organiza una transición. Reconocer un marcador requiere examinar su uso en la secuencia.",
-      "En Caldiz, prominencia, tono —contorno— y altura tonal son selecciones diferentes. La comparación pertinente relaciona el marcador con su unidad tonal y con el segmento siguiente; encontrar «bueno» o una voz más aguda no basta para trasladar una función.",
+      "«El café está bueno» atribuye una cualidad. «Bueno, pasemos al siguiente punto» usa la misma palabra como [[marcador-discursivo|marcador discursivo]] para anunciar una transición.",
+      "En el ejemplo 18, Caldiz registra un cambio de [[nivel-tonal|nivel o altura tonal]] al pasar de «bueno» al grupo siguiente. Ubica cada [[unidad-tonal|unidad tonal]] y sigue el [[contorno-entonativo|contorno]] dentro de cada tramo.",
       "En este ejemplo de realización oral, en «ESTA es mi propuesta», la sílaba inicial de «esta» dura más y alcanza mayor altura que las próximas, sin aumentar apreciablemente el volumen. Si se acaba de mencionar otra propuesta, la prominencia ayuda a seleccionar la presente. También podría acompañar su presentación inicial; el cotexto permite decidir cuál lectura tiene apoyo.",
       "Las mayúsculas representan el destaque descrito en esta demostración. Para el episodio real hacen falta escucha, palabras próximas e intervalo. La lectura teórica orienta la explicación; la leyenda justifica la notación."
     ],
     "example": "En la demostración escrita, «bueno» puede preceder «pasemos al siguiente punto» o «volvamos a la propuesta».",
-    "reading": "Las expresiones siguientes permiten distinguir avanzar a otro punto de retomar uno anterior. Para atribuir una contribución prosódica habría que conocer la realización. Este contraste es del curso y no reproduce los resultados empíricos de Caldiz.",
+    "reading": "En este ejemplo didáctico, las expresiones siguientes distinguen avanzar a otro punto de retomar uno anterior. En la ficha, vuelve al registro y escucha cómo se realiza esa transición.",
     "prompt": "¿Qué caso obligaría a modificar nuestra interpretación del marcador?",
     "source": "caldiz",
     "lesson": 2
@@ -112,12 +112,11 @@ export const classContent={
     "title": "Revisar es cambiar una afirmación con razones",
     "explanation": "La revisión compara la interpretación inicial con el registro y con un criterio explícito de análisis. Puede corregir la categoría empleada, restringir una función propuesta o mantenerla con mejor fundamento. Una expresión técnica como «cambio de tema» también necesita justificación.",
     "points": [
-      "Registro del ejemplo didáctico: «La propuesta tiene dos ventajas: reduce el costo y acorta el plazo. [pausa] En cuanto a sus límites, requiere personal especializado». Se estipula una interrupción entre «plazo» y «en cuanto a».",
-      "Criterio temático: «ventajas» y «límites» introducen aspectos diferentes de la misma propuesta, y «en cuanto a» anuncia el paso. Es un cambio de subtema dentro del mismo asunto; esa clasificación procede de comparar el contenido.",
-      "Hipótesis funcional: la pausa puede ayudar a delimitar ese paso. Respirar es otra función compatible. La duración, otras pausas y la continuación aportarían contraste; atribuir inseguridad requiere evidencia adicional.",
-      "La revisión también puede sustituir «sube el tono» por «aumenta la intensidad» si eso es lo que sostiene la escucha. Conservar el borrador permite mostrar qué dato o distinción produjo el cambio."
+      "Revisar la descripción: comprueba qué se oye y cómo lo nombraste. Si «sube el tono» describía una voz más fuerte, corresponde «aumenta la intensidad», siempre que lo sostenga la escucha.",
+      "Revisar la función: relaciona la marca de voz con las palabras anteriores y posteriores. Un cambio de subtema se reconoce comparando el contenido. La pausa puede contribuir a organizar ese paso y cumplir otras funciones compatibles.",
+      "Revisar el fundamento: explica qué dato o distinción cambió tu interpretación, qué mantienes y qué falta contrastar. Conserva el borrador para poder reconstruir esa revisión."
     ],
-    "example": "Primera lectura: «la pausa expresa inseguridad». Revisión: «la pausa coincide con el paso de ventajas a límites y puede ayudar a delimitarlo».",
+    "example": "Registro: «La propuesta tiene dos ventajas: reduce el costo y acorta el plazo. [pausa] En cuanto a sus límites, requiere personal especializado». Primera lectura: «la pausa expresa inseguridad». Revisión: «la pausa coincide con el paso de ventajas a límites y puede ayudar a delimitarlo».",
     "reading": "La nueva explicación distingue las palabras y la pausa, el criterio con que se reconoce el cambio de subtema y la función propuesta. Conserva abierta la posibilidad de respirar y declara qué contraste falta. En el episodio real, las palabras y la realización deben comprobarse en el registro.",
     "prompt": "¿Qué dato justificó el cambio y qué evidencia todavía falta?",
     "source": "guia-1",
@@ -150,7 +149,7 @@ export const classContent={
     "points": [
       "El agente realiza la acción; la autoridad que la decide puede ser otra.",
       "La omisión se interpreta junto con los participantes identificados en el documento.",
-      "Modalidad: «deben presentar» expresa obligación; «pueden presentar» puede expresar permiso. «Es posible que presenten» expresa posibilidad. En una norma, esas diferencias organizan deberes, facultades y expectativas."
+      "[[modalidad|Modalidad]]: «deben presentar» expresa obligación; «pueden presentar» puede expresar permiso. «Es posible que presenten» expresa posibilidad. En una norma, esas diferencias organizan deberes, facultades y expectativas."
     ],
     "example": "«La comisión revisó las solicitudes» / «Se revisaron las solicitudes».",
     "reading": "La primera versión vincula una actuación con la comisión; la segunda centra la atención en el trámite realizado. Si la comisión ya está identificada, el lector puede recuperar ese vínculo. Si aparece aislada, la segunda versión deja pendiente a quién atribuir la actuación. La diferencia permite analizar la representación de la responsabilidad en cada situación.",
@@ -161,7 +160,7 @@ export const classContent={
 ],
  's5-e1':[
   topic(1,'El lector aporta conocimientos','Los escritos se dirigen a lectores a quienes atribuyen ciertos conocimientos. Un trámite puede dar por conocidos un certificado o un procedimiento y exigir que el destinatario complete esa información. Las inferencias permiten examinar esa relación entre lo expresado y lo que se espera que el lector sepa.',
-   ['Flower y Hayes, según el manual, describen los procesos de quien escribe: planificar, textualizar y revisar son procesos que se alternan. Textualizar es poner las ideas por escrito; revisar puede llevar a cambiar el plan. No forman un circuito fijo: cada proceso puede activar los otros.','El conocimiento que el analista supone no coincide necesariamente con el de los lectores reales.','En Grice según Escandell, «Algunos grupos entregaron» puede sugerir «no todos». «Algunos; de hecho, todos» cancela esa implicatura. El supuesto de una entrega anterior en «nuevamente» funciona de otra manera.'],
+   ['Flower y Hayes, según el manual, describen los procesos de quien escribe: planificar, textualizar y revisar son procesos que se alternan. Textualizar es poner las ideas por escrito; revisar puede llevar a cambiar el plan. No forman un circuito fijo: cada proceso puede activar los otros.','El conocimiento que el analista supone no coincide necesariamente con el de los lectores reales.','En Grice según Escandell, «Algunos grupos entregaron» puede sugerir «no todos»: esa sugerencia es una [[implicatura|implicatura]]. «Algunos; de hecho, todos» cancela esa implicatura. El supuesto de una entrega anterior en «nuevamente» es una [[presuposicion|presuposición]]: presenta esa entrega como información compartida.'],
    '«Adjunte nuevamente el certificado».','«Nuevamente» presenta una acción anterior como información dada por supuesta: una presuposición, según Calsamiglia y Tusón y Brown y Yule. La petición sitúa al destinatario como alguien que ya participa en el trámite y puede reconocer el certificado. Un lector nuevo necesitaría recuperar esa información. El análisis explica qué conocimiento presupone el escrito; comprobar la entrega anterior exige consultar el expediente.',
    '¿Qué aporta la expresión y qué conocimiento estamos añadiendo?','escandell',1)
  ],
@@ -173,7 +172,7 @@ export const classContent={
     "points": [
       "Conserva las palabras que apoyan la interpretación.",
       "Busca un dato capaz de debilitarla, además de datos que la confirmen.",
-      "En «hasta el viernes», la deixis temporal exige situar qué viernes corresponde a esa comunicación; el horario y el canal de recepción precisan después cómo ejercer el permiso. Cada dato resuelve una parte distinta de la interpretación."
+      "En «hasta el viernes», la [[deixis|deixis temporal]] exige situar qué viernes corresponde a esa comunicación; el horario y el canal de recepción precisan después cómo ejercer el permiso. Cada dato resuelve una parte distinta de la interpretación."
     ],
     "example": "«Puede presentar la solicitud hasta el viernes».",
     "reading": "La formulación ofrece una posibilidad y fija un límite temporal: organiza la acción del solicitante. Para convertir ese límite en una decisión práctica importa conocer el horario y el canal de recepción. Esos datos contextualizan el permiso y permiten precisar cuándo puede ejercerse.",
@@ -186,11 +185,11 @@ export const classContent={
     "title": "Del significado local al tema global",
     "explanation": "Una proposición es una unidad de contenido que afirma algo sobre un participante o situación. La macroestructura organiza el sentido global que reconstruimos desde las proposiciones del texto. Una síntesis ofrece al lector una representación del asunto. Seleccionar conserva información pertinente; generalizar reúne casos bajo una categoría; integrar reúne pasos en una acción global. En una norma, las condiciones conservadas determinan cómo se representa el acceso a la ayuda.",
     "points": [
-      "La cohesión enlaza segmentos. En «Ana presentó una solicitud. La revisó la comisión», «la» recupera su antecedente, «una solicitud». La recurrencia de «beca/becas» en el artículo 3 mantiene el asunto mientras se añaden disposiciones; el conector «También» agrega beneficiarios al tramo anterior. Estas relaciones permiten seguir cómo se organiza el acceso.",
-      "La segmentación separa temas en artículos y párrafos; la puntuación delimita sus unidades y relaciones. El rótulo «Art. 3.- Beca completa» introduce una definición y otro párrafo hace localizable el reparto 65/35. Identificar a qué disposición pertenece una condición evita separarla de la ayuda que limita.",
+      "La cohesión enlaza segmentos mediante referencias, recurrencias y conectores. Una referencia puede recuperar una expresión anterior, su antecedente; la recurrencia léxica mantiene el asunto mediante palabras repetidas o relacionadas; un conector señala cómo se relacionan dos partes.",
+      "La segmentación distribuye temas en artículos y párrafos; la puntuación delimita unidades y relaciones dentro de ellos. Para resumir una norma, identifica a qué disposición pertenece cada condición y conserva ese vínculo.",
       "Una síntesis puede omitir detalles; debe justificar su selección.",
       "Cambiar una condición o introducir una conclusión ajena altera el contenido que se representa.",
-      "Al generalizar los certificados de docencia, investigación y gestión como «tres tipos de certificados de actividades académicas», se conserva una admisión delimitada. La lista sigue siendo necesaria para saber cuáles se aceptan. Omitir «tres tipos» puede hacer parecer admisible cualquier certificado de esa categoría."
+      "Al generalizar una lista bajo una categoría, comprueba que el resumen conserve sus límites. El lector debe poder distinguir los casos admitidos de otros que pertenecen a la misma categoría."
     ],
     "example": "Texto: «La ayuda exige matrícula vigente y acreditación de ingresos». Síntesis: «La ayuda está condicionada a matrícula e ingresos».",
     "reading": "La síntesis pierde «vigente» y «acreditación»: representa el acceso mediante dos datos generales y deja fuera su condición temporal y la obligación de justificarlos. Una versión como «Para acceder hay que acreditar ingresos y tener matrícula vigente» conserva esa relación. La comparación muestra cómo resumir puede cambiar la imagen del beneficiario y de lo que se le exige.",
@@ -208,7 +207,7 @@ export const classContent={
       "Prominencia es el grado en que un elemento atrae la atención: aumentar tamaño y grosor de «Requisitos» lo destaca. Encuadre es la separación o conexión visual: el recuadro agrupa las condiciones y las diferencia del resto.",
       "Valor informativo es el papel que adquiere un elemento por su posición en el conjunto. En este aviso, llevar los requisitos al inicio propone comprobarlos antes de continuar. Esa lectura se interpreta según las convenciones del documento.",
       "Para comparar disposición, conserva el mismo contenido verbal.",
-      "La prominencia propone una lectura; no demuestra un efecto universal."
+      "Para saber qué leen primero los destinatarios, compara las versiones con lectores."
     ],
     "example": "En un aviso, «Requisitos» aparece en letra pequeña; en otra disposición conserva las mismas palabras y gana tamaño y posición inicial.",
     "reading": "La segunda disposición destaca las condiciones como entrada a la lectura: propone que el destinatario compruebe si puede participar. Se conserva la información verbal y cambia su jerarquía. La respuesta del lector permitirá contrastar si ese recorrido propuesto coincide con su lectura.",
@@ -229,9 +228,9 @@ export const classContent={
     "title": "Elegir un enfoque cambia la investigación",
     "explanation": "Elegir un enfoque exige relacionar problema, categorías y datos. El cotexto aporta palabras próximas; el contexto incluye además situación, institución y conocimientos pertinentes. En el reglamento, el encabezado y «RESUELVE» permiten interpretar «Se deberá destinar» como una disposición institucional. Los enfoques críticos investigan cómo el discurso participa en relaciones de poder, desigualdad y resistencia. La elección es provisional y se apoya en qué relación podremos explicar con las evidencias disponibles.",
     "points": [
-      "Van Dijk, perspectiva sociocognitiva: distingue representaciones del asunto tratado e interpretaciones de la situación comunicativa. El modelo de acontecimiento representa mentalmente el asunto del discurso; el modelo de contexto, cómo un participante entiende quién comunica, con qué propósito y qué se supone conocido. «Adjunte nuevamente el certificado» presenta un trámite anterior y trata al destinatario como capaz de reconocerlo. Las respuestas y experiencias documentadas de lectores permiten contrastar esa hipótesis.",
-      "Fairclough relaciona texto, práctica discursiva y práctica social: obligaciones, denominaciones, autoridad y condiciones de producción. «Se deberá destinar» y el 65/35 configuran una obligación con prioridades distintas. El órgano emisor y las autoridades citadas en los considerandos la sitúan como decisión institucional justificada. El texto contribuye a organizar el acceso a recursos; registros de difusión o lectura permitirían estudiar su circulación y recepción.",
-      "Wodak y colaboradores estudian denominaciones, atributos y argumentos en contexto. Nominación nombra grupos y predicación les atribuye rasgos: en «estudiantes que no cuenten con recursos económicos suficientes», «estudiantes» identifica el grupo y la expresión siguiente delimita una condición económica. Los considerandos relacionan ayudas y continuidad de estudios: aportan una razón para incluir a esos beneficiarios. Investigar cambios requiere versiones comparables.",
+      "Van Dijk, perspectiva sociocognitiva: distingue representaciones del asunto tratado e interpretaciones de la situación comunicativa. El modelo de acontecimiento representa mentalmente el asunto del discurso; el modelo de contexto, cómo un participante entiende quién comunica, con qué propósito y qué se supone conocido. Esas representaciones median la relación entre discurso y sociedad.",
+      "Fairclough relaciona elecciones del texto, procesos de producción, distribución e interpretación —práctica discursiva— y relaciones institucionales y de poder —práctica social—. Así articula obligaciones, denominaciones, autoridad y condiciones de producción.",
+      "Wodak y colaboradores estudian denominaciones, atributos y argumentos en contexto. Nominación es nombrar grupos; predicación, atribuirles rasgos; argumentación, relacionar razones con una afirmación o medida. El estudio de los cambios históricos necesita versiones comparables y datos de su contexto.",
       "La perspectiva dialéctico-relacional de Fairclough se desarrolla en distintos momentos; el esquema de tres dimensiones que usamos procede de 1992. La pregunta, la marca y el dato que la explica orientan qué categorías de cada propuesta son pertinentes."
     ],
     "example": "Problema: ¿cómo se representa una condición de acceso a una ayuda en una norma y en su explicación pública?",
@@ -276,7 +275,7 @@ export const classContent={
 ],
  's8-e1':[
   topic(1,'Triangular para resolver una dificultad','Triangular permite reconstruir una práctica desde fuentes que muestran aspectos distintos: lo dispuesto, lo comunicado y lo interpretado. Una discrepancia puede revelar cómo cambia una condición al pasar entre documentos o entre participantes. La relación entre las fuentes debe estar documentada.',
-   ['Explica qué permite conocer cada fuente y qué no permite.','Sumar documentos que repiten una afirmación no asegura evidencias independientes.'],
+   ['Explica qué pregunta responde cada fuente y cómo se complementan sus aportes.','Comprueba si los documentos se basan en una misma fuente o aportan datos obtenidos por separado.'],
    'Una norma fija el procedimiento; un aviso informa una convocatoria; una respuesta registrada muestra cómo fue interpretada.','Si pertenecen al mismo trámite, podemos seguir una condición: cómo se establece, cómo se comunica y qué entiende un participante. Una diferencia entre esos registros ayuda a localizar dónde se transforma su sentido. La conclusión se refiere a esas piezas y esa respuesta; otras experiencias requieren nuevos registros.',
    '¿Qué relación entre las fuentes sostiene nuestra conclusión?','wodak',3)
  ],
@@ -365,8 +364,8 @@ export const classContent={
  ],
  's12-e2':[
   topic(1,'Un salto inferencial necesita un puente','Explicar cómo un discurso circula exige documentar relaciones entre piezas. Una referencia a la resolución o una disposición de publicar puede vincular la decisión con su convocatoria. Ese puente permite estudiar cómo una institución comunica lo decidido a posibles solicitantes.',
-   ['Una relación dibujada no demuestra circulación histórica.','Una semejanza temática puede sostener una comparación sin probar dependencia entre piezas.'],
-   '«Ambos avisos hablan de becas; por eso uno deriva del otro».','El tema compartido no acredita derivación. La conclusión descansa en una ley de paso implícita —si dos avisos comparten tema, uno deriva del otro— que no se sostiene. Para investigar el vínculo necesitamos otro dato: una cita, un enlace, una identificación de versión u otra fuente que documente el vínculo.',
+   ['Para reconstruir la circulación, busca un vínculo documentado entre las versiones.','Una semejanza temática sirve para comparar las piezas.'],
+   '«Ambos avisos hablan de becas; por eso uno deriva del otro».','La conclusión se apoya en una regla implícita que habría que justificar. Busca una cita, un enlace, una identificación de versión u otra fuente que documente el vínculo.',
    '¿Qué dato falta entre la observación y la conclusión?','guia-5',4)
  ],
  's13-e1':[
@@ -397,7 +396,7 @@ export const classContent={
       "Definir delimita qué significa un concepto; clasificar organiza casos según un criterio. Ejemplificar concreta una idea en un caso; la analogía la aclara mediante la comparación con otro ámbito.",
       "Reformular aclara una expresión anterior. En «acreditar tus ingresos, es decir, demostrarlos», ejemplo de adaptación propia ya trabajado, «acreditar» puede plantear la dificultad, «es decir» señala la operación y «demostrarlos» aporta una formulación más familiar. Se entiende la necesidad de aportar prueba; las bases establecen los comprobantes.",
       "Los textos llamados expositivos presentan y organizan conocimiento. La secuencia explicativa de Adam permite estudiar cómo se pasa de una dificultad a su aclaración.",
-      "Una secuencia temporal no demuestra una causa. Una causa de una práctica no establece por sí sola que sea aceptable. En el ejemplo del sistema, la explicación y la justificación responden preguntas distintas."
+      "Para explicar el retraso, muestra cómo se produjo a partir del fallo. Para justificar la ampliación del plazo, explicita el criterio que vincula el fallo con esa decisión."
     ],
     "example": "«El retraso se produjo por un fallo del sistema; por tanto, debemos ampliar el plazo».",
     "reading": "La causa atribuida al sistema representa el retraso como un problema ajeno al solicitante. Ampliar el plazo se vuelve defendible si se adopta el criterio de que ese fallo no debe perjudicar su acceso al trámite. El análisis hace explícito el valor que conecta la explicación con la decisión; comprobar el fallo y discutir el criterio son operaciones distintas.",
@@ -436,7 +435,7 @@ export const classContent={
       "Distingue interacción registrada de diálogo reconstruido dentro de un relato. En el manual, secuencia también designa un episodio temático de la interacción; aquí usamos episodio para diferenciar ese alcance de los cinco tipos de secuencia textual."
     ],
     "example": "A: «La inscripción al taller de lectura es accesible: se completa en línea». B: «¿Y cómo se inscribe quien no tiene conexión?». A: «Por eso ofrecemos un punto de atención en el campus, de ocho a doce».",
-    "reading": "B cuestiona que la conexión esté al alcance de todas las personas. A responde con una alternativa presencial y desplaza el foco hacia un lugar y un horario. Esa respuesta atiende la dificultad de conexión; quedan por examinar el traslado y la disponibilidad en ese horario antes de dar por resuelto el acceso. La secuencia permite describir ese cambio; no prueba un efecto general en toda la institución.",
+    "reading": "B cuestiona que la conexión esté al alcance de todas las personas. A responde con una alternativa presencial y desplaza el foco hacia un lugar y un horario. Esa respuesta atiende la dificultad de conexión; quedan por examinar el traslado y la disponibilidad en ese horario antes de dar por resuelto el acceso. Para estudiar un cambio en la atención institucional, compara otros intercambios y prácticas a lo largo del tiempo.",
     "prompt": "¿Qué modifica la respuesta y dónde se observa la modificación?",
     "source": "bolivar",
     "lesson": 3

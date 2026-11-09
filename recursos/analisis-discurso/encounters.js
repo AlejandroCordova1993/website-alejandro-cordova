@@ -219,7 +219,7 @@ export const sessions=[
         "Conserva las notas en «Tu trabajo», debajo de estas instrucciones. Anota un límite y qué necesitas retomar en la siguiente clase."
       ]
     ],
-    "preparation": "Lee «Antes de leer a Caldiz», en «Teoría», y después Caldiz: PDF 6–9 y 13. Retoma tu pregunta, transcripción y marcas del mismo episodio; usarás la lectura para explicar su función."
+    "preparation": "Lee «Antes de leer a Caldiz» en «Teoría». Después, lee las páginas 6 a 9 y 13 del archivo de Caldiz, contando la portada como página 1. Retoma la pregunta, la transcripción y las marcas del mismo episodio para explicar su función."
   },
   {
     "id": "s3-e2",
@@ -289,7 +289,7 @@ export const sessions=[
       [
         25,
         "Trabajo y contraste",
-        "Escribe «Pregunta de la ficha» en la ficha 2. Debajo, en el expediente, completa «Pregunta de investigación» y «Corpus y criterios de selección» con tu propuesta de 2–4 documentos o episodios; señala lo pendiente de comprobar."
+        "Guarda la pregunta sobre el reglamento en «Pregunta de la ficha». Usa esa pregunta como punto de partida del expediente si se ajusta a tu tema. En el expediente, propón 2–4 documentos o episodios que ayuden a responder la pregunta elegida."
       ],
       [
         10,
@@ -352,7 +352,7 @@ export const sessions=[
     "title": "Escribir para un lector",
     "question": "¿Qué conocimiento supone esta cláusula?",
     "resource": "guia-2",
-    "product": "Ficha 2: dos inferencias con sus fundamentos y datos pendientes.",
+    "product": "Ficha 2: una inferencia que explica cómo un lector entiende una condición.",
     "agenda": [
       [
         10,
@@ -367,15 +367,15 @@ export const sessions=[
       [
         25,
         "Trabajo y contraste",
-        "Añade a «Mi argumento» dos inferencias: palabras que las apoyan, conocimiento utilizado y conclusión. Indica qué dato falta comprobar; si descartas una candidata, explica por qué."
+        "Añade una inferencia a «Mi argumento»: qué concluyes, qué palabras te apoyan y qué conocimiento aportas. Señala qué falta comprobar."
       ],
       [
         10,
         "Cierre y continuidad",
-        "Comprueba que las inferencias estén guardadas en el mismo argumento. Ten a mano sus artículos y páginas para contrastarlas."
+        "Conserva la inferencia y el localizador para contrastarlos en la próxima clase."
       ]
     ],
-    "preparation": "Relee «Planificar y leer desde conocimientos» en «Teoría». Elige una o dos frases ya guardadas y prepara dos inferencias: qué concluyes y en qué te apoyas; pueden ser compatibles."
+    "preparation": "Relee «Planificar y leer desde conocimientos» en «Teoría». Elige una frase ya guardada y piensa qué podría entender un lector a partir de ella."
   },
   {
     "id": "s5-e2",
@@ -386,17 +386,17 @@ export const sessions=[
     "title": "Interpretaciones y datos faltantes",
     "question": "¿Qué datos respaldan cada inferencia?",
     "resource": "becas",
-    "product": "Ficha 2: inferencias contrastadas y síntesis de los artículos 1–3.",
+    "product": "Ficha 2: una explicación que sitúa la inferencia dentro del reglamento.",
     "agenda": [
       [
         10,
         "Retomar la pregunta",
-        "Lee tus dos inferencias. Señala qué información necesitas comprobar en cada una."
+        "Lee tu inferencia y señala qué información necesitas comprobar."
       ],
       [
         35,
         "Taller de evidencia",
-        "Busca en los artículos 1–3 qué apoya o limita cada inferencia. Distingue los datos disponibles de los pendientes; una omisión, por sí sola, no demuestra una intención."
+        "Busca en los artículos 1–3 qué apoya o limita tu inferencia. Distingue lo comprobado de lo pendiente."
       ],
       [
         10,
@@ -406,20 +406,20 @@ export const sessions=[
       [
         30,
         "Producción",
-        "En «Mi argumento», añade el contraste y una síntesis de los artículos 1–3. Conserva participantes y condiciones, explica qué seleccionaste u omitiste y distingue la norma de su cumplimiento."
+        "En «Mi argumento», escribe una síntesis de los artículos 1–3 en una frase. Conserva participantes y condiciones relevantes. Relaciónala con tu inferencia y explica qué seleccionaste u omitiste."
       ],
       [
         25,
         "Revisión entre lectores",
-        "Pide a un compañero comprobar una inferencia y la síntesis con el reglamento. Ajusta el mismo argumento según sus observaciones."
+        "Pide a un compañero comprobar la inferencia y su relación con el reglamento. Ajusta el mismo párrafo."
       ],
       [
         10,
         "Cierre",
-        "Comprueba que el contraste y la síntesis estén guardados en la ficha 2. Señala oralmente qué sigue pendiente."
+        "Guarda el argumento. Elige la frase que usarás para probar un cambio de presentación."
       ]
     ],
-    "preparation": "Trae las dos inferencias y sus localizadores. Revisa los artículos 1–3; consulta los artículos 8–9 (PDF 3) solo si necesitas comprobar esos requisitos."
+    "preparation": "Lee «Del significado local al global» en «Teoría». Retoma tu inferencia y su localizador. Revisa los artículos 1–3. Consulta los artículos 8–9 (PDF 3) si necesitas comprobar esos requisitos."
   },
   {
     "id": "s6-e1",
@@ -445,7 +445,7 @@ export const sessions=[
       [
         25,
         "Trabajo y contraste",
-        "Crea una alternativa visual con las mismas palabras, en papel o en otro archivo. Registra sus cambios como evidencia de elaboración propia y explica en «Mi argumento» qué quieres comparar con el original."
+        "Prepara una alternativa visual con las mismas palabras. Cambia el tamaño o la ubicación del fragmento. Conserva ambas versiones y anota qué esperas que el lector encuentre primero."
       ],
       [
         10,
@@ -453,7 +453,7 @@ export const sessions=[
         "Comprueba el guardado de la descripción y la explicación. Conserva ambas versiones para mostrarlas a otro lector."
       ]
     ],
-    "preparation": "Relee «La página también orienta» en «Teoría». Elige un tramo del reglamento y retoma tu argumento de la ficha 2."
+    "preparation": "Relee «La página también orienta» en «Teoría». Retoma la frase y la condición que explicaste en la ficha 2."
   },
   {
     "id": "s6-e2",
@@ -494,7 +494,7 @@ export const sessions=[
       [
         10,
         "Cierre",
-        "Revisa que ambos campos estén guardados. Si terminaste la comprobación, pulsa «Marcar revisión terminada»."
+        "Comprueba que la respuesta revisada y el motivo queden juntos en tu ficha."
       ]
     ],
     "preparation": "Trae el original y tu alternativa visual, con las mismas palabras. Retoma tu explicación sobre lo que podría cambiar al leerlas."
@@ -508,27 +508,27 @@ export const sessions=[
     "title": "Elegir el enfoque",
     "question": "¿Qué pregunta exige qué método?",
     "resource": "pardo",
-    "product": "Ficha 3: comparación de tres enfoques y elección provisional justificada.",
+    "product": "Ficha 3: elección provisional de un enfoque para explicar un fragmento.",
     "agenda": [
       [
         10,
         "Abrir el problema",
-        "Elige un fragmento de tu corpus cuya explicación necesite contexto. Escribe en «Pregunta de la ficha» qué quieres entender de él."
+        "Retoma un fragmento del expediente o del reglamento. Escribe en «Pregunta de la ficha» qué quieres explicar de él."
       ],
       [
         15,
         "Herramientas y lectura",
-        "Con Pardo y «Teoría», compara qué observarían los enfoques sociocognitivo, dialéctico-relacional e histórico-discursivo para responder a esa pregunta."
+        "Con Pardo y «Teoría», compara en clase qué observarían los tres enfoques en un ejemplo común. Usa la comparación para pensar qué método necesita tu pregunta."
       ],
       [
         25,
         "Trabajo y contraste",
-        "En «Mi argumento», elige un enfoque y justifica sus categorías citando la lectura utilizada. Indica qué observarás con ellas y qué datos contextuales necesitas comprobar."
+        "En «Mi argumento», elige un enfoque ya estudiado. Explica qué marca te ayuda a analizar y cita la lectura."
       ],
       [
         10,
         "Cierre y continuidad",
-        "Comprueba el guardado de tu elección provisional. Para la próxima clase, busca tres datos que ayuden a examinarla y conserva sus fuentes."
+        "Guarda tu elección. Para la próxima clase, busca un dato de contexto que ayude a comprobarla."
       ]
     ],
     "preparation": "Lee «Teoría» y Pardo: páginas impresas 43–47 / PDF 3–7. Retoma la pregunta y el corpus del hito 1."
@@ -542,17 +542,17 @@ export const sessions=[
     "title": "Construir un dossier contextual",
     "question": "¿Qué dato contextual resuelve nuestra dificultad?",
     "resource": "guia-3",
-    "product": "Ficha 3: tres datos contextuales y explicación de su utilidad.",
+    "product": "Ficha 3: un dato contextual comprobado y una explicación de su utilidad.",
     "agenda": [
       [
         10,
         "Retomar la pregunta",
-        "Lee tu pregunta y el enfoque elegido. Explica qué dificultad debería resolver cada dato de contexto."
+        "Lee tu pregunta y explica qué dificultad puede resolver el dato elegido."
       ],
       [
         35,
         "Taller de evidencia",
-        "Comprueba los tres datos con sus fuentes y localizadores. Reúne cada dato una sola vez en «Contexto documentado y su fuente» de la evidencia correspondiente; marca lo pendiente de comprobar."
+        "Comprueba el dato con su fuente y localizador. Anótalo en «Contexto documentado y su fuente» de la evidencia del fragmento. Marca lo pendiente de comprobar."
       ],
       [
         10,
@@ -562,20 +562,20 @@ export const sessions=[
       [
         30,
         "Producción",
-        "En «Mi argumento», explica qué aporta cada dato a la pregunta y al enfoque elegido. Distingue publicación, circulación y recepción según la evidencia disponible."
+        "En «Mi argumento», explica qué aclara ese dato. Añade otros datos si tu pregunta los necesita."
       ],
       [
         25,
         "Revisión entre lectores",
-        "Pide a un compañero localizar un dato y comprobar si ayuda a responder tu pregunta. Corrige la evidencia o su explicación si hace falta."
+        "Pide a un compañero localizar el dato y comprobar si ayuda a responder tu pregunta."
       ],
       [
         10,
         "Cierre",
-        "Comprueba que los datos y sus fuentes estén guardados en la ficha 3. Señala oralmente qué sigue pendiente."
+        "Guarda la evidencia y su explicación para la revisión de la ficha 3."
       ]
     ],
-    "preparation": "Busca tres datos de contexto con fuente y localizador para tu pregunta; pueden proceder del mismo documento. Si usas el reglamento, consulta su versión en la razón final (PDF 4); marca lo pendiente de comprobar."
+    "preparation": "Relee «Del texto a una explicación crítica» en «Teoría». Busca un dato de contexto con fuente y localizador. Si usas el reglamento, consulta su versión en la razón final (PDF 4)."
   },
   {
     "id": "s8-e1",
@@ -601,7 +601,7 @@ export const sessions=[
       [
         25,
         "Trabajo y contraste",
-        "Completa «Interpretación revisada» y «Qué cambió y por qué» en la ficha 3. En «Método y contexto documentado» del expediente, justifica el enfoque, las categorías y las fuentes que usarás."
+        "Completa «Interpretación revisada» y «Qué cambió y por qué». Lleva al expediente la decisión que ya justificaste y adáptala a su pregunta en «Método y contexto documentado»."
       ],
       [
         10,
@@ -650,7 +650,7 @@ export const sessions=[
       [
         10,
         "Entregar y conservar",
-        "Entrega por el canal indicado y conserva una copia aparte. Mantén la ficha 3 como preparación; guardar en la página no envía la evaluación."
+        "Entrega por el canal indicado. Usa la ficha 3 como preparación y conserva tu respuesta al caso nuevo por separado."
       ]
     ],
     "preparation": "Revisa la ficha 3 y el método del hito 2. El docente entregará un caso nuevo y precisará los materiales permitidos y el canal de entrega de la Sumativa 1."
@@ -698,7 +698,7 @@ export const sessions=[
     "title": "Dar voz y asumir responsabilidad",
     "question": "¿Quién se responsabiliza de esta proposición?",
     "resource": "marquez",
-    "product": "Ficha 4: mapa escrito de voces y una atribución para contrastar.",
+    "product": "Ficha 4: explicación de cómo las voces contribuyen a la posición de cada texto.",
     "agenda": [
       [
         10,
@@ -718,20 +718,20 @@ export const sessions=[
       [
         30,
         "Producción",
-        "En «Mi argumento», escribe una tabla: localizador, voz o perspectiva, marca, responsabilidad y adhesión o distancia. Explica una semejanza o diferencia entre los colectivos y elige una atribución para contrastar."
+        "En «Mi argumento», escribe un párrafo o lista. Señala quién sostiene cada idea, qué palabras lo muestran y cómo esa voz contribuye a la posición del texto o a la construcción del colectivo."
       ],
       [
         25,
         "Revisión entre lectores",
-        "Pide a un compañero comprobar una atribución con su localizador. Si propone otra, examina qué palabras la apoyan o permiten descartarla."
+        "Pide a un compañero comprobar una de tus atribuciones con el localizador."
       ],
       [
         10,
         "Cierre",
-        "Comprueba que el mapa y la atribución estén guardados en «Mi argumento». Mantén tus conclusiones referidas a estas intervenciones concretas."
+        "Guarda la explicación y elige una atribución para examinarla en la próxima clase."
       ]
     ],
-    "preparation": "Retoma los tres segmentos guardados en la ficha 4 y los mismos recortes de Menchú y Márquez."
+    "preparation": "Relee «Responsabilidad y punto de vista» y lee «Citar también encuadra» en «Teoría». Retoma los tres segmentos guardados en la ficha 4 y los mismos recortes de Menchú y Márquez."
   },
   {
     "id": "s10-e1",
@@ -752,20 +752,20 @@ export const sessions=[
       [
         15,
         "Herramientas y lectura",
-        "Examina cómo Márquez incorpora la idea atribuida a Davis y considera otra lectura posible. Si trabajas con otro corpus, usa una atribución de tus registros."
+        "Examina cómo Márquez usa la idea atribuida a Davis para defender una posición. Si trabajas con otro corpus, retoma una atribución de tus registros."
       ],
       [
         25,
         "Trabajo y contraste",
-        "Amplía «Mi argumento» con la interpretación y otra explicación posible. Justifica ambas con marcas del texto; si una carece de apoyo, explica por qué la descartas."
+        "Añade al mismo argumento cómo la atribución ayuda a sostener la posición del texto. Señala la marca que apoya tu lectura y considera otra si el fragmento la admite."
       ],
       [
         10,
         "Cierre y continuidad",
-        "Comprueba que el contraste esté guardado en el mismo argumento. Conserva los localizadores para revisar la atribución."
+        "Guarda la explicación y conserva el localizador para revisar la atribución."
       ]
     ],
-    "preparation": "Relee «Citar también encuadra» y «Hablar desde una experiencia y en nombre de otros» en «Teoría». Retoma tu mapa y una atribución de la ficha 4."
+    "preparation": "Relee «Citar también encuadra» y «Hablar desde una experiencia y en nombre de otros» en «Teoría». Retoma tu explicación y una atribución de la ficha 4."
   },
   {
     "id": "s10-e2",
@@ -781,7 +781,7 @@ export const sessions=[
       [
         10,
         "Retomar la pregunta",
-        "Lee la atribución y la alternativa que examinaste. Decide qué marca necesitas comprobar para sostenerlas."
+        "Lee la atribución elegida y señala la marca que necesitas comprobar."
       ],
       [
         35,
@@ -806,10 +806,10 @@ export const sessions=[
       [
         10,
         "Cierre",
-        "Comprueba el guardado de la revisión. Si terminaste, pulsa «Marcar revisión terminada»."
+        "Comprueba que la atribución revisada y su motivo queden juntos en tu ficha."
       ]
     ],
-    "preparation": "Retoma el argumento, los tres segmentos y la alternativa examinada en la ficha 4. Compararás la atribución con el contraste Menchú–Márquez."
+    "preparation": "Retoma el argumento y los segmentos de la ficha 4. Elige una atribución que quieras comprobar en el contraste Menchú–Márquez."
   },
   {
     "id": "s11-e1",
@@ -835,7 +835,7 @@ export const sessions=[
       [
         25,
         "Trabajo y contraste",
-        "Guarda los fragmentos en «Evidencias» y explícalos en «Mi argumento». Indica qué documento vinculado compararás o qué adaptación propia prepararás para otro destinatario."
+        "Retoma el localizador del tramo original o guarda el fragmento si es nuevo. En «Mi argumento», señala qué hace la pieza y a quién se dirige. Elige qué adaptarás o qué documento vinculado compararás."
       ],
       [
         10,
@@ -843,7 +843,7 @@ export const sessions=[
         "Comprueba el guardado de la primera pieza y deja elegida la segunda pieza o la adaptación que podrás preparar en la próxima clase."
       ]
     ],
-    "preparation": "Lee en «Teoría» las distinciones género/secuencia y modo/medio/soporte. Retoma un documento conocido y elige una ruta: compararlo con otro vinculado o crear una adaptación propia."
+    "preparation": "Lee en «Teoría» las distinciones género/secuencia y modo/medio/soporte. Retoma la condición que analizaste en la ficha 2 para adaptarla, o un documento que puedas comparar con otro vinculado."
   },
   {
     "id": "s11-e2",
@@ -864,7 +864,7 @@ export const sessions=[
       [
         35,
         "Taller de evidencia",
-        "Si recuperas un documento vinculado, comprueba la fuente de su vínculo. Si adaptas un tramo, reformúlalo para el destinatario elegido y rotúlalo «Adaptación didáctica propia». Guarda la segunda pieza con «Añadir evidencia» y comienza a contrastar los cambios de función, información y soporte."
+        "Si adaptas, redacta un aviso que explique la condición y la acción esperada del nuevo lector. Si comparas documentos, comprueba la fuente de su vínculo. Conserva la segunda pieza en tu ficha."
       ],
       [
         10,
@@ -874,12 +874,12 @@ export const sessions=[
       [
         30,
         "Producción",
-        "En «Mi argumento», explica qué cambia y qué se conserva. Apoya el vínculo con su fuente o identifica la transformación como elaboración propia."
+        "En «Mi argumento», explica qué cambia para el lector y qué se conserva. Cita la fuente del vínculo o rotula tu versión «Adaptación didáctica propia»."
       ],
       [
         25,
         "Revisión entre lectores",
-        "Pide a un compañero comprobar un fragmento y una diferencia entre las piezas. Ajusta la evidencia o la explicación si hace falta."
+        "Pide a un compañero que lea un tramo y diga qué entiende o haría. Usa su respuesta para revisar la comparación."
       ],
       [
         10,
@@ -887,7 +887,7 @@ export const sessions=[
         "Comprueba que la comparación esté guardada en la ficha 5. Conserva ambas piezas y sus referencias."
       ]
     ],
-    "preparation": "Sigue una sola ruta: trae dos documentos y la fuente de su vínculo, o elige un tramo del reglamento y el destinatario de tu adaptación. Podrás elaborar esta última en clase."
+    "preparation": "Retoma la condición del reglamento que adaptarás para primer semestre o trae los documentos vinculados y la fuente de su relación. Puedes redactar la adaptación en clase."
   },
   {
     "id": "s12-e1",
@@ -913,7 +913,7 @@ export const sessions=[
       [
         25,
         "Trabajo y contraste",
-        "En «Desarrollo del análisis», redacta dos o tres párrafos con observación, categoría, contexto y respuesta a la pregunta. Usa los dos segmentos y añade una objeción y un límite."
+        "En «Desarrollo del análisis», usa dos segmentos ya guardados y redacta dos o tres párrafos que respondan a la pregunta del expediente. Explica qué aportan, examina una objeción y señala un límite."
       ],
       [
         10,
@@ -952,7 +952,7 @@ export const sessions=[
       [
         30,
         "Producción",
-        "Revisa la ficha 5 en «Interpretación revisada». En «Qué cambió y por qué», identifica a tu compañero, las evidencias u objeciones que aportó cada persona y qué ajustaste o mantuviste. Ajusta también «Desarrollo del análisis» del expediente con las objeciones pertinentes a ese informe."
+        "Escribe tu respuesta final en «Interpretación revisada». Anota una vez, en «Qué cambió y por qué», con quién trabajaste, qué aportó cada persona y qué ajustaste. Si el comentario afecta al informe, corrige allí solo la afirmación pertinente."
       ],
       [
         25,
@@ -976,7 +976,7 @@ export const sessions=[
     "title": "Organizaciones mixtas",
     "question": "¿Cómo se articulan las secuencias?",
     "resource": "guia-6",
-    "product": "Ficha 6: lista o tabla de segmentos y secuencias justificadas.",
+    "product": "Ficha 6: explicación de cómo se conectan dos tramos de un texto conocido.",
     "agenda": [
       [
         10,
@@ -991,15 +991,15 @@ export const sessions=[
       [
         25,
         "Trabajo y contraste",
-        "Guarda los segmentos con sus localizadores. En «Mi argumento», organiza una lista o tabla con secuencia, marcas que la muestran y función en el texto."
+        "Retoma los localizadores y guarda solo los segmentos que falten. En «Mi argumento», escribe qué hace cada tramo y qué palabras muestran su función."
       ],
       [
         10,
         "Cierre y continuidad",
-        "Comprueba el guardado de los registros y la tabla. Elige un paso entre segmentos para explicarlo en la siguiente clase."
+        "Guarda la explicación y elige una transición para examinarla en la próxima clase."
       ]
     ],
-    "preparation": "Lee «Reconstruir organizaciones mixtas» y «Explicar, justificar y evaluar» en «Teoría». Retoma un texto conocido que combine secuencias y sus localizadores."
+    "preparation": "Lee «Reconstruir organizaciones mixtas» en «Teoría». Retoma un texto conocido que combine secuencias y sus localizadores."
   },
   {
     "id": "s13-e2",
@@ -1035,15 +1035,15 @@ export const sessions=[
       [
         25,
         "Revisión entre lectores",
-        "Pide a un compañero comprobar una clasificación y el paso entre segmentos. Ajusta la tabla o la explicación con las marcas que encuentren."
+        "Pide a un compañero comprobar una marca y explicar el paso entre los dos tramos."
       ],
       [
         10,
         "Cierre",
-        "Comprueba que la tabla y la explicación estén guardadas en la ficha 6. Conserva los mismos localizadores."
+        "Guarda lo que aclaraste sobre esa transición. Conserva los mismos localizadores."
       ]
     ],
-    "preparation": "Retoma la tabla de la ficha 6 y el mismo texto. Consulta los considerandos y artículos pertinentes del reglamento para comparar sus secuencias."
+    "preparation": "Lee «Explicar, justificar y evaluar» en «Teoría». Retoma la explicación de la ficha 6 y el mismo texto. Consulta los considerandos y artículos pertinentes del reglamento para comparar sus secuencias."
   },
   {
     "id": "s14-e1",
@@ -1108,7 +1108,7 @@ export const sessions=[
       [
         30,
         "Producción",
-        "Revisa la ficha 6 en «Interpretación revisada» y «Qué cambió y por qué». En «Desarrollo del análisis» del expediente, incorpora la objeción pertinente y precisa el alcance de la conclusión."
+        "Revisa la ficha 6 en «Interpretación revisada» y «Qué cambió y por qué». Usa el hallazgo y la objeción pertinentes para ajustar «Desarrollo del análisis» del expediente."
       ],
       [
         25,
@@ -1118,10 +1118,10 @@ export const sessions=[
       [
         10,
         "Cierre",
-        "Comprueba el guardado de la ficha 6 y del expediente. Si terminaste la revisión de la ficha, márcala como terminada."
+        "Comprueba que la revisión quede en la ficha 6 y que el expediente incluya el hallazgo que responde a su pregunta."
       ]
     ],
-    "preparation": "Lee Bolívar: páginas impresas 96–102 y 105–107 / PDF 4–10 y 13–15. Trae tu objeción y un intercambio ya registrado; si usas una representación didáctica, identifícala como tal."
+    "preparation": "Lee «El diálogo hace algo con la evaluación» en «Teoría» y Bolívar: páginas impresas 96–102 y 105–107 / PDF 4–10 y 13–15. Trae tu objeción y un intercambio ya registrado, como el que tuviste al probar el aviso. Si usas una representación didáctica, identifícala como tal."
   },
   {
     "id": "s15-e1",
@@ -1152,10 +1152,10 @@ export const sessions=[
       [
         10,
         "Cierre y continuidad",
-        "Comprueba el guardado. Antes de la próxima clase, termina «Actividad de enseñanza» para una prueba de 5 minutos y «Guion de defensa»."
+        "Para la próxima clase, transforma un fragmento ya analizado en «Actividad de enseñanza». Pide al lector que localice una marca y explique qué hace. Usa esa misma evidencia en el «Guion de defensa» si responde a tu pregunta."
       ]
     ],
-    "preparation": "Trae el borrador del expediente, sus fuentes y una objeción a una afirmación. Prepara también el borrador de «Guion de defensa» y confirma tu turno."
+    "preparation": "Trae el borrador del expediente, sus fuentes y una objeción. Retoma una evidencia que puedas explicar en la defensa y usar para enseñar. Confirma tu turno."
   },
   {
     "id": "s15-e2",
@@ -1176,7 +1176,7 @@ export const sessions=[
       [
         25,
         "Probar la microconsigna en tríos",
-        "Los tríos trabajan a la vez. Dedica 4 minutos a organizar el trío. Rota tres veces: 5 minutos para realizar cada microconsigna y 2 para comentar su claridad y sus evidencias."
+        "Los tríos trabajan a la vez. Dedica 4 minutos a organizar el trío. Rota tres veces: 5 minutos para guiar al lector con el fragmento y 2 para comentar qué entendió y qué ayudaría a aclarar la consigna."
       ],
       [
         10,
@@ -1191,7 +1191,7 @@ export const sessions=[
       [
         8,
         "Ajustar la consigna probada",
-        "En «Actividad de enseñanza», identifica quién hizo de autor, lector y observador en el turno de tu consigna y qué aportó cada persona. Anota la dificultad observada y el ajuste realizado. Limita la conclusión a esta prueba."
+        "En «Actividad de enseñanza», anota quién hizo cada papel, qué aportó y qué ajustaste después de observar cómo se interpretó el fragmento."
       ],
       [
         8,
@@ -1199,7 +1199,7 @@ export const sessions=[
         "Comprueba el guardado y el próximo turno. Ajusta el informe con las objeciones recibidas y prepara la entrega por el canal indicado."
       ]
     ],
-    "preparation": "Trae la microconsigna de 5 minutos guardada en «Actividad de enseñanza»: problema, segmento, 2–3 pasos, resultado y criterio de revisión. Ten listo «Guion de defensa» y comprueba si estás entre los primeros 16 turnos.",
+    "preparation": "Trae la microconsigna de 5 minutos que preparaste en «Actividad de enseñanza», en tus hojas o en el cuaderno web. Usa un fragmento del expediente y una pregunta que el lector pueda responder con él. Ten listo el «Guion de defensa» y confirma tu turno.",
     "defensePlan": {
       "slots": 16,
       "slotMinutes": 4
@@ -1247,7 +1247,7 @@ export const sessions=[
     "title": "Completar las defensas y cerrar el expediente",
     "question": "¿Qué sabemos ahora y qué sigue abierto?",
     "resource": "bolivar",
-    "product": "Últimas 15 defensas. Expediente ajustado, autoevaluación, PDF de entrega y respaldo JSON.",
+    "product": "Últimas 15 defensas. Expediente ajustado y listo para entregar.",
     "agenda": [
       [
         5,
@@ -1271,13 +1271,13 @@ export const sessions=[
       ],
       [
         15,
-        "Comprobar la vista previa y los anexos",
-        "Pulsa «Preparar PDF de entrega» y comprueba portada, apartados, referencias y anexos. Guarda el PDF desde la impresión del navegador; si falla, conserva el JSON o texto para prepararlo después."
+        "Comprobar las hojas o la vista previa y los anexos",
+        "Si trabajaste en hojas, ordénalas y revisa referencias y anexos. Si usaste el cuaderno web, abre la vista previa para comprobar el PDF."
       ],
       [
         10,
         "Cerrar y conservar",
-        "Descarga el respaldo JSON y entrega el PDF por el canal indicado. Confirma con el docente cualquier entrega pendiente."
+        "Entrega en el formato indicado por el docente. Si la entrega es digital y trabajaste en papel, puedes enviar fotos legibles o un escaneo. Si usaste el cuaderno web, puedes guardar un respaldo."
       ]
     ],
     "preparation": "Trae el expediente completo, sus referencias y anexos elegidos. Confirma si estás entre los últimos 15 turnos y prepara el guion; consulta de Bolívar solo el pasaje ya utilizado.",

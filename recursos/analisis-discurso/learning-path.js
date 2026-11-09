@@ -6,17 +6,17 @@ export const weeklyPath=[
  {title:'Oralidad: transcripción, voz y cuerpo',steps:['analizar','argumentar'],advance:'Observar la charla, iniciar su transcripción y añadir voz y cuerpo al mismo episodio de la ficha 1.'},
  {title:'Oralidad: argumentar y revisar',steps:['argumentar','revisar'],advance:'Completar y revisar la misma ficha 1 con una interpretación alternativa.'},
  {title:'Escritura: acciones y representación',steps:['argumentar','analizar'],advance:'Comenzar la ficha 2 con el reglamento y delimitar pregunta y corpus del expediente.',milestone:1},
- {title:'Escritura: lectores e inferencias',steps:['analizar','argumentar'],advance:'Añadir a la ficha 2 inferencias de lectura, sus fundamentos y los datos que faltan.'},
+ {title:'Escritura: lectores e inferencias',steps:['analizar','argumentar'],advance:'Explicar una inferencia y situarla en el conjunto del reglamento.'},
  {title:'Escritura: composición y reformulación',steps:['analizar','revisar'],advance:'Contrastar una alternativa visual que conserva las palabras y revisar la misma ficha 2.'},
- {title:'Contexto: fuentes y elección del método',steps:['argumentar','analizar'],advance:'Proponer el enfoque de la ficha 3 y documentar el contexto para contrastar esa elección.'},
+ {title:'Contexto: fuentes y elección del método',steps:['argumentar','analizar'],advance:'Elegir un enfoque pertinente y comprobar un dato que ayude a responder la pregunta.'},
  {title:'Contexto: límites y transferencia',steps:['revisar','assessment'],advance:'Revisar la ficha 3, precisar el método del expediente y aplicar el enfoque a un caso acotado.',milestone:2},
  {title:'Voces: personas y responsabilidad',steps:['analizar','argumentar'],advance:'Comenzar la ficha 4 con tres segmentos en total del contraste Menchú–Márquez; identificar participantes, voces y responsabilidad. Si ya la empezaste, continúa tus registros.'},
- {title:'Voces: perspectivas y atribuciones',steps:['argumentar','revisar'],advance:'Revisar la misma ficha 4 mediante una atribución contrastada y una alternativa examinada.'},
+ {title:'Voces: perspectivas y atribuciones',steps:['argumentar','revisar'],advance:'Explicar cómo se usa una voz y comprobar la atribución en la misma ficha.'},
  {title:'Géneros: acciones y circulación',steps:['analizar','argumentar'],advance:'En la clase 1, registrar la primera pieza y elegir la segunda. En la clase 2, recuperar el documento vinculado o preparar la adaptación, registrar la segunda pieza y comparar ambas.'},
  {title:'Géneros: contraste y argumento parcial',steps:['project','revisar'],advance:'Revisar la ficha 5 e integrar un análisis parcial en el expediente.',milestone:3},
  {title:'Organización textual: secuencias',steps:['analizar','argumentar'],advance:'Comenzar la ficha 6: localizar secuencias y explicar cómo se articulan.'},
  {title:'Argumentación: inferencias y objeciones',steps:['argumentar','revisar'],advance:'Revisar la ficha 6 y utilizar sus evidencias en el borrador del expediente.'},
- {title:'Expediente: revisión, enseñanza y primeras defensas',steps:['project','project'],advance:'Revisar el informe, probar la microconsigna del hito 4 en tríos y comenzar las defensas individuales según el turno asignado.',milestone:4},
+ {title:'Expediente: revisión, enseñanza y primeras defensas',steps:['project','project'],advance:'Revisar el informe y convertir un fragmento ya analizado en la microconsigna que se prueba en tríos. Comenzar las defensas según el turno asignado.',milestone:4},
  {title:'Expediente: defensas y cierre',steps:['project','project'],advance:'Completar los turnos de defensa y ajustar la versión final del mismo expediente; no se redacta todo el informe en clase.',milestone:4}
 ];
 export const projectFieldForWeek=week=>({4:'question',8:'method',12:'argument',15:'revision',16:'defense'})[week];
