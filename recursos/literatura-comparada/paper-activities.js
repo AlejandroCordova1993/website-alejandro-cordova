@@ -25,7 +25,7 @@ export const paperActivities={
   purpose:'Comparar cómo se presentan voces y destinatarios sin borrar las diferencias históricas, lingüísticas y de mediación.',
   materials:['Guamán Poma: lámina 961 [975] e inicio de 962 [976]; Rivera Cusicanqui, pp. 19–26.','Chikangana: Takina/Poema, p. 85, dentro del estudio asignado, pp. 84–87.','Kowii: fragmento sobre rimanakuy, p. 8, leído en clase como apoyo.'],
   steps:['En Guamán Poma, describe una voz o figura y a quién se dirige. Anota un detalle verbal o visual y su folio; contrástalo con una afirmación de Rivera.','En Chikangana, localiza una marca de voz o destinatario. Relaciónala con Guamán Poma mediante el mismo criterio y explica una diferencia de época, género o mediación.','Redacta la comparación con un detalle de cada objeto, una objeción y tu respuesta. Identifica qué sostiene las relaciones de poder que afirmas y qué no puedes concluir sobre las lenguas.'],
-  product:'Ficha 3 individual de 250–350 palabras sobre Guamán Poma y Chikangana. Rivera y Kowii apoyan el análisis; no añaden otros objetos obligatorios a la ficha.'
+  product:'Ficha 3 individual de 250–350 palabras sobre Guamán Poma y Chikangana. En la sesión 6·2 elaboras el borrador; revisa y entrega la versión final en papel antes de la siguiente semana. Rivera y Kowii apoyan el análisis; no añaden otros objetos obligatorios a la ficha.'
  },
  '2-cartografia':{
   purpose:'Mostrar cómo circulan las obras mediante personas, instituciones y medios, distinguiendo relaciones documentadas y propuestas.',
@@ -34,9 +34,9 @@ export const paperActivities={
   product:'Una cartografía grupal con mapa, comentario final y fuentes. Se inicia en la semana 7 y se revisa en la 13; tiene una sola entrega y calificación.'
  },
  '2-sumativa':{
-  purpose:'Sostener una comparación sobre representación y proponer una condición de circulación vinculada a un problema documentado.',
+  purpose:'Sostener una comparación sobre representación y proponer una condición de circulación, distinguiendo pruebas disponibles e hipótesis.',
   materials:['Dos objetos ya trabajados en la unidad 2.','Tus pasajes, fuentes y notas del curso; no se añade una lectura completa nueva.'],
-  steps:['Elige los dos objetos y una pregunta sobre cómo representan una voz, experiencia o relación de poder. Selecciona un pasaje de cada uno y una diferencia histórica o de mediación.','Prepara un esquema: respuesta, pasajes que la sostienen, diferencia y conclusión. Añade una dificultad documentada de circulación y una acción posible con un agente y un límite.','Redacta el análisis en clase. Distingue lo que muestran las fuentes, tu interpretación y lo que propones; revisa las referencias antes de entregar.'],
+  steps:['Elige los dos objetos y una pregunta sobre cómo representan una voz, experiencia o relación de poder. Prepara un esquema con tu respuesta, un pasaje de cada objeto y una diferencia histórica o de mediación.','Propón una mejora de circulación con un agente, una acción y un límite. Identifica la dificultad que la justifica y su fuente. Si los materiales no prueban esa dificultad, preséntala como hipótesis e indica qué documento permitiría comprobarla; basta nombrarlo, no debes conseguirlo para esta entrega.','Redacta el análisis en clase. Distingue lo que muestran las fuentes, tu interpretación y lo que propones. Una exclusión narrada no prueba por sí sola una barrera de circulación de la obra. Revisa las referencias antes de entregar.'],
   product:'Análisis comparativo individual de 600–800 palabras, redactado en clase. El esquema prepara esta entrega; no sustituye el ensayo final.'
  },
  '3-hermeneutica':{
@@ -49,13 +49,13 @@ export const paperActivities={
   purpose:'Comparar valoraciones documentadas y distinguirlas de tu reacción personal y de las operaciones de lectura propuestas por un texto.',
   materials:['Dossier de recepción: recortes identificados de los prólogos de Avellaneda y Cervantes.','Caso Tess del manual, pp. 120–122, examinado en clase; no se requiere leer la novela.'],
   steps:['En cada prólogo, identifica autor, fecha, medio y un pasaje con su localizador. Explica qué valora o cuestiona su autor.','Contrasta las posiciones: qué expectativas históricas expresan y qué permiten afirmar. Distingue esos testimonios del lector implícito y de tu respuesta personal, como explica Teoría.','Redacta la ficha con ambos testimonios y sus referencias. Delimita la conclusión: dos prólogos no representan la respuesta de todo el público.'],
-  product:'Ficha 4 individual de 250–350 palabras. Los registros de la primera sesión preparan la única ficha de recepción.'
+  product:'Ficha 4 individual de 250–350 palabras. Los registros de la primera sesión preparan una sola ficha. En la sesión 10·2 elaboras el borrador; revisa y entrega la versión final en papel antes de la siguiente semana.'
  },
  '3-traduccion':{
   purpose:'Explicar cómo distintas decisiones de traducción modifican la escena, el ritmo o la posición del observador.',
   materials:['Baudelaire, Le Port, y versiones completas de Casal y Díez-Canedo, identificadas en el taller.','Tabla de cotejo y manual, pp. 133–136, hasta antes de Transducción.'],
   steps:['Lee los tres testimonios y anota qué escena y observador imaginas antes de examinar las diferencias.','Elige tres diferencias del cotejo. Copia las palabras pertinentes de cada versión, identifica sus localizadores y explica el posible efecto dentro del pasaje.','Redacta 400–500 palabras con las tres diferencias y una duda concreta para contrastar el francés con apoyo del docente. Explica qué cambió en tu primera impresión y delimita las afirmaciones sobre intención del traductor.'],
-  product:'Comentario individual de traducción de 400–500 palabras: tres diferencias, sus efectos y una duda fundamentada. La preparación y la revisión pertenecen al mismo trabajo.'
+  product:'Comentario individual de traducción de 400–500 palabras: tres diferencias, sus efectos y una duda fundamentada. En la sesión 11·2 elaboras el borrador; revisa y entrega la versión final en papel antes de la siguiente semana. La preparación y la revisión pertenecen al mismo trabajo.'
  },
  '3-metodos':{
   purpose:'Comprobar cómo cambia una interpretación cuando se modifica la pregunta, la operación de análisis y la evidencia utilizada.',
@@ -73,7 +73,7 @@ export const paperActivities={
   purpose:'Explicar cómo cambian el sentido y la valoración de unas palabras cuando se atribuyen a otro autor y contexto.',
   materials:['Los dos recortes del capítulo IX del Quijote, con sus localizadores.','Borges, Pierre Menard, autor del Quijote, y Genette, capítulo I, pp. 9–17, hasta antes del numeral II.'],
   steps:['En Cervantes, identifica quién presenta, atribuye y traduce el manuscrito dentro de la ficción. En Borges, distingue la cita del Quijote y el comentario del narrador. Anota los pasajes y sus fuentes.','Explica qué cambia con la nueva atribución y una diferencia de contexto. Sitúa el diálogo entre los ámbitos español y argentino sin deducir una influencia histórica inversa.','Redacta la comparación con evidencia de ambos textos, una lectura rival y tu respuesta. Delimita la conclusión y revisa las referencias.'],
-  product:'Ficha 5 individual de 250–350 palabras. Los pasajes y la revisión preparan la misma entrega.'
+  product:'Ficha 5 individual de 250–350 palabras. En la sesión 14·2 elaboras el borrador; revisa y entrega la versión final en papel antes de la siguiente semana. Los pasajes y la revisión preparan la misma entrega.'
  },
  '4-temas':{
   purpose:'Explicar cómo un problema temático se transforma según la forma narrativa y el contexto de cada obra.',
@@ -145,7 +145,7 @@ export const paperSessionGuides={
  },
  '6/2':{
   steps:['Recupera los dos objetos y comprueba sus pasajes, atribuciones y localizadores.','Redacta 250–350 palabras sobre voz, destinatario y mediación. Explica una diferencia y justifica cualquier relación de poder que afirmes.','Incluye una lectura rival y tu respuesta. Revisa los límites históricos y lingüísticos antes de entregar.'],
-  result:'Entrega la ficha 3 en papel. Conserva sus pasajes y notas para el trabajo posterior de circulación.'
+  result:'Hoy elaboras el borrador de la ficha 3. Revisa y entrega una sola versión final en papel antes de la siguiente semana. Conserva sus pasajes y notas para el trabajo posterior de circulación.'
  },
  '7/1':{
   steps:['Recupera los fragmentos de Martínez y Ruiz Agila/Esparza. Identifica obras, personas, instituciones y medios que puedan relacionarse.','Anota qué vínculo documenta cada fuente. Distingue ese dato de la interpretación literaria y de las conexiones que solo propones investigar.','En grupo, selecciona las relaciones que incluirán en el mapa y conserva sus fuentes.'],
@@ -156,11 +156,11 @@ export const paperSessionGuides={
   result:'Conserven mapa, comentario inicial y fuentes del grupo. Revisarán esta misma cartografía en la semana 13; no es otra entrega.'
  },
  '8/1':{
-  steps:['Elige dos objetos ya trabajados y una pregunta sobre representación. Reúne un pasaje de cada uno y una diferencia histórica o de mediación.','Esboza la respuesta con ambos pasajes. Añade una dificultad documentada de circulación, un agente y una acción posible con su límite.','Distingue en el esquema lo que documentan las fuentes y lo que propones.'],
+  steps:['Elige dos objetos ya trabajados y una pregunta sobre representación. Reúne un pasaje de cada uno y una diferencia histórica o de mediación.','Esboza la respuesta con ambos pasajes. Propón una mejora de circulación con un agente, una acción y su límite.','Explica qué dificultad atiende tu propuesta y qué fuente la documenta. Si faltan pruebas, preséntala como hipótesis e identifica el documento necesario, sin tener que conseguirlo para esta entrega.'],
   result:'Conserva el esquema y las fuentes. Preparan el análisis de 600–800 palabras que redactarás en clase en la siguiente sesión.'
  },
  '8/2':{
-  steps:['Recupera el esquema y los materiales del curso autorizados para el trabajo en aula.','Redacta 600–800 palabras con ambos objetos: respuesta, pasajes analizados, diferencia y condición de circulación propuesta.','Revisa atribuciones, localizadores y límites. Explica la dificultad, el agente y la acción de tu propuesta.'],
+  steps:['Recupera el esquema y los materiales del curso autorizados para el trabajo en aula.','Redacta 600–800 palabras con ambos objetos: respuesta, pasajes analizados, diferencia y condición de circulación propuesta.','Revisa atribuciones, localizadores y límites. Explica la dificultad, el agente y la acción de tu propuesta. Si la dificultad es una hipótesis, indícalo y nombra qué documento permitiría comprobarla; no necesitas obtenerlo.'],
   result:'Entrega el análisis individual en papel. Es la sumativa de esta unidad y se mantiene separado del ensayo final.'
  },
  '9/1':{
@@ -177,7 +177,7 @@ export const paperSessionGuides={
  },
  '10/2':{
   steps:['Recupera los registros y confirma a quién pertenece cada valoración.','Redacta 250–350 palabras que comparen ambos testimonios, sus criterios y lo que permiten concluir.','Distingue horizonte histórico, lector implícito y respuesta personal. Revisa las referencias y evita atribuir las dos posiciones a todo el público.'],
-  result:'Entrega una sola ficha 4 de recepción en papel. Conserva los registros preparatorios y sus fuentes.'
+  result:'Hoy elaboras el borrador de la ficha 4. Revisa y entrega una sola versión final en papel antes de la siguiente semana. Conserva los registros preparatorios y sus fuentes.'
  },
  '11/1':{
   steps:['Lee el original de Le Port y las versiones de Casal y Díez-Canedo. Anota qué escena y observador imaginas.','Elige tres diferencias de la tabla. Copia las palabras y versiones con su localizador y explica un posible efecto en el pasaje.','Señala una duda concreta sobre el francés para contrastarla con apoyo del docente.'],
@@ -185,7 +185,7 @@ export const paperSessionGuides={
  },
  '11/2':{
   steps:['Revisa tus tres diferencias en los testimonios y relaciónalas con el conjunto del poema.','Redacta 400–500 palabras: localizadores, efectos en escena, ritmo u observador y una duda fundamentada sobre el francés.','Explica qué cambia en tu primera impresión y evita atribuir intenciones al traductor sin documentación.'],
-  result:'Revisa y entrega un solo comentario de traducción en papel. Las observaciones iniciales se conservan en tu cuaderno.'
+  result:'Hoy elaboras el borrador del comentario. Revisa y entrega una sola versión final en papel antes de la siguiente semana. Conserva las observaciones iniciales en tu cuaderno.'
  },
  '12/1':{
   steps:['Elige un pasaje ya leído y dos enfoques de la consigna. Escribe un párrafo por enfoque: pregunta, operación, evidencia, contexto, conclusión y límite.','Compara sus resultados y revisa la afirmación simulada de Teoría. Si falta una fuente, delimita lo que puedes concluir.','Recupera lo útil para organizar el esquema del ensayo en Proyecto.'],
@@ -209,7 +209,7 @@ export const paperSessionGuides={
  },
  '14/2':{
   steps:['Recupera los pasajes y redacta 250–350 palabras sobre el cambio de atribución y contexto.','Relaciona evidencia de Cervantes y Borges y sitúa el diálogo entre los ámbitos español y argentino sin usar la nacionalidad como explicación automática.','Discute una lectura rival, responde con un pasaje y revisa fuentes y límites.'],
-  result:'Entrega una sola ficha 5 en papel. Conserva las notas y las decisiones de revisión para el ensayo.'
+  result:'Hoy elaboras el borrador de la ficha 5. Revisa y entrega una sola versión final en papel antes de la siguiente semana. Conserva las notas y las decisiones de revisión para el ensayo.'
  },
  '15/1':{
   steps:['Compara pasajes de Palacio y Machado: organiza tema, situación o motivo, procedimiento, contexto y variación. Explica una diferencia con evidencia.','Después contrasta la pieza de Esparza/Ruiz Agila con una secuencia de Historia de un oso: palabra, imagen, sonido y tiempo en la construcción de ausencia.','Anota los localizadores, las diferencias históricas y un ajuste que puedas aprovechar para el ensayo digital.'],
@@ -233,23 +233,23 @@ const sessionAdvances={
  '5/1':'En tu cuaderno, describe una voz o figura de Guamán Poma, su destinatario y un detalle con folio. Contrástalo con una afirmación de Rivera y explica qué observas y qué interpretas. Estas notas preparan la ficha 3; Chikangana se incorpora en la semana 6.',
  '5/2':'Relee el manuscrito y Rivera. Señala qué detalle sostiene o dificulta la explicación y precisa tu interpretación de voz, autoridad y destinatario. Anota su límite en las mismas páginas del cuaderno. Continúas preparando la comparación, sin una entrega nueva.',
  '6/1':'Añade al cuaderno un detalle de voz o destinatario de Chikangana con su localizador. Compáralo con Guamán Poma y explica una diferencia histórica o de mediación. Kowii apoya la discusión; no añade un tercer objeto. Conserva estos registros para la ficha 3.',
- '6/2':'Redacta a mano la ficha 3 de 250–350 palabras con ambos objetos, pasajes localizados, una diferencia y una objeción respondida. Justifica las relaciones de poder y revisa los límites lingüísticos e históricos. Entrega una sola ficha y conserva las notas.',
+ '6/2':'Elabora a mano el borrador de la ficha 3 de 250–350 palabras: ambos objetos, pasajes localizados, una diferencia y una objeción respondida. Justifica las relaciones de poder y los límites lingüísticos e históricos. Revisa y entrega la versión final antes de la siguiente semana; conserva las notas.',
  '7/1':'En grupo, reúne en papel agentes, obras, medios y fuentes de los materiales trabajados. Explica qué vínculos están documentados y cuáles proponen investigar. Estos registros servirán para dibujar la cartografía en la sesión 2 y revisarla en la semana 13.',
  '7/2':'Dibujen la primera cartografía con flechas rotuladas y fuentes. Distingan vínculos comprobados y propuestos. Escriban un comentario sobre la iniciativa colectiva, sus temas y una desigualdad documentada. Conserven mapa y comentario en papel: revisarán este mismo trabajo en la semana 13.',
- '8/1':'Prepara a mano el esquema del análisis: pregunta sobre dos objetos, respuesta, pasajes y una diferencia. Añade una dificultad documentada de circulación, un agente y una acción posible con su límite. Conserva las fuentes; redactarás las 600–800 palabras en la siguiente sesión.',
- '8/2':'Redacta en clase el análisis de 600–800 palabras usando tu esquema y los materiales autorizados. Relaciona ambos objetos y explica una diferencia y la condición de circulación que propones. Revisa las fuentes y entrega el texto en papel; es distinto del ensayo final.',
+ '8/1':'Prepara a mano el esquema: pregunta sobre dos objetos, respuesta, pasajes y diferencia. Propón una mejora de circulación con un agente, una acción y un límite. Distingue dificultad documentada e hipótesis; si faltan pruebas, identifica el documento necesario sin tener que conseguirlo. Conserva el esquema para redactar las 600–800 palabras en la siguiente sesión.',
+ '8/2':'Redacta en clase el análisis de 600–800 palabras con tu esquema y los materiales autorizados. Relaciona ambos objetos, explica una diferencia y la mejora de circulación que propones. Distingue pruebas e hipótesis; para estas últimas basta identificar el documento que permitiría comprobarlas. Revisa las fuentes y entrega el texto en papel; es distinto del ensayo final.',
  '9/1':'Anota tu primera interpretación de Carrington y Bierce. Localiza un pasaje de cada uno y explica qué confirma o dificulta esa lectura. Compara sus procedimientos y una diferencia histórica. Conserva las notas en el cuaderno para revisar la interpretación; no preparas una nueva ficha evaluada.',
  '9/2':'Con tus pasajes, escribe a mano una interpretación revisada de Carrington y Bierce. Discute una lectura rival y explica por qué cambias, precisas o mantienes la tuya. Conserva una diferencia histórica. Esta práctica prepara recepción y el ensayo, sin entrega evaluada adicional.',
  '10/1':'En tu cuaderno, registra autor, fecha, medio, pasaje y valoración de cada prólogo. Compara las posiciones de Avellaneda y Cervantes; distingue testimonio histórico, lector implícito y reacción personal. Examina Tess en clase como relato mediado. Conserva estos registros para la ficha 4.',
- '10/2':'Redacta a mano la ficha 4 de 250–350 palabras con los dos testimonios, sus valoraciones y sus referencias. Distingue horizonte histórico, lector implícito y respuesta personal; delimita lo que permiten concluir. Revisa y entrega una sola ficha de recepción.',
+ '10/2':'Elabora a mano el borrador de la ficha 4 de 250–350 palabras con los dos testimonios, sus valoraciones y referencias. Distingue horizonte histórico, lector implícito y respuesta personal; delimita la conclusión. Revisa y entrega una sola versión final antes de la siguiente semana.',
  '11/1':'Anota en el cuaderno tu primera impresión del poema. Elige tres diferencias entre las versiones: palabras, localizadores y posibles efectos en escena, ritmo u observador. Añade una duda concreta para contrastar el francés. Estos registros preparan el comentario de traducción.',
- '11/2':'Redacta a mano el comentario de 400–500 palabras con las tres diferencias, sus efectos y una duda fundamentada sobre el francés. Explica qué cambia en tu impresión inicial y delimita lo que afirmas del traductor. Revisa y entrega un solo comentario.',
+ '11/2':'Elabora a mano el borrador del comentario de 400–500 palabras con tres diferencias, sus efectos y una duda fundamentada sobre el francés. Explica qué cambia en tu impresión inicial y delimita lo que afirmas del traductor. Revisa y entrega una sola versión final antes de la siguiente semana.',
  '12/1':'Aplica dos enfoques a un pasaje conocido. Escribe un párrafo por enfoque con pregunta, operación, evidencia, contexto, conclusión y límite; compara sus resultados. Revisa también el ejemplo de Teoría. Conserva la matriz en papel y recupera lo útil para el esquema digital del ensayo.',
  '12/2':'Si tu grupo tiene turno, conduzcan 12 minutos de comparación y 8 de discusión. Anoten en el guion una respuesta o dificultad y un ajuste justificado. Si presentan en la semana 15, participen como público. Cada grupo realiza una sola microclase.',
  '13/1':'Recuperen el mapa y comentario de la semana 7. Con Goethe y el caso América Latina–India, examinen una relación mediante dos criterios de escala, como lengua y edición. Anoten qué mediador y fuente la sostienen y qué precisarán. Continúan la misma cartografía en papel.',
  '13/2':'Revisen las relaciones y sus fuentes en el mismo mapa. Precisen mediadores, medios, escalas y límites. Redacten el comentario final con una desigualdad documentada y los cambios realizados. Entreguen una cartografía grupal con mapa, comentario y fuentes; conserven la primera versión.',
  '14/1':'En el cuaderno, identifica los mediadores ficticios de Cervantes y distingue cita y comentario en Borges. Anota pasajes y localizadores. Explica qué cambia con la atribución a otro autor y contexto, conservando una diferencia histórica. Preparas la ficha 5.',
- '14/2':'Redacta a mano la ficha 5 de 250–350 palabras con evidencia de Cervantes y Borges, diferencia contextual y una lectura rival respondida. Explica el cambio de atribución y delimita la relación. Revisa las referencias antes de entregar la misma ficha.',
+ '14/2':'Elabora a mano el borrador de la ficha 5 de 250–350 palabras con evidencia de Cervantes y Borges, diferencia contextual y una lectura rival respondida. Explica el cambio de atribución y delimita la relación. Revisa las referencias y entrega una sola versión final antes de la siguiente semana.',
  '15/1':'Compara en papel tema, situación, procedimiento, contexto y variación en Palacio y Machado. Después contrasta memoria y ausencia en la crónica de Esparza/Ruiz Agila y el cortometraje, con pasaje y secuencia localizados. Conserva las diferencias y señala un ajuste para el ensayo digital. Son prácticas, sin una sexta ficha.',
  '15/2':'Los grupos pendientes presentan 12 minutos de comparación y 8 de discusión. Conserven en el guion una respuesta y un ajuste justificado; quienes ya presentaron participan como público. Después revisa una afirmación y sus evidencias en el ensayo digital. Nadie repite la microclase.'
 };

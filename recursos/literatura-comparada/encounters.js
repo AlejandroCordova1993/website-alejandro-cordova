@@ -75,7 +75,7 @@ export const encounters=[
  ['Guía la lectura de pp. 84–87 y las versiones de Takina/Poema. Dentro del mismo tiempo de lectura, lee el apartado de Kowii sobre rimanakuy.','Examina voz, destinatario y disposición; usa la pregunta por escucha y diálogo como apoyo y declara el alcance de tu lectura del castellano.'],
  ['Confronta los procedimientos con la crónica colonial.','Construye una matriz con diferencias históricas, de género y reconocimiento.'],
  ['Delimita la Ficha 3 y los registros de circulación.','Selecciona evidencia y un mediador que puedas documentar.'])),
- meeting(6,'miercoles','Comparar sin homogeneizar las voces','Argumentar diferencias entre la crónica y el poema.','Ficha 3 · borrador de 250–350 palabras, para cerrar antes de la siguiente semana.',regular(
+ meeting(6,'miercoles','Comparar sin homogeneizar las voces','Argumentar diferencias entre la crónica y el poema.','Ficha 3 · borrador de 250–350 palabras; revisión y entrega de la versión final antes de la siguiente semana.',regular(
  ['Recupera límites lingüísticos y preguntas de la primera sesión.','Comprueba atribuciones y localizadores de ambos objetos.'],
  ['Explica cómo sostener una relación de poder sin reducir las obras a identidades.','Pon a prueba una afirmación general con un pasaje.'],
  ['Acompaña la escritura de la Ficha 3.','Desarrolla una comparación de voz y destinatario con una diferencia relevante.'],
@@ -122,7 +122,7 @@ export const encounters=[
  ['Guía los dos prólogos de recepción del dossier.','Registra autor, fecha, medio y criterio de valoración de cada documento.'],
  ['Acompaña el caso Tess, pp. 120–122 del manual, leído en aula.','Distingue relato mediado y observación directa; contrasta su alcance con los prólogos.'],
  ['Delimita la Ficha 4 y la evidencia pertinente.','Conserva una afirmación textual y otra histórica, con fuentes separadas.'])),
- meeting(10,'miercoles','Argumentar una recepción situada','Sostener una comparación de documentos y declarar su alcance.','Ficha 4 · borrador de 250–350 palabras, para cerrar antes de la siguiente semana.',regular(
+ meeting(10,'miercoles','Argumentar una recepción situada','Sostener una comparación de documentos y declarar su alcance.','Ficha 4 · borrador de 250–350 palabras; revisión y entrega de la versión final antes de la siguiente semana.',regular(
  ['Recupera las fuentes y sus localizadores.','Comprueba autorías y fechas de los dos documentos.'],
  ['Modela cómo una polémica documenta posiciones interesadas.','Reconoce qué generalización requiere más testimonios.'],
  ['Acompaña la escritura de la Ficha 4.','Distingue lector implícito, respuesta propia y horizonte histórico.'],
@@ -134,7 +134,7 @@ export const encounters=[
  ['Guía el cotejo de Baudelaire, Casal y Díez-Canedo.','Examina tres lugares: léxico, temporalidad, espacio o ritmo.'],
  ['Discute efectos y posibles explicaciones con evidencia.','Inicia el comentario y formula una duda que no pueda resolverse solo por semejanza.'],
  ['Delimita el uso del manual y la extensión final.','Conserva versiones y localizadores para continuar la segunda sesión.'])),
- meeting(11,'miercoles','Comentario de traducción y revisión','Transformar el cotejo en una explicación de decisiones y efectos.','Comentario · borrador de 400–500 palabras, para cerrar antes de la siguiente semana.',regular(
+ meeting(11,'miercoles','Comentario de traducción y revisión','Transformar el cotejo en una explicación de decisiones y efectos.','Comentario · borrador de 400–500 palabras; revisión y entrega de la versión final antes de la siguiente semana.',regular(
  ['Recupera diferencias y dudas del cotejo.','Comprueba en los testimonios los tres lugares que elegiste entre los cuatro del taller.'],
  ['Discute variante, decisión y error sin atribuir intenciones sin fuentes.','Formula qué información permitiría decidir entre explicaciones.'],
  ['Acompaña la redacción y la consulta del manual, pp. 133–136.','Desarrolla tres diferencias y sus efectos, con traductores y versiones identificados.'],
@@ -169,7 +169,7 @@ export const encounters=[
  ['Guía los dos pasajes del capítulo IX del Quijote y su cita en Borges.','Reconstruye mediadores y localiza palabras, atribución y comentario.'],
  ['Discute cambio de contexto y escala España–Argentina.','Construye una explicación que no convierta relectura retrospectiva en influencia histórica inversa.'],
  ['Delimita la Ficha 5.','Selecciona evidencia y una objeción para escribir la segunda sesión.'])),
- meeting(14,'miercoles','Argumentar el diálogo entre textos','Explicar una relación textual y sus transformaciones de contexto.','Ficha 5 · borrador de 250–350 palabras, para cerrar antes de la siguiente semana.',regular(
+ meeting(14,'miercoles','Argumentar el diálogo entre textos','Explicar una relación textual y sus transformaciones de contexto.','Ficha 5 · borrador de 250–350 palabras; revisión y entrega de la versión final antes de la siguiente semana.',regular(
  ['Recupera localizadores y categorías de la primera sesión.','Comprueba qué relación demuestra cada cita.'],
  ['Modela la articulación de forma, atribución y contexto.','Distingue qué añade el comentario del narrador a las mismas palabras.'],
  ['Acompaña la escritura de la Ficha 5.','Desarrolla el contraste Cervantes–Borges con un límite explícito.'],
@@ -208,15 +208,15 @@ export const autonomousPlan={
  3:a([70,'Lee los fundamentos sobre Bloom y Bourdieu y las listas A/B del dossier.'],[20,'Lee la explicación de Guillory y consulta los registros C/D del dossier.'],[30,'Conserven las primeras obras y razones del equipo. Recuperen lecturas conocidas y detalles para justificar las elecciones; definan institución, público y propósito. No se exigen ocho libros nuevos completos en estas dos semanas.']),
  4:a([40,'Lee tipos de canon y repertorio; recupera tus notas y revisa los pasajes de las obras elegidas.'],[35,'Revisen la consigna y el ejemplo parcial de la sesión 4·2. Preparen reseñas, justificaciones y tres conceptos aplicados; organicen la comparación en un espacio propio.'],[45,'Conserven el producto presentado y sus fuentes. Recupera individualmente las decisiones útiles para tu ensayo, que es otro trabajo.']),
  5:a([75,'Examina los dos testimonios de Guamán Poma y lee Rivera, pp. 19–26.'],[20,'Vuelve al detalle que permite poner a prueba una afirmación de Rivera.'],[25,'Consolida el mapa de voces y su límite.']),
- 6:a([60,'Lee el estudio, pp. 84–87, que ya incluye Takina/Poema y ambas versiones.'],[30,'Relee el contraste con Guamán Poma y prepara tus localizadores.'],[30,'Revisa y cierra la Ficha 3 antes de la siguiente semana.']),
+ 6:a([60,'Lee el estudio, pp. 84–87, que ya incluye Takina/Poema y ambas versiones.'],[30,'Relee el contraste con Guamán Poma y prepara tus localizadores.'],[30,'Revisa y entrega la versión final de la ficha 3 en papel antes de la siguiente semana.']),
  7:a([60,'Lee la presentación y bloques delimitados de Martínez y la pieza de Esparza, pp. 41–43.'],[30,'Comprueba con el grupo dos registros de circulación; no leas los libros completos de sus catálogos.'],[30,'Conserva la cartografía inicial y explica sus límites.']),
  8:a([45,'Elige dos objetos ya trabajados y recupera sus pasajes; no hay lectura nueva.'],[30,'Ordena las notas y localizadores para la sumativa en aula.'],[45,'Revisa el procedimiento utilizado y organiza tus materiales para las siguientes relecturas.']),
  9:a([80,'Durante la primera lectura de Carrington y Bierce registra tus expectativas antes del desenlace y los indicios que las ponen a prueba. Después lee el dossier de hermenéutica.'],[15,'Relee el indicio elegido y una explicación rival.'],[25,'Consolida la hipótesis revisada y justifica qué cambias, precisas o mantienes.']),
- 10:a([60,'Lee el dossier de recepción y sus dos documentos; el caso Tess se guía en aula.'],[25,'Revisa qué evidencia necesita cada afirmación sobre el lector.'],[35,'Revisa y cierra la Ficha 4 antes de la siguiente semana.']),
- 11:a([40,'Lee el poema de Baudelaire en francés y sus dos traducciones, junto con el manual, pp. 133–136 antes de Transducción.'],[40,'Desarrolla tres diferencias con sus efectos y revisa las versiones.'],[40,'Cierra el comentario de 400–500 palabras antes de la siguiente semana.']),
+ 10:a([60,'Lee el dossier de recepción y sus dos documentos; el caso Tess se guía en aula.'],[25,'Revisa qué evidencia necesita cada afirmación sobre el lector.'],[35,'Revisa y entrega la versión final de la ficha 4 en papel antes de la siguiente semana.']),
+ 11:a([40,'Lee el poema de Baudelaire en francés y sus dos traducciones, junto con el manual, pp. 133–136 antes de Transducción.'],[40,'Desarrolla tres diferencias con sus efectos y revisa las versiones.'],[40,'Revisa y entrega la versión final del comentario de 400–500 palabras en papel antes de la siguiente semana.']),
  12:a([40,'Recupera pasajes para dos enfoques y la pregunta del proyecto; no hay lectura nueva.'],[40,'Prepara o revisa la microclase según tu turno y su consigna.'],[40,'Consolida el esquema del ensayo y las decisiones de método.']),
  13:a([40,'Lee la selección española de Goethe e inicia el cuento de Borges.'],[20,'Recupera fuentes y vínculos de la cartografía; Ortiz se trabaja en aula.'],[60,'Cierra la revisión de escalas y continúa Borges. La cartografía se califica una sola vez.']),
- 14:a([70,'Termina Borges; lee los pasajes de Cervantes y Genette, capítulo I, pp. 9–17.'],[20,'Revisa citas, categorías y localizadores para la ficha.'],[30,'Revisa y cierra la Ficha 5 antes de la siguiente semana.']),
+ 14:a([70,'Termina Borges; lee los pasajes de Cervantes y Genette, capítulo I, pp. 9–17.'],[20,'Revisa citas, categorías y localizadores para la ficha.'],[30,'Revisa y entrega la versión final de la ficha 5 en papel antes de la siguiente semana.']),
  15:a([40,'Recupera Palacio, Machado y la crónica; selecciona materiales para el borrador, sin lectura nueva.'],[40,'Desarrolla el borrador y prepara la microclase solo si corresponde a tu turno.'],[40,'Revisa tesis, evidencia y objeción; prepara la versión que defenderás.']),
  16:a([70,'Revisa ensayo, referencias y consigna; organiza la defensa con pasajes ya trabajados.'],[35,'Completa atribuciones, autoevaluación y revisiones para el cierre.'],[15,'Conserva la entrega y el respaldo del cuaderno; no hay corpus nuevo.'])
 };

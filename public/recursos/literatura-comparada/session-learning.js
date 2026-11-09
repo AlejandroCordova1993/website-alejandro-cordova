@@ -1,8 +1,8 @@
 // Orientaciones docentes para las mismas actividades y claves del cuaderno.
 // Definiciones de trabajo, no citas ni sustitutos de las fuentes del curso.
-import {paperSessionGuides} from './paper-activities.js?v=lc-06229345ff3d';
-import {activityBriefFor} from './activity-briefs.js?v=lc-06229345ff3d';
-import {weekTwoConcepts,weekTwoPrompts,weekTwoFieldHints} from './week-two-learning.js?v=lc-06229345ff3d';
+import {paperSessionGuides} from './paper-activities.js?v=lc-9139ca4f39cf';
+import {activityBriefFor} from './activity-briefs.js?v=lc-9139ca4f39cf';
+import {weekTwoConcepts,weekTwoPrompts,weekTwoFieldHints} from './week-two-learning.js?v=lc-9139ca4f39cf';
 const concepts={
  procedimiento:['Procedimiento narrativo','Una manera concreta de construir el relato: ordenar hechos, repetir una expresión, ocultar información o presentar una suposición como certeza. Identificarlo exige describir qué hace la escritura en un pasaje.'],
  indicio:['Observación e indicio textual','Observar es señalar palabras, una disposición o un detalle verificable del texto. Ese detalle funciona como indicio cuando explicas qué interpretación permite fundamentar; una cita aislada todavía no constituye una explicación.'],
@@ -37,7 +37,7 @@ const concepts={
  red:['Red e iniciativa colectiva','Una red relaciona agentes y acciones mediante vínculos identificables. Documentar una iniciativa colectiva exige participantes, actividad compartida y fuentes; reunir obras con un tema parecido o publicadas en internet no demuestra por sí solo esa organización.'],
  asimetria:['Asimetría','Diferencia en la capacidad de seleccionar, editar, traducir, distribuir o ser escuchado dentro de un circuito. Explica qué decisión controla cada agente y con qué fuente lo sabes; el tamaño de un nodo no lo demuestra.'],
  circulacion:['Circulación documentada','Recorrido comprobable de una obra entre agentes, medios y públicos. Publicación, traducción, disponibilidad y lectura efectiva son hechos distintos. Registra qué acredita tu fuente y evita convertir acceso potencial en recepción demostrada.'],
- condicion:['Condición de circulación futura','Propuesta razonada sobre qué tendría que cambiar para ampliar o transformar un intercambio. Parte de una dificultad documentada, identifica un agente y explica la acción y su límite; no es una predicción de lo que ocurrirá.'],
+ condicion:['Condición de circulación futura','Propuesta razonada para ampliar o transformar un intercambio: dificultad, agente, acción y límite. Distingue una dificultad documentada de una hipótesis. Si faltan pruebas, identifica qué documento permitiría comprobarla; la propuesta depende de esa comprobación. No es una predicción.'],
  riesgos:['Apropiación, homogeneización y visibilidad condicionada','Como preguntas de trabajo: apropiación, uso y recontextualización de una palabra ajena; homogeneización, borrado de diferencias relevantes; visibilidad condicionada, reconocimiento sujeto a exigencias de mediadores. Examina quién decide y qué fuente lo muestra, sin atribuir el mismo alcance a todo intercambio.'],
  presupuesto:['Presupuesto de lectura','Anticipación desde la que comprendes: expectativas sobre lo verosímil, la justicia o el sentido de un desenlace. Hazla explícita y vuelve al pasaje que la confirma o dificulta; una reacción personal no describe a todos los lectores.'],
  hermeneutica:['Revisión hermenéutica','Con Gadamer, comprender implica una situación histórica y un movimiento entre partes y conjunto. Releer un indicio puede transformar la pregunta desde la que leías. Justifica qué cambias o mantienes, sin reducir el proceso a descubrir una sorpresa.'],
@@ -132,7 +132,7 @@ const sessions={
  example:'Decir que ambos objetos presentan una voz indígena no explica todavía cómo lo hacen. Relaciona un detalle de voz o destinatario con una mediación, y muestra una diferencia que limite esa formulación general.',
  steps:['Consulta los pasajes guardados y confirma la atribución y el localizador de cada uno.','Escribe 250–350 palabras que comparen voz, destinatario y mediación con evidencia de ambos objetos.','Si nombras una relación de poder, identifica ante qué autoridad o circuito se establece y qué detalle la sostiene.','Formula una lectura rival y registra qué precisas o mantienes. Comprueba la diferencia histórica antes de cerrar la ficha.'],
  result:'Borrador de la ficha 3 y decisiones de revisión con evidencias de los dos objetos.',
- delivery:'Revisa y cierra la ficha antes de la siguiente semana. Conserva los pasajes para la cartografía; conserva la preparación en tu cuaderno.',
+ delivery:'Hoy elaboras el borrador. Revisa y entrega una sola ficha final en papel antes de la siguiente semana. Conserva los pasajes y la preparación en tu cuaderno.',
  check:'Tu argumento debe conservar atribuciones, diferencias de género y época, y el alcance de lo que puedes afirmar sobre cada lengua.'},
  '7/1':{key:'2-cartografia',stage:'preparacion',concepts:['testimonio','paratexto','cartografia','asimetria'],
  example:'El encabezado y la nota de la pieza permiten identificar a Esparza y a Ruiz Agila. Para trazar además un vínculo editorial o colectivo, registra el crédito o el estudio que lo documenta; la interpretación del efecto literario cumple otra función.',
@@ -147,13 +147,13 @@ const sessions={
  delivery:'Conserva esta versión para revisarla en la semana 13. No se pide una segunda cartografía independiente ni una calificación adicional.',
  check:'Deben distinguirse relaciones documentadas y propuestas, y cada afirmación de poder debe apoyarse en una intervención reconocible.',fieldLabel:'Mi comentario de la primera versión de la cartografía'},
  '8/1':{key:'2-sumativa',stage:'preparacion',concepts:['representacion','condicion','riesgos','argumento'],
- example:'Ejemplo simulado: un archivo registra un texto, pero no ofrece reproducción ni datos de consulta. Una condición futura podría ser que la institución publique una copia autorizada y explique cómo acceder a ella. La fuente acredita la barrera; la publicación es una propuesta, no un hecho ni una prueba de lectura futura.',
- steps:['Elige dos objetos ya trabajados y formula una pregunta sobre cómo se representa una voz, experiencia o relación de poder.','Selecciona evidencia de cada objeto y una diferencia histórica o de mediación. No añadas lecturas completas nuevas.','En tu cuaderno organiza pregunta o tesis, evidencia de A, evidencia de B, diferencia y conclusión.','Añade una condición de circulación futura: dificultad documentada, agente, acción posible y límite. Explica qué parte es propuesta tuya.'],
+ example:'En Martínez, la exclusión escolar forma parte del testimonio; no demuestra que el libro esté excluido de bibliotecas. Para examinar esa posible barrera necesitarías catálogos o registros de adquisición. Si la comprobaras, podrías proponer que una biblioteca incorporase la obra. En este ejercicio basta identificar esos documentos: no debes conseguirlos ni afirmar que la barrera ya existe.',
+ steps:['Elige dos objetos ya trabajados y formula una pregunta sobre cómo se representa una voz, experiencia o relación de poder.','Selecciona evidencia de cada objeto y una diferencia histórica o de mediación. No añadas lecturas completas nuevas.','En tu cuaderno organiza pregunta o tesis, evidencia de A, evidencia de B, diferencia y conclusión.','Propón una mejora de circulación: dificultad, agente, acción y límite. Si los materiales no acreditan la dificultad, preséntala como hipótesis e indica qué documento la comprobaría, sin tener que conseguirlo.'],
  result:'Esquema de la comparación individual con evidencias y una condición futura razonada.',
  delivery:'Hoy preparas el análisis de 600–800 palabras. La redacción en aula corresponde a la sesión 2; no se pide entregar ahora ese texto completo.',
- check:'La condición propuesta debe responder a un problema del caso y no apoyarse solo en deseos generales sobre difusión.',fieldLabel:'Mi esquema del análisis comparativo'},
+ check:'Vincula la propuesta al caso. Aclara si la dificultad está documentada o es una hipótesis pendiente de comprobación; no confundas exclusión narrada y barrera de circulación.',fieldLabel:'Mi esquema del análisis comparativo'},
  '8/2':{key:'2-sumativa',stage:'redaccion',concepts:['argumento','dato','condicion'],
- example:'Una conclusión puede distinguir dos planos: lo que los pasajes permiten sostener sobre representación y lo que propones cambiar en la circulación. La evidencia del primero debe fundamentar la pertinencia de la propuesta, sin convertirla en un hecho ocurrido.',
+ example:'Distingue lo que los pasajes muestran sobre representación de lo que propones para la circulación. Una exclusión narrada no demuestra una barrera editorial. Si esta es hipotética, presenta la acción de modo condicional e indica qué documento permitiría comprobar el problema; no debes obtenerlo para esta entrega.',
  steps:['Recupera el esquema, los textos y las notas autorizados del curso para el trabajo en aula.','Redacta 600–800 palabras que respondan a la pregunta común con evidencia de los dos objetos.','Explica el problema de representación, una diferencia pertinente y la condición de circulación futura con su agente y límite.','Revisa atribuciones, fuentes y alcance. En el registro de revisión, anota la decisión más importante antes de entregar por el canal docente.'],
  result:'Análisis comparativo individual en aula de 600–800 palabras, con condición futura fundamentada.',
  delivery:'Esta es la sesión de redacción de la sumativa. Redacta a mano y entrega el texto como indique el docente.',
@@ -180,7 +180,7 @@ const sessions={
  example:'Puedes contrastar dos criterios de legitimidad presentes en los prólogos y delimitar a quién pertenecen. Para afirmar un cambio del horizonte de un público más amplio necesitarías otros documentos; reconocerlo fortalece el alcance de la ficha.',
  steps:['Recupera el cuadro de documentos y selecciona un pasaje de cada prólogo.','Redacta 250–350 palabras que expliquen el contraste de criterios, con autor, fecha, medio y localizadores.','Distingue el testimonio histórico, la operación del lector implícito y tu respuesta; usa el pasaje de apoyo solo cuando ayude a esa distinción.','Explica el límite de las fuentes y registra la revisión. Relee la ficha antes de entregarla.'],
  result:'Borrador de la ficha 4 con comparación documental y límites de las conclusiones.',
- delivery:'Revisa y cierra la ficha antes de la siguiente semana. Conserva la preparación en tu cuaderno; entrega una sola ficha escrita a mano.',
+ delivery:'Hoy elaboras el borrador. Revisa y entrega una sola ficha final en papel antes de la siguiente semana. Conserva la preparación en tu cuaderno.',
  check:'Cada conclusión debe corresponder al tipo de evidencia utilizado; no atribuyas las posiciones de los prólogos a todos los lectores.',fieldLabel:'Mi argumento de la ficha 4'},
  '11/1':{key:'3-traduccion',stage:'preparacion',concepts:['cotejo','efecto','version'],
  example:'«No tiene» y «ya no tiene» permiten estudiar cómo se explicita una relación temporal. Relee el cansancio y las acciones del poema para sostener el efecto propuesto; ese cotejo local no demuestra por sí solo la intención del traductor.',
@@ -192,7 +192,7 @@ const sessions={
  example:'Una diferencia puede destacar una pérdida de deseo en una frase, mientras otras partes del poema también construyen esa temporalidad. Matizar el efecto permite comparar las versiones sin convertir cada elección distinta en un error.',
  steps:['Recupera la observación inicial y comprueba las tres diferencias elegidas en los testimonios del taller.','Desarrolla el comentario de 400–500 palabras: organiza cada diferencia con su localizador, relación contextual y efecto.','Añade una duda para el cotejo del francés y delimita cualquier afirmación sobre intención o historia de la traducción.','Revisa qué cambió en la escena o el observador que imaginabas inicialmente y conserva la versión que entregarás.'],
  result:'Comentario de traducción de 400–500 palabras con tres diferencias, efectos y una duda fundamentada.',
- delivery:'Completa el comentario en el trabajo autónomo de la semana y entrégalo por el canal docente. Conserva las diferencias preparatorias en tu cuaderno.',
+ delivery:'Hoy elaboras el borrador. Revisa y entrega un solo comentario final en papel antes de la siguiente semana. Conserva las diferencias preparatorias en tu cuaderno.',
  check:'Cada efecto debe estar apoyado en el segmento y el conjunto; si afirmas un error, identifica la relación lingüística que no se sostiene.'},
  '12/1':{key:'3-metodos',stage:'redaccion',concepts:['metodo','presupuesto','objecion','tesis'],
  example:'El episodio del reloj de Bierce permite estudiar organización temporal o revisar una anticipación de lectura. Investigar cómo lo valoró un público histórico exigiría un testimonio de recepción. Cambian la pregunta y la prueba, no solo el nombre del enfoque.',
@@ -228,7 +228,7 @@ const sessions={
  example:'La igualdad de palabras permite localizar una cita; explicar lo que añade otra atribución requiere analizar el comentario y el contexto. Distingue esa operación de la transmisión histórica de una edición, que necesita otros documentos.',
  steps:['Recupera la cita, el comentario y los mediadores registrados en la sesión anterior.','Redacta 250–350 palabras sobre el cambio de atribución y contexto, relacionando evidencias de Cervantes y Borges.','Sitúa el diálogo entre los ámbitos español y argentino sin convertir nacionalidad en explicación automática ni en prueba suficiente de circulación.','Formula una lectura rival, responde con un pasaje y registra qué precisas o mantienes antes de cerrar la ficha.'],
  result:'Borrador de la ficha 5 con análisis de atribución, diferencia contextual y límite de la relación.',
- delivery:'Revisa y cierra la ficha antes de la siguiente semana. Conserva los pasajes y las decisiones de revisión en tu cuaderno; entrega una sola ficha escrita a mano.',
+ delivery:'Hoy elaboras el borrador. Revisa y entrega una sola ficha final en papel antes de la siguiente semana. Conserva los pasajes y las decisiones de revisión en tu cuaderno.',
  check:'La conclusión debe explicar qué transforma la lectura posterior y qué afirmación sobre contacto o circulación queda sin demostrar.'},
  '15/1':{key:'4-temas',stage:'practica',concepts:['tema','variacion','deshumanizacion','intermedialidad'],
  example:'Dos relatos pueden presentar violencia mediante procedimientos diferentes: conjetura, distribución de información o justificación. La matriz debe explicar esa variación con pasajes. En crónica y cine, estudia después cómo palabra, imagen y sonido construyen ausencia.',

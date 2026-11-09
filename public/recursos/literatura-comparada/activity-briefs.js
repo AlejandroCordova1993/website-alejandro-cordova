@@ -1,6 +1,6 @@
 // Brief instructions for the remaining course. Existing note keys and products
 // stay in class-flow/session-learning; weeks 1 and 2 keep their current wording.
-import {paperSessionGuides} from './paper-activities.js?v=lc-06229345ff3d';
+import {paperSessionGuides} from './paper-activities.js?v=lc-9139ca4f39cf';
 const briefs={
  "3/1":{...paperSessionGuides["3/1"],hint:"Formen el equipo e inicien sus dos selecciones."},
  "3/2":{...paperSessionGuides["3/2"],hint:"Distingue la disponibilidad del texto de las ayudas para aprender a interpretarlo."},
@@ -83,12 +83,12 @@ const briefs={
    'Elige dos objetos ya trabajados y formula una pregunta sobre la representación de una voz, experiencia o relación de poder.',
    'Selecciona un pasaje de cada objeto, con fuente y localizador, y una diferencia histórica o de mediación.',
    'Esboza el argumento: pregunta o tesis, evidencia de ambos objetos, diferencia y conclusión.',
-   'Propón una condición para mejorar su circulación: dificultad documentada, agente que podría intervenir, acción y límite. Identifica esta parte como propuesta tuya.'
+   'Propón una mejora de circulación: dificultad, agente, acción y límite. Si la dificultad no está documentada, preséntala como hipótesis e identifica el documento que permitiría comprobarla, sin tener que conseguirlo para esta entrega.'
   ],
   result:'Esquema para el análisis individual de 600–800 palabras. Hoy preparas el texto; lo redactarás en aula durante la sesión 2.',
   label:'Mi esquema del análisis comparativo',
   hint:'Organiza pregunta, evidencias, diferencia y conclusión. Añade la propuesta de circulación con su problema, agente, acción y límite.',
-  check:'La propuesta debe responder a una dificultad del caso; no basta desear que la obra tenga mayor difusión.'
+  check:'Relaciona la propuesta con el caso. Distingue la dificultad documentada de la hipótesis; una exclusión narrada no demuestra por sí sola una barrera de circulación.'
  },
  '8/2':{
   steps:[
