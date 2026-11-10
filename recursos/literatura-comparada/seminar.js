@@ -1,6 +1,6 @@
-import {courseModules,taskNotes,optionalComparison} from './curriculum.js?v=lc-9139ca4f39cf';
-import {resourceById} from './corpus.js?v=lc-9139ca4f39cf';
-import {keyNames,fieldLabel,archivedKeys} from './state.js?v=lc-9139ca4f39cf';
+import {courseModules,taskNotes,optionalComparison} from './curriculum.js?v=lc-f2309849447a';
+import {resourceById} from './corpus.js?v=lc-f2309849447a';
+import {keyNames,fieldLabel,archivedKeys} from './state.js?v=lc-f2309849447a';
 
 export const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function collectEvidence(state){
