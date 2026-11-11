@@ -63,7 +63,7 @@ export const weeks=[
   {
     "week": 13,
     "title": "Literatura mundial y mapas literarios",
-    "description": "Docencia: origen de Weltliteratur en Goethe; definir escalas continental, nacional y local, con ejemplos y tensiones. Práctica: caso Sur–Sur de Ortiz Wallner, pp. 132–135 en aula; revisar dos mapas del corpus según lugar de producción y circulación documentada. Autónomo: Goethe, 1–2 páginas, e inicio de Borges. Evidencia: cartografía revisada que justifica las escalas y sus límites."
+    "description": "Docencia: origen de Weltliteratur en Goethe; definir escalas continental, nacional y local, con ejemplos y tensiones. Práctica: caso Sur–Sur de Ortiz Wallner, pp. 132–135 en aula; revisar la misma cartografía iniciada en la semana 7 mediante dos criterios de escala, atendiendo al lugar de producción y a la circulación documentada. Autónomo: Goethe, 1–2 páginas, e inicio de Borges. Evidencia: cartografía revisada que justifica las escalas y sus límites."
   },
   {
     "week": 14,
