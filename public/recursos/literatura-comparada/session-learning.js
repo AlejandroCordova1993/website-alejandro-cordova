@@ -1,8 +1,8 @@
 // Orientaciones docentes para las mismas actividades y claves del cuaderno.
 // Definiciones de trabajo, no citas ni sustitutos de las fuentes del curso.
-import {paperSessionGuides} from './paper-activities.js?v=lc-f2309849447a';
-import {activityBriefFor} from './activity-briefs.js?v=lc-f2309849447a';
-import {weekTwoConcepts,weekTwoPrompts,weekTwoFieldHints} from './week-two-learning.js?v=lc-f2309849447a';
+import {paperSessionGuides} from './paper-activities.js?v=lc-e841a813dbd5';
+import {activityBriefFor} from './activity-briefs.js?v=lc-e841a813dbd5';
+import {weekTwoConcepts,weekTwoPrompts,weekTwoFieldHints} from './week-two-learning.js?v=lc-e841a813dbd5';
 const concepts={
  procedimiento:['Procedimiento narrativo','Una manera concreta de construir el relato: ordenar hechos, repetir una expresión, ocultar información o presentar una suposición como certeza. Identificarlo exige describir qué hace la escritura en un pasaje.'],
  indicio:['Observación e indicio textual','Observar es señalar palabras, una disposición o un detalle verificable del texto. Ese detalle funciona como indicio cuando explicas qué interpretación permite fundamentar; una cita aislada todavía no constituye una explicación.'],
@@ -166,7 +166,7 @@ const sessions={
  check:'La revisión debe relacionar pasajes y situación de lectura, sin reducir la hermenéutica a sorpresa ni generalizar tu reacción a todos los lectores.'},
  '9/2':{key:'3-hermeneutica',stage:'revision',concepts:['hermeneutica','objecion','argumento'],
  example:'Puedes mantener una interpretación después de distinguir mejor una voz o una secuencia temporal. Para mostrar revisión, explica el indicio que puso a prueba tu hipótesis y la razón por la que la sostienes o corriges.',
- steps:['Recupera la hipótesis y los pasajes guardados en la sesión 1.','En el argumento explica qué presupuesto reconoces, qué pasaje lo pone a prueba y cómo cambia, se precisa o se mantiene la lectura.','Contrasta Carrington y Bierce y formula una lectura rival apoyada en un detalle.','Completa hipótesis revisada y razón de la revisión; conserva una diferencia histórica y el límite de tu respuesta personal.'],
+ steps:['Recupera la hipótesis y los pasajes guardados en la sesión 1.','En el argumento explica qué presupuesto reconoces, qué pasaje lo pone a prueba y cómo cambia, se precisa o se mantiene la lectura.','Contrasta Carrington y Bierce y formula una lectura rival apoyada en un detalle.','Completa hipótesis revisada y razón de la revisión; conserva una diferencia entre los contextos representados, respaldada por pasajes, y el límite de tu respuesta personal. No se requiere investigación externa para esa diferencia.'],
  result:'Ejercicio de interpretación revisada con contraste de procedimientos y presupuestos.',
  delivery:'Se completa el ejercicio de práctica de la semana 9. La ficha evaluada de recepción se trabaja en la semana 10; aquí no se exige su extensión.',
  check:'Debe verse la relación entre primera lectura, pasaje, objeción y conclusión; cambiar una frase sin explicar el motivo no demuestra la revisión.'},
@@ -184,7 +184,7 @@ const sessions={
  check:'Cada conclusión debe corresponder al tipo de evidencia utilizado; no atribuyas las posiciones de los prólogos a todos los lectores.',fieldLabel:'Mi argumento de la ficha 4'},
  '11/1':{key:'3-traduccion',stage:'preparacion',concepts:['cotejo','efecto','version'],
  example:'«No tiene» y «ya no tiene» permiten estudiar cómo se explicita una relación temporal. Relee el cansancio y las acciones del poema para sostener el efecto propuesto; ese cotejo local no demuestra por sí solo la intención del traductor.',
- steps:['Lee el original y las dos versiones identificadas en el taller. En tu cuaderno registra la escena y el observador que imaginas antes de cotejar.','Compara los cuatro lugares de la tabla y elige tres diferencias que puedas localizar.','Anota cada diferencia en tu cuaderno: versión y forma, localizador, relación con el pasaje, efecto propuesto y límite. El comentario final se redacta en la sesión 2.','Distingue lo que sostienes desde el castellano de lo que necesitas consultar con apoyo del francés.'],
+ steps:['Lee completas las versiones de Casal y Díez-Canedo identificadas en el taller. En tu cuaderno registra la escena y el observador que imaginas; después coteja los segmentos franceses de la tabla con guía docente.','Compara los cuatro lugares de la tabla y elige tres diferencias que puedas localizar.','Anota cada diferencia en tu cuaderno: versión y forma, localizador, relación con el pasaje, efecto propuesto y límite. El comentario final se redacta en la sesión 2.','Distingue lo que sostienes desde el castellano de lo que necesitas consultar con apoyo del francés.'],
  result:'Observación inicial y tres diferencias registradas con efectos por comprobar.',
  delivery:'Comienzas el comentario en aula y lo desarrollarás hasta 400–500 palabras. En esta sesión se admite un registro preparatorio, sin exigir todavía el comentario completo.',
  check:'Explica una diferencia de sentido o construcción y su apoyo; no reduzcas el cotejo a preferencia por la versión que suena más natural.'},

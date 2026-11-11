@@ -1,8 +1,8 @@
 // Optional digital records remain separate from the handwriting class route.
-import {activityByKey} from './activities.js?v=lc-f2309849447a';
-import {fichaTitles} from './class-flow.js?v=lc-f2309849447a';
-import {activityProducts} from './seminar.js?v=lc-f2309849447a';
-import {archivedKeys,keyNames,fieldLabel,fieldNames,hasWork} from './state.js?v=lc-f2309849447a';
+import {activityByKey} from './activities.js?v=lc-e841a813dbd5';
+import {fichaTitles} from './class-flow.js?v=lc-e841a813dbd5';
+import {activityProducts} from './seminar.js?v=lc-e841a813dbd5';
+import {archivedKeys,keyNames,fieldLabel,fieldNames,hasWork} from './state.js?v=lc-e841a813dbd5';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const title=key=>activityByKey[key]?.title||fichaTitles[key]||keyNames[key]||key;
 export function renderSavedNotebook(state,{header,button,toneHead,relationsView,saveLabel}){

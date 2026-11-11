@@ -53,7 +53,7 @@ export const weeks=[
   {
     "week": 11,
     "title": "Un texto y dos traducciones",
-    "description": "Docencia: traducción como mediación y lectura cercana; visibilidad del traductor. Práctica: cotejar Le Port con Casal y Díez-Canedo en tres lugares precisos e iniciar el comentario. Autónomo: versiones breves, manual de Domínguez, Saussy y Villanueva, pp. 133–136 hasta antes de «Transducción», y terminación del comentario de 400–500 palabras. Se reconoce el alcance del control del francés."
+    "description": "Docencia: traducción como mediación y lectura cercana; visibilidad del traductor. Práctica: cotejar Le Port con Casal y Díez-Canedo en tres lugares precisos e iniciar el comentario. Autónomo: versiones completas de Casal y Díez-Canedo, manual de Domínguez, Saussy y Villanueva, pp. 133–136 hasta antes de «Transducción», y terminación del comentario de 400–500 palabras. Los segmentos franceses de la tabla se cotejan en clase con guía docente; no se exige leer el original completo por cuenta propia."
   },
   {
     "week": 12,

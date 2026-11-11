@@ -42,7 +42,7 @@ export const paperActivities={
  '3-hermeneutica':{
   purpose:'Examinar cómo tus expectativas orientan una interpretación y ponerla a prueba con la forma de los relatos.',
   materials:['Carrington, La debutante, y Bierce, El incidente del Puente del Búho, completos.','Dossier de hermenéutica y pasajes localizados de ambos cuentos.'],
-  steps:['Antes de releer, anota qué esperabas o cómo entendiste cada cuento.','En Carrington, observa qué se considera verosímil y cómo juzgan los personajes; en Bierce, cómo se organizan tiempo e información. Señala un pasaje de cada obra y explica qué confirma o dificulta tu lectura.','Compara los procedimientos y una diferencia histórica. Discute otra interpretación apoyada en un detalle y explica qué cambias, precisas o mantienes en la tuya.'],
+  steps:['Antes de releer, anota qué esperabas o cómo entendiste cada cuento.','En Carrington, observa qué se considera verosímil y cómo juzgan los personajes; en Bierce, cómo se organizan tiempo e información. Señala un pasaje de cada obra y explica qué confirma o dificulta tu lectura.','Compara los procedimientos y una diferencia entre los contextos representados, respaldada por pasajes de ambos cuentos; no requiere investigación externa. Discute otra interpretación apoyada en un detalle y explica qué cambias, precisas o mantienes en la tuya.'],
   product:'Una interpretación revisada en el cuaderno. Es práctica para recepción y el ensayo; no añade una ficha evaluada ni exige 250–350 palabras.'
  },
  '3-recepcion':{
@@ -54,7 +54,7 @@ export const paperActivities={
  '3-traduccion':{
   purpose:'Explicar cómo distintas decisiones de traducción modifican la escena, el ritmo o la posición del observador.',
   materials:['Baudelaire, Le Port, y versiones completas de Casal y Díez-Canedo, identificadas en el taller.','Tabla de cotejo y manual, pp. 133–136, hasta antes de Transducción.'],
-  steps:['Lee los tres testimonios y anota qué escena y observador imaginas antes de examinar las diferencias.','Elige tres diferencias del cotejo. Copia las palabras pertinentes de cada versión, identifica sus localizadores y explica el posible efecto dentro del pasaje.','Redacta 400–500 palabras con las tres diferencias y una duda concreta para contrastar el francés con apoyo del docente. Explica qué cambió en tu primera impresión y delimita las afirmaciones sobre intención del traductor.'],
+  steps:['Lee completas las versiones de Casal y Díez-Canedo y anota qué escena y observador imaginas. Después coteja los segmentos franceses de la tabla con guía docente.','Elige tres diferencias del cotejo. Copia las palabras pertinentes de cada versión, identifica sus localizadores y explica el posible efecto dentro del pasaje.','Redacta 400–500 palabras con las tres diferencias y una duda concreta para contrastar el francés con apoyo del docente. Explica qué cambió en tu primera impresión y delimita las afirmaciones sobre intención del traductor.'],
   product:'Comentario individual de traducción de 400–500 palabras: tres diferencias, sus efectos y una duda fundamentada. En la sesión 11·2 elaboras el borrador; revisa y entrega la versión final en papel antes de la siguiente semana. La preparación y la revisión pertenecen al mismo trabajo.'
  },
  '3-metodos':{
@@ -164,11 +164,11 @@ export const paperSessionGuides={
   result:'Entrega el análisis individual en papel. Es la sumativa de esta unidad y se mantiene separado del ensayo final.'
  },
  '9/1':{
-  steps:['Anota tu primera interpretación antes de releer. En Carrington, observa lo verosímil y los juicios; en Bierce, tiempo e información.','Selecciona un pasaje de cada cuento y explica qué confirma o dificulta tu expectativa. Anota fuentes y localizadores.','Relaciona los procedimientos y una diferencia histórica sin generalizar tu reacción a todos los lectores.'],
+  steps:['Anota tu primera interpretación antes de releer. En Carrington, observa lo verosímil y los juicios; en Bierce, tiempo e información.','Selecciona un pasaje de cada cuento y explica qué confirma o dificulta tu expectativa. Anota fuentes y localizadores.','Relaciona los procedimientos y una diferencia entre los contextos representados, respaldada por pasajes; no requiere investigación externa. Evita generalizar tu reacción a todos los lectores.'],
   result:'Conserva primera lectura, pasajes y diferencia. Preparan la revisión de esta misma práctica; no hay una ficha evaluada adicional.'
  },
  '9/2':{
-  steps:['Recupera tu primera lectura y los pasajes de Carrington y Bierce.','Explica qué cambia, se precisa o se mantiene al comparar los procedimientos. Discute una lectura rival apoyada en un detalle.','Escribe tu interpretación revisada con las razones del cambio o de la continuidad y una diferencia histórica.'],
+  steps:['Recupera tu primera lectura y los pasajes de Carrington y Bierce.','Explica qué cambia, se precisa o se mantiene al comparar los procedimientos. Discute una lectura rival apoyada en un detalle.','Escribe tu interpretación revisada con las razones del cambio o de la continuidad y una diferencia entre los contextos representados, respaldada por pasajes; no requiere investigación externa.'],
   result:'Conserva la práctica de interpretación revisada en tu cuaderno. Servirá para distinguir lectura personal y recepción documentada en la semana 10.'
  },
  '10/1':{
@@ -180,7 +180,7 @@ export const paperSessionGuides={
   result:'Hoy elaboras el borrador de la ficha 4. Revisa y entrega una sola versión final en papel antes de la siguiente semana. Conserva los registros preparatorios y sus fuentes.'
  },
  '11/1':{
-  steps:['Lee el original de Le Port y las versiones de Casal y Díez-Canedo. Anota qué escena y observador imaginas.','Elige tres diferencias de la tabla. Copia las palabras y versiones con su localizador y explica un posible efecto en el pasaje.','Señala una duda concreta sobre el francés para contrastarla con apoyo del docente.'],
+  steps:['Lee completas las versiones de Casal y Díez-Canedo. Anota qué escena y observador imaginas; después coteja los segmentos franceses de la tabla con guía docente.','Elige tres diferencias de la tabla. Copia las palabras y versiones con su localizador y explica un posible efecto en el pasaje.','Señala una duda concreta sobre el francés para contrastarla con apoyo del docente.'],
   result:'Conserva primera impresión, tres diferencias y duda. Preparan el comentario de traducción; todavía no entregas las 400–500 palabras.'
  },
  '11/2':{
@@ -238,8 +238,8 @@ const sessionAdvances={
  '7/2':'Dibujen la primera cartografía con flechas rotuladas y fuentes. Distingan vínculos comprobados y propuestos. Escriban un comentario sobre la iniciativa colectiva, sus temas y una desigualdad documentada. Conserven mapa y comentario en papel: revisarán este mismo trabajo en la semana 13.',
  '8/1':'Prepara a mano el esquema: pregunta sobre dos objetos, respuesta, pasajes y diferencia. Propón una mejora de circulación con un agente, una acción y un límite. Distingue dificultad documentada e hipótesis; si faltan pruebas, identifica el documento necesario sin tener que conseguirlo. Conserva el esquema para redactar las 600–800 palabras en la siguiente sesión.',
  '8/2':'Redacta en clase el análisis de 600–800 palabras con tu esquema y los materiales autorizados. Relaciona ambos objetos, explica una diferencia y la mejora de circulación que propones. Distingue pruebas e hipótesis; para estas últimas basta identificar el documento que permitiría comprobarlas. Revisa las fuentes y entrega el texto en papel; es distinto del ensayo final.',
- '9/1':'Anota tu primera interpretación de Carrington y Bierce. Localiza un pasaje de cada uno y explica qué confirma o dificulta esa lectura. Compara sus procedimientos y una diferencia histórica. Conserva las notas en el cuaderno para revisar la interpretación; no preparas una nueva ficha evaluada.',
- '9/2':'Con tus pasajes, escribe a mano una interpretación revisada de Carrington y Bierce. Discute una lectura rival y explica por qué cambias, precisas o mantienes la tuya. Conserva una diferencia histórica. Esta práctica prepara recepción y el ensayo, sin entrega evaluada adicional.',
+ '9/1':'Anota tu primera interpretación de Carrington y Bierce. Localiza un pasaje de cada uno y explica qué confirma o dificulta esa lectura. Compara sus procedimientos y una diferencia entre los contextos representados, respaldada por pasajes; no requiere investigación externa. Conserva las notas en el cuaderno para revisar la interpretación; no preparas una nueva ficha evaluada.',
+ '9/2':'Con tus pasajes, escribe a mano una interpretación revisada de Carrington y Bierce. Discute una lectura rival y explica por qué cambias, precisas o mantienes la tuya. Conserva una diferencia entre los contextos representados, respaldada por pasajes; no requiere investigación externa. Esta práctica prepara recepción y el ensayo, sin entrega evaluada adicional.',
  '10/1':'En tu cuaderno, registra autor, fecha, medio, pasaje y valoración de cada prólogo. Compara las posiciones de Avellaneda y Cervantes; distingue testimonio histórico, lector implícito y reacción personal. Examina Tess en clase como relato mediado. Conserva estos registros para la ficha 4.',
  '10/2':'Elabora a mano el borrador de la ficha 4 de 250–350 palabras con los dos testimonios, sus valoraciones y referencias. Distingue horizonte histórico, lector implícito y respuesta personal; delimita la conclusión. Revisa y entrega una sola versión final antes de la siguiente semana.',
  '11/1':'Anota en el cuaderno tu primera impresión del poema. Elige tres diferencias entre las versiones: palabras, localizadores y posibles efectos en escena, ritmo u observador. Añade una duda concreta para contrastar el francés. Estos registros preparan el comentario de traducción.',

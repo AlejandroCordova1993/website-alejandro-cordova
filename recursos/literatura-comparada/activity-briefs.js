@@ -1,6 +1,6 @@
 // Brief instructions for the remaining course. Existing note keys and products
 // stay in class-flow/session-learning; weeks 1 and 2 keep their current wording.
-import {paperSessionGuides} from './paper-activities.js?v=lc-f2309849447a';
+import {paperSessionGuides} from './paper-activities.js?v=lc-e841a813dbd5';
 const briefs={
  "3/1":{...paperSessionGuides["3/1"],hint:"Formen el equipo e inicien sus dos selecciones."},
  "3/2":{...paperSessionGuides["3/2"],hint:"Distingue la disponibilidad del texto de las ayudas para aprender a interpretarlo."},
@@ -118,7 +118,7 @@ const briefs={
   steps:[
    'Recupera la interpretación inicial y los pasajes guardados de Carrington y Bierce.',
    'Explica en el argumento qué expectativa reconoces, qué pasaje la pone a prueba y qué cambia, precisas o mantienes.',
-   'Contrasta ambos relatos e integra una lectura rival apoyada en un detalle y tu respuesta. Conserva una diferencia histórica.',
+   'Contrasta ambos relatos e integra una lectura rival apoyada en un detalle y tu respuesta. Conserva una diferencia entre los contextos representados respaldada por pasajes; no requiere investigación externa.',
    'En la revisión, guarda la hipótesis resultante y explica qué evidencia sostuvo el cambio o la continuidad.'
   ],
   result:'Ejercicio de interpretación revisada. Es práctica para recepción, sin extensión obligatoria de ficha; la ficha 4 se trabaja en la semana 10.',
@@ -152,7 +152,7 @@ const briefs={
  },
  '11/1':{
   steps:[
-   'Lee el original y las dos versiones identificadas. En tu cuaderno, registra qué escena y observador imaginas.',
+   'Lee completas las versiones identificadas de Casal y Díez-Canedo. En tu cuaderno, registra qué escena y observador imaginas; después coteja los segmentos franceses de la tabla con guía docente.',
    'Compara los cuatro lugares de la tabla y elige tres diferencias que puedas localizar.',
    'Para cada diferencia, anota versión, palabras, localizador, relación con el pasaje y efecto posible. Señala qué falta comprobar.',
    'Distingue lo que sostienes desde el castellano de lo que requiere apoyo del francés. Conserva esas dudas para el comentario.'
