@@ -1,6 +1,6 @@
-import {activityFromHash} from './activities.js?v=lc-8c48a05d3109';
-import {taskNotes,courseModules,unitActivities} from './curriculum.js?v=lc-8c48a05d3109';
-import {workDestination} from './class-flow.js?v=lc-8c48a05d3109';
+import {activityFromHash} from './activities.js?v=lc-c7e609d3ba05';
+import {taskNotes,courseModules,unitActivities} from './curriculum.js?v=lc-c7e609d3ba05';
+import {workDestination} from './class-flow.js?v=lc-c7e609d3ba05';
 export const STORAGE_KEY='lc-cuaderno-v1';
 export const fields=['hypothesis','evidenceA','locatorA','evidenceB','locatorB','difference','objection','argument','revision','revisionReason','translation','initialTranslation','title','question','corpus','method','mediation','credits','reflection','intro','student','deliveryDate','defense','selfAssessment','preparation'];
 export const notebookKeys=['intro','1-A','2-A','2-B','3-A','3-B','3-traduccion','4-A','4-B','proyecto','2-oralitura','3-hermeneutica','4-intertexto','4-medios','ensayo','2-ampliacion',...Object.keys(taskNotes)];

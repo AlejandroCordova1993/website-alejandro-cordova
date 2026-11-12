@@ -1,4 +1,4 @@
-import {paperActivityAdvance,paperActivityGuide} from './paper-activities.js?v=lc-8c48a05d3109';
+import {paperActivityAdvance,paperActivityGuide} from './paper-activities.js?v=lc-c7e609d3ba05';
 // Cada entrada reúne un trabajo completo. Las sesiones orientan sus avances,
 // sin crear productos, campos ni claves de almacenamiento adicionales.
 export const activities=[
@@ -56,7 +56,7 @@ export const activities=[
   encounters:[[14,1],[14,2]],label:'Mi ficha 5 · Cervantes / Borges',hint:'Relaciona cita, atribución y contexto. Explica una diferencia y responde una objeción dentro del argumento.'},
  {key:'4-temas',module:4,title:'Explicar una variación temática: Palacio y Machado',kind:'task',
   prompt:'Compara violencia y deshumanización en los relatos de Palacio y Machado ya trabajados. Organiza cinco aspectos: tema, situación o motivo, procedimiento, contexto y variación explicada. Apoya el contraste en pasajes localizados de ambos relatos y conserva una diferencia y un límite. No fuerces motivos idénticos cuando los pasajes no los sostengan. Después amplía el procedimiento en el ejercicio de memoria y medios e identifica un ajuste para tu ensayo.',
-  product:'Matriz tematológica de práctica para el ensayo. El contraste entre medios tiene su propio espacio; ninguno añade una sexta ficha evaluada.',
+  product:'Matriz tematológica de práctica para el ensayo. El contraste entre medios tiene su propio espacio; ninguno añade otra ficha evaluada.',
   steps:['Recupera pasajes de ambos relatos y delimita el problema temático común.','Organiza los cinco aspectos y explica la variación mediante forma y contexto, con una diferencia y un límite.','Continúa con memoria y medios e identifica qué ajuste permiten estas comparaciones en el ensayo.'],
   encounters:[[15,1]],label:'Mi matriz tematológica · Palacio / Machado',hint:'Usa cinco apartados: tema, situación o motivo, procedimiento, contexto y variación. No necesitas dibujar una tabla.'},
  {key:'4-medios',module:4,title:'Comparar memoria y ausencia entre medios',kind:'comparison',

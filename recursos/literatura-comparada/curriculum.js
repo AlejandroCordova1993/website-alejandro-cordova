@@ -1,4 +1,4 @@
-import {activityByKey,activityHref} from './activities.js?v=lc-8c48a05d3109';
+import {activityByKey,activityHref} from './activities.js?v=lc-c7e609d3ba05';
 // Course decisions approved in Planificación versión 2 revisada (11 October 2026).
 // Stable notebook keys identify the actual task, independently of its screen position.
 export const courseModules = [
@@ -59,7 +59,7 @@ export const unitActivities=[
 ] .map(a=>{const key=a.field.slice(0,a.field.lastIndexOf('-'));return activityByKey[key]?{...a,title:activityByKey[key].title,href:activityHref(key)}:a;});
 
 export const assessments=[
- ['Formativa individual','35 %','Cuatro fichas de 250–350 palabras (25 % en total; 6,25 % cada una): semanas 2, 6, 10 y 14. Comentario de traducción de 400–500 palabras (10 %): semana 11.'],
+ ['Formativa individual','35 %','Cuatro fichas de 250–350 palabras (25 % en total; 6,25 % cada una): ficha 1 (semana 2), ficha 3 (semana 6), ficha 4 (semana 10) y ficha 5 (semana 14). Se conservan estas etiquetas; el canon es un trabajo grupal y no requiere una ficha 2 adicional. Comentario de traducción de 400–500 palabras (10 %): semana 11.'],
  ['Formativa grupal','25 %','Dos selecciones de lectura: personal e institucional (5 %): semana 4. Cartografía de circulación (10 %), iniciada en la semana 7 y revisada en la semana 13: una sola calificación. Microclase (10 %): 12 minutos de actividad y 8 de discusión, en la semana 12 o 15.'],
  ['Sumativa individual 1','10 %','Análisis comparativo en aula de 600–800 palabras, semana 8, con textos y notas del curso.'],
  ['Sumativa individual 2','30 %','Ensayo de 1500–1800 palabras (20 %) y defensa con 4 minutos de exposición más 1 minuto para responder una pregunta del docente (10 %), semana 16.']

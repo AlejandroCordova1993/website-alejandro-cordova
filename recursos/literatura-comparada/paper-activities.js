@@ -25,7 +25,7 @@ export const paperActivities={
   purpose:'Comparar cómo se presentan voces y destinatarios sin borrar las diferencias históricas, lingüísticas y de mediación.',
   materials:['Guamán Poma: lámina 961 [975] e inicio de 962 [976]; Rivera Cusicanqui, pp. 19–26.','Chikangana: Takina/Poema, p. 85, dentro del estudio asignado, pp. 84–87.','Kowii: fragmento sobre rimanakuy, p. 8, leído en clase como apoyo.'],
   steps:['En Guamán Poma, describe una voz o figura y a quién se dirige. Anota un detalle verbal o visual y su folio; contrástalo con una afirmación de Rivera.','En Chikangana, localiza una marca de voz o destinatario. Relaciónala con Guamán Poma mediante el mismo criterio y explica una diferencia de época, género o mediación.','Redacta la comparación con un detalle de cada objeto, una objeción y tu respuesta. Identifica qué sostiene las relaciones de poder que afirmas y qué no puedes concluir sobre las lenguas.'],
-  product:'Ficha 3 individual de 250–350 palabras sobre Guamán Poma y Chikangana. En la sesión 6·2 elaboras el borrador; revisa y entrega la versión final en papel antes de la siguiente semana. Rivera y Kowii apoyan el análisis; no añaden otros objetos obligatorios a la ficha.'
+  product:'Ficha 3 individual de 250–350 palabras sobre Guamán Poma y Chikangana. En la sesión 6·2 elaboras el borrador; revisa y entrega la versión final en papel antes de la siguiente semana. Rivera y Kowii apoyan el análisis; no añaden otros objetos obligatorios a la ficha. Esta es la segunda ficha individual del curso y conserva el número 3. En las semanas 3–4 realizaste el trabajo grupal del canon; no hay una ficha 2 adicional que entregar.'
  },
  '2-cartografia':{
   purpose:'Mostrar cómo circulan las obras mediante personas, instituciones y medios, distinguiendo relaciones documentadas y propuestas.',
@@ -79,7 +79,7 @@ export const paperActivities={
   purpose:'Explicar cómo un problema temático se transforma según la forma narrativa y el contexto de cada obra.',
   materials:['Pasajes ya trabajados de Palacio y Machado sobre violencia y deshumanización.','Explicación de tema, motivo y variación de la sesión 15·1.'],
   steps:['Recupera un pasaje de cada cuento y delimita el problema que compararás.','Organiza cinco aspectos: tema, situación o motivo, procedimiento, contexto y variación. Explica con los pasajes una diferencia y un límite; no fuerces motivos idénticos.','Continúa con el contraste de memoria y medios e identifica qué puedes aprovechar para revisar el ensayo.'],
-  product:'Una matriz tematológica en el cuaderno, en tabla o párrafos. Es práctica para el ensayo; no añade una sexta ficha evaluada.'
+  product:'Una matriz tematológica en el cuaderno, en tabla o párrafos. Es práctica para el ensayo; no añade otra ficha evaluada.'
  },
  '4-medios':{
   purpose:'Comparar cómo escritura, imagen y sonido construyen memoria y ausencia mediante recursos diferentes.',
@@ -113,7 +113,7 @@ export const paperSessionGuides={
  },
  '2/2':{
   steps:['Recupera tus pasajes y precisa la respuesta que defenderás. Discute un pasaje que pueda cuestionarla.','Redacta 250–350 palabras: pregunta y respuesta, comparación de ambos relatos, una diferencia, objeción con respuesta y conclusión limitada. Integra las referencias.','Relee la ficha y anota qué precisaste o mantuviste y por qué.'],
-  result:'Entrega una sola ficha 1 revisada en papel. Las notas anteriores preparan el argumento y se conservan en tu cuaderno.'
+  result:'Conserva el borrador; revísalo y entrega una sola ficha 1 en papel antes de la siguiente semana. Las notas anteriores preparan el argumento y se conservan en tu cuaderno.'
  },
  '3/1':{
   steps:['Relee Palacio, pp. 34–35: contrasta una conclusión del narrador con la razón que ofrece. Explica su efecto y por qué lo valoras.','Consulta la página legal (página 6 del visor de PDF). Anota quién publica y cómo distribuye para distinguir ese dato de tu valoración literaria.','En las listas A/B del dossier, compara las razones de selección de ambos docentes. Anota las fuentes junto a tus observaciones.'],
@@ -213,7 +213,7 @@ export const paperSessionGuides={
  },
  '15/1':{
   steps:['Compara pasajes de Palacio y Machado: organiza tema, situación o motivo, procedimiento, contexto y variación. Explica una diferencia con evidencia.','Después contrasta la pieza de Esparza/Ruiz Agila con una secuencia de Historia de un oso: palabra, imagen, sonido y tiempo en la construcción de ausencia.','Anota los localizadores, las diferencias históricas y un ajuste que puedas aprovechar para el ensayo digital.'],
-  result:'Conserva la matriz temática y el comentario intermedial como prácticas en tu cuaderno. No añaden una sexta ficha evaluada.'
+  result:'Conserva la matriz temática y el comentario intermedial como prácticas en tu cuaderno. No añaden otra ficha evaluada.'
  },
  '15/2':{
   steps:['Los grupos pendientes conducen 12 minutos de comparación y 8 de discusión; quienes ya presentaron participan como público.','Conserven una respuesta o dificultad y expliquen qué ajustarían en el guion.','Recupera lo pertinente para revisar una afirmación y sus evidencias en el borrador digital del ensayo.'],
@@ -250,7 +250,7 @@ const sessionAdvances={
  '13/2':'Revisen las relaciones y sus fuentes en el mismo mapa. Precisen mediadores, medios, escalas y límites. Redacten el comentario final con una desigualdad documentada y los cambios realizados. Entreguen una cartografía grupal con mapa, comentario y fuentes; conserven la primera versión.',
  '14/1':'En el cuaderno, identifica los mediadores ficticios de Cervantes y distingue cita y comentario en Borges. Anota pasajes y localizadores. Explica qué cambia con la atribución a otro autor y contexto, conservando una diferencia histórica. Preparas la ficha 5.',
  '14/2':'Elabora a mano el borrador de la ficha 5 de 250–350 palabras con evidencia de Cervantes y Borges, diferencia contextual y una lectura rival respondida. Explica el cambio de atribución y delimita la relación. Revisa las referencias y entrega una sola versión final antes de la siguiente semana.',
- '15/1':'Compara en papel tema, situación, procedimiento, contexto y variación en Palacio y Machado. Después contrasta memoria y ausencia en la crónica de Esparza/Ruiz Agila y el cortometraje, con pasaje y secuencia localizados. Conserva las diferencias y señala un ajuste para el ensayo digital. Son prácticas, sin una sexta ficha.',
+ '15/1':'Compara en papel tema, situación, procedimiento, contexto y variación en Palacio y Machado. Después contrasta memoria y ausencia en la crónica de Esparza/Ruiz Agila y el cortometraje, con pasaje y secuencia localizados. Conserva las diferencias y señala un ajuste para el ensayo digital. Son prácticas, sin otra ficha.',
  '15/2':'Los grupos pendientes presentan 12 minutos de comparación y 8 de discusión. Conserven en el guion una respuesta y un ajuste justificado; quienes ya presentaron participan como público. Después revisa una afirmación y sus evidencias en el ensayo digital. Nadie repite la microclase.'
 };
 

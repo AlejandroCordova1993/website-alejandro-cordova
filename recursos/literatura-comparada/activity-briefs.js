@@ -1,6 +1,6 @@
 // Brief instructions for the remaining course. Existing note keys and products
 // stay in class-flow/session-learning; weeks 1 and 2 keep their current wording.
-import {paperSessionGuides} from './paper-activities.js?v=lc-8c48a05d3109';
+import {paperSessionGuides} from './paper-activities.js?v=lc-c7e609d3ba05';
 const briefs={
  "3/1":{...paperSessionGuides["3/1"],hint:"Formen el equipo e inicien sus dos selecciones."},
  "3/2":{...paperSessionGuides["3/2"],hint:"Distingue la disponibilidad del texto de las ayudas para aprender a interpretarlo."},
@@ -253,7 +253,7 @@ const briefs={
    'Después, abre la extensión intermedial. Compara Esparza/Ruiz Agila con una secuencia del cortometraje: explica cómo palabra, imagen y sonido construyen ausencia. Escribe el ejercicio en tu cuaderno.',
    'Retoma el borrador del ensayo e identifica un ajuste que estas comparaciones permitan realizar.'
   ],
-  result:'Matriz tematológica, contraste entre medios y ajuste para el ensayo. Son ejercicios de práctica que conservas en tu cuaderno; no añaden una sexta ficha evaluada.',
+  result:'Matriz tematológica, contraste entre medios y ajuste para el ensayo. Son ejercicios de práctica que conservas en tu cuaderno; no añaden otra ficha evaluada.',
   label:'Mi matriz tematológica · Palacio / Machado',
   hint:'Usa cinco apartados, no necesitas dibujar una tabla. Explica la variación con pasajes, forma y contexto; conserva un límite de la comparación.',
   check:'No fuerces motivos idénticos ni presentes la relación entre crónica y cine como adaptación o influencia sin documentación.'

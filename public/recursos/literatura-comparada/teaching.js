@@ -1,12 +1,12 @@
-import {activityByKey} from './activities.js?v=lc-8c48a05d3109';
-import {weeks,minimumContents} from './schedule.js?v=lc-8c48a05d3109';
-import {taskNotes,assessments,unitActivities} from './curriculum.js?v=lc-8c48a05d3109';
-import {weeklyReadings,essayMilestones} from './journey.js?v=lc-8c48a05d3109';
-import {resourceById} from './corpus.js?v=lc-8c48a05d3109';
-import {courseModules} from './curriculum.js?v=lc-8c48a05d3109';
-import {encounters,autonomousPlan,dayLabel} from './encounters.js?v=lc-8c48a05d3109';
-import {classHref,classReadingGroups} from './class-flow.js?v=lc-8c48a05d3109';
-import {toneHead} from './ui-icons.js?v=lc-8c48a05d3109';
+import {activityByKey} from './activities.js?v=lc-c7e609d3ba05';
+import {weeks,minimumContents} from './schedule.js?v=lc-c7e609d3ba05';
+import {taskNotes,assessments,unitActivities} from './curriculum.js?v=lc-c7e609d3ba05';
+import {weeklyReadings,essayMilestones} from './journey.js?v=lc-c7e609d3ba05';
+import {resourceById} from './corpus.js?v=lc-c7e609d3ba05';
+import {courseModules} from './curriculum.js?v=lc-c7e609d3ba05';
+import {encounters,autonomousPlan,dayLabel} from './encounters.js?v=lc-c7e609d3ba05';
+import {classHref,classReadingGroups} from './class-flow.js?v=lc-c7e609d3ba05';
+import {toneHead} from './ui-icons.js?v=lc-c7e609d3ba05';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function weekLabel(value){
  const text=Array.isArray(value)?value.join(' y '):String(value).replace('; retorno ',' y ').replace('; transversal','').replace('; anticipación ',' y ');

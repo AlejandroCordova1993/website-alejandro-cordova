@@ -1,8 +1,8 @@
 // Orientaciones docentes para las mismas actividades y claves del cuaderno.
 // Definiciones de trabajo, no citas ni sustitutos de las fuentes del curso.
-import {paperSessionGuides} from './paper-activities.js?v=lc-8c48a05d3109';
-import {activityBriefFor} from './activity-briefs.js?v=lc-8c48a05d3109';
-import {weekTwoConcepts,weekTwoPrompts,weekTwoFieldHints} from './week-two-learning.js?v=lc-8c48a05d3109';
+import {paperSessionGuides} from './paper-activities.js?v=lc-c7e609d3ba05';
+import {activityBriefFor} from './activity-briefs.js?v=lc-c7e609d3ba05';
+import {weekTwoConcepts,weekTwoPrompts,weekTwoFieldHints} from './week-two-learning.js?v=lc-c7e609d3ba05';
 const concepts={
  procedimiento:['Procedimiento narrativo','Una manera concreta de construir el relato: ordenar hechos, repetir una expresión, ocultar información o presentar una suposición como certeza. Identificarlo exige describir qué hace la escritura en un pasaje.'],
  indicio:['Observación e indicio textual','Observar es señalar palabras, una disposición o un detalle verificable del texto. Ese detalle funciona como indicio cuando explicas qué interpretación permite fundamentar; una cita aislada todavía no constituye una explicación.'],
@@ -234,7 +234,7 @@ const sessions={
  example:'Dos relatos pueden presentar violencia mediante procedimientos diferentes: conjetura, distribución de información o justificación. La matriz debe explicar esa variación con pasajes. En crónica y cine, estudia después cómo palabra, imagen y sonido construyen ausencia.',
  steps:['Recupera los pasajes de Palacio y Machado ya trabajados; no necesitas una lectura autónoma nueva.','En tu cuaderno organiza cinco columnas o apartados: tema, situación o motivo, procedimiento, contexto y variación explicada.','Localiza evidencia en ambos relatos, explica una diferencia y un límite; no fuerces un motivo idéntico si los pasajes no lo sostienen.','Después, abre la extensión intermedial: compara Esparza/Ruiz Agila y el cortometraje, localizando una secuencia y los recursos de palabra, imagen y sonido. Escribe ese ejercicio a continuación de la matriz y retoma el borrador digital del ensayo.'],
  result:'Matriz tematológica, ejercicio de contraste entre medios y un ajuste identificado para el ensayo.',
- delivery:'Son trabajos de práctica que alimentan el ensayo. La matriz y el contraste entre medios se conservan en tu cuaderno; no constituyen una sexta ficha evaluada.',
+ delivery:'Son trabajos de práctica que alimentan el ensayo. La matriz y el contraste entre medios se conservan en tu cuaderno; no constituyen otra ficha evaluada.',
  check:'La variación debe explicarse mediante forma y contexto; el contraste entre medios no debe presentarse como adaptación o influencia no documentadas.',fieldLabel:'Mi matriz tematológica · Palacio / Machado'},
  '15/2':{key:'3-microclase',stage:'presentacion',concepts:['consigna','evidenciaEsperada','tesis'],
  example:'Si el público ofrece interpretaciones distintas con pasajes pertinentes, la discusión puede comparar sus apoyos. Registra qué parte de la consigna hizo posible ese contraste y qué ajustarías; no necesitas imponer una única conclusión para evaluar la actividad.',
