@@ -93,6 +93,7 @@ export function classEvidenceOptions(s){
  return {argument:work.argument,nextArgument:work.argumentNext,defaultMode:s.id==='s2-e1'?'cita':'descripcion'};
 }
 
+export const projectQuestionExample='¿Cómo se presentan las condiciones de acceso a una beca en el reglamento y en el aviso para estudiantes?';
 export const projectInputs={
   "title": [
     "Título del expediente",
@@ -106,7 +107,7 @@ export const projectInputs={
   ],
   "question": [
     "Pregunta de investigación",
-    "Retoma una pregunta de tus fichas si encaja con tu tema. Delimítala para poder responderla con 2–4 documentos o episodios.",
+    `Retoma una pregunta de tus fichas si encaja con tu tema. Delimítala para poder responderla con 2–4 documentos o episodios. Ejemplo, si comparas un reglamento con un aviso: «${projectQuestionExample}». Adapta la pregunta a los documentos que elegiste.`,
     3
   ],
   "corpus": [
@@ -141,7 +142,7 @@ export const projectInputs={
   ],
   "mediation": [
     "Actividad de enseñanza",
-    "Prepara una consigna de 5 minutos con un fragmento que ya explicaste. Si tu informe analiza el aviso, puedes mostrarlo junto al original y preguntar qué acción entiende el lector. Después de probar la consigna en el trío, anota quién hizo cada papel, qué aportó y qué ajustaste.",
+    "Prepara una consigna de 5 minutos con un fragmento que ya explicaste. Si tu informe analiza el aviso, puedes mostrarlo junto al original y preguntar: «¿Qué tendría que hacer un estudiante después de leer cada versión y qué palabras se lo indican?». Después de probar la consigna en el trío, anota quién hizo cada papel, qué aportó y qué ajustaste.",
     6
   ],
   "defense": [

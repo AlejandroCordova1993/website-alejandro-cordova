@@ -168,7 +168,7 @@ export const visualSchemas={
    {label:'Respuesta registrada',gives:'Muestra cómo fue interpretada.',limit:'Compara otras respuestas si investigas cómo leyó el grupo.'}
   ],
   verdict:'El contraste permite explicar qué condición de la norma se vuelve visible en el aviso y cuál reconoce la respuesta registrada. Una diferencia puede precisar dónde cambia la representación del trámite. Comprueba si las fuentes aportan datos obtenidos por separado.',
-  task:{label:'En la ficha 3',text:'Explica qué pregunta responde cada fuente y cómo se complementan sus aportes.'},
+  task:{label:'En la ficha 3',text:'Explica qué pregunta responde cada fuente y cómo se complementan sus aportes. Ejemplos: norma, «¿Qué requisito establece?»; aviso, «¿Cómo comunica ese requisito?»; respuesta registrada, «¿Qué entendió el lector sobre ese requisito?».'},
   source:'Ejemplo. Principio de triangulación: Wodak, en Wodak y Meyer (comps., 2003: 104).',
   anchors:['Una norma fija el procedimiento','un aviso informa una convocatoria','una respuesta registrada muestra cómo fue interpretada','lo dispuesto, lo comunicado y lo interpretado','La conclusión se refiere a esas piezas y esa respuesta','aportan datos obtenidos por separado']
  },
@@ -249,7 +249,7 @@ export const visualSchemas={
    {label:'Transcripción con leyenda',text:'«No [pausa] aceptamos esa explicación».',marks:['[pausa]'],note:'La marca declara una pausa que habría que comprobar en el audio; la leyenda explica la convención.'}
   ],
   verdict:'Escucha qué se dice antes y después para explicar la función de la pausa.',
-  task:{label:'Al transcribir el tramo de Drexler',text:'Usa tu pregunta provisional para elegir 20–30 segundos dentro de 00:39–01:47. Anota ambos intervalos en el localizador: episodio observado y fragmento transcrito. Toma las marcas de la escucha y añade una leyenda.'},
+  task:{label:'Al transcribir el tramo de Drexler',text:'Usa tu pregunta provisional para elegir 20–30 segundos dentro de 00:39–01:47. Ejemplo: «¿Qué recursos de voz usa Drexler al reproducir las palabras de Sabina?». Anota ambos intervalos en el localizador: episodio observado y fragmento transcrito. Toma las marcas de la escucha y añade una leyenda.'},
   source:'Representación didáctica del curso. Transcripción: Calsamiglia y Tusón (2012, apéndice, §1.2 · páginas 358–361 del archivo).',
   anchors:['No [pausa] aceptamos esa explicación','La puntuación de un subtítulo es una decisión de escritura que debe contrastarse con el audio','La leyenda precisa qué representa cada marca y la escucha decide dónde corresponde','su posible función requiere las palabras próximas y la continuación']
  },
@@ -263,7 +263,7 @@ export const visualSchemas={
    {words:'antes de resolver',label:'Orden del procedimiento',note:'primero se verifica; después se resuelve.'}
   ],
   verdict:'La cláusula presenta a la comisión como responsable de tramitar la solicitud y ordena su actuación: verificar antes de resolver. Así organiza la relación entre quien solicita y quien decide; para afirmar que se cumplió habría que investigar la aplicación.',
-  task:{label:'En la ficha 2',text:'Formula tu pregunta inicial: qué regula el texto y qué documentos necesitarías para estudiar su cumplimiento.'},
+  task:{label:'En la ficha 2',text:'Formula tu pregunta inicial. Ejemplo: «¿Qué condiciones establece el artículo 3 para acceder a una beca?». Anota también qué documento necesitarías para estudiar si esas condiciones se aplican.'},
   source:'Ejemplo. Prácticas escritas en los ámbitos de la vida social, entre ellos el institucional: Calsamiglia y Tusón (2012, §3.2 · página 76 del archivo).',
   anchors:['La comisión verificará los requisitos antes de resolver la solicitud','Relaciona la formulación con la acción que permite: solicitar, verificar o resolver','qué necesitaríamos para estudiar su cumplimiento','su aplicación se estudia con otros datos']
  },
@@ -403,7 +403,7 @@ export const visualSchemas={
  'alcance-conclusion':{
   type:'scale',planned:'s15-e1',topic:'Un límite precisa la conclusión',placed:true,replaces:'example',
   label:'La misma observación con alcances crecientes',
-  question:'¿Qué sabemos después del análisis y qué pregunta permanece abierta?',
+  question:'¿Qué sabemos después del análisis y qué pregunta permanece abierta? Ejemplo de pregunta pendiente: «¿A quién acudirían los lectores para pedir una aclaración sobre estos avisos?»',
   axis:{from:'Lo que el corpus sostiene',to:'Lo que exige otros datos'},
   items:[
    {text:'«En los tres avisos analizados no se identifica al órgano responsable».',label:'Delimita la observación a los tres avisos. Busca el órgano responsable en el documento que registra la actuación.'},
@@ -434,7 +434,7 @@ export const visualSchemas={
   claimLabel:'Qué observar',
   steps:[
    {verb:'Redactar',dimension:'la consigna',question:'¿Qué pide y sobre qué material?',claim:'Material («estas dos cláusulas»), operación («subraya», «explica») y resultado.',evidence:'un segmento que el lector pueda localizar.'},
-   {verb:'Probar',dimension:'con un lector',question:'¿Qué respuesta produce?',claim:'Si la respuesta sorprende, pregunta cómo leyó la consigna y ajusta las instrucciones a partir de esa explicación.',evidence:'una respuesta examinable.'},
+   {verb:'Probar',dimension:'con un lector',question:'¿Qué respuesta produce?',claim:'Si la respuesta sorprende, pregunta cómo leyó la consigna. Ejemplo: «¿Qué entendiste que debías hacer primero?». Ajusta las instrucciones a partir de esa explicación.',evidence:'una respuesta examinable.'},
    {verb:'Ajustar',dimension:'la instrucción',question:'¿Qué hay que cambiar?',claim:'¿La dificultad procede del concepto, del material o de la instrucción?',evidence:'la respuesta observada y el criterio de revisión.'}
   ],
   scale:'Probar la consigna revisa la instrucción, no solo al lector.',

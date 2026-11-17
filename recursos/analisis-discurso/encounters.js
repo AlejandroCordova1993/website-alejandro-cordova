@@ -172,7 +172,7 @@ export const sessions=[
       [
         15,
         "Comparar con un intercambio de taller",
-        "Participa en una pregunta, respuesta y aclaración organizadas por el docente. Compara oralmente cómo una respuesta retoma la intervención anterior y distingue ese intercambio del diálogo que Drexler cuenta. Si necesitas guardar una nota de la comparación, añádela al final de «Mi argumento» con el título «Comparación de aula» y señala que es una producción de clase. No hace falta transcribir otro episodio ni empezar otra ficha."
+        "Participa en una pregunta, respuesta y aclaración organizadas por el docente. Ejemplo de pregunta: «¿Qué palabras presenta Drexler como propias y cuáles atribuye a Sabina?». Compara oralmente cómo una respuesta retoma la intervención anterior y distingue ese intercambio del diálogo que Drexler cuenta. Si necesitas guardar una nota de la comparación, añádela al final de «Mi argumento» con el título «Comparación de aula» y señala que es una producción de clase. No hace falta transcribir otro episodio ni empezar otra ficha."
       ],
       [
         20,
@@ -284,7 +284,7 @@ export const sessions=[
       [
         15,
         "Herramientas y lectura",
-        "Con «La escritura organiza una acción», compara cómo el reglamento presenta a esos participantes. Formula una pregunta sobre una diferencia que encuentres."
+        "Con «La escritura organiza una acción», compara cómo el reglamento presenta a esos participantes. Formula una pregunta sobre una diferencia que encuentres. Ejemplo: «¿Qué acciones atribuyen los artículos 1–3 a la institución y cuáles a los estudiantes?»."
       ],
       [
         25,
@@ -297,7 +297,7 @@ export const sessions=[
         "Comprueba que la pregunta de la ficha 2 y la propuesta del expediente estén guardadas. Comenta qué dato necesitas completar para la próxima clase."
       ]
     ],
-    "preparation": "Lee «La escritura organiza una acción» en «Teoría» y los artículos 1–3 del reglamento (páginas 1–2 del archivo). Trae una pregunta para la ficha 2 y una propuesta de 2–4 documentos o episodios para el expediente."
+    "preparation": "Lee «La escritura organiza una acción» en «Teoría» y los artículos 1–3 del reglamento (páginas 1–2 del archivo). Trae una pregunta para la ficha 2; por ejemplo: «¿Qué acciones atribuyen los artículos 1–3 a la institución y cuáles a los estudiantes?». Propón 2–4 documentos o episodios que permitan investigar la pregunta del expediente."
   },
   {
     "id": "s4-e2",
@@ -513,7 +513,7 @@ export const sessions=[
       [
         10,
         "Abrir el problema",
-        "Retoma un fragmento del expediente o del reglamento. Escribe en «Pregunta de la ficha» qué quieres explicar de él."
+        "Retoma un fragmento del expediente o del reglamento. Escribe en «Pregunta de la ficha» qué quieres explicar de él. Ejemplo: «¿Cómo se relaciona el reparto de becas del artículo 3 con la equidad que invocan los considerandos?»."
       ],
       [
         15,
@@ -630,7 +630,7 @@ export const sessions=[
       [
         35,
         "Localizar y describir",
-        "Trabaja individualmente: escribe una pregunta, selecciona fragmentos con localizador y describe sus marcas relevantes."
+        "Trabaja individualmente: escribe una pregunta, selecciona fragmentos con localizador y describe sus marcas relevantes. Ejemplo para un aviso de inscripción: «¿Cómo presenta el aviso a sus destinatarios y qué les pide hacer?». Ajusta la pregunta al caso que recibas."
       ],
       [
         10,
@@ -679,7 +679,7 @@ export const sessions=[
       [
         25,
         "Trabajo y contraste",
-        "Guarda esos segmentos en «Evidencias», con autora y localizador. En «Pregunta de la ficha», escribe qué quieres explicar sobre las personas o colectivos nombrados; si ya tenías otro corpus, continúa sus registros."
+        "Guarda esos segmentos en «Evidencias», con autora y localizador. En «Pregunta de la ficha», escribe qué quieres explicar sobre las personas o colectivos nombrados. Ejemplo: «¿A quiénes incluyen Menchú y Márquez cuando hablan en nombre de un colectivo?». Si ya tenías otro corpus, continúa sus registros."
       ],
       [
         10,
@@ -1152,7 +1152,7 @@ export const sessions=[
       [
         10,
         "Cierre y continuidad",
-        "Para la próxima clase, transforma un fragmento ya analizado en «Actividad de enseñanza». Pide al lector que localice una marca y explique qué hace. Usa esa misma evidencia en el «Guion de defensa» si responde a tu pregunta."
+        "Para la próxima clase, transforma un fragmento ya analizado en «Actividad de enseñanza». Pide al lector que localice una marca y explique qué hace. Ejemplo con el aviso B: «¿Qué palabras nombran la acción y qué información falta para identificar quién la decidió?». Usa esa misma evidencia en el «Guion de defensa» si responde a tu pregunta."
       ]
     ],
     "preparation": "Trae el borrador del expediente, sus fuentes y una objeción. Retoma una evidencia que puedas explicar en la defensa y usar para enseñar. Confirma tu turno."
@@ -1199,7 +1199,7 @@ export const sessions=[
         "Comprueba el guardado y el próximo turno. Ajusta el informe con las objeciones recibidas y prepara la entrega por el canal indicado."
       ]
     ],
-    "preparation": "Trae la microconsigna de 5 minutos que preparaste en «Actividad de enseñanza», en tus hojas o en el cuaderno web. Usa un fragmento del expediente y una pregunta que el lector pueda responder con él. Ten listo el «Guion de defensa» y confirma tu turno.",
+    "preparation": "Trae la microconsigna de 5 minutos que preparaste en «Actividad de enseñanza», en tus hojas o en el cuaderno web. Usa un fragmento del expediente y una pregunta que el lector pueda responder con él. Ejemplo con el aviso B: «¿Qué palabras nombran la acción y qué información falta para identificar quién la decidió?». Ten listo el «Guion de defensa» y confirma tu turno.",
     "defensePlan": {
       "slots": 16,
       "slotMinutes": 4

@@ -1,5 +1,13 @@
 // Instructions use the existing note fields and records; no additional assignments.
 export const activityTitles={2:'Cómo comunica el reglamento de becas sus condiciones',3:'Explicar un discurso con datos de su contexto',4:'Quién habla y quién responde por las ideas',5:'Qué cambia al transformar un texto para otro destinatario',6:'Cómo se organiza y se sostiene una explicación'};
+export const questionExamples={
+ 1:'¿Cómo distingue Drexler sus propias palabras de las que atribuye a Joaquín Sabina?',
+ 2:'¿Cómo presenta el artículo 3 los criterios para distribuir las becas?',
+ 3:'¿Cómo se relacionan los criterios de reparto del artículo 3 con la equidad que invocan los considerandos?',
+ 4:'¿Qué aporta la idea atribuida a Angela Davis a la posición que defiende Márquez?',
+ 5:'¿Cómo cambia la explicación de la condición al convertir el reglamento en un aviso para estudiantes de primer semestre?',
+ 6:'¿Cómo se conectan los considerandos del reglamento con lo que se dispone en sus artículos?'
+};
 export const unitActivities={
  1:{
   material:'Corpus común: la charla de Jorge Drexler enlazada en esta unidad, episodio 00:39–01:47 (68 segundos). Conserva ese episodio durante las cuatro clases de la ficha 1. Si el docente indica otro registro de taller, continúa con ese registro y sus tiempos.',
@@ -11,7 +19,7 @@ export const unitActivities={
    ['Interpretar y contrastar','En «Mi argumento», relaciona las marcas con la situación y explica qué función podrían cumplir. Propón otra explicación plausible sobre las mismas marcas. En la semana 3, usa Caldiz para justificar o corregir las marcas del mismo episodio. Pide a un compañero volver al intervalo y comprobar la descripción.'],
    ['Revisar la ficha','En «Interpretación revisada», indica qué lectura sostienes después del contraste; en «Qué cambió y por qué», señala el dato o la objeción que motivó la decisión. Distingue el público de la charla del diálogo pasado que Drexler narra.']
   ],
-  questionHelp:"Elige una pausa, un énfasis, un gesto o una forma de tomar la palabra. Escribe qué quieres entender de ese recurso e indica el intervalo. Pregunta por lo que hace en ese episodio, no por la personalidad del hablante.",
+  questionHelp:`Elige un recurso que puedas observar en el episodio e indica dónde aparece. Ejemplo: «${questionExamples[1]}».`,
   argumentHelp:"Escribe en párrafos o en una tabla siguiendo estos pasos. Si ya habías escrito una explicación en una evidencia, úsala como apoyo; no hace falta copiarla otra vez.",
   contextHelp:"Describe la situación del episodio una sola vez: quién habla, a quién, dónde y con qué fuente lo sabes. Si ya la guardaste con la transcripción, deja vacío este campo en las demás evidencias del mismo episodio. Si usas Drexler, distingue la charla actual del diálogo pasado que cuenta.",
   argumentSteps:["Di qué fragmento de la charla o del intercambio vas a explicar y entre qué minutos ocurre. Señala las evidencias que usarás; no hace falta copiar otra vez toda la transcripción.", "Relaciona las palabras con dos recursos de voz, como pausa o énfasis. Añade un gesto o una mirada si el registro permite verlo. Si solo tiene audio, escribe ese límite.", "Explica qué podría hacer cada recurso en esa situación. Di qué palabras, sonidos o imágenes apoyan tu explicación y dónde encontrarlos.", "Cuando uses un concepto de la teoría, explica cómo te ayuda y cita el autor o lectura. En la clase sobre marcas de voz, usa Caldiz para justificar o corregir lo ya registrado.", "Propón otra explicación de las mismas marcas. Di qué dato necesitas para elegir entre las dos y qué no puedes afirmar todavía.", "Si usas Drexler, distingue lo que ocurre ante su público del diálogo pasado que él cuenta. Si elegiste un intercambio del taller, identifica a sus participantes."],
@@ -34,7 +42,7 @@ export const unitActivities={
        "Muestra las dos versiones a un compañero. Pregúntale qué leyó primero y qué condición entendió. Escribe tu respuesta final en «Interpretación revisada» y el motivo en «Qué cambió y por qué»."
      ]
    ],
-   "questionHelp": "Escribe qué quieres entender sobre una condición del reglamento o sobre cómo se presenta.",
+   "questionHelp": `Escribe qué quieres entender sobre una condición del reglamento o sobre cómo se presenta. Ejemplo: «${questionExamples[2]}».`,
    "argumentHelp": "Explica la condición y cómo se la comunica al lector. Usa la frase guardada y su localizador.",
    "contextHelp": "Indica la versión del reglamento. Si explicas cómo se aplica, cita el dato que lo comprueba.",
    "argumentSteps": [
@@ -61,7 +69,7 @@ export const unitActivities={
        "Completa «Interpretación revisada» y «Qué cambió y por qué». Retoma esa decisión en «Método y contexto documentado» del expediente. La evaluación de la clase 2 usa otro caso y se entrega por el canal del docente."
      ]
    ],
-   "questionHelp": "Identifica el fragmento y escribe qué quieres entender de él.",
+   "questionHelp": `Identifica el fragmento y qué dato de contexto necesitas para explicarlo. Ejemplo: «${questionExamples[3]}».`,
    "argumentHelp": "Explica qué enfoque elegiste y cómo el dato de contexto te ayuda a responder.",
    "contextHelp": "Anota el dato, su fuente y su página o enlace. Añade otro dato si tu pregunta lo necesita.",
    "argumentSteps": [
@@ -87,7 +95,7 @@ export const unitActivities={
        "Pide a un compañero comprobar una atribución. Escribe la lectura que puedes sostener en «Interpretación revisada». En «Qué cambió y por qué», indica la marca o el comentario que motivó tu decisión."
      ]
    ],
-   "questionHelp": "Pregunta qué aporta una voz a la posición que defiende el texto.",
+   "questionHelp": `Pregunta qué aporta una voz a la posición que defiende el texto. Ejemplo: «${questionExamples[4]}».`,
    "argumentHelp": "Escribe tu explicación como párrafo o lista. Remite a los localizadores guardados.",
    "contextHelp": "Identifica quién habla, en qué situación y dónde se publicó.",
    "argumentSteps": [
@@ -113,7 +121,7 @@ export const unitActivities={
        "Muestra los fragmentos a un compañero y pídele señalar qué entiende o haría en cada caso. Ajusta «Interpretación revisada». En «Qué cambió y por qué», indica con quién trabajaste, qué aportó cada persona y qué ajustaste."
      ]
    ],
-   "questionHelp": "Pregunta qué cambia al dirigirse a otro lector o al cumplir otro propósito.",
+   "questionHelp": `Pregunta qué cambia al dirigirse a otro lector o al cumplir otro propósito. Ejemplo: «${questionExamples[5]}».`,
    "argumentHelp": "Explica cómo el cambio de destinatario o propósito se refleja en las dos piezas.",
    "contextHelp": "Cita la fuente del vínculo o identifica tu versión como «Adaptación didáctica propia».",
    "argumentSteps": [
@@ -139,7 +147,7 @@ export const unitActivities={
        "Completa «Interpretación revisada» y «Qué cambió y por qué». En el expediente, cita el fragmento y usa el hallazgo para responder tu pregunta. Puedes usar ese material en la microconsigna del cierre."
      ]
    ],
-   "questionHelp": "Pregunta cómo se conectan dos tramos, cómo se sostiene una idea o qué cambia con una respuesta.",
+   "questionHelp": `Pregunta cómo se conectan dos tramos, cómo se sostiene una idea o qué cambia con una respuesta. Ejemplo: «${questionExamples[6]}».`,
    "argumentHelp": "Usa un párrafo, lista o tabla para explicar la organización y el razonamiento del texto.",
    "contextHelp": "Identifica la situación. Si analizas un diálogo, indica si es registrado o representado.",
    "argumentSteps": [

@@ -275,7 +275,7 @@ export const classContent={
 ],
  's8-e1':[
   topic(1,'Triangular para resolver una dificultad','Triangular permite reconstruir una práctica desde fuentes que muestran aspectos distintos: lo dispuesto, lo comunicado y lo interpretado. Una discrepancia puede revelar cómo cambia una condición al pasar entre documentos o entre participantes. La relación entre las fuentes debe estar documentada.',
-   ['Explica qué pregunta responde cada fuente y cómo se complementan sus aportes.','Comprueba si los documentos se basan en una misma fuente o aportan datos obtenidos por separado.'],
+   ['Explica qué pregunta responde cada fuente y cómo se complementan sus aportes. Por ejemplo: «¿Qué condición establece la norma?», «¿Cómo la comunica el aviso?» y «¿Cómo la entendió el participante cuya respuesta registramos?».','Comprueba si los documentos se basan en una misma fuente o aportan datos obtenidos por separado.'],
    'Una norma fija el procedimiento; un aviso informa una convocatoria; una respuesta registrada muestra cómo fue interpretada.','Si pertenecen al mismo trámite, podemos seguir una condición: cómo se establece, cómo se comunica y qué entiende un participante. Una diferencia entre esos registros ayuda a localizar dónde se transforma su sentido. La conclusión se refiere a esas piezas y esa respuesta; otras experiencias requieren nuevos registros.',
    '¿Qué relación entre las fuentes sostiene nuestra conclusión?','wodak',3)
  ],
@@ -285,7 +285,7 @@ export const classContent={
     "title": "Transferir una operación a un caso nuevo",
     "explanation": "La transferencia conserva una forma de investigar y ajusta sus categorías al nuevo problema. Una herramienta resulta pertinente cuando responde a la pregunta, permite analizar una marca y orienta qué dato contextual buscar. La respuesta distingue descripción, interpretación, fundamento y límite.",
     "points": [
-      "Pregunta: qué relación queremos explicar. Marca: qué expresión o recurso permite examinarla. Dato: qué información situada puede sostener o modificar la interpretación.",
+      "Pregunta: qué relación queremos explicar; por ejemplo, «¿Cómo cambia el trato al pasar de “mi amor” a “Cristina”?». Marca: qué expresión o recurso permite examinarla. Dato: qué información situada puede sostener o modificar la interpretación.",
       "Si la nueva pregunta trata del vínculo entre participantes, el tratamiento y la respuesta pueden ser más pertinentes que buscar un agente omitido. La elección se justifica por lo que la herramienta permite explicar."
     ],
     "example": "Una omisión en un aviso y una omisión en un reglamento pueden tener condiciones de uso diferentes. En el café, «mi amor» y «perdón, Cristina» plantean otro problema: cómo se reajusta el trato.",
@@ -445,7 +445,7 @@ export const classContent={
   topic(1,'Un límite precisa la conclusión','Una conclusión explica qué hemos comprendido de una práctica: cómo se representa un acontecimiento, se propone una relación o se justifica una decisión. Identifica las elecciones discursivas y los datos que sostienen esa explicación. Su alcance precisa a qué materiales y situaciones se refiere.',
    ['El corpus delimitado permite explicar relaciones concretas entre formulaciones, participantes y contexto.','La revisión debe indicar qué evidencia afectó qué afirmación.'],
    '«En los tres avisos analizados no se identifica al órgano responsable; falta estudiar otros géneros y la recepción».','Esta observación permite avanzar: los avisos comunican las decisiones sin vincularlas allí con un órgano responsable, de modo que identificarlo exige otra fuente. Esa conclusión explica cómo se distribuye la información para sus destinatarios. Investigar una estrategia sistemática o las respuestas efectivas de los lectores ampliaría el problema y las evidencias necesarias.',
-   '¿Qué sabemos después del análisis y qué pregunta permanece abierta?','guia-6',4)
+   '¿Qué sabemos después del análisis y qué pregunta permanece abierta? Ejemplo para continuar el estudio de los avisos: «¿Cómo identifican sus lectores a quién dirigirse para pedir una explicación?».','guia-6',4)
  ],
  's15-e2':[
   topic(0,'Convertir el análisis en una enseñanza','Enseñar análisis del discurso implica ayudar a relacionar una elección expresiva con lo que hace en una situación. Una consigna breve puede llevar desde observar una marca hasta explicar una responsabilidad, una posición o una acción. Material accesible y criterios claros hacen examinable ese razonamiento.',
