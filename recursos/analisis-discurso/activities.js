@@ -57,8 +57,8 @@ export const unitActivities={
  },
  3:{
   "material": "Trabaja con el material que elegiste para el expediente. Para la carta, recupera el borrador, la versión final, los comentarios recibidos y tus decisiones de la ficha 2. Para otro corpus, elige dos de sus piezas y recupera los datos de contexto disponibles.",
-  "product": "Una explicación que relaciona dos pasajes con un dato concreto sobre cómo se escribió, se leyó o se difundió el texto.",
-  "documentQuestion": "¿Cómo comunica la convocatoria a los postulantes las condiciones aprobadas en la resolución?",
+  "product": "Una explicación que relaciona dos pasajes con un dato de contexto y su fuente. Explica qué aclara ese dato sobre las palabras elegidas, quién habla o a quién se dirige.",
+  "documentQuestion": "¿Qué decisión del comité comunica Bienestar Universitario y dónde se comprueba?",
   "steps": [
     [
       "Elegir qué explicar · semana 7, clase 1",
@@ -70,15 +70,15 @@ export const unitActivities={
     ],
     [
       "Cerrar la ficha y avanzar el expediente · semana 8, clase 1",
-      "En «Mi revisión final», precisa tu explicación con lo comprobado e indica qué sostienes y por qué. En «Método y contexto documentado» del expediente, resume enfoque, pasajes y dato usado. Remite a la ficha 3 por su número y localizadores para consultar el análisis completo."
+      "En «Mi revisión final», precisa tu explicación con lo comprobado e indica qué sostienes y por qué. En «Método y contexto documentado» del expediente, explica cómo comparaste los pasajes y comprobaste el dato. Remite a la ficha 3 por su número y localizadores para consultar el análisis completo."
     ]
   ],
   "questionHelp": "Usa la pregunta del expediente. Puedes escribir aquí «Retomo la pregunta del expediente».",
   "argumentHelp": "Relaciona los dos pasajes con el dato de contexto. Explica qué te ayuda a entender sobre la decisión del autor, los destinatarios o la circulación del texto.",
   "contextHelp": "Indica el dato, su fuente y dónde encontrarlo. Para la carta puede ser «Comentarios recibidos sobre mi borrador, comentario 2». Con otros documentos, señala, por ejemplo, el párrafo de la convocatoria que remite a la resolución.",
   "argumentSteps": [
-    "Si analizas tu carta, explica por qué cambiaste o mantuviste esas palabras. La carta se dirige a la dirección de la carrera. El comentario recoge lo que entendió tu compañero.",
-    "Si analizas otras piezas, explica qué aclara el dato sobre sus pasajes. Por ejemplo, cuando la convocatoria remite a las bases aprobadas, puedes seguir cómo una condición de la resolución se convierte en una instrucción para postular. Para estudiar qué entendió un lector, necesitas su respuesta registrada.",
+    "Si analizas tu carta, identifica qué palabras comenta el compañero. Explica qué muestran sobre la voz que asumes ante la dirección y apoya la relación con tu decisión de revisión.",
+    "Si analizas otras piezas, explica qué aclara el dato sobre sus pasajes. En el caso de la UNAE, compara el artículo 1 de la resolución con el primer párrafo del aviso y su firma. Distingue quién aprobó las bases y quién comunicó esa decisión. Para estudiar qué entendió un lector, necesitas su respuesta registrada.",
     "En tu explicación usa el concepto elegido y cita la lectura que te ayudó a relacionar los pasajes con su contexto."
   ],
   "reviewFocus": "Vuelve a los dos pasajes y a la fuente del dato. Indica qué parte de tu explicación puedes sostener y qué precisaste al comprobarla."

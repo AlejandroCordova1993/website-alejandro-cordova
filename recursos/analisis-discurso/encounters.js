@@ -513,7 +513,7 @@ export const sessions=[
       [
         10,
         "Abrir el problema",
-        "Con la carta, elige una formulación que cambiaste o mantuviste. Por ejemplo, «¿Cómo se relaciona un comentario recibido con lo que cambié o mantuve en mi carta?». Con otro corpus, plantea la pregunta sobre sus piezas. Por ejemplo, «¿Cómo comunica la convocatoria a los postulantes las condiciones aprobadas en la resolución?»."
+        "Con la carta, elige una formulación que cambiaste o mantuviste. Por ejemplo, «¿Cómo se relaciona un comentario recibido con lo que cambié o mantuve en mi carta?». Con otro corpus, plantea la pregunta sobre sus piezas. Por ejemplo, «¿Qué decisión del comité comunica Bienestar Universitario y dónde se comprueba?»."
       ],
       [
         15,
@@ -523,7 +523,7 @@ export const sessions=[
       [
         25,
         "Trabajo y contraste",
-        "En el expediente, escribe la pregunta y enumera sus 2–4 piezas con su ubicación. En la ficha 3, remite a esa pregunta. Para la carta, registra el pasaje del borrador y su versión final, aunque sean iguales. Con otro corpus, registra un pasaje de cada pieza elegida. En «Mi argumento», explica qué enfoque ayuda a estudiarlos y cita la lectura."
+        "En el expediente, escribe la pregunta y enumera sus 2–4 piezas con su ubicación. En la ficha 3, remite a esa pregunta. Para la carta, registra el pasaje del borrador y su versión final, aunque sean iguales. Con otro corpus, registra un pasaje de cada pieza elegida. En «Mi argumento», anota el concepto que probarás y la lectura de la que procede."
       ],
       [
         10,
@@ -601,7 +601,7 @@ export const sessions=[
       [
         25,
         "Trabajo y contraste",
-        "Completa «Interpretación revisada» y «Qué cambió y por qué» de la ficha 3. En «Método y contexto documentado» del expediente, resume enfoque, pasajes y dato contextual. Remite a la ficha 3 y sus localizadores para consultar la explicación completa."
+        "Completa «Interpretación revisada» y «Qué cambió y por qué» de la ficha 3. En «Método y contexto documentado» del expediente, explica qué comparaste y cómo comprobaste el dato. Remite a la ficha 3 y sus localizadores para consultar la explicación completa."
       ],
       [
         10,

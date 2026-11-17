@@ -268,7 +268,7 @@ export const classContent={
       "También puedes explicar una formulación conservada. Si el lector reconoce que «Como estudiante, propongo» expresa una postura individual y decides mantenerla, relaciona esa respuesta con la voz que quieres asumir ante la dirección."
     ],
     "example": "Borrador, párrafo 1: «Los estudiantes exigimos». Comentario 1 de Cristina: «¿Hablas por todos?». Carta final, párrafo 1: «Como estudiante, propongo».",
-    "reading": "El borrador atribuye una demanda al colectivo. La pregunta de Cristina pone en discusión esa representación. En la decisión de revisión, el autor explica que habla a título personal; la versión final lo hace explícito y presenta una propuesta. Desde Fairclough, relacionamos el texto —las formulaciones— con su práctica discursiva —la escritura y la lectura entre compañeros— y con una relación institucional: un estudiante se dirige a la dirección para proponer condiciones de uso de IA. El comentario documenta la intervención de la lectora; las dos versiones muestran la decisión. La explicación se apoya en esos pasajes y en la razón registrada por el autor.",
+    "reading": "El borrador atribuye una demanda al colectivo. Cristina pregunta «¿Hablas por todos?». En su nota de revisión, el autor aclara que habla a título personal. «Como estudiante» hace explícita esa posición ante la dirección. Desde Fairclough, la práctica discursiva incluye esta relación entre la escritura de la carta, la lectura de la compañera y la revisión del autor.",
     "prompt": "¿Qué palabras del pasaje se entienden mejor al conocer el dato de contexto?",
     "source": "guia-3",
     "lesson": 0
@@ -276,7 +276,7 @@ export const classContent={
   {
     "block": 1,
     "title": "De una formulación a un problema social",
-    "explanation": "El reglamento ofrece un contraste institucional con la carta. La norma establece una distribución; la carta propone una decisión a la dirección. En ambos casos, el análisis crítico examina quién puede intervenir, cómo se presenta a los grupos y qué razones se ofrecen. La lectura previa desarrolla poder, ideología y legitimación.",
+    "explanation": "El Reglamento de Becas de la UCE ofrece un contraste institucional con la carta. La norma establece una distribución; la carta propone una decisión a la dirección. En ambos casos, el análisis crítico examina quién puede intervenir, cómo se presenta a los grupos y qué razones se ofrecen. La lectura previa desarrolla poder, ideología y legitimación.",
     "points": [
       "Observa qué criterios organiza la norma, quién los establece y qué razones invoca.",
       "Explicita el criterio de evaluación y separa la representación normativa de su aplicación.",
@@ -299,8 +299,8 @@ export const classContent={
       "Una formulación conservada también permite estudiar la relación con el lector. Comprueba si el comentario apoyó tu interpretación o si decidiste mantenerla por otra razón documentada."
     ],
     "example": "«Los estudiantes exigimos» → comentario «¿Hablas por todos?» → «Como estudiante, propongo».",
-    "reading": "Las versiones muestran el paso de una voz colectiva a una individual. El comentario cuestiona la representación del grupo; la decisión registrada por el autor permite relacionar esa lectura con la revisión. Si el comentario se refiere a otro asunto, precisa qué dato sí sostiene tu explicación.",
-    "prompt": "¿Qué aporta cada registro a la explicación que propones?",
+    "reading": "«Exigimos» formulaba una exigencia y «propongo» presenta una propuesta. El comentario de Cristina cuestionaba a quién representaba el autor. Su nota explica que decidió hablar a título personal. La razón para cambiar el verbo queda abierta hasta encontrar una decisión que la documente.",
+    "prompt": "¿Qué parte del cambio explica el comentario de Cristina y qué parte requiere conocer otra decisión del autor?",
     "source": "wodak",
     "lesson": 3
   }

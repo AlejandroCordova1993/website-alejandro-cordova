@@ -147,7 +147,7 @@ export const visualSchemas={
   "verdict": "Para la ficha 3, elige la perspectiva que ayude a explicar la relación observada. Puedes usar Fairclough para relacionar la formulación con la producción y la lectura de tu carta.",
   "task": {
     "label": "En la ficha 3",
-    "text": "Relaciona un concepto con el pasaje y el dato que vas a analizar."
+    "text": "Elige un concepto que te ayude a explicar quién habla y en nombre de quién, o el problema que observaste en tu propio corpus."
   },
   "source": "Ejemplo de carta y revisión elaborado para el curso. Fairclough (1992: 73–75), dimensiones, y en Wodak y Meyer (2003: 184–185), enfoque dialéctico-relacional; van Dijk (1999: 124–125), modelos de contexto y de acontecimiento; Wodak (2003: 113–115), estrategias discursivas; Pardo (2012: 48), panorama de enfoques.",
   "anchors": [
@@ -229,7 +229,7 @@ export const visualSchemas={
       "limit": "Consulta tus tres decisiones para recuperar la razón anotada."
     }
   ],
-  "verdict": "Borrador y carta final proceden del mismo autor; el comentario aporta la perspectiva del lector. Las decisiones de la ficha 2 ayudan a contrastar la relación que propones entre la lectura y la versión final.",
+  "verdict": "«¿Hablas por todos?» cuestiona la voz colectiva. La nota del autor explica por qué ahora habla a título personal. También pasó de exigir a proponer. Para explicar ese cambio de verbo haría falta una razón registrada por el autor.",
   "task": {
     "label": "En la ficha 3",
     "text": "Comprueba tu explicación con estos registros y precisa qué sostienes después del contraste."
@@ -558,7 +558,7 @@ export const visualSchemas={
     },
     {
       "name": "Comportamiento no verbal",
-      "example": "La disposición, el tamaño de las letras y los espacios entre párrafos destacan la propuesta y separan sus razones. Observa los recursos presentes en tu carta."
+      "example": "En una conversación, observa los gestos o las miradas. En una carta escrita, el análisis puede atender a su presentación gráfica. Si la petición ocupa un párrafo aparte, señala dónde aparece."
     },
     {
       "name": "La lengua como contexto",

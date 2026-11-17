@@ -117,7 +117,7 @@ export const projectInputs={
   ],
   "method": [
     "Método y contexto documentado",
-    "En la semana 8, resume el enfoque elegido, los pasajes comparados y el dato de contexto comprobado en la ficha 3. Cita la lectura y la fuente del dato. Remite al análisis con «Ficha 3» y sus localizadores.",
+    "Explica cómo hiciste la comparación. Con la carta, por ejemplo: «Comparé quién habla en cada versión y usé el comentario del compañero para explicar el cambio de voz». Con el caso de la UNAE: «Leí qué decisión anuncia Bienestar Universitario y comprobé en el artículo 1 qué aprobó el comité». Nombra el concepto que aplicaste, cita la lectura y la fuente del dato, y remite a la ficha 3 con sus localizadores.",
     6
   ],
   "argument": [
