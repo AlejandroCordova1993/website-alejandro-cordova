@@ -45,7 +45,7 @@ export const classWriting={
   },
   "s6-e1": {
     "focus": "Revisa el título, los párrafos y la jerarquía visual de la misma carta.",
-    "help": "Anota una decisión de presentación para usarla en tus tres decisiones finales."
+    "help": "Trabaja la presentación en papel o en un editor como Word. Describe la decisión y la lectura del compañero en «Tres decisiones de revisión»."
   },
   "s7-e1": {
     "focus": "Propón un enfoque que ayude a responder tu pregunta.",

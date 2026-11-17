@@ -416,7 +416,7 @@ export const sessions=[
       [
         10,
         "Cierre",
-        "Conserva la carta del compañero con tus comentarios identificados y tu propia revisión. Deja señalado qué parte necesitas terminar."
+        "Conserva tus comentarios sobre la carta del compañero. Guarda también los que recibiste sobre la tuya: adjúntalos en papel o pégalos al inicio de «Tres decisiones de revisión», con el nombre del revisor. Continúa después tu revisión."
       ]
     ],
     "preparation": "Lee «Del significado local al global» en «Teoría». Retoma la carta del compañero, tu primera lectura y los tres pasajes señalados."
@@ -445,15 +445,15 @@ export const sessions=[
       [
         25,
         "Trabajo y contraste",
-        "Revisa la presentación de tu carta. Prueba un cambio de tamaño, posición o agrupación con el mismo contenido y muéstralo a tu compañero. Pídele señalar qué encuentra primero. Incorpora la disposición que ayude a leer tu propuesta. En papel puedes hacer el cambio a mano."
+        "Sobre la misma carta, prueba un cambio de tamaño, posición o agrupación en papel o en un editor como Word. Conserva las palabras y muéstralo al compañero. Pídele señalar qué encuentra primero. Incorpora la disposición que ayude a leer tu propuesta."
       ],
       [
         10,
         "Cierre y continuidad",
-        "Conserva la versión revisada. Anota junto a ella una decisión de presentación y lo que observó tu lector; podrás usarla entre tus tres decisiones finales."
+        "Conserva la carta con su presentación. En tus hojas o en «Tres decisiones de revisión», describe el cambio visual y lo que observó tu lector. Cuenta como una de las tres decisiones finales."
       ]
     ],
-    "preparation": "Lee «La página también orienta» en «Teoría». Trae tu carta revisada y el borrador con los comentarios del compañero."
+    "preparation": "Lee «La página también orienta» en «Teoría». Trae tu carta revisada y el borrador con los comentarios del compañero. Para probar la presentación, ten la misma carta en papel o en un editor como Word."
   },
   {
     "id": "s6-e2",
@@ -484,7 +484,7 @@ export const sessions=[
       [
         25,
         "Explicar tres decisiones",
-        "En tus hojas o en «Tres decisiones de revisión», cita el pasaje inicial y el final, y explica por qué lo cambiaste o mantuviste. Relaciona cada decisión con el comentario recibido y un concepto del curso. Si usaste IA, indica la herramienta y la sugerencia que aceptaste, adaptaste o rechazaste."
+        "Retoma los comentarios recibidos que ya guardaste. En tus hojas o en «Tres decisiones de revisión», cita el pasaje inicial y el final y explica el cambio o la conservación con un concepto del curso. Para la decisión visual, describe ambas disposiciones. Si usaste IA, identifica la herramienta, su sugerencia y tu decisión."
       ],
       [
         20,
@@ -494,7 +494,7 @@ export const sessions=[
       [
         10,
         "Cierre",
-        "Conserva juntos carta final, borrador comentado y tres decisiones. En el cuaderno web, comprueba los cuatro campos y marca la revisión terminada. Entrega por el canal indicado por el docente."
+        "Conserva juntos carta final, borrador, comentarios recibidos y tres decisiones para retomarlos en la unidad 3. Si trabajaste la presentación fuera de la web, conserva también ese formato. Comprueba los cuatro campos del cuaderno y marca la revisión terminada, o entrega tus hojas por el canal indicado."
       ]
     ],
     "preparation": "Trae tu carta revisada, el borrador comentado y la decisión de presentación. Consulta «Teoría» para relacionar la revisión con la respuesta de tu lector."

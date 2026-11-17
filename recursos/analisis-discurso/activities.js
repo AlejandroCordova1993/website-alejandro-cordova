@@ -39,7 +39,7 @@ export const unitActivities={
      ],
      [
        "Revisar · semanas 5 y 6",
-       "Revisa tu carta con los comentarios recibidos. Ajusta también el título, los párrafos y la jerarquía visual. Conserva la versión final y explica tres decisiones: qué cambiaste o mantuviste, qué comentario consideraste y qué efecto buscas en la lectura."
+       "Revisa tu carta con los comentarios recibidos. Ajusta el título, los párrafos y la jerarquía visual en papel o en un editor como Word. Conserva la versión final y explica tres decisiones: qué cambiaste o mantuviste, qué comentario consideraste y qué efecto buscas en la lectura."
      ]
    ],
    "questionHelp": "Conserva aquí la pregunta que escribiste sobre el reglamento en el trabajo anterior.",
@@ -50,6 +50,7 @@ export const unitActivities={
      "Posición ante el destinatario: copia una expresión de obligación, posibilidad o certeza. Explica qué aporta a la demanda o propuesta; por ejemplo, el cambio entre «debe permitir» y «podría permitir».",
      "Información y razones: comenta una razón o un dato que el lector necesite reconstruir. Explica qué entendiste, qué palabras te ayudaron y qué aclaración sería útil. Si se entiende bien, señala qué formulación lo hace comprensible."
    ],
+   "commentExample": "«Los estudiantes exigimos» construye una voz colectiva: presenta la demanda ante la dirección como compartida por un grupo. Conviene precisar a quiénes incluye. Si la carta expresa la postura individual del autor, «Como estudiante, propongo» sitúa esa voz con mayor claridad.",
    "reviewFocus": "Explica tres decisiones sobre la representación de personas, las razones, los conocimientos supuestos o la organización de tu carta.",
    "rubric": [["Análisis del compañero: tres pasajes y su función discursiva",4],["Carta situada: destinatario, tesis y dos razones",2],["Apoyo verificable, objeción y organización del sentido",2],["Revisión: tres decisiones explicadas con los conceptos",2]],
    "aiHelp": "Durante la revisión puedes pedir a una IA dos comentarios sobre pasajes de tu carta usando esta rúbrica. Contrástalos con la lectura del compañero. En tus tres decisiones indica qué aceptas, adaptas o rechazas y por qué; si la usaste, anota la herramienta."

@@ -186,14 +186,14 @@ export const classContent={
   {
     "block": 1,
     "title": "Poner a prueba una inferencia",
-    "explanation": "Interpretar un aviso implica decidir qué acción permite en una situación: cuándo presentar una solicitud, qué condición cumplir o a quién dirigirse. La formulación y las reglas del trámite sostienen esa lectura. No toda cláusula es ambigua ni toda inferencia necesita una rival igualmente plausible.",
+    "explanation": "Leer una carta implica reconstruir qué propone el autor, para quién y bajo qué condiciones. Sus palabras y la situación orientan las inferencias del lector. El comentario del compañero permite comprobar qué propuesta entendió y qué información utilizó.",
     "points": [
-      "Conserva las palabras que apoyan la interpretación.",
-      "Busca un dato capaz de debilitarla, además de datos que la confirmen.",
-      "En «hasta el viernes», la [[deixis|deixis temporal]] exige situar qué viernes corresponde a esa comunicación; el horario y el canal de recepción precisan después cómo ejercer el permiso. Cada dato resuelve una parte distinta de la interpretación."
+      "Señala las palabras que permiten identificar la propuesta y sus condiciones.",
+      "Comprueba tu lectura con el resto de la carta: una condición posterior puede precisar el alcance de la propuesta.",
+      "En «el próximo semestre», la [[deixis|deixis temporal]] exige situar la fecha desde la que se escribe. Para interpretar «esta asignatura», identifica el curso al que se refiere la carta."
     ],
-    "example": "«Puede presentar la solicitud hasta el viernes».",
-    "reading": "La formulación ofrece una posibilidad y fija un límite temporal: organiza la acción del solicitante. Para convertir ese límite en una decisión práctica importa conocer el horario y el canal de recepción. Esos datos contextualizan el permiso y permiten precisar cuándo puede ejercerse.",
+    "example": "«A partir del próximo semestre, propongo permitir IA para revisar los ensayos de esta asignatura».",
+    "reading": "«Propongo» presenta una iniciativa del autor. «Para revisar» y «los ensayos» delimitan el uso de IA y los textos previstos. La fecha de la carta y el curso al que se refiere permiten situar el semestre y la asignatura. Con esas pistas, el lector reconstruye el alcance de la propuesta.",
     "prompt": "Señala qué información permite precisar la lectura de una condición.",
     "source": "brown-yule",
     "lesson": 1
@@ -207,7 +207,7 @@ export const classContent={
       "La segmentación distribuye temas en artículos y párrafos; la puntuación delimita unidades y relaciones dentro de ellos. Para resumir una norma, identifica a qué disposición pertenece cada condición y conserva ese vínculo.",
       "Al generalizar una lista bajo una categoría, comprueba que el resumen conserve sus límites. El lector debe poder distinguir los casos admitidos de otros que pertenecen a la misma categoría."
       ,"En la carta, la frase «Entiendo que propone… porque…» permite comparar la posición que reconstruye el compañero con la tesis del autor. Selecciona la propuesta y sus condiciones al sintetizarla.",
-      "La cohesión ayuda a seguir las razones. La coherencia exige que esas razones sostengan la propuesta: «La IA responde rápido; por tanto, su respuesta es correcta» contiene un conector, pero la rapidez no demuestra la corrección."
+      "La cohesión enlaza partes del texto; la coherencia permite reconstruir una unidad de sentido en la situación. La solidez del argumento depende de que las razones justifiquen la conclusión. En «La IA responde rápido; por tanto, su respuesta es correcta», entendemos la conclusión propuesta, pero falta justificar el salto entre rapidez y corrección."
     ],
     "example": "Texto: «La ayuda exige matrícula vigente y acreditación de ingresos». Síntesis: «La ayuda está condicionada a matrícula e ingresos».",
     "reading": "La síntesis pierde «vigente» y «acreditación»: representa el acceso mediante dos datos generales y deja fuera su condición temporal y la obligación de justificarlos. Una versión como «Para acceder hay que acreditar ingresos y tener matrícula vigente» conserva esa relación. La comparación muestra cómo resumir puede cambiar la imagen del beneficiario y de lo que se le exige.",
