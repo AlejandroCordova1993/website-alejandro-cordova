@@ -494,7 +494,7 @@ export const sessions=[
       [
         10,
         "Cierre",
-        "Conserva juntos carta final, borrador, comentarios recibidos y tres decisiones para retomarlos en la unidad 3. Si trabajaste la presentación fuera de la web, conserva también ese formato. Comprueba los cuatro campos del cuaderno y marca la revisión terminada, o entrega tus hojas por el canal indicado."
+        "Conserva juntos carta final, borrador, comentarios recibidos y tres decisiones en la ficha 2. La lectura común de la unidad 3 será el pronunciamiento de Sarayaku. Si trabajaste la presentación fuera de la web, conserva también ese formato. Comprueba los cuatro campos del cuaderno y marca la revisión terminada, o entrega tus hojas por el canal indicado."
       ]
     ],
     "preparation": "Trae tu carta revisada, el borrador comentado y la decisión de presentación. Consulta «Teoría» para relacionar la revisión con la respuesta de tu lector."
@@ -506,32 +506,32 @@ export const sessions=[
     "unit": 3,
     "duration": 60,
     "title": "Elegir el enfoque",
-    "question": "¿Qué pregunta exige qué método?",
+    "question": "¿Qué hace el pueblo de Sarayaku al comunicar la sentencia?",
     "resource": "pardo",
     "product": "Hito 1: pregunta y corpus del expediente. Ficha 3: dos pasajes localizados y un enfoque provisional para explicarlos.",
     "agenda": [
       [
         10,
         "Abrir el problema",
-        "Con la carta, elige una formulación que cambiaste o mantuviste. Por ejemplo, «¿Cómo se relaciona un comentario recibido con lo que cambié o mantuve en mi carta?». Con otro corpus, plantea la pregunta sobre sus piezas. Por ejemplo, «¿Qué decisión del comité comunica Bienestar Universitario y dónde se comprueba?»."
+        "Lee el párrafo inicial y el que empieza «Sarayaku manifiesta su satisfacción». Identifica quién comunica la sentencia y quién anuncia lo que hará."
       ],
       [
         15,
         "Herramientas y lectura",
-        "Con la lectura de Pardo y la matriz de «Teoría», compara qué observarían los enfoques en el ejemplo de la carta. Elige un concepto que ayude a responder la pregunta de tu corpus."
+        "Usa la matriz para reconocer qué aspecto del pronunciamiento explica cada enfoque. Elige un concepto útil para leer ese cierre."
       ],
       [
         25,
         "Trabajo y contraste",
-        "En el expediente, escribe la pregunta y enumera sus 2–4 piezas con su ubicación. En la ficha 3, remite a esa pregunta. Para la carta, registra el pasaje del borrador y su versión final, aunque sean iguales. Con otro corpus, registra un pasaje de cada pieza elegida. En «Mi argumento», anota el concepto que probarás y la lectura de la que procede."
+        "Localiza los dos pasajes en la ficha 3. En hojas, márcalos juntos. En la web, puedes guardarlos como una sola evidencia. Para el primer hito del expediente, registra la pregunta común y las dos fuentes: pronunciamiento y sentencia."
       ],
       [
         10,
         "Cierre y continuidad",
-        "Para la próxima clase, identifica la fuente del dato contextual. Puede ser un comentario o una condición de la consigna de la carta. Para otros documentos, puede ser la referencia con la que una convocatoria remite a su resolución."
+        "Conserva los pasajes para la siguiente clase. Si ya empezaste con la carta, sigue con tus versiones, tu pregunta y la misma ficha."
       ]
     ],
-    "preparation": "Lee los apartados de «Teoría» sobre contexto y enfoques, y las páginas 43–47 de Pardo (páginas 3–7 del archivo). Si trabajas con tu carta, trae el borrador, la versión final, los comentarios recibidos y tus tres decisiones. Si elegiste otro corpus, trae dos piezas que ayuden a responder tu pregunta."
+    "preparation": "Lee el pronunciamiento de Sarayaku en «Recursos». Para elegir un enfoque, consulta la teoría de la clase y las pp. 43–47 de Pardo. Si ya trabajas con la carta, trae tu ficha 3 y sus pasajes."
   },
   {
     "id": "s7-e2",
@@ -540,19 +540,19 @@ export const sessions=[
     "unit": 3,
     "duration": 120,
     "title": "Explicar los pasajes con su contexto",
-    "question": "¿Qué ayuda a explicar el dato de contexto al comparar los dos pasajes?",
+    "question": "¿Qué significa «estaremos atentos» cuando conocemos lo que dispuso la Corte?",
     "resource": "guia-3",
     "product": "Ficha 3: un dato contextual comprobado y una explicación de su utilidad.",
     "agenda": [
       [
         10,
         "Retomar la pregunta",
-        "Retoma la pregunta y tus dos pasajes. Para la carta, identifica el comentario o la condición de la consigna que ayuda a explicar tu decisión. Con otros documentos, identifica un dato sobre su producción o circulación y la fuente donde se comprueba."
+        "Vuelve a las palabras que marcaste. Distingue la noticia de la sentencia del compromiso que asume el pueblo ante la opinión pública."
       ],
       [
         35,
         "Taller de evidencia",
-        "Comprueba el dato con su fuente y localizador; anota lo pendiente. En la web, abre tu evidencia guardada, pulsa «Editar evidencia», completa «Contexto documentado y su fuente» y pulsa «Guardar cambios». En hojas, añade el dato al lado de los pasajes."
+        "Localiza la obligación de consulta en el punto 3. Añade ese dato y su fuente junto a tus pasajes en hojas. En la web, abre «Editar evidencia», completa «Contexto documentado y su fuente» y pulsa «Guardar cambios»."
       ],
       [
         10,
@@ -562,7 +562,7 @@ export const sessions=[
       [
         30,
         "Producción",
-        "En «Mi argumento», relaciona el dato con las palabras de ambos pasajes. En la carta, explica una decisión de revisión. En otros documentos, explica por ejemplo quién tiene autoridad para tomar una decisión y quién se encarga de comunicarla."
+        "Continúa el mismo párrafo en «Mi argumento». Relaciona la satisfacción del pueblo con el sentido que adquiere «estaremos atentos». Quien continúa con la carta explica una formulación con el comentario o la consigna."
       ],
       [
         25,
@@ -575,7 +575,7 @@ export const sessions=[
         "Guarda la evidencia y su explicación para la revisión de la ficha 3."
       ]
     ],
-    "preparation": "Lee «Del texto a una explicación crítica» y el ejemplo de la carta en «Teoría». Trae un comentario recibido o una condición de la consigna que ayude a entender tu decisión. Identifica su autor y dónde está. Si usas otro corpus, prepara un dato pertinente con su fuente."
+    "preparation": "Trae tus dos pasajes. Lee el dato de contexto de la ficha 3 y consulta el punto 3 de «Y dispone», p. 100. Si continúas con tu carta, recupera el comentario o la consigna que explica tu decisión."
   },
   {
     "id": "s8-e1",
@@ -584,7 +584,7 @@ export const sessions=[
     "unit": 3,
     "duration": 60,
     "title": "Contrastar y delimitar",
-    "question": "¿Qué no permite concluir nuestro corpus?",
+    "question": "¿Hasta dónde llega la explicación que sostienen tus fuentes?",
     "resource": "guia-3",
     "product": "Ficha 3 revisada. Hito 2: método y contexto documentado.",
     "agenda": [
@@ -596,12 +596,12 @@ export const sessions=[
       [
         15,
         "Herramientas y lectura",
-        "Contrasta la afirmación con los dos pasajes y la fuente del contexto. En la carta, revisa el comentario o la consigna y la razón que anotaste en la ficha 2. Con otro corpus, comprueba si el dato documentado respalda lo que dices sobre los pasajes."
+        "Comprueba si el párrafo distingue la obligación del Estado, la postura del pueblo y el cumplimiento posterior. Si continúas con la carta, revisa qué cambio respaldan el comentario y la nota de revisión."
       ],
       [
         25,
         "Trabajo y contraste",
-        "Completa «Interpretación revisada» y «Qué cambió y por qué» de la ficha 3. En «Método y contexto documentado» del expediente, explica qué comparaste y cómo comprobaste el dato. Remite a la ficha 3 y sus localizadores para consultar la explicación completa."
+        "En «Mi revisión final», precisa tu interpretación e indica qué mantuviste o cambiaste. En el método del expediente, resume el procedimiento y remite a los pasajes de la ficha 3."
       ],
       [
         10,
@@ -609,7 +609,7 @@ export const sessions=[
         "Comprueba el guardado de la revisión y del método. Revisa las condiciones que indique el docente para la evaluación individual de la próxima clase."
       ]
     ],
-    "preparation": "Lee «Triangular con propósito» y «Hacer visible la propia posición» en «Teoría». Retoma la ficha 3 y señala una afirmación que quieras comprobar con tus registros."
+    "preparation": "Trae la ficha 3 con tu explicación. Relee «Triangular con propósito» y «Hacer visible la propia posición»."
   },
   {
     "id": "s8-e2",

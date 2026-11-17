@@ -244,15 +244,15 @@ export const classContent={
   {
     "block": 1,
     "title": "Elegir un enfoque cambia la investigación",
-    "explanation": "El enfoque relaciona la pregunta, los conceptos y los datos que permiten responderla. La matriz lo muestra con una carta. En ese ejemplo, la lectura del compañero y la situación de escritura ayudan a explicar la voz que el autor asume ante la dirección.",
+    "explanation": "El enfoque conecta la pregunta con un concepto y con las palabras que se pueden examinar. En el pronunciamiento de Sarayaku, el pueblo recibe una decisión de la Corte y luego toma la palabra ante la opinión pública.",
     "points": [
-      "Para elegir el concepto, parte de los dos pasajes y del dato que ayuda a explicarlos. En el ejemplo de la carta, ese dato es el comentario que el autor tuvo en cuenta al revisar.",
-      "La práctica discursiva, en Fairclough, incluye cómo se produce y se interpreta el texto. En esta actividad permite relacionar la voz de la carta con la revisión entre compañeros y el destinatario previsto.",
-      "Las perspectivas sociocognitiva e histórico-discursiva ofrecen otras entradas: cómo los participantes entienden la situación y cómo se nombra y caracteriza a los grupos. La lectura previa define sus conceptos."
+      "En el primer párrafo, observa quién comunica el fallo y quién lo recibe. En el cierre, identifica quién asume el compromiso expresado en futuro.",
+      "Fairclough llama práctica discursiva a los procesos de producción, circulación e interpretación de un texto. Aquí podemos estudiar cómo el pueblo presenta una sentencia judicial ante otros públicos.",
+      "Los enfoques de van Dijk y Wodak permiten examinar, respectivamente, qué conocimiento del caso presupone el texto y cómo se nombra a los actores. La matriz compara sus preguntas."
     ],
-    "example": "Borrador: «Los estudiantes exigimos». Comentario de Cristina: «¿Hablas por todos?». Versión final: «Como estudiante, propongo».",
-    "reading": "Fairclough permite relacionar la voz colectiva del borrador y la posición individual de la versión final con la lectura de Cristina. La perspectiva sociocognitiva estudia cómo autor y lectora interpretan quién habla y a quién representa; el comentario aporta una pista para contrastar esa interpretación. El enfoque histórico-discursivo permite examinar la denominación «los estudiantes» y la atribución de una demanda al grupo; las dos versiones y el comentario documentan esta revisión concreta.",
-    "prompt": "¿Qué relación entre palabras, participantes y situación explica el enfoque que elegiste?",
+    "example": "La Corte comunica la sentencia al pueblo. Sarayaku toma la palabra y declara «estaremos atentos».",
+    "reading": "Con Fairclough podemos relacionar el fallo judicial con el pronunciamiento público. Desde van Dijk, cabe examinar qué identificaciones facilita el primer párrafo a quienes desconocen el caso. Desde Wodak, interesa cómo se nombra y caracteriza al pueblo al reconocer su lucha. Cada enfoque requiere datos adecuados a su pregunta.",
+    "prompt": "¿Qué papel asume Sarayaku al comienzo del pronunciamiento y cuál se atribuye en el cierre?",
     "source": "pardo",
     "lesson": 1
   }
@@ -261,14 +261,14 @@ export const classContent={
   {
     "block": 1,
     "title": "Contextualizar exige fuentes y función",
-    "explanation": "En la unidad 2 registraste decisiones de escritura. Ahora explicas cómo el contexto interviene en lo que tu carta hace: proponer una medida, representar a un grupo o atribuir una responsabilidad. Un dato es pertinente cuando ayuda a entender una formulación concreta. El contexto también se construye mientras los participantes escriben, leen y responden.",
+    "explanation": "Un dato de contexto ayuda a entender una expresión precisa. Al recibir el fallo, Sarayaku celebra el reconocimiento de sus derechos. El futuro de «estaremos atentos» cobra un sentido más preciso cuando sabemos qué obligaciones seguían abiertas.",
     "points": [
       "La primera clase distinguió dimensiones espacio-temporales, situacionales, socioculturales y cognitivas. Goodwin y Duranti, según Calsamiglia y Tusón, organizan el contexto en cuatro dimensiones: localización o marco socioespacial, comportamiento no verbal, lengua como contexto y contexto extrasituacional. Son formas complementarias de examinar la misma interacción. El marco sitúa la actividad; palabras y recursos no verbales orientan su interpretación; los conocimientos extrasituacionales enlazan saberes sociales e interpretaciones de los participantes.",
-      "Elige el dato que ayuda a explicar tu pasaje: por ejemplo, un comentario del compañero sobre a quién representa «los estudiantes». Identifica quién lo escribió y dónde está. El esquema permite reconocer qué aspectos de la situación intervienen.",
-      "También puedes explicar una formulación conservada. Si el lector reconoce que «Como estudiante, propongo» expresa una postura individual y decides mantenerla, relaciona esa respuesta con la voz que quieres asumir ante la dirección."
+      "El punto 3 de «Y dispone» establece que el Estado debe consultar al pueblo ante futuros proyectos que puedan afectar su territorio. Señala quién queda obligado y en qué circunstancia.",
+      "Compara el plural de quien recibe la noticia con el plural que anuncia la vigilancia del cumplimiento. El título identifica a quién se dirige el pronunciamiento y la firma sitúa la voz pública que habla en nombre del pueblo."
     ],
-    "example": "Borrador, párrafo 1: «Los estudiantes exigimos». Comentario 1 de Cristina: «¿Hablas por todos?». Carta final, párrafo 1: «Como estudiante, propongo».",
-    "reading": "El borrador atribuye una demanda al colectivo. Cristina pregunta «¿Hablas por todos?». En su nota de revisión, el autor aclara que habla a título personal. «Como estudiante» hace explícita esa posición ante la dirección. Desde Fairclough, la práctica discursiva incluye esta relación entre la escritura de la carta, la lectura de la compañera y la revisión del autor.",
+    "example": "El primer párrafo presenta al pueblo como destinatario de la noticia. El cierre le atribuye una acción futura.",
+    "reading": "La sentencia establece una obligación estatal y el comunicado anuncia que el pueblo seguirá pendiente de su cumplimiento. Leídos juntos, permiten explicar cómo una victoria jurídica se convierte en motivo para tomar la palabra públicamente. El texto permite estudiar la postura expresada en ese momento.",
     "prompt": "¿Qué palabras del pasaje se entienden mejor al conocer el dato de contexto?",
     "source": "guia-3",
     "lesson": 0
@@ -276,7 +276,7 @@ export const classContent={
   {
     "block": 1,
     "title": "De una formulación a un problema social",
-    "explanation": "El Reglamento de Becas de la UCE ofrece un contraste institucional con la carta. La norma establece una distribución; la carta propone una decisión a la dirección. En ambos casos, el análisis crítico examina quién puede intervenir, cómo se presenta a los grupos y qué razones se ofrecen. La lectura previa desarrolla poder, ideología y legitimación.",
+    "explanation": "El reglamento de becas de la UCE sirve como ejemplo docente para observar cómo una institución justifica una decisión. Al volver a Sarayaku, la pregunta es quién puede exigir el cumplimiento de lo decidido y cómo se presenta ante otros públicos.",
     "points": [
       "Observa qué criterios organiza la norma, quién los establece y qué razones invoca.",
       "Explicita el criterio de evaluación y separa la representación normativa de su aplicación.",
@@ -293,14 +293,14 @@ export const classContent={
   {
     "block": 1,
     "title": "Triangular para resolver una dificultad",
-    "explanation": "Para comprobar una explicación, observa qué aporta cada registro. En el ejemplo de la carta, el borrador conserva la formulación inicial, el comentario documenta la lectura de un compañero y la carta final muestra lo que cambiaste o mantuviste. Tus tres decisiones registran cómo justificaste esa elección.",
+    "explanation": "Triangular es contrastar fuentes o perspectivas para comprobar una interpretación. Aquí disponemos de dos fuentes: el pronunciamiento expresa la posición pública del pueblo y la sentencia documenta una obligación del Estado. Los dos pasajes del pronunciamiento pertenecen a una misma voz.",
     "points": [
-      "El borrador y la carta final proceden del mismo autor. El comentario aporta la perspectiva del lector. Compara sus aportes y vuelve a la decisión anotada para justificar la relación que propones.",
-      "Una formulación conservada también permite estudiar la relación con el lector. Comprueba si el comentario apoyó tu interpretación o si decidiste mantenerla por otra razón documentada."
+      "La apertura y el cierre permiten seguir cómo el pueblo pasa de comunicar una noticia a anunciar un compromiso ante sus lectores.",
+      "El punto 3 de la sentencia precisa una obligación futura. Para estudiar lo que ocurrió después se necesitarían registros de cumplimiento posteriores."
     ],
-    "example": "«Los estudiantes exigimos» → comentario «¿Hablas por todos?» → «Como estudiante, propongo».",
-    "reading": "«Exigimos» formulaba una exigencia y «propongo» presenta una propuesta. El comentario de Cristina cuestionaba a quién representaba el autor. Su nota explica que decidió hablar a título personal. La razón para cambiar el verbo queda abierta hasta encontrar una decisión que la documente.",
-    "prompt": "¿Qué parte del cambio explica el comentario de Cristina y qué parte requiere conocer otra decisión del autor?",
+    "example": "El pueblo expresa que estará atento a que se cumpla el fallo. La sentencia precisa una de las medidas que debe cumplir el Estado.",
+    "reading": "La interpretación se apoya en lo que cada fuente puede documentar: el comunicado da acceso a una posición pública y la sentencia a una decisión judicial. Comprobar una actuación posterior requeriría un registro de esa actuación.",
+    "prompt": "¿Qué palabras de tu párrafo describen un compromiso y cuáles afirmarían que ya se cumplió?",
     "source": "wodak",
     "lesson": 3
   }

@@ -3,7 +3,7 @@ export const activityTitles={2:'Escribir y representar: una carta abierta',3:'Ex
 export const questionExamples={
  1:'¿Cómo distingue Drexler sus propias palabras de las que atribuye a Joaquín Sabina?',
  2:'¿Cómo presenta el artículo 3 los criterios para distribuir las becas?',
- 3:'¿Cómo se relaciona un comentario recibido con lo que cambié o mantuve en mi carta?',
+ 3:'¿Por qué Sarayaku celebra la sentencia y, en el mismo comunicado, afirma que estará atento a su cumplimiento?',
  4:'¿Qué aporta la idea atribuida a Angela Davis a la posición que defiende Márquez?',
  5:'¿Cómo cambia la propuesta de mi carta al convertirla en un aviso para estudiantes de primer semestre?',
  6:'¿Cómo se conectan los considerandos del reglamento con lo que se dispone en sus artículos?'
@@ -56,32 +56,31 @@ export const unitActivities={
    "aiHelp": "Durante la revisión puedes pedir a una IA dos comentarios sobre pasajes de tu carta usando esta rúbrica. Contrástalos con la lectura del compañero. En tus tres decisiones indica qué aceptas, adaptas o rechazas y por qué; si la usaste, anota la herramienta."
  },
  3:{
-  "material": "Trabaja con el material que elegiste para el expediente. Para la carta, recupera el borrador, la versión final, los comentarios recibidos y tus decisiones de la ficha 2. Para otro corpus, elige dos de sus piezas y recupera los datos de contexto disponibles.",
-  "product": "Una explicación que relaciona dos pasajes con un dato de contexto y su fuente. Explica qué aclara ese dato sobre las palabras elegidas, quién habla o a quién se dirige.",
-  "documentQuestion": "¿Qué decisión del comité comunica Bienestar Universitario y dónde se comprueba?",
+  "material": "Lee el pronunciamiento del Pueblo Originario Kichwa de Sarayaku dirigido a la opinión pública. Trabajarás con dos pasajes del mismo texto.",
+  "product": "Un párrafo que explique el cierre del pronunciamiento con dos pasajes y un dato de la sentencia, o la explicación de la carta que ya empezaste.",
   "steps": [
     [
-      "Elegir qué explicar · semana 7, clase 1",
-      "Con la carta, elige una decisión de la ficha 2 y localiza el pasaje en el borrador y en la versión final. Con otro corpus, localiza un pasaje de cada pieza que ayude a responder tu pregunta. Anota la pregunta y las piezas en el expediente. En la ficha 3, identifica los dos pasajes y el enfoque que usarás."
+      "Localizar · semana 7, clase 1",
+      "Lee el pronunciamiento completo. En el primer párrafo, marca cómo Sarayaku cuenta que recibió la sentencia. En el párrafo que empieza «Sarayaku manifiesta su satisfacción», marca lo que anuncia que hará. Guarda ambos pasajes juntos en tu ficha con sus localizadores."
     ],
     [
-      "Explicar los pasajes con un dato de contexto · semana 7, clase 2",
-      "Con la carta, usa el comentario recibido o la condición de la consigna que explica tu decisión. Con otros documentos, identifica un dato sobre quién los produjo, cómo se publicaron o qué vínculo tienen. Por ejemplo, una convocatoria puede citar la resolución que aprobó sus bases. En «Mi argumento», explica qué aclara ese dato al comparar los dos pasajes. En hojas, anota la fuente junto a ellos. En la web, pulsa «Editar evidencia», completa «Contexto documentado y su fuente» y pulsa «Guardar cambios»."
+      "Explicar · semana 7, clase 2",
+      "Consulta el punto 3 de «Y dispone» en la sentencia. Anota qué debía hacer el Estado ante futuros proyectos que pudieran afectar el territorio. En «Mi argumento», explica en un párrafo qué significa «estaremos atentos» a la luz de esa obligación."
     ],
     [
-      "Cerrar la ficha y avanzar el expediente · semana 8, clase 1",
-      "En «Mi revisión final», precisa tu explicación con lo comprobado e indica qué sostienes y por qué. En «Método y contexto documentado» del expediente, explica cómo comparaste los pasajes y comprobaste el dato. Remite a la ficha 3 por su número y localizadores para consultar el análisis completo."
+      "Revisar · semana 8, clase 1",
+      "Vuelve a tu párrafo y distingue lo que el pueblo anuncia de lo que ocurrió después. En «Mi revisión final», recoge el ajuste o indica por qué mantienes tu lectura. En el expediente basta remitir a la ficha 3 y resumir el procedimiento."
     ]
   ],
-  "questionHelp": "Usa la pregunta del expediente. Puedes escribir aquí «Retomo la pregunta del expediente».",
-  "argumentHelp": "Relaciona los dos pasajes con el dato de contexto. Explica qué te ayuda a entender sobre la decisión del autor, los destinatarios o la circulación del texto.",
-  "contextHelp": "Indica el dato, su fuente y dónde encontrarlo. Para la carta puede ser «Comentarios recibidos sobre mi borrador, comentario 2». Con otros documentos, señala, por ejemplo, el párrafo de la convocatoria que remite a la resolución.",
+  "questionHelp": "La pregunta común ya está indicada. Este campo es opcional. Si empezaste con otra pregunta, puedes seguir con ella.",
+  "argumentHelp": "Apoya tu explicación en los dos pasajes y el dato de contexto. Si sigues con tu carta, relaciona el cambio de voz o de formulación con lo que documenta el comentario del lector.",
+  "contextHelp": "Para Sarayaku, indica la obligación y su localizador: sentencia de la Corte Interamericana, «Y dispone», punto 3, p. 100. Para tu carta, identifica el comentario o la condición de la consigna y dónde encontrarlo.",
   "argumentSteps": [
-    "Si analizas tu carta, identifica qué palabras comenta el compañero. Explica qué muestran sobre la voz que asumes ante la dirección y apoya la relación con tu decisión de revisión.",
-    "Si analizas otras piezas, explica qué aclara el dato sobre sus pasajes. En el caso de la UNAE, compara el artículo 1 de la resolución con el primer párrafo del aviso y su firma. Distingue quién aprobó las bases y quién comunicó esa decisión. Para estudiar qué entendió un lector, necesitas su respuesta registrada.",
-    "En tu explicación usa el concepto elegido y cita la lectura que te ayudó a relacionar los pasajes con su contexto."
+    "Señala quién recibe la noticia al comienzo y quién asume un compromiso en el cierre.",
+    "Relaciona una expresión concreta con la obligación que documenta la sentencia.",
+    "Distingue la postura pública del pueblo en ese momento de las medidas que se pudieran adoptar después."
   ],
-  "reviewFocus": "Vuelve a los dos pasajes y a la fuente del dato. Indica qué parte de tu explicación puedes sostener y qué precisaste al comprobarla."
+  "reviewFocus": "Comprueba tu interpretación con los dos pasajes y la fuente del dato. Precisa qué sostienes al volver a leerlos."
 },
  4:{
    "material": "Lee los recortes de Menchú y Márquez, unas 360 palabras. Si ya empezaste con otro corpus, continúa sus registros y usa estos textos para el contraste.",

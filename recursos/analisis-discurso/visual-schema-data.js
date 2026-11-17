@@ -109,10 +109,10 @@ export const visualSchemas={
   "topic": "Elegir un enfoque cambia la investigación",
   "placed": true,
   "replaces": "example",
-  "label": "Tres perspectivas sobre una decisión de la carta",
+  "label": "Tres perspectivas sobre el pronunciamiento de Sarayaku",
   "object": {
     "label": "El caso",
-    "text": "Borrador: «Los estudiantes exigimos». Comentario de Cristina: «¿Hablas por todos?». Versión final: «Como estudiante, propongo»."
+    "text": "El pueblo recibe la noticia del fallo y anuncia ante la opinión pública que estará atento a su cumplimiento."
   },
   "columns": [
     "Marca y lectura posible",
@@ -123,40 +123,37 @@ export const visualSchemas={
       "head": "Fairclough",
       "sub": "dialéctico-relacional",
       "cells": [
-        "La voz colectiva del borrador pasa a una posición individual. La formulación se relaciona con cómo se escribe y se lee la carta.",
-        "Las dos versiones, el comentario de Cristina y la decisión del autor permiten estudiar la revisión ante un destinatario institucional."
+        "El pueblo lleva una decisión judicial al espacio público y expresa qué hará tras conocerla.",
+        "Compara la atribución del fallo a la Corte en la apertura con la primera persona plural del cierre."
       ]
     },
     {
       "head": "Van Dijk",
       "sub": "sociocognitivo",
       "cells": [
-        "«¿Hablas por todos?» cuestiona cómo se entiende quién habla y a quién representa.",
-        "El comentario y la respuesta del autor permiten contrastar sus interpretaciones de la situación comunicativa."
+        "El primer párrafo sitúa el caso para lectores que pueden desconocerlo.",
+        "La fecha, el nombre de la Corte y la referencia al proceso muestran qué información ofrece el texto. Averiguar qué sabía un lector concreto exigiría su testimonio."
       ]
     },
     {
       "head": "Wodak y colaboradores",
       "sub": "histórico-discursivo",
       "cells": [
-        "«Los estudiantes» nombra un grupo; «exigimos» le atribuye una demanda. La versión final presenta una propuesta individual.",
-        "Versiones y comentario documentan esta revisión. Las categorías de nominación y predicación ayudan a describirla; un estudio histórico requeriría reconstruir un proceso más amplio."
+        "El escrito presenta al pueblo como participante en un proceso y atribuye la victoria al esfuerzo colectivo.",
+        "Observa cómo nombra a los participantes y qué acciones les atribuye. La fecha y las referencias al proceso sitúan esa caracterización."
       ]
     }
   ],
-  "verdict": "Para la ficha 3, elige la perspectiva que ayude a explicar la relación observada. Puedes usar Fairclough para relacionar la formulación con la producción y la lectura de tu carta.",
+  "verdict": "Una misma expresión admite preguntas distintas. Para explicar el compromiso público, relaciona la voz del pueblo con el fallo que acaba de conocer.",
   "task": {
     "label": "En la ficha 3",
-    "text": "Elige un concepto que te ayude a explicar quién habla y en nombre de quién, o el problema que observaste en tu propio corpus."
+    "text": "Usa un concepto que te ayude a explicar el paso de recibir la noticia a asumir un compromiso."
   },
-  "source": "Ejemplo de carta y revisión elaborado para el curso. Fairclough (1992: 73–75), dimensiones, y en Wodak y Meyer (2003: 184–185), enfoque dialéctico-relacional; van Dijk (1999: 124–125), modelos de contexto y de acontecimiento; Wodak (2003: 113–115), estrategias discursivas; Pardo (2012: 48), panorama de enfoques.",
+  "source": "Análisis docente del pronunciamiento de Sarayaku (25 de julio de 2012), párrafos 1 y 5. Fairclough (1992: 73–75), dimensiones, y en Wodak y Meyer (2003: 184–185), enfoque dialéctico-relacional; van Dijk (1999: 124–125), modelos de contexto y de acontecimiento; Wodak (2003: 113–115), estrategias discursivas; Pardo (2012: 48), panorama de enfoques.",
   "anchors": [
-    "Borrador: «Los estudiantes exigimos»",
-    "Comentario de Cristina: «¿Hablas por todos?»",
-    "Versión final: «Como estudiante, propongo»",
-    "la voz colectiva del borrador",
-    "cómo autor y lectora interpretan quién habla y a quién representa",
-    "la denominación «los estudiantes» y la atribución de una demanda al grupo"
+    "el pueblo recibe una decisión de la Corte",
+    "qué conocimiento del caso presupone el texto",
+    "cómo se nombra a los actores"
   ]
 },
  'partitura-propuesta':{
@@ -206,40 +203,39 @@ export const visualSchemas={
   "topic": "Triangular para resolver una dificultad",
   "placed": true,
   "replaces": "example",
-  "label": "Qué aporta cada pieza al análisis de la carta",
+  "label": "Dos pasajes y un dato para revisar la interpretación",
   "detailLabel": "Comprobar",
   "center": {
     "label": "Explicación",
-    "text": "Relaciona la formulación, la lectura del compañero y la decisión final."
+    "text": "Distingue qué se anuncia, qué se ordena y qué tendría que comprobarse después."
   },
   "vertices": [
     {
-      "label": "Borrador",
-      "gives": "Conserva la formulación inicial.",
-      "limit": "Localiza el pasaje que comparas con la carta final."
+      "label": "Apertura del comunicado",
+      "gives": "Sitúa al pueblo como destinatario de la sentencia.",
+      "limit": "Párrafo 1: identifica quién comunica el fallo."
     },
     {
-      "label": "Comentario recibido",
-      "gives": "Documenta lo que expresó el lector.",
-      "limit": "Identifica al compañero y el comentario utilizado."
+      "label": "Cierre del comunicado",
+      "gives": "Expresa la posición pública del pueblo tras recibir el fallo.",
+      "limit": "Párrafo 5: localiza el verbo que anuncia una actuación futura."
     },
     {
-      "label": "Carta final",
-      "gives": "Muestra lo que cambiaste o mantuviste.",
-      "limit": "Consulta tus tres decisiones para recuperar la razón anotada."
+      "label": "Sentencia de la Corte",
+      "gives": "Documenta qué debe hacer el Estado ante determinados proyectos.",
+      "limit": "Página 100, «Y dispone», punto 3: identifica al obligado y la circunstancia."
     }
   ],
-  "verdict": "«¿Hablas por todos?» cuestiona la voz colectiva. La nota del autor explica por qué ahora habla a título personal. También pasó de exigir a proponer. Para explicar ese cambio de verbo haría falta una razón registrada por el autor.",
+  "verdict": "Ambos pasajes expresan la posición pública del pueblo en julio de 2012. La sentencia permite precisar la obligación que da sentido a esa vigilancia.",
   "task": {
     "label": "En la ficha 3",
     "text": "Comprueba tu explicación con estos registros y precisa qué sostienes después del contraste."
   },
-  "source": "Ejemplo de revisión de una carta elaborado para el curso. Principio de triangulación: Wodak, en Wodak y Meyer (comps., 2003: 104).",
+  "source": "Pronunciamiento de Sarayaku, párrs. 1 y 5. Corte Interamericana, sentencia de 27 de junio de 2012, «Y dispone», punto 3. Principio de triangulación: Wodak, en Wodak y Meyer (comps., 2003: 104).",
   "anchors": [
-    "el comentario documenta la lectura de un compañero",
-    "la carta final muestra lo que cambiaste o mantuviste",
-    "Tus tres decisiones registran cómo justificaste esa elección",
-    "El borrador y la carta final proceden del mismo autor"
+    "dos fuentes",
+    "posición pública del pueblo",
+    "registros de cumplimiento posteriores"
   ]
 },
  'recontextualizar-clausula':{
@@ -545,35 +541,35 @@ export const visualSchemas={
   "planned": "s7-e2",
   "topic": "Contextualizar exige fuentes y función",
   "placed": true,
-  "label": "El contexto de la carta en cuatro dimensiones",
+  "label": "El contexto del pronunciamiento en cuatro dimensiones",
   "model": "Modelo · Goodwin y Duranti, según el manual",
   "center": {
     "label": "Contexto",
-    "text": "En el mismo intercambio se relacionan la situación de aula, la presentación de la carta, las palabras y los conocimientos de quienes participan."
+    "text": "El pueblo comunica el fallo y se dirige a un público más amplio que las partes del caso."
   },
   "facets": [
     {
       "name": "Localización o marco socioespacial",
-      "example": "La carta se escribe y revisa en clase. Se dirige a la dirección; el compañero participa como lector de la revisión."
+      "example": "El texto se firma en Sarayaku el día de la notificación del fallo y se dirige a la opinión pública nacional e internacional."
     },
     {
       "name": "Comportamiento no verbal",
-      "example": "En una conversación, observa los gestos o las miradas. En una carta escrita, el análisis puede atender a su presentación gráfica. Si la petición ocupa un párrafo aparte, señala dónde aparece."
+      "example": "En una interacción presencial pueden observarse gestos y miradas. En la versión escrita, observa cómo la firma separada del cuerpo identifica a quien suscribe el pronunciamiento."
     },
     {
       "name": "La lengua como contexto",
-      "example": "«Los estudiantes exigimos» propone una voz colectiva; «Como estudiante, propongo» sitúa una voz individual."
+      "example": "En el cierre, «la sentencia» retoma el fallo presentado al comienzo. El futuro sitúa la vigilancia después de la notificación."
     },
     {
       "name": "Contexto extrasituacional",
-      "example": "Conocer la consigna y el papel de la dirección ayuda a entender para qué se escribe y quién podría decidir sobre la propuesta."
+      "example": "El punto 3 del fallo documenta la obligación estatal de consulta. Este dato ayuda a entender por qué el comunicado se proyecta hacia el futuro."
     }
   ],
   "task": {
     "label": "En la ficha 3",
     "text": "Relaciona tu dato con el aspecto de la situación que ayuda a explicar."
   },
-  "source": "Cuatro dimensiones del contexto: Goodwin y Duranti (1992), en Calsamiglia y Tusón (2012, §4.3 · páginas 127–128 del archivo).",
+  "source": "Cuatro dimensiones del contexto: Goodwin y Duranti (1992), en Calsamiglia y Tusón (2012, §4.3 · páginas 127–128 del archivo). Aplicación docente al pronunciamiento de Sarayaku (2012).",
   "anchors": [
     "localización o marco socioespacial",
     "comportamiento no verbal",

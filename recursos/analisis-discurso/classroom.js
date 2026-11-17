@@ -49,7 +49,7 @@ export const classWriting={
   },
   "s7-e1": {
     "focus": "Elige un enfoque para explicar los dos pasajes de tu corpus.",
-    "help": "Relaciona el concepto con los pasajes de la carta o de las piezas que elegiste y cita la lectura."
+    "help": "Relaciona un concepto de la teoría con la voz del pueblo en los dos pasajes o con tu análisis anterior."
   },
   "s7-e2": {
     "focus": "Explica qué aclara tu dato de contexto.",
@@ -107,17 +107,17 @@ export const projectInputs={
   ],
   "question": [
     "Pregunta de investigación",
-    `En la semana 7, escribe la pregunta que guiará el expediente y la ficha 3. Ejemplo con tu carta: «${projectQuestionExample}». Si ya elegiste otro corpus, ajusta la pregunta a esas piezas.`,
+    `Si sigues el caso común, usa «${projectQuestionExample}». Si ya tienes una pregunta sobre la carta u otro corpus, continúa con ella.`,
     3
   ],
   "corpus": [
     "Corpus y criterios de selección",
-    "Enumera 2–4 piezas y explica qué aporta cada una. Para estudiar una decisión de tu carta puedes usar el borrador, la versión final y los comentarios recibidos. Si estudias qué dice o decide la carrera, incluye entre esas piezas una fuente institucional que recoja esa posición. Identifica quién produjo cada pieza y dónde encontrarla. Reunirás 6–10 segmentos en total.",
+    "Enumera 2–4 piezas y explica qué aporta cada una. Para Sarayaku, usa el pronunciamiento como objeto de análisis y la sentencia como fuente de contexto. Para la carta puedes usar el borrador, la versión final y el comentario recibido. Si estudias qué dice o decide la carrera, incluye entre esas piezas una fuente institucional que recoja esa posición. Identifica quién produjo cada pieza y dónde encontrarla. Reunirás 6–10 segmentos en total.",
     5
   ],
   "method": [
     "Método y contexto documentado",
-    "Explica cómo hiciste la comparación. Con la carta, por ejemplo: «Comparé quién habla en cada versión y usé el comentario del compañero para explicar el cambio de voz». Con el caso de la UNAE: «Leí qué decisión anuncia Bienestar Universitario y comprobé en el artículo 1 qué aprobó el comité». Nombra el concepto que aplicaste, cita la lectura y la fuente del dato, y remite a la ficha 3 con sus localizadores.",
+    "Explica cómo hiciste la comparación. Por ejemplo, «Comparé cómo abre y cierra el pronunciamiento y consulté el punto 3 de la sentencia para entender a qué se refiere el compromiso final». Si retomaste la carta, indica qué comentario usaste y qué ayuda a explicar. Nombra el concepto que aplicaste, cita la lectura y la fuente del dato, y remite a la ficha 3 con sus localizadores.",
     6
   ],
   "argument": [
