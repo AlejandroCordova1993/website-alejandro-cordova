@@ -513,25 +513,25 @@ export const sessions=[
       [
         10,
         "Abrir el problema",
-        "Recupera el borrador, la carta final y los comentarios recibidos. Usa tus tres decisiones de revisión para localizar un cambio. Ejemplo de pregunta: «¿Qué cambios entre mi borrador y mi carta final se relacionan con los comentarios del compañero?». Si ya elegiste otro corpus, continúa con sus piezas."
+        "Recupera las dos versiones, los comentarios recibidos y tus tres decisiones. Elige una formulación que cambiaste o mantuviste. Ejemplo de pregunta: «¿Cómo se relaciona un comentario recibido con lo que cambié o mantuve en mi carta?». Si ya elegiste otro corpus, continúa con sus piezas."
       ],
       [
         15,
         "Herramientas y lectura",
-        "Con Pardo y «Teoría», compara en clase qué observarían los tres enfoques en un ejemplo común. Usa la comparación para pensar qué método necesita tu pregunta."
+        "Con la lectura de Pardo y la matriz de «Teoría», compara qué observarían los enfoques en el ejemplo de la carta. Elige un concepto que ayude a explicar tu decisión."
       ],
       [
         25,
         "Trabajo y contraste",
-        "En el expediente, escribe la pregunta y enumera las 2–4 piezas con su ubicación. En la ficha 3, remite a esa pregunta y localiza un pasaje del borrador y su versión final. En «Mi argumento», explica qué enfoque ayudará a estudiar el cambio y cita la lectura."
+        "En el expediente, escribe la pregunta y enumera las 2–4 piezas con su ubicación. En la ficha 3, remite a esa pregunta y registra el pasaje del borrador y el de la carta final, aunque sean iguales. En «Mi argumento», explica qué enfoque ayuda a estudiarlos y cita la lectura."
       ],
       [
         10,
         "Cierre y continuidad",
-        "Para la próxima clase, recupera un comentario recibido que ayude a explicar ese cambio, con su autor y ubicación. También puedes usar una condición de la consigna. Conserva la pregunta y las piezas del mismo expediente."
+        "Para la próxima clase, recupera el comentario recibido o la condición de la consigna que ayuda a explicar tu decisión. Identifica autor y ubicación. Continúa con la misma pregunta y evidencia."
       ]
     ],
-    "preparation": "Lee «Teoría» y Pardo: páginas impresas 43–47 (páginas 3–7 del archivo). Trae tu borrador, tu carta final, los comentarios recibidos y tus tres decisiones de revisión. El borrador y la versión final cuentan como dos piezas del corpus. Si ya elegiste otros documentos, retómalos."
+    "preparation": "Lee en «Teoría» los apartados sobre contexto y enfoques, y Pardo: páginas impresas 43–47 (páginas 3–7 del archivo). Trae borrador, carta final, comentarios recibidos y tus tres decisiones. Puedes analizar algo que cambiaste o mantuviste. Si ya elegiste otros documentos, retómalos."
   },
   {
     "id": "s7-e2",
@@ -539,20 +539,20 @@ export const sessions=[
     "encounter": 2,
     "unit": 3,
     "duration": 120,
-    "title": "Construir un dossier contextual",
-    "question": "¿Qué dato contextual resuelve nuestra dificultad?",
+    "title": "Explicar la carta con su contexto",
+    "question": "¿Cómo ayuda el contexto a explicar una decisión de la carta?",
     "resource": "guia-3",
     "product": "Ficha 3: un dato contextual comprobado y una explicación de su utilidad.",
     "agenda": [
       [
         10,
         "Retomar la pregunta",
-        "Lee tu pregunta y explica qué dificultad puede resolver el dato elegido."
+        "Retoma la pregunta y el pasaje de tu carta. Señala qué comentario o condición de escritura ayuda a explicar tu decisión."
       ],
       [
         35,
         "Taller de evidencia",
-        "Comprueba el dato con su fuente y localizador. Anótalo en «Contexto documentado y su fuente» de la evidencia del fragmento. Marca lo pendiente de comprobar."
+        "Comprueba el dato con su fuente y localizador; anota lo pendiente. En la web, abre tu evidencia guardada, pulsa «Editar evidencia», completa «Contexto documentado y su fuente» y pulsa «Guardar cambios». En hojas, añade el dato al lado de los pasajes."
       ],
       [
         10,
@@ -562,7 +562,7 @@ export const sessions=[
       [
         30,
         "Producción",
-        "En «Mi argumento», explica la relación entre ese dato y las palabras que cambiaron. Distingue la dirección de la carrera como destinatario previsto y el compañero como lector de la revisión. Comprueba la explicación con tus decisiones de la ficha 2."
+        "En «Mi argumento», relaciona el dato con lo que cambiaste o mantuviste y con tu decisión de la ficha 2. Explica qué aporta a la voz, la propuesta o las responsabilidades. Distingue la dirección como destinataria prevista y el compañero como lector de la revisión."
       ],
       [
         25,
@@ -575,7 +575,7 @@ export const sessions=[
         "Guarda la evidencia y su explicación para la revisión de la ficha 3."
       ]
     ],
-    "preparation": "Relee «Del texto a una explicación crítica» en «Teoría». Trae un comentario recibido o una condición de la consigna que ayude a entender el cambio elegido. Identifica su autor y dónde está. Si usas otro corpus, prepara un dato pertinente con su fuente."
+    "preparation": "Lee «Del texto a una explicación crítica» y el ejemplo de la carta en «Teoría». Trae un comentario recibido o una condición de la consigna que ayude a entender tu decisión. Identifica su autor y dónde está. Si usas otro corpus, prepara un dato pertinente con su fuente."
   },
   {
     "id": "s8-e1",
@@ -596,7 +596,7 @@ export const sessions=[
       [
         15,
         "Herramientas y lectura",
-        "Compara esa afirmación con tus datos y otra explicación posible. Busca un contraejemplo o un límite que obligue a ajustarla."
+        "Contrasta la afirmación con los dos pasajes, el comentario y la razón anotada. Si algo discrepa, precisa tu explicación. Puedes confirmar una decisión de conservar el texto o justificar un cambio."
       ],
       [
         25,
@@ -609,7 +609,7 @@ export const sessions=[
         "Comprueba el guardado de la revisión y del método. Revisa las condiciones que indique el docente para la evaluación individual de la próxima clase."
       ]
     ],
-    "preparation": "Relee «Triangular con propósito» y «Hacer visible la propia posición» en «Teoría». Retoma la ficha 3 y prepara una interpretación alternativa o un límite de tu explicación."
+    "preparation": "Lee «Triangular con propósito» y «Hacer visible la propia posición» en «Teoría». Retoma la ficha 3 y señala una afirmación que quieras comprobar con tus registros."
   },
   {
     "id": "s8-e2",

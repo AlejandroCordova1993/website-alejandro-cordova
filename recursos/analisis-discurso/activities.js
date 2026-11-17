@@ -3,7 +3,7 @@ export const activityTitles={2:'Escribir y representar: una carta abierta',3:'Ex
 export const questionExamples={
  1:'¿Cómo distingue Drexler sus propias palabras de las que atribuye a Joaquín Sabina?',
  2:'¿Cómo presenta el artículo 3 los criterios para distribuir las becas?',
- 3:'¿Qué cambios entre mi borrador y mi carta final se relacionan con los comentarios del compañero?',
+ 3:'¿Cómo se relaciona un comentario recibido con lo que cambié o mantuve en mi carta?',
  4:'¿Qué aporta la idea atribuida a Angela Davis a la posición que defiende Márquez?',
  5:'¿Cómo cambia la propuesta de mi carta al convertirla en un aviso para estudiantes de primer semestre?',
  6:'¿Cómo se conectan los considerandos del reglamento con lo que se dispone en sus artículos?'
@@ -56,32 +56,32 @@ export const unitActivities={
    "aiHelp": "Durante la revisión puedes pedir a una IA dos comentarios sobre pasajes de tu carta usando esta rúbrica. Contrástalos con la lectura del compañero. En tus tres decisiones indica qué aceptas, adaptas o rechazas y por qué; si la usaste, anota la herramienta."
  },
  3:{
-   "material": "Recupera tu borrador, tu carta final y los comentarios que recibiste en la unidad 2. Consulta también tus tres decisiones de revisión. Trabajarás con esas versiones ya terminadas. Si ya elegiste otro corpus para el expediente, continúa con sus documentos y registros.",
-   "product": "Una explicación de cómo una condición de escritura o de lectura ayuda a entender un cambio de tu carta. Esta ficha aporta el análisis de contexto al expediente.",
-   "steps": [
-     [
-       "Elegir qué explicar · semana 7, clase 1",
-       "En el expediente, escribe una pregunta y enumera las piezas elegidas con autor, versión y ubicación. Puedes reunir borrador, carta final y comentarios recibidos. En la ficha 3, localiza un pasaje que cambió y su versión final. En «Mi argumento», indica qué enfoque de Teoría te ayuda a estudiarlo."
-     ],
-     [
-       "Explicar el cambio con su contexto · semana 7, clase 2",
-       "Retoma un comentario recibido que ayude a entender ese cambio. Anota qué dijo el lector, quién lo escribió y dónde está, en «Contexto documentado y su fuente». En «Mi argumento», relaciona ese dato con las palabras del borrador y de la carta final. Puedes usar la consigna de escritura si esa condición explica mejor tu elección."
-     ],
-     [
-       "Cerrar la ficha y avanzar el expediente · semana 8, clase 1",
-       "En «Mi revisión final», ajusta la explicación con lo comprobado y señala qué mantuviste o cambiaste. En «Método y contexto documentado» del expediente, resume el enfoque, los pasajes comparados y el dato usado. Remite al análisis de la ficha 3 por su número y localizadores."
-     ]
-   ],
-   "questionHelp": `Usa la pregunta del expediente. Puedes escribir aquí «Retomo la pregunta del expediente». Ejemplo de pregunta: «${questionExamples[3]}».`,
-   "argumentHelp": "Explica un cambio de la carta con un dato de su escritura o lectura. Retoma tus decisiones de la ficha 2 y añade qué permite comprender el contexto.",
-   "contextHelp": "Copia el comentario recibido o indica la condición de la consigna que usas. Identifica su autor y dónde está. Ejemplo de localizador: «Comentarios recibidos sobre mi borrador, comentario 2».",
-   "argumentSteps": [
-     "Señala el pasaje del borrador y el de la carta final. Describe el cambio de palabras y qué aporta a tu propuesta o a la representación de las personas.",
-     "Distingue el destinatario previsto, la dirección de la carrera, del lector que participó en la revisión, tu compañero. Usa su comentario o la consigna como dato documentado de esa situación.",
-     "Explica cómo esa situación de escritura o lectura ayuda a entender el cambio. Compruébalo con tus decisiones de la ficha 2. Puedes usar Fairclough para relacionar la formulación con su producción y recepción; cita la lectura y el concepto que utilizas."
-   ],
-   "reviewFocus": "Explica qué sostienes después de comprobar el comentario o la consigna y las dos versiones. Indica hasta dónde permiten llegar esos datos."
- },
+  "material": "Recupera tu borrador, tu carta final y los comentarios que recibiste en la unidad 2. Consulta también tus tres decisiones de revisión. Trabajarás con esas versiones ya terminadas. Si ya elegiste otro corpus para el expediente, continúa con sus documentos y registros.",
+  "product": "Una explicación de cómo una condición de escritura o de lectura ayuda a entender una decisión de tu carta. Esta ficha aporta el análisis de contexto al expediente.",
+  "steps": [
+    [
+      "Elegir qué explicar · semana 7, clase 1",
+      "Elige una decisión de tu carta: algo que cambiaste o mantuviste después de leer los comentarios. En el expediente, escribe la pregunta y enumera las piezas con autor, versión y ubicación. En la ficha 3, registra los pasajes del borrador y de la versión final. En «Mi argumento», indica qué enfoque te ayudará a explicarlos."
+    ],
+    [
+      "Relacionar la decisión con su contexto · semana 7, clase 2",
+      "Recupera el comentario recibido o la condición de la consigna que ayuda a explicar tu decisión. En la web, abre la evidencia guardada, pulsa «Editar evidencia», completa «Contexto documentado y su fuente» y pulsa «Guardar cambios». En hojas, añade el dato junto a los pasajes. En «Mi argumento», explica cómo ese contexto interviene en la voz, la propuesta o las responsabilidades que presenta tu carta."
+    ],
+    [
+      "Cerrar la ficha y avanzar el expediente · semana 8, clase 1",
+      "En «Mi revisión final», precisa tu explicación con lo comprobado e indica qué sostienes y por qué. En «Método y contexto documentado» del expediente, resume enfoque, pasajes y dato usado. Remite a la ficha 3 por su número y localizadores para consultar el análisis completo."
+    ]
+  ],
+  "questionHelp": `Usa la pregunta del expediente. Puedes escribir aquí «Retomo la pregunta del expediente». Ejemplo de pregunta: «${questionExamples[3]}».`,
+  "argumentHelp": "Explica cómo la situación de escritura o la lectura del compañero interviene en la voz, la propuesta o las responsabilidades de tu carta. Apóyate en el pasaje, el comentario y tu decisión de la ficha 2.",
+  "contextHelp": "Copia el comentario recibido o indica la condición de la consigna que usas. Identifica su autor y dónde está. Ejemplo de localizador: «Comentarios recibidos sobre mi borrador, comentario 2».",
+  "argumentSteps": [
+    "Señala el pasaje del borrador y el de la carta final. Explica qué cambiaste o mantuviste y cómo presenta tu propuesta o a las personas.",
+    "Distingue el destinatario previsto, la dirección de la carrera, del lector de la revisión, tu compañero. Identifica el comentario recibido o la condición de la consigna que usas como dato.",
+    "Relaciona ese dato con tu decisión de la ficha 2 y con las palabras de la carta. Puedes usar Fairclough para explicar cómo la producción y la lectura intervienen en la formulación. Cita el concepto y la lectura utilizados."
+  ],
+  "reviewFocus": "Explica qué sostienes después de contrastar las dos versiones, el comentario o la consigna y tu decisión. Si mantuviste una formulación, indica qué permite comprender esa continuidad."
+},
  4:{
    "material": "Lee los recortes de Menchú y Márquez, unas 360 palabras. Si ya empezaste con otro corpus, continúa sus registros y usa estos textos para el contraste.",
    "product": "Una explicación de cómo las voces contribuyen a la posición que defiende cada intervención.",

@@ -104,20 +104,61 @@ export const visualSchemas={
   anchors:['nosotros','«los solicitantes» puede designar a los destinatarios','una institución puede nombrarse a sí misma, como «esta comisión»','La forma por sí sola no decide a quién incluye','Distingue quien enuncia, los participantes representados y los destinatarios','nombres, posesivos y terminaciones verbales']
  },
  'enfoques-matriz':{
-  type:'matrix',planned:'s7-e1',topic:'Elegir un enfoque cambia la investigación',placed:true,replaces:'example',
-  label:'Qué observaría cada enfoque ante el mismo problema',
-  object:{label:'Problema',text:'¿Cómo se representa una condición de acceso a una ayuda en una norma y en su explicación pública?'},
-  columns:['Marca y lectura posible','Datos para sostenerla'],
-  rows:[
-   {head:'Fairclough',sub:'dialéctico-relacional',cells:['«Se deberá destinar» establece una obligación. El reparto 65/35 fija prioridades de acceso a los recursos.','El órgano emisor y los considerandos sitúan la decisión y sus fundamentos. Registros de difusión o lectura permitirían estudiar circulación y recepción.']},
-   {head:'Van Dijk',sub:'sociocognitivo',cells:['«Adjunte nuevamente el certificado» presenta un trámite anterior y trata al destinatario como capaz de reconocerlo.','Respuestas y experiencias de lectores permiten contrastar qué saben del trámite y cómo entienden su papel. Esos datos ayudan a investigar sus modelos de contexto.']},
-   {head:'Wodak y colaboradores',sub:'histórico-discursivo',cells:['«Estudiantes» nombra un grupo; «que no cuenten con recursos económicos suficientes» le atribuye una condición que delimita beneficiarios.','Los considerandos vinculan la ayuda con la continuidad de estudios y aportan una razón para incluir a ese grupo. Versiones comparables permitirían investigar cambios.']}
+  "type": "matrix",
+  "planned": "s7-e1",
+  "topic": "Elegir un enfoque cambia la investigación",
+  "placed": true,
+  "replaces": "example",
+  "label": "Tres perspectivas sobre una decisión de la carta",
+  "object": {
+    "label": "El caso",
+    "text": "Borrador: «Los estudiantes exigimos». Comentario de Cristina: «¿Hablas por todos?». Versión final: «Como estudiante, propongo»."
+  },
+  "columns": [
+    "Marca y lectura posible",
+    "Datos para sostenerla"
   ],
-  verdict:'La matriz orienta preguntas y procedimientos posibles ante el mismo problema. Las fuentes pueden servir a más de un enfoque; la elección se justifica por la relación que queremos explicar y los datos con que podemos sostenerla.',
-  task:{label:'En la ficha 3',text:'Usa la comparación hecha en clase para elegir un enfoque pertinente para tu pregunta.'},
-  source:'Aplicación del curso al reglamento de becas y al ejemplo de solicitud de un certificado. Fairclough (1992: 73–75), dimensiones, y en Wodak y Meyer (2003: 184–185), enfoque dialéctico-relacional; van Dijk (1999: 124–125), modelos de contexto y de acontecimiento; Wodak (2003: 113–115), estrategias discursivas; Pardo (2012: 48).',
-  anchors:['condición de acceso a una ayuda en una norma y en su explicación pública','obligaciones, denominaciones, autoridad y condiciones de producción','representaciones del asunto tratado e interpretaciones de la situación comunicativa','denominaciones, atributos y argumentos en contexto','versiones comparables','Estudiar los conocimientos que median interpretaciones requiere datos adecuados de participantes']
- },
+  "rows": [
+    {
+      "head": "Fairclough",
+      "sub": "dialéctico-relacional",
+      "cells": [
+        "La voz colectiva del borrador pasa a una posición individual. La formulación se relaciona con cómo se escribe y se lee la carta.",
+        "Las dos versiones, el comentario de Cristina y la decisión del autor permiten estudiar la revisión ante un destinatario institucional."
+      ]
+    },
+    {
+      "head": "Van Dijk",
+      "sub": "sociocognitivo",
+      "cells": [
+        "«¿Hablas por todos?» cuestiona cómo se entiende quién habla y a quién representa.",
+        "El comentario y la respuesta del autor permiten contrastar sus interpretaciones de la situación comunicativa."
+      ]
+    },
+    {
+      "head": "Wodak y colaboradores",
+      "sub": "histórico-discursivo",
+      "cells": [
+        "«Los estudiantes» nombra un grupo; «exigimos» le atribuye una demanda. La versión final presenta una propuesta individual.",
+        "Versiones y comentario documentan esta revisión. Las categorías de nominación y predicación ayudan a describirla; un estudio histórico requeriría reconstruir un proceso más amplio."
+      ]
+    }
+  ],
+  "verdict": "Para la ficha 3, elige la perspectiva que ayude a explicar la relación observada. Puedes usar Fairclough para relacionar la formulación con la producción y la lectura de tu carta.",
+  "task": {
+    "label": "En la ficha 3",
+    "text": "Relaciona un concepto con el pasaje y el dato que vas a analizar."
+  },
+  "source": "Ejemplo de carta y revisión elaborado para el curso. Fairclough (1992: 73–75), dimensiones, y en Wodak y Meyer (2003: 184–185), enfoque dialéctico-relacional; van Dijk (1999: 124–125), modelos de contexto y de acontecimiento; Wodak (2003: 113–115), estrategias discursivas; Pardo (2012: 48), panorama de enfoques.",
+  "anchors": [
+    "Borrador: «Los estudiantes exigimos»",
+    "Comentario de Cristina: «¿Hablas por todos?»",
+    "Versión final: «Como estudiante, propongo»",
+    "la voz colectiva del borrador",
+    "cómo autor y lectora interpretan quién habla y a quién representa",
+    "la denominación «los estudiantes» y la atribución de una demanda al grupo"
+  ]
+},
  'partitura-propuesta':{
   type:'score',planned:'s2-e2',topic:'Palabras, voz y cuerpo',placed:true,replaces:'example',
   label:'Palabras, voz y cuerpo alineados en el tiempo',
@@ -160,19 +201,47 @@ export const visualSchemas={
   anchors:['La medida beneficia a muchos estudiantes; debemos mantenerla','una medida beneficiosa merece mantenerse','El beneficio estudiantil funciona como criterio de legitimación','la prueba del beneficio','costes o exclusiones']
  },
  'triangulacion-fuentes':{
-  type:'triangle',planned:'s8-e1',topic:'Triangular para resolver una dificultad',placed:true,replaces:'example',
-  label:'Tres fuentes que responden a preguntas relacionadas, pero no equivalentes',
-  center:{label:'Conclusión',text:'Relaciona lo que se exige, cómo se comunica y cómo lo interpreta un participante.'},
-  vertices:[
-   {label:'Norma',gives:'Fija el procedimiento.',limit:'Consulta el aviso para estudiar cómo se comunicó.'},
-   {label:'Aviso',gives:'Informa una convocatoria.',limit:'Consulta registros de aplicación para estudiar el cumplimiento.'},
-   {label:'Respuesta registrada',gives:'Muestra cómo fue interpretada.',limit:'Compara otras respuestas si investigas cómo leyó el grupo.'}
+  "type": "triangle",
+  "planned": "s8-e1",
+  "topic": "Triangular para resolver una dificultad",
+  "placed": true,
+  "replaces": "example",
+  "label": "Qué aporta cada pieza al análisis de la carta",
+  "detailLabel": "Comprobar",
+  "center": {
+    "label": "Explicación",
+    "text": "Relaciona la formulación, la lectura del compañero y la decisión final."
+  },
+  "vertices": [
+    {
+      "label": "Borrador",
+      "gives": "Conserva la formulación inicial.",
+      "limit": "Localiza el pasaje que comparas con la carta final."
+    },
+    {
+      "label": "Comentario recibido",
+      "gives": "Documenta lo que expresó el lector.",
+      "limit": "Identifica al compañero y el comentario utilizado."
+    },
+    {
+      "label": "Carta final",
+      "gives": "Muestra lo que cambiaste o mantuviste.",
+      "limit": "Consulta tus tres decisiones para recuperar la razón anotada."
+    }
   ],
-  verdict:'El contraste permite explicar qué condición de la norma se vuelve visible en el aviso y cuál reconoce la respuesta registrada. Una diferencia puede precisar dónde cambia la representación del trámite. Comprueba si las fuentes aportan datos obtenidos por separado.',
-  task:{label:'En la ficha 3',text:'Explica qué pregunta responde cada fuente y cómo se complementan sus aportes. Ejemplos: norma, «¿Qué requisito establece?»; aviso, «¿Cómo comunica ese requisito?»; respuesta registrada, «¿Qué entendió el lector sobre ese requisito?».'},
-  source:'Ejemplo. Principio de triangulación: Wodak, en Wodak y Meyer (comps., 2003: 104).',
-  anchors:['Una norma fija el procedimiento','un aviso informa una convocatoria','una respuesta registrada muestra cómo fue interpretada','lo dispuesto, lo comunicado y lo interpretado','La conclusión se refiere a esas piezas y esa respuesta','aportan datos obtenidos por separado']
- },
+  "verdict": "Borrador y carta final proceden del mismo autor; el comentario aporta la perspectiva del lector. Las decisiones de la ficha 2 ayudan a contrastar la relación que propones entre la lectura y la versión final.",
+  "task": {
+    "label": "En la ficha 3",
+    "text": "Comprueba tu explicación con estos registros y precisa qué sostienes después del contraste."
+  },
+  "source": "Ejemplo de revisión de una carta elaborado para el curso. Principio de triangulación: Wodak, en Wodak y Meyer (comps., 2003: 104).",
+  "anchors": [
+    "el comentario documenta la lectura de un compañero",
+    "la carta final muestra lo que cambiaste o mantuviste",
+    "Tus tres decisiones registran cómo justificaste esa elección",
+    "El borrador y la carta final proceden del mismo autor"
+  ]
+},
  'recontextualizar-clausula':{
   type:'transform',planned:'s11-e2',topic:'Recontextualizar implica seleccionar',placed:true,replaces:'example',
   label:'Una cláusula transformada para otro destinatario',
@@ -473,20 +542,47 @@ export const visualSchemas={
   anchors:['Escribir una carta abierta permite intervenir en un asunto compartido','El esquema relaciona planificación, textualización y revisión de esa intervención']
  },
  'contexto-dimensiones':{
-  type:'facets',planned:'s7-e2',topic:'Contextualizar exige fuentes y función',placed:true,
-  label:'Las cuatro dimensiones del contexto',
-  model:'Modelo · Goodwin y Duranti, según el manual',
-  center:{label:'Contexto',text:'Las dimensiones actúan conjuntamente: un dato importa cuando cambia cómo entendemos la acción o la relación entre participantes.'},
-  facets:[
-   {name:'Localización o marco socioespacial',example:'La fecha sitúa una versión; la institución permite establecer quién puede emitir una norma.'},
-   {name:'Comportamiento no verbal',example:'En un intercambio, la mirada puede indicar a quién se dirige una intervención. En el reglamento, el emblema junto al nombre de la universidad aporta un indicio visual de identidad institucional, que se interpreta con el encabezado y «RESUELVE».'},
-   {name:'La lengua como contexto',example:'Los tratamientos proponen una relación; las referencias conectan la intervención con lo ya dicho.'},
-   {name:'Contexto extrasituacional',example:'Conocer la práctica ayuda a reconocer una solicitud, una decisión o una objeción.'}
+  "type": "facets",
+  "planned": "s7-e2",
+  "topic": "Contextualizar exige fuentes y función",
+  "placed": true,
+  "label": "El contexto de la carta en cuatro dimensiones",
+  "model": "Modelo · Goodwin y Duranti, según el manual",
+  "center": {
+    "label": "Contexto",
+    "text": "En el mismo intercambio se relacionan la situación de aula, la presentación de la carta, las palabras y los conocimientos de quienes participan."
+  },
+  "facets": [
+    {
+      "name": "Localización o marco socioespacial",
+      "example": "La carta se escribe y revisa en clase. Se dirige a la dirección; el compañero participa como lector de la revisión."
+    },
+    {
+      "name": "Comportamiento no verbal",
+      "example": "La disposición, el tamaño de las letras y los espacios entre párrafos destacan la propuesta y separan sus razones. Observa los recursos presentes en tu carta."
+    },
+    {
+      "name": "La lengua como contexto",
+      "example": "«Los estudiantes exigimos» propone una voz colectiva; «Como estudiante, propongo» sitúa una voz individual."
+    },
+    {
+      "name": "Contexto extrasituacional",
+      "example": "Conocer la consigna y el papel de la dirección ayuda a entender para qué se escribe y quién podría decidir sobre la propuesta."
+    }
   ],
-  task:{label:'En la ficha 3',text:'Al revisar tu dato de contexto, indica qué dimensión te ayuda a explicar.'},
-  source:'Cuatro dimensiones del contexto: Goodwin y Duranti (1992), en Calsamiglia y Tusón (2012, §4.3 · páginas 127–128 del archivo).',
-  anchors:['distinguen cuatro dimensiones del contexto','la localización o marco socioespacial, como una fecha o una institución','el comportamiento no verbal, como los gestos','la lengua como contexto, con tratamientos y referencias','el contexto extrasituacional, los conocimientos previos que permiten reconocer qué está pasando','Se estudian por separado, pero actúan conjuntamente']
- }
+  "task": {
+    "label": "En la ficha 3",
+    "text": "Relaciona tu dato con el aspecto de la situación que ayuda a explicar."
+  },
+  "source": "Cuatro dimensiones del contexto: Goodwin y Duranti (1992), en Calsamiglia y Tusón (2012, §4.3 · páginas 127–128 del archivo).",
+  "anchors": [
+    "localización o marco socioespacial",
+    "comportamiento no verbal",
+    "lengua como contexto",
+    "contexto extrasituacional",
+    "la misma interacción"
+  ]
+}
 };
 
 // Image slots. While `file` is empty students see nothing and the author view shows the specification.

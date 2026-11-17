@@ -48,12 +48,12 @@ export const classWriting={
     "help": "Trabaja la presentación en papel o en un editor como Word. Describe la decisión y la lectura del compañero en «Tres decisiones de revisión»."
   },
   "s7-e1": {
-    "focus": "Propón un enfoque que ayude a responder tu pregunta.",
-    "help": "Indica qué marca observarás y cita la lectura."
+    "focus": "Elige un enfoque para explicar una decisión de tu carta.",
+    "help": "Relaciona el concepto con el pasaje que cambiaste o mantuviste y cita la lectura."
   },
   "s7-e2": {
     "focus": "Explica qué aclara tu dato de contexto.",
-    "help": "Remite al dato y a su fuente."
+    "help": "Completa la evidencia guardada con «Editar evidencia» y guarda los cambios."
   },
   "s9-e2": {
     "focus": "Explica quién sostiene cada idea.",
@@ -161,7 +161,7 @@ export const projectInputs={
 export const preparationLessons={
  's2-e1':[0,2,3],'s2-e2':[1,3],'s3-e1':[5],'s3-e2':[4],
  's4-e1':[5,0],'s4-e2':[4],'s5-e1':[1],'s5-e2':[2],'s6-e1':[3],'s6-e2':[3],
- 's7-e1':[0,1,2],'s7-e2':[0,2],'s8-e1':[3,4],'s8-e2':[],
+ 's7-e1':[0,1],'s7-e2':[2],'s8-e1':[3,4],'s8-e2':[],
  's9-e1':[0,1],'s9-e2':[1,2],'s10-e1':[2,3],'s10-e2':[4],
  's11-e1':[0,1,2],'s11-e2':[3],'s12-e1':[3,4],'s12-e2':[4],
  's13-e1':[0],'s13-e2':[2],'s14-e1':[1],'s14-e2':[3],

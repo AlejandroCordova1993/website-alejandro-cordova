@@ -244,16 +244,15 @@ export const classContent={
   {
     "block": 1,
     "title": "Elegir un enfoque cambia la investigación",
-    "explanation": "Elegir un enfoque exige relacionar problema, categorías y datos. El cotexto aporta palabras próximas; el contexto incluye además situación, institución y conocimientos pertinentes. En el reglamento, el encabezado y «RESUELVE» permiten interpretar «Se deberá destinar» como una disposición institucional. Los enfoques críticos investigan cómo el discurso participa en relaciones de poder, desigualdad y resistencia. La elección es provisional y se apoya en qué relación podremos explicar con las evidencias disponibles.",
+    "explanation": "El enfoque relaciona la pregunta, los conceptos y los datos que permiten responderla. Partimos de una decisión ya registrada en la carta. Estudiamos cómo la lectura del compañero y la situación de escritura intervienen en la voz que asumes ante la dirección. La matriz muestra qué observaría cada perspectiva en ese mismo caso.",
     "points": [
-      "Van Dijk, perspectiva sociocognitiva: distingue representaciones del asunto tratado e interpretaciones de la situación comunicativa. El modelo de acontecimiento representa mentalmente el asunto del discurso; el modelo de contexto, cómo un participante entiende quién comunica, con qué propósito y qué se supone conocido. Esas representaciones median la relación entre discurso y sociedad.",
-      "Fairclough relaciona elecciones del texto, procesos de producción, distribución e interpretación —práctica discursiva— y relaciones institucionales y de poder —práctica social—. Así articula obligaciones, denominaciones, autoridad y condiciones de producción.",
-      "Wodak y colaboradores estudian denominaciones, atributos y argumentos en contexto. Nominación es nombrar grupos; predicación, atribuirles rasgos; argumentación, relacionar razones con una afirmación o medida. El estudio de los cambios históricos necesita versiones comparables y datos de su contexto.",
-      "La perspectiva dialéctico-relacional de Fairclough se desarrolla en distintos momentos; el esquema de tres dimensiones que usamos procede de 1992. La pregunta, la marca y el dato que la explica orientan qué categorías de cada propuesta son pertinentes."
+      "Primero localiza los dos pasajes, el comentario recibido y la decisión anotada en la ficha 2. Después elige el concepto que te permita explicar su relación.",
+      "La práctica discursiva, en Fairclough, incluye cómo se produce y se interpreta el texto. En esta actividad permite relacionar la voz de la carta con la revisión entre compañeros y el destinatario previsto.",
+      "Las perspectivas sociocognitiva e histórico-discursiva ofrecen otras entradas: cómo los participantes entienden la situación y cómo se nombra y caracteriza a los grupos. La lectura previa define sus conceptos."
     ],
-    "example": "Problema: ¿cómo se representa una condición de acceso a una ayuda en una norma y en su explicación pública?",
-    "reading": "Con las dos piezas podemos relacionar denominaciones y obligaciones con la autoridad que produce la norma y con el destinatario de su explicación: es un recorrido apoyado en Fairclough. Estudiar los conocimientos que median interpretaciones requiere datos adecuados de participantes; reconstruir cambios históricos exige documentos comparables. Elegir un enfoque concreta qué relación explicaremos y cómo la documentaremos.",
-    "prompt": "¿Qué dato necesitaría cada enfoque y cuál podemos documentar en nuestro corpus?",
+    "example": "Borrador: «Los estudiantes exigimos». Comentario de Cristina: «¿Hablas por todos?». Versión final: «Como estudiante, propongo».",
+    "reading": "Fairclough permite relacionar la voz colectiva del borrador y la posición individual de la versión final con la lectura de Cristina. La perspectiva sociocognitiva estudia cómo autor y lectora interpretan quién habla y a quién representa; el comentario aporta una pista para contrastar esa interpretación. El enfoque histórico-discursivo permite examinar la denominación «los estudiantes» y la atribución de una demanda al grupo; las dos versiones y el comentario documentan esta revisión concreta.",
+    "prompt": "¿Qué relación entre palabras, participantes y situación explica el enfoque que elegiste?",
     "source": "pardo",
     "lesson": 1
   }
@@ -262,23 +261,22 @@ export const classContent={
   {
     "block": 1,
     "title": "Contextualizar exige fuentes y función",
-    "explanation": "El contexto se documenta para resolver una dificultad interpretativa. Una fecha, una institución o una circunstancia importa cuando explicamos cómo afecta la lectura y de qué fuente procede. El contexto también se construye con indicios del propio discurso: tratamientos, referencias, turnos, gestos o prosodia. Vuelve al fragmento para comprobar cómo se presenta la situación.",
+    "explanation": "En la unidad 2 registraste decisiones de escritura. Ahora explicas cómo el contexto interviene en lo que tu carta hace: proponer una medida, representar a un grupo o atribuir una responsabilidad. Un dato es pertinente cuando ayuda a entender una formulación concreta. El contexto también se construye mientras los participantes escriben, leen y responden.",
     "points": [
-      "Goodwin y Duranti, según el manual, distinguen cuatro dimensiones del contexto: la localización o marco socioespacial, como una fecha o una institución; el comportamiento no verbal, como los gestos y los elementos iconográficos de la escritura; la lengua como contexto, con tratamientos y referencias; y el contexto extrasituacional, los conocimientos previos que permiten reconocer qué está pasando. Se estudian por separado, pero actúan conjuntamente.",
-      "En la primera página del reglamento, el emblema institucional junto al nombre de la universidad aporta un indicio visual; «RESUELVE» realiza verbalmente una decisión. Conocer el papel normativo del Consejo Universitario permite relacionarlos con una voz autorizada. La imagen, las palabras y el conocimiento institucional colaboran en esa lectura.",
-      "La fecha de una carpeta digital no equivale a la fecha de reforma del documento.",
-      "Un procedimiento normativo no acredita cómo fue aplicado o experimentado."
+      "La primera clase distinguió dimensiones espacio-temporales, situacionales, socioculturales y cognitivas. Goodwin y Duranti, según Calsamiglia y Tusón, organizan el contexto en cuatro dimensiones: localización o marco socioespacial, comportamiento no verbal, lengua como contexto y contexto extrasituacional. Son formas complementarias de examinar la misma interacción. El marco sitúa la actividad; palabras y recursos no verbales orientan su interpretación; los conocimientos extrasituacionales enlazan saberes sociales e interpretaciones de los participantes.",
+      "Elige el dato que ayuda a explicar tu pasaje: por ejemplo, un comentario del compañero sobre a quién representa «los estudiantes». Identifica quién lo escribió y dónde está. El esquema permite reconocer qué aspectos de la situación intervienen.",
+      "También puedes explicar una formulación conservada. Si el lector reconoce que «Como estudiante, propongo» expresa una postura individual y decides mantenerla, relaciona esa respuesta con la voz que quieres asumir ante la dirección."
     ],
-    "example": "Fragmento: «Se deberá destinar el 65% de las becas para excelencia académica y el 35 % por vulnerabilidad» (artículo 3, página 2 del archivo). Dificultad: ¿el «2024» de la carpeta identifica la reforma de este ejemplar?",
-    "reading": "Dato y fuente: la razón final del mismo Reglamento de Becas, página 4 del archivo, consigna reformas de 7 de diciembre de 2021 y 20 de septiembre de 2022. Función: permite identificar el ejemplar en que analizamos la obligación. La lectura pasa de «reparto en una norma reformada en 2024» a «reparto en un ejemplar que registra reforma de 2022»; la carpeta informa dónde se consulta. El encabezado del Consejo Universitario y «RESUELVE» (página 1 del archivo) aportan otro dato: quién presenta la disposición. Fecha e instancia explican aspectos diferentes del mismo fragmento. Para saber qué cambió exactamente en el artículo haría falta comparar versiones.",
-    "prompt": "¿Qué afirmación cambia con este dato y cuál sigue pendiente?",
+    "example": "Borrador, párrafo 1: «Los estudiantes exigimos». Comentario 1 de Cristina: «¿Hablas por todos?». Carta final, párrafo 1: «Como estudiante, propongo».",
+    "reading": "El borrador atribuye una demanda al colectivo. La pregunta de Cristina pone en discusión esa representación. En la decisión de revisión, el autor explica que habla a título personal; la versión final lo hace explícito y presenta una propuesta. Desde Fairclough, relacionamos el texto —las formulaciones— con su práctica discursiva —la escritura y la lectura entre compañeros— y con una relación institucional: un estudiante se dirige a la dirección para proponer condiciones de uso de IA. El comentario documenta la intervención de la lectora; las dos versiones muestran la decisión. La explicación se apoya en esos pasajes y en la razón registrada por el autor.",
+    "prompt": "Explica qué ayuda a comprender el comentario o la consigna sobre tu decisión.",
     "source": "guia-3",
     "lesson": 0
   },
   {
     "block": 1,
     "title": "De una formulación a un problema social",
-    "explanation": "El análisis crítico relaciona marcas, categorías y condiciones sociales. Poder es capacidad situada de orientar acciones y acceso a recursos. Legitimar es presentar una decisión como aceptable o autorizada. La ideología exige estudiar relaciones entre creencias, significados y grupos; no se identifica por una palabra aislada.",
+    "explanation": "El reglamento ofrece un contraste institucional con la carta. La norma establece una distribución; la carta propone una decisión a la dirección. En ambos casos, el análisis crítico examina quién puede intervenir, cómo se presenta a los grupos y qué razones se ofrecen. La lectura previa desarrolla poder, ideología y legitimación.",
     "points": [
       "Observa qué criterios organiza la norma, quién los establece y qué razones invoca.",
       "Explicita el criterio de evaluación y separa la representación normativa de su aplicación.",
@@ -292,11 +290,21 @@ export const classContent={
   }
 ],
  's8-e1':[
-  topic(1,'Triangular para resolver una dificultad','Triangular permite reconstruir una práctica desde fuentes que muestran aspectos distintos: lo dispuesto, lo comunicado y lo interpretado. Una discrepancia puede revelar cómo cambia una condición al pasar entre documentos o entre participantes. La relación entre las fuentes debe estar documentada.',
-   ['Explica qué pregunta responde cada fuente y cómo se complementan sus aportes. Por ejemplo: «¿Qué condición establece la norma?», «¿Cómo la comunica el aviso?» y «¿Cómo la entendió el participante cuya respuesta registramos?».','Comprueba si los documentos se basan en una misma fuente o aportan datos obtenidos por separado.'],
-   'Una norma fija el procedimiento; un aviso informa una convocatoria; una respuesta registrada muestra cómo fue interpretada.','Si pertenecen al mismo trámite, podemos seguir una condición: cómo se establece, cómo se comunica y qué entiende un participante. Una diferencia entre esos registros ayuda a localizar dónde se transforma su sentido. La conclusión se refiere a esas piezas y esa respuesta; otras experiencias requieren nuevos registros.',
-   '¿Qué relación entre las fuentes sostiene nuestra conclusión?','wodak',3)
- ],
+  {
+    "block": 1,
+    "title": "Triangular para resolver una dificultad",
+    "explanation": "Contrasta los registros de la misma revisión para comprobar tu explicación. El borrador conserva la formulación inicial; el comentario documenta la lectura de un compañero; la carta final muestra lo que cambiaste o mantuviste. Tus tres decisiones registran cómo justificaste esa elección.",
+    "points": [
+      "El borrador y la carta final proceden del mismo autor. El comentario aporta la perspectiva del lector. Compara sus aportes y vuelve a la decisión anotada para justificar la relación que propones.",
+      "Una formulación conservada también permite estudiar la relación con el lector. Comprueba si el comentario apoyó tu interpretación o si decidiste mantenerla por otra razón documentada."
+    ],
+    "example": "«Los estudiantes exigimos» → comentario «¿Hablas por todos?» → «Como estudiante, propongo».",
+    "reading": "Las versiones muestran el paso de una voz colectiva a una individual. El comentario cuestiona la representación del grupo; la decisión registrada por el autor permite relacionar esa lectura con la revisión. Si el comentario se refiere a otro asunto, precisa qué dato sí sostiene tu explicación.",
+    "prompt": "¿Qué aporta cada registro a la explicación de tu decisión?",
+    "source": "wodak",
+    "lesson": 3
+  }
+],
  's8-e2':[
   {
     "block": 0,
