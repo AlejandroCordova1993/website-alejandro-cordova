@@ -99,9 +99,9 @@ export const visualSchemas={
    nn:{forms:'«ellas», «la comisión»',example:'Cuando nombran a alguien que no interviene en el intercambio: se habla sobre ese grupo, sin convertirlo en destinatario.'}
   },
   limit:'la forma por sí sola no decide a quién incluye: «la comisión» cambia de casilla según quién enuncia. El destinatario construido no identifica a todos los lectores reales.',
-  task:{label:'En la ficha 4',text:'Localiza tres segmentos con marcas de persona; busca también nombres, posesivos y terminaciones verbales.'},
+  task:{label:'En la ficha 4',text:'En los tres pasajes de la ficha, los nombres, posesivos y formas verbales ayudan a distinguir a quien habla, al público y a los grupos mencionados.'},
   source:'Formas de persona: Calsamiglia y Tusón (2012, §§5.1.1–5.1.4 · páginas 138–143 del archivo); receptor nombrado como «estudiante» o «usuario», página 139 del archivo; «nosotros» inclusivo y su ejemplo, página 141 del archivo; el locutor que se nombra a sí mismo, como «este departamento», página 143 del archivo. El cuadrante es síntesis del curso.',
-  anchors:['nosotros','«los solicitantes» puede designar a los destinatarios','una institución puede nombrarse a sí misma, como «esta comisión»','La forma por sí sola no decide a quién incluye','Distingue quien enuncia, los participantes representados y los destinatarios','nombres, posesivos y terminaciones verbales']
+  anchors:['nosotros','«los solicitantes» puede designar a los destinatarios','una institución puede nombrarse a sí misma, como «esta comisión»','La forma por sí sola no decide a quién incluye','Distingue a quien habla, a quienes aparecen en sus palabras y al público al que se dirige','nombres, posesivos y terminaciones verbales']
  },
  'enfoques-matriz':{
   "type": "matrix",
@@ -414,7 +414,7 @@ export const visualSchemas={
    {label:'Con «admitió»',text:'«El portavoz admitió que la medida era necesaria».',marks:['admitió'],note:'El verbo presenta la misma proposición como algo que el portavoz reconoce.'}
   ],
   verdict:'La proposición atribuida se conserva; el verbo cambia su encuadre. «Aseguró» presenta una afirmación firme; «admitió», un reconocimiento que puede leerse como concesión. Quien cita construye así una posición para el portavoz; el cotexto permite precisar ante qué discusión.',
-  task:{label:'En la ficha 4',text:'Contrasta una atribución de tu corpus: qué verbo la introduce, qué marcas la sostienen y qué lectura alternativa examinaste.'},
+  task:{label:'En la ficha 4',text:'Comprueba qué palabras sostienen tu atribución. Si el pasaje admite otra lectura, compara las marcas que apoyan cada una.'},
   source:'Ejemplo. Verbo que anuncia la cita (verba dicendi) e indica el acto de habla atribuido: Calsamiglia y Tusón (2012, §5.2.1 · página 152 del archivo).',
   anchors:['El portavoz aseguró que la medida era necesaria','El portavoz admitió que la medida era necesaria','quien refiere las palabras orienta la imagen del portavoz y de su posición','El cotexto permite precisar esa lectura','verbos introductores']
  },
@@ -446,15 +446,15 @@ export const visualSchemas={
  },
  'evidencias-argumento':{
   type:'tree',planned:'s12-e1',topic:'De las evidencias al argumento parcial',placed:true,replaces:'example',
-  label:'Dos evidencias unidas por una relación explicada',
-  leaves:[{label:'Segmento 1',text:'Una condición se formula en la norma.'},{label:'Segmento 2',text:'Esa condición se reformula en una adaptación propia.'}],
-  operation:{label:'Relación explicada',text:'En el ejemplo de la clase anterior, «exige» formula la condición; «debes cumplir» la dirige al estudiante y «demostrarlos» explica la acreditación.'},
-  top:{label:'Afirmación parcial',text:'La adaptación convierte una exigencia impersonal en orientación dirigida al estudiante, conservando las condiciones de acceso.'},
-  rejected:{label:'Excede los datos',text:'«La adaptación hizo que se entendiera mejor».',note:'Atribuir efectos exige otras evidencias de lectura.'},
+  label:'Un argumento que compara la carta y el aviso de aula',
+  leaves:[{label:'Carta a la dirección',text:'«Propongo que la carrera publique ejemplos de uso de IA».'},{label:'Aviso para primer semestre · adaptación propia',text:'«Si estás en primer semestre, ¿qué ejemplos te ayudarían?».'}],
+  operation:{label:'Relación explicada',text:'«Propongo que» presenta a la dirección una decisión por tomar. La pregunta directa invita a estudiantes de primer semestre a sugerir ejemplos.'},
+  top:{label:'Afirmación parcial',text:'El tema se mantiene. La carta pide una decisión a la dirección y el aviso invita a opinar a quienes usarían la guía.'},
+  rejected:{label:'Excede los datos',text:'«Los estudiantes de primer semestre entendieron que se les pedía sugerir ejemplos».',note:'Para afirmarlo hacen falta respuestas de estudiantes de primer semestre que hayan leído el aviso.'},
   limit:'dos evidencias necesitan una relación explicada; una lista de citas no constituye ese desarrollo.',
   task:{label:'En el hito 3',text:'Explica qué muestra cada segmento, cómo se relacionan, qué objeción afecta a la conclusión y hasta dónde llega.'},
-  source:'Ejemplo de esta clase; la conclusión que excede los datos se escribió para este esquema. Efectos y evidencias de lectura: apartado «Dibujar una relación no la demuestra» de la lectura integrada de «Teoría» y de la guía de la unidad 5. Procesos de lectura: Calsamiglia y Tusón (2012, §3.4.2 · páginas 83–85 del archivo).',
-  anchors:['una condición se formula en la norma','esa condición se reformula en una adaptación propia','La conclusión relaciona el cambio verbal con una nueva posición del lector','Para estudiar si esa orientación fue comprendida, se contrasta con su respuesta','Las evidencias y las categorías sostienen esa interpretación']
+  source:'Ejemplo retomado de la semana 11. Efectos y evidencias de lectura: apartado «Dibujar una relación no la demuestra» de la lectura integrada de «Teoría» y de la guía de la unidad 5. Procesos de lectura: Calsamiglia y Tusón (2012, §3.4.2 · páginas 83–85 del archivo).',
+  anchors:['Retomamos la carta y el aviso de la semana 11','Propongo que la carrera publique ejemplos de uso de IA','Si estás en primer semestre, ¿qué ejemplos te ayudarían?','la pregunta directa invita a estudiantes de primer semestre a sugerir ejemplos','cambian el destinatario y la acción que se le pide']
  },
  'explicar-justificar':{
   type:'contrast',planned:'s13-e2',topic:'Explicar y justificar tienen preguntas distintas',placed:true,replaces:'example',
@@ -470,19 +470,18 @@ export const visualSchemas={
   anchors:['El retraso se produjo por un fallo del sistema; por tanto, debemos ampliar el plazo','La causa atribuida al sistema representa el retraso como un problema ajeno al solicitante','el criterio de que ese fallo no debe perjudicar su acceso al trámite','comprender una causa no obliga a aceptar una medida','¿Qué premisa adicional conecta la explicación con la decisión?']
  },
  'alcance-conclusion':{
-  type:'scale',planned:'s15-e1',topic:'Un límite precisa la conclusión',placed:true,replaces:'example',
-  label:'La misma observación con alcances crecientes',
-  question:'¿Qué sabemos después del análisis y qué pregunta permanece abierta? Ejemplo de pregunta pendiente: «¿A quién acudirían los lectores para pedir una aclaración sobre estos avisos?»',
+  type:'scale',planned:'s15-e1',topic:'Contraejemplo y límite de evidencia',placed:true,replaces:'example',
+  label:'Revisión de una afirmación sobre la carta y el aviso',
+  question:'¿Qué afirmación corrige el aviso y qué queda por saber sobre sus lectores?',
   axis:{from:'Lo que el corpus sostiene',to:'Lo que exige otros datos'},
   items:[
-   {text:'«En los tres avisos analizados no se identifica al órgano responsable».',label:'Delimita la observación a los tres avisos. Busca el órgano responsable en el documento que registra la actuación.'},
-   {text:'«Los avisos de la institución no identifican al órgano responsable».',label:'Generaliza a todos los avisos: un corpus pequeño no representa a todos.'},
-   {text:'«La institución oculta sistemáticamente a sus responsables».',label:'Atribuye una estrategia: necesitaría criterios y fuentes adicionales.'}
+   {text:'«La carta y el aviso se dirigen exclusivamente a la dirección de la carrera».',label:'El aviso ofrece un contraejemplo. «Si estás en primer semestre, ¿qué ejemplos te ayudarían?» interpela directamente a estudiantes. Esa frase contradice «exclusivamente».'},
+   {text:'«En la carta se pide una decisión a la dirección. En el aviso se piden sugerencias a estudiantes de primer semestre».',label:'Así queda la conclusión revisada. «Propongo que la carrera publique ejemplos de uso de IA» y la pregunta del aviso muestran el cambio de destinatario y de acción.'},
+   {text:'«Los estudiantes de primer semestre entendieron que se les pedía sugerir ejemplos».',label:'Aquí aparece un límite de evidencia. Para sostener esa afirmación harían falta respuestas de estudiantes de primer semestre que leyeron el aviso. El comentario de un compañero documenta su propia lectura.'}
   ],
-  limit:'el corpus pequeño permite afirmaciones delimitadas. La revisión debe indicar qué evidencia afectó qué afirmación.',
-  task:{label:'En el hito 4',text:'Escribe tu conclusión revisada con su alcance y registra qué evidencia cambió qué afirmación.'},
-  source:'Ejemplo de esta clase; las dos formulaciones más amplias se escribieron para este esquema. Corpus pequeño y explicación acotada: apartado «Hacer visible la propia posición» de la lectura integrada de «Teoría» y de la guía de la unidad 3. Selección de corpus: Calsamiglia y Tusón (2012, apéndice, §4 · páginas 368–370 del archivo).',
-  anchors:['En los tres avisos analizados no se identifica al órgano responsable','los avisos comunican las decisiones sin vincularlas allí con un órgano responsable','Investigar una estrategia sistemática o las respuestas efectivas de los lectores ampliaría el problema y las evidencias necesarias','El corpus delimitado permite explicar relaciones concretas entre formulaciones, participantes y contexto','La revisión debe indicar qué evidencia afectó qué afirmación']
+  task:{label:'En el hito 4',text:'Precisa qué sostienes en «Conclusión revisada y límites». En «Registro de cambios», indica qué pasaje u objeción te llevó a esa decisión.'},
+  source:'Carta y aviso retomados de la semana 11. Las afirmaciones sobre el destinatario exclusivo y sobre la recepción se escribieron para este esquema. Corpus pequeño y explicación acotada: apartado «Hacer visible la propia posición» de la lectura integrada de «Teoría» y de la guía de la unidad 3. Selección de corpus: Calsamiglia y Tusón (2012, apéndice, §4 · páginas 368–370 del archivo).',
+  anchors:['La carta y el aviso se dirigen exclusivamente a la dirección de la carrera','Si estás en primer semestre, ¿qué ejemplos te ayudarían?','La carta propone a la dirección que publique ejemplos de uso de IA','el aviso pide sugerencias a estudiantes de primer semestre','El comentario de un compañero de clase documenta su propia lectura']
  },
  'revision-atribucion':{
   type:'revision',planned:'s10-e2',topic:'Revisar una atribución con marcas',placed:true,position:'after-example',

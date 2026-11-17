@@ -56,43 +56,44 @@ export const unitActivities={
    "aiHelp": "Durante la revisión puedes pedir a una IA dos comentarios sobre pasajes de tu carta usando esta rúbrica. Contrástalos con la lectura del compañero. En tus tres decisiones indica qué aceptas, adaptas o rechazas y por qué; si la usaste, anota la herramienta."
  },
  3:{
-  "material": "Recupera tu borrador, tu carta final y los comentarios que recibiste en la unidad 2. Consulta también tus tres decisiones de revisión. Trabajarás con esas versiones ya terminadas. Si ya elegiste otro corpus para el expediente, continúa con sus documentos y registros.",
-  "product": "Una explicación de cómo una condición de escritura o de lectura ayuda a entender una decisión de tu carta. Esta ficha aporta el análisis de contexto al expediente.",
+  "material": "Trabaja con el material que elegiste para el expediente. Para la carta, recupera el borrador, la versión final, los comentarios recibidos y tus decisiones de la ficha 2. Para otro corpus, elige dos de sus piezas y recupera los datos de contexto disponibles.",
+  "product": "Una explicación que relaciona dos pasajes con un dato concreto sobre cómo se escribió, se leyó o se difundió el texto.",
+  "documentQuestion": "¿Cómo comunica la convocatoria a los postulantes las condiciones aprobadas en la resolución?",
   "steps": [
     [
       "Elegir qué explicar · semana 7, clase 1",
-      "Elige una decisión de tu carta: algo que cambiaste o mantuviste después de leer los comentarios. En el expediente, escribe la pregunta y enumera las piezas con autor, versión y ubicación. En la ficha 3, registra los pasajes del borrador y de la versión final. En «Mi argumento», indica qué enfoque te ayudará a explicarlos."
+      "Con la carta, elige una decisión de la ficha 2 y localiza el pasaje en el borrador y en la versión final. Con otro corpus, localiza un pasaje de cada pieza que ayude a responder tu pregunta. Anota la pregunta y las piezas en el expediente. En la ficha 3, identifica los dos pasajes y el enfoque que usarás."
     ],
     [
-      "Relacionar la decisión con su contexto · semana 7, clase 2",
-      "Recupera el comentario recibido o la condición de la consigna que ayuda a explicar tu decisión. En la web, abre la evidencia guardada, pulsa «Editar evidencia», completa «Contexto documentado y su fuente» y pulsa «Guardar cambios». En hojas, añade el dato junto a los pasajes. En «Mi argumento», explica cómo ese contexto interviene en la voz, la propuesta o las responsabilidades que presenta tu carta."
+      "Explicar los pasajes con un dato de contexto · semana 7, clase 2",
+      "Con la carta, usa el comentario recibido o la condición de la consigna que explica tu decisión. Con otros documentos, identifica un dato sobre quién los produjo, cómo se publicaron o qué vínculo tienen. Por ejemplo, una convocatoria puede citar la resolución que aprobó sus bases. En «Mi argumento», explica qué aclara ese dato al comparar los dos pasajes. En hojas, anota la fuente junto a ellos. En la web, pulsa «Editar evidencia», completa «Contexto documentado y su fuente» y pulsa «Guardar cambios»."
     ],
     [
       "Cerrar la ficha y avanzar el expediente · semana 8, clase 1",
       "En «Mi revisión final», precisa tu explicación con lo comprobado e indica qué sostienes y por qué. En «Método y contexto documentado» del expediente, resume enfoque, pasajes y dato usado. Remite a la ficha 3 por su número y localizadores para consultar el análisis completo."
     ]
   ],
-  "questionHelp": `Usa la pregunta del expediente. Puedes escribir aquí «Retomo la pregunta del expediente». Ejemplo de pregunta: «${questionExamples[3]}».`,
-  "argumentHelp": "Explica cómo la situación de escritura o la lectura del compañero interviene en la voz, la propuesta o las responsabilidades de tu carta. Apóyate en el pasaje, el comentario y tu decisión de la ficha 2.",
-  "contextHelp": "Copia el comentario recibido o indica la condición de la consigna que usas. Identifica su autor y dónde está. Ejemplo de localizador: «Comentarios recibidos sobre mi borrador, comentario 2».",
+  "questionHelp": "Usa la pregunta del expediente. Puedes escribir aquí «Retomo la pregunta del expediente».",
+  "argumentHelp": "Relaciona los dos pasajes con el dato de contexto. Explica qué te ayuda a entender sobre la decisión del autor, los destinatarios o la circulación del texto.",
+  "contextHelp": "Indica el dato, su fuente y dónde encontrarlo. Para la carta puede ser «Comentarios recibidos sobre mi borrador, comentario 2». Con otros documentos, señala, por ejemplo, el párrafo de la convocatoria que remite a la resolución.",
   "argumentSteps": [
-    "Señala el pasaje del borrador y el de la carta final. Explica qué cambiaste o mantuviste y cómo presenta tu propuesta o a las personas.",
-    "Distingue el destinatario previsto, la dirección de la carrera, del lector de la revisión, tu compañero. Identifica el comentario recibido o la condición de la consigna que usas como dato.",
-    "Relaciona ese dato con tu decisión de la ficha 2 y con las palabras de la carta. Puedes usar Fairclough para explicar cómo la producción y la lectura intervienen en la formulación. Cita el concepto y la lectura utilizados."
+    "Si analizas tu carta, explica por qué cambiaste o mantuviste esas palabras. La carta se dirige a la dirección de la carrera. El comentario recoge lo que entendió tu compañero.",
+    "Si analizas otras piezas, explica qué aclara el dato sobre sus pasajes. Por ejemplo, cuando la convocatoria remite a las bases aprobadas, puedes seguir cómo una condición de la resolución se convierte en una instrucción para postular. Para estudiar qué entendió un lector, necesitas su respuesta registrada.",
+    "En tu explicación usa el concepto elegido y cita la lectura que te ayudó a relacionar los pasajes con su contexto."
   ],
-  "reviewFocus": "Explica qué sostienes después de contrastar las dos versiones, el comentario o la consigna y tu decisión. Si mantuviste una formulación, indica qué permite comprender esa continuidad."
+  "reviewFocus": "Vuelve a los dos pasajes y a la fuente del dato. Indica qué parte de tu explicación puedes sostener y qué precisaste al comprobarla."
 },
  4:{
    "material": "Lee los recortes de Menchú y Márquez, unas 360 palabras. Si ya empezaste con otro corpus, continúa sus registros y usa estos textos para el contraste.",
-   "product": "Una explicación de cómo las voces contribuyen a la posición que defiende cada intervención.",
+   "product": "Una explicación de cómo cada oradora presenta a un colectivo ante su público y qué voces intervienen en su argumento.",
    "steps": [
      [
        "Reúne las voces · semana 9, clase 1",
-       "Anota tres segmentos y dónde encontrarlos. Toma uno de Menchú sobre un colectivo y dos de Márquez, sobre diferencias entre mujeres y sobre la idea atribuida a Davis. Escribe tu pregunta sobre esas voces."
+       "Usa el pasaje de Menchú que se explica en «Teoría» y dos pasajes de Márquez: la comparación entre mujeres y el que menciona a Davis. Anota dónde encontrarlos y escribe tu pregunta sobre esas voces."
      ],
      [
        "Explica qué hacen · semana 9, clase 2, y semana 10, clase 1",
-       "En «Mi argumento», señala quién sostiene cada idea y qué palabras lo muestran. Explica cómo esas voces ayudan a defender una posición o a construir un colectivo. Puedes partir del ejemplo de «Teoría» y justificar tu lectura."
+       "Usa el ejemplo de Menchú como guía. En la comparación de Márquez, fíjate en cómo nombra a las mujeres. En el pasaje sobre Davis, elige tú la expresión que te permite atribuir una idea. Justifica ambas lecturas en «Mi argumento»."
      ],
      [
        "Comprueba una atribución · semana 10, clase 2",
@@ -100,13 +101,13 @@ export const unitActivities={
      ]
    ],
    "questionHelp": `Pregunta qué aporta una voz a la posición que defiende el texto. Ejemplo: «${questionExamples[4]}».`,
-   "argumentHelp": "Escribe tu explicación como párrafo o lista. Remite a los localizadores guardados.",
+   "argumentHelp": "Escribe un párrafo o una lista usando los tres pasajes guardados. Puedes remitir al ejemplo de Menchú. Justifica tu interpretación de los dos pasajes de Márquez.",
    "contextHelp": "Identifica quién habla, en qué situación y dónde se publicó.",
    "argumentSteps": [
-     "Señala las palabras que permiten distinguir a quien habla, al grupo mencionado y a quien se atribuye la idea.",
-     "Explica si el texto se apoya en esa idea, la discute o se distancia de ella. Si solo una lectura tiene respaldo, muestra por qué."
+     "Se valora que identifiques quién habla y ante qué público, cites cómo se nombra al colectivo y expliques qué posición expresa esa elección en ese pasaje.",
+     "Al comentar la voz citada, indica a quién atribuyes la idea. Si solo una lectura tiene respaldo, basta con mostrar las palabras que la sostienen."
    ],
-   "reviewFocus": "Justifica con una marca quién sostiene la idea y cómo interviene en la posición del texto."
+   "reviewFocus": "Retoma la atribución que comprobó tu compañero. Explica qué palabras sostienen tu lectura y qué aporta esa voz a la posición de la oradora."
  },
  5:{
    "material": "Retoma la propuesta de tu carta de la unidad 2 y conviértela en un aviso para estudiantes de primer semestre. Conserva la propuesta como propuesta y explica la acción que planteas. Si ya trabajaste con el reglamento, puedes continuar con esa condición. También puedes comparar dos piezas con un vínculo verificable.",

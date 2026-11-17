@@ -48,8 +48,8 @@ export const classWriting={
     "help": "Trabaja la presentación en papel o en un editor como Word. Describe la decisión y la lectura del compañero en «Tres decisiones de revisión»."
   },
   "s7-e1": {
-    "focus": "Elige un enfoque para explicar una decisión de tu carta.",
-    "help": "Relaciona el concepto con el pasaje que cambiaste o mantuviste y cita la lectura."
+    "focus": "Elige un enfoque para explicar los dos pasajes de tu corpus.",
+    "help": "Relaciona el concepto con los pasajes de la carta o de las piezas que elegiste y cita la lectura."
   },
   "s7-e2": {
     "focus": "Explica qué aclara tu dato de contexto.",
@@ -112,7 +112,7 @@ export const projectInputs={
   ],
   "corpus": [
     "Corpus y criterios de selección",
-    "Enumera 2–4 piezas y explica por qué sirven para responder tu pregunta. Puedes usar tu borrador, tu carta final y los comentarios recibidos. Identifica autor, versión y ubicación, por ejemplo «Ficha 2, versión final». A lo largo del expediente reunirás 6–10 segmentos en total.",
+    "Enumera 2–4 piezas y explica qué aporta cada una. Para estudiar una decisión de tu carta puedes usar el borrador, la versión final y los comentarios recibidos. Si estudias qué dice o decide la carrera, incluye entre esas piezas una fuente institucional que recoja esa posición. Identifica quién produjo cada pieza y dónde encontrarla. Reunirás 6–10 segmentos en total.",
     5
   ],
   "method": [

@@ -508,30 +508,30 @@ export const sessions=[
     "title": "Elegir el enfoque",
     "question": "¿Qué pregunta exige qué método?",
     "resource": "pardo",
-    "product": "Hito 1: pregunta y corpus del expediente. Ficha 3: enfoque provisional aplicado a un fragmento de ese corpus.",
+    "product": "Hito 1: pregunta y corpus del expediente. Ficha 3: dos pasajes localizados y un enfoque provisional para explicarlos.",
     "agenda": [
       [
         10,
         "Abrir el problema",
-        "Recupera las dos versiones, los comentarios recibidos y tus tres decisiones. Elige una formulación que cambiaste o mantuviste. Ejemplo de pregunta: «¿Cómo se relaciona un comentario recibido con lo que cambié o mantuve en mi carta?». Si ya elegiste otro corpus, continúa con sus piezas."
+        "Con la carta, elige una formulación que cambiaste o mantuviste. Por ejemplo, «¿Cómo se relaciona un comentario recibido con lo que cambié o mantuve en mi carta?». Con otro corpus, plantea la pregunta sobre sus piezas. Por ejemplo, «¿Cómo comunica la convocatoria a los postulantes las condiciones aprobadas en la resolución?»."
       ],
       [
         15,
         "Herramientas y lectura",
-        "Con la lectura de Pardo y la matriz de «Teoría», compara qué observarían los enfoques en el ejemplo de la carta. Elige un concepto que ayude a explicar tu decisión."
+        "Con la lectura de Pardo y la matriz de «Teoría», compara qué observarían los enfoques en el ejemplo de la carta. Elige un concepto que ayude a responder la pregunta de tu corpus."
       ],
       [
         25,
         "Trabajo y contraste",
-        "En el expediente, escribe la pregunta y enumera las 2–4 piezas con su ubicación. En la ficha 3, remite a esa pregunta y registra el pasaje del borrador y el de la carta final, aunque sean iguales. En «Mi argumento», explica qué enfoque ayuda a estudiarlos y cita la lectura."
+        "En el expediente, escribe la pregunta y enumera sus 2–4 piezas con su ubicación. En la ficha 3, remite a esa pregunta. Para la carta, registra el pasaje del borrador y su versión final, aunque sean iguales. Con otro corpus, registra un pasaje de cada pieza elegida. En «Mi argumento», explica qué enfoque ayuda a estudiarlos y cita la lectura."
       ],
       [
         10,
         "Cierre y continuidad",
-        "Para la próxima clase, recupera el comentario recibido o la condición de la consigna que ayuda a explicar tu decisión. Identifica autor y ubicación. Continúa con la misma pregunta y evidencia."
+        "Para la próxima clase, identifica la fuente del dato contextual. Puede ser un comentario o una condición de la consigna de la carta. Para otros documentos, puede ser la referencia con la que una convocatoria remite a su resolución."
       ]
     ],
-    "preparation": "Lee en «Teoría» los apartados sobre contexto y enfoques, y Pardo: páginas impresas 43–47 (páginas 3–7 del archivo). Trae borrador, carta final, comentarios recibidos y tus tres decisiones. Puedes analizar algo que cambiaste o mantuviste. Si ya elegiste otros documentos, retómalos."
+    "preparation": "Lee los apartados de «Teoría» sobre contexto y enfoques, y las páginas 43–47 de Pardo (páginas 3–7 del archivo). Si trabajas con tu carta, trae el borrador, la versión final, los comentarios recibidos y tus tres decisiones. Si elegiste otro corpus, trae dos piezas que ayuden a responder tu pregunta."
   },
   {
     "id": "s7-e2",
@@ -539,15 +539,15 @@ export const sessions=[
     "encounter": 2,
     "unit": 3,
     "duration": 120,
-    "title": "Explicar la carta con su contexto",
-    "question": "¿Cómo ayuda el contexto a explicar una decisión de la carta?",
+    "title": "Explicar los pasajes con su contexto",
+    "question": "¿Qué ayuda a explicar el dato de contexto al comparar los dos pasajes?",
     "resource": "guia-3",
     "product": "Ficha 3: un dato contextual comprobado y una explicación de su utilidad.",
     "agenda": [
       [
         10,
         "Retomar la pregunta",
-        "Retoma la pregunta y el pasaje de tu carta. Señala qué comentario o condición de escritura ayuda a explicar tu decisión."
+        "Retoma la pregunta y tus dos pasajes. Para la carta, identifica el comentario o la condición de la consigna que ayuda a explicar tu decisión. Con otros documentos, identifica un dato sobre su producción o circulación y la fuente donde se comprueba."
       ],
       [
         35,
@@ -562,7 +562,7 @@ export const sessions=[
       [
         30,
         "Producción",
-        "En «Mi argumento», relaciona el dato con lo que cambiaste o mantuviste y con tu decisión de la ficha 2. Explica qué aporta a la voz, la propuesta o las responsabilidades. Distingue la dirección como destinataria prevista y el compañero como lector de la revisión."
+        "En «Mi argumento», relaciona el dato con las palabras de ambos pasajes. En la carta, explica una decisión de revisión. En otros documentos, explica por ejemplo quién tiene autoridad para tomar una decisión y quién se encarga de comunicarla."
       ],
       [
         25,
@@ -596,7 +596,7 @@ export const sessions=[
       [
         15,
         "Herramientas y lectura",
-        "Contrasta la afirmación con los dos pasajes, el comentario y la razón anotada. Si algo discrepa, precisa tu explicación. Puedes confirmar una decisión de conservar el texto o justificar un cambio."
+        "Contrasta la afirmación con los dos pasajes y la fuente del contexto. En la carta, revisa el comentario o la consigna y la razón que anotaste en la ficha 2. Con otro corpus, comprueba si el dato documentado respalda lo que dices sobre los pasajes."
       ],
       [
         25,
@@ -662,7 +662,7 @@ export const sessions=[
     "unit": 4,
     "duration": 60,
     "title": "Personas y destinatarios",
-    "question": "¿A quién incluye este nosotros?",
+    "question": "¿Quién habla y con qué palabras presenta al colectivo?",
     "resource": "guia-4",
     "product": "Ficha 4: pregunta y tres segmentos en total, al menos uno de cada texto.",
     "agenda": [
@@ -674,12 +674,12 @@ export const sessions=[
       [
         15,
         "Herramientas y lectura",
-        "Elige tres segmentos: uno de Menchú con una marca personal o colectivo, otro de Márquez sobre diferencias entre mujeres y otro donde atribuye una idea a Angela Davis."
+        "Retoma el ejemplo de Menchú, en el párrafo «Considero este Premio». Localiza los otros dos segmentos en la entrevista de Márquez: la comparación entre mujeres y el pasaje donde menciona a Angela Davis."
       ],
       [
         25,
         "Trabajo y contraste",
-        "Guarda esos segmentos en «Evidencias», con autora y localizador. En «Pregunta de la ficha», escribe qué quieres explicar sobre las personas o colectivos nombrados. Ejemplo: «¿A quiénes incluyen Menchú y Márquez cuando hablan en nombre de un colectivo?». Si ya tenías otro corpus, continúa sus registros."
+        "Guarda esos segmentos en «Evidencias», con autora y localizador. En «Pregunta de la ficha», escribe qué quieres explicar sobre las voces o colectivos nombrados. Ejemplo: «¿Cómo presenta cada oradora al colectivo del que habla?». Si ya tenías otro corpus, continúa sus registros."
       ],
       [
         10,
@@ -708,7 +708,7 @@ export const sessions=[
       [
         35,
         "Taller de evidencia",
-        "En la entrevista, distingue entrevistadoras, Márquez y la idea atribuida a Davis; en Menchú, experiencia individual y colectivos mencionados. Señala las palabras que permiten distinguir esas voces y sus destinatarios."
+        "Ten a mano el ejemplo resuelto de Menchú. En la comparación de Márquez, busca las palabras con que nombra a los grupos. En el pasaje sobre Davis, escoge la marca que mejor justifique a quién pertenece una idea."
       ],
       [
         10,
@@ -718,7 +718,7 @@ export const sessions=[
       [
         30,
         "Producción",
-        "En «Mi argumento», escribe un párrafo o lista. Señala quién sostiene cada idea, qué palabras lo muestran y cómo esa voz contribuye a la posición del texto o a la construcción del colectivo."
+        "En «Mi argumento», explica con los pasajes guardados quién habla, ante qué público y qué palabras presentan al colectivo. Justifica tu lectura de los dos pasajes de la entrevista."
       ],
       [
         25,
@@ -752,7 +752,7 @@ export const sessions=[
       [
         15,
         "Herramientas y lectura",
-        "Examina cómo Márquez usa la idea atribuida a Davis para defender una posición. Si trabajas con otro corpus, retoma una atribución de tus registros."
+        "Decide cómo entiendes la relación entre la voz citada y la posición de Márquez. Si trabajas con otro corpus, retoma una atribución de tus registros."
       ],
       [
         25,
@@ -896,7 +896,7 @@ export const sessions=[
     "unit": 5,
     "duration": 60,
     "title": "Construir el argumento parcial",
-    "question": "¿Cómo se relacionan nuestras evidencias?",
+    "question": "¿Qué relación entre dos pasajes ayuda a responder la pregunta de tu expediente?",
     "resource": "guia-5",
     "product": "Hito 3: análisis parcial con dos segmentos, una objeción y un límite.",
     "agenda": [
@@ -908,7 +908,7 @@ export const sessions=[
       [
         15,
         "Herramientas y lectura",
-        "Comprueba las evidencias de la ficha 5. Distingue el vínculo documentado entre las piezas de la transformación o hipótesis que propones tú."
+        "Localiza cada pasaje en su fuente. Explica qué los relaciona. Puede ser un comentario al borrador, una adaptación que hiciste o un vínculo que consta en los documentos."
       ],
       [
         25,
@@ -921,7 +921,7 @@ export const sessions=[
         "Comprueba el guardado y completa «Referencias y atribuciones». Antes del próximo taller, amplía el desarrollo con las demás evidencias pertinentes."
       ]
     ],
-    "preparation": "Relee «Recontextualizar implica seleccionar» y «Dibujar una relación no la demuestra». Retoma la ficha 5 y la pregunta, corpus y método del expediente; selecciona dos segmentos pertinentes."
+    "preparation": "Relee «Recontextualizar implica seleccionar» y «Dibujar una relación no la demuestra». Trae la pregunta de tu expediente y dos pasajes ya guardados que ayuden a responderla."
   },
   {
     "id": "s12-e2",
@@ -942,7 +942,7 @@ export const sessions=[
       [
         35,
         "Taller de evidencia",
-        "Intercambia los dos o tres párrafos y sus segmentos de apoyo. Pide comprobar un localizador, el vínculo entre piezas y una conclusión que pudiera exceder la evidencia."
+        "Comparte los pasajes de la ficha 5. Pide al compañero que diga a quién se dirige cada pieza y qué acción entiende. Al revisar los párrafos del informe, comprueben la afirmación con los pasajes que elegiste para esa pregunta."
       ],
       [
         10,
@@ -965,7 +965,7 @@ export const sessions=[
         "Comprueba el guardado de la revisión de la ficha 5 y del hito 3. Completa las referencias utilizadas."
       ]
     ],
-    "preparation": "Trae el desarrollo parcial del hito 3 y la ficha 5 con sus fuentes. Selecciona dos o tres párrafos del informe y sus dos segmentos de apoyo para el intercambio."
+    "preparation": "Trae la comparación de la ficha 5 y los dos o tres párrafos del expediente con sus pasajes de apoyo. Si usaste la misma comparación en el informe, basta una copia."
   },
   {
     "id": "s13-e1",
@@ -1130,7 +1130,7 @@ export const sessions=[
     "unit": 6,
     "duration": 60,
     "title": "Límites y contraejemplos",
-    "question": "¿Qué nos obliga a restringir el argumento?",
+    "question": "¿Qué parte de tu conclusión sostienen los datos y qué tendrías que corregir?",
     "resource": "guia-6",
     "product": "Hito 4: conclusión revisada, límites y registro de cambios.",
     "agenda": [
@@ -1142,7 +1142,7 @@ export const sessions=[
       [
         15,
         "Herramientas y lectura",
-        "Con el borrador, sus fuentes y «Teoría», comprueba si la afirmación excede los datos. Examina un contraejemplo que pueda limitarla."
+        "Contrasta la afirmación de tu borrador con sus fuentes. Si un pasaje la contradice, corrígela. Si faltan datos, precisa hasta dónde llega tu conclusión."
       ],
       [
         25,

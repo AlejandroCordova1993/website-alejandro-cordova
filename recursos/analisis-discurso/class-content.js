@@ -244,9 +244,9 @@ export const classContent={
   {
     "block": 1,
     "title": "Elegir un enfoque cambia la investigación",
-    "explanation": "El enfoque relaciona la pregunta, los conceptos y los datos que permiten responderla. Partimos de una decisión ya registrada en la carta. Estudiamos cómo la lectura del compañero y la situación de escritura intervienen en la voz que asumes ante la dirección. La matriz muestra qué observaría cada perspectiva en ese mismo caso.",
+    "explanation": "El enfoque relaciona la pregunta, los conceptos y los datos que permiten responderla. La matriz lo muestra con una carta. En ese ejemplo, la lectura del compañero y la situación de escritura ayudan a explicar la voz que el autor asume ante la dirección.",
     "points": [
-      "Primero localiza los dos pasajes, el comentario recibido y la decisión anotada en la ficha 2. Después elige el concepto que te permita explicar su relación.",
+      "Para elegir el concepto, parte de los dos pasajes y del dato que ayuda a explicarlos. En el ejemplo de la carta, ese dato es el comentario que el autor tuvo en cuenta al revisar.",
       "La práctica discursiva, en Fairclough, incluye cómo se produce y se interpreta el texto. En esta actividad permite relacionar la voz de la carta con la revisión entre compañeros y el destinatario previsto.",
       "Las perspectivas sociocognitiva e histórico-discursiva ofrecen otras entradas: cómo los participantes entienden la situación y cómo se nombra y caracteriza a los grupos. La lectura previa define sus conceptos."
     ],
@@ -269,7 +269,7 @@ export const classContent={
     ],
     "example": "Borrador, párrafo 1: «Los estudiantes exigimos». Comentario 1 de Cristina: «¿Hablas por todos?». Carta final, párrafo 1: «Como estudiante, propongo».",
     "reading": "El borrador atribuye una demanda al colectivo. La pregunta de Cristina pone en discusión esa representación. En la decisión de revisión, el autor explica que habla a título personal; la versión final lo hace explícito y presenta una propuesta. Desde Fairclough, relacionamos el texto —las formulaciones— con su práctica discursiva —la escritura y la lectura entre compañeros— y con una relación institucional: un estudiante se dirige a la dirección para proponer condiciones de uso de IA. El comentario documenta la intervención de la lectora; las dos versiones muestran la decisión. La explicación se apoya en esos pasajes y en la razón registrada por el autor.",
-    "prompt": "Explica qué ayuda a comprender el comentario o la consigna sobre tu decisión.",
+    "prompt": "¿Qué palabras del pasaje se entienden mejor al conocer el dato de contexto?",
     "source": "guia-3",
     "lesson": 0
   },
@@ -293,14 +293,14 @@ export const classContent={
   {
     "block": 1,
     "title": "Triangular para resolver una dificultad",
-    "explanation": "Contrasta los registros de la misma revisión para comprobar tu explicación. El borrador conserva la formulación inicial; el comentario documenta la lectura de un compañero; la carta final muestra lo que cambiaste o mantuviste. Tus tres decisiones registran cómo justificaste esa elección.",
+    "explanation": "Para comprobar una explicación, observa qué aporta cada registro. En el ejemplo de la carta, el borrador conserva la formulación inicial, el comentario documenta la lectura de un compañero y la carta final muestra lo que cambiaste o mantuviste. Tus tres decisiones registran cómo justificaste esa elección.",
     "points": [
       "El borrador y la carta final proceden del mismo autor. El comentario aporta la perspectiva del lector. Compara sus aportes y vuelve a la decisión anotada para justificar la relación que propones.",
       "Una formulación conservada también permite estudiar la relación con el lector. Comprueba si el comentario apoyó tu interpretación o si decidiste mantenerla por otra razón documentada."
     ],
     "example": "«Los estudiantes exigimos» → comentario «¿Hablas por todos?» → «Como estudiante, propongo».",
     "reading": "Las versiones muestran el paso de una voz colectiva a una individual. El comentario cuestiona la representación del grupo; la decisión registrada por el autor permite relacionar esa lectura con la revisión. Si el comentario se refiere a otro asunto, precisa qué dato sí sostiene tu explicación.",
-    "prompt": "¿Qué aporta cada registro a la explicación de tu decisión?",
+    "prompt": "¿Qué aporta cada registro a la explicación que propones?",
     "source": "wodak",
     "lesson": 3
   }
@@ -322,10 +322,10 @@ export const classContent={
   }
 ],
  's9-e1':[
-  topic(1,'Personas y destinatarios se reconstruyen','Las marcas personales y las denominaciones permiten presentarse, construir un colectivo y dirigirse a otros desde una posición. Menchú vincula el reconocimiento individual con una conquista colectiva; Márquez propone una alianza que reconoce diferencias internas. La referencia de «nosotros» debe reconstruirse en cada pasaje.',
-   ['Distingue quien enuncia, los participantes representados y los destinatarios.','Persona gramatical y papel comunicativo no siempre coinciden: «los solicitantes» puede designar a los destinatarios, y una institución puede nombrarse a sí misma, como «esta comisión». La forma por sí sola no decide a quién incluye. Busca también nombres, posesivos y terminaciones verbales.'],
-   'Paráfrasis del curso: Menchú relaciona el reconocimiento individual con una conquista colectiva. Márquez plantea que la unidad exige reconocer diferencias entre las mujeres.','En la recepción del premio, la experiencia individual permite reivindicar un reconocimiento compartido. En la entrevista, la comparación entre experiencias de mujeres cuestiona que el colectivo sea homogéneo y fundamenta una propuesta de alianza. El análisis relaciona esas posiciones con las marcas del recorte original y con cada situación de enunciación.',
-   '¿Qué marca sostiene la inclusión que estamos proponiendo?','calsamiglia',0)
+  topic(1,'Personas y destinatarios se reconstruyen','Al hablar, alguien puede tomar posición, nombrar a un grupo y dirigirse a un público. Un «nosotros» puede incluir a quienes escuchan o remitir a un grupo más reducido. Para saber a quién incluye, lee también las palabras que lo rodean.',
+   ['Distingue a quien habla, a quienes aparecen en sus palabras y al público al que se dirige.','Persona gramatical y papel comunicativo no siempre coinciden: «los solicitantes» puede designar a los destinatarios, y una institución puede nombrarse a sí misma, como «esta comisión». La forma por sí sola no decide a quién incluye. Busca también nombres, posesivos y terminaciones verbales.'],
+   'Menchú, discurso del Nobel de la Paz, párrafo que empieza «Considero este Premio». Dos marcas del pasaje son «Considero» y «los derechos de los pueblos indígenas».','«Considero» muestra que Menchú asume la valoración en primera persona. La mención de los derechos de los pueblos indígenas vincula el premio que ella recibe con una lucha colectiva. Ante el Comité Nobel y los demás asistentes, da a esa lucha un lugar en el reconocimiento público.',
+   'En el pasaje de la entrevista que compara experiencias de mujeres, ¿qué palabras nombran a los grupos y qué diferencia destaca la hablante?','calsamiglia',0)
  ],
  's9-e2':[
   {
@@ -335,8 +335,8 @@ export const classContent={
     "points": [
       "Para esta ficha usamos las definiciones de Ducrot presentadas por Calsamiglia y Tusón: permiten distinguir la responsabilidad de enunciar y los puntos de vista puestos en escena.",
       "Negar una proposición puede evocar una perspectiva sin identificar un hablante empírico. Rechazar «privilegio», en el ejemplo, disputa la manera de presentar una medida.",
-      "En Menchú, «Considero» sitúa en la locutora la valoración del premio; los pueblos indígenas son el colectivo cuyos derechos y luchas se representan. En Márquez, la comparación de mujeres de la capital y de zonas rurales describe sus condiciones. Esas menciones construyen participantes del discurso.",
-      "El mapa añade una voz atribuida cuando encuentra una marca pertinente: «Angela Davis, que dice» introduce una perspectiva y «yo creo» señala la posición asumida por Márquez. El recorte permite explicar su apoyo en esa voz. Una persona o un colectivo mencionado puede ser objeto del discurso sin recibir una intervención propia."
+      "Una persona puede nombrar a un colectivo, hablar en su nombre o reproducir palabras de uno de sus integrantes. En cada caso cambia quién asume la responsabilidad por lo dicho.",
+      "En el pasaje de la entrevista que compara experiencias, localiza cómo se nombra a cada grupo. Explica quién hace la comparación y qué aporta a la respuesta."
     ],
     "example": "«La medida no es un privilegio».",
     "reading": "En esta lectura polifónica de la negación, apoyada en Ducrot según Caldiz, el locutor (L) pone en escena dos puntos de vista: E1 afirma «la medida es un privilegio»; E2 rechaza esa afirmación. L se distancia de E1 y asume E2. Estos puntos de vista se reconstruyen a partir del enunciado. El sujeto hablante es quien produce materialmente el mensaje. El enunciado aislado no identifica a quien habría sostenido E1. El cotexto permite precisar si se responde a algo dicho o se previene una objeción.",
@@ -346,13 +346,13 @@ export const classContent={
   }
 ],
  's10-e1':[
-  topic(1,'Citar también encuadra','Incorporar una voz permite apoyarse en ella, discutirla o delimitar una posición propia. Los verbos introductores, las comillas y el cotexto orientan esa relación. En la entrevista, Márquez recurre a una voz atribuida a Angela Davis para cuestionar qué experiencias representa cierta imagen de emancipación.',
-   ['Directa: «La portavoz dijo: “Revisaremos el caso mañana”». Indirecta: «La portavoz dijo que revisarían el caso al día siguiente». Cambia el centro de referencia; el ajuste depende de la situación.','En Márquez, el discurso referido contribuye al argumento sobre diferencias entre mujeres. Analizamos esa atribución en la entrevista; verificar la literalidad de Davis exige su fuente original.'],
+  topic(1,'Citar también encuadra','Quien incorpora una voz puede apoyarse en ella, discutirla o delimitar su propia posición. Los verbos introductores como «aseguró» o «admitió» y las frases que rodean la cita ayudan a interpretar esa relación.',
+   ['En «La portavoz dijo: “Revisaremos el caso mañana”», la cita directa mantiene el «mañana» de la portavoz. En «La portavoz dijo que revisarían el caso al día siguiente», quien relata adapta la referencia al tiempo de su relato.','El [[ethos|ethos]] es la imagen que alguien construye de sí al hablar. En «Como delegada, transmito el acuerdo del curso», quien habla se presenta como portavoz del grupo y funda en ese papel su derecho a intervenir.'],
    '«El portavoz aseguró que la medida era necesaria» / «El portavoz admitió que la medida era necesaria».','«Aseguró» presenta la intervención como afirmación firme; «admitió» la encuadra como reconocimiento de algo que podía ofrecer resistencia. Así, quien refiere las palabras orienta la imagen del portavoz y de su posición. El cotexto permite precisar esa lectura.',
    '¿Qué cambia en la atribución cuando cambia el verbo introductor?','calsamiglia',2)
  ],
  's10-e2':[
-  topic(1,'Revisar una atribución con marcas','El mapa de voces permite explicar cómo una intervención construye su posición frente a otras. En el pasaje de Márquez, la comparación entre experiencias y la voz citada sostienen una unidad basada en reconocer diferencias. Segmento, marcas, responsabilidad y adhesión o distancia fundamentan esa interpretación.',
+  topic(1,'Revisar una atribución con marcas','Una atribución se puede revisar volviendo a las palabras de la entrevista. Si otro lector asigna una idea a una voz distinta, comparen la expresión que cada uno tomó como indicio y lo que se dice antes y después.',
    ['Una cita puede autorizar una posición o convertirse en objeto de discusión; la relación se reconoce en su presentación.','Una revisión puede corregir a quién se atribuye una idea y, con ello, cambiar la interpretación de la posición del texto.'],
    '«La comisión informó que el plazo era suficiente; considero que esa afirmación debe revisarse».','«Informó que» atribuye a la comisión la suficiencia del plazo. El «yo» de «considero» asume el cuestionamiento y presenta esa valoración institucional como discutible. La distribución de voces construye una intervención crítica: la autoridad citada pasa a ser objeto de examen. Identificar al productor empírico requiere la fuente del documento.',
    '¿Qué perspectiva se sostiene y qué perspectiva se somete a examen?','guia-4',4)
@@ -383,9 +383,9 @@ export const classContent={
    '¿Qué transformación facilita la comprensión y cuál podría alterar una condición?','fairclough',3)
  ],
  's12-e1':[
-  topic(1,'De las evidencias al argumento parcial','Un argumento de análisis explica una relación que el corpus permite comprender. Comparar una condición normativa con su reformulación muestra qué acción se propone al destinatario y qué conocimientos se esperan de él. Las evidencias y las categorías sostienen esa interpretación.',
+  topic(1,'De las evidencias al argumento parcial','Un argumento de análisis explica una relación que las evidencias permiten ver. Retomamos la carta y el aviso de la semana 11 como ejemplo de una pregunta sobre el destinatario. Comparamos qué se pide y a quién en cada texto.',
    ['Explica qué muestra cada segmento y cómo responde a la pregunta.','Añade una objeción pertinente y delimita qué parte de la conclusión afecta.'],
-   'Segmento 1: una condición se formula en la norma. Segmento 2: esa condición se reformula en una adaptación propia.','Si la norma exige acreditar una condición y la adaptación explica cómo reconocerla, esta última orienta al destinatario para actuar y hace explícito un conocimiento del trámite. La conclusión relaciona el cambio verbal con una nueva posición del lector. Para estudiar si esa orientación fue comprendida, se contrasta con su respuesta.',
+   'En la carta, «Propongo que la carrera publique ejemplos de uso de IA». En el aviso de aula, «Si estás en primer semestre, ¿qué ejemplos te ayudarían?».','En la carta, «propongo que» presenta a la dirección una decisión por tomar. En el aviso, la pregunta directa invita a estudiantes de primer semestre a sugerir ejemplos. Las dos piezas mantienen el tema y muestran que cambian el destinatario y la acción que se le pide.',
    '¿Qué relación sostiene este párrafo y qué conclusión excedería sus datos?','guia-5',4)
  ],
  's12-e2':[
@@ -468,10 +468,11 @@ export const classContent={
   }
 ],
  's15-e1':[
-  topic(1,'Un límite precisa la conclusión','Una conclusión explica qué hemos comprendido de una práctica: cómo se representa un acontecimiento, se propone una relación o se justifica una decisión. Identifica las elecciones discursivas y los datos que sostienen esa explicación. Su alcance precisa a qué materiales y situaciones se refiere.',
-   ['El corpus delimitado permite explicar relaciones concretas entre formulaciones, participantes y contexto.','La revisión debe indicar qué evidencia afectó qué afirmación.'],
-   '«En los tres avisos analizados no se identifica al órgano responsable; falta estudiar otros géneros y la recepción».','Esta observación permite avanzar: los avisos comunican las decisiones sin vincularlas allí con un órgano responsable, de modo que identificarlo exige otra fuente. Esa conclusión explica cómo se distribuye la información para sus destinatarios. Investigar una estrategia sistemática o las respuestas efectivas de los lectores ampliaría el problema y las evidencias necesarias.',
-   '¿Qué sabemos después del análisis y qué pregunta permanece abierta? Ejemplo para continuar el estudio de los avisos: «¿Cómo identifican sus lectores a quién dirigirse para pedir una explicación?».','guia-6',4)
+  topic(1,'Contraejemplo y límite de evidencia','Al revisar una conclusión, conviene distinguir dos situaciones. A veces encontramos un pasaje que contradice lo que afirmamos. Otras veces la pregunta va más allá de lo que los documentos registran.',
+   ['Un contraejemplo es un caso que contradice una afirmación general y obliga a corregirla.','Un límite de evidencia indica hasta dónde llega la conclusión con los datos disponibles.'],
+   'Primera afirmación: «La carta y el aviso se dirigen exclusivamente a la dirección de la carrera». En el aviso leemos «Si estás en primer semestre, ¿qué ejemplos te ayudarían?».',
+   'Ese pasaje contradice «exclusivamente». La carta propone a la dirección que publique ejemplos de uso de IA y el aviso pide sugerencias a estudiantes de primer semestre. Para saber cómo entendieron el aviso sus destinatarios, harían falta respuestas de quienes lo leyeron. El comentario de un compañero de clase documenta su propia lectura.',
+   '¿Qué afirmación corrige el aviso y qué queda por saber sobre sus lectores?','guia-6',4)
  ],
  's15-e2':[
   topic(0,'Convertir el análisis en una enseñanza','Enseñar análisis del discurso implica ayudar a relacionar una elección expresiva con lo que hace en una situación. Una consigna breve puede llevar desde observar una marca hasta explicar una responsabilidad, una posición o una acción. Material accesible y criterios claros hacen examinable ese razonamiento.',
