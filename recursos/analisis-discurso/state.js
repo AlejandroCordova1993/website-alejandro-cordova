@@ -2,7 +2,8 @@ export const STORAGE_KEY='ad-cuaderno-v1';
 export const COURSE_ID='uce-analisis-discurso';
 export const unitIds=[1,2,3,4,5,6];
 export const sectionKeys=['apertura',...unitIds.map(id=>`ficha-${id}`),'proyecto'];
-export const noteFields=['expectations','agreements','reflection','question','corpus','method','argument','revision','revisionReason','title','student','mediation','credits','defense','selfAssessment'];
+export const letterFields=['letterDraft','letterPeer','letterFinal','letterDecisions'];
+export const noteFields=['expectations','agreements','reflection','question','corpus','method','argument','revision','revisionReason','title','student','mediation','credits','defense','selfAssessment',...letterFields];
 export const evidenceFields=['id','resource','source','locator','observation','category','context','interpretation','alternative'];
 export const relationFields=['id','from','to','evidence','mediator','medium'];
 export const evidenceDraftKey=unit=>`evidence-${unit}`;
@@ -56,7 +57,7 @@ export function loadState(storage){let raw=null;try{raw=storage.getItem(STORAGE_
 const canonical=value=>JSON.stringify(value,(key,v)=>v&&typeof v==='object'&&!Array.isArray(v)?Object.fromEntries(Object.entries(v).sort(([x],[y])=>x<y?-1:x>y?1:0)):v);
 export function sameWork(rawA,rawB){const work=raw=>{try{const {lastLocation,updatedAt,...rest}=raw===null?freshState():validateState(JSON.parse(raw));return canonical(rest);}catch{return null;}};const a=work(rawA);return a!==null&&a===work(rawB);}
 export const hasWork=state=>Object.values(state.notes||{}).some(note=>Object.values(note).some(v=>v.trim()))||(state.evidence?.length||0)>0||(state.relations?.length||0)>0||Object.keys(state.drafts||{}).length>0;
-export function workStatus(state,key){if(state.completed.includes(key))return state.modified.includes(key)?'Modificado después de revisar':'Revisión registrada';return Object.values(state.notes[key]||{}).some(v=>v.trim())||state.evidence.some(e=>key===`ficha-${e.unit}`)||state.drafts?.[evidenceDraftKey(+key.split('-')[1])]?'En construcción':'Sin empezar';}
+export function workStatus(state,key){const started=Object.values(state.notes[key]||{}).some(v=>v.trim())||state.evidence.some(e=>key===`ficha-${e.unit}`)||state.drafts?.[evidenceDraftKey(+key.split('-')[1])];if(key==='ficha-2'&&!letterFields.some(f=>state.notes[key]?.[f]?.trim()))return started?'Trabajo anterior guardado':'Sin empezar';if(state.completed.includes(key))return state.modified.includes(key)?'Modificado después de revisar':'Revisión registrada';return started?'En construcción':'Sin empezar';}
 export function setNote(state,key,field,value){if(!sectionKeys.includes(key)||!noteFields.includes(field))throw Error('Campo desconocido.');text(value);state.notes[key]??={};if(state.notes[key][field]===value)return;state.notes[key][field]=value;if(state.completed.includes(key)&&!state.modified.includes(key))state.modified.push(key);}
 export function touchUnit(state,unit){const key=`ficha-${unit}`;if(state.completed.includes(key)&&!state.modified.includes(key))state.modified.push(key);}
-export function registerReview(state,key){const note=state.notes[key]||{};const missing=['argument','revision','revisionReason'].filter(field=>!note[field]?.trim());if(missing.length)return {ok:false,missing};if(!state.completed.includes(key))state.completed.push(key);state.modified=state.modified.filter(k=>k!==key);state.reviewedAt[key]=new Date().toISOString();return {ok:true};}
+export function registerReview(state,key){const note=state.notes[key]||{};const required=key==='ficha-2'?letterFields:['argument','revision','revisionReason'];const missing=required.filter(field=>!note[field]?.trim());if(missing.length)return {ok:false,missing};if(!state.completed.includes(key))state.completed.push(key);state.modified=state.modified.filter(k=>k!==key);state.reviewedAt[key]=new Date().toISOString();return {ok:true};}

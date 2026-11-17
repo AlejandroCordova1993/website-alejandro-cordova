@@ -1,11 +1,11 @@
 // Instructions use the existing note fields and records; no additional assignments.
-export const activityTitles={2:'Cómo comunica el reglamento de becas sus condiciones',3:'Explicar un discurso con datos de su contexto',4:'Quién habla y quién responde por las ideas',5:'Qué cambia al transformar un texto para otro destinatario',6:'Cómo se organiza y se sostiene una explicación'};
+export const activityTitles={2:'Escribir y representar: una carta abierta',3:'Explicar un discurso con datos de su contexto',4:'Quién habla y quién responde por las ideas',5:'Qué cambia al transformar un texto para otro destinatario',6:'Cómo se organiza y se sostiene una explicación'};
 export const questionExamples={
  1:'¿Cómo distingue Drexler sus propias palabras de las que atribuye a Joaquín Sabina?',
  2:'¿Cómo presenta el artículo 3 los criterios para distribuir las becas?',
  3:'¿Cómo se relacionan los criterios de reparto del artículo 3 con la equidad que invocan los considerandos?',
  4:'¿Qué aporta la idea atribuida a Angela Davis a la posición que defiende Márquez?',
- 5:'¿Cómo cambia la explicación de la condición al convertir el reglamento en un aviso para estudiantes de primer semestre?',
+ 5:'¿Cómo cambia la propuesta de mi carta al convertirla en un aviso para estudiantes de primer semestre?',
  6:'¿Cómo se conectan los considerandos del reglamento con lo que se dispone en sus artículos?'
 };
 export const unitActivities={
@@ -22,35 +22,37 @@ export const unitActivities={
   questionHelp:`Elige un recurso que puedas observar en el episodio e indica dónde aparece. Ejemplo: «${questionExamples[1]}».`,
   argumentHelp:"Escribe en párrafos o en una tabla siguiendo estos pasos. Si ya habías escrito una explicación en una evidencia, úsala como apoyo; no hace falta copiarla otra vez.",
   contextHelp:"Describe la situación del episodio una sola vez: quién habla, a quién, dónde y con qué fuente lo sabes. Si ya la guardaste con la transcripción, deja vacío este campo en las demás evidencias del mismo episodio. Si usas Drexler, distingue la charla actual del diálogo pasado que cuenta.",
-  argumentSteps:["Di qué fragmento de la charla o del intercambio vas a explicar y entre qué minutos ocurre. Señala las evidencias que usarás; no hace falta copiar otra vez toda la transcripción.", "Relaciona las palabras con dos recursos de voz, como pausa o énfasis. Añade un gesto o una mirada si el registro permite verlo. Si solo tiene audio, escribe ese límite.", "Explica qué podría hacer cada recurso en esa situación. Di qué palabras, sonidos o imágenes apoyan tu explicación y dónde encontrarlos.", "Cuando uses un concepto de la teoría, explica cómo te ayuda y cita el autor o lectura. En la clase sobre marcas de voz, usa Caldiz para justificar o corregir lo ya registrado.", "Propón otra explicación de las mismas marcas. Di qué dato necesitas para elegir entre las dos y qué no puedes afirmar todavía.", "Si usas Drexler, distingue lo que ocurre ante su público del diálogo pasado que él cuenta. Si elegiste un intercambio del taller, identifica a sus participantes."],
+  argumentSteps:["Di qué fragmento de la charla o del intercambio vas a explicar y entre qué minutos ocurre. Señala las evidencias que usarás; no hace falta copiar otra vez toda la transcripción.", "Relaciona las palabras con dos recursos de voz, como pausa o énfasis. Retoma también la característica verbal registrada —cita, marcador o forma personal— y explica qué aporta. Añade un gesto o una mirada si el registro permite verlo. Si solo tiene audio, escribe ese límite.", "Explica qué podría hacer cada recurso en esa situación. Di qué palabras, sonidos o imágenes apoyan tu explicación y dónde encontrarlos.", "Cuando uses un concepto de la teoría, explica cómo te ayuda y cita el autor o lectura. En la clase sobre marcas de voz, usa Caldiz para justificar o corregir lo ya registrado.", "Propón otra explicación de las mismas marcas. Di qué dato necesitas para elegir entre las dos y qué no puedes afirmar todavía.", "Si usas Drexler, distingue lo que ocurre ante su público del diálogo pasado que él cuenta. Si elegiste un intercambio del taller, identifica a sus participantes."],
   reviewFocus:"Vuelve a escuchar o mirar cada pausa, énfasis o gesto. Comprueba su intervalo. Explica qué respuesta resiste mejor la comparación y por qué; las dos deben hablar de las mismas marcas."
  },
  2:{
-   "material": "Reglamento de becas, artículos 1–3 (páginas 1–2 del archivo). Usa el mismo tramo para el análisis y la comparación visual.",
-   "product": "Una explicación de cómo el reglamento comunica una condición, revisada después de probar dos formas de presentarla.",
+   "material": "Tu carta y la de un compañero. Tema común: las condiciones para usar IA en los trabajos universitarios. La carta se dirige a la dirección de la carrera y está pensada también para la comunidad estudiantil. La presentación de UNESCO en español ofrece un apoyo para formular tu posición; el reglamento de becas sirve como ejemplo explicado en la teoría.",
+   "product": "Una carta abierta de 350–500 palabras, la lectura comentada de otra carta y una versión propia revisada con tres decisiones explicadas.",
    "steps": [
      [
-       "Analiza una condición · semanas 4 y 5",
-       "Lee los artículos 1–3. Guarda una frase con su página y artículo. En «Mi argumento», explica quién actúa, qué condición se exige y qué puede inferir un lector. Sitúa esa condición en el conjunto de los artículos."
+       "Escribir · semana 4",
+       "Define tu posición sobre el uso de IA y las condiciones que propones. Escribe tu carta con una tesis, dos razones, un apoyo verificable y una objeción con respuesta. Decide desde qué posición hablas, cómo nombras a las personas y qué acción propones. Conserva el primer borrador."
      ],
      [
-       "Prepara dos formas de leerla · semana 6, clase 1",
-       "Cambia el tamaño o la ubicación del mismo fragmento y conserva las mismas palabras. Guarda las dos versiones juntas. En «Mi argumento», indica qué esperas que el lector encuentre primero."
+       "Leer al compañero · semana 5",
+       "Intercambia tu borrador. Lee primero sin que el autor te explique lo que quiso decir. Escribe en una frase la propuesta que entiendes y comenta tres pasajes con la guía de abajo. Comparte los comentarios y conserva una copia o una foto de tu análisis."
      ],
      [
-       "Comprueba tu explicación · semana 6, clase 2",
-       "Muestra las dos versiones a un compañero. Pregúntale qué leyó primero y qué condición entendió. Escribe tu respuesta final en «Interpretación revisada» y el motivo en «Qué cambió y por qué»."
+       "Revisar · semanas 5 y 6",
+       "Revisa tu carta con los comentarios recibidos. Ajusta también el título, los párrafos y la jerarquía visual. Conserva la versión final y explica tres decisiones: qué cambiaste o mantuviste, qué comentario consideraste y qué efecto buscas en la lectura."
      ]
    ],
-   "questionHelp": `Escribe qué quieres entender sobre una condición del reglamento o sobre cómo se presenta. Ejemplo: «${questionExamples[2]}».`,
-   "argumentHelp": "Explica la condición y cómo se la comunica al lector. Usa la frase guardada y su localizador.",
-   "contextHelp": "Indica la versión del reglamento. Si explicas cómo se aplica, cita el dato que lo comprueba.",
+   "questionHelp": "Conserva aquí la pregunta que escribiste sobre el reglamento en el trabajo anterior.",
+   "argumentHelp": "Conserva o consulta tu análisis anterior del reglamento.",
+   "contextHelp": "Identifica el documento, su autor y versión. Para una carta, indica también a quién se dirige.",
    "argumentSteps": [
-     "Explica una inferencia con las palabras del texto, el conocimiento que aporta el lector y la conclusión. Distingue lo que dispone la norma de su aplicación.",
-     "Resume en una frase qué regulan los artículos 1–3 y explica cómo la condición elegida encaja en ese conjunto.",
-     "Compara el original y tu versión visual. Relaciona el cambio con lo que el lector puede encontrar primero."
+     "Personas y responsabilidades: señala un pasaje que nombre un grupo o atribuya una acción. Explica quién habla, cómo presenta a esas personas y quién tendría que actuar.",
+     "Posición ante el destinatario: copia una expresión de obligación, posibilidad o certeza. Explica qué aporta a la demanda o propuesta; por ejemplo, el cambio entre «debe permitir» y «podría permitir».",
+     "Información y razones: comenta una razón o un dato que el lector necesite reconstruir. Explica qué entendiste, qué palabras te ayudaron y qué aclaración sería útil. Si se entiende bien, señala qué formulación lo hace comprensible."
    ],
-   "reviewFocus": "Usa la respuesta de tu compañero para decir qué explicación sostienes sobre la presentación de la condición."
+   "reviewFocus": "Explica tres decisiones sobre la representación de personas, las razones, los conocimientos supuestos o la organización de tu carta.",
+   "rubric": [["Análisis del compañero: tres pasajes y su función discursiva",4],["Carta situada: destinatario, tesis y dos razones",2],["Apoyo verificable, objeción y organización del sentido",2],["Revisión: tres decisiones explicadas con los conceptos",2]],
+   "aiHelp": "Durante la revisión puedes pedir a una IA dos comentarios sobre pasajes de tu carta usando esta rúbrica. Contrástalos con la lectura del compañero. En tus tres decisiones indica qué aceptas, adaptas o rechazas y por qué; si la usaste, anota la herramienta."
  },
  3:{
    "material": "Retoma un fragmento de tu expediente o del reglamento de becas. Prepara «Teoría» y la selección de Pardo de la semana 7, clase 1.",
@@ -105,16 +107,16 @@ export const unitActivities={
    "reviewFocus": "Justifica con una marca quién sostiene la idea y cómo interviene en la posición del texto."
  },
  5:{
-   "material": "Retoma una pieza conocida. En la ruta común, convierte una condición analizada en la ficha 2 en un aviso para estudiantes de primer semestre. Aquí puedes reformular las palabras. También puedes comparar dos piezas con un vínculo verificable.",
+   "material": "Retoma la propuesta de tu carta de la unidad 2 y conviértela en un aviso para estudiantes de primer semestre. Conserva la propuesta como propuesta y explica la acción que planteas. Si ya trabajaste con el reglamento, puedes continuar con esa condición. También puedes comparar dos piezas con un vínculo verificable.",
    "product": "Una comparación que explica cómo cambia el mensaje al dirigirse a otro lector o cumplir otro propósito.",
    "steps": [
      [
        "Recupera la primera pieza · semana 11, clase 1",
-       "Indica qué quieres comparar. Si ya analizaste el tramo, remite a la ficha y al lugar donde aparece, por ejemplo «Ficha 2, art. 3, página 2 del archivo». Si es nuevo, anota el fragmento, la fuente y dónde encontrarlo."
+       "Indica qué quieres comparar. Recupera el pasaje de la carta, por ejemplo «Ficha 2, versión final, párrafo 3». Si continúas con el reglamento, conserva su artículo y página. Si es otro texto, anota el fragmento, la fuente y dónde encontrarlo."
      ],
      [
        "Prepara o recupera la segunda pieza · semana 11, clase 2",
-       "Escribe el aviso con la condición original y la acción que debe entender el nuevo lector. Si elegiste documentos vinculados, recupera la segunda pieza y su fuente. Conserva esa pieza en la ficha y explica qué cambia para el lector y qué se conserva."
+       "Escribe el aviso con la propuesta o condición original y la acción que debe entender el nuevo lector. Identifica quién propone o dispone esa acción. Si elegiste documentos vinculados, recupera la segunda pieza y su fuente. Conserva esa pieza en la ficha y explica qué cambia para el lector y qué se conserva."
      ],
      [
        "Contrasta la comparación · semana 12, clase 2",

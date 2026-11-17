@@ -1,6 +1,7 @@
 import {foundations,distinctions} from './foundations.js';
+import {questionExamples} from './activities.js';
 // Exposition accompanies an existing agenda block; it adds no assignments or minutes.
-// Examples are authored illustrations, not quotations or new empirical corpus.
+// Examples identify their source; explanations accompany the existing course corpus.
 const topic=(block,title,explanation,points,example,reading,prompt,source,lesson)=>({block,title,explanation,points,example,reading,prompt,source,lesson});
 export const classContent={
  's1-e1':[
@@ -8,7 +9,7 @@ export const classContent={
   {block:0,title:'El concepto de discurso en cinco autores',explanation:'Estas perspectivas construyen problemas distintos: enunciación, diálogo, formación histórica del saber y relaciones entre discurso y sociedad. Las paráfrasis introductorias presentan el aporte específico de cada enfoque.',perspectives:true,points:[],source:'guia-fundamentos'},
   topic(2,'Observar antes de atribuir intención','Una descripción identifica una forma que otro lector puede comprobar. La interpretación propone qué permite entender esa forma en una situación. El motivo de quien escribe constituye una hipótesis adicional. La descripción también usa categorías: separar sus fundamentos ayuda a revisarlas, sin suponer una observación libre de teoría.',
    ['Distingue palabras presentes, información recuperada y explicación propuesta.','La ausencia de un nombre no identifica por sí sola a quien quiso ocultarlo.'],
-   '«Se canceló la reunión».','La oración comunica una decisión ya realizada y coloca en primer plano la reunión afectada. Deja sin nombrar a quien canceló. Así organiza la representación del acontecimiento; el texto circundante permitirá saber si el responsable ya estaba identificado y explicar esa elección.',
+   '«Se canceló la reunión».','La oración presenta la cancelación como un hecho pasado y coloca en primer plano la reunión afectada. Deja sin nombrar a quien canceló. Así organiza la representación del acontecimiento; el texto circundante permitirá saber si el responsable ya estaba identificado y explicar esa elección.',
    '¿Qué parte de nuestra afirmación puede verificar otro lector en la oración?','guia-2',4)
  ],
  's1-e2':[
@@ -124,19 +125,35 @@ export const classContent={
   }
 ],
  's4-e1':[
+  topic(1,'Escribir y representar una posición','Escribir una carta abierta permite intervenir en un asunto compartido. La carta se dirige a una instancia concreta y también prevé lectores de la comunidad. En esta unidad, la dirección de la carrera recibe una propuesta sobre el uso de IA; los compañeros pueden apoyarla, discutirla o plantear otras condiciones. El texto representa a esos participantes al nombrarlos, atribuirles responsabilidades y decidir desde qué voz se habla. El esquema relaciona planificación, textualización y revisión de esa intervención.',
+   ['El tema es el asunto; la [[tesis|tesis]] es la posición que se defiende. Una [[razon-argumentativa|razón]] explica por qué sostenerla; un [[apoyo-argumentativo|apoyo]] aporta un dato, fuente o ejemplo pertinente. Una [[objecion|objeción]] plantea una dificultad a la que el autor responde.','La [[representacion|representación discursiva]] incluye cómo se presenta a personas, grupos y hechos. «Como estudiante» sitúa una voz individual; «los estudiantes exigimos» construye una voz colectiva que debe situarse en su relación con el grupo.'],
+   'Tesis: permitir IA para revisar borradores, con decisiones justificadas. Razón: explicar los cambios hace visible el criterio del autor. Apoyo: la orientación de UNESCO hacia un uso educativo centrado en las personas. Objeción: aceptar sugerencias sin comprenderlas. Respuesta: conservar el borrador y explicar tres decisiones.',
+   'El ejemplo conecta una propuesta con una razón y un criterio de una fuente. La respuesta a la objeción concreta cómo se preservaría la decisión del estudiante. La lectura previa contiene el párrafo completo y la referencia. El autor puede defender otra posición y fundamentarla.',
+   'Reconoce en el ejemplo la propuesta, sus razones y las responsabilidades que atribuye a cada participante.','calsamiglia',5),
   {
     "block": 1,
-    "title": "Escribir configura una acción social",
-    "explanation": "Un escrito interviene en una relación entre participantes. Un reglamento establece quién puede recibir una ayuda, quién acredita condiciones y quién administra el procedimiento. Las denominaciones y las obligaciones construyen esas posiciones dentro de la institución. La enunciación escrita se reconstruye mediante huellas del emisor, el destinatario y el momento de producción: quien aparece dentro de una cláusula puede tener un papel diferente de quien dicta el documento.",
+    "title": "Cómo el reglamento organiza el reparto",
+    "explanation": "En el ejemplar de becas, el encabezado «Honorable Consejo Universitario» y «RESUELVE» identifican al órgano que dicta la norma (página 1). El artículo 1 asigna la administración a la Dirección General de Bienestar Universitario y el programa a la Unidad de Becas; el artículo 2 identifica a los estudiantes que cumplen los requisitos (página 2). La certificación final permite reconocer el ejemplar con reforma de 2022 (página 4). Así distinguimos quién dicta, quién administra y quién puede recibir la ayuda.",
     "points": [
-      "En el reglamento, el encabezado del Consejo Universitario y «RESUELVE» identifican la voz que dispone (página 1 del archivo); los artículos 1–2 nombran al estudiantado y a la instancia administradora (página 2 del archivo). La razón final registra la reforma de septiembre de 2022 y la certificación de la Secretaría General (página 4 del archivo). Estas huellas sitúan emisor, destinatarios y ejemplar.",
-      "Distingue quien dispone, quien acredita una condición y quien recibe un beneficio.",
-      "Relaciona la formulación con la acción que permite: solicitar, verificar o resolver.",
-      "Corpus es el conjunto seleccionado para responder una pregunta. En esta ficha, el documento es una pieza del corpus y cada cláusula o tramo examinado es una unidad de análisis; guardar su localizador permite relacionarlo con el conjunto."
+      "El artículo 3 fija un reparto entre excelencia académica y vulnerabilidad. Observa cómo la expresión de obligación y los porcentajes convierten esos criterios en una decisión que debe seguir quien administra las becas."
     ],
-    "example": "«La comisión verificará los requisitos antes de resolver la solicitud».",
-    "reading": "El enunciado asigna a la comisión las acciones de verificar y resolver, y sitúa la verificación antes de la decisión sobre la solicitud. Ese orden organiza la relación entre la comisión y quien solicita. En los artículos 1–3 de becas, las denominaciones de responsables y beneficiarios permiten reconstruir posiciones institucionales; su aplicación se estudia con otros datos.",
-    "prompt": "¿Qué regula el texto y qué necesitaríamos para estudiar su cumplimiento?",
+    "example": "«Se deberá destinar el 65% de las becas para excelencia académica y el 35 % por vulnerabilidad».",
+    "reading": "«Se deberá destinar» expresa una obligación: modalidad deóntica. El reparto reserva una proporción mayor para excelencia académica y otra para vulnerabilidad. La formulación establece cómo debe distribuir la institución las ayudas y clasifica a sus posibles beneficiarios mediante esos criterios. El encabezado y los artículos 1–2 permiten reconstruir la autoridad y los responsables de la disposición.",
+    "prompt": "Relaciona la obligación, los porcentajes y los grupos de beneficiarios con la decisión institucional.",
+    "source": "calsamiglia",
+    "lesson": 0
+  },
+  {
+    "block": 1,
+    "title": "El corpus de esta actividad",
+    "explanation": "Un corpus es el conjunto de textos o registros seleccionados para estudiar un problema. En esta actividad está formado por las cartas, sus versiones y los comentarios de lectura. Permite observar cómo se representan personas y responsabilidades, y cómo otro lector interpreta esas elecciones. Cada pieza se identifica por autor, versión y procedencia.",
+    "points": [
+      "Documento y recorte: la carta completa conserva la propuesta y sus razones. Para comentar una elección, seleccionamos un pasaje y lo situamos en ese conjunto. Por ejemplo, «borrador de Ana, párrafo 2, desde “Los estudiantes…”».",
+      "Unidad de análisis: es la parte que examinamos para explicar una relación. Puede ser la frase que presenta al colectivo, el párrafo que le atribuye una responsabilidad o una expresión de obligación dentro de él.",
+      "En el modelo del reglamento, el documento completo aporta la referencia; los artículos 1–3 son el recorte, y la disposición del artículo 3 es la unidad que permite estudiar el reparto. Se localiza como «artículo 3, página 2 del archivo».",
+      "Fuente teórica: Calsamiglia y Tusón aportan conceptos, como modalidad. La carta y el reglamento aportan enunciados que podemos estudiar. La respuesta del compañero permite documentar una lectura concreta. Puedes abrir [[corpus|corpus]] para repasar estas distinciones."
+    ],
+    "prompt": "Distingue el texto que analizas, el pasaje elegido y el concepto con que lo explicas.",
     "source": "calsamiglia",
     "lesson": 0
   }
@@ -145,24 +162,25 @@ export const classContent={
   {
     "block": 1,
     "title": "Agencia y representación de participantes",
-    "explanation": "Una cláusula relaciona un proceso o estado con sus participantes. El sujeto es una función gramatical, normalmente identificable por la concordancia con el verbo; el agente realiza la acción. Las cláusulas distribuyen atención y responsabilidad al representar un acontecimiento. En «Las solicitudes fueron revisadas por la comisión», las solicitudes son sujeto y la comisión realiza la revisión. «La revisión» convierte el proceso en un nombre. Estas elecciones permiten presentar quién interviene, qué se hizo y qué se toma como información ya conocida.",
+    "explanation": "Una cláusula relaciona un proceso o estado con sus participantes. El sujeto es una función gramatical, normalmente identificable por la concordancia con el verbo; el agente realiza la acción. Las cláusulas distribuyen atención y responsabilidad al representar un acontecimiento. En «Las solicitudes fueron revisadas por la comisión», las solicitudes son sujeto y la comisión realiza la revisión. La nominalización «la revisión» convierte el proceso en un nombre y permite retomarlo como asunto. Estas elecciones permiten presentar quién interviene, qué se hizo y qué se toma como información ya conocida.",
     "points": [
-      "El agente realiza la acción; la autoridad que la decide puede ser otra.",
-      "La omisión se interpreta junto con los participantes identificados en el documento.",
+      "El agente realiza la acción; la autoridad que la decide puede ser otra. Un actor social es una persona, colectivo u organización que participa en la práctica. La omisión se interpreta junto con los participantes identificados en el documento.",
       "[[modalidad|Modalidad]]: «deben presentar» expresa obligación; «pueden presentar» puede expresar permiso. «Es posible que presenten» expresa posibilidad. En una norma, esas diferencias organizan deberes, facultades y expectativas."
+      ,"En una carta, «La dirección debería acordar criterios con docentes y estudiantes» asigna una iniciativa e incluye a otros grupos en la decisión. «Se deberían acordar criterios» centra la atención en el acuerdo. El resto de la carta puede aclarar quién debe impulsarlo.",
+      "Nombrar a un colectivo también selecciona una perspectiva: «quienes usan IA» lo define por una práctica; «quienes necesitan orientación» lo presenta desde una necesidad de apoyo. Explica qué relación construye la denominación que realmente aparece en el texto."
     ],
     "example": "«La comisión revisó las solicitudes» / «Se revisaron las solicitudes».",
     "reading": "La primera versión vincula una actuación con la comisión; la segunda centra la atención en el trámite realizado. Si la comisión ya está identificada, el lector puede recuperar ese vínculo. Si aparece aislada, la segunda versión deja pendiente a quién atribuir la actuación. La diferencia permite analizar la representación de la responsabilidad en cada situación.",
-    "prompt": "¿Qué sabemos por la cláusula y qué recuperamos del resto del documento?",
+    "prompt": "Explica quién aparece actuando, quién recibe la acción y qué responsabilidad se reconstruye con el resto del texto.",
     "source": "fairclough",
     "lesson": 0
   }
 ],
  's5-e1':[
   topic(1,'El lector aporta conocimientos','Los escritos se dirigen a lectores a quienes atribuyen ciertos conocimientos. Un trámite puede dar por conocidos un certificado o un procedimiento y exigir que el destinatario complete esa información. Las inferencias permiten examinar esa relación entre lo expresado y lo que se espera que el lector sepa.',
-   ['Flower y Hayes, según el manual, describen los procesos de quien escribe: planificar, textualizar y revisar son procesos que se alternan. Textualizar es poner las ideas por escrito; revisar puede llevar a cambiar el plan. No forman un circuito fijo: cada proceso puede activar los otros.','El conocimiento que el analista supone no coincide necesariamente con el de los lectores reales.','En Grice según Escandell, «Algunos grupos entregaron» puede sugerir «no todos»: esa sugerencia es una [[implicatura|implicatura]]. «Algunos; de hecho, todos» cancela esa implicatura. El supuesto de una entrega anterior en «nuevamente» es una [[presuposicion|presuposición]]: presenta esa entrega como información compartida.'],
+   ['La primera lectura del compañero permite observar qué propuesta entiende y qué información tuvo que completar. Su comentario se apoya en palabras concretas del borrador.','En la carta, «Mantengamos el permiso para revisar borradores con IA» presenta un permiso como existente. «Propongo permitir la revisión de borradores con IA» presenta una iniciativa. El cambio modifica cómo se representa la situación institucional.','La [[presuposicion|presuposición]] presenta un dato como compartido; la [[implicatura|implicatura]], en Grice según Escandell, se reconstruye en contexto y puede cancelarse. Las dos escenas permiten comparar estas formas de información implícita.'],
    '«Adjunte nuevamente el certificado».','«Nuevamente» presenta una acción anterior como información dada por supuesta: una presuposición, según Calsamiglia y Tusón y Brown y Yule. La petición sitúa al destinatario como alguien que ya participa en el trámite y puede reconocer el certificado. Un lector nuevo necesitaría recuperar esa información. El análisis explica qué conocimiento presupone el escrito; comprobar la entrega anterior exige consultar el expediente.',
-   '¿Qué aporta la expresión y qué conocimiento estamos añadiendo?','escandell',1)
+   'Distingue las palabras del texto y el conocimiento que aportaste para interpretarlas.','escandell',1)
  ],
  's5-e2':[
   {
@@ -176,7 +194,7 @@ export const classContent={
     ],
     "example": "«Puede presentar la solicitud hasta el viernes».",
     "reading": "La formulación ofrece una posibilidad y fija un límite temporal: organiza la acción del solicitante. Para convertir ese límite en una decisión práctica importa conocer el horario y el canal de recepción. Esos datos contextualizan el permiso y permiten precisar cuándo puede ejercerse.",
-    "prompt": "¿Qué información resolvería la discrepancia sin adivinar lo que quiso decir quien escribió?",
+    "prompt": "Señala qué información permite precisar la lectura de una condición.",
     "source": "brown-yule",
     "lesson": 1
   },
@@ -187,13 +205,13 @@ export const classContent={
     "points": [
       "La cohesión enlaza segmentos mediante referencias, recurrencias y conectores. Una referencia puede recuperar una expresión anterior, su antecedente; la recurrencia léxica mantiene el asunto mediante palabras repetidas o relacionadas; un conector señala cómo se relacionan dos partes.",
       "La segmentación distribuye temas en artículos y párrafos; la puntuación delimita unidades y relaciones dentro de ellos. Para resumir una norma, identifica a qué disposición pertenece cada condición y conserva ese vínculo.",
-      "Una síntesis puede omitir detalles; debe justificar su selección.",
-      "Cambiar una condición o introducir una conclusión ajena altera el contenido que se representa.",
       "Al generalizar una lista bajo una categoría, comprueba que el resumen conserve sus límites. El lector debe poder distinguir los casos admitidos de otros que pertenecen a la misma categoría."
+      ,"En la carta, la frase «Entiendo que propone… porque…» permite comparar la posición que reconstruye el compañero con la tesis del autor. Selecciona la propuesta y sus condiciones al sintetizarla.",
+      "La cohesión ayuda a seguir las razones. La coherencia exige que esas razones sostengan la propuesta: «La IA responde rápido; por tanto, su respuesta es correcta» contiene un conector, pero la rapidez no demuestra la corrección."
     ],
     "example": "Texto: «La ayuda exige matrícula vigente y acreditación de ingresos». Síntesis: «La ayuda está condicionada a matrícula e ingresos».",
     "reading": "La síntesis pierde «vigente» y «acreditación»: representa el acceso mediante dos datos generales y deja fuera su condición temporal y la obligación de justificarlos. Una versión como «Para acceder hay que acreditar ingresos y tener matrícula vigente» conserva esa relación. La comparación muestra cómo resumir puede cambiar la imagen del beneficiario y de lo que se le exige.",
-    "prompt": "¿Qué condición perderíamos con una síntesis demasiado amplia?",
+    "prompt": "Conserva en la síntesis la propuesta, sus razones y las condiciones que delimitan su alcance.",
     "source": "van-dijk",
     "lesson": 2
   }
@@ -206,21 +224,21 @@ export const classContent={
     "points": [
       "Prominencia es el grado en que un elemento atrae la atención: aumentar tamaño y grosor de «Requisitos» lo destaca. Encuadre es la separación o conexión visual: el recuadro agrupa las condiciones y las diferencia del resto.",
       "Valor informativo es el papel que adquiere un elemento por su posición en el conjunto. En este aviso, llevar los requisitos al inicio propone comprobarlos antes de continuar. Esa lectura se interpreta según las convenciones del documento.",
-      "Para comparar disposición, conserva el mismo contenido verbal.",
       "Para saber qué leen primero los destinatarios, compara las versiones con lectores."
+      ,"En la carta, título y párrafos pueden destacar la posición, agrupar razones y presentar la respuesta a una objeción. Destacar «Permitir la IA» y alejar «para revisar borradores» puede hacer menos visible el alcance de la propuesta."
     ],
     "example": "En un aviso, «Requisitos» aparece en letra pequeña; en otra disposición conserva las mismas palabras y gana tamaño y posición inicial.",
     "reading": "La segunda disposición destaca las condiciones como entrada a la lectura: propone que el destinatario compruebe si puede participar. Se conserva la información verbal y cambia su jerarquía. La respuesta del lector permitirá contrastar si ese recorrido propuesto coincide con su lectura.",
-    "prompt": "¿Qué decisión visual cambió y qué observación permitiría valorar su efecto?",
+    "prompt": "Relaciona una decisión de presentación de la carta con lo que el compañero identifica al leerla.",
     "source": "kress",
     "lesson": 3
   }
 ],
  's6-e2':[
-  topic(1,'Distinguir diseño propuesto y lectura observada','La composición permite proponer una jerarquía de información. La respuesta del compañero aporta un dato de lectura en una situación concreta. Comparar ambas ayuda a revisar una hipótesis sin confundir lo visible con un efecto garantizado.',
-   ['Señala qué elemento gana tamaño, posición o agrupación en tu alternativa.','Registra qué condición identifica el lector y cómo explica su recorrido. No conviertas una respuesta en una regla para todos.'],
-   'Hipótesis: al destacar «Requisitos», será más fácil localizar las condiciones. Un compañero encuentra el título, pero omite una condición ubicada debajo.','La respuesta permite distinguir localizar el apartado de reconstruir las condiciones de acceso. El lector encuentra el título, pero no recupera una condición. Revisar la agrupación permite poner a prueba si contribuyó a esa omisión. La conclusión distingue el resultado observado de su posible explicación. En la ficha se contrasta con la respuesta realmente obtenida.',
-   '¿Qué parte de la hipótesis apoya la respuesta y qué parte debemos revisar?','kress',3)
+  topic(1,'Distinguir diseño propuesto y lectura observada','El autor propone una posición mediante palabras y una presentación. El compañero reconstruye esa posición al leer. Comparar ambas permite revisar cómo se representan las personas, qué acción se pide y qué condiciones se hacen visibles. La explicación de la revisión relaciona una elección concreta con esa lectura.',
+   ['Una decisión de revisión puede cambiar una denominación, precisar quién actúa, fundamentar una razón o acercar una condición a la propuesta. Describe la formulación inicial, la final y el motivo.','La respuesta del compañero documenta su lectura en este intercambio. Una formulación clara también puede conservarse: explica qué reconoció el lector y qué palabras lo ayudaron.','Si consultas IA, contrasta sus sugerencias con el texto y la lectura del compañero. La decisión de aceptar, adaptar o rechazar una sugerencia se justifica con el mismo criterio discursivo.'],
+   'El título dice «Permitir la IA»; la condición «para revisar borradores» aparece al final. El compañero entiende una autorización para producir trabajos completos.','El autor reúne propuesta y condición en el título: «Permitir IA para revisar borradores». Explica que buscaba delimitar el uso permitido y que el comentario del lector mostró otra interpretación. En otra revisión, sustituye «los estudiantes exigimos» por «como estudiante, propongo» para asumir su posición individual. Una decisión atiende a la lectura de la propuesta; la otra, a la voz que representa al autor.',
+   'Explica tres decisiones de tu revisión con el pasaje correspondiente y su motivo.','calsamiglia',3)
  ],
  's7-e1':[
   {

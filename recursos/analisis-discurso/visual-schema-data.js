@@ -1,4 +1,5 @@
 import {openingNotice} from './foundations.js';
+import {questionExamples} from './activities.js';
 
 // Content of the visual schemas. Each entry names the class it belongs to (`planned`), the theory topic
 // it accompanies and `anchors`: phrases that must appear in that class, so a schema never adds content.
@@ -83,9 +84,9 @@ export const visualSchemas={
    {head:'Nominalización',sub:'el proceso como nombre',cells:['«La revisión de las solicitudes».','No: convierte la acción en un asunto nombrado, sin indicar aquí quién revisa ni cuándo.']}
   ],
   limit:'para distinguir quién actúa y quién decide, contrasta la formulación con otros pasajes o documentos sobre la decisión.',
-  task:{label:'En la ficha 2',text:'Localiza en el reglamento cláusulas con participantes, acciones y condiciones, y anota dónde queda el agente.'},
+  task:{label:'En tu carta',text:'Señala a quién atribuyes una acción. Explica cómo esa formulación representa su responsabilidad ante los lectores.'},
   source:'Ejemplos. Pasiva sin agente y nominalización: Fairclough (1992: 178–179). Impersonales y pasivas sin agente que borran al locutor: Calsamiglia y Tusón (2012, §5.1.1 · página 138 del archivo).',
-  anchors:['La comisión revisó las solicitudes','Las solicitudes fueron revisadas por la comisión','Se revisaron las solicitudes','«La revisión» convierte el proceso en un nombre','El agente realiza la acción; la autoridad que la decide puede ser otra','La omisión se interpreta junto con los participantes identificados en el documento']
+  anchors:['La comisión revisó las solicitudes','Las solicitudes fueron revisadas por la comisión','Se revisaron las solicitudes','La nominalización «la revisión» convierte el proceso en un nombre','El agente realiza la acción; la autoridad que la decide puede ser otra','La omisión se interpreta junto con los participantes identificados en el documento']
  },
  'personas-cuadrante':{
   type:'quadrant',planned:'s9-e1',topic:'Personas y destinatarios se reconstruyen',placed:true,
@@ -141,9 +142,9 @@ export const visualSchemas={
   loss:{label:'Qué se pierde',items:['«vigente»: no cualquier matrícula sirve.','«acreditación» exige presentar pruebas de los ingresos.'],question:'¿Cómo cambia lo que el lector entiende que necesita para acceder a la ayuda?'},
   rejected:{label:'No la sostiene el texto',text:'«La ayuda se ofrece a todos».',note:'Añade una generalización que elimina las condiciones.'},
   limit:'el tema global es una reconstrucción de quien interpreta. Una síntesis puede omitir detalles si justifica su selección; cambiar una condición altera el contenido.',
-  task:{label:'En la ficha 2',text:'Reconstruye el tema global y justifica qué seleccionaste, generalizaste o integraste.'},
+  task:{label:'Al leer la carta del compañero',text:'Expresa en una frase la propuesta que entiendes y señala los pasajes que sostienen esa lectura.'},
   source:'Ejemplo. Macroestructura y macrorreglas: Calsamiglia y Tusón (2012, §8.1.2 · páginas 225–226 del archivo). Generalización y operaciones selectivas y constructivas: van Dijk (1980: 216–217).',
-  anchors:['La ayuda exige matrícula vigente y acreditación de ingresos','La ayuda está condicionada a matrícula e ingresos','las condiciones conservadas determinan cómo se representa el acceso a la ayuda','generalizar reúne casos bajo una categoría','pierde «vigente»','Una síntesis puede omitir detalles; debe justificar su selección','Cambiar una condición o introducir una conclusión ajena altera el contenido']
+  anchors:['La ayuda exige matrícula vigente y acreditación de ingresos','La ayuda está condicionada a matrícula e ingresos','las condiciones conservadas determinan cómo se representa el acceso a la ayuda','generalizar reúne casos bajo una categoría','pierde «vigente»','Al generalizar una lista bajo una categoría, comprueba que el resumen conserve sus límites']
  },
  'regla-de-paso':{
   type:'argument',planned:'s14-e1',topic:'El argumento necesita una regla de paso',placed:true,replaces:'example',
@@ -254,18 +255,18 @@ export const visualSchemas={
   anchors:['No [pausa] aceptamos esa explicación','La puntuación de un subtítulo es una decisión de escritura que debe contrastarse con el audio','La leyenda precisa qué representa cada marca y la escucha decide dónde corresponde','su posible función requiere las palabras próximas y la continuación']
  },
  'accion-clausula':{
-  type:'annotated',planned:'s4-e1',topic:'Escribir configura una acción social',placed:true,replaces:'example',
-  label:'Cómo una cláusula distribuye acciones y su orden',
-  text:'«La comisión verificará los requisitos antes de resolver la solicitud».',
+  type:'annotated',planned:'s4-e1',topic:'Cómo el reglamento organiza el reparto',placed:true,replaces:'example',
+  label:'Artículo 3: obligación y criterios de reparto',
+  text:'«Se deberá destinar el 65% de las becas para excelencia académica y el 35 % por vulnerabilidad».',
   marks:[
-   {words:'La comisión',label:'Quien actúa',note:'se le atribuyen la verificación y la resolución de la solicitud.'},
-   {words:'verificará',label:'Acción futura',note:'proyecta una actuación institucional que el solicitante puede esperar.'},
-   {words:'antes de resolver',label:'Orden del procedimiento',note:'primero se verifica; después se resuelve.'}
+   {words:'Se deberá destinar',label:'Obligación',note:'establece cómo deben repartirse las becas. Es una expresión de modalidad deóntica.'},
+   {words:'65% de las becas para excelencia académica',label:'Primer criterio y proporción',note:'reserva la mayor parte de las becas para excelencia académica.'},
+   {words:'35 % por vulnerabilidad',label:'Segundo criterio y proporción',note:'reserva otra parte para vulnerabilidad. Las categorías indican cómo se agrupa a los posibles beneficiarios.'}
   ],
-  verdict:'La cláusula presenta a la comisión como responsable de tramitar la solicitud y ordena su actuación: verificar antes de resolver. Así organiza la relación entre quien solicita y quien decide; para afirmar que se cumplió habría que investigar la aplicación.',
-  task:{label:'En la ficha 2',text:'Formula tu pregunta inicial. Ejemplo: «¿Qué condiciones establece el artículo 3 para acceder a una beca?». Anota también qué documento necesitarías para estudiar si esas condiciones se aplican.'},
-  source:'Ejemplo. Prácticas escritas en los ámbitos de la vida social, entre ellos el institucional: Calsamiglia y Tusón (2012, §3.2 · página 76 del archivo).',
-  anchors:['La comisión verificará los requisitos antes de resolver la solicitud','Relaciona la formulación con la acción que permite: solicitar, verificar o resolver','qué necesitaríamos para estudiar su cumplimiento','su aplicación se estudia con otros datos']
+  verdict:'La disposición obliga a la institución a distribuir las ayudas en dos proporciones y da mayor peso a la excelencia académica. El análisis relaciona esa forma de escribir con una prioridad institucional y con las categorías de estudiantes que construye el reglamento.',
+  task:{label:'Del ejemplo a la carta',text:'El reglamento establece obligaciones desde una voz institucional. En tu carta, decide desde qué posición hablas y qué acción propones a la dirección de la carrera.'},
+  source:'UCE, Reglamento de Becas para Estudiantes de Tercer Nivel, ejemplar con reforma de 2022, artículo 3, página 2 del archivo. Interpretación del curso. Modalidad: Calsamiglia y Tusón (2012, §6.4.1, páginas 177–178 del archivo).',
+  anchors:['Se deberá destinar','65%','35 %','excelencia académica','vulnerabilidad']
  },
  'presuposicion-certificado':{
   type:'annotated',planned:'s5-e1',topic:'El lector aporta conocimientos',placed:true,replaces:'example',
@@ -284,9 +285,9 @@ export const visualSchemas={
    {words:'el certificado',label:'Referencia',note:'identificarlo exige otras referencias del texto o de la situación.'}
   ],
   verdict:'«Adjunte nuevamente» pide repetir una entrega y trata la anterior como información compartida: sitúa al estudiante en un trámite ya iniciado. «Algunos grupos entregaron» puede sugerir «no todos»; «de hecho, todos» cancela esa implicatura. La entrega previa presupuesta por «nuevamente» no queda demostrada por la orden.',
-  task:{label:'En la ficha 2',text:'Explica una inferencia con las palabras que la apoyan y el conocimiento que aporta el lector.'},
+  task:{label:'Al leer la carta del compañero',text:'Marca un pasaje que requiera aportar información. Explica qué entendiste y qué palabras o conocimientos te ayudaron.'},
   source:'Ejemplo. Presuposición: Calsamiglia y Tusón (2012, §7.2.1 · páginas 191–192 del archivo) y Brown y Yule (1983: 28–31). Implicatura y su cancelación: Grice, en Escandell (1996: 86–87).',
-  anchors:['Adjunte nuevamente el certificado','presenta una acción anterior como información dada por supuesta','comprobar la entrega anterior exige consultar el expediente','Un lector nuevo necesitaría recuperar esa información','«Algunos grupos entregaron» puede sugerir «no todos»','cancela esa implicatura']
+  anchors:['Adjunte nuevamente el certificado','presenta una acción anterior como información dada por supuesta','comprobar la entrega anterior exige consultar el expediente','Un lector nuevo necesitaría recuperar esa información','se reconstruye en contexto y puede cancelarse','Las dos escenas permiten comparar estas formas de información implícita']
  },
  'composicion-aviso':{
   type:'composition',planned:'s6-e1',topic:'La composición orienta la lectura',placed:true,replaces:'example',
@@ -302,23 +303,22 @@ export const visualSchemas={
    {label:'Encuadre · separación y agrupación',values:['Sin recuadro: los requisitos quedan junto al pie.','Un recuadro separa los requisitos del resto.']}
   ],
   verdict:'La primera disposición destaca la convocatoria y la entrega; la segunda presenta primero las condiciones de acceso. Las mismas palabras proponen así distintas prioridades al destinatario.',
-  task:{label:'En la ficha 2',text:'Describe la disposición original de tu documento y propone una alternativa que conserve las mismas palabras.'},
-  source:'Aviso inventado para este esquema. Tipografía y diseño gráfico: Calsamiglia y Tusón (2012, §3.5 · página 86 del archivo). Valor informativo, prominencia y encuadre: Kress y van Leeuwen (2021: 181–182).',
-  anchors:['«Requisitos» aparece en letra pequeña','conserva las mismas palabras y gana tamaño y posición inicial','Tamaño, posición, agrupación y encuadre proponen jerarquías','Para saber qué leen primero los destinatarios, compara las versiones con lectores','Para comparar disposición, conserva el mismo contenido verbal']
+  task:{label:'En tu carta',text:'Revisa si el título y los párrafos hacen visible tu propuesta y sus condiciones. Compara una decisión de disposición conservando las mismas palabras.'},
+  source:'Ejemplo del curso. Tipografía y diseño gráfico: Calsamiglia y Tusón (2012, §3.5 · página 86 del archivo). Valor informativo, prominencia y encuadre: Kress y van Leeuwen (2021: 181–182).',
+  anchors:['«Requisitos» aparece en letra pequeña','conserva las mismas palabras y gana tamaño y posición inicial','Tamaño, posición, agrupación y encuadre proponen jerarquías','Para saber qué leen primero los destinatarios, compara las versiones con lectores','Se conserva la información verbal y cambia su jerarquía']
  },
  'diseno-lectura':{
   type:'contrast',planned:'s6-e2',topic:'Distinguir diseño propuesto y lectura observada',placed:true,replaces:'example',
   label:'Lo que el diseño propone y lo que el lector hizo',
-  question:'¿Qué parte de la hipótesis apoya la respuesta y qué parte hay que revisar?',
+  question:'La lectura del compañero ayuda a precisar la propuesta.',
   columns:[
-   {label:'Diseño propuesto · hipótesis',text:'«Al destacar “Requisitos”, será más fácil localizar las condiciones».',marks:['“Requisitos”'],note:'Una jerarquía visible propone una lectura.'},
-   {label:'Lectura observada · un compañero',text:'Encuentra el título, pero omite una condición ubicada debajo.',note:'Es un dato de lectura en una situación concreta, no una regla para todos.'}
+   {label:'Formulación inicial',text:'Título: «Permitir la IA». Al final: «para revisar borradores».',marks:['«Permitir la IA»'],note:'La propuesta y su condición aparecen separadas.'},
+   {label:'Lectura del compañero',text:'Entiende una autorización para producir trabajos completos.',note:'Su comentario hace visible cómo interpretó este escrito.'}
   ],
-  verdict:'El lector localizó el título, pero omitió una condición. Destacar «Requisitos» no bastó para reconocer todo lo exigido en esta lectura. La agrupación es una explicación posible que se puede comprobar; también pueden influir la formulación y los conocimientos del lector.',
-  limit:'ejemplo construido de revisión: en tu ficha usa la respuesta que realmente obtuviste.',
-  task:{label:'En la ficha 2',text:'Revisa tu interpretación tras el contraste visual y explica qué cambió.'},
-  source:'Ejemplo construido del curso. Tipografía y diseño gráfico: Calsamiglia y Tusón (2012, §3.5 · página 86 del archivo). El lector, sujeto activo de la lectura: §3.4.2 · páginas 83–84 del archivo.',
-  anchors:['al destacar «Requisitos», será más fácil localizar las condiciones','Un compañero encuentra el título, pero omite una condición ubicada debajo','Revisar la agrupación permite poner a prueba si contribuyó a esa omisión','No conviertas una respuesta en una regla para todos','En la ficha se contrasta con la respuesta realmente obtenida']
+  verdict:'El autor cambia el título a «Permitir IA para revisar borradores». La condición queda junto a la propuesta y precisa el uso que defiende. Explica que tomó esa decisión a partir del comentario recibido.',
+  task:{label:'En tu carta',text:'Explica tres decisiones con sus formulaciones y motivos. Puedes conservar una expresión que tu lector comprendió con claridad.'},
+  source:'Ejemplo del curso. Tipografía y diseño gráfico: Calsamiglia y Tusón (2012, §3.5 · página 86 del archivo). El lector, sujeto activo de la lectura: §3.4.2 · páginas 83–84 del archivo.',
+  anchors:['El título dice «Permitir la IA»','la condición «para revisar borradores» aparece al final','El compañero entiende una autorización para producir trabajos completos','El autor reúne propuesta y condición en el título: «Permitir IA para revisar borradores»']
  },
  'recorrido-reparto':{
   type:'path',planned:'s7-e2',topic:'De una formulación a un problema social',placed:true,replaces:'example',
@@ -459,7 +459,7 @@ export const visualSchemas={
   anchors:['Heteroselección: quien habla elige al siguiente','Autoselección: alguien empieza sin ser elegido','Para explicar la participación interesa la secuencia completa y las posibilidades de responder','examinar oportunidades negadas o intervenciones que se impiden, además de la duración del turno']
  },
  'escritura-procesos':{
-  type:'cycle',planned:'s5-e1',topic:'El lector aporta conocimientos',placed:true,
+  type:'cycle',planned:'s4-e1',topic:'Escribir y representar una posición',placed:true,
   label:'Escribir para un lector: planificar, textualizar y revisar se interrelacionan',
   model:'Modelo · Flower y Hayes, procesos de escritura, según el manual',
   steps:[
@@ -468,9 +468,9 @@ export const visualSchemas={
    {name:'Revisar',text:'Evalúa lo escrito y su adecuación a los objetivos.'}
   ],
   back:'No forman un circuito fijo: cada proceso puede activar los otros, y revisar puede llevar a cambiar el plan.',
-  task:{label:'En la ficha 2',text:'Si al revisar una inferencia deja de sostenerse, vuelve al plan: conserva la primera versión y explica el cambio.'},
+  task:{label:'En tu carta',text:'Mientras escribes, vuelve a tu posición y a tus razones cuando necesites ajustarlas. Conserva el primer borrador para explicar después tus decisiones.'},
   source:'Modelo de Flower y Hayes (1980, 1981), en Calsamiglia y Tusón (2012, §3.4.1 · página 81 del archivo). En el modelo completo, un «monitor» coordina cuándo planificar, poner las ideas por escrito o revisar.',
-  anchors:['describen los procesos de quien escribe','planificar, textualizar y revisar son procesos que se alternan','Textualizar es poner las ideas por escrito','revisar puede llevar a cambiar el plan','No forman un circuito fijo: cada proceso puede activar los otros']
+  anchors:['Escribir una carta abierta permite intervenir en un asunto compartido','El esquema relaciona planificación, textualización y revisión de esa intervención']
  },
  'contexto-dimensiones':{
   type:'facets',planned:'s7-e2',topic:'Contextualizar exige fuentes y función',placed:true,

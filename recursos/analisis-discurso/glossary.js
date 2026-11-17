@@ -3,6 +3,48 @@ export const glossary={
  'analisis-discurso':{term:'Análisis del discurso (AD)',author:'Campo interdisciplinario; diversas tradiciones lingüísticas y sociales',definition:'Investiga cómo textos e interacciones situados producen e interpretan sentidos y acciones, relacionando formas observables y condiciones de uso mediante categorías explícitas.',operation:'Delimita pregunta y corpus; describe marcas; documenta contexto; argumenta y contrasta una explicación.',limit:'Los enfoques críticos del discurso estudian especialmente poder, ideología y desigualdad; no agotan todo el campo ni eximen de justificar con evidencia.'},
  enunciado:{term:'Enunciado',author:'Distinción operativa a partir de Benveniste y Calsamiglia y Tusón',definition:'Lo dicho o escrito como producto de una realización situada. Enunciación designa el acto de producción, no ese producto.',operation:'Conserva las palabras e identifica la situación necesaria para interpretar sus referencias.',limit:'No equipares automáticamente oración gramatical, enunciado y texto. El alcance de cada unidad depende del marco y del problema.'},
  enunciacion:{term:'Enunciación',author:'Benveniste; desarrollos recogidos por Calsamiglia y Tusón',definition:'Puesta en funcionamiento de recursos lingüísticos desde una situación y una relación entre participantes. Sus marcas permiten investigar posiciones, aquí/ahora y destinatarios.',operation:'Reconstruye quién habla o escribe, a quién se dirige y qué marcas sostienen esa relación.',limit:'La identificación del emisor empírico no agota la posición construida por el texto.'},
+ corpus:{
+  term:'Corpus',
+  author:'Calsamiglia y Tusón, apéndice, §4',
+  definition:'Conjunto de textos o registros seleccionados para responder una pregunta de análisis. La pregunta orienta qué materiales incluir y qué partes examinar. Una unidad de análisis es el segmento que se estudia, como una disposición de un reglamento o un intercambio de una conversación.',
+  operation:'Identifica cada documento, su versión y su procedencia. Explica qué aporta a tu pregunta y localiza el fragmento que analizarás dentro del documento completo.',
+  limit:'Para un trabajo de curso puede bastar una muestra pequeña bien situada. La cantidad y el tipo de materiales se justifican por lo que se quiere investigar.'
+ },
+ representacion:{
+  term:'Representación discursiva',
+  author:'Síntesis del curso a partir de Fairclough y Calsamiglia y Tusón',
+  definition:'Manera de presentar personas, grupos, acontecimientos y relaciones mediante elecciones del discurso. Al nombrar, atribuir acciones y cualidades, o destacar ciertos aspectos, un texto construye una perspectiva sobre su asunto.',
+  operation:'Señala cómo se nombra a un grupo, qué se dice de él y qué papel se le asigna. Relaciona esas elecciones con quien escribe, su destinatario y la situación.',
+  limit:'Una representación se estudia en pasajes concretos y puede compararse con otras formas de presentar el mismo asunto.'
+ },
+ tesis:{
+  term:'Tesis',
+  author:'Síntesis del curso; Calsamiglia y Tusón, §10.3',
+  definition:'Posición discutible que un texto argumentativo busca sostener mediante razones. El tema nombra el asunto; la tesis afirma algo sobre él y permite reconocer qué defiende el autor.',
+  operation:'Formula la posición en una oración y comprueba qué razones ofrece el texto para sostenerla.',
+  limit:'La tesis puede aparecer explícita o reconstruirse a partir de varios pasajes. En la carta del curso se expresa de forma clara para que otro lector pueda discutirla.'
+ },
+ 'razon-argumentativa':{
+  term:'Razón argumentativa',
+  author:'Síntesis del curso; Calsamiglia y Tusón, §10.3',
+  definition:'Afirmación que se ofrece para justificar una posición. Su fuerza depende de cómo se conecta con la tesis y de qué respaldo recibe en esa situación.',
+  operation:'Identifica qué afirma la razón y explica por qué favorecería aceptar la tesis. Comprueba el vínculo entre ambas.',
+  limit:'Un mismo dato puede apoyar conclusiones distintas según los supuestos que conecten la razón con la propuesta.'
+ },
+ 'apoyo-argumentativo':{
+  term:'Apoyo de una razón',
+  author:'Síntesis didáctica del curso; Calsamiglia y Tusón, §10.3',
+  definition:'Dato, fuente, ejemplo o experiencia identificada que permite valorar una razón. «Apoyo» reúne aquí distintas formas de fundamentar; en cada caso se explica qué aporta y de dónde procede.',
+  operation:'Identifica la fuente o el caso, conserva el pasaje pertinente y explica qué parte de tu razón ayuda a sostener.',
+  limit:'Una orientación institucional aporta un criterio; un estudio puede aportar resultados. Presenta cada apoyo según el tipo de fundamento que ofrece.'
+ },
+ objecion:{
+  term:'Objeción',
+  author:'Síntesis del curso; Calsamiglia y Tusón, §10.3',
+  definition:'Dificultad o razón que cuestiona una tesis, uno de sus apoyos o su alcance. Responder permite defender la propuesta, precisar sus condiciones o modificarla.',
+  operation:'Expón una dificultad que un lector podría sostener y responde indicando qué parte de tu propuesta se mantiene o cambia.',
+  limit:'La objeción debe tratar un problema pertinente para la posición debatida y representarse de una manera que permita discutirlo.'
+ },
  'acto-habla':{
   term:'Acto de habla',
   author:'Austin y Searle, según Calsamiglia y Tusón, §7.2.2',
@@ -70,10 +112,10 @@ export const glossary={
  agencia:{term:'Agencia y representación',author:'Fairclough; tradición sistémico-funcional',definition:'Problema de cómo los procesos y sus participantes se expresan, recuperan u omiten, y de cómo se relaciona esa descripción con actores y prácticas sociales.',operation:'Identifica proceso, participantes expresados, cotexto y alternativas de formulación.',limit:'Omitir un agente gramatical no demuestra automáticamente ocultamiento de responsabilidad social.'},
  modalidad:{
   term:'Modalidad',
-  author:'Calsamiglia y Tusón, §6.4',
-  definition:'Forma en que quien habla o escribe presenta el contenido de su enunciado. La modalidad epistémica expresa grados de certeza o posibilidad según el conocimiento disponible, como «seguramente» o «es posible que». La modalidad deóntica expresa obligaciones, permisos o prohibiciones, como «debe entregar» o «se permite entrar».',
-  operation:'Señala la expresión modal y explica si presenta un conocimiento como seguro o posible, o si regula lo que alguien debe o puede hacer.',
-  limit:'La situación y el resto del texto ayudan a decidir el valor de una expresión. En un reglamento, estas elecciones organizan derechos, deberes y posibilidades de actuación.'
+  author:'Calsamiglia y Tusón, §6.4.1',
+  definition:'La modalidad expresa la posición de quien habla o escribe ante lo que comunica. Aquí interesan dos tipos: la modalidad epistémica presenta algo como cierto, probable o posible según el conocimiento disponible; la modalidad deóntica expresa obligaciones, permisos o prohibiciones.',
+  operation:'Localiza la expresión, como «es posible que» o «se deberá». Explica qué grado de certeza presenta o qué acción regula, quién sostiene esa posición y a quién afecta.',
+  limit:'La situación y el resto del texto ayudan a interpretar la expresión. En «puede entrar», por ejemplo, el contexto aclara si alguien tiene permiso o capacidad para hacerlo.'
  },
  inferencia:{term:'Inferencia',author:'Brown y Yule; Escandell Vidal',definition:'Proceso por el que el lector u oyente obtiene una interpretación a partir de lo expresado y de conocimientos o supuestos pertinentes. Permite, por ejemplo, resolver referencias o reconstruir implícitos. Presuposición e implicatura son problemas específicos: no equivalen a cualquier inferencia.',operation:'Distingue marca textual, conocimiento aportado y conclusión. Explica una alternativa.',limit:'Intención atribuida, significado inferido y efecto sobre el público son afirmaciones distintas.'},
  presuposicion:{
@@ -113,6 +155,12 @@ export const examples={
  'analisis-discurso':'Comparar dos avisos exige justificar qué cambia en sus formas y condiciones. Para afirmar que uno excluyó a ciertos lectores se necesitan datos adicionales sobre acceso o recepción.',
  enunciado:'En «Mañana retomamos la discusión», las palabras son el enunciado; producirlo ante un grupo al cerrar una clase es un acto de enunciación. «Mañana» requiere esa referencia temporal.',
  enunciacion:'En «Les propongo discutir aquí esta decisión», identifica quién construye el yo, a qué destinatarios remite les y cómo se define aquí.',
+ corpus:'En la unidad 2, las cartas, sus versiones y los comentarios forman un corpus de aula. Una carta es un documento; su párrafo sobre responsabilidades puede ser una unidad de análisis. El reglamento aporta otro ejemplo: los artículos 1–3 son el recorte y la disposición de reparto del artículo 3, una unidad. Las cosas del decir aporta conceptos para estudiarlos: es una fuente teórica.',
+ representacion:'«Los estudiantes exigimos» presenta una voz colectiva que formula una demanda. «Como estudiante, propongo» sitúa una iniciativa individual. El cambio modifica la posición desde la que el autor se dirige a la autoridad y a sus compañeros.',
+ tesis:'Tema: uso de IA en trabajos universitarios. Tesis: «La carrera debería permitir IA para revisar borradores cuando el estudiante pueda justificar los cambios». La segunda formulación toma posición y delimita una condición.',
+ 'razon-argumentativa':'Para defender que se explique la revisión, el autor ofrece esta razón: «Comparar la versión inicial y la final permite mostrar qué decisiones de escritura tomó el estudiante». La razón conecta la explicación de cambios con un criterio de aprendizaje.',
+ 'apoyo-argumentativo':'La guía de UNESCO sobre IA propone un enfoque educativo centrado en las personas. Una carta puede usar ese criterio para defender que el estudiante decida y justifique sus revisiones. Debe identificar la fuente y explicar esa conexión.',
+ objecion:'Tesis: permitir IA para revisar borradores. Objeción: el estudiante puede aceptar cambios que no comprende. Respuesta: conservar el borrador y explicar tres decisiones permite examinar qué criterio aplicó al revisar.',
  'acto-habla':'Una persona dice «Te pido que cierres la puerta». Emitir esas palabras con su significado es el plano locutivo; hacer una petición es el ilocutivo. Si el interlocutor cierra la puerta a raíz de la petición, esa acción permite observar un efecto perlocutivo.',
  deixis:'Cristina dice «Mañana iremos a tomar café juntos». «Mañana» señala el día siguiente al momento en que ella habla. Al decir la misma frase otro día, cambia la fecha señalada.',
  cotexto:'En «Ana presentó una solicitud. La revisó la comisión», «la» recupera «una solicitud», mencionada en el enunciado anterior. Ese tramo anterior es parte del cotexto.',
@@ -124,7 +172,7 @@ export const examples={
  'unidad-tonal':'En una realización, «bueno» se oye como un grupo completo y «hasta el momento» empieza otro con un nuevo arranque melódico.',
  'marcador-discursivo':'En «Bueno, volvamos al primer punto», «bueno» anuncia que se retoma un asunto anterior.',
  agencia:'Contrasta «La dirección suspendió las becas» con «Se suspendieron las becas». El cambio observable es la expresión del agente; los motivos necesitan otras fuentes.',
- modalidad:'«Es posible que entreguen el informe» presenta una posibilidad: modalidad epistémica. «Deben entregarlo» establece una obligación y «pueden entregarlo por correo» puede conceder un permiso: modalidad deóntica.',
+ modalidad:'El reglamento de becas de la UCE dispone: «Se deberá destinar el 65% de las becas para excelencia académica y el 35 % por vulnerabilidad» (artículo 3, página 2). «Se deberá destinar» establece una obligación de reparto: modalidad deóntica. En cambio, «Es posible que entreguen el informe» presenta un hecho como posible: modalidad epistémica.',
  inferencia:'«Llegó tarde otra vez» presenta una llegada tardía anterior como dada por supuesta: una presuposición. Que el hablante esté molesto es otra inferencia que depende del contexto y puede no sostenerse.',
  presuposicion:'«Ana volvió a entregar el formulario» presupone una entrega anterior. «Ana no volvió a entregarlo» normalmente mantiene ese supuesto. En ambos casos, el hecho de la entrega anterior se presenta como información de fondo.',
  implicatura:'Al informar sobre las entregas del curso, «Algunos grupos entregaron» puede sugerir que otros faltan. La continuación «algunos; de hecho, todos» retira esa sugerencia. Se conserva la afirmación inicial y se cancela la implicatura «no todos».',

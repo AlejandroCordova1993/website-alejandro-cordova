@@ -15,7 +15,7 @@ export function resumeClass(state){
 
 // These are the existing project fields needed by the actual class agenda.
 const projectByClass={
- 's4-e1':['question','corpus'],'s4-e2':['question','corpus'],
+ 's7-e1':['question','corpus'],
  's8-e1':['method'],
  's12-e1':['argument','credits'],'s12-e2':['argument','credits'],
  's14-e1':['argument'],'s14-e2':['argument'],
@@ -27,25 +27,24 @@ const projectByClass={
 // Explicit class stages: visibility follows the task, never a phrase match in its instructions.
 const argumentLater={
  's2-e1':'En la próxima clase, «Palabras, voz y cuerpo», escribirás la primera explicación con esta transcripción.',
- 's4-e1':'En la próxima clase, «Norma y representación», explicarás las evidencias del reglamento en esta misma ficha.',
  's9-e1':'En la próxima clase, «Dar voz y asumir responsabilidad», explicarás las voces y los colectivos de estos segmentos.'
 };
 export const classWriting={
   "s4-e2": {
-    "focus": "Explica quién actúa y qué condición exige el reglamento.",
-    "help": "Empieza con la frase que guardaste."
+    "focus": "Redacta el borrador completo de tu carta y revisa cómo representa a las personas.",
+    "help": "Continúa «Borrador de mi carta» o las mismas hojas."
   },
   "s5-e1": {
-    "focus": "Añade una inferencia al argumento.",
-    "help": "Relaciona la frase, lo que sabe el lector y lo que concluye."
+    "focus": "Lee la carta del compañero y señala tres pasajes para comentar.",
+    "help": "Escribe al margen o en «Mi lectura de la carta del compañero»."
   },
   "s5-e2": {
-    "focus": "Sitúa tu inferencia en el conjunto del reglamento.",
-    "help": "Amplía el mismo párrafo con lo que comprobaste."
+    "focus": "Completa los tres comentarios y empieza la revisión de tu propia carta.",
+    "help": "Conserva el borrador y trabaja en «Versión final de mi carta» o en otra hoja."
   },
   "s6-e1": {
-    "focus": "Prepara la versión visual del fragmento.",
-    "help": "Mantén las mismas palabras y explica qué esperas que el lector vea primero."
+    "focus": "Revisa el título, los párrafos y la jerarquía visual de la misma carta.",
+    "help": "Anota una decisión de presentación para usarla en tus tres decisiones finales."
   },
   "s7-e1": {
     "focus": "Propón un enfoque que ayude a responder tu pregunta.",
@@ -86,7 +85,7 @@ export const classWriting={
 };
 export function classWork(s){
  const work=sessionWork(s);
- return {...work,diagnosis:s.week===1,assessment:work.step==='assessment',projectFields:projectByClass[s.id]||[],review:work.step==='revisar',evidence:!['diagnosis','project','assessment'].includes(work.step),argument:!argumentLater[s.id],argumentNext:argumentLater[s.id]||'',relations:['s11-e2','s12-e2'].includes(s.id)};
+ return {...work,diagnosis:s.week===1,assessment:work.step==='assessment',projectFields:projectByClass[s.id]||[],review:work.step==='revisar',evidence:s.unit!==2&&!['diagnosis','project','assessment'].includes(work.step),argument:s.unit!==2&&!argumentLater[s.id],argumentNext:argumentLater[s.id]||'',relations:['s11-e2','s12-e2'].includes(s.id)};
 }
 export function classEvidenceOptions(s){
  const work=classWork(s);
@@ -160,7 +159,7 @@ export const projectInputs={
 // Preparation remains in the class, with selected paragraphs of the existing guide.
 export const preparationLessons={
  's2-e1':[0,2,3],'s2-e2':[1,3],'s3-e1':[5],'s3-e2':[4],
- 's4-e1':[0],'s4-e2':[0,4],'s5-e1':[1],'s5-e2':[1,2],'s6-e1':[3],'s6-e2':[3],
+ 's4-e1':[5,0],'s4-e2':[4],'s5-e1':[1],'s5-e2':[2],'s6-e1':[3],'s6-e2':[3],
  's7-e1':[0,1,2],'s7-e2':[0,2],'s8-e1':[3,4],'s8-e2':[],
  's9-e1':[0,1],'s9-e2':[1,2],'s10-e1':[2,3],'s10-e2':[4],
  's11-e1':[0,1,2],'s11-e2':[3],'s12-e1':[3,4],'s12-e2':[4],

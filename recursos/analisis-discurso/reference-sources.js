@@ -9,6 +9,7 @@ const ideology=[
 ];
 export const lessonReferences={
  1:{5:[{resource:'caldiz',selection:'Las páginas corresponden al contador del archivo, con la portada como primera página.',pages:[[13,'Abrir el ejemplo 18 en la página 13'],[8,'Abrir los ejemplos 1 y 2 en la página 8']]}]},
+ 2:{5:[{resource:'unesco-ia',selection:'La presentación en español propone un uso centrado en las personas y la validación pedagógica. El ejemplo del curso toma esa orientación como criterio para argumentar; la carta es una elaboración del curso.'}]},
  3:{2:ideology},
  6:{3:[{resource:'bolivar',selection:'Páginas impresas 99–100 / páginas 7–8 del archivo: evaluación, relaciones entre intervenciones y escalas del cambio. Síntesis aplicada al diálogo del curso.'}]}
 };

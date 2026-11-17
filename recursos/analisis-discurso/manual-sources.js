@@ -9,6 +9,9 @@ export const manualPassages={
  oralVariation:'§2.8.1, variación y pronunciación · páginas 55–57',
  transcription:'apéndice, §1.2 · páginas 358–361',
  writing:'§§3.1–3.2 · páginas 74–77',
+ emissionRoles:'§5.1.5, papeles de emisor y receptor · páginas 147–149',
+ modalityTypes:'§6.4.1, modalidades epistémica y deóntica · páginas 177–178',
+ corpus:'apéndice, §4, establecimiento de un corpus · páginas 368–370',
  writtenLanguage:'§3.6, organización lingüístico-textual del escrito · páginas 91–98',
  processes:'§3.4 · páginas 80–85',
  modality:'§6.4 · páginas 175–183',
@@ -36,7 +39,7 @@ export const manualPassages={
 };
 export const lessonManualSources={
  1:[['oral','speechActs','intentions','linguistic'],['body','voice','linguistic','oralVariation'],['transcription'],['voices','context','argument','ethos'],['oral','transcription','linguistic'],['voice','voices','linguistic']],
- 2:[['writing','persons','modality','writtenLanguage'],['processes','implicit'],['texture','writtenLanguage'],['materiality'],['persons']],
+ 2:[['writing','emissionRoles','modalityTypes','corpus'],['implicit'],['texture','writtenLanguage','argument'],['materiality'],['persons','modalityTypes'],['writing','processes','argument','persons']],
  3:[['context','deixis'],[],[],['research'],['research']],
  4:[['persons'],['voices'],['voices'],[],['voices']],
  5:[['genres'],['sequences','narrative','description','explanation','argument','dialogue'],[],[],[]],
@@ -46,8 +49,8 @@ export const classManualSources={
  's1-e1':['foundations'],'s1-e2':['foundations','cotext'],
  's2-e1':['oral','deixis','transcription','speechActs','intentions','context','linguistic'],'s2-e2':['body','voice','linguistic','oral','oralVariation','argument'],
  's3-e1':['voice','voices','linguistic','transcription'],'s3-e2':['transcription','linguistic','voice'],
- 's4-e1':['writing','writtenLanguage'],'s4-e2':['persons','modality'],
- 's5-e1':['processes','implicit'],'s5-e2':['processes','implicit','texture','writtenLanguage'],'s6-e1':['materiality'],'s6-e2':['materiality'],
+ 's4-e1':['writing','emissionRoles','modalityTypes','corpus','processes','argument'],'s4-e2':['persons','modality'],
+ 's5-e1':['implicit','implicatures'],'s5-e2':['implicit','texture','writtenLanguage','argument'],'s6-e1':['materiality'],'s6-e2':['materiality','processes','intentions','persons'],
  's7-e1':['context','deixis'],'s7-e2':['context','deixis'],'s8-e1':['research'],
  's9-e1':['persons'],'s9-e2':['voices'],'s10-e1':['voices'],'s10-e2':['voices'],
  's11-e1':['genres','sequences','narrative','description','explanation','argument','dialogue'],
@@ -56,7 +59,8 @@ export const classManualSources={
 };
 export const conceptManualSources={
  discurso:['foundations'],'analisis-discurso':['foundations'],enunciado:['foundations'],enunciacion:['foundations','deixis'],
- 'acto-habla':['speechActs'],deixis:['deixis'],cotexto:['cotext'],modalidad:['modality'],presuposicion:['implicit'],implicatura:['implicatures'],
+ 'acto-habla':['speechActs'],deixis:['deixis'],cotexto:['cotext'],corpus:['corpus'],modalidad:['modalityTypes'],presuposicion:['implicit'],implicatura:['implicatures'],
+ representacion:['persons','modality'],tesis:['argument'],'razon-argumentativa':['argument'],'apoyo-argumentativo':['argument'],objecion:['argument'],
  paraverbal:['voice'],inferencia:['processes','implicit'],macroestructura:['texture'],contexto:['context','deixis'],
  reflexividad:['position'],persona:['persons'],polifonia:['voices'],'discurso-referido':['voices'],
  ethos:['ethos'],genero:['genres'],secuencia:['sequences'],argumentacion:['argument'],dialogo:['dialogue']

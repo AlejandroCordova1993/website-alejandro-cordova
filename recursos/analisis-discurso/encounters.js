@@ -271,33 +271,33 @@ export const sessions=[
     "encounter": 1,
     "unit": 2,
     "duration": 60,
-    "title": "Escritura y corpus",
-    "question": "¿Quién actúa en este documento?",
+    "title": "Escribir una posición y representar a otros",
+    "question": "¿Desde qué posición escribimos y cómo presentamos a las personas?",
     "resource": "guia-2",
-    "product": "Ficha 2: pregunta inicial. Expediente, hito 1: pregunta y propuesta de corpus.",
+    "product": "Inicio de la misma carta: destinatario, tesis provisional y dos razones.",
     "agenda": [
       [
         10,
-        "Abrir el problema",
-        "Lee los artículos 1–3 del reglamento. Señala quién decide, quién acredita una condición y quién recibe el beneficio."
+        "Situar la carta",
+        "Lee el encargo de la actividad: escribir a la dirección de la carrera sobre las condiciones de uso de IA en trabajos universitarios. Decide desde qué posición hablarás y qué propuesta quieres que conozca la comunidad estudiantil."
       ],
       [
         15,
-        "Herramientas y lectura",
-        "Con «La escritura organiza una acción», compara cómo el reglamento presenta a esos participantes. Formula una pregunta sobre una diferencia que encuentres. Ejemplo: «¿Qué acciones atribuyen los artículos 1–3 a la institución y cuáles a los estudiantes?»."
+        "Reconocer una posición",
+        "Con el ejemplo de «Teoría», distingue tema, tesis, razón, apoyo y objeción. Compara una voz individual y una colectiva. El artículo 3 del reglamento sirve como modelo de obligación y representación de beneficiarios."
       ],
       [
         25,
-        "Trabajo y contraste",
-        "Guarda la pregunta sobre el reglamento en «Pregunta de la ficha». Usa esa pregunta como punto de partida del expediente si se ajusta a tu tema. En el expediente, propón 2–4 documentos o episodios que ayuden a responder la pregunta elegida."
+        "Planificar el mismo escrito",
+        "En tus hojas o en «Borrador de mi carta», anota destinatario, tesis y dos razones. Indica quién tendría que actuar y cómo nombrarás a las personas implicadas. Empieza la carta si ya tienes organizada tu propuesta."
       ],
       [
         10,
         "Cierre y continuidad",
-        "Comprueba que la pregunta de la ficha 2 y la propuesta del expediente estén guardadas. Comenta qué dato necesitas completar para la próxima clase."
+        "Lee tu tesis a un compañero y comprueba que se entienda la propuesta. Conserva el plan en el mismo borrador para continuar la carta."
       ]
     ],
-    "preparation": "Lee «La escritura organiza una acción» en «Teoría» y los artículos 1–3 del reglamento (páginas 1–2 del archivo). Trae una pregunta para la ficha 2; por ejemplo: «¿Qué acciones atribuyen los artículos 1–3 a la institución y cuáles a los estudiantes?». Propón 2–4 documentos o episodios que permitan investigar la pregunta del expediente."
+    "preparation": "Lee «Escribir una posición y representar a otros» en «Teoría». Después consulta «La escritura organiza una acción»: el reglamento es el ejemplo explicado. En clase comenzarás tu propia carta."
   },
   {
     "id": "s4-e2",
@@ -305,43 +305,43 @@ export const sessions=[
     "encounter": 2,
     "unit": 2,
     "duration": 120,
-    "title": "Norma y representación",
-    "question": "¿Cómo se distribuyen las capacidades y condiciones?",
-    "resource": "becas",
-    "product": "Ficha 2: evidencias y explicación de participantes, acciones y condiciones. Hito 1 ajustado.",
+    "title": "Redactar y representar a los participantes",
+    "question": "¿A quién damos voz y a quién atribuimos responsabilidades?",
+    "resource": "guia-2",
+    "product": "Borrador completo de la carta abierta, de 350–500 palabras.",
     "agenda": [
       [
         10,
-        "Retomar la pregunta",
-        "Lee tu pregunta de la ficha 2. Busca una frase del reglamento que ayude a responderla."
+        "Retomar el plan",
+        "Recupera tu tesis, destinatario y dos razones. Decide la propuesta concreta que defenderás en la carta."
       ],
       [
-        35,
-        "Taller de evidencia",
-        "Localiza frases que indiquen quién puede hacer qué y bajo qué condiciones. Guárdalas en «Evidencias», con artículo y página."
+        20,
+        "Representar personas y responsabilidades",
+        "Con «Teoría», compara formas de nombrar a estudiantes y docentes y de atribuir acciones. Distingue una obligación, una posibilidad y una propuesta en sus contextos."
       ],
       [
-        10,
-        "Pausa",
-        "Retoma después el mismo documento."
+        20,
+        "Sostener una razón",
+        "Localiza un apoyo en la fuente de consulta y anota su referencia. Explica cómo se relaciona con una de tus razones. Elige una objeción razonable y prepara tu respuesta."
       ],
       [
-        30,
-        "Producción",
-        "En «Mi argumento», explica esas relaciones con evidencias y conceptos de la lectura; cita su fuente y distingue la norma de su cumplimiento. Ajusta la pregunta y el corpus del expediente si hace falta."
+        45,
+        "Escribir la carta",
+        "Redacta 350–500 palabras en tus hojas o en «Borrador de mi carta». Incluye destinatario, tesis, dos razones, apoyo con referencia y objeción con respuesta. Identifica quién escribe y quién tendría que actuar."
       ],
       [
-        25,
-        "Revisión entre lectores",
-        "Pide a un compañero localizar una evidencia y comprobar tu explicación. Corrige el registro o el argumento si detectan un problema."
+        15,
+        "Releer las representaciones",
+        "Relee tu borrador. Comprueba cómo nombras a los grupos y si hablas por ti o en nombre de otros. Ajusta las formulaciones que no correspondan a tu posición."
       ],
       [
         10,
         "Cierre",
-        "Comprueba el guardado de la ficha 2 y del hito 1. Elige qué frase retomarás para estudiar sus inferencias."
+        "Conserva el borrador completo, con tu nombre y la fuente utilizada. En la próxima clase lo leerá un compañero."
       ]
     ],
-    "preparation": "Retoma tu pregunta de la ficha 2 y los artículos 1–3 (páginas 1–2 del archivo). Ten disponibles la pregunta y el corpus que propusiste para el expediente."
+    "preparation": "Trae el plan de tu carta. Lee «Agencia y representación de participantes» y el contraste de formulaciones en «Teoría». Ten disponible la fuente en español de «Recursos» para apoyar una razón."
   },
   {
     "id": "s5-e1",
@@ -350,32 +350,32 @@ export const sessions=[
     "unit": 2,
     "duration": 60,
     "title": "Escribir para un lector",
-    "question": "¿Qué conocimiento supone esta cláusula?",
+    "question": "¿Qué entiende el compañero y qué información aporta al leer?",
     "resource": "guia-2",
-    "product": "Ficha 2: una inferencia que explica cómo un lector entiende una condición.",
+    "product": "Primera lectura de la carta del compañero: propuesta comprendida y tres pasajes señalados.",
     "agenda": [
       [
         10,
-        "Abrir el problema",
-        "Lee una frase de tus evidencias. Comenta qué dice expresamente y qué necesitas saber para entenderla."
+        "Intercambiar borradores",
+        "Intercambia tu carta con un compañero. Lean primero en silencio, antes de que el autor explique su intención. Anota quién escribió la carta y quién la revisa."
       ],
       [
         15,
         "Herramientas y lectura",
-        "Con la lectura de «Teoría», distingue las palabras del reglamento, el conocimiento que aporta el lector y la conclusión que obtiene."
+        "Con la lectura de «Teoría», distingue lo expresado, los conocimientos supuestos y las inferencias. Usa el ejemplo resuelto para reconocer qué aporta el lector."
       ],
       [
         25,
-        "Trabajo y contraste",
-        "Añade una inferencia a «Mi argumento»: qué concluyes, qué palabras te apoyan y qué conocimiento aportas. Señala qué falta comprobar."
+        "Leer y señalar",
+        "Escribe en una frase la propuesta que entiendes. Señala tres pasajes para comentar: personas y responsabilidades; modo de presentar la posición; información o razones. Trabaja al margen o en «Mi lectura de la carta del compañero», copiando las palabras elegidas."
       ],
       [
         10,
         "Cierre y continuidad",
-        "Conserva la inferencia y el localizador para contrastarlos en la próxima clase."
+        "Conserva los pasajes señalados y tu primera lectura. En la siguiente clase desarrollarás esos mismos comentarios."
       ]
     ],
-    "preparation": "Relee «Planificar y leer desde conocimientos» en «Teoría». Elige una frase ya guardada y piensa qué podría entender un lector a partir de ella."
+    "preparation": "Lee la explicación sobre conocimientos e inferencias en «Teoría». Trae tu carta completa para intercambiarla. Si trabajas en papel, lleva una copia o acuerda cómo conservar el borrador comentado."
   },
   {
     "id": "s5-e2",
@@ -383,43 +383,43 @@ export const sessions=[
     "encounter": 2,
     "unit": 2,
     "duration": 120,
-    "title": "Interpretaciones y datos faltantes",
-    "question": "¿Qué datos respaldan cada inferencia?",
-    "resource": "becas",
-    "product": "Ficha 2: una explicación que sitúa la inferencia dentro del reglamento.",
+    "title": "Analizar la carta y revisar sus razones",
+    "question": "¿Cómo sostiene el texto su posición y representa el problema?",
+    "resource": "guia-2",
+    "product": "Tres comentarios sobre la carta del compañero y comienzo de la revisión propia.",
     "agenda": [
       [
         10,
-        "Retomar la pregunta",
-        "Lee tu inferencia y señala qué información necesitas comprobar."
+        "Retomar la primera lectura",
+        "Recupera la propuesta que entendiste y los tres pasajes que señalaste en la carta de tu compañero."
       ],
       [
-        35,
-        "Taller de evidencia",
-        "Busca en los artículos 1–3 qué apoya o limita tu inferencia. Distingue lo comprobado de lo pendiente."
-      ],
-      [
-        10,
-        "Pausa",
-        "Retoma después el mismo documento."
+        20,
+        "Relacionar tesis y razones",
+        "Con «Teoría», observa cómo referencias, conectores y párrafos ayudan a seguir una posición. Comprueba qué razón sostiene la propuesta y qué apoyo ofrece."
       ],
       [
         30,
-        "Producción",
-        "En «Mi argumento», escribe una síntesis de los artículos 1–3 en una frase. Conserva participantes y condiciones relevantes. Relaciónala con tu inferencia y explica qué seleccionaste u omitiste."
+        "Escribir tres comentarios",
+        "Comenta los mismos tres pasajes: explica cómo representan a las personas, presentan la posición y orientan al lector. Cita las palabras concretas. Señala un cambio útil o explica qué funciona. Firma los comentarios al margen o complétalos en «Mi lectura de la carta del compañero»."
       ],
       [
-        25,
-        "Revisión entre lectores",
-        "Pide a un compañero comprobar la inferencia y su relación con el reglamento. Ajusta el mismo párrafo."
+        20,
+        "Conversar entre autor y lector",
+        "Comparen la propuesta que el lector entendió con la que el autor quiso sostener. Expliquen los comentarios con el texto delante. Cada autor decide qué conservar o cambiar."
+      ],
+      [
+        30,
+        "Revisar la propia carta",
+        "Empieza una versión revisada en otra hoja o en «Versión final de mi carta». Conserva el borrador comentado. Puedes contrastar dos sugerencias de IA con las del compañero usando la rúbrica; las decisiones siguen siendo tuyas."
       ],
       [
         10,
         "Cierre",
-        "Guarda el argumento. Elige la frase que usarás para probar un cambio de presentación."
+        "Conserva la carta del compañero con tus comentarios identificados y tu propia revisión. Deja señalado qué parte necesitas terminar."
       ]
     ],
-    "preparation": "Lee «Del significado local al global» en «Teoría». Retoma tu inferencia y su localizador. Revisa los artículos 1–3. Consulta los artículos 8–9 (página 3 del archivo) si necesitas comprobar esos requisitos."
+    "preparation": "Lee «Del significado local al global» en «Teoría». Retoma la carta del compañero, tu primera lectura y los tres pasajes señalados."
   },
   {
     "id": "s6-e1",
@@ -430,30 +430,30 @@ export const sessions=[
     "title": "Composición y lectura",
     "question": "¿Qué destaca y qué queda subordinado?",
     "resource": "guia-2",
-    "product": "Ficha 2: original y alternativa visual propia con las mismas palabras.",
+    "product": "La misma carta revisada con título, párrafos y jerarquía visual legibles.",
     "agenda": [
       [
         10,
         "Abrir el problema",
-        "Mira el tramo elegido del reglamento. Señala qué se ve primero por su tamaño, posición o agrupación."
+        "Mira tu carta revisada. Localiza el título, la propuesta principal y la acción que solicitas al destinatario."
       ],
       [
         15,
         "Herramientas y lectura",
-        "Describe una decisión de diseño que puedas comprobar en el PDF. Con «Teoría», distingue esa observación de su posible efecto en la lectura."
+        "Con «La página también orienta», reconoce título, párrafos y jerarquía visual. Compara dos disposiciones de un pasaje que conservan las mismas palabras."
       ],
       [
         25,
         "Trabajo y contraste",
-        "Prepara una alternativa visual con las mismas palabras. Cambia el tamaño o la ubicación del fragmento. Conserva ambas versiones y anota qué esperas que el lector encuentre primero."
+        "Revisa la presentación de tu carta. Prueba un cambio de tamaño, posición o agrupación con el mismo contenido y muéstralo a tu compañero. Pídele señalar qué encuentra primero. Incorpora la disposición que ayude a leer tu propuesta. En papel puedes hacer el cambio a mano."
       ],
       [
         10,
         "Cierre y continuidad",
-        "Comprueba el guardado de la descripción y la explicación. Conserva ambas versiones para mostrarlas a otro lector."
+        "Conserva la versión revisada. Anota junto a ella una decisión de presentación y lo que observó tu lector; podrás usarla entre tus tres decisiones finales."
       ]
     ],
-    "preparation": "Relee «La página también orienta» en «Teoría». Retoma la frase y la condición que explicaste en la ficha 2."
+    "preparation": "Lee «La página también orienta» en «Teoría». Trae tu carta revisada y el borrador con los comentarios del compañero."
   },
   {
     "id": "s6-e2",
@@ -461,43 +461,43 @@ export const sessions=[
     "encounter": 2,
     "unit": 2,
     "duration": 120,
-    "title": "Reformular con controles",
-    "question": "¿Qué cambia al conservar palabras y alterar su jerarquía?",
-    "resource": "becas",
-    "product": "Ficha 2 revisada a partir del contraste visual con otro lector.",
+    "title": "Revisar y explicar las decisiones",
+    "question": "¿Cómo cambió la representación al revisar nuestra carta?",
+    "resource": "guia-2",
+    "product": "Carta final, borrador comentado y tres decisiones de revisión justificadas.",
     "agenda": [
       [
         10,
-        "Retomar la pregunta",
-        "Compara las dos versiones y comprueba que conservan las mismas palabras. Recupera tu explicación sobre el cambio visual."
-      ],
-      [
-        35,
-        "Taller de evidencia",
-        "Muestra ambas versiones a un compañero. Pídele explicar qué lee primero y qué condición identifica; compara su respuesta con tu hipótesis."
-      ],
-      [
-        10,
-        "Pausa",
-        "Retoma después las mismas versiones."
-      ],
-      [
-        30,
-        "Producción",
-        "En «Interpretación revisada», explica qué mantienes o corriges tras la prueba. Limita la conclusión a lo observado con ese lector."
+        "Recuperar el mismo trabajo",
+        "Reúne el borrador, los comentarios y la versión revisada. Comprueba que cada texto tenga autor y que los comentarios identifiquen al revisor."
       ],
       [
         25,
-        "Revisión entre lectores",
-        "Comprueba los cambios con las dos versiones delante. En «Qué cambió y por qué», señala el comentario o dato que motivó tu decisión."
+        "Comprobar la lectura",
+        "Intercambia la versión revisada. El lector identifica propuesta, personas representadas y acción solicitada. Compara esa lectura con la del primer borrador y señala qué formulación explica el cambio."
+      ],
+      [
+        30,
+        "Cerrar la carta",
+        "Ajusta la versión final según la lectura y la rúbrica. Decide qué posición sostienes tras la revisión y justifica las decisiones sobre la voz, las personas, las razones o la presentación."
+      ],
+      [
+        25,
+        "Explicar tres decisiones",
+        "En tus hojas o en «Tres decisiones de revisión», cita el pasaje inicial y el final, y explica por qué lo cambiaste o mantuviste. Relaciona cada decisión con el comentario recibido y un concepto del curso. Si usaste IA, indica la herramienta y la sugerencia que aceptaste, adaptaste o rechazaste."
+      ],
+      [
+        20,
+        "Puesta en común",
+        "Comenten dos o tres decisiones de escritura con los pasajes a la vista. El docente muestra cómo esas decisiones cambian la representación y la relación con el destinatario."
       ],
       [
         10,
         "Cierre",
-        "Comprueba que la respuesta revisada y el motivo queden juntos en tu ficha."
+        "Conserva juntos carta final, borrador comentado y tres decisiones. En el cuaderno web, comprueba los cuatro campos y marca la revisión terminada. Entrega por el canal indicado por el docente."
       ]
     ],
-    "preparation": "Trae el original y tu alternativa visual, con las mismas palabras. Retoma tu explicación sobre lo que podría cambiar al leerlas."
+    "preparation": "Trae tu carta revisada, el borrador comentado y la decisión de presentación. Consulta «Teoría» para relacionar la revisión con la respuesta de tu lector."
   },
   {
     "id": "s7-e1",
@@ -508,12 +508,12 @@ export const sessions=[
     "title": "Elegir el enfoque",
     "question": "¿Qué pregunta exige qué método?",
     "resource": "pardo",
-    "product": "Ficha 3: elección provisional de un enfoque para explicar un fragmento.",
+    "product": "Hito 1: pregunta y corpus del expediente. Ficha 3: enfoque provisional aplicado a un fragmento de ese corpus.",
     "agenda": [
       [
         10,
         "Abrir el problema",
-        "Retoma un fragmento del expediente o del reglamento. Escribe en «Pregunta de la ficha» qué quieres explicar de él. Ejemplo: «¿Cómo se relaciona el reparto de becas del artículo 3 con la equidad que invocan los considerandos?»."
+        "Revisa las piezas que trajiste y delimita qué relación estudiarás. Puedes usar tu carta y su revisión, con la respuesta del lector, o documentos que ya conozcas. Ejemplo: «¿Cómo cambia la representación de los estudiantes entre mi borrador y mi carta final?»."
       ],
       [
         15,
@@ -523,15 +523,15 @@ export const sessions=[
       [
         25,
         "Trabajo y contraste",
-        "En «Mi argumento», elige un enfoque ya estudiado. Explica qué marca te ayuda a analizar y cita la lectura."
+        "En el expediente, registra la pregunta y las 2–4 piezas elegidas con sus referencias. Usa un fragmento de ese mismo corpus para la ficha 3. En «Mi argumento», explica qué enfoque ayuda a analizarlo y cita la lectura."
       ],
       [
         10,
         "Cierre y continuidad",
-        "Guarda tu elección. Para la próxima clase, busca un dato de contexto que ayude a comprobarla."
+        "Conserva la selección del expediente y el enfoque de la ficha 3. Para la próxima clase, busca un dato contextual que ayude a responder la misma pregunta."
       ]
     ],
-    "preparation": "Lee «Teoría» y Pardo: páginas impresas 43–47 (páginas 3–7 del archivo). Retoma la pregunta y el corpus del hito 1."
+    "preparation": "Lee «Teoría» y Pardo: páginas impresas 43–47 (páginas 3–7 del archivo). Trae 2–4 piezas que ya conozcas para iniciar el expediente. Puedes recuperar tu borrador, la carta final y la respuesta de lectura; también puedes elegir documentos de la biblioteca."
   },
   {
     "id": "s7-e2",
@@ -843,7 +843,7 @@ export const sessions=[
         "Comprueba el guardado de la primera pieza y deja elegida la segunda pieza o la adaptación que podrás preparar en la próxima clase."
       ]
     ],
-    "preparation": "Lee en «Teoría» las distinciones género/secuencia y modo/medio/soporte. Retoma la condición que analizaste en la ficha 2 para adaptarla, o un documento que puedas comparar con otro vinculado."
+    "preparation": "Lee en «Teoría» las distinciones género/secuencia y modo/medio/soporte. Recupera la propuesta de tu carta de la ficha 2 para convertirla en un aviso dirigido a primer semestre. Si tu trabajo anterior usa el reglamento, puedes continuar con ese fragmento; también puedes comparar documentos vinculados."
   },
   {
     "id": "s11-e2",
@@ -864,7 +864,7 @@ export const sessions=[
       [
         35,
         "Taller de evidencia",
-        "Si adaptas, redacta un aviso que explique la condición y la acción esperada del nuevo lector. Si comparas documentos, comprueba la fuente de su vínculo. Conserva la segunda pieza en tu ficha."
+        "Convierte la propuesta de tu carta en un aviso para estudiantes de primer semestre: explica qué propones y qué respuesta solicitas. Conserva su carácter de propuesta. Si trabajas con el reglamento, explica su condición; si comparas documentos, comprueba la fuente de su vínculo. Guarda la segunda pieza en la misma ficha."
       ],
       [
         10,
@@ -887,7 +887,7 @@ export const sessions=[
         "Comprueba que la comparación esté guardada en la ficha 5. Conserva ambas piezas y sus referencias."
       ]
     ],
-    "preparation": "Retoma la condición del reglamento que adaptarás para primer semestre o trae los documentos vinculados y la fuente de su relación. Puedes redactar la adaptación en clase."
+    "preparation": "Trae tu carta y señala la propuesta que adaptarás para primer semestre. Si continúas con el reglamento, recupera la condición elegida; si comparas documentos, trae las dos piezas y la fuente de su vínculo. Redactarás la adaptación en clase."
   },
   {
     "id": "s12-e1",
@@ -1010,7 +1010,7 @@ export const sessions=[
     "title": "Narrar, describir y explicar",
     "question": "¿Qué transición necesita una justificación?",
     "resource": "becas",
-    "product": "Ficha 6: explicación del paso entre secuencias y contraste con el reglamento.",
+    "product": "Ficha 6: explicación del paso entre secuencias y contraste entre tramos del texto elegido.",
     "agenda": [
       [
         10,
@@ -1020,12 +1020,12 @@ export const sessions=[
       [
         35,
         "Taller de evidencia",
-        "Identifica las secuencias presentes en el reglamento y compáralas con tu texto. Justifica la clasificación con marcas de cada documento."
+        "Compara las secuencias de los tramos que elegiste en tu texto. Explica qué cambia entre ellas y justifica la clasificación con sus marcas. El reglamento está disponible como ejemplo opcional."
       ],
       [
         10,
         "Pausa",
-        "Retoma después los mismos textos."
+        "Retoma después los mismos tramos."
       ],
       [
         30,
@@ -1043,7 +1043,7 @@ export const sessions=[
         "Guarda lo que aclaraste sobre esa transición. Conserva los mismos localizadores."
       ]
     ],
-    "preparation": "Lee «Explicar, justificar y evaluar» en «Teoría». Retoma la explicación de la ficha 6 y el mismo texto. Consulta los considerandos y artículos pertinentes del reglamento para comparar sus secuencias."
+    "preparation": "Lee «Explicar, justificar y evaluar» en «Teoría». Retoma la explicación de la ficha 6 y los tramos del mismo texto para comparar sus secuencias. El reglamento está disponible como ejemplo opcional."
   },
   {
     "id": "s14-e1",
