@@ -2,6 +2,7 @@ import {sessions} from './encounters.js';
 import {sessionWork} from './learning-path.js';
 import {parseRoute} from './navigation.js';
 import {hasWork} from './state.js';
+import {questionExamples} from './activities.js';
 
 export const classHref=s=>`#semana/${s.week}/${s.encounter}`;
 export function resumeClass(state){
@@ -92,7 +93,7 @@ export function classEvidenceOptions(s){
  return {argument:work.argument,nextArgument:work.argumentNext,defaultMode:s.id==='s2-e1'?'cita':'descripcion'};
 }
 
-export const projectQuestionExample='¿Cómo se presentan las condiciones de acceso a una beca en el reglamento y en el aviso para estudiantes?';
+export const projectQuestionExample=questionExamples[3];
 export const projectInputs={
   "title": [
     "Título del expediente",
@@ -106,17 +107,17 @@ export const projectInputs={
   ],
   "question": [
     "Pregunta de investigación",
-    `Retoma una pregunta de tus fichas si encaja con tu tema. Delimítala para poder responderla con 2–4 documentos o episodios. Ejemplo, si comparas un reglamento con un aviso: «${projectQuestionExample}». Adapta la pregunta a los documentos que elegiste.`,
+    `En la semana 7, escribe la pregunta que guiará el expediente y la ficha 3. Ejemplo con tu carta: «${projectQuestionExample}». Si ya elegiste otro corpus, ajusta la pregunta a esas piezas.`,
     3
   ],
   "corpus": [
     "Corpus y criterios de selección",
-    "Identifica cada pieza con autor, título, versión y ubicación. Explica por qué la elegiste. Selecciona 6–10 segmentos en total.",
+    "Enumera 2–4 piezas y explica por qué sirven para responder tu pregunta. Puedes usar tu borrador, tu carta final y los comentarios recibidos. Identifica autor, versión y ubicación, por ejemplo «Ficha 2, versión final». A lo largo del expediente reunirás 6–10 segmentos en total.",
     5
   ],
   "method": [
     "Método y contexto documentado",
-    "Retoma la decisión de la ficha 3. Explica qué herramienta elegiste, qué tramos y marcas vas a observar y qué contexto necesitas. Cita la lectura y la fuente del dato.",
+    "En la semana 8, resume el enfoque elegido, los pasajes comparados y el dato de contexto comprobado en la ficha 3. Cita la lectura y la fuente del dato. Remite al análisis con «Ficha 3» y sus localizadores.",
     6
   ],
   "argument": [

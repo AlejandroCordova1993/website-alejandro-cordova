@@ -513,7 +513,7 @@ export const sessions=[
       [
         10,
         "Abrir el problema",
-        "Revisa las piezas que trajiste y delimita qué relación estudiarás. Puedes usar tu carta y su revisión, con la respuesta del lector, o documentos que ya conozcas. Ejemplo: «¿Cómo cambia la representación de los estudiantes entre mi borrador y mi carta final?»."
+        "Recupera el borrador, la carta final y los comentarios recibidos. Usa tus tres decisiones de revisión para localizar un cambio. Ejemplo de pregunta: «¿Qué cambios entre mi borrador y mi carta final se relacionan con los comentarios del compañero?». Si ya elegiste otro corpus, continúa con sus piezas."
       ],
       [
         15,
@@ -523,15 +523,15 @@ export const sessions=[
       [
         25,
         "Trabajo y contraste",
-        "En el expediente, registra la pregunta y las 2–4 piezas elegidas con sus referencias. Usa un fragmento de ese mismo corpus para la ficha 3. En «Mi argumento», explica qué enfoque ayuda a analizarlo y cita la lectura."
+        "En el expediente, escribe la pregunta y enumera las 2–4 piezas con su ubicación. En la ficha 3, remite a esa pregunta y localiza un pasaje del borrador y su versión final. En «Mi argumento», explica qué enfoque ayudará a estudiar el cambio y cita la lectura."
       ],
       [
         10,
         "Cierre y continuidad",
-        "Conserva la selección del expediente y el enfoque de la ficha 3. Para la próxima clase, busca un dato contextual que ayude a responder la misma pregunta."
+        "Para la próxima clase, recupera un comentario recibido que ayude a explicar ese cambio, con su autor y ubicación. También puedes usar una condición de la consigna. Conserva la pregunta y las piezas del mismo expediente."
       ]
     ],
-    "preparation": "Lee «Teoría» y Pardo: páginas impresas 43–47 (páginas 3–7 del archivo). Trae 2–4 piezas que ya conozcas para iniciar el expediente. Puedes recuperar tu borrador, la carta final y la respuesta de lectura; también puedes elegir documentos de la biblioteca."
+    "preparation": "Lee «Teoría» y Pardo: páginas impresas 43–47 (páginas 3–7 del archivo). Trae tu borrador, tu carta final, los comentarios recibidos y tus tres decisiones de revisión. El borrador y la versión final cuentan como dos piezas del corpus. Si ya elegiste otros documentos, retómalos."
   },
   {
     "id": "s7-e2",
@@ -562,7 +562,7 @@ export const sessions=[
       [
         30,
         "Producción",
-        "En «Mi argumento», explica qué aclara ese dato. Añade otros datos si tu pregunta los necesita."
+        "En «Mi argumento», explica la relación entre ese dato y las palabras que cambiaron. Distingue la dirección de la carrera como destinatario previsto y el compañero como lector de la revisión. Comprueba la explicación con tus decisiones de la ficha 2."
       ],
       [
         25,
@@ -575,7 +575,7 @@ export const sessions=[
         "Guarda la evidencia y su explicación para la revisión de la ficha 3."
       ]
     ],
-    "preparation": "Relee «Del texto a una explicación crítica» en «Teoría». Busca un dato de contexto con fuente y localizador. Si usas el reglamento, consulta su versión en la razón final (página 4 del archivo)."
+    "preparation": "Relee «Del texto a una explicación crítica» en «Teoría». Trae un comentario recibido o una condición de la consigna que ayude a entender el cambio elegido. Identifica su autor y dónde está. Si usas otro corpus, prepara un dato pertinente con su fuente."
   },
   {
     "id": "s8-e1",
@@ -601,7 +601,7 @@ export const sessions=[
       [
         25,
         "Trabajo y contraste",
-        "Completa «Interpretación revisada» y «Qué cambió y por qué». Lleva al expediente la decisión que ya justificaste y adáptala a su pregunta en «Método y contexto documentado»."
+        "Completa «Interpretación revisada» y «Qué cambió y por qué» de la ficha 3. En «Método y contexto documentado» del expediente, resume enfoque, pasajes y dato contextual. Remite a la ficha 3 y sus localizadores para consultar la explicación completa."
       ],
       [
         10,

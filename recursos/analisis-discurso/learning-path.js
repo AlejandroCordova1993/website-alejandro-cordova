@@ -8,7 +8,7 @@ export const weeklyPath=[
  {title:'Escribir y representar: plan y borrador',steps:['argumentar','analizar'],advance:'Planificar y redactar la misma carta abierta: posición, participantes, razones y propuesta.'},
  {title:'Escribir y representar: lectura entre pares',steps:['analizar','argumentar'],advance:'Comentar tres pasajes de la carta del compañero y revisar el contenido de la propia.'},
  {title:'Escribir y representar: revisión y decisiones',steps:['analizar','revisar'],advance:'Revisar la presentación de la carta, comprobar su lectura y explicar tres decisiones.'},
- {title:'Contexto: fuentes y elección del método',steps:['argumentar','analizar'],advance:'Delimitar pregunta y corpus del expediente, elegir un enfoque y comprobar un dato contextual.',milestone:1},
+ {title:'Contexto: fuentes y elección del método',steps:['argumentar','analizar'],advance:'Retomar borrador, carta final y comentarios recibidos para iniciar el expediente; explicar un cambio con su contexto en la ficha 3.',milestone:1},
  {title:'Contexto: límites y transferencia',steps:['revisar','assessment'],advance:'Revisar la ficha 3, precisar el método del expediente y aplicar el enfoque a un caso acotado.',milestone:2},
  {title:'Voces: personas y responsabilidad',steps:['analizar','argumentar'],advance:'Comenzar la ficha 4 con tres segmentos en total del contraste Menchú–Márquez; identificar participantes, voces y responsabilidad. Si ya la empezaste, continúa tus registros.'},
  {title:'Voces: perspectivas y atribuciones',steps:['argumentar','revisar'],advance:'Explicar cómo se usa una voz y comprobar la atribución en la misma ficha.'},
