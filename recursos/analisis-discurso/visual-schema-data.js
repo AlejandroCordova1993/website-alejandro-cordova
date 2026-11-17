@@ -190,15 +190,15 @@ export const visualSchemas={
  'regla-de-paso':{
   type:'argument',planned:'s14-e1',topic:'El argumento necesita una regla de paso',placed:true,replaces:'example',
   label:'Premisa, ley de paso y conclusión, con su garantía y su reserva',
-  premise:{label:'Premisa',connector:'dado que',text:'la medida beneficia a muchos estudiantes'},
-  conclusion:{label:'Conclusión',text:'debemos mantenerla'},
-  law:{label:'Ley de paso',connector:'puesto que',text:'una medida beneficiosa merece mantenerse'},
-  backing:{label:'Garantía',connector:'debido a que',text:'adoptamos como criterio que las políticas deben favorecer al estudiantado'},
-  reserve:{label:'Reserva',connector:'a menos que',text:'produzca costes o exclusiones que restrinjan la regla'},
-  limit:'en este esquema la garantía apoya la ley de paso, que es la regla entre premisa y conclusión. El criterio está construido para el ejemplo, no es una política real de la UCE; comprobar el beneficio exige datos para la premisa.',
+  premise:{label:'Premisa',connector:'dado que',text:'declarar el uso de IA informa al docente sobre la ayuda que recibió el estudiante'},
+  conclusion:{label:'Conclusión',text:'conviene declarar el uso de IA'},
+  law:{label:'Ley de paso',connector:'puesto que',text:'conocer qué ayuda recibió el estudiante permite evaluar mejor la autoría del trabajo'},
+  backing:{label:'Garantía',connector:'debido a que',text:'evaluar la autoría exige distinguir los aportes propios de la ayuda externa'},
+  reserve:{label:'Reserva',connector:'a menos que',text:'sea una práctica en la que no se evalúe la autoría'},
+  limit:'el esquema reconstruye una propuesta de carta. Aquí la garantía apoya la ley de paso. Una objeción puede cuestionar la premisa si la declaración se limita a «usé IA» y deja sin explicar qué ayuda recibió el estudiante.',
   task:{label:'En la ficha 6',text:'Escribe premisa, regla de conexión, conclusión y una objeción que afecte la inferencia.'},
   source:'Ejemplo. Esquema de Plantin (1996: 38) con garantía y reserva de Toulmin (1958), en Calsamiglia y Tusón (2012, §10.3 · páginas 297–298 del archivo).',
-  anchors:['La medida beneficia a muchos estudiantes; debemos mantenerla','una medida beneficiosa merece mantenerse','El beneficio estudiantil funciona como criterio de legitimación','la prueba del beneficio','costes o exclusiones']
+  anchors:['Conviene declarar el uso de IA porque así el docente sabe qué ayuda recibió el estudiante','La tesis de la carta funciona aquí como conclusión','conocer qué ayuda hubo es pertinente para evaluar la autoría','Un apoyo de la carta puede respaldar la premisa','la reserva acota en qué casos se aplica la regla']
  },
  'triangulacion-fuentes':{
   "type": "triangle",

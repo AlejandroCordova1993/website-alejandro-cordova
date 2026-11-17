@@ -378,7 +378,7 @@ export const classContent={
 ],
  's11-e2':[
   topic(1,'Recontextualizar implica seleccionar','Recontextualizar cambia la situación en que un contenido adquiere sentido: quién lo comunica, para quién y con qué propósito. Al explicar una norma a estudiantes nuevos, se selecciona y reformula información para orientar su actuación. La adaptación propia permite examinar esa transformación como experimento didáctico.',
-   ['El vínculo documentado entre piezas permite reconstruir su circulación.','La selección muestra qué conocimientos se atribuyen al nuevo destinatario y qué respuesta se espera de él.'],
+   ['Carta → aviso propio. En la carta, «Propongo que la carrera publique ejemplos de uso de IA» pide una decisión a la dirección. El aviso mantiene la propuesta y se dirige a quienes usarían la guía: «Propuse a la carrera que publique ejemplos de uso de IA. Si estás en primer semestre, ¿qué ejemplos te ayudarían?». El ejercicio permite explicar el cambio de destinatario y de acción.', 'Resolución → convocatoria de la UNAE. El aviso enlaza la resolución que aprueba las bases y el cronograma. Puedes seguir una decisión publicada hasta su comunicación a los postulantes. Aquí el vínculo se comprueba en los documentos.', 'La selección muestra qué conocimientos se atribuyen al nuevo destinatario y qué respuesta se espera de él.'],
    'Transformamos una cláusula normativa en una explicación para estudiantes de primer semestre.','La autoridad que establece la norma y quien explica su alcance ocupan posiciones distintas. La adaptación convierte condiciones generales en orientaciones para un lector con menos conocimiento del trámite. Al conservar requisitos y explicitar referencias, propone una relación de acompañamiento. Su identificación como adaptación propia mantiene visible quién responde por esa explicación.',
    '¿Qué transformación facilita la comprensión y cuál podría alterar una condición?','fairclough',3)
  ],
@@ -439,11 +439,11 @@ export const classContent={
     "points": [
       "Un topos es una regla de conexión; no equivale a un tema o una palabra frecuente.",
       "Términos: en el manual (Plantin y Toulmin), la ley de paso es la regla y la garantía, su apoyo. En Wodak, el topos funciona como esa regla de conexión.",
-      "La objeción debe afectar la inferencia que se sostiene.",
+      "En el ejemplo de la carta, la tesis es la conclusión y la razón aporta la premisa. El cuadro hace explícito el criterio que las conecta. Una objeción puede cuestionar esa conexión o el dato en que se apoya.",
       "También se argumenta al analizar un texto: concluir que Márquez presenta una unidad basada en reconocer diferencias exige relacionar su comparación de experiencias con la propuesta final de alianza. Esas marcas sostienen una interpretación; el análisis debe explicar el vínculo y considerar una lectura alternativa."
     ],
-    "example": "«La medida beneficia a muchos estudiantes; debemos mantenerla».",
-    "reading": "La regla propuesta es que una medida beneficiosa merece mantenerse. El beneficio estudiantil funciona como criterio de legitimación: hace defendible la continuidad de la medida. Se puede discutir tanto la prueba del beneficio como el peso concedido a la cantidad de beneficiarios frente a costes o exclusiones. El criterio se construye para este ejemplo; no se atribuye como política real de la UCE.",
+    "example": "«Conviene declarar el uso de IA porque así el docente sabe qué ayuda recibió el estudiante».",
+    "reading": "La tesis de la carta funciona aquí como conclusión. La razón aporta la premisa: declarar el uso informa al docente sobre la ayuda recibida. La regla de paso explica por qué eso cuenta a favor de la propuesta: conocer qué ayuda hubo es pertinente para evaluar la autoría. Un apoyo de la carta puede respaldar la premisa o, si justifica el criterio, servir de garantía de la regla. Una objeción puede cuestionar cuánto aclara la declaración; la reserva acota en qué casos se aplica la regla.",
     "prompt": "¿Bajo qué condición dejaría de ser aceptable este paso?",
     "source": "wodak",
     "lesson": 1
