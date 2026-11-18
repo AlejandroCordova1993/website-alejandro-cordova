@@ -1,8 +1,8 @@
 // Orientaciones docentes para las mismas actividades y claves del cuaderno.
 // Definiciones de trabajo, no citas ni sustitutos de las fuentes del curso.
-import {paperSessionGuides} from './paper-activities.js?v=lc-4006bb1bbcf9';
-import {activityBriefFor} from './activity-briefs.js?v=lc-4006bb1bbcf9';
-import {weekTwoConcepts,weekTwoPrompts,weekTwoFieldHints} from './week-two-learning.js?v=lc-4006bb1bbcf9';
+import {paperSessionGuides} from './paper-activities.js?v=lc-e2601cef7740';
+import {activityBriefFor} from './activity-briefs.js?v=lc-e2601cef7740';
+import {weekTwoConcepts,weekTwoPrompts,weekTwoFieldHints} from './week-two-learning.js?v=lc-e2601cef7740';
 const concepts={
  procedimiento:['Procedimiento narrativo','Una manera concreta de construir el relato: ordenar hechos, repetir una expresión, ocultar información o presentar una suposición como certeza. Identificarlo exige describir qué hace la escritura en un pasaje.'],
  indicio:['Observación e indicio textual','Observar es señalar palabras, una disposición o un detalle verificable del texto. Ese detalle funciona como indicio cuando explicas qué interpretación permite fundamentar; una cita aislada todavía no constituye una explicación.'],
@@ -159,37 +159,37 @@ const sessions={
  delivery:'Esta es la sesión de redacción de la sumativa. Redacta a mano y entrega el texto como indique el docente.',
  check:'El texto debe diferenciar evidencia, interpretación y propuesta, y relacionar ambos objetos a lo largo del argumento.',fieldLabel:'Mi análisis comparativo de 600–800 palabras'},
  '9/1':{key:'3-hermeneutica',stage:'preparacion',concepts:['presupuesto','hermeneutica','verosimil','procedimiento'],
- example:'En Bierce, releer un detalle temporal después del desenlace puede modificar una interpretación. En Carrington, lo extraordinario se acepta desde el inicio. Compara qué operación pone a prueba tus anticipaciones sin exigir que ambos cuentos produzcan la misma reacción.',
+ example:'Anota qué te hizo aceptar como normal el intercambio de lenguas en Carrington y qué creíste que anunciaba el sonido del reloj en Bierce. Escribe cada expectativa junto al pasaje que la orientó.',
  steps:['Antes de revisar el desenlace o el comentario, registra qué interpretación o expectativa orientó tu lectura.','Localiza un pasaje de Carrington sobre lo verosímil o el juicio de los personajes y uno de Bierce sobre tiempo o información.','Guarda fuentes y localizadores, y explica qué detalle confirma o dificulta tu presupuesto.','En la hipótesis y la diferencia, compara las operaciones de ambos relatos. Puedes mantener tu lectura si justificas la prueba a la que la sometiste.'],
  result:'Registro de presupuestos, pasajes y diferencia entre las operaciones de Carrington y Bierce.',
  delivery:'Es preparación del ejercicio de hermenéutica. Este trabajo practica la interpretación revisada y prepara recepción; no constituye una ficha nueva de 250–350 palabras.',
  check:'La revisión debe relacionar pasajes y situación de lectura, sin reducir la hermenéutica a sorpresa ni generalizar tu reacción a todos los lectores.'},
  '9/2':{key:'3-hermeneutica',stage:'revision',concepts:['hermeneutica','objecion','argumento'],
- example:'Puedes mantener una interpretación después de distinguir mejor una voz o una secuencia temporal. Para mostrar revisión, explica el indicio que puso a prueba tu hipótesis y la razón por la que la sostienes o corriges.',
+ example:'Una objeción señala qué detalle puede entenderse de otra manera. Recupera el juicio inicial sobre la narradora de Carrington e identifica qué pasaje permite discutirlo.',
  steps:['Recupera la hipótesis y los pasajes guardados en la sesión 1.','En el argumento explica qué presupuesto reconoces, qué pasaje lo pone a prueba y cómo cambia, se precisa o se mantiene la lectura.','Contrasta Carrington y Bierce y formula una lectura rival apoyada en un detalle.','Completa hipótesis revisada y razón de la revisión; conserva una diferencia entre los contextos representados, respaldada por pasajes, y el límite de tu respuesta personal. No se requiere investigación externa para esa diferencia.'],
  result:'Ejercicio de interpretación revisada con contraste de procedimientos y presupuestos.',
  delivery:'Se completa el ejercicio de práctica de la semana 9. La ficha evaluada de recepción se trabaja en la semana 10; aquí no se exige su extensión.',
  check:'Debe verse la relación entre primera lectura, pasaje, objeción y conclusión; cambiar una frase sin explicar el motivo no demuestra la revisión.'},
  '10/1':{key:'3-recepcion',stage:'preparacion',concepts:['horizonte','lector','recepcion','dato'],
- example:'Un prólogo registra cómo su autor interviene en una polémica. Permite contrastar posiciones sobre una continuación, pero no representa por sí solo a todo el público. El lector implícito se estudia en operaciones del texto, no en la biografía de un testigo.',
+ example:'Para registrar cada prólogo, señala qué posición defiende su autor y ante quién. Esos datos sirven para interpretar la polémica y acotar a quién corresponde cada valoración.',
  steps:['Lee el dossier y los recortes identificados de los prólogos de Avellaneda y Cervantes.','En tu cuaderno registra por separado autor, fecha, medio, pasaje y criterio de valoración de cada testimonio.','Distingue qué afirmaciones tratan de una posición histórica, de una operación de lectura o de tu respuesta personal. Puedes recuperar Carrington o Bierce para esta distinción.','En clase, examina el caso Tess del manual como relato mediado; no se exige leer la novela. Anota el alcance y la evidencia que falta.'],
  result:'Cuadro de dos documentos de recepción con distinciones entre testimonio, lector implícito y respuesta personal.',
  delivery:'Hoy preparas la ficha 4. La redacción de 250–350 palabras corresponde a la sesión 2; el cuadro aún no necesita esa extensión.',
  check:'Atribuye cada posición a su testigo y evita presentar los dos prólogos como una historia completa de recepción.',fieldLabel:'Mi cuadro de documentos para la ficha 4'},
  '10/2':{key:'3-recepcion',stage:'borrador',finalFicha:true,concepts:['recepcion','horizonte','lector','argumento'],
- example:'Puedes contrastar dos criterios de legitimidad presentes en los prólogos y delimitar a quién pertenecen. Para afirmar un cambio del horizonte de un público más amplio necesitarías otros documentos; reconocerlo fortalece el alcance de la ficha.',
+ example:'Antes de redactar la ficha, distingue tres afirmaciones posibles: lo que declara Cervantes, la operación que pide a su interlocutor y lo que tú hiciste al leer la réplica. Indica qué evidencia sostiene cada una.',
  steps:['Recupera el cuadro de documentos y selecciona un pasaje de cada prólogo.','Redacta 250–350 palabras que expliquen el contraste de criterios, con autor, fecha, medio y localizadores.','Distingue el testimonio histórico, la operación del lector implícito y tu respuesta; usa el pasaje de apoyo solo cuando ayude a esa distinción.','Explica el límite de las fuentes y registra la revisión. Relee la ficha antes de entregarla.'],
  result:'Borrador de la ficha 4 con comparación documental y límites de las conclusiones.',
  delivery:'Hoy elaboras el borrador. Revisa y entrega una sola ficha final en papel antes de la siguiente semana. Conserva la preparación en tu cuaderno.',
  check:'Cada conclusión debe corresponder al tipo de evidencia utilizado; no atribuyas las posiciones de los prólogos a todos los lectores.',fieldLabel:'Mi argumento de la ficha 4'},
  '11/1':{key:'3-traduccion',stage:'preparacion',concepts:['cotejo','efecto','version'],
- example:'«No tiene» y «ya no tiene» permiten estudiar cómo se explicita una relación temporal. Relee el cansancio y las acciones del poema para sostener el efecto propuesto; ese cotejo local no demuestra por sí solo la intención del traductor.',
+ example:'Registra dónde encuentras «no tiene» y «ya no tiene». A continuación, comprueba qué deja de sentir el observador y qué sigue disfrutando en la escena.',
  steps:['Lee completas las versiones de Casal y Díez-Canedo identificadas en el taller. En tu cuaderno registra la escena y el observador que imaginas; después coteja los segmentos franceses de la tabla con guía docente.','Compara los cuatro lugares de la tabla y elige tres diferencias que puedas localizar.','Anota cada diferencia en tu cuaderno: versión y forma, localizador, relación con el pasaje, efecto propuesto y límite. El comentario final se redacta en la sesión 2.','Distingue lo que sostienes desde el castellano de lo que necesitas consultar con apoyo del francés.'],
  result:'Observación inicial y tres diferencias registradas con efectos por comprobar.',
  delivery:'Comienzas el comentario en aula y lo desarrollarás hasta 400–500 palabras. En esta sesión se admite un registro preparatorio, sin exigir todavía el comentario completo.',
  check:'Explica una diferencia de sentido o construcción y su apoyo; no reduzcas el cotejo a preferencia por la versión que suena más natural.'},
  '11/2':{key:'3-traduccion',stage:'redaccion',concepts:['cotejo','efecto','dato'],
- example:'Una diferencia puede destacar una pérdida de deseo en una frase, mientras otras partes del poema también construyen esa temporalidad. Matizar el efecto permite comparar las versiones sin convertir cada elección distinta en un error.',
+ example:'En tu borrador, subraya el efecto que atribuyes a una palabra. Vuelve a la oración completa y señala qué parte sostiene ese efecto. Si interviene otro elemento de la frase, incorpóralo al comentario.',
  steps:['Recupera la observación inicial y comprueba las tres diferencias elegidas en los testimonios del taller.','Desarrolla el comentario de 400–500 palabras: organiza cada diferencia con su localizador, relación contextual y efecto.','Añade una duda para el cotejo del francés y delimita cualquier afirmación sobre intención o historia de la traducción.','Revisa qué cambió en la escena o el observador que imaginabas inicialmente y conserva la versión que entregarás.'],
  result:'Comentario de traducción de 400–500 palabras con tres diferencias, efectos y una duda fundamentada.',
  delivery:'Hoy elaboras el borrador. Revisa y entrega un solo comentario final en papel antes de la siguiente semana. Conserva las diferencias preparatorias en tu cuaderno.',

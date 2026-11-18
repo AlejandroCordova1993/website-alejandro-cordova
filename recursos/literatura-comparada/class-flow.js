@@ -1,6 +1,6 @@
-import {activityByKey,activityFromHash,activityHref} from './activities.js?v=lc-4006bb1bbcf9';
-import {encounters,autonomousPlan} from './encounters.js?v=lc-4006bb1bbcf9';
-import {weeklyReadings} from './journey.js?v=lc-4006bb1bbcf9';
+import {activityByKey,activityFromHash,activityHref} from './activities.js?v=lc-e2601cef7740';
+import {encounters,autonomousPlan} from './encounters.js?v=lc-e2601cef7740';
+import {weeklyReadings} from './journey.js?v=lc-e2601cef7740';
 
 export const classHref=e=>`#semana/${e.week}/${e.day==='lunes'?1:2}`;
 export function classFromHash(hash){
