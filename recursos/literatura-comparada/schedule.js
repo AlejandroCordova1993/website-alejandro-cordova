@@ -23,7 +23,7 @@ export const weeks=[
   {
     "week": 5,
     "title": "Centro y periferia como relaciones",
-    "description": "Docencia: canon, centro y periferia; subalternidad, representación y heterogeneidad. Práctica: examinar el diálogo figurado de Guamán Poma y contrastar la interpretación de Rivera Cusicanqui con palabras e imágenes del manuscrito. Autónomo: lámina y recorte escrito, más Rivera, «Sociología de la imagen», pp. 19–26. Evidencia: mapa de voces y mediaciones."
+    "description": "Docencia: canon, centro y periferia; subalternidad, representación y heterogeneidad. Práctica: aplicar a la audiencia real la pregunta de Rivera por el argumento de una imagen y contrastar la lectura propia de la lámina con el pasaje escrito. Autónomo: lámina y recorte escrito, más Rivera, «Sociología de la imagen», pp. 19–26. Evidencia: mapa de voces y mediaciones."
   },
   {
     "week": 6,

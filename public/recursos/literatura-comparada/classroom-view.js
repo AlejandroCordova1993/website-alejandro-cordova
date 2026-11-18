@@ -1,20 +1,20 @@
-import {encounters,dayLabel} from './encounters.js?v=lc-c7e609d3ba05';
-import {classHref,classPlan,classPreparation,classContinuation,classReadingGroups} from './class-flow.js?v=lc-c7e609d3ba05';
-import {toneHead,uiIcon} from './ui-icons.js?v=lc-c7e609d3ba05';
-import {glossaryLinks,concepts} from './glossary.js?v=lc-c7e609d3ba05';
-import {theoryNoteHtml} from './theory-notes.js?v=lc-c7e609d3ba05';
-import {sessionTheoryHtml} from './session-learning.js?v=lc-c7e609d3ba05';
-import {weekTwoGuideHtml} from './week-two-learning.js?v=lc-c7e609d3ba05';
-import {activityBriefFor} from './activity-briefs.js?v=lc-c7e609d3ba05';
-import {activityForEncounter,activityHref} from './activities.js?v=lc-c7e609d3ba05';
-import {paperSessionGuides,paperActivityAdvance} from './paper-activities.js?v=lc-c7e609d3ba05';
+import {encounters,dayLabel} from './encounters.js?v=lc-f037d09805bd';
+import {classHref,classPlan,classPreparation,classContinuation,classReadingGroups} from './class-flow.js?v=lc-f037d09805bd';
+import {toneHead,uiIcon} from './ui-icons.js?v=lc-f037d09805bd';
+import {glossaryLinks,concepts} from './glossary.js?v=lc-f037d09805bd';
+import {theoryNoteHtml} from './theory-notes.js?v=lc-f037d09805bd';
+import {sessionTheoryHtml} from './session-learning.js?v=lc-f037d09805bd';
+import {weekTwoGuideHtml} from './week-two-learning.js?v=lc-f037d09805bd';
+import {activityBriefFor} from './activity-briefs.js?v=lc-f037d09805bd';
+import {activityForEncounter,activityHref} from './activities.js?v=lc-f037d09805bd';
+import {paperSessionGuides,paperActivityAdvance} from './paper-activities.js?v=lc-f037d09805bd';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 const canonReadings={
- '3-lunes':{url:'./materiales/canon.html?v=lc-c7e609d3ba05#fundamentos',label:'Leer fundamentos y listas A/B',selection:'Lee la distinción entre valor y selección, Bloom y Bourdieu. Después examina las listas A/B. Guillory se trabaja en la sesión 2.'},
- '3-miercoles':{url:'./materiales/canon.html?v=lc-c7e609d3ba05#transmision',label:'Leer transmisión y registros C/D',selection:'Lee «Guillory: transmisión y acceso a la lectura» y los registros C/D. La reseña de Trujillo es opcional.'},
- '4-lunes':{url:'./materiales/canon.html?v=lc-c7e609d3ba05#tipos',label:'Leer tipos de canon y repertorio',selection:'Lee los ámbitos de selección y «Del procedimiento a las razones de elección». Recupera A/B y C/D como ejemplos para revisar las decisiones de tus dos selecciones.'},
- '4-miercoles':{url:'./materiales/canon.html?v=lc-c7e609d3ba05#ficha2',label:'Consultar la consigna de las dos selecciones',selection:'Revisen la consigna y sus fuentes. El ejemplo comentado está en Teoría; revisen las obras que eligieron. El dossier no añade otra lectura teórica.'}
+ '3-lunes':{url:'./materiales/canon.html?v=lc-f037d09805bd#fundamentos',label:'Leer fundamentos y listas A/B',selection:'Lee la distinción entre valor y selección, Bloom y Bourdieu. Después examina las listas A/B. Guillory se trabaja en la sesión 2.'},
+ '3-miercoles':{url:'./materiales/canon.html?v=lc-f037d09805bd#transmision',label:'Leer transmisión y registros C/D',selection:'Lee «Guillory: transmisión y acceso a la lectura» y los registros C/D. La reseña de Trujillo es opcional.'},
+ '4-lunes':{url:'./materiales/canon.html?v=lc-f037d09805bd#tipos',label:'Leer tipos de canon y repertorio',selection:'Lee los ámbitos de selección y «Del procedimiento a las razones de elección». Recupera A/B y C/D como ejemplos para revisar las decisiones de tus dos selecciones.'},
+ '4-miercoles':{url:'./materiales/canon.html?v=lc-f037d09805bd#ficha2',label:'Consultar la consigna de las dos selecciones',selection:'Revisen la consigna y sus fuentes. El ejemplo comentado está en Teoría; revisen las obras que eligieron. El dossier no añade otra lectura teórica.'}
 };
 
 export function renderClassPage(e,ctx){

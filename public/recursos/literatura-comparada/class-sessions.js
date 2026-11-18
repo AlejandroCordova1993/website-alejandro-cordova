@@ -1,8 +1,8 @@
-import {weeks} from './schedule.js?v=lc-c7e609d3ba05';
-import {unitActivities} from './curriculum.js?v=lc-c7e609d3ba05';
-import {translationRows} from './corpus.js?v=lc-c7e609d3ba05';
-import {activityTitle} from './teaching.js?v=lc-c7e609d3ba05';
-import {encounterById,dayLabel} from './encounters.js?v=lc-c7e609d3ba05';
+import {weeks} from './schedule.js?v=lc-f037d09805bd';
+import {unitActivities} from './curriculum.js?v=lc-f037d09805bd';
+import {translationRows} from './corpus.js?v=lc-f037d09805bd';
+import {activityTitle} from './teaching.js?v=lc-f037d09805bd';
+import {encounterById,dayLabel} from './encounters.js?v=lc-f037d09805bd';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 // Teaching prompts are original syntheses. Texts and attributions are in Leer.
 const lessons={
@@ -30,7 +30,7 @@ const lessons={
  5:[
   ['Centro y periferia son relaciones','Indica respecto de qué institución, lengua, mercado o circuito una posición es central o periférica. La identidad de un autor no demuestra automáticamente subalternidad.','¿Qué acceso o reconocimiento está en disputa?'],
   ['Palabra e imagen en Guamán Poma','Examina autoría, destinatario, voces y composición visual. Su condición de crónica permite estudiar operaciones discursivas y relaciones culturales.','Lámina y recorte escrito del manuscrito.'],
-  ['Poner a prueba una interpretación','Contrasta el análisis de Rivera Cusicanqui con los detalles del facsímil. Conserva lo que la fuente muestra y delimita lo que infieres.','Mapa de voces y mediaciones; Rivera, pp. 19–26.']
+  ['Poner a prueba una interpretación','Rivera lee imágenes del tejido. Aplica su pregunta sobre la autoridad a otra escena, la audiencia real. Vuelve al inicio de 962 [976] para revisar tu lectura del dibujo.','Mapa de voces y mediaciones; Rivera, pp. 19–26.']
  ],
  6:[
   ['Oralitura y contemporaneidad','La relación entre oralidad y escritura incluye decisiones actuales de autoría, edición y circulación. Evita tratarla solo como supervivencia del pasado.','Brígido-Corachán y Domínguez, pp. 84–87.'],

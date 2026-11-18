@@ -1,6 +1,6 @@
 // Brief instructions for the remaining course. Existing note keys and products
 // stay in class-flow/session-learning; weeks 1 and 2 keep their current wording.
-import {paperSessionGuides} from './paper-activities.js?v=lc-c7e609d3ba05';
+import {paperSessionGuides} from './paper-activities.js?v=lc-f037d09805bd';
 const briefs={
  "3/1":{...paperSessionGuides["3/1"],hint:"Formen el equipo e inicien sus dos selecciones."},
  "3/2":{...paperSessionGuides["3/2"],hint:"Distingue la disponibilidad del texto de las ayudas para aprender a interpretarlo."},
@@ -10,7 +10,7 @@ const briefs={
   steps:[
    'Abre la lámina 961 [975], el inicio de 962 [976] y el fragmento de Rivera indicado en Lecturas.',
    'En el pasaje A, describe un detalle verbal o visual y anota el folio. Distingue autor, figuras representadas y destinatario.',
-   'Relaciona ese detalle con una afirmación de Rivera: explica qué la sostiene o qué pregunta permite plantear.',
+   'Observa la postura del cronista y lee el rótulo de la audiencia. Explica cómo se reparten la autoridad de preguntar y la de responder.',
    'Organiza tu respuesta inicial por voces y destinatarios. Anota qué contraste investigarás al incorporar el poema de la semana 6.'
   ],
   result:'Registro de Guamán Poma con detalle, folio e interpretación inicial. Preparas la ficha 3; hoy no completas un segundo documento ni entregas una ficha.',
@@ -21,13 +21,13 @@ const briefs={
  '5/2':{
   steps:[
    'Recupera tu lectura de Guamán Poma y elige una afirmación que necesite precisión.',
-   'Comprueba el detalle en el facsímil y compáralo con Rivera. Conserva el localizador de ambos pasajes.',
+   'Rivera examina qué idea del poder expresan otras imágenes. Aplica esa pregunta a la audiencia y relee el inicio de 962 [976]. Conserva los localizadores.',
    'Ajusta tu explicación de la voz, la autoridad y el destinatario: separa lo observado de lo que interpretas.',
-   'Reformula tu respuesta inicial y anota una diferencia histórica que deberás conservar al incorporar Chikangana.'
+   'Explica qué detalle de la página escrita te lleva a sostener o matizar tu interpretación inicial.'
   ],
   result:'Registro de Guamán Poma revisado, con una interpretación y su límite. Continúas la preparación de la ficha 3 en los mismos espacios.',
   label:'Mi lectura revisada de Guamán Poma',
-  hint:'Precisa la afirmación elegida con el facsímil y Rivera. Puedes mantener tu interpretación si explicas cómo la comprobaste.',
+  hint:'Vuelve a tu interpretación del dibujo. Explica qué añade a esa lectura lo que el cronista escribe a continuación.',
   check:'Debe distinguirse lo que dice Rivera, lo que muestra el manuscrito y lo que propones tú.'
  },
  '6/1':{
@@ -45,9 +45,9 @@ const briefs={
  '6/2':{
   steps:[
    'Consulta los pasajes guardados y comprueba quién habla, la fuente y el localizador de cada uno.',
-   'Redacta la comparación de voz, destinatario y mediación con evidencia de ambos objetos. Explica una diferencia de género o época.',
-   'Si analizas una relación de poder, identifica la autoridad o el circuito y el detalle que la sostiene. Integra una objeción y tu respuesta en el argumento.',
-   'Revisa los límites históricos y lingüísticos. En la revisión, registra qué precisas o mantienes; después prepara la ficha para entregar.'
+   'Elige un detalle de cada obra y explica cómo sostienen, matizan o cuestionan el modelo de clase. Conserva una diferencia de época, género o mediación.',
+   'Si analizas una relación de poder, identifícala con un detalle. Señala qué afirmación tuya cuestionaría otro lector y responde con el pasaje.',
+   'Explica un límite que afecte a tu argumento y revisa las referencias antes de entregar la ficha.'
   ],
   result:'Una ficha 3 de 250–350 palabras. Revisa y entrega la ficha escrita a mano antes de la siguiente semana, como indique el docente. Conserva la preparación en tu cuaderno.',
   label:'Mi ficha 3 · Guamán Poma / Chikangana',
@@ -63,27 +63,27 @@ const briefs={
   ],
   result:'Registros iniciales para la cartografía grupal. La primera versión se organiza en la sesión 2 y se revisa en la semana 13; es un único trabajo evaluado.',
   label:'Mis registros para la cartografía',
-  hint:'Por cada relación: elementos que conecta, fuente disponible o faltante y alcance. Distingue la conexión documentada de tu propuesta de investigación.',
+  hint:'Para cada vínculo comprobado, cita la fuente y la página. Si propones un vínculo por investigar, basta identificar el documento que permitiría comprobarlo.',
   check:'Atribuye cada dato a su fuente; una interpretación literaria no acredita por sí sola un vínculo editorial o colectivo.'
  },
  '7/2':{
   steps:[
    'Recuperen los registros anteriores y lean la guía de iniciativa colectiva. Trabajen en una hoja común para conservar el mapa del grupo.',
-   'Dibujen cada vínculo e identifiquen partida, destino, tipo y fuente. Añadan mediador, fecha o medio cuando consten.',
+   'Dibujen los vínculos documentados con una fuente y página. Si proponen uno por investigar, indiquen qué documento permitiría comprobarlo. Pueden dejar separados los casos independientes.',
    'Escriban un comentario sobre la red o iniciativa documentada, sus temas y una asimetría apoyada en fuentes. Conserven este comentario en la preparación.',
    'Comprueben los vínculos añadidos y anoten qué falta documentar. En la revisión, expliquen un ajuste.'
   ],
   result:'Primera versión grupal del mapa y su comentario. Se conservará para la revisión de la semana 13; todavía no se entrega otra cartografía independiente.',
   label:'Comentario de la primera cartografía',
   hint:'Explica qué iniciativa conectan los vínculos, qué temas reúne y qué desigualdad documentan sus fuentes. Este comentario inicial se conserva como preparación.',
-  check:'Cada vínculo trazado debe identificar sus elementos y su fuente. Distingan relaciones comprobadas y propuestas.'
+  check:'¿Qué flechas están documentadas y cuáles expresan hipótesis? Marquen esa diferencia en el mapa.'
  },
  '8/1':{
   steps:[
-   'Elige dos objetos ya trabajados y formula una pregunta sobre la representación de una voz, experiencia o relación de poder.',
+   'Elige dos obras entre la lámina de Guamán Poma, «Takina/Poema», «Miriam Fredes» y la pieza de Esparza en Ataúd en llamas. Formula una pregunta sobre la representación que puedas examinar en ambas.',
    'Selecciona un pasaje de cada objeto, con fuente y localizador, y una diferencia histórica o de mediación.',
    'Esboza el argumento: pregunta o tesis, evidencia de ambos objetos, diferencia y conclusión.',
-   'Propón una mejora de circulación: dificultad, agente, acción y límite. Si la dificultad no está documentada, preséntala como hipótesis e identifica el documento que permitiría comprobarla, sin tener que conseguirlo para esta entrega.'
+   'Justifica la propuesta de circulación con un hallazgo de tu lectura. Precisa dificultad, agente, acción y límite. Si la dificultad es hipotética, basta indicar qué documento permitiría comprobarla.'
   ],
   result:'Esquema para el análisis individual de 600–800 palabras. Hoy preparas el texto; lo redactarás en aula durante la sesión 2.',
   label:'Mi esquema del análisis comparativo',
@@ -94,7 +94,7 @@ const briefs={
   steps:[
    'Recupera el esquema, los textos y las notas autorizados para el trabajo en aula.',
    'Redacta 600–800 palabras que respondan a tu pregunta con evidencia de los dos objetos y una diferencia pertinente.',
-   'Explica el problema de representación e integra la condición de circulación futura, su agente y su límite.',
+   'Explica qué descubriste al comparar las obras y cómo te lleva a proponer una decisión de edición o circulación. Indica quién podría llevarla a cabo y con qué límite.',
    'Revisa voces, fuentes y alcance. Registra la decisión principal de revisión y prepara el texto manuscrito para entregarlo como indique el docente.'
   ],
   result:'Análisis comparativo individual en aula de 600–800 palabras. Entrega el texto escrito a mano como indique el docente; es un producto independiente del ensayo final.',
