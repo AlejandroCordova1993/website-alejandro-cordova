@@ -1,4 +1,4 @@
-import {reviseResources} from './corpus-v2.js?v=lc-e2601cef7740';
+import {reviseResources} from './corpus-v2.js?v=lc-ac608eddb2bf';
 const uv1='https://www.uv.mx/bdh/files/2014/08/Libro-1-literatura-comparada.pdf';
 const uv2='https://www.uv.mx/bdh/files/2014/09/Libro-Literatura-comparada-II.pdf';
 const originalResources=[
@@ -29,6 +29,6 @@ export const resourceById=Object.fromEntries(resources.map(r=>[r.id,r]));
 export const translationRows=[
  {original:'séjour',casal:'asilo',diez:'morada',question:'¿Se imagina un lugar para permanecer, un refugio o una habitación?'},
  {original:'élancées',casal:'salientes',diez:'esbeltas',question:'¿Qué forma sugiere cada adjetivo? ¿Qué parte de la oración explica el movimiento?'},
- {original:'n’a plus',casal:'no tiene',diez:'ya no tiene',question:'¿La falta de deseo implica una pérdida anterior?'},
+ {original:'n’a plus',casal:'no tiene',diez:'ya no tiene',question:'¿Qué diferencia temporal introduce «ya no tiene» frente a «no tiene» al describir la curiosidad y la ambición del observador?'},
  {original:'belvédère',casal:'mirador',diez:'azotea',question:'¿Se conserva una función de observación o se concreta un espacio?'}
 ];

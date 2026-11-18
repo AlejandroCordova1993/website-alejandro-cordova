@@ -49,13 +49,13 @@ export const paperActivities={
   purpose:'Comparar valoraciones documentadas y distinguirlas de tu reacción personal y de las operaciones de lectura propuestas por un texto.',
   materials:['Dossier de recepción: recortes identificados de los prólogos de Avellaneda y Cervantes.','Caso Tess del manual, pp. 120–122, examinado en clase; no se requiere leer la novela.'],
   steps:['En cada prólogo, identifica autor, fecha, medio y un pasaje con su localizador. Explica qué valora o cuestiona su autor.','Contrasta las posiciones: qué expectativas históricas expresan y qué permiten afirmar. Usa los propios prólogos para distinguir la posición histórica de cada autor, una operación de lectura que propone el texto y tu reacción personal. Carrington o Bierce pueden servir como apoyo opcional.','Redacta la ficha con ambos testimonios y sus referencias. Delimita la conclusión: dos prólogos no representan la respuesta de todo el público.'],
-  product:'Ficha 4 individual de 250–350 palabras. Los registros de la primera sesión preparan una sola ficha. En la sesión 10·2 elaboras el borrador; revisa y entrega la versión final en papel antes de la siguiente semana.'
+  product:'Ficha 4 individual de 250–350 palabras. En la segunda sesión de la semana 10 redactas el borrador con los dos registros que preparaste. Revísalo y entrega la ficha final en papel al inicio de la primera clase de la semana 11.'
  },
  '3-traduccion':{
   purpose:'Explicar cómo distintas decisiones de traducción modifican la escena, el ritmo o la posición del observador.',
   materials:['Baudelaire, Le Port, y versiones completas de Casal y Díez-Canedo, identificadas en el taller.','Tabla de cotejo y manual, pp. 133–136, hasta antes de Transducción.'],
   steps:['Lee completas las versiones de Casal y Díez-Canedo y anota qué escena y observador imaginas. Después coteja los segmentos franceses de la tabla con guía docente.','Elige tres diferencias del cotejo. Copia las palabras pertinentes de cada versión, identifica sus localizadores y explica el posible efecto dentro del pasaje.','Redacta 400–500 palabras con las tres diferencias y una duda concreta para contrastar el francés con apoyo del docente. Explica qué cambió en tu primera impresión y delimita las afirmaciones sobre intención del traductor.'],
-  product:'Comentario individual de traducción de 400–500 palabras: tres diferencias, sus efectos y una duda fundamentada. En la sesión 11·2 elaboras el borrador; revisa y entrega la versión final en papel antes de la siguiente semana. La preparación y la revisión pertenecen al mismo trabajo.'
+  product:'Un comentario individual de traducción de 400–500 palabras sobre tres diferencias, sus efectos y una duda fundamentada. En la segunda sesión de la semana 11 redactas el borrador. Revísalo y entrega el comentario final en papel al inicio de la primera clase de la semana 12.'
  },
  '3-metodos':{
   purpose:'Comprobar cómo cambia una interpretación cuando se modifica la pregunta, la operación de análisis y la evidencia utilizada.',
@@ -177,7 +177,7 @@ export const paperSessionGuides={
  },
  '10/2':{
   steps:['Recupera los registros y confirma a quién pertenece cada valoración.','Redacta 250–350 palabras que comparen ambos testimonios, sus criterios y lo que permiten concluir.','Distingue horizonte histórico, lector implícito y respuesta personal. Revisa las referencias y evita atribuir las dos posiciones a todo el público.'],
-  result:'Hoy elaboras el borrador de la ficha 4. Revisa y entrega una sola versión final en papel antes de la siguiente semana. Conserva los registros preparatorios y sus fuentes.'
+  result:'Hoy elaboras el borrador de la ficha 4. Revísalo y entrega la ficha final en papel al inicio de la primera clase de la semana 11. Conserva los registros preparatorios y sus fuentes.'
  },
  '11/1':{
   steps:['Lee completas las versiones de Casal y Díez-Canedo. Anota qué escena y observador imaginas; después coteja los segmentos franceses de la tabla con guía docente.','Elige tres diferencias de la tabla. Copia las palabras y versiones con su localizador y explica un posible efecto en el pasaje.','Señala una duda concreta sobre el francés para contrastarla con apoyo del docente.'],
@@ -185,7 +185,7 @@ export const paperSessionGuides={
  },
  '11/2':{
   steps:['Revisa tus tres diferencias en los testimonios y relaciónalas con el conjunto del poema.','Redacta 400–500 palabras: localizadores, efectos en escena, ritmo u observador y una duda fundamentada sobre el francés.','Explica qué cambia en tu primera impresión y evita atribuir intenciones al traductor sin documentación.'],
-  result:'Hoy elaboras el borrador del comentario. Revisa y entrega una sola versión final en papel antes de la siguiente semana. Conserva las observaciones iniciales en tu cuaderno.'
+  result:'Hoy elaboras el borrador del comentario. Revísalo y entrega el comentario final en papel al inicio de la primera clase de la semana 12. Conserva las observaciones iniciales en tu cuaderno.'
  },
  '12/1':{
   steps:['Elige un pasaje ya leído y dos enfoques de la consigna. Escribe un párrafo por enfoque: pregunta, operación, evidencia, contexto, conclusión y límite.','Compara sus resultados y revisa la afirmación simulada de Teoría. Si falta una fuente, delimita lo que puedes concluir.','Recupera lo útil para organizar el esquema del ensayo en Proyecto.'],
@@ -241,9 +241,9 @@ const sessionAdvances={
  '9/1':'Anota tu primera interpretación de Carrington y Bierce. Localiza un pasaje de cada uno y explica qué confirma o dificulta esa lectura. Compara sus procedimientos y una diferencia entre los contextos representados, respaldada por pasajes; no requiere investigación externa. Conserva las notas en el cuaderno para revisar la interpretación; no preparas una nueva ficha evaluada.',
  '9/2':'Con tus pasajes, escribe a mano una interpretación revisada de Carrington y Bierce. Discute una lectura rival y explica por qué cambias, precisas o mantienes la tuya. Conserva una diferencia entre los contextos representados, respaldada por pasajes; no requiere investigación externa. Esta práctica prepara recepción y el ensayo, sin entrega evaluada adicional.',
  '10/1':'En tu cuaderno, registra autor, fecha, medio, pasaje y valoración de cada prólogo. Compara las posiciones de Avellaneda y Cervantes; distingue testimonio histórico, lector implícito y reacción personal. Examina Tess en clase como relato mediado. Conserva estos registros para la ficha 4.',
- '10/2':'Elabora a mano el borrador de la ficha 4 de 250–350 palabras con los dos testimonios, sus valoraciones y referencias. Distingue horizonte histórico, lector implícito y respuesta personal; delimita la conclusión. Revisa y entrega una sola versión final antes de la siguiente semana.',
+ '10/2':'Elabora a mano el borrador de la ficha 4 de 250–350 palabras con los dos testimonios, sus valoraciones y referencias. Distingue horizonte histórico, lector implícito y respuesta personal, y delimita la conclusión. Revísalo y entrega la ficha final en papel al inicio de la primera clase de la semana 11.',
  '11/1':'Anota en el cuaderno tu primera impresión del poema. Elige tres diferencias entre las versiones: palabras, localizadores y posibles efectos en escena, ritmo u observador. Añade una duda concreta para contrastar el francés. Estos registros preparan el comentario de traducción.',
- '11/2':'Elabora a mano el borrador del comentario de 400–500 palabras con tres diferencias, sus efectos y una duda fundamentada sobre el francés. Explica qué cambia en tu impresión inicial y delimita lo que afirmas del traductor. Revisa y entrega una sola versión final antes de la siguiente semana.',
+ '11/2':'Elabora a mano el borrador del comentario de 400–500 palabras con tres diferencias, sus efectos y una duda fundamentada sobre el francés. Explica qué cambia en tu impresión inicial y delimita lo que afirmas del traductor. Revísalo y entrega el comentario final en papel al inicio de la primera clase de la semana 12.',
  '12/1':'Aplica dos enfoques a un pasaje conocido. Escribe un párrafo por enfoque con pregunta, operación, evidencia, contexto y alcance. Si falta una fuente, indica qué pregunta queda abierta y qué documento necesitarías. Compara los resultados. Revisa también el ejemplo de Teoría. Conserva la matriz en papel y recupera lo útil para el esquema digital del ensayo.',
  '12/2':'Si tu grupo tiene turno, conduzcan 12 minutos de comparación y 8 de discusión. Anoten en el guion una respuesta o dificultad y un ajuste justificado. Si presentan en la semana 15, participen como público. Cada grupo realiza una sola microclase.',
  '13/1':'Recuperen el mapa y el comentario de la semana 7. Con Goethe y el caso América Latina–India, examinen un vínculo documentado mediante dos criterios de escala, como lengua y edición. Anoten qué permite precisar su fuente. Continúen en el mismo mapa.',

@@ -1,4 +1,4 @@
-import {paperActivityAdvance,paperActivityGuide} from './paper-activities.js?v=lc-e2601cef7740';
+import {paperActivityAdvance,paperActivityGuide} from './paper-activities.js?v=lc-ac608eddb2bf';
 // Cada entrada reúne un trabajo completo. Las sesiones orientan sus avances,
 // sin crear productos, campos ni claves de almacenamiento adicionales.
 export const activities=[
@@ -31,12 +31,12 @@ export const activities=[
   encounters:[[9,1],[9,2]],label:'Mi interpretación revisada',hint:'Relaciona lectura inicial, pasajes, procedimientos, diferencia, objeción y respuesta. Explica qué comprobaste aunque mantengas la interpretación.'},
  {key:'3-recepcion',module:3,title:'Contrastar testimonios de recepción',kind:'task',
   prompt:'Contrasta los recortes de los prólogos de Avellaneda y Cervantes incluidos en el dossier. Identifica autor, fecha, medio, pasaje localizado y criterio de valoración de cada testimonio. Explica qué permiten concluir y qué requeriría otros documentos. Distingue el horizonte histórico de la respuesta personal y del lector implícito; puedes recuperar Carrington o Bierce para esa distinción. El caso Tess se examina en aula como relato mediado, sin exigir leer la novela.',
-  product:'Ficha 4 individual de 250–350 palabras. Elabora el borrador en la sesión 10·2; revisa y entrega una sola versión final en papel antes de la siguiente semana. Conserva los registros documentales en el cuaderno.',
+  product:'Ficha 4 individual de 250–350 palabras. Elabora el borrador en la sesión 10·2. Revísalo y entrega la ficha final en papel al inicio de la primera clase de la semana 11. Conserva los registros documentales en el cuaderno.',
   steps:['Registra la identificación, el pasaje y el criterio de valoración de cada prólogo.','Contrasta los testimonios y distingue posición histórica, operaciones del lector implícito y respuesta personal.','Redacta la ficha, delimita sus conclusiones y revisa las atribuciones antes de entregar el trabajo.'],
   encounters:[[10,1],[10,2]],label:'Mi ficha 4 · Recepción y límites',hint:'Compara las valoraciones, atribúyelas a sus autores y explica qué permiten concluir. Conserva los registros documentales en las notas.'},
  {key:'3-traduccion',module:3,title:'Un puerto, dos traducciones',kind:'translation',
   prompt:'Lee completas las versiones identificadas de Casal y Díez-Canedo. Registra tu primera impresión de la escena y del observador; después coteja los segmentos franceses de la tabla con guía docente y elige tres diferencias localizables. Explica su relación con el pasaje y su posible efecto en escena, ritmo o posición del observador. Incluye una duda para contrastar el francés y delimita las afirmaciones sobre intención o proyecto histórico del traductor. Revisa tu impresión inicial.',
-  product:'Comentario individual de traducción de 400–500 palabras: tres diferencias, efectos y una duda fundamentada. Elabora el borrador en la sesión 11·2; revisa y entrega una sola versión final en papel antes de la siguiente semana.',
+  product:'Comentario individual de traducción de 400–500 palabras sobre tres diferencias, sus efectos y una duda fundamentada. Elabora el borrador en la sesión 11·2. Revísalo y entrega el comentario final en papel al inicio de la primera clase de la semana 12.',
   steps:['Lee completas las versiones de Casal y Díez-Canedo y registra qué escena y observador imaginas. Coteja después los segmentos franceses de la tabla con guía docente.','Elige tres diferencias de la tabla y anota palabras, versiones, localizadores y efectos por comprobar.','Redacta el comentario, integra la duda sobre el francés y revisa qué cambia respecto de tu primera lectura.'],
   encounters:[[11,1],[11,2]],label:'Mi comentario de traducción',hint:'Desarrolla tres diferencias dentro del conjunto del poema, con localizadores, efectos y una duda para contrastar el francés.'},
  {key:'3-metodos',module:3,title:'Comparar dos métodos de lectura',kind:'task',

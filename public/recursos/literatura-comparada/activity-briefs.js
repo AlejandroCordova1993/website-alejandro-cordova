@@ -1,6 +1,6 @@
 // Brief instructions for the remaining course. Existing note keys and products
 // stay in class-flow/session-learning; weeks 1 and 2 keep their current wording.
-import {paperSessionGuides} from './paper-activities.js?v=lc-e2601cef7740';
+import {paperSessionGuides} from './paper-activities.js?v=lc-ac608eddb2bf';
 const briefs={
  "3/1":{...paperSessionGuides["3/1"],hint:"Formen el equipo e inicien sus dos selecciones."},
  "3/2":{...paperSessionGuides["3/2"],hint:"Distingue la disponibilidad del texto de las ayudas para aprender a interpretarlo."},
@@ -145,7 +145,7 @@ const briefs={
    'Distingue testimonio histórico, lector implícito y respuesta personal; recupera Carrington o Bierce solo si ayuda a explicarlo.',
    'Delimita lo que permiten concluir esas fuentes. Registra una decisión de revisión y prepara la ficha para entregar.'
   ],
-  result:'Una ficha 4 de 250–350 palabras. Revisa y entrega la ficha escrita a mano antes de la siguiente semana, como indique el docente. Conserva la preparación en tu cuaderno.',
+  result:'Una ficha 4 de 250–350 palabras. Entrega la ficha revisada en papel al inicio de la primera clase de la semana 11. Conserva la preparación en tu cuaderno.',
   label:'Mi ficha 4 · Recepción y límites',
   hint:'Compara las valoraciones de los prólogos y atribúyelas a sus autores. Explica qué puedes concluir y qué requeriría otros documentos.',
   check:'Una posición documentada no equivale al horizonte de todo un público; el lector implícito tampoco es una persona histórica.'
@@ -169,7 +169,7 @@ const briefs={
    'Integra una duda para el cotejo del francés. Delimita cualquier afirmación sobre la intención o el proyecto histórico de un traductor.',
    'Revisa qué cambió en la escena o el observador que imaginabas. Completa el comentario durante el trabajo autónomo y prepara el texto manuscrito para entregar.'
   ],
-  result:'Comentario de traducción de 400–500 palabras, con tres diferencias y una duda fundamentada. Entrégalo por el canal docente; conserva la preparación en tu cuaderno.',
+  result:'Comentario de traducción de 400–500 palabras, con tres diferencias y una duda fundamentada. Entrégalo revisado en papel al inicio de la primera clase de la semana 12. Conserva la preparación en tu cuaderno.',
   label:'Mi comentario de traducción',
   hint:'Explica las tres diferencias dentro del conjunto del poema. Incluye localizadores, efectos y la duda que necesitas contrastar con el francés.',
   check:'No conviertas toda diferencia en error; fundamenta el efecto en el segmento y en el conjunto.'

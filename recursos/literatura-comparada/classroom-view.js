@@ -1,21 +1,22 @@
-import {encounters,dayLabel} from './encounters.js?v=lc-e2601cef7740';
-import {classHref,classPlan,classPreparation,classContinuation,classReadingGroups} from './class-flow.js?v=lc-e2601cef7740';
-import {resourceById} from './corpus.js?v=lc-e2601cef7740';
-import {toneHead,uiIcon} from './ui-icons.js?v=lc-e2601cef7740';
-import {glossaryLinks,concepts} from './glossary.js?v=lc-e2601cef7740';
-import {theoryNoteHtml} from './theory-notes.js?v=lc-e2601cef7740';
-import {sessionTheoryHtml} from './session-learning.js?v=lc-e2601cef7740';
-import {weekTwoGuideHtml} from './week-two-learning.js?v=lc-e2601cef7740';
-import {activityBriefFor} from './activity-briefs.js?v=lc-e2601cef7740';
-import {activityForEncounter,activityHref} from './activities.js?v=lc-e2601cef7740';
-import {paperSessionGuides,paperActivityAdvance} from './paper-activities.js?v=lc-e2601cef7740';
+import {encounters,dayLabel} from './encounters.js?v=lc-ac608eddb2bf';
+import {classHref,classPlan,classPreparation,classContinuation,classReadingGroups} from './class-flow.js?v=lc-ac608eddb2bf';
+import {resourceById} from './corpus.js?v=lc-ac608eddb2bf';
+import {toneHead,uiIcon} from './ui-icons.js?v=lc-ac608eddb2bf';
+import {glossaryLinks,concepts} from './glossary.js?v=lc-ac608eddb2bf';
+import {theoryNoteHtml} from './theory-notes.js?v=lc-ac608eddb2bf';
+import {sessionTheoryHtml} from './session-learning.js?v=lc-ac608eddb2bf';
+import {weekTwoGuideHtml} from './week-two-learning.js?v=lc-ac608eddb2bf';
+import {essayStageLink} from './teaching.js?v=lc-ac608eddb2bf';
+import {activityBriefFor} from './activity-briefs.js?v=lc-ac608eddb2bf';
+import {activityForEncounter,activityHref} from './activities.js?v=lc-ac608eddb2bf';
+import {paperSessionGuides,paperActivityAdvance} from './paper-activities.js?v=lc-ac608eddb2bf';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 const canonReadings={
- '3-lunes':{url:'./materiales/canon.html?v=lc-e2601cef7740#fundamentos',label:'Leer fundamentos y listas A/B',selection:'Lee la distinción entre valor y selección, Bloom y Bourdieu. Después examina las listas A/B. Guillory se trabaja en la sesión 2.'},
- '3-miercoles':{url:'./materiales/canon.html?v=lc-e2601cef7740#transmision',label:'Leer transmisión y registros C/D',selection:'Lee «Guillory: transmisión y acceso a la lectura» y los registros C/D. La reseña de Trujillo es opcional.'},
- '4-lunes':{url:'./materiales/canon.html?v=lc-e2601cef7740#tipos',label:'Leer tipos de canon y repertorio',selection:'Lee los ámbitos de selección y «Del procedimiento a las razones de elección». Recupera A/B y C/D como ejemplos para revisar las decisiones de tus dos selecciones.'},
- '4-miercoles':{url:'./materiales/canon.html?v=lc-e2601cef7740#ficha2',label:'Consultar la consigna de las dos selecciones',selection:'Revisen la consigna y sus fuentes. El ejemplo comentado está en Teoría; revisen las obras que eligieron. El dossier no añade otra lectura teórica.'}
+ '3-lunes':{url:'./materiales/canon.html?v=lc-ac608eddb2bf#fundamentos',label:'Leer fundamentos y listas A/B',selection:'Lee la distinción entre valor y selección, Bloom y Bourdieu. Después examina las listas A/B. Guillory se trabaja en la sesión 2.'},
+ '3-miercoles':{url:'./materiales/canon.html?v=lc-ac608eddb2bf#transmision',label:'Leer transmisión y registros C/D',selection:'Lee «Guillory: transmisión y acceso a la lectura» y los registros C/D. La reseña de Trujillo es opcional.'},
+ '4-lunes':{url:'./materiales/canon.html?v=lc-ac608eddb2bf#tipos',label:'Leer tipos de canon y repertorio',selection:'Lee los ámbitos de selección y «Del procedimiento a las razones de elección». Recupera A/B y C/D como ejemplos para revisar las decisiones de tus dos selecciones.'},
+ '4-miercoles':{url:'./materiales/canon.html?v=lc-ac608eddb2bf#ficha2',label:'Consultar la consigna de las dos selecciones',selection:'Revisen la consigna y sus fuentes. El ejemplo comentado está en Teoría; revisen las obras que eligieron. El dossier no añade otra lectura teórica.'}
 };
 
 export function renderClassPage(e,ctx){
@@ -33,6 +34,7 @@ export function renderClassPage(e,ctx){
  let workspace='';
  if(e.week>=3)workspace=activity?`<div class="class-activity-entry"><h3>${esc(activity.title)}</h3><p>${esc(paperActivityAdvance(e))}</p><p class="caption">${activity.key==='1-canon'?'Los apuntes pueden hacerse a mano. El producto grupal es de formato libre, físico o digital.':'Trabaja a mano y continúa en las mismas notas. Los avances preparan un solo producto.'}</p><a class="text-link" href="${activityHref(activity.key)}">Ver instrucciones del trabajo</a></div>`:`<div class="class-activity-entry"><h3>Ensayo final, consigna y defensa</h3><p>${e.day==='lunes'?'Continúa el guion de defensa y revisa el ensayo digital con sus evidencias y referencias.':'Completa las defensas pendientes y entrega el PDF con el ensayo, la consigna y las referencias por el canal indicado por el docente. Guardarlo en esta web no lo envía.'}</p><a class="button primary" href="#proyecto" data-project-target="cierre">Continuar el ensayo final</a></div>`;
  if(e.week<=2)workspace=`<section class="paper-session"><p>Trabaja a mano en tu cuaderno o en hojas que puedas conservar juntas.</p><ol class="paper-steps">${paperGuide.steps.map(t=>`<li>${esc(t)}</li>`).join('')}</ol><p><strong>Al terminar:</strong> ${esc(paperGuide.result)}</p></section>`;
+ if(e.week===12||(e.week===15&&e.day==='miercoles'))workspace+=`<p>${essayStageLink(e.week)}</p>`;
  const groups=classReadingGroups(e).map(g=>({...g,rows:g.rows.filter(([id])=>plan.kind!=='translation'||!['baudelaire','casal','diez'].includes(id))})).filter(g=>g.rows.length);
  const guaman=resourceById.guaman;
  const guamanRevisit=e.week===6?`<p class="class-reading-reminder">Para cotejar con «Takina/Poema», vuelve a los pasajes de Guamán Poma trabajados en la semana 5. Abre la <a href="${esc(guaman.url)}" target="_blank" rel="noopener">lámina 961 [975]</a> y el <a href="${esc(guaman.alternate)}" target="_blank" rel="noopener">fragmento escrito de 962 [976]</a> (en otra pestaña).</p>`:'';

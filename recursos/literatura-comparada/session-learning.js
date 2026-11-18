@@ -1,8 +1,8 @@
 // Orientaciones docentes para las mismas actividades y claves del cuaderno.
 // Definiciones de trabajo, no citas ni sustitutos de las fuentes del curso.
-import {paperSessionGuides} from './paper-activities.js?v=lc-e2601cef7740';
-import {activityBriefFor} from './activity-briefs.js?v=lc-e2601cef7740';
-import {weekTwoConcepts,weekTwoPrompts,weekTwoFieldHints} from './week-two-learning.js?v=lc-e2601cef7740';
+import {paperSessionGuides} from './paper-activities.js?v=lc-ac608eddb2bf';
+import {activityBriefFor} from './activity-briefs.js?v=lc-ac608eddb2bf';
+import {weekTwoConcepts,weekTwoPrompts,weekTwoFieldHints} from './week-two-learning.js?v=lc-ac608eddb2bf';
 const concepts={
  procedimiento:['Procedimiento narrativo','Una manera concreta de construir el relato: ordenar hechos, repetir una expresión, ocultar información o presentar una suposición como certeza. Identificarlo exige describir qué hace la escritura en un pasaje.'],
  indicio:['Observación e indicio textual','Observar es señalar palabras, una disposición o un detalle verificable del texto. Ese detalle funciona como indicio cuando explicas qué interpretación permite fundamentar; una cita aislada todavía no constituye una explicación.'],
@@ -180,7 +180,7 @@ const sessions={
  example:'Antes de redactar la ficha, distingue tres afirmaciones posibles: lo que declara Cervantes, la operación que pide a su interlocutor y lo que tú hiciste al leer la réplica. Indica qué evidencia sostiene cada una.',
  steps:['Recupera el cuadro de documentos y selecciona un pasaje de cada prólogo.','Redacta 250–350 palabras que expliquen el contraste de criterios, con autor, fecha, medio y localizadores.','Distingue el testimonio histórico, la operación del lector implícito y tu respuesta; usa el pasaje de apoyo solo cuando ayude a esa distinción.','Explica el límite de las fuentes y registra la revisión. Relee la ficha antes de entregarla.'],
  result:'Borrador de la ficha 4 con comparación documental y límites de las conclusiones.',
- delivery:'Hoy elaboras el borrador. Revisa y entrega una sola ficha final en papel antes de la siguiente semana. Conserva la preparación en tu cuaderno.',
+ delivery:'Hoy elaboras el borrador. Revísalo y entrega la ficha final en papel al inicio de la primera clase de la semana 11. Conserva la preparación en tu cuaderno.',
  check:'Cada conclusión debe corresponder al tipo de evidencia utilizado; no atribuyas las posiciones de los prólogos a todos los lectores.',fieldLabel:'Mi argumento de la ficha 4'},
  '11/1':{key:'3-traduccion',stage:'preparacion',concepts:['cotejo','efecto','version'],
  example:'Registra dónde encuentras «no tiene» y «ya no tiene». A continuación, comprueba qué deja de sentir el observador y qué sigue disfrutando en la escena.',
@@ -192,7 +192,7 @@ const sessions={
  example:'En tu borrador, subraya el efecto que atribuyes a una palabra. Vuelve a la oración completa y señala qué parte sostiene ese efecto. Si interviene otro elemento de la frase, incorpóralo al comentario.',
  steps:['Recupera la observación inicial y comprueba las tres diferencias elegidas en los testimonios del taller.','Desarrolla el comentario de 400–500 palabras: organiza cada diferencia con su localizador, relación contextual y efecto.','Añade una duda para el cotejo del francés y delimita cualquier afirmación sobre intención o historia de la traducción.','Revisa qué cambió en la escena o el observador que imaginabas inicialmente y conserva la versión que entregarás.'],
  result:'Comentario de traducción de 400–500 palabras con tres diferencias, efectos y una duda fundamentada.',
- delivery:'Hoy elaboras el borrador. Revisa y entrega un solo comentario final en papel antes de la siguiente semana. Conserva las diferencias preparatorias en tu cuaderno.',
+ delivery:'Hoy elaboras el borrador. Revísalo y entrega el comentario final en papel al inicio de la primera clase de la semana 12. Conserva las diferencias preparatorias en tu cuaderno.',
  check:'Cada efecto debe estar apoyado en el segmento y el conjunto; si afirmas un error, identifica la relación lingüística que no se sostiene.'},
  '12/1':{key:'3-metodos',stage:'redaccion',concepts:['metodo','presupuesto','objecion','tesis'],
  example:'El episodio del reloj de Bierce permite estudiar organización temporal o revisar una anticipación de lectura. Investigar cómo lo valoró un público histórico exigiría un testimonio de recepción. Cambian la pregunta y la prueba, no solo el nombre del enfoque.',
