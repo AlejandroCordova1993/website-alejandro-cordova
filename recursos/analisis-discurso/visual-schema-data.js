@@ -186,14 +186,14 @@ export const visualSchemas={
  },
  'regla-de-paso':{
   type:'argument',planned:'s14-e1',topic:'El argumento necesita una regla de paso',placed:true,replaces:'example',
-  label:'Premisa, ley de paso y conclusión, con su garantía y su reserva',
+  label:'La razón, el criterio que la conecta y la conclusión',
   premise:{label:'Premisa',connector:'dado que',text:'declarar el uso de IA informa al docente sobre la ayuda que recibió el estudiante'},
   conclusion:{label:'Conclusión',text:'conviene declarar el uso de IA'},
   law:{label:'Ley de paso',connector:'puesto que',text:'conocer qué ayuda recibió el estudiante permite evaluar mejor la autoría del trabajo'},
   backing:{label:'Garantía',connector:'debido a que',text:'evaluar la autoría exige distinguir los aportes propios de la ayuda externa'},
   reserve:{label:'Reserva',connector:'a menos que',text:'sea una práctica en la que no se evalúe la autoría'},
   limit:'el esquema reconstruye una propuesta de carta. Aquí la garantía apoya la ley de paso. Una objeción puede cuestionar la premisa si la declaración se limita a «usé IA» y deja sin explicar qué ayuda recibió el estudiante.',
-  task:{label:'En la ficha 6',text:'Escribe premisa, regla de conexión, conclusión y una objeción que afecte la inferencia.'},
+  task:{label:'En la ficha 6',text:'Di qué sostienes, qué expresión lo respalda y por qué. Después examina una objeción.'},
   source:'Ejemplo. Esquema de Plantin (1996: 38) con garantía y reserva de Toulmin (1958), en Calsamiglia y Tusón (2012, §10.3 · páginas 297–298 del archivo).',
   anchors:['Conviene declarar el uso de IA porque así el docente sabe qué ayuda recibió el estudiante','La tesis de la carta funciona aquí como conclusión','conocer qué ayuda hubo es pertinente para evaluar la autoría','Un apoyo de la carta puede respaldar la premisa','la reserva acota en qué casos se aplica la regla']
  },
@@ -272,7 +272,7 @@ export const visualSchemas={
   ],
   note:'A valora la inscripción como «accesible» porque se realiza en línea. B cuestiona ese criterio al introducir a quienes carecen de conexión. A responde con atención presencial: cambia la solución ofrecida y añade lugar y horario. Seguir las tres intervenciones permite ver qué valoración se discute y cómo se reajusta la respuesta.',
   limit:'para estudiar un cambio en la atención institucional, compara otros intercambios y prácticas a lo largo del tiempo.',
-  task:{label:'En el borrador del expediente',text:'Incorpora la objeción y muestra dónde se observa la modificación.'},
+  task:{label:'En la ficha 6',text:'Puedes practicar con este diálogo representado. Al expediente lleva la objeción o la respuesta solo si ayuda a responder la pregunta del informe.'},
   source:'Ejemplo. Intervenciones e intercambios: Calsamiglia y Tusón (2012, §10.5 · páginas 319–323 del archivo). Diálogo, evaluación y escalas de cambio: Bolívar (2024: 99–100 / páginas 7–8 del archivo).',
   anchors:['La inscripción al taller de lectura es accesible: se completa en línea','¿Y cómo se inscribe quien no tiene conexión?','Por eso ofrecemos un punto de atención en el campus, de ocho a doce','compara otros intercambios y prácticas a lo largo del tiempo']
  },
@@ -460,7 +460,7 @@ export const visualSchemas={
    {label:'Justificar · ¿por qué aceptar la decisión?',text:'«Por tanto, debemos ampliar el plazo».',marks:['Por tanto'],note:'Convierte esa atribución en una razón para actuar: requiere un criterio sobre equidad, responsabilidades y condiciones del trámite.'}
   ],
   verdict:'La frase justifica una ampliación a partir de cómo representa el retraso. Un criterio posible sería no perjudicar a quien sufrió un fallo ajeno; hay que declararlo y discutirlo. Comprender una causa no obliga a aceptar una medida.',
-  task:{label:'En la ficha 6',text:'Explica las secuencias efectivamente presentes en tu texto y compáralas con el texto mixto.'},
+  task:{label:'En la ficha 6',text:'Compara los dos tramos que ya elegiste. Explica qué cambia entre ellos y qué aporta ese cambio al texto.'},
   source:'Ejemplo. Explicación y argumentación: Calsamiglia y Tusón (2012, §10.4 · páginas 308–312 del archivo; §10.3 · páginas 295–300 del archivo).',
   anchors:['El retraso se produjo por un fallo del sistema; por tanto, debemos ampliar el plazo','La causa atribuida al sistema representa el retraso como un problema ajeno al solicitante','el criterio de que ese fallo no debe perjudicar su acceso al trámite','comprender una causa no obliga a aceptar una medida','¿Qué premisa adicional conecta la explicación con la decisión?']
  },
@@ -493,10 +493,10 @@ export const visualSchemas={
  'recorrido-consigna':{
   type:'path',planned:'s15-e2',topic:'Convertir el análisis en una enseñanza',placed:true,replaces:'example',
   label:'De la consigna redactada a la consigna ajustada',
-  object:{label:'La consigna',text:'«En estas dos cláusulas, subraya quién realiza la acción. Explica una diferencia y señala qué dato necesitarías para interpretarla».'},
+  object:{label:'Carta y aviso de la semana 11',text:'Carta: «Propongo que la carrera publique ejemplos de uso de IA». Aviso: «Si estás en primer semestre, ¿qué ejemplos te ayudarían?».'},
   claimLabel:'Qué observar',
   steps:[
-   {verb:'Redactar',dimension:'la consigna',question:'¿Qué pide y sobre qué material?',claim:'Material («estas dos cláusulas»), operación («subraya», «explica») y resultado.',evidence:'un segmento que el lector pueda localizar.'},
+   {verb:'Redactar',dimension:'la consigna',question:'¿Qué pide y sobre qué material?',claim:'Subraya qué se le pide a la dirección en la carta y qué se les pide a los estudiantes en el aviso. Explica cómo cambia lo que se espera de cada destinatario.',evidence:'una expresión de cada frase que sostenga la diferencia.'},
    {verb:'Probar',dimension:'con un lector',question:'¿Qué respuesta produce?',claim:'Si la respuesta sorprende, pregunta cómo leyó la consigna. Ejemplo: «¿Qué entendiste que debías hacer primero?». Ajusta las instrucciones a partir de esa explicación.',evidence:'una respuesta examinable.'},
    {verb:'Ajustar',dimension:'la instrucción',question:'¿Qué hay que cambiar?',claim:'¿La dificultad procede del concepto, del material o de la instrucción?',evidence:'la respuesta observada y el criterio de revisión.'}
   ],
@@ -504,7 +504,7 @@ export const visualSchemas={
   task:{label:'En el expediente',text:'Usa un fragmento de tu informe para guiar la lectura y ajusta la consigna después de probarla en el trío.'},
   limit:'la consigna admite interpretaciones discrepantes que se justifiquen con evidencia.',
   source:'Consigna y criterios propios del curso. Probar la consigna y admitir lecturas discrepantes justificadas: apartado «Transformar un análisis en enseñanza» de la lectura integrada de «Teoría» y de la guía de la unidad 6. No se atribuyen estos criterios a un autor externo.',
-  anchors:['En estas dos cláusulas, subraya quién realiza la acción','Material accesible y criterios claros hacen examinable ese razonamiento','La revisión ajusta la enseñanza a esa dificultad concreta','¿La dificultad observada procede del concepto, del material o de la instrucción?','producir una respuesta examinable','Admite interpretaciones discrepantes que se justifiquen con evidencia']
+  anchors:['Propongo que la carrera publique ejemplos de uso de IA','¿qué ejemplos te ayudarían?','Una respuesta lograda usa una expresión de cada frase','¿La dificultad observada procede del concepto, del material o de la instrucción?','producir una respuesta examinable','Admite interpretaciones discrepantes que se justifiquen con evidencia']
  },
  // Theory models: each draws a model that its source presents and that the class already names.
  'turnos-mecanismos':{

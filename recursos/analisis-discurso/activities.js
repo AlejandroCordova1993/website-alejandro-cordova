@@ -6,7 +6,7 @@ export const questionExamples={
  3:'¿Por qué Sarayaku celebra la sentencia y, en el mismo comunicado, afirma que estará atento a su cumplimiento?',
  4:'¿Cómo vincula Menchú el premio con una lucha colectiva y para qué retoma Márquez la voz de Davis al hablar de las diferencias entre mujeres?',
  5:'¿Qué le pides a la dirección en tu carta y qué les pides a los estudiantes en tu aviso?',
- 6:'¿Cómo se conectan los considerandos del reglamento con lo que se dispone en sus artículos?'
+ 6:'¿Cómo pasa mi aviso de contar lo que propuse a pedir sugerencias a primer semestre?'
 };
 export const unitActivities={
  1:{
@@ -135,29 +135,33 @@ export const unitActivities={
    "reviewFocus": "Explica qué muestra la comparación después de la lectura de tu compañero."
  },
  6:{
-   "material": "Retoma un texto de tus fichas, del expediente o el reglamento. Para estudiar una respuesta, usa un intercambio ya disponible e identifica su procedencia.",
-   "product": "Una explicación revisada sobre cómo se organiza y se sostiene un texto, con evidencias útiles para el expediente.",
+   "material": "Elige un texto que ya analizaste y que sirva para la pregunta de tu expediente. Puedes retomar tu aviso, Sarayaku, Márquez, el reglamento u otro texto de tus fichas.",
+   "product": "Una explicación revisada de lo que hacen dos tramos y un hallazgo que puedes usar en el expediente.",
    "steps": [
      [
-       "Explica la organización · semanas 13 y 14, clase 1",
-       "Escribe tu pregunta y retoma los localizadores que la ayudan a responder. Guarda los tramos que falten. En «Mi argumento», explica qué hace cada tramo y cómo se conecta con el siguiente. Reconstruye un razonamiento y señala una objeción."
+       "Elige dos tramos · semana 13, clase 1",
+       "Localiza dos partes del mismo texto. En «Mi argumento», anota dónde están, por ejemplo «Ficha 5, aviso, párrafo 1». Señala una expresión de cada parte y explica qué hace. Usa «Añadir evidencia» solo si el pasaje todavía no está registrado."
      ],
      [
-       "Examina una respuesta · semana 14, clase 2",
-       "Retoma una intervención y su respuesta. Puedes usar el intercambio sobre el aviso si ya anotaste la pregunta y lo que respondió tu compañero. Con Bolívar, explica en «Mi argumento» cómo la respuesta retoma, modifica o valora lo anterior. Indica dónde está registrado."
+       "Explica el paso entre los tramos · semana 13, clase 2",
+       "Sigue en «Mi argumento». Explica cómo pasas de lo que hace el primer tramo a lo que hace el segundo y para qué sirve ese cambio en el texto. Usa los mismos localizadores."
      ],
      [
-       "Revisa e integra · semana 14, clase 2",
-       "Completa «Interpretación revisada» y «Qué cambió y por qué». En el expediente, cita el fragmento y usa el hallazgo para responder tu pregunta. Puedes usar ese material en la microconsigna del cierre."
+       "Justifica tu lectura · semana 14, clase 1",
+       "Amplía «Mi argumento». Di qué sostienes, qué palabras te llevan a pensarlo y por qué apoyan tu lectura. Si el texto sostiene una propuesta, puedes explicar su razonamiento. Añade una objeción que te obligue a precisar tu explicación."
+     ],
+     [
+       "Examina una respuesta y revisa · semana 14, clase 2",
+       "Retoma la pregunta y la respuesta sobre el aviso si las anotaste. También puedes usar los tres turnos de la viñeta de inscripción en «Teoría» como diálogo representado. Con Bolívar, explica cómo la respuesta cambia lo que se discute. En «Interpretación revisada», escribe qué sostienes ahora sobre el texto elegido. En «Qué cambió y por qué», explica qué te ayudó a precisarlo."
      ]
    ],
-   "questionHelp": `Pregunta cómo se conectan dos tramos, cómo se sostiene una idea o qué cambia con una respuesta. Ejemplo: «${questionExamples[6]}».`,
-   "argumentHelp": "Usa un párrafo, lista o tabla para explicar la organización y el razonamiento del texto.",
+   "questionHelp": `Usa tu pregunta anterior si te permite explicar cómo se conectan los tramos. Ejemplo con el aviso: «${questionExamples[6]}».`,
+   "argumentHelp": "Anota el número de la ficha anterior y la ubicación de tus dos tramos. Amplía aquí la misma explicación en las clases de las semanas 13 y 14.",
    "contextHelp": "Identifica la situación. Si analizas un diálogo, indica si es registrado o representado.",
    "argumentSteps": [
-     "Cita una marca por cada tramo que analices y explica qué función cumple en el conjunto.",
-     "Señala la premisa, la conclusión y la regla que las conecta. Explica cómo una objeción o una respuesta cambia lo que puedes sostener."
+     "Señala qué hace cada tramo y explica cómo el primero prepara, aclara o da sentido al segundo.",
+     "Relaciona las palabras elegidas con tu interpretación. Considera qué objeción, respuesta o dato te ayuda a precisar lo que puedes sostener."
    ],
-   "reviewFocus": "Explica qué sostienes después de examinar la objeción y la respuesta."
+   "reviewFocus": "Explica qué sostienes ahora sobre el pasaje después de considerar la objeción. Si el diálogo ilustrado trata otro tema, úsalo para practicar la lectura de respuestas."
  }
 };

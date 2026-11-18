@@ -1065,12 +1065,12 @@ export const sessions=[
       [
         10,
         "Abrir el problema",
-        "Lee el razonamiento elegido. Señala de qué idea parte y a qué conclusión llega."
+        "Retoma el pasaje trabajado y tu explicación. Decide si examinarás el razonamiento del texto o la forma en que sostienes tu propia lectura."
       ],
       [
         15,
         "Herramientas y lectura",
-        "Con «Teoría», explica qué regla conecta premisa y conclusión. Propón una objeción que afecte ese paso."
+        "Con «Teoría», identifica la afirmación, las palabras que la respaldan y por qué sirven como razones. Propón una objeción a ese vínculo."
       ],
       [
         25,
@@ -1083,7 +1083,7 @@ export const sessions=[
         "Comprueba el guardado de ambos avances. Conserva la objeción y sus localizadores para revisar la conclusión."
       ]
     ],
-    "preparation": "Relee «Una afirmación necesita un puente» en «Teoría». Elige un razonamiento de tu corpus e identifica premisa, conclusión, regla de conexión y una posible objeción."
+    "preparation": "Relee «Una afirmación necesita un puente» en «Teoría». Trae el pasaje y tu explicación de la semana 13. En clase examinarás cómo se sostiene esa lectura."
   },
   {
     "id": "s14-e2",
@@ -1114,7 +1114,7 @@ export const sessions=[
       [
         30,
         "Producción",
-        "Revisa la ficha 6 en «Interpretación revisada» y «Qué cambió y por qué». Usa el hallazgo y la objeción pertinentes para ajustar «Desarrollo del análisis» del expediente."
+        "Revisa el pasaje en «Interpretación revisada» y «Qué cambió y por qué». Si el hallazgo responde a la pregunta del expediente, ajusta la afirmación correspondiente en «Desarrollo del análisis». Remite a la cita si ya figura allí."
       ],
       [
         25,
@@ -1127,7 +1127,7 @@ export const sessions=[
         "Comprueba que la revisión quede en la ficha 6 y que el expediente incluya el hallazgo que responde a su pregunta."
       ]
     ],
-    "preparation": "Lee «El diálogo hace algo con la evaluación» en «Teoría» y Bolívar: páginas impresas 96–102 y 105–107 (páginas 4–10 y 13–15 del archivo). Trae tu objeción y un intercambio ya registrado, como el que tuviste al probar el aviso. Si usas una representación didáctica, identifícala como tal."
+    "preparation": "Lee «El diálogo hace algo con la evaluación» en «Teoría» y Bolívar: páginas impresas 96–102 y 105–107 (páginas 4–10 y 13–15 del archivo). Trae tu objeción y un intercambio ya registrado, como la pregunta y la respuesta sobre el aviso si conservaste sus palabras. Puedes usar los tres turnos de la viñeta de inscripción en «Teoría» como diálogo representado."
   },
   {
     "id": "s15-e1",
@@ -1273,7 +1273,7 @@ export const sessions=[
       [
         20,
         "Incorporar objeciones y autoevaluar",
-        "Ajusta «Conclusión revisada y límites» y «Registro de cambios» según la defensa. Completa «Autoevaluación» con ejemplos del informe para las dimensiones de la rúbrica."
+        "Ajusta «Conclusión revisada y límites» y «Registro de cambios» según la defensa. Completa «Autoevaluación» con ejemplos del informe para las dimensiones de la rúbrica. Puedes usar una revisión guardada de las fichas 4 a 6 para mostrar qué cambiaste y qué evidencia te llevó a hacerlo."
       ],
       [
         15,

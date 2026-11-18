@@ -435,10 +435,10 @@ export const classContent={
   {
     "block": 1,
     "title": "El argumento necesita una regla de paso",
-    "explanation": "Un argumento sostiene una afirmación, interpretación o decisión mediante razones y criterios compartidos o discutibles. La ley de paso conecta premisas y conclusión; una garantía puede apoyarla. Reconstruir esa relación permite examinar qué hace defendible la posición y qué objeción podría modificarla. En una decisión interesa además a quién afecta y qué valor se invoca.",
+    "explanation": "Para justificar una lectura, empieza por tres preguntas. ¿Qué sostienes? ¿Qué palabras te llevan a pensarlo? ¿Por qué esas palabras respaldan tu lectura? Considera después una objeción que te obligue a precisar lo que afirmas.",
     "points": [
-      "Un topos es una regla de conexión; no equivale a un tema o una palabra frecuente.",
-      "Términos: en el manual (Plantin y Toulmin), la ley de paso es la regla y la garantía, su apoyo. En Wodak, el topos funciona como esa regla de conexión.",
+      "Primero localiza la razón (premisa) y lo que se sostiene (conclusión). Pregúntate qué criterio permite pasar de una a la otra.",
+      "Para consultar el esquema completo, en el manual (Plantin y Toulmin), la ley de paso es la regla y la garantía, su apoyo. Una reserva indica cuándo limitar su aplicación. En Wodak, el topos funciona como regla de conexión.",
       "En el ejemplo de la carta, la tesis es la conclusión y la razón aporta la premisa. El cuadro hace explícito el criterio que las conecta. Una objeción puede cuestionar esa conexión o el dato en que se apoya.",
       "También se argumenta al analizar un texto: concluir que Márquez presenta una unidad basada en reconocer diferencias exige relacionar su comparación de experiencias con la propuesta final de alianza. Esas marcas sostienen una interpretación; el análisis debe explicar el vínculo y considerar una lectura alternativa."
     ],
@@ -477,7 +477,7 @@ export const classContent={
  's15-e2':[
   topic(0,'Convertir el análisis en una enseñanza','Enseñar análisis del discurso implica ayudar a relacionar una elección expresiva con lo que hace en una situación. Una consigna breve puede llevar desde observar una marca hasta explicar una responsabilidad, una posición o una acción. Material accesible y criterios claros hacen examinable ese razonamiento.',
    ['El lector debe poder localizar el segmento y producir una respuesta examinable.','Admite interpretaciones discrepantes que se justifiquen con evidencia.'],
-   '«En estas dos cláusulas, subraya quién realiza la acción. Explica una diferencia y señala qué dato necesitarías para interpretarla».','La diferencia cobra sentido al explicar cómo cada cláusula representa la responsabilidad ante sus destinatarios. La respuesta permite ver si la consigna condujo hasta esa relación o se quedó en nombrar el agente. La revisión ajusta la enseñanza a esa dificultad concreta.',
+   'Carta: «Propongo que la carrera publique ejemplos de uso de IA». Aviso: «Si estás en primer semestre, ¿qué ejemplos te ayudarían?».','Pide al lector que señale qué se le pide a la dirección en la carta y qué se les pide a los estudiantes en el aviso. Una respuesta lograda usa una expresión de cada frase para explicar esa diferencia. Pregunta al lector qué parte de la consigna le ayudó a reconocerla.',
    '¿La dificultad observada procede del concepto, del material o de la instrucción?','guia-6',4)
  ],
  's16-e1':[

@@ -122,7 +122,7 @@ export const projectInputs={
   ],
   "argument": [
     "Desarrollo del análisis",
-    "Usa las evidencias guardadas para explicar qué hace el discurso en esa situación. Agrupa los segmentos que apoyan la misma idea. Incluye una objeción y explica hasta dónde llega tu respuesta.",
+    "Usa las evidencias guardadas para explicar qué hace el discurso en esa situación. Agrupa los segmentos que apoyan la misma idea. Incluye una objeción y explica hasta dónde llega tu respuesta. Si retomas un hallazgo de la ficha 6, ajusta la afirmación correspondiente y remite a la cita si ya está aquí.",
     12
   ],
   "credits": [
@@ -142,7 +142,7 @@ export const projectInputs={
   ],
   "mediation": [
     "Actividad de enseñanza",
-    "Prepara una consigna de 5 minutos con un fragmento que ya explicaste. Si tu informe analiza el aviso, puedes mostrarlo junto al original y preguntar: «¿Qué tendría que hacer un estudiante después de leer cada versión y qué palabras se lo indican?». Después de probar la consigna en el trío, anota quién hizo cada papel, qué aportó y qué ajustaste.",
+    "Prepara una consigna de 5 minutos con un fragmento que ya explicaste. Si tu informe analiza el aviso, puedes mostrarlo junto al original y preguntar: «¿Qué se le pide a la dirección en la carta y qué se les pide a los estudiantes en el aviso? Señala una expresión de cada pieza». Después de probar la consigna en el trío, anota quién hizo cada papel, qué aportó y qué ajustaste.",
     6
   ],
   "defense": [
@@ -152,7 +152,7 @@ export const projectInputs={
   ],
   "selfAssessment": [
     "Autoevaluación",
-    "Usa la rúbrica para señalar un logro y una mejora pendiente con ejemplos del informe. Puedes incluir la autoevaluación en el PDF.",
+    "Usa la rúbrica para señalar un logro y una mejora pendiente con ejemplos del informe. Puedes retomar una revisión de las fichas 4 a 6 para explicar qué cambiaste y por qué. Puedes incluir la autoevaluación en el PDF.",
     5
   ]
 };

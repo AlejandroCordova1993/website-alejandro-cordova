@@ -3,7 +3,7 @@ import {resourceById} from './resources.js';
 import {getSession} from './encounters.js';
 import {newEvidenceSource,ownNotice} from './workflow.js';
 import {classEvidenceOptions} from './classroom.js';
-import {parseRoute} from './navigation.js';
+import {parseRoute,projectSections} from './navigation.js';
 import {workStatus,STORAGE_KEY,validateState,hasWork,evidenceDraftKey} from './state.js';
 import {createNotebook} from './notebook.js';
 import {esc,deliveryHtml,exportMarkdown,insertEvidence,sectionTitle,reportWordCount} from './export.js';
@@ -70,8 +70,14 @@ function focusWorkSection(){
   focusField(digital?'proyecto-argument':'papel-hito-3',{start:true});
   return;
  }
+ if(route.page==='proyecto'&&Object.hasOwn(projectSections,section)){
+  const digital=notebook.editable()&&['proyecto','ficha-6'].some(key=>workStatus(notebook.state,key)!=='Sin empezar');
+  focusField(digital?'proyecto-'+projectSections[section]:'papel-'+section,{start:true});
+  return;
+ }
  if(route.page!=='ficha')return;
  const unit=route.unit;
+ if(unit===6){focusField('paso-6-'+section,{start:true});return;}
  if(unit===2&&section==='version-final'){
   focusField(notebook.editable()&&notebook.state.notes['ficha-2']?.letterFinal?.trim()?'ficha-2-letterFinal':'paso-carta-final',{start:true});
   return;
