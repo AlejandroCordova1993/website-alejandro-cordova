@@ -2,11 +2,11 @@ import {units,unitById,unitForWeek} from './course.js';
 import {resourceById} from './resources.js';
 import {getSession} from './encounters.js';
 import {newEvidenceSource,ownNotice} from './workflow.js';
-import {classEvidenceOptions} from './classroom.js';
+import {classEvidenceOptions,classHref,classForWork,projectInputs} from './classroom.js';
 import {parseRoute,projectSections} from './navigation.js';
 import {workStatus,STORAGE_KEY,validateState,hasWork,evidenceDraftKey} from './state.js';
 import {createNotebook} from './notebook.js';
-import {esc,deliveryHtml,exportMarkdown,insertEvidence,sectionTitle,reportWordCount} from './export.js';
+import {esc,deliveryHtml,exportMarkdown,insertEvidence,sectionTitle,reportWordCount,missingReportFields} from './export.js';
 import {button,renderPage,sidebar,libraryResults,conceptHtml,evidenceForm} from './render.js';
 import {setAuthorMode,isAuthorView} from './visual-schemas.js';
 
@@ -42,6 +42,7 @@ function refreshStatus(){if(!notebook)return;const mode=notebook.mode,phase=note
  document.querySelectorAll('[data-report-word-count]').forEach(el=>el.textContent=`${reportWordCount(notebook.state.notes.proyecto||{})} palabras en el cuerpo del informe · orientación: 1800–2200`);
 }
 function render(keep=false){const sideOpen=[...$('#sidebar').querySelectorAll('details[open]')].map(el=>el.dataset.sideUnit),sideScroll=$('#sidebar').scrollTop;const openPanels=keep?[...main.querySelectorAll('details[open]>summary')].map(el=>el.textContent):[];const y=scrollY,active=document.activeElement,id=active?.id,selection=typeof active?.selectionStart==='number'?[active.selectionStart,active.selectionEnd]:null;if(!keep)draftForm=false;
+ if(!workEncounter&&notebook.state.lastLocation===routeHash)workEncounter=classForWork(parseRoute(notebook.state.lastClass))||null;
  if(route.page==='semana')workEncounter=route.week>1?getSession(route.week,route.encounter):null;else if(['unidad','ficha'].includes(route.page)&&workEncounter?.unit!==route.unit&&!(route.returnPhase&&workEncounter?.unit===5))workEncounter=null;
  main.innerHTML=renderPage(route,notebook.state,notebook.editable(),workEncounter);$('#sidebar').innerHTML=sidebar(route,notebook.state,workEncounter);if(keep)for(const panel of $('#sidebar').querySelectorAll('details'))if(sideOpen.includes(panel.dataset.sideUnit))panel.open=true;$('#sidebar').scrollTop=sideScroll;if(!keep){document.body.dataset.courseMenu='closed';$('#course-menu-toggle')?.setAttribute('aria-expanded','false');}document.querySelectorAll('[data-nav]').forEach(a=>{const page=(['unidad','semana'].includes(route.page)||(route.page==='ficha'&&route.unit>1))?'inicio':route.page==='glosario'?'biblioteca':['ficha','proyecto'].includes(route.page)?'cuaderno':route.page;a.toggleAttribute('aria-current',a.dataset.nav===page);if(a.hasAttribute('aria-current'))a.setAttribute('aria-current','page');});
  document.title=`${['unidad','ficha'].includes(route.page)?unitById[route.unit].title:route.page==='semana'?getSession(route.week,route.encounter).title:route.page==='galeria-visual'&&isAuthorView(location)?'Galería de elementos visuales':'Análisis del discurso'} · Alejandro Córdova`;
@@ -71,7 +72,8 @@ function focusWorkSection(){
   return;
  }
  if(route.page==='proyecto'&&Object.hasOwn(projectSections,section)){
-  const digital=notebook.editable()&&['proyecto','ficha-6'].some(key=>workStatus(notebook.state,key)!=='Sin empezar');
+  const companion=['pregunta','metodo'].includes(section)?'ficha-3':'ficha-6';
+  const digital=notebook.editable()&&['proyecto',companion].some(key=>workStatus(notebook.state,key)!=='Sin empezar');
   focusField(digital?'proyecto-'+projectSections[section]:'papel-'+section,{start:true});
   if(digital&&section==='defensa')document.getElementById('proyecto-defense-help')?.scrollIntoView({block:'start',behavior:'auto'});
   return;
@@ -81,6 +83,12 @@ function focusWorkSection(){
  if(unit===6){focusField('paso-6-'+section,{start:true});return;}
  if(unit===2&&section==='version-final'){
   focusField(notebook.editable()&&notebook.state.notes['ficha-2']?.letterFinal?.trim()?'ficha-2-letterFinal':'paso-carta-final',{start:true});
+  return;
+ }
+ if(unit===2){
+  const field={borrador:'letterDraft',lectura:'letterPeer',revision:'letterFinal'}[section];
+  const paper=section==='revision'?'paso-carta-final':'paso-2-'+section;
+  focusField(notebook.editable()&&Object.values(notebook.state.notes['ficha-2']||{}).some(value=>value.trim())?'ficha-2-'+field:paper,{start:true});
   return;
  }
  if(section==='lecturas'){focusField('lecturas-ficha-4',{start:true});return;}
@@ -111,15 +119,27 @@ function closeDialogs(){for(const d of document.querySelectorAll('dialog[open]')
 function download(content,name,type){const url=URL.createObjectURL(new Blob([content],{type})),a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 function exportJSON(){if(['locked','consult','invalid'].includes(notebook.mode)){toast('Continúa tu trabajo antes de exportarlo; las notas guardadas siguen ocultas.');return;}download(JSON.stringify(notebook.exportState,null,2),'analisis-discurso-respaldo.json','application/json');toast('JSON preparado. Conserva notas y preparaciones para continuar editando.');}
 function deliveryChoices(){return [...new Set([...Object.keys(notebook.state.notes).filter(key=>key!=='proyecto'&&Object.values(notebook.state.notes[key]).some(v=>v.trim())),...notebook.state.evidence.map(e=>`ficha-${e.unit}`)])];}
-function showDelivery(){const state=notebook.state,d=state.delivery;dialog('delivery-dialog',`<div class="dialog-heading"><h2 id="delivery-title">Preparar PDF de entrega</h2>${button('close-dialog','Cerrar','autofocus')}</div><p>Revisa que aparezcan tu nombre, pregunta, corpus y método, análisis, conclusión y cambios, actividad de enseñanza y referencias. Cada ficha que elijas como anexo añade todas sus notas y evidencias. Si eliges el diagnóstico, también se añaden sus notas personales. El guion de defensa queda en el cuaderno. La autoevaluación se añade si la seleccionas.</p><fieldset><legend>Anexos elegidos</legend>${deliveryChoices().map(key=>`<label class="check"><input type="checkbox" data-annex="${key}" ${d.annexes.includes(key)?'checked':''} ${notebook.editable()?'':'disabled'}> ${esc(sectionTitle(key))}</label>`).join('')||'<p class="caption">Todavía no hay notas o evidencias para anexar.</p>'}<label class="check"><input type="checkbox" data-delivery="includeMap" ${d.includeMap?'checked':''} ${notebook.editable()?'':'disabled'}> Relaciones y sus fuentes</label><label class="check"><input type="checkbox" data-delivery="includeAssessment" ${d.includeAssessment?'checked':''} ${notebook.editable()?'':'disabled'}> Autoevaluación</label></fieldset><div class="actions">${button('print','Imprimir / guardar como PDF','',true)}${button('json','Guardar respaldo JSON')}</div><p class="caption">Pulsa «Imprimir / guardar como PDF» y elige Guardar como PDF en el diálogo del navegador. Entrega ese archivo por el canal indicado en clase; este botón no lo envía. El JSON conserva la edición y todas las preparaciones, no solo los anexos seleccionados.</p><div id="delivery-preview">${deliveryHtml(state)}</div>`);}
+function showDelivery(){
+ const state=notebook.state,d=state.delivery;
+ const pending=missingReportFields(state.notes.proyecto);
+ const labels=pending.map(key=>'«'+projectInputs[key][0]+'»');
+ const reminder=pending.length
+  ? `<p><strong>Antes de entregar</strong></p><p>Falta completar ${esc(new Intl.ListFormat('es').format(labels))}. Puedes imprimir el borrador y seguir escribiendo en el expediente.</p>`
+  : '';
+ dialog('delivery-dialog',`<div class="dialog-heading"><h2 id="delivery-title">Preparar PDF de entrega</h2>${button('close-dialog','Cerrar','autofocus')}</div>
+ ${reminder}<p>Revisa tu informe en la vista previa. Cada ficha que elijas como anexo añade sus notas y evidencias. Si eliges el diagnóstico, se incluyen también sus notas personales. El guion de defensa queda en el cuaderno. Puedes incluir la autoevaluación.</p>
+ <fieldset><legend>Anexos elegidos</legend>${deliveryChoices().map(key=>`<label class="check"><input type="checkbox" data-annex="${key}" ${d.annexes.includes(key)?'checked':''} ${notebook.editable()?'':'disabled'}> ${esc(sectionTitle(key))}</label>`).join('')||'<p class="caption">Todavía no hay notas o evidencias para anexar.</p>'}<label class="check"><input type="checkbox" data-delivery="includeMap" ${d.includeMap?'checked':''} ${notebook.editable()?'':'disabled'}> Relaciones y sus fuentes</label><label class="check"><input type="checkbox" data-delivery="includeAssessment" ${d.includeAssessment?'checked':''} ${notebook.editable()?'':'disabled'}> Autoevaluación</label></fieldset>
+ <div class="actions">${button('print','Imprimir / guardar como PDF','',true)}${button('json','Guardar respaldo JSON')}</div>
+ <p class="caption">Elige «Guardar como PDF» en el diálogo de impresión y entrega el archivo por el canal indicado en clase. El respaldo JSON conserva tu cuaderno para seguir editándolo.</p><div id="delivery-preview">${deliveryHtml(state)}</div>`);
+}
 function printDelivery(){const old=$('#delivery-print');old?.remove();const print=document.createElement('div');print.id='delivery-print';print.innerHTML=deliveryHtml(notebook.state);document.body.append(print);document.body.dataset.print='delivery';window.print();}
-function saveLocation(){notebook.rememberLocation(location.hash||'#inicio');}
+function saveLocation(field){notebook.rememberLocation(location.hash||'#inicio',workEncounter?classHref(workEncounter):null,field);}
 function evidenceData(form){const values=Object.fromEntries(new FormData(form));return {...values,id:values.id||crypto.randomUUID(),unit:+form.dataset.unit};}
 function evidenceOptions(){return route.page==='semana'?classEvidenceOptions(getSession(route.week,route.encounter)):{};}
 function resetEvidence(){const form=$('#evidence-form');if(form){notebook.removeDraft('evidence',+form.dataset.unit);form.outerHTML=evidenceForm(+form.dataset.unit,newEvidenceSource(+form.dataset.unit,notebook.state.evidence,route.section),notebook.editable(),evidenceOptions());}editingEvidence=null;draftForm=false;}
 function refreshLibrary(){$('#library-results').innerHTML=libraryResults(Object.fromEntries(new FormData($('#library-filters'))));}
 function capturePreparation(form){if(!form)return;draftForm=true;notebook.draft(form.getAttribute('id')==='evidence-form'?'evidence':'relation',+form.dataset.unit||1,Object.fromEntries(new FormData(form)));saveLocation();}
-document.addEventListener('input',event=>{const el=event.target;if(el.id==='library-query'){refreshLibrary();return;}if(el.dataset.note){if(notebook.note(el.dataset.note,el.dataset.field,el.value)){saveLocation();refreshStatus();}}else capturePreparation(el.closest('#evidence-form,#relation-form'));});
+document.addEventListener('input',event=>{const el=event.target;if(el.id==='library-query'){refreshLibrary();return;}if(el.dataset.note){if(notebook.note(el.dataset.note,el.dataset.field,el.value)){saveLocation(el.dataset.field);refreshStatus();}}else capturePreparation(el.closest('#evidence-form,#relation-form'));});
 document.addEventListener('change',event=>{const el=event.target;
  // The search field has already updated on input. Replacing results on blur can interrupt a click on a filter button.
  if(el.matches('#library-filters select')){refreshLibrary();return;}
@@ -130,7 +150,6 @@ document.addEventListener('change',event=>{const el=event.target;
  const form=el.closest('#evidence-form,#relation-form');
  if(form?.dataset.unit==='5'&&(el.id==='e-resource'||el.id==='e-mode')){
   const data=Object.fromEntries(new FormData(form));
-  if(el.id==='e-resource'&&!data.id&&!data.observation.trim())data.mode=data.resource===ownNotice.id?'cita':'descripcion';
   const openSettings=form.querySelector('.evidence-settings')?.open;
   form.outerHTML=evidenceForm(5,data,notebook.editable());
   $('#evidence-form .evidence-settings').open=!!openSettings;
@@ -181,7 +200,7 @@ document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!document.q
 for(const name of ['keyup','click','select'])document.addEventListener(name,event=>{const el=event.target;if(el.matches('textarea[data-field="argument"]'))caret={id:el.id,start:el.selectionStart,end:el.selectionEnd};});
 $('#import-file').addEventListener('change',async event=>{const file=event.target.files[0];if(!file)return;try{if(file.size>5*1024*1024)throw Error('El archivo supera 5 MB. Elige un respaldo de este curso.');importCandidate=validateState(JSON.parse(await file.text()));const sections=Object.values(importCandidate.notes).filter(n=>Object.values(n).some(v=>v.trim())).length;dialog('import-dialog',`<div class="dialog-heading"><h2 id="import-title">Revisar el respaldo</h2>${button('close-dialog','Cancelar','autofocus')}</div><p>Respaldo de <strong>Análisis del discurso</strong>: ${sections} secciones con texto, ${importCandidate.evidence.length} evidencias y ${importCandidate.relations.length} relaciones; ${Object.keys(importCandidate.drafts).length} preparaciones sin registrar.</p><p>La recuperación <strong>reemplazará</strong> el trabajo guardado en este navegador. Guarda primero su JSON si necesitas conservarlo.</p><div class="actions">${button('json','Guardar mi trabajo actual')}${button('confirm-import','Reemplazar con este respaldo','',true)}</div><p id="import-error" role="alert" class="field-error"></p>`);}catch(error){dialog('import-dialog',`<div class="dialog-heading"><h2 id="import-title">El respaldo no se puede recuperar</h2>${button('close-dialog','Cerrar','autofocus')}</div><p role="alert">${esc(error instanceof SyntaxError?'El archivo no tiene un JSON legible. Elige el respaldo descargado desde esta página.':error.message)}</p><p>Tu trabajo actual no se ha modificado.</p>`);}});
 // Navigating does not write the notebook: the place to continue is saved only when the student writes, so other open tabs (projection, another page) are not refreshed or stopped by a page change.
-window.addEventListener('hashchange',()=>{const nextHash=location.hash||'#inicio';routeHash=nextHash;route=parseRoute(nextHash);render();if(editingEvidence&&$('#evidence-form')&&+$('#evidence-form').dataset.unit===editingEvidence.unit){$('#evidence-form').outerHTML=evidenceForm(editingEvidence.unit,editingEvidence,notebook.editable());focusField('e-source');editingEvidence=null;}});
+window.addEventListener('hashchange',()=>{const nextHash=location.hash||'#inicio';if(['inicio','cuaderno'].includes(route.page))workEncounter=null;routeHash=nextHash;route=parseRoute(nextHash);render();if(editingEvidence&&$('#evidence-form')&&+$('#evidence-form').dataset.unit===editingEvidence.unit){$('#evidence-form').outerHTML=evidenceForm(editingEvidence.unit,editingEvidence,notebook.editable());focusField('e-source');editingEvidence=null;}});
 window.addEventListener('storage',event=>{if(event.key===STORAGE_KEY||event.key===null)notebook.external(draftForm);});
 window.addEventListener('beforeunload',event=>{if(notebook.dirty||notebook.phase==='saving'||(['memory','conflict'].includes(notebook.mode)&&hasWork(notebook.exportState))){event.preventDefault();event.returnValue='';}});
 document.addEventListener('visibilitychange',()=>{if(document.hidden)notebook.flush();else{notebook.external(draftForm);checkIdle();}});

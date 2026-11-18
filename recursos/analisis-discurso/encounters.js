@@ -651,7 +651,7 @@ export const sessions=[
       [
         10,
         "Entregar y conservar",
-        "Entrega por el canal indicado. Usa la ficha 3 como preparación y conserva tu respuesta al caso nuevo por separado."
+        "Entrega tu respuesta al caso nuevo por el canal indicado. Al cierre de la semana, elige una de las fichas 1 a 3 para la primera revisión comentada. Muestra al docente la versión inicial, la revisada y el motivo que ya anotaste. Si eliges la carta, usa el borrador, la versión final y tus decisiones de revisión."
       ]
     ],
     "preparation": "Revisa la ficha 3 y el método del hito 2. El docente entregará un caso nuevo y precisará los materiales permitidos y el canal de entrega de la Sumativa 1."
@@ -1273,7 +1273,7 @@ export const sessions=[
       [
         20,
         "Incorporar objeciones y autoevaluar",
-        "Ajusta «Conclusión revisada y límites» y «Registro de cambios» según la defensa. Completa «Autoevaluación» con ejemplos del informe para las dimensiones de la rúbrica. Puedes usar una revisión guardada de las fichas 4 a 6 para mostrar qué cambiaste y qué evidencia te llevó a hacerlo."
+        "Ajusta «Conclusión revisada y límites» y «Registro de cambios» según la defensa. Completa «Autoevaluación» con ejemplos del informe para las dimensiones de la rúbrica. Para la segunda revisión comentada, muestra al docente una revisión guardada de las fichas 4 a 6. Puedes usar el mismo ejemplo en tu autoevaluación."
       ],
       [
         15,

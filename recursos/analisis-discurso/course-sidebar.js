@@ -5,7 +5,7 @@ import {esc} from './export.js';
 import {uiIcon} from './ui-icons.js';
 
 export function renderCourseSidebar(route,state,origin=null){
- const last=parseRoute(state.lastLocation),saved=last.page==='semana'?getSession(last.week,last.encounter):null;
+ const last=parseRoute(state.lastClass||state.lastLocation),saved=last.page==='semana'?getSession(last.week,last.encounter):null;
  const current=route.page==='semana'?getSession(route.week,route.encounter):origin||saved;
  const currentUnit=route.unit||current?.unit||1;
  const selected=['biblioteca','glosario'].includes(route.page)?'biblioteca':(['cuaderno','proyecto'].includes(route.page)||(route.page==='ficha'&&route.unit===1))?'cuaderno':'inicio';

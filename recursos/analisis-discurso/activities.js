@@ -103,7 +103,7 @@ export const unitActivities={
    "argumentHelp": "Escribe aquí tu explicación y amplíala en la clase siguiente. Apoya cada idea con palabras del pasaje que guardaste.",
    "contextHelp": "Identifica quién habla, en qué situación y dónde se publicó.",
    "argumentSteps": [
-     "Pregunta y fragmento (4 puntos de 20): elige una expresión pertinente en cada pasaje y explica en tu argumento cómo ayuda a responder la pregunta.",
+     "Elige una expresión pertinente en cada pasaje y explica en tu argumento cómo ayuda a responder la pregunta.",
      "Al comentar la voz citada, indica a quién atribuyes la idea. Si solo una lectura tiene respaldo, basta con mostrar las palabras que la sostienen."
    ],
    "reviewFocus": "Escribe solo la frase que mantienes o corriges después de leerla con un compañero."
@@ -114,7 +114,7 @@ export const unitActivities={
    "steps": [
      [
        "Recupera la primera pieza · semana 11, clase 1",
-       "Señala el párrafo donde pides una decisión a la dirección y anota dónde está, por ejemplo «Ficha 2, versión final, párrafo 3». Si usas otro texto, identifica la primera pieza y su pasaje."
+       "Retoma el párrafo marcado en tu carta y anota dónde está, por ejemplo «Ficha 2, versión final, párrafo 3». Si usas otro texto, identifica tu primera pieza y su pasaje."
      ],
      [
        "Prepara o recupera la segunda pieza · semana 11, clase 2",

@@ -1,5 +1,23 @@
 import {unitForWeek} from './course.js';
 import {projectSections} from './navigation.js';
+export const fichaPhaseLinks={
+ 's4-e1':['borrador','Empezar mi carta'],
+ 's4-e2':['borrador','Continuar mi borrador'],
+ 's5-e1':['lectura','Comentar la carta del compañero'],
+ 's5-e2':['lectura','Completar mis comentarios'],
+ 's6-e1':['revision','Revisar mi carta'],
+ 's6-e2':['revision','Completar la versión final'],
+ 's7-e1':['pasajes','Localizar los dos pasajes'],
+ 's7-e2':['contexto','Explicar los pasajes con su contexto'],
+ 's8-e1':['revision','Revisar mi explicación'],
+ 's9-e1':['pasajes','Elegir las tres expresiones'],
+ 's9-e2':['argumento','Comenzar mi argumento'],
+ 's10-e1':['argumento','Continuar mi argumento'],
+ 's10-e2':['revision','Revisar mi frase'],
+ 's11-e1':['carta','Localizar la primera pieza'],
+ 's11-e2':['aviso','Trabajar con la segunda pieza'],
+ 's12-e2':['revision','Revisar la comparación']
+};
 
 export const ficha6Phases=['tramos','transicion','argumento','revision'];
 export const unit6Links={
@@ -36,9 +54,10 @@ export const projectFieldForWeek=week=>({7:'question',8:'method',12:'argument',1
 export function sessionWork(s){
  const path=weeklyPath[s.week-1],unit=unitForWeek(s.week),step=path.steps[s.encounter-1];
  const common={path,unit,step,key:`ficha-${unit.id}`,label:`Ficha ${unit.id} · ${unit.title}`,href:`#unidad/${unit.id}/${step}`};
- if(unit.id===2)return {...common,href:'#ficha/2',label:'Escribir y representar · Mi carta abierta',explanation:'Las seis clases desarrollan la misma carta: borrador, lectura del compañero y revisión. Conserva el trabajo en hojas o en los cuatro campos del cuaderno opcional.'};
+ const phaseHref=fichaPhaseLinks[s.id]?'#ficha/'+unit.id+'/'+fichaPhaseLinks[s.id][0]:null;
+ if(unit.id===2)return {...common,href:phaseHref,label:'Escribir y representar · Mi carta abierta',explanation:'Las seis clases desarrollan la misma carta: borrador, lectura del compañero y revisión. Conserva el trabajo en hojas o en los cuatro campos del cuaderno opcional.'};
  if(step==='diagnosis')return {...common,key:'apertura',label:'Diagnóstico inicial · Semana 1',href:'#cuaderno',explanation:'Este es el único diagnóstico inicial del recorrido. La lectura inicial y la revisión se guardan juntas en el cuaderno; todavía no son la ficha oral de la unidad 1.'};
  if(step==='assessment')return {...common,label:'Evaluación de transferencia · Semana 8',href:'#unidad/3/argumentar',explanation:'Este encuentro aplica el método a un caso acotado y corresponde a la Sumativa 1. Sigue las indicaciones del docente para el caso y la entrega. Conserva la ficha 3 como preparación; no sustituyas su texto por la respuesta de evaluación.'};
  if(step==='project')return {...common,key:'proyecto',label:`Expediente final · Hito ${path.milestone}`,href:s.week===12?'#proyecto/hito-3':unit6Links[s.id][0],field:s.week===12?'argument':projectSections[unit6Links[s.id][0].split('/').at(-1)],explanation:s.week===12?'Aquí desarrollas el hito 3 del mismo expediente. Selecciona de las fichas las evidencias que responden a su pregunta; redacta el análisis en «Desarrollo del análisis». No copies automáticamente toda la ficha 5.':'Aquí trabajas en el expediente que has construido durante el curso. Recupera las evidencias de tus fichas para revisar, enseñar y defender; no es un diagnóstico nuevo.'};
- return {...common,href:unit6Links[s.id]?.[0]||common.href,explanation:`Continúa la misma ficha ${unit.id}: las notas y evidencias de las semanas ${unit.id===1?2:unit.weeks[0]}–${unit.id===6?14:unit.weeks[1]} se reúnen en ella. El orden de clases está en «Unidad y encuentros». La guía, el registro, el argumento y la revisión son espacios de esa ficha, no otras actividades que debas empezar de nuevo.`};
+ return {...common,href:unit6Links[s.id]?.[0]||phaseHref||common.href,explanation:`Continúa la misma ficha ${unit.id}: las notas y evidencias de las semanas ${unit.id===1?2:unit.weeks[0]}–${unit.id===6?14:unit.weeks[1]} se reúnen en ella. El orden de clases está en «Unidad y encuentros». La guía, el registro, el argumento y la revisión son espacios de esa ficha, no otras actividades que debas empezar de nuevo.`};
 }

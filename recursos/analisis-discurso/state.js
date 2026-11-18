@@ -1,4 +1,5 @@
 import {questionExamples} from './activities.js';
+import {parseRoute} from './navigation.js';
 
 export function initialFicha4Question(state){
  if(state.notes['ficha-4']||state.drafts[evidenceDraftKey(4)]||state.evidence.some(e=>e.unit===4)||state.completed.includes('ficha-4'))return '';
@@ -14,7 +15,7 @@ export const noteFields=['expectations','agreements','reflection','question','co
 export const evidenceFields=['id','resource','source','locator','observation','category','context','interpretation','alternative'];
 export const relationFields=['id','from','to','evidence','mediator','medium'];
 export const evidenceDraftKey=unit=>`evidence-${unit}`;
-export const freshState=()=>({version:1,courseId:COURSE_ID,updatedAt:null,notes:{},evidence:[],relations:[],drafts:{},completed:[],modified:[],reviewedAt:{},lastLocation:'#inicio',delivery:{annexes:[],includeMap:false,includeAssessment:false}});
+export const freshState=()=>({version:1,courseId:COURSE_ID,updatedAt:null,notes:{},evidence:[],relations:[],drafts:{},completed:[],modified:[],reviewedAt:{},lastLocation:'#inicio',lastClass:null,delivery:{annexes:[],includeMap:false,includeAssessment:false}});
 const object=value=>!!value&&typeof value==='object'&&!Array.isArray(value);
 function text(value,max=60000){if(typeof value!=='string'||value.length>max)throw Error('Hay datos de texto no válidos o demasiado extensos.');return value;}
 function array(input,key,max){if(input[key]===undefined)return [];if(!Array.isArray(input[key])||input[key].length>max)throw Error(`El apartado ${key} no tiene un formato o tamaño válido.`);return input[key];}
@@ -43,7 +44,8 @@ export function validateState(input){
  if(input.reviewedAt!==undefined&&!object(input.reviewedAt))throw Error('El registro de revisión no es válido.');
  for(const key of sectionKeys)if(typeof input.reviewedAt?.[key]==='string'&&Number.isFinite(Date.parse(input.reviewedAt[key])))clean.reviewedAt[key]=input.reviewedAt[key];
  if(input.delivery!==undefined){const d=input.delivery;if(!object(d)||!Array.isArray(d.annexes)||d.annexes.some(key=>!sectionKeys.includes(key)||key==='proyecto')||typeof d.includeMap!=='boolean'||typeof d.includeAssessment!=='boolean')throw Error('La selección de anexos no es válida.');clean.delivery={annexes:[...new Set(d.annexes)],includeMap:d.includeMap,includeAssessment:d.includeAssessment};}
- if(typeof input.lastLocation==='string'&&/^#(?:inicio|biblioteca|proyecto|cuaderno|glosario|ficha\/[1-6]|unidad\/[1-6]\/(?:situar|observar|analizar|argumentar|revisar)|semana\/(?:[1-9]|1[0-6])\/[12])$/.test(input.lastLocation))clean.lastLocation=input.lastLocation;
+ if(typeof input.lastClass==='string'&&input.lastClass.startsWith('#')&&parseRoute(input.lastClass).page==='semana')clean.lastClass=input.lastClass;
+ if(typeof input.lastLocation==='string'&&input.lastLocation.startsWith('#')&&parseRoute(input.lastLocation).page!=='inicio')clean.lastLocation=input.lastLocation;
  if(input.drafts!==undefined){
   if(!object(input.drafts))throw Error('Las preparaciones no son válidas.');
   for(const [key,draft] of Object.entries(input.drafts)){
@@ -60,9 +62,9 @@ export function validateState(input){
  return clean;
 }
 export function loadState(storage){let raw=null;try{raw=storage.getItem(STORAGE_KEY);if(raw===null)return {state:freshState(),raw,error:null};try{return {state:validateState(JSON.parse(raw)),raw,error:null};}catch{return {state:freshState(),raw,error:'invalid'};}}catch{return {state:freshState(),raw,error:'unavailable'};}}
-// True when two stored notebooks hold the same work and differ at most in «Continuar» (lastLocation) or the save time.
+// True when two stored notebooks hold the same work and differ at most in «Continuar» (location and class) or the save time.
 const canonical=value=>JSON.stringify(value,(key,v)=>v&&typeof v==='object'&&!Array.isArray(v)?Object.fromEntries(Object.entries(v).sort(([x],[y])=>x<y?-1:x>y?1:0)):v);
-export function sameWork(rawA,rawB){const work=raw=>{try{const {lastLocation,updatedAt,...rest}=raw===null?freshState():validateState(JSON.parse(raw));return canonical(rest);}catch{return null;}};const a=work(rawA);return a!==null&&a===work(rawB);}
+export function sameWork(rawA,rawB){const work=raw=>{try{const {lastLocation,lastClass,updatedAt,...rest}=raw===null?freshState():validateState(JSON.parse(raw));return canonical(rest);}catch{return null;}};const a=work(rawA);return a!==null&&a===work(rawB);}
 export const hasWork=state=>Object.values(state.notes||{}).some(note=>Object.values(note).some(v=>v.trim()))||(state.evidence?.length||0)>0||(state.relations?.length||0)>0||Object.keys(state.drafts||{}).length>0;
 export function workStatus(state,key){const started=Object.values(state.notes[key]||{}).some(v=>v.trim())||state.evidence.some(e=>key===`ficha-${e.unit}`)||state.drafts?.[evidenceDraftKey(+key.split('-')[1])];if(key==='ficha-2'&&!letterFields.some(f=>state.notes[key]?.[f]?.trim()))return started?'Trabajo anterior guardado':'Sin empezar';if(state.completed.includes(key))return state.modified.includes(key)?'Modificado después de revisar':'Revisión registrada';return started?'En construcción':'Sin empezar';}
 export function setNote(state,key,field,value){if(!sectionKeys.includes(key)||!noteFields.includes(field))throw Error('Campo desconocido.');text(value);state.notes[key]??={};if(state.notes[key][field]===value)return;state.notes[key][field]=value;if(state.completed.includes(key)&&!state.modified.includes(key))state.modified.push(key);}

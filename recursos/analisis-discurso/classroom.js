@@ -1,17 +1,30 @@
-import {sessions} from './encounters.js';
-import {sessionWork} from './learning-path.js';
+import {sessions,getSession} from './encounters.js';
+import {sessionWork,unit6Links,fichaPhaseLinks} from './learning-path.js';
 import {parseRoute} from './navigation.js';
 import {hasWork} from './state.js';
 import {questionExamples} from './activities.js';
 
 export const classHref=s=>`#semana/${s.week}/${s.encounter}`;
+export function classForWork(route){
+ if(route.page==='semana')return getSession(route.week,route.encounter);
+ if(route.page==='proyecto'){
+  const section=route.section;
+  if(section==='metodo')return getSession(8,1);
+  if(section==='hito-3'||section==='analisis')return getSession(12,1);
+  return sessions.find(s=>unit6Links[s.id]?.[0]==='#proyecto/'+section)||getSession(7,1);
+ }
+ if(route.unit){
+  const section=route.section==='version-final'?'revision':route.section;
+  if(section){
+   const phase=sessions.find(s=>s.unit===route.unit&&(fichaPhaseLinks[s.id]?.[0]===section||unit6Links[s.id]?.[0]==='#ficha/'+s.unit+'/'+section));
+   if(phase)return phase;
+  }
+  return sessions.find(s=>s.unit===route.unit&&(s.unit!==1||s.week===2));
+ }
+}
 export function resumeClass(state){
  if(!hasWork(state))return sessions[0];
- const r=parseRoute(state.lastLocation);
- if(r.page==='semana')return sessions.find(s=>s.week===r.week&&s.encounter===r.encounter)||sessions[0];
- if(r.unit)return sessions.find(s=>s.unit===r.unit&&(r.unit!==1||s.week===2))||sessions[0];
- if(r.page==='proyecto')return sessions.find(s=>s.week===15)||sessions[0];
- return sessions[0];
+ return classForWork(parseRoute(state.lastClass))||classForWork(parseRoute(state.lastLocation))||sessions[0];
 }
 
 // These are the existing project fields needed by the actual class agenda.
@@ -152,7 +165,7 @@ export const projectInputs={
   ],
   "selfAssessment": [
     "Autoevaluación",
-    "Usa la rúbrica para señalar un logro y una mejora pendiente con ejemplos del informe. Puedes retomar una revisión de las fichas 4 a 6 para explicar qué cambiaste y por qué. Puedes incluir la autoevaluación en el PDF.",
+    "Señala un logro y una mejora pendiente con ejemplos del informe y la rúbrica. Puedes usar la misma revisión de las fichas 4 a 6 que elegiste para comentar con el docente. Tú decides si incluyes la autoevaluación en el PDF.",
     5
   ]
 };

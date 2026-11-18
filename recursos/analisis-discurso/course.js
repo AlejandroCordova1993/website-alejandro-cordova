@@ -12,7 +12,33 @@ for(const u of units){const activity=unitActivities[u.id];u.product=activity.pro
 export const unitById=Object.fromEntries(units.map(u=>[u.id,u]));
 export const unitForWeek=week=>units.find(u=>week>=u.weeks[0]&&week<=u.weeks[1]);
 export const milestones=[{week:7,title:'Delimitar el problema',fields:['question','corpus'],description:'Delimita una pregunta y selecciona 2–4 documentos o episodios que permitan responderla.'},{week:8,title:'Justificar el método',fields:['method'],description:'Retoma de la ficha 3 el enfoque y el dato que ayudan a responder la pregunta del informe.'},{week:12,title:'Construir el argumento',fields:['argument'],description:'Relaciona evidencias de las fichas en el argumento del informe y examina una objeción.'},{week:16,title:'Revisar y enseñar',fields:['revision','mediation','defense'],description:'Revisa el informe, convierte un fragmento ya analizado en una consigna y defiende una decisión con su evidencia.'}];
-export const evaluation=[['Formativa individual',35,'Seis fichas y dos revisiones comentadas. Se valora el progreso argumentado.'],['Formativa grupal',25,'Contraste entre pares de la ficha 5 (semana 12, clase 2) y prueba de microconsignas en tríos (semana 15, clase 2). Comparte fragmentos que otros puedan localizar. Identifica qué aportó cada persona al contraste o a la prueba y qué se ajustó o mantuvo. Regístralo en «Qué cambió y por qué» de la ficha 5 y en «Actividad de enseñanza» del expediente, respectivamente.'],['Sumativa 1',10,'Análisis individual de un caso nuevo acotado, en la semana 8.'],['Sumativa 2',30,'Informe individual del expediente y defensa, semanas 15–16.']];
+export const evaluation=[
+ ['Formativa individual',35,'Promedio de las seis fichas sobre 20. En la semana 8 elige una revisión de las fichas 1 a 3 y en la semana 16 una de las fichas 4 a 6. El docente comenta tu progreso a partir de las versiones y el motivo que ya guardaste en cada ficha.'],
+ ['Formativa grupal',25,'Promedio de dos momentos de colaboración. En la semana 12, clase 2, registra el intercambio en pareja en «Qué cambió y por qué» de la ficha 5. En la semana 15, clase 2, recoge la prueba en trío en «Actividad de enseñanza» del expediente. En cada caso se valora qué aportaste al grupo.'],
+ ['Sumativa 1',10,'Análisis individual de un caso nuevo en la semana 8, clase 2.'],
+ ['Sumativa 2',30,'Informe individual del expediente y defensa, semanas 15–16.']
+];
+export const fichaCriteria=[
+ ['Pregunta y fragmento','Trabajas con una pregunta concreta y eliges un pasaje que te permite responderla.'],
+ ['Observación y fuente','Describes una marca que otro lector puede comprobar e indicas dónde encontrarla.'],
+ ['Explicación discursiva','Usas un concepto del curso para explicar qué hace el discurso en esa situación.'],
+ ['Contraste y revisión','Consideras otra lectura o un comentario y explicas con evidencia qué mantienes o cambias.'],
+ ['Claridad y atribución','Organizas tus ideas, identificas las palabras ajenas y citas las lecturas que usaste.']
+];
+export const collaborationCriteria=[
+ ['Aporte verificable','Compartes un pasaje, una observación o una decisión que el grupo puede comprobar.'],
+ ['Escucha e intercambio','Escuchas al compañero, pides o das aclaraciones y respetas los turnos.'],
+ ['Comentario útil','Señalas unas palabras o una dificultad concreta y sugieres cómo mejorar.'],
+ ['Decisión fundamentada','Explicas qué mantuviste o cambiaste a partir del intercambio.'],
+ ['Registro de participación','En el apartado de la actividad se reconoce quién participó, qué aportó y qué decidieron.']
+];
+export const transferCriteria=[
+ ['Respuesta al problema','Das una interpretación que responde a la pregunta del caso.'],
+ ['Evidencia textual','Ubicas los pasajes y describes las marcas que apoyan tu lectura.'],
+ ['Categoría y contexto','Usas un concepto del curso y un dato del caso para explicar un pasaje.'],
+ ['Alternativa y alcance','Consideras otra explicación y precisas hasta dónde llega tu interpretación.'],
+ ['Argumentación clara','Conectas las observaciones con tu conclusión e identificas las palabras y fuentes que utilizas.']
+];
 export const rubric=[
  ['Problema y corpus',15,'Delimita la pregunta y explica por qué elegiste materiales que otro lector puede identificar.'],
  ['Descripción y evidencia',30,'Indica dónde están los pasajes y qué observaciones sostienen el análisis.'],

@@ -24,7 +24,22 @@ export function createNotebook({storage,lock,onChange=()=>{}}){
  });}
  function draft(key,unit,data){const target=key==='evidence'?evidenceDraftKey(unit):key;return mutate(s=>{const next=validateState({...s,drafts:{...s.drafts,[target]:{unit,data}}}).drafts;startFicha4(s,unit);s.drafts=next;});}
  function removeDraft(key,unit){const target=key==='evidence'?evidenceDraftKey(unit):key;return mutate(s=>delete s.drafts[target]);}
- function rememberLocation(hash){const r=parseRoute(hash);if(!['unidad','ficha','semana','proyecto'].includes(r.page))return false;const target=r.page==='ficha'?`#ficha/${r.unit}`:r.page==='unidad'?`#unidad/${r.unit}/${r.step}`:r.page==='semana'?`#semana/${r.week}/${r.encounter}`:'#proyecto';if(state.lastLocation===target)return false;return mutate(s=>s.lastLocation=target);}
+ function rememberLocation(hash,origin=null,field=null){
+  const r=parseRoute(hash);
+  if(!['unidad','ficha','semana','proyecto'].includes(r.page))return false;
+  let target='#'+hash.replace(/^#/,'');
+  if(r.page==='proyecto'){
+   const section={question:'pregunta',corpus:'pregunta',method:'metodo',argument:r.section==='hito-3'?'hito-3':'analisis',revision:'conclusion',revisionReason:'conclusion',mediation:'ensenanza',defense:'defensa',selfAssessment:'autoevaluacion'}[field];
+   if(section)target='#proyecto/'+section;
+  }
+  if(r.page==='ficha'&&r.unit===2&&!r.returnPhase){
+   const section={letterDraft:'borrador',letterPeer:'lectura',letterFinal:'revision',letterDecisions:'revision'}[field];
+   if(section)target='#ficha/2/'+section;
+  }
+  const lastClass=r.page==='semana'?target:origin;
+  if(state.lastLocation===target&&state.lastClass===lastClass)return false;
+  return mutate(s=>{s.lastLocation=target;s.lastClass=lastClass;});
+ }
  function evidence(entry){return mutate(s=>{const candidate=validateState({...s,evidence:s.evidence.some(e=>e.id===entry.id)?s.evidence.map(e=>e.id===entry.id?entry:e):[...s.evidence,entry]});startFicha4(s,entry.unit);s.evidence=candidate.evidence;touchUnit(s,entry.unit);});}
  function removeEvidence(id){return mutate(s=>{const found=s.evidence.find(e=>e.id===id);s.evidence=s.evidence.filter(e=>e.id!==id);if(found)touchUnit(s,found.unit);});}
  function review(key){if(!editable())return {ok:false,missing:[]};const result=registerReview(state,key);if(result.ok)changed();return result;}
