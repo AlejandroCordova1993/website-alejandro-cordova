@@ -240,19 +240,18 @@ export const visualSchemas={
 },
  'recontextualizar-clausula':{
   type:'transform',planned:'s11-e2',topic:'Recontextualizar implica seleccionar',placed:true,replaces:'example',
-  label:'Una cláusula transformada para otro destinatario',
-  from:{label:'Cláusula · ejemplo',text:'«La ayuda exige matrícula vigente y acreditación de ingresos».'},
-  to:{label:'Explicación para primer semestre · adaptación propia',text:'«Para recibir la ayuda debes cumplir dos requisitos: matrícula vigente y acreditar tus ingresos, es decir, demostrarlos».'},
+  label:'Una propuesta pasa de la carta abierta al aviso',
+  from:{label:'Carta abierta a la dirección',text:'«Propongo que la carrera publique ejemplos de uso de IA».'},
+  to:{label:'Aviso para primer semestre · adaptación propia',text:'«Propuse a la carrera que publique ejemplos de uso de IA. Si estás en primer semestre, ¿qué ejemplos te ayudarían?».'},
   operations:[
-   {kind:'Conserva',text:'Las dos condiciones y su alcance: requisitos para recibir la ayuda.'},
-   {kind:'Reformula',text:'«exige» pasa a «debes cumplir»: la obligación se dirige a quien necesita actuar; su alcance no cambia.'},
-   {kind:'Aclara y ordena',text:'Aclara «acreditar» y anuncia «dos requisitos»: condiciones, no pasos.'},
-   {kind:'Omite',text:'Nada: omitir una condición alteraría lo que dice la norma.'}
+   {kind:'Conserva',text:'La idea de publicar ejemplos de uso de IA sigue siendo una propuesta.'},
+   {kind:'Reformula',text:'La carta pide que la carrera decida. En el aviso, «propuse» cuenta al estudiantado qué se ha solicitado.'},
+   {kind:'Invita a responder',text:'«¿Qué ejemplos te ayudarían?» da al estudiante un papel preciso: sugerir ejemplos desde su experiencia.'}
   ],
-  verdict:'La norma formula una exigencia; la adaptación interpela al estudiante y explica qué necesita acreditar. Cambia la relación con el destinatario y la presentación del trámite. La adaptación se declara propia: no es una comunicación oficial de la institución.',
+  verdict:'Quien leía la carta como parte de la comunidad universitaria pasa a ser la persona a quien se dirige la pregunta.',
   task:{label:'En la ficha 5',text:'Compara las dos piezas de tu ruta: qué se conserva, omite o reformula, con vínculo documentado o adaptación identificada.'},
-  source:'Cláusula del curso; la adaptación es propia y se escribió para este esquema. Recontextualización: apartado «Recontextualizar implica seleccionar» de la lectura integrada de «Teoría» y de la guía de la unidad 5, síntesis docente de Fairclough, Discourse and Social Change (1992).',
-  anchors:['Transformamos una cláusula normativa en una explicación para estudiantes de primer semestre','se selecciona y reformula información para orientar su actuación','Al conservar requisitos y explicitar referencias, propone una relación de acompañamiento','Su identificación como adaptación propia mantiene visible quién responde por esa explicación']
+  source:'Carta de ejemplo del curso. La adaptación es propia. Recontextualización: apartado «Recontextualizar implica seleccionar» de la lectura integrada de «Teoría» y de la guía de la unidad 5, síntesis docente de Fairclough, Discourse and Social Change (1992).',
+  anchors:['La misma propuesta pasa de una carta abierta a un aviso','La carta abierta pide una decisión a la dirección','La pregunta «¿qué ejemplos te ayudarían?» invita al estudiante a intervenir','La propuesta sigue pendiente en las dos piezas']
  },
  'intercambio-accesible':{
   type:'turns',planned:'s14-e2',topic:'Una respuesta modifica la interacción',placed:true,replaces:'example',

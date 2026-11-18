@@ -232,7 +232,7 @@ export const lessons={
   ],
   [
    "Recontextualizar implica seleccionar",
-   "Una [[recontextualizacion|recontextualización]] selecciona material al llevarlo a otra situación. Al pasar tu carta a un aviso, puedes conservar lo que propones y cambiar la acción que esperas de quien lee. La dirección recibe una petición para que decida y el estudiantado puede recibir una invitación a opinar. El rótulo «Adaptación didáctica propia» identifica el aviso como una producción de clase. En el caso de la UNAE, el aviso enlaza la resolución y destaca fechas y bases para orientar la postulación. Ese enlace permite rastrear cómo una decisión institucional llegó a presentarse a posibles solicitantes."
+   "Una [[recontextualizacion|recontextualización]] selecciona material al llevarlo a otra situación. Al pasar tu carta a un aviso, puedes conservar lo que propones y cambiar la acción que esperas de quien lee. La carta abierta también llega al estudiantado, pero la petición de decidir se dirige a la carrera. En el aviso, la pregunta se dirige a estudiantes de primer semestre y les da la palabra para proponer ejemplos. El rótulo «Adaptación didáctica propia» identifica el aviso como una producción de clase. En el caso de la UNAE, el aviso enlaza la resolución y destaca fechas y bases para orientar la postulación. Ese enlace permite rastrear cómo una decisión institucional llegó a presentarse a posibles solicitantes."
   ],
   [
    "Dibujar una relación no la demuestra",

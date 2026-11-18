@@ -1,7 +1,7 @@
 import {units,unitById,unitForWeek} from './course.js';
 import {resourceById} from './resources.js';
 import {getSession} from './encounters.js';
-import {newEvidenceSource} from './workflow.js';
+import {newEvidenceSource,ownNotice} from './workflow.js';
 import {classEvidenceOptions} from './classroom.js';
 import {parseRoute} from './navigation.js';
 import {workStatus,STORAGE_KEY,validateState,hasWork,evidenceDraftKey} from './state.js';
@@ -42,14 +42,14 @@ function refreshStatus(){if(!notebook)return;const mode=notebook.mode,phase=note
  document.querySelectorAll('[data-report-word-count]').forEach(el=>el.textContent=`${reportWordCount(notebook.state.notes.proyecto||{})} palabras en el cuerpo del informe · orientación: 1800–2200`);
 }
 function render(keep=false){const sideOpen=[...$('#sidebar').querySelectorAll('details[open]')].map(el=>el.dataset.sideUnit),sideScroll=$('#sidebar').scrollTop;const openPanels=keep?[...main.querySelectorAll('details[open]>summary')].map(el=>el.textContent):[];const y=scrollY,active=document.activeElement,id=active?.id,selection=typeof active?.selectionStart==='number'?[active.selectionStart,active.selectionEnd]:null;if(!keep)draftForm=false;
- if(route.page==='semana')workEncounter=route.week>1?getSession(route.week,route.encounter):null;else if(['unidad','ficha'].includes(route.page)&&workEncounter?.unit!==route.unit)workEncounter=null;
+ if(route.page==='semana')workEncounter=route.week>1?getSession(route.week,route.encounter):null;else if(['unidad','ficha'].includes(route.page)&&workEncounter?.unit!==route.unit&&!(route.returnPhase&&workEncounter?.unit===5))workEncounter=null;
  main.innerHTML=renderPage(route,notebook.state,notebook.editable(),workEncounter);$('#sidebar').innerHTML=sidebar(route,notebook.state,workEncounter);if(keep)for(const panel of $('#sidebar').querySelectorAll('details'))if(sideOpen.includes(panel.dataset.sideUnit))panel.open=true;$('#sidebar').scrollTop=sideScroll;if(!keep){document.body.dataset.courseMenu='closed';$('#course-menu-toggle')?.setAttribute('aria-expanded','false');}document.querySelectorAll('[data-nav]').forEach(a=>{const page=(['unidad','semana'].includes(route.page)||(route.page==='ficha'&&route.unit>1))?'inicio':route.page==='glosario'?'biblioteca':['ficha','proyecto'].includes(route.page)?'cuaderno':route.page;a.toggleAttribute('aria-current',a.dataset.nav===page);if(a.hasAttribute('aria-current'))a.setAttribute('aria-current','page');});
  document.title=`${['unidad','ficha'].includes(route.page)?unitById[route.unit].title:route.page==='semana'?getSession(route.week,route.encounter).title:route.page==='galeria-visual'&&isAuthorView(location)?'Galería de elementos visuales':'Análisis del discurso'} · Alejandro Córdova`;
  for(const [key,draft] of Object.entries(notebook.state.drafts||{})){let form=document.getElementById(key.startsWith('evidence-')?'evidence-form':'relation-form');if(form&&(key==='relation'||+form.dataset.unit===draft.unit)){if(key.startsWith('evidence-')){form.outerHTML=evidenceForm(draft.unit,draft.data,notebook.editable(),evidenceOptions());form=$('#evidence-form');}else for(const [name,value] of Object.entries(draft.data)){const field=form.elements.namedItem(name);if(field)field.value=value;}}}
  if(requestedPane&&route.page==='proyecto'){const tab=document.querySelector(`[data-desk-tab="${requestedPane}"]`);if(tab)switchDesk(tab,false);const ficha=requestedUnit&&document.getElementById(`project-ficha-${requestedUnit}`);if(ficha)ficha.open=true;requestedPane=null;requestedUnit=null;}
  for(const summary of main.querySelectorAll('details>summary'))if(openPanels.includes(summary.textContent))summary.parentElement.open=true;
   refreshStatus();if(keep){scrollTo(0,y);const el=id&&document.getElementById(id);if(el){el.focus({preventScroll:true});if(selection&&el.setSelectionRange)el.setSelectionRange(...selection);}}else{scrollTo(0,0);(main.querySelector('h1')||main).setAttribute('tabindex','-1');(main.querySelector('h1')||main).focus({preventScroll:true});}
- if(!keep&&route.page==='ficha'&&route.unit===4&&route.section)focusFicha4(route.section);
+ if(!keep&&route.section)focusWorkSection();
  if(requestedField&&route.page==='proyecto'){focusField(`proyecto-${requestedField}`);requestedField=null;}
  observeSections();
 }
@@ -63,13 +63,33 @@ function observeSections(){const bar=main.querySelector('.class-bar'),sections=[
 window.addEventListener('scroll',()=>{if(sectionFrame!==null)return;sectionFrame=requestAnimationFrame(()=>{sectionFrame=null;observeSections();});},{passive:true});
 main.addEventListener('toggle',()=>requestAnimationFrame(observeSections),true);
 function closeRecap(focus=false){const open=main.querySelector('.class-recap[open]');if(!open)return false;open.open=false;if(focus)open.querySelector('summary').focus();return true;}
-function focusFicha4(section){
+function focusWorkSection(){
+ const section=route.section;
+ if(route.page==='proyecto'&&section==='hito-3'){
+  const digital=notebook.editable()&&(workStatus(notebook.state,'proyecto')!=='Sin empezar'||workStatus(notebook.state,'ficha-5')!=='Sin empezar');
+  focusField(digital?'proyecto-argument':'papel-hito-3',{start:true});
+  return;
+ }
+ if(route.page!=='ficha')return;
+ const unit=route.unit;
+ if(unit===2&&section==='version-final'){
+  focusField(notebook.editable()&&notebook.state.notes['ficha-2']?.letterFinal?.trim()?'ficha-2-letterFinal':'paso-carta-final',{start:true});
+  return;
+ }
  if(section==='lecturas'){focusField('lecturas-ficha-4',{start:true});return;}
- if(notebook.editable()&&workStatus(notebook.state,'ficha-4')!=='Sin empezar'){
-  const summary=document.getElementById('cuaderno-4-'+section);
+ if(notebook.editable()&&workStatus(notebook.state,'ficha-'+unit)!=='Sin empezar'){
+  if(unit===5&&section==='aviso'){
+   const pieces=notebook.state.evidence.filter(e=>e.unit===5).map(e=>e.resource===ownNotice.id?ownNotice.source:e.resource||e.source);
+   const hasBoth=new Set(pieces.map(piece=>piece.trim().toLowerCase())).size>=2;
+   const draft=notebook.state.drafts[evidenceDraftKey(5)];
+   const entryField=main.querySelector('#evidence-form[data-writing-notice]')?'e-observation':'e-source';
+   focusField(hasBoth&&!draft?'ficha-5-argument':entryField,{start:true});
+   return;
+  }
+  const summary=document.getElementById('cuaderno-'+unit+'-'+section);
   if(summary){summary.parentElement.open=true;focusField(summary.id,{start:true});return;}
  }
- focusField('paso-4-'+section,{start:true});
+ focusField('paso-'+unit+'-'+section,{start:true});
 }
 function focusField(id,{start=false}={}){const target=document.getElementById(id);if(!target)return;for(let parent=target.parentElement;parent;parent=parent.parentElement)if(parent.tagName==='DETAILS')parent.open=true;if(target.tagName==='DETAILS')target.open=true;if(start)target.style.scrollMarginTop=`${(main.querySelector('.class-bar')?.getBoundingClientRect().height||0)+16}px`;target.focus({preventScroll:true});target.scrollIntoView({block:start?'start':'center',behavior:'auto'});const section=target.closest('[data-class-section]');if(section)setActiveSection(section.dataset.classSection);}
 function navigate(hash){draftForm=false;editingEvidence=null;location.hash=hash;}
@@ -89,14 +109,27 @@ function printDelivery(){const old=$('#delivery-print');old?.remove();const prin
 function saveLocation(){notebook.rememberLocation(location.hash||'#inicio');}
 function evidenceData(form){const values=Object.fromEntries(new FormData(form));return {...values,id:values.id||crypto.randomUUID(),unit:+form.dataset.unit};}
 function evidenceOptions(){return route.page==='semana'?classEvidenceOptions(getSession(route.week,route.encounter)):{};}
-function resetEvidence(){const form=$('#evidence-form');if(form){notebook.removeDraft('evidence',+form.dataset.unit);form.outerHTML=evidenceForm(+form.dataset.unit,newEvidenceSource(+form.dataset.unit,notebook.state.evidence),notebook.editable(),evidenceOptions());}editingEvidence=null;draftForm=false;}
+function resetEvidence(){const form=$('#evidence-form');if(form){notebook.removeDraft('evidence',+form.dataset.unit);form.outerHTML=evidenceForm(+form.dataset.unit,newEvidenceSource(+form.dataset.unit,notebook.state.evidence,route.section),notebook.editable(),evidenceOptions());}editingEvidence=null;draftForm=false;}
 function refreshLibrary(){$('#library-results').innerHTML=libraryResults(Object.fromEntries(new FormData($('#library-filters'))));}
 function capturePreparation(form){if(!form)return;draftForm=true;notebook.draft(form.getAttribute('id')==='evidence-form'?'evidence':'relation',+form.dataset.unit||1,Object.fromEntries(new FormData(form)));saveLocation();}
 document.addEventListener('input',event=>{const el=event.target;if(el.id==='library-query'){refreshLibrary();return;}if(el.dataset.note){if(notebook.note(el.dataset.note,el.dataset.field,el.value)){saveLocation();refreshStatus();}}else capturePreparation(el.closest('#evidence-form,#relation-form'));});
 document.addEventListener('change',event=>{const el=event.target;
  // The search field has already updated on input. Replacing results on blur can interrupt a click on a filter button.
  if(el.matches('#library-filters select')){refreshLibrary();return;}
- if(el.id==='e-resource'){const r=resourceById[el.value];$('#e-source').value=r?`${r.author} · ${r.title} · ${r.year}`:'';}capturePreparation(el.closest('#evidence-form,#relation-form'));
+ if(el.id==='e-resource'){
+  const r=resourceById[el.value];
+  $('#e-source').value=el.value===ownNotice.id?ownNotice.source:r?`${r.author} · ${r.title} · ${r.year}`:'';
+ }
+ const form=el.closest('#evidence-form,#relation-form');
+ if(form?.dataset.unit==='5'&&(el.id==='e-resource'||el.id==='e-mode')){
+  const data=Object.fromEntries(new FormData(form));
+  if(el.id==='e-resource'&&!data.id&&!data.observation.trim())data.mode=data.resource===ownNotice.id?'cita':'descripcion';
+  const openSettings=form.querySelector('.evidence-settings')?.open;
+  form.outerHTML=evidenceForm(5,data,notebook.editable());
+  $('#evidence-form .evidence-settings').open=!!openSettings;
+  $('#'+el.id)?.focus({preventScroll:true});
+  capturePreparation($('#evidence-form'));
+ }else capturePreparation(form);
  if(el.dataset.annex||el.dataset.delivery){notebook.mutate(state=>{if(el.dataset.annex){const key=el.dataset.annex;state.delivery.annexes=el.checked?[...new Set([...state.delivery.annexes,key])]:state.delivery.annexes.filter(k=>k!==key);}else state.delivery[el.dataset.delivery]=el.checked;});$('#delivery-preview').innerHTML=deliveryHtml(notebook.state);}
 });
 document.addEventListener('submit',event=>{event.preventDefault();const form=event.target;if(form.getAttribute('id')==='library-filters'){refreshLibrary();return;}if(!notebook.editable()){toast('Continúa tu trabajo para registrar evidencias.');return;}try{
@@ -115,7 +148,7 @@ document.addEventListener('click',async event=>{if(!event.target.closest('.class
  if(action==='show-index'){const toggle=$('#course-menu-toggle');if(toggle&&getComputedStyle(toggle).display!=='none'){document.body.dataset.courseMenu='open';toggle.setAttribute('aria-expanded','true');}const target=$('#sidebar .side-unit[open]>summary')||$('#sidebar .side-unit>summary');target?.scrollIntoView({block:'nearest'});target?.focus({preventScroll:true});return;}
  if(action==='close-dialog'){control.closest('dialog')?.close();return;}
  if(action==='confirm'){const run=confirmCallback;confirmCallback=null;if(run)await run();return;}
- if(action==='resume'){notebook.resume();lastActivity=Date.now();if(route.page==='ficha'&&route.unit===4&&route.section)focusFicha4(route.section);return;}
+ if(action==='resume'){notebook.resume();lastActivity=Date.now();if(route.section)focusWorkSection();return;}
  if(action==='consult'){notebook.consult();return;}
  if(action==='json'){exportJSON();return;}
  if(action==='markdown'){if(['locked','consult','invalid'].includes(notebook.mode)){toast('Continúa tu trabajo para exportar tus notas.');return;}download(exportMarkdown(notebook.exportState),'analisis-discurso-cuaderno.md','text/markdown;charset=utf-8');return;}

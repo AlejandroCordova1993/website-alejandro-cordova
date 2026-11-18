@@ -3,8 +3,9 @@ import {resourceById,resourceHref} from './resources.js';
 
 // Teaching references and documents of analysis have separate roles.
 export const unitCorpusIds={1:['drexler'],2:['becas'],3:['sarayaku'],4:['menchu','marquez','becas'],5:['becas'],6:['becas']};
+export const ownNotice={id:'aviso-propio',title:'Mi aviso para primer semestre',source:'Adaptación didáctica propia · Aviso'};
 export const unitSequence=unit=>sessions.filter(s=>s.unit===unit&&!(unit===1&&s.week===1)).sort((a,b)=>a.week-b.week||a.encounter-b.encounter);
-export function newEvidenceSource(unit,evidence){
+export function newEvidenceSource(unit,evidence,section=null){
  if(unit===3)return null;
  if(unit===4){
   const records=evidence.filter(e=>e.unit===4);
@@ -14,11 +15,18 @@ export function newEvidenceSource(unit,evidence){
   const r=resourceById[next];
   return {resource:r.id,source:`${r.author} · ${r.title} · ${r.year}`};
  }
+ if(unit===5){
+  const previous=evidence.findLast(e=>e.unit===5);
+  if(!previous&&section!=='aviso')return null;
+  if(previous&&(previous.resource||!/\bcarta abierta\b/i.test(previous.source)))return {resource:previous.resource||'',source:previous.source};
+  return {resource:ownNotice.id,source:ownNotice.source};
+ }
  const last=evidence.findLast(e=>e.unit===unit&&(!e.resource||unitCorpusIds[unit].includes(e.resource)));
  return last?{resource:last.resource||'',source:last.source}:null;
 }
 export function evidenceSources(unit,entry){
  const list=unitCorpusIds[unit].map(id=>resourceById[id]).filter(r=>r.kind==='corpus'&&resourceHref(r));
+ if(unit===5)list.unshift(ownNotice);
  if(entry?.resource&&!list.some(r=>r.id===entry.resource))list.push({id:entry.resource,title:resourceById[entry.resource]?.title||'Documento registrado',legacy:true});
  return list;
 }

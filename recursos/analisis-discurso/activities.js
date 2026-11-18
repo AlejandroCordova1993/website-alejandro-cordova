@@ -5,7 +5,7 @@ export const questionExamples={
  2:'¿Cómo presenta el artículo 3 los criterios para distribuir las becas?',
  3:'¿Por qué Sarayaku celebra la sentencia y, en el mismo comunicado, afirma que estará atento a su cumplimiento?',
  4:'¿Cómo vincula Menchú el premio con una lucha colectiva y para qué retoma Márquez la voz de Davis al hablar de las diferencias entre mujeres?',
- 5:'¿Cómo cambia la propuesta de mi carta al convertirla en un aviso para estudiantes de primer semestre?',
+ 5:'¿Qué le pides a la dirección en tu carta y qué les pides a los estudiantes en tu aviso?',
  6:'¿Cómo se conectan los considerandos del reglamento con lo que se dispone en sus artículos?'
 };
 export const unitActivities={
@@ -114,19 +114,19 @@ export const unitActivities={
    "steps": [
      [
        "Recupera la primera pieza · semana 11, clase 1",
-       "Indica qué quieres comparar. Recupera el pasaje de la carta, por ejemplo «Ficha 2, versión final, párrafo 3». Si continúas con el reglamento, conserva su artículo y página. Si es otro texto, anota el fragmento, la fuente y dónde encontrarlo."
+       "Señala el párrafo donde pides una decisión a la dirección y anota dónde está, por ejemplo «Ficha 2, versión final, párrafo 3». Si usas otro texto, identifica la primera pieza y su pasaje."
      ],
      [
        "Prepara o recupera la segunda pieza · semana 11, clase 2",
-       "Escribe el aviso con la propuesta o condición original y la acción que debe entender el nuevo lector. Identifica quién propone o dispone esa acción. Si elegiste documentos vinculados, recupera la segunda pieza y su fuente. Conserva esa pieza en la ficha y explica qué cambia para el lector y qué se conserva."
+       "Si trabajas con tu carta, redacta un aviso de un párrafo. Conserva tu propuesta e invita a primer semestre a responder. En hojas, ponle el título «Aviso». En el cuaderno web, escribe el párrafo en «Texto de mi aviso» y pulsa «Añadir evidencia». Si comparas documentos vinculados, guarda la segunda pieza con su fuente. En «Mi argumento», cita una expresión de cada pieza y explica qué acción pide. Lee el aviso o la segunda pieza a un compañero y escucha qué acción entiende."
      ],
      [
        "Contrasta la comparación · semana 12, clase 2",
-       "Muestra los fragmentos a un compañero y pídele señalar qué entiende o haría en cada caso. Ajusta «Interpretación revisada». En «Qué cambió y por qué», indica con quién trabajaste, qué aportó cada persona y qué ajustaste."
+       "Relean la comparación y señalen las palabras que apoyan o ponen en duda lo que escribiste. En «Interpretación revisada», ajusta o confirma tu explicación. En «Qué cambió y por qué», registra una sola vez con quién trabajaste, qué aportó cada persona y qué formulación mantuviste o cambiaste."
      ]
    ],
-   "questionHelp": `Pregunta qué cambia al dirigirse a otro lector o al cumplir otro propósito. Ejemplo: «${questionExamples[5]}».`,
-   "argumentHelp": "Explica cómo el cambio de destinatario o propósito se refleja en las dos piezas.",
+   "questionHelp": `Puedes usar esta pregunta para la carta y el aviso: «${questionExamples[5]}». Si comparas otros documentos, pregunta qué acción pide cada uno y a quién.`,
+   "argumentHelp": "Compara una expresión de cada pieza. Explica quién puede decidir y a quién se invita a responder, o qué acción pide cada documento que elegiste.",
    "contextHelp": "Cita la fuente del vínculo o identifica tu versión como «Adaptación didáctica propia».",
    "argumentSteps": [
      "Usa un fragmento de cada pieza. Identifica el género y explica qué decisión de redacción, organización o presentación responde al propósito o al destinatario.",

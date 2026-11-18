@@ -849,7 +849,7 @@ export const sessions=[
         "Comprueba el guardado de la primera pieza y deja elegida la segunda pieza o la adaptación que podrás preparar en la próxima clase."
       ]
     ],
-    "preparation": "Lee en «Teoría» las distinciones género/secuencia y modo/medio/soporte. Recupera la propuesta de tu carta de la ficha 2 para convertirla en un aviso dirigido a primer semestre. Si tu trabajo anterior usa el reglamento, puedes continuar con ese fragmento; también puedes comparar documentos vinculados."
+    "preparation": "Lee en «Teoría» las distinciones entre género y secuencia, y entre modo, medio y soporte. Trae la carta de la ficha 2 y marca el párrafo de tu propuesta. Si continúas otra ruta, trae tu primera pieza."
   },
   {
     "id": "s11-e2",
@@ -884,8 +884,8 @@ export const sessions=[
       ],
       [
         25,
-        "Revisión entre lectores",
-        "Pide a un compañero que lea un tramo y diga qué entiende o haría. Usa su respuesta para revisar la comparación."
+        "Prueba oral y lectura de ejemplos",
+        "Haz una prueba oral breve. Un compañero lee el aviso y dice qué acción entiende. Escucha su respuesta. Si comparas dos documentos, haz la prueba con la segunda pieza. En la puesta en común, comenten dos ejemplos."
       ],
       [
         10,
@@ -893,7 +893,7 @@ export const sessions=[
         "Comprueba que la comparación esté guardada en la ficha 5. Conserva ambas piezas y sus referencias."
       ]
     ],
-    "preparation": "Trae tu carta y señala la propuesta que adaptarás para primer semestre. Si continúas con el reglamento, recupera la condición elegida; si comparas documentos, trae las dos piezas y la fuente de su vínculo. Redactarás la adaptación en clase."
+    "preparation": "Trae la carta con el párrafo de la propuesta marcado. Redactarás el aviso en clase. Si trabajas con el reglamento, trae la condición elegida. Si comparas documentos vinculados, trae las dos piezas y su fuente."
   },
   {
     "id": "s12-e1",
@@ -948,7 +948,7 @@ export const sessions=[
       [
         35,
         "Taller de evidencia",
-        "Comparte los pasajes de la ficha 5. Pide al compañero que diga a quién se dirige cada pieza y qué acción entiende. Al revisar los párrafos del informe, comprueben la afirmación con los pasajes que elegiste para esa pregunta."
+        "En pareja, relean la comparación de la ficha 5. Señalen una expresión que sustente la interpretación o sugiera otra lectura. Decidan qué formulación conviene mantener o cambiar. Para el expediente, comprueben solo la afirmación vinculada con sus pasajes."
       ],
       [
         10,
