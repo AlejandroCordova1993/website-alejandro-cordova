@@ -1,5 +1,6 @@
 // Each class has one final definition. Edit its preparation, product and agenda here.
 // Identifiers, order and timing also support saved work and navigation.
+import {questionExamples} from './activities.js';
 export const sessions=[
   {
     "id": "s1-e1",
@@ -662,9 +663,9 @@ export const sessions=[
     "unit": 4,
     "duration": 60,
     "title": "Personas y destinatarios",
-    "question": "¿Quién habla y con qué palabras presenta al colectivo?",
+    "question": questionExamples[4],
     "resource": "guia-4",
-    "product": "Ficha 4: pregunta y tres segmentos en total, al menos uno de cada texto.",
+    "product": "Ficha 4: pregunta común y tres pasajes localizables, uno de Menchú y dos de Márquez.",
     "agenda": [
       [
         10,
@@ -674,12 +675,12 @@ export const sessions=[
       [
         15,
         "Herramientas y lectura",
-        "Retoma el ejemplo de Menchú, en el párrafo «Considero este Premio». Localiza los otros dos segmentos en la entrevista de Márquez: la comparación entre mujeres y el pasaje donde menciona a Angela Davis."
+        "Retoma el ejemplo de Menchú, en el párrafo «Considero este Premio». Localiza los otros dos segmentos en la entrevista de Márquez: la mención de Angela Davis y, después, la comparación sobre el acceso al agua."
       ],
       [
         25,
         "Trabajo y contraste",
-        "Guarda esos segmentos en «Evidencias», con autora y localizador. En «Pregunta de la ficha», escribe qué quieres explicar sobre las voces o colectivos nombrados. Ejemplo: «¿Cómo presenta cada oradora al colectivo del que habla?». Si ya tenías otro corpus, continúa sus registros."
+        `De cada pasaje elige una expresión, anota su autora y el inicio del párrafo. Trabaja con la pregunta común: ${questionExamples[4]} Si tu ficha empezó con otro texto, conserva tu pregunta y tus pasajes.`
       ],
       [
         10,
@@ -687,7 +688,7 @@ export const sessions=[
         "Comprueba que los tres segmentos y la pregunta estén guardados. Los usarás durante las cuatro clases de esta ficha."
       ]
     ],
-    "preparation": "Lee «Teoría» y los recortes de Menchú y Márquez: unas 360 palabras en total. Si ya empezaste la ficha 4 con otro corpus, conserva sus segmentos y usa estos textos para contrastarlos."
+    "preparation": "Lee la teoría y los dos fragmentos indicados del discurso de Menchú y de la entrevista a Márquez (unas 360 palabras en total)."
   },
   {
     "id": "s9-e2",
@@ -698,17 +699,17 @@ export const sessions=[
     "title": "Dar voz y asumir responsabilidad",
     "question": "¿Quién se responsabiliza de esta proposición?",
     "resource": "marquez",
-    "product": "Ficha 4: explicación de cómo las voces contribuyen a la posición de cada texto.",
+    "product": "Ficha 4: primer párrafo sobre las personas y los grupos de ambos textos.",
     "agenda": [
       [
         10,
         "Retomar la pregunta",
-        "Lee los tres segmentos. Identifica quién habla y a quién atribuye una idea."
+        "Relee los pasajes guardados. Sitúa a Menchú ante el público de la ceremonia y a Márquez ante las periodistas y los lectores."
       ],
       [
         35,
         "Taller de evidencia",
-        "Ten a mano el ejemplo resuelto de Menchú. En la comparación de Márquez, busca las palabras con que nombra a los grupos. En el pasaje sobre Davis, escoge la marca que mejor justifique a quién pertenece una idea."
+        "Usa el ejemplo resuelto de Menchú. En el pasaje del agua, localiza cómo Márquez nombra a las mujeres de la capital y a las de la zona rural."
       ],
       [
         10,
@@ -718,20 +719,20 @@ export const sessions=[
       [
         30,
         "Producción",
-        "En «Mi argumento», explica con los pasajes guardados quién habla, ante qué público y qué palabras presentan al colectivo. Justifica tu lectura de los dos pasajes de la entrevista."
+        "Explica qué significado da Menchú al premio ante quienes la escuchan y para qué le sirve a Márquez el ejemplo del agua al responder a las periodistas. Usa las expresiones que elegiste."
       ],
       [
         25,
-        "Revisión entre lectores",
-        "Pide a un compañero comprobar una de tus atribuciones con el localizador."
+        "Volver al pasaje",
+        "Relee tu párrafo junto a los recortes. Precisa quién hace cada afirmación y a quiénes menciona."
       ],
       [
         10,
         "Cierre",
-        "Guarda la explicación y elige una atribución para examinarla en la próxima clase."
+        "Conserva tu párrafo. En la próxima clase lo ampliarás con el pasaje sobre Davis."
       ]
     ],
-    "preparation": "Relee «Responsabilidad y punto de vista» y lee «Citar también encuadra» en «Teoría». Retoma los tres segmentos guardados en la ficha 4 y los mismos recortes de Menchú y Márquez."
+    "preparation": "Lee «Responsabilidad y punto de vista» en la teoría y ten a mano los pasajes guardados en la ficha 4."
   },
   {
     "id": "s10-e1",
@@ -747,7 +748,7 @@ export const sessions=[
       [
         10,
         "Abrir el problema",
-        "Vuelve a la atribución elegida. Señala qué palabras muestran cómo se presenta esa idea."
+        "En la respuesta de Márquez, encuentra «dice ella». Identifica a quién remite «ella»."
       ],
       [
         15,
@@ -757,7 +758,7 @@ export const sessions=[
       [
         25,
         "Trabajo y contraste",
-        "Añade al mismo argumento cómo la atribución ayuda a sostener la posición del texto. Señala la marca que apoya tu lectura y considera otra si el fragmento la admite."
+        "Amplía «Mi argumento» con la idea atribuida a Davis y explica para qué la retoma Márquez. Apoya tu lectura con una expresión del pasaje."
       ],
       [
         10,
@@ -765,7 +766,7 @@ export const sessions=[
         "Guarda la explicación y conserva el localizador para revisar la atribución."
       ]
     ],
-    "preparation": "Relee «Citar también encuadra» y «Hablar desde una experiencia y en nombre de otros» en «Teoría». Retoma tu explicación y una atribución de la ficha 4."
+    "preparation": "Relee «Citar también encuadra» y «Hablar desde una experiencia y en nombre de otros». Ten a mano tu primer párrafo y el pasaje de la voz citada."
   },
   {
     "id": "s10-e2",
@@ -784,9 +785,9 @@ export const sessions=[
         "Lee la atribución elegida y señala la marca que necesitas comprobar."
       ],
       [
-        35,
-        "Taller de evidencia",
-        "Comprueba quién habla y qué marca muestra aceptación o distancia respecto de la idea citada. En Márquez estudias la atribución a Davis; las palabras originales de Davis requerirían su propia fuente."
+        20,
+        "Preparar el intercambio",
+        "Cada estudiante elige una frase de su argumento y deja a mano el pasaje en que se apoya."
       ],
       [
         10,
@@ -794,14 +795,19 @@ export const sessions=[
         "Retoma después los mismos segmentos."
       ],
       [
-        30,
-        "Producción",
-        "En «Interpretación revisada», escribe la atribución que puedes sostener y sus límites. En «Qué cambió y por qué», explica qué evidencia motivó la decisión."
+        20,
+        "Revisión entre lectores",
+        "Lean la frase que eligió su compañero. Indiquen quién asume la idea y qué palabras permiten seguir esa voz."
       ],
       [
-        25,
-        "Revisión entre lectores",
-        "Pide a un compañero comprobar la versión revisada y sus localizadores. Ajusta esos campos manteniendo el argumento anterior."
+        15,
+        "Revisión de la frase",
+        "Escribe la frase que mantienes o corriges en «Interpretación revisada». En «Qué cambió y por qué», señala las palabras o el comentario que motivaron tu decisión."
+      ],
+      [
+        35,
+        "Puesta en común",
+        "Comparen dos interpretaciones del grupo con los pasajes a la vista. Abran el ejemplo comentado para discutir cómo cambia el argumento al atribuir una idea a otra voz."
       ],
       [
         10,
@@ -809,7 +815,7 @@ export const sessions=[
         "Comprueba que la atribución revisada y su motivo queden juntos en tu ficha."
       ]
     ],
-    "preparation": "Retoma el argumento y los segmentos de la ficha 4. Elige una atribución que quieras comprobar en el contraste Menchú–Márquez."
+    "preparation": "Trae tu ficha y elige una frase en la que hayas atribuido una idea a alguien."
   },
   {
     "id": "s11-e1",

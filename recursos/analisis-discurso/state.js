@@ -1,3 +1,10 @@
+import {questionExamples} from './activities.js';
+
+export function initialFicha4Question(state){
+ if(state.notes['ficha-4']||state.drafts[evidenceDraftKey(4)]||state.evidence.some(e=>e.unit===4)||state.completed.includes('ficha-4'))return '';
+ return questionExamples[4];
+}
+
 export const STORAGE_KEY='ad-cuaderno-v1';
 export const COURSE_ID='uce-analisis-discurso';
 export const unitIds=[1,2,3,4,5,6];

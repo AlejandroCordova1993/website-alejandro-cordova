@@ -28,7 +28,7 @@ const projectByClass={
 // Explicit class stages: visibility follows the task, never a phrase match in its instructions.
 const argumentLater={
  's2-e1':'En la próxima clase, «Palabras, voz y cuerpo», escribirás la primera explicación con esta transcripción.',
- 's9-e1':'En la próxima clase, «Dar voz y asumir responsabilidad», explicarás las voces y los colectivos de estos segmentos.'
+ 's9-e1':'En la próxima clase explicarás cómo se presenta a los colectivos en estos pasajes.'
 };
 export const classWriting={
   "s4-e2": {
@@ -56,7 +56,7 @@ export const classWriting={
     "help": "Completa la evidencia guardada con «Editar evidencia» y guarda los cambios."
   },
   "s9-e2": {
-    "focus": "Explica quién sostiene cada idea.",
+    "focus": "Explica quién habla y cómo presenta a los grupos.",
     "help": "Señala las palabras que apoyan tu atribución."
   },
   "s10-e1": {

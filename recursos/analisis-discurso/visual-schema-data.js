@@ -481,15 +481,15 @@ export const visualSchemas={
  },
  'revision-atribucion':{
   type:'revision',planned:'s10-e2',topic:'Revisar una atribución con marcas',placed:true,position:'after-example',
-  label:'Una atribución corregida con las mismas marcas',
-  before:{label:'Primera atribución',text:'La comisión considera que el plazo debe revisarse.'},
-  evidence:{label:'Lo que muestran las marcas',text:'«informó que» atribuye a la comisión la suficiencia del plazo; «considero» marca al locutor.'},
-  after:{label:'Atribución revisada',text:'La comisión sostiene que el plazo es suficiente; el locutor cuestiona esa afirmación.'},
-  reason:'La persona citada no es automáticamente el locutor del texto que la cita. La corrección permite ver la disputa: el locutor retoma la evaluación institucional del plazo para someterla a revisión.',
-  limit:'no sabemos qué ocurrió después con el plazo, e identificar al productor empírico requiere la fuente del documento.',
-  task:{label:'En la ficha 4',text:'Revisa tu atribución y explica qué cambia o se mantiene, con apoyo en las mismas marcas.'},
-  source:'Ejemplo; la primera atribución, un error frecuente, se escribió para este esquema. Sujeto hablante y locutor: Ducrot, en Calsamiglia y Tusón (2012, §5.2 · página 150 del archivo). Estilo indirecto: §5.2.1 · página 152 del archivo.',
-  anchors:['La comisión informó que el plazo era suficiente; considero que esa afirmación debe revisarse','«Informó que» atribuye a la comisión la suficiencia del plazo','El «yo» de «considero» asume el cuestionamiento','Una revisión puede corregir a quién se atribuye una idea','la autoridad citada pasa a ser objeto de examen','Identificar al productor empírico requiere la fuente del documento']
+  label:'De la idea atribuida a Davis a la posición de Márquez',
+  before:{label:'Primera lectura',text:'Atribuí a Davis el ejemplo del acceso al agua.'},
+  evidence:{label:'Al volver al texto',text:'«Dice ella» remite a Davis. En el siguiente párrafo, «yo creo» precede al ejemplo del agua.'},
+  after:{label:'Atribución revisada',text:'Márquez retoma una idea de Davis y usa el ejemplo del agua para explicar su propia posición.'},
+  reason:'El paso de «ella» a «yo» permite seguir qué idea atribuye Márquez a Davis y dónde asume su valoración.',
+  limit:'la fuente para esta lectura es la respuesta publicada de Márquez.',
+  task:{label:'En la ficha 4',text:'Comprueba la frase elegida con tu compañero. Puedes mantenerla si las palabras del pasaje la respaldan.'},
+  source:'Entrevista a Francia Márquez, LatFem (2021), respuesta sobre la candidatura feminista, pasajes sobre Davis y el agua. Locutor y punto de vista: Calsamiglia y Tusón (2012, §5.2 · página 150 del archivo).',
+  anchors:['«dice ella»','«Y yo creo que hoy estoy en el mismo lugar»','«Dice ella» remite a Davis','Con «yo creo», Márquez toma posición','El ejemplo del agua concreta su argumento']
  },
  'recorrido-consigna':{
   type:'path',planned:'s15-e2',topic:'Convertir el análisis en una enseñanza',placed:true,replaces:'example',

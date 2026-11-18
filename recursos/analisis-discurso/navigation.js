@@ -3,6 +3,8 @@ export const steps=[['situar','Unidad y encuentros'],['observar','Guía de lectu
 export function parseRoute(hash){
  const value=String(hash||'').replace(/^#/,'');
  if(['inicio','biblioteca','proyecto','cuaderno','glosario','galeria-visual'].includes(value))return {page:value};
+ const ficha4=value.match(/^ficha\/4\/(lecturas|pasajes|argumento|revision)$/);
+ if(ficha4)return {page:'ficha',unit:4,section:ficha4[1]};
  const ficha=value.match(/^ficha\/([1-6])$/);if(ficha)return {page:'ficha',unit:+ficha[1]};
  const unit=value.match(/^unidad\/(\d+)\/(situar|observar|analizar|argumentar|revisar)$/);if(unit&&unitIds.includes(+unit[1]))return {page:'unidad',unit:+unit[1],step:unit[2]};
  const week=value.match(/^semana\/(\d+)\/([12])$/);if(week&&+week[1]>=1&&+week[1]<=16)return {page:'semana',week:+week[1],encounter:+week[2]};

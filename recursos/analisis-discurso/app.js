@@ -49,6 +49,7 @@ function render(keep=false){const sideOpen=[...$('#sidebar').querySelectorAll('d
  if(requestedPane&&route.page==='proyecto'){const tab=document.querySelector(`[data-desk-tab="${requestedPane}"]`);if(tab)switchDesk(tab,false);const ficha=requestedUnit&&document.getElementById(`project-ficha-${requestedUnit}`);if(ficha)ficha.open=true;requestedPane=null;requestedUnit=null;}
  for(const summary of main.querySelectorAll('details>summary'))if(openPanels.includes(summary.textContent))summary.parentElement.open=true;
   refreshStatus();if(keep){scrollTo(0,y);const el=id&&document.getElementById(id);if(el){el.focus({preventScroll:true});if(selection&&el.setSelectionRange)el.setSelectionRange(...selection);}}else{scrollTo(0,0);(main.querySelector('h1')||main).setAttribute('tabindex','-1');(main.querySelector('h1')||main).focus({preventScroll:true});}
+ if(!keep&&route.page==='ficha'&&route.unit===4&&route.section)focusFicha4(route.section);
  if(requestedField&&route.page==='proyecto'){focusField(`proyecto-${requestedField}`);requestedField=null;}
  observeSections();
 }
@@ -62,6 +63,14 @@ function observeSections(){const bar=main.querySelector('.class-bar'),sections=[
 window.addEventListener('scroll',()=>{if(sectionFrame!==null)return;sectionFrame=requestAnimationFrame(()=>{sectionFrame=null;observeSections();});},{passive:true});
 main.addEventListener('toggle',()=>requestAnimationFrame(observeSections),true);
 function closeRecap(focus=false){const open=main.querySelector('.class-recap[open]');if(!open)return false;open.open=false;if(focus)open.querySelector('summary').focus();return true;}
+function focusFicha4(section){
+ if(section==='lecturas'){focusField('lecturas-ficha-4',{start:true});return;}
+ if(notebook.editable()&&workStatus(notebook.state,'ficha-4')!=='Sin empezar'){
+  const summary=document.getElementById('cuaderno-4-'+section);
+  if(summary){summary.parentElement.open=true;focusField(summary.id,{start:true});return;}
+ }
+ focusField('paso-4-'+section,{start:true});
+}
 function focusField(id,{start=false}={}){const target=document.getElementById(id);if(!target)return;for(let parent=target.parentElement;parent;parent=parent.parentElement)if(parent.tagName==='DETAILS')parent.open=true;if(target.tagName==='DETAILS')target.open=true;if(start)target.style.scrollMarginTop=`${(main.querySelector('.class-bar')?.getBoundingClientRect().height||0)+16}px`;target.focus({preventScroll:true});target.scrollIntoView({block:start?'start':'center',behavior:'auto'});const section=target.closest('[data-class-section]');if(section)setActiveSection(section.dataset.classSection);}
 function navigate(hash){draftForm=false;editingEvidence=null;location.hash=hash;}
 function dialog(id,html){dialogReturn=document.activeElement;const el=document.getElementById(id);el.innerHTML=html;
@@ -106,7 +115,7 @@ document.addEventListener('click',async event=>{if(!event.target.closest('.class
  if(action==='show-index'){const toggle=$('#course-menu-toggle');if(toggle&&getComputedStyle(toggle).display!=='none'){document.body.dataset.courseMenu='open';toggle.setAttribute('aria-expanded','true');}const target=$('#sidebar .side-unit[open]>summary')||$('#sidebar .side-unit>summary');target?.scrollIntoView({block:'nearest'});target?.focus({preventScroll:true});return;}
  if(action==='close-dialog'){control.closest('dialog')?.close();return;}
  if(action==='confirm'){const run=confirmCallback;confirmCallback=null;if(run)await run();return;}
- if(action==='resume'){notebook.resume();lastActivity=Date.now();return;}
+ if(action==='resume'){notebook.resume();lastActivity=Date.now();if(route.page==='ficha'&&route.unit===4&&route.section)focusFicha4(route.section);return;}
  if(action==='consult'){notebook.consult();return;}
  if(action==='json'){exportJSON();return;}
  if(action==='markdown'){if(['locked','consult','invalid'].includes(notebook.mode)){toast('Continúa tu trabajo para exportar tus notas.');return;}download(exportMarkdown(notebook.exportState),'analisis-discurso-cuaderno.md','text/markdown;charset=utf-8');return;}

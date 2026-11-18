@@ -4,7 +4,7 @@ export const questionExamples={
  1:'¿Cómo distingue Drexler sus propias palabras de las que atribuye a Joaquín Sabina?',
  2:'¿Cómo presenta el artículo 3 los criterios para distribuir las becas?',
  3:'¿Por qué Sarayaku celebra la sentencia y, en el mismo comunicado, afirma que estará atento a su cumplimiento?',
- 4:'¿Qué aporta la idea atribuida a Angela Davis a la posición que defiende Márquez?',
+ 4:'¿Cómo vincula Menchú el premio con una lucha colectiva y para qué retoma Márquez la voz de Davis al hablar de las diferencias entre mujeres?',
  5:'¿Cómo cambia la propuesta de mi carta al convertirla en un aviso para estudiantes de primer semestre?',
  6:'¿Cómo se conectan los considerandos del reglamento con lo que se dispone en sus artículos?'
 };
@@ -83,30 +83,30 @@ export const unitActivities={
   "reviewFocus": "Comprueba tu interpretación con los dos pasajes y la fuente del dato. Precisa qué sostienes al volver a leerlos."
 },
  4:{
-   "material": "Lee los recortes de Menchú y Márquez, unas 360 palabras. Si ya empezaste con otro corpus, continúa sus registros y usa estos textos para el contraste.",
+   "material": "Lee solo los pasajes indicados del discurso y de la entrevista (unas 360 palabras en total).",
    "product": "Una explicación de cómo cada oradora presenta a un colectivo ante su público y qué voces intervienen en su argumento.",
    "steps": [
      [
-       "Reúne las voces · semana 9, clase 1",
-       "Usa el pasaje de Menchú que se explica en «Teoría» y dos pasajes de Márquez: la comparación entre mujeres y el que menciona a Davis. Anota dónde encontrarlos y escribe tu pregunta sobre esas voces."
+       "Elige tres expresiones · semana 9, clase 1",
+       "En Menchú, localiza el párrafo que empieza con «Considero este Premio». En Márquez, localiza primero la mención de Davis y después el ejemplo del agua. En cada pasaje, subraya o copia solo las palabras que usarás para responder a la pregunta. Anota la autora y el inicio del párrafo."
      ],
      [
        "Explica qué hacen · semana 9, clase 2, y semana 10, clase 1",
-       "Usa el ejemplo de Menchú como guía. En la comparación de Márquez, fíjate en cómo nombra a las mujeres. En el pasaje sobre Davis, elige tú la expresión que te permite atribuir una idea. Justifica ambas lecturas en «Mi argumento»."
+       "Semana 9, clase 2. En «Mi argumento», explica qué significado da Menchú al premio ante el público del Nobel y cómo responde Márquez a las periodistas con el ejemplo del agua. Semana 10, clase 1. Amplía ese párrafo: indica qué idea atribuye Márquez a Davis y para qué la usa."
      ],
      [
        "Comprueba una atribución · semana 10, clase 2",
-       "Pide a un compañero comprobar una atribución. Escribe la lectura que puedes sostener en «Interpretación revisada». En «Qué cambió y por qué», indica la marca o el comentario que motivó tu decisión."
+       "Elige una frase de tu escrito. Tu compañero busca las palabras que la respaldan y explica quién asume esa idea. En «Interpretación revisada», escribe la atribución que mantienes o corriges. En «Qué cambió y por qué», señala las palabras que apoyan tu decisión."
      ]
    ],
-   "questionHelp": `Pregunta qué aporta una voz a la posición que defiende el texto. Ejemplo: «${questionExamples[4]}».`,
-   "argumentHelp": "Escribe un párrafo o una lista usando los tres pasajes guardados. Puedes remitir al ejemplo de Menchú. Justifica tu interpretación de los dos pasajes de Márquez.",
+   "questionHelp": `Puedes trabajar con la pregunta común o ajustar la que ya tienes.`,
+   "argumentHelp": "Escribe aquí tu explicación y amplíala en la clase siguiente. Apoya cada idea con palabras del pasaje que guardaste.",
    "contextHelp": "Identifica quién habla, en qué situación y dónde se publicó.",
    "argumentSteps": [
-     "Se valora que identifiques quién habla y ante qué público, cites cómo se nombra al colectivo y expliques qué posición expresa esa elección en ese pasaje.",
+     "Pregunta y fragmento (4 puntos de 20): elige una expresión pertinente en cada pasaje y explica en tu argumento cómo ayuda a responder la pregunta.",
      "Al comentar la voz citada, indica a quién atribuyes la idea. Si solo una lectura tiene respaldo, basta con mostrar las palabras que la sostienen."
    ],
-   "reviewFocus": "Retoma la atribución que comprobó tu compañero. Explica qué palabras sostienen tu lectura y qué aporta esa voz a la posición de la oradora."
+   "reviewFocus": "Escribe solo la frase que mantienes o corriges después de leerla con un compañero."
  },
  5:{
    "material": "Retoma la propuesta de tu carta de la unidad 2 y conviértela en un aviso para estudiantes de primer semestre. Conserva la propuesta como propuesta y explica la acción que planteas. Si ya trabajaste con el reglamento, puedes continuar con esa condición. También puedes comparar dos piezas con un vínculo verificable.",

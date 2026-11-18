@@ -193,7 +193,7 @@ export const lessons={
   ],
   [
    "Citar también encuadra",
-   "El [[discurso-referido|discurso referido]] incorpora palabras o perspectivas ajenas a una nueva intervención. La cita directa mantiene la perspectiva de quien habló. En la indirecta, quien relata puede ajustar la persona y las referencias de tiempo o lugar. Verbos como «aseguró» o «admitió» presentan de manera diferente una misma afirmación. Elegir a quién citar y cómo introducir su voz también contribuye al [[ethos|ethos]], la imagen que quien habla construye de sí ante su público. En la ficha estudias cómo se presenta una voz en la entrevista publicada. Comprobar su formulación original requeriría consultar la fuente de esa voz."
+   "El [[discurso-referido|discurso referido]] incorpora palabras o perspectivas ajenas a una nueva intervención. En una cita directa, palabras como «yo», «aquí» o «mañana» se entienden desde la situación de la persona citada. Quien recupera esas palabras elige el fragmento y cómo presentarlo a su público. En la indirecta, quien relata puede ajustar la persona y las referencias de tiempo o lugar. Verbos como «aseguró» o «admitió» presentan de manera diferente una misma afirmación. Elegir a quién citar y cómo introducir su voz también contribuye al [[ethos|ethos]], la imagen que quien habla construye de sí ante su público. En la ficha estudias cómo se presenta una voz en la entrevista publicada. Comprobar su formulación original requeriría consultar la fuente de esa voz."
   ],
   [
    "Hablar desde una experiencia y en nombre de otros",

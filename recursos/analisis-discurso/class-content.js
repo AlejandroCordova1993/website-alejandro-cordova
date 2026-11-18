@@ -324,7 +324,7 @@ export const classContent={
  's9-e1':[
   topic(1,'Personas y destinatarios se reconstruyen','Al hablar, alguien puede tomar posición, nombrar a un grupo y dirigirse a un público. Un «nosotros» puede incluir a quienes escuchan o remitir a un grupo más reducido. Para saber a quién incluye, lee también las palabras que lo rodean.',
    ['Distingue a quien habla, a quienes aparecen en sus palabras y al público al que se dirige.','Persona gramatical y papel comunicativo no siempre coinciden: «los solicitantes» puede designar a los destinatarios, y una institución puede nombrarse a sí misma, como «esta comisión». La forma por sí sola no decide a quién incluye. Busca también nombres, posesivos y terminaciones verbales.'],
-   'Menchú, discurso del Nobel de la Paz, párrafo que empieza «Considero este Premio». Dos marcas del pasaje son «Considero» y «los derechos de los pueblos indígenas».','«Considero» muestra que Menchú asume la valoración en primera persona. La mención de los derechos de los pueblos indígenas vincula el premio que ella recibe con una lucha colectiva. Ante el Comité Nobel y los demás asistentes, da a esa lucha un lugar en el reconocimiento público.',
+   'Menchú, discurso del Nobel de la Paz, párrafo que empieza «Considero este Premio». Dos marcas del pasaje son «Considero» y «los derechos de los pueblos indígenas».','«Considero» muestra que Menchú asume la valoración en primera persona. Al contraponer el galardón personal y la conquista colectiva, Menchú invita al público de la ceremonia a reconocer en el premio la lucha de los pueblos indígenas.',
    'En el pasaje de la entrevista que compara experiencias de mujeres, ¿qué palabras nombran a los grupos y qué diferencia destaca la hablante?','calsamiglia',0)
  ],
  's9-e2':[
@@ -347,15 +347,15 @@ export const classContent={
 ],
  's10-e1':[
   topic(1,'Citar también encuadra','Quien incorpora una voz puede apoyarse en ella, discutirla o delimitar su propia posición. Los verbos introductores como «aseguró» o «admitió» y las frases que rodean la cita ayudan a interpretar esa relación.',
-   ['En «La portavoz dijo: “Revisaremos el caso mañana”», la cita directa mantiene el «mañana» de la portavoz. En «La portavoz dijo que revisarían el caso al día siguiente», quien relata adapta la referencia al tiempo de su relato.','El [[ethos|ethos]] es la imagen que alguien construye de sí al hablar. En «Como delegada, transmito el acuerdo del curso», quien habla se presenta como portavoz del grupo y funda en ese papel su derecho a intervenir.'],
+   ['En la entrevista, el «techo de cristal» es una imagen de las barreras poco visibles que dificultan el acceso de las mujeres a puestos de poder.', 'En «La portavoz dijo: “Revisaremos el caso mañana”», la cita directa mantiene el «mañana» de la portavoz. En «La portavoz dijo que revisarían el caso al día siguiente», quien relata adapta la referencia al tiempo de su relato.','El [[ethos|ethos]] es la imagen que alguien construye de sí al hablar. En «Como delegada, transmito el acuerdo del curso», quien habla se presenta como portavoz del grupo y funda en ese papel su derecho a intervenir.'],
    '«El portavoz aseguró que la medida era necesaria» / «El portavoz admitió que la medida era necesaria».','«Aseguró» presenta la intervención como afirmación firme; «admitió» la encuadra como reconocimiento de algo que podía ofrecer resistencia. Así, quien refiere las palabras orienta la imagen del portavoz y de su posición. El cotexto permite precisar esa lectura.',
    '¿Qué cambia en la atribución cuando cambia el verbo introductor?','calsamiglia',2)
  ],
  's10-e2':[
   topic(1,'Revisar una atribución con marcas','Una atribución se puede revisar volviendo a las palabras de la entrevista. Si otro lector asigna una idea a una voz distinta, comparen la expresión que cada uno tomó como indicio y lo que se dice antes y después.',
    ['Una cita puede autorizar una posición o convertirse en objeto de discusión; la relación se reconoce en su presentación.','Una revisión puede corregir a quién se atribuye una idea y, con ello, cambiar la interpretación de la posición del texto.'],
-   '«La comisión informó que el plazo era suficiente; considero que esa afirmación debe revisarse».','«Informó que» atribuye a la comisión la suficiencia del plazo. El «yo» de «considero» asume el cuestionamiento y presenta esa valoración institucional como discutible. La distribución de voces construye una intervención crítica: la autoridad citada pasa a ser objeto de examen. Identificar al productor empírico requiere la fuente del documento.',
-   '¿Qué perspectiva se sostiene y qué perspectiva se somete a examen?','guia-4',4)
+   'En la entrevista de LatFem, Márquez introduce una idea de Davis y añade «dice ella». En el párrafo siguiente dice «Y yo creo que hoy estoy en el mismo lugar».','«Dice ella» remite a Davis. Con «yo creo», Márquez toma posición. El ejemplo del agua concreta su argumento: reconocer las distintas condiciones en las que viven las mujeres permite pensar una lucha compartida.',
+   '¿Qué palabras indican que Márquez asume ahora la valoración?','marquez',4)
  ],
  's11-e1':[
   {
