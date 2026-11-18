@@ -122,7 +122,7 @@ export const projectInputs={
   ],
   "argument": [
     "Desarrollo del análisis",
-    "Usa las evidencias guardadas para explicar qué hace el discurso en esa situación. Agrupa los segmentos que apoyan la misma idea. Incluye una objeción y explica hasta dónde llega tu respuesta. Si retomas un hallazgo de la ficha 6, ajusta la afirmación correspondiente y remite a la cita si ya está aquí.",
+    "Usa las evidencias guardadas para explicar qué hace el discurso en esa situación. Agrupa los segmentos que apoyan la misma idea. Examina una lectura alternativa y un contraejemplo o límite. Si el pasaje ya está citado, ajusta la afirmación correspondiente y remite a esa cita.",
     12
   ],
   "credits": [
@@ -147,7 +147,7 @@ export const projectInputs={
   ],
   "defense": [
     "Guion de defensa",
-    "Prepara una decisión del análisis y la evidencia que la sostiene. Después de tu turno, anota la pregunta y tu respuesta en el mismo guion.",
+    "Elige una decisión del informe y el pasaje que ya usaste para sostenerla. En 2 minutos, di qué sostienes, ubica el pasaje y explica qué muestra. En 1 minuto, responde una pregunta del docente. El último minuto se reserva para anotar y cambiar de turno. En este guion, guarda la pregunta y tu respuesta.",
     5
   ],
   "selfAssessment": [

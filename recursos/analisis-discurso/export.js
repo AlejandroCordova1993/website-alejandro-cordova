@@ -25,4 +25,13 @@ export function exportMarkdown(state){
  if(state.relations.length)lines.push('## Relaciones','',...state.relations.map(r=>`${r.from} → ${r.to} (${r.type})\n${r.evidence}`));
  for(const [key,draft] of Object.entries(state.drafts||{})){lines.push(`## Preparación pendiente · ${key.startsWith('evidence')?'evidencia · unidad '+draft.unit:'relación'}`,'','Todavía no se añadió al registro.','');for(const [name,value] of Object.entries(draft.data))if(value.trim())lines.push(`${name}: ${value}`,'');}return lines.join('\n');
 }
-export function insertEvidence(text,start,end,evidence){const at=Math.max(0,Math.min(text.length,start??text.length)),finish=Math.max(at,Math.min(text.length,end??at));const fragment=`\n\n${evidence.mode==='cita'?'Cita literal':'Descripción'}: ${evidence.observation}\n[${evidence.source}; ${evidence.locator||'localizador pendiente'}]\n\n`;return {text:text.slice(0,at)+fragment+text.slice(finish),caret:at+fragment.length};}
+export function insertEvidence(text,start,end,evidence){
+ const at=Math.max(0,Math.min(text.length,start??text.length));
+ const record=`${evidence.observation}\n[${evidence.source}; ${evidence.locator||'localizador pendiente'}]`;
+ const normalize=value=>value.trim().replace(/\s+/gu,' ');
+ if(normalize(text).includes(normalize(record)))return {text,caret:at,duplicate:true};
+ const finish=Math.max(at,Math.min(text.length,end??at));
+ const label=evidence.mode==='cita'?'Cita literal':'Descripción';
+ const fragment=`\n\n${label}: ${record}\n\n`;
+ return {text:text.slice(0,at)+fragment+text.slice(finish),caret:at+fragment.length};
+}
