@@ -1,11 +1,11 @@
-import {encounters,dayLabel} from './encounters.js?v=lc-ac608eddb2bf';
-import {classHref} from './class-flow.js?v=lc-ac608eddb2bf';
-import {activityAdvance,activityHref} from './activities.js?v=lc-ac608eddb2bf';
-import {focusedComparison,focusedArgument} from './activity-workspace.js?v=lc-ac608eddb2bf';
-import {fichaTitles} from './class-flow.js?v=lc-ac608eddb2bf';
-import {essayStageLink} from './teaching.js?v=lc-ac608eddb2bf';
-import {activityProducts} from './seminar.js?v=lc-ac608eddb2bf';
-import {paperActivityGuide,paperActivityAdvance} from './paper-activities.js?v=lc-ac608eddb2bf';
+import {encounters,dayLabel} from './encounters.js?v=lc-d3bc36bca208';
+import {classHref} from './class-flow.js?v=lc-d3bc36bca208';
+import {activityAdvance,activityHref} from './activities.js?v=lc-d3bc36bca208';
+import {focusedComparison,focusedArgument} from './activity-workspace.js?v=lc-d3bc36bca208';
+import {fichaTitles} from './class-flow.js?v=lc-d3bc36bca208';
+import {essayStageLink} from './teaching.js?v=lc-d3bc36bca208';
+import {activityProducts} from './seminar.js?v=lc-d3bc36bca208';
+import {paperActivityGuide,paperActivityAdvance} from './paper-activities.js?v=lc-d3bc36bca208';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 function essayLinksForActivity(key){

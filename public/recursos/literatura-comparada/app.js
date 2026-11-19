@@ -1,24 +1,25 @@
-import {activityFromHash,activityByKey} from './activities.js?v=lc-ac608eddb2bf';
-import {renderActivityPage,renderDigitalActivityPage,activityReviewHtml} from './activity-view.js?v=lc-ac608eddb2bf';
-import {taskNotes,optionalComparison} from './curriculum.js?v=lc-ac608eddb2bf';
-import {encounters,dayLabel} from './encounters.js?v=lc-ac608eddb2bf';
-import {classHref,classFromHash,resumeHref,projectPhases,suggestedProjectPhase,workDestination,fichaTitles} from './class-flow.js?v=lc-ac608eddb2bf';
-import {renderClassPage} from './classroom-view.js?v=lc-ac608eddb2bf';
-import {weeks} from './schedule.js?v=lc-ac608eddb2bf';
-import {essayMilestones} from './journey.js?v=lc-ac608eddb2bf';
-import {collectEvidence,insertPassage,projectDesk,relationDiagram,deliveryHtml,deliveryChecklist,annexOptions,alertHtml,fichaChecklist,fichaHtml,activityProducts,activityChecklist,activityHtml,projectTextHtml} from './seminar.js?v=lc-ac608eddb2bf';
-import {glossaryLinks,conceptHtml,conceptById} from './glossary.js?v=lc-ac608eddb2bf';
-import {teachingPlan,evaluationView,activityLinks} from './teaching.js?v=lc-ac608eddb2bf';
-import {resources,resourceById,translationRows} from './corpus.js?v=lc-ac608eddb2bf';
-import {modules,moduleById,steps,history,schools,diagnostic,rubric} from './course.js?v=lc-ac608eddb2bf';
-import {STORAGE_KEY,freshState,loadState,writeNote,markReviewed,workStatus,hasWork,wordCount,exportMarkdown,validateState,fileName,moduleKeys,moduleWorkStatus,fieldNames,keyNames,routeKey,noteDestination,activityProgress,archivedKeys,fieldLabel,reviewFields,notebookKeys} from './state.js?v=lc-ac608eddb2bf';
+import {activityFromHash,activityByKey} from './activities.js?v=lc-d3bc36bca208';
+import {renderActivityPage,renderDigitalActivityPage,activityReviewHtml} from './activity-view.js?v=lc-d3bc36bca208';
+import {taskNotes,optionalComparison} from './curriculum.js?v=lc-d3bc36bca208';
+import {encounters,dayLabel} from './encounters.js?v=lc-d3bc36bca208';
+import {classHref,classFromHash,resumeHref,projectPhases,suggestedProjectPhase,workDestination,fichaTitles} from './class-flow.js?v=lc-d3bc36bca208';
+import {renderClassPage} from './classroom-view.js?v=lc-d3bc36bca208';
+import {weeks} from './schedule.js?v=lc-d3bc36bca208';
+import {essayMilestones} from './journey.js?v=lc-d3bc36bca208';
+import {collectEvidence,insertPassage,projectDesk,relationDiagram,deliveryHtml,deliveryChecklist,annexOptions,alertHtml,fichaChecklist,fichaHtml,activityProducts,activityChecklist,activityHtml,projectTextHtml} from './seminar.js?v=lc-d3bc36bca208';
+import {glossaryLinks,conceptHtml,conceptById} from './glossary.js?v=lc-d3bc36bca208';
+import {teachingPlan,evaluationView,activityLinks} from './teaching.js?v=lc-d3bc36bca208';
+import {resources,resourceById,translationRows} from './corpus.js?v=lc-d3bc36bca208';
+import {modules,moduleById,steps,history,schools,diagnostic,rubric} from './course.js?v=lc-d3bc36bca208';
+import {STORAGE_KEY,freshState,loadState,writeNote,markReviewed,workStatus,hasWork,wordCount,exportMarkdown,validateState,fileName,moduleKeys,moduleWorkStatus,fieldNames,keyNames,routeKey,noteDestination,activityProgress,archivedKeys,fieldLabel,reviewFields,notebookKeys} from './state.js?v=lc-d3bc36bca208';
 
-import {createPresenter} from './presenter.js?v=lc-ac608eddb2bf';
-import {createSession} from './session.js?v=lc-ac608eddb2bf';
-import {uiIcon,toneHead,toneSummary} from './ui-icons.js?v=lc-ac608eddb2bf';
-import {readingDocumentHtml} from './reading-examples.js?v=lc-ac608eddb2bf';
-import {renderSavedNotebook,renderStoredNotes} from './digital-notes-view.js?v=lc-ac608eddb2bf';
-import {paperActivityGuide} from './paper-activities.js?v=lc-ac608eddb2bf';
+import {createPresenter} from './presenter.js?v=lc-d3bc36bca208';
+import {createSession} from './session.js?v=lc-d3bc36bca208';
+import {uiIcon,toneHead,toneSummary} from './ui-icons.js?v=lc-d3bc36bca208';
+import {readingDocumentHtml} from './reading-examples.js?v=lc-d3bc36bca208';
+import {renderSavedNotebook,renderStoredNotes} from './digital-notes-view.js?v=lc-d3bc36bca208';
+import {paperActivityGuide} from './paper-activities.js?v=lc-d3bc36bca208';
+import {essayRevisionExample} from './session-learning.js?v=lc-d3bc36bca208';
 const $=s=>document.querySelector(s);
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let storage;try{storage=window.localStorage;}catch{storage={getItem(){throw Error();},setItem(){throw Error();}};}
@@ -30,7 +31,7 @@ let teacherView=false;try{const q=new URLSearchParams(location.search);if(q.has(
 document.body.dataset.role=teacherView?'docente':'estudiante';
 const roleSwitch=$('[data-role-switch]');if(roleSwitch){roleSwitch.textContent=teacherView?'Vista de estudiante':'Vista docente';roleSwitch.addEventListener('click',()=>{roleSwitch.href=(teacherView?'?estudiante':'?docente')+location.hash;});}
 // In the catalogue installation the return is relative; standalone local work uses its local preview.
-const catalogHref=location.pathname.includes('/recursos/literatura-comparada/')?'../../recursos.html?v=lc-ac608eddb2bf':/^(127\.0\.0\.1|localhost)$/.test(location.hostname)?'http://127.0.0.1:4184/recursos.html':null;
+const catalogHref=location.pathname.includes('/recursos/literatura-comparada/')?'../../recursos.html?v=lc-d3bc36bca208':/^(127\.0\.0\.1|localhost)$/.test(location.hostname)?'http://127.0.0.1:4184/recursos.html':null;
 document.querySelectorAll('[data-catalog-link]').forEach(a=>{if(!catalogHref){a.hidden=true;return;}a.href=catalogHref;if(!location.pathname.includes('/recursos/literatura-comparada/')){a.target='_blank';a.rel='noopener noreferrer';a.setAttribute('aria-label',a.textContent+' (abre en otra pestaña)');}});
 const lock=navigator.locks?fn=>navigator.locks.request('lc-cuaderno-write',fn):null;
 let session=createSession({storage,lock,initialRaw:loaded.raw}),savePhase=storageBlocked?'unavailable':'saved',pendingSaves=0,saveAnnouncement,lastAnnounced='',relationEdit=-1,mutationBusy=false;
@@ -169,7 +170,11 @@ function applyProjectPhase(){if(current.page!=='proyecto')return;applyEssayView(
 function projectMilestones(){return `<details class="essay-milestones"><summary>Consultar los cuatro hitos del ensayo</summary><ol>${projectPhases.map(p=>`<li><span class="caption">Semana ${p.week}</span><h3>${escape(p.title)}</h3><p>${escape(essayMilestones[p.week].description)}</p><a href="#proyecto" data-project-target="${p.id}">Trabajar en este hito</a></li>`).join('')}</ol></details>`;}
 
 function project(){const options=relationOptions();return `${header('Proyecto integrador','Ensayo final','Un ensayo con tesis comparativa sustentada en dos objetos del corpus, acompañado de una consigna didáctica y una defensa individual.')}<p class="save-line" data-save-status>${savedLabel()}</p><section class="project-start"><p class="lead">Escribe un ensayo individual de 1500–1800 palabras sobre dos objetos del corpus común. Justifica la relación, analiza pasajes, contextualiza mediaciones y responde una objeción. La consigna didáctica, referencias y anexos se presentan por separado.</p>${projectStageSelector()}${essayRubric()}${projectMilestones()}<details class="project-stages-fold"><summary>Retomar las comparaciones del curso</summary><div class="project-stages">${modules.map(m=>`<a href="${workDestination(routeKey(m)).href}"><span class="number">0${m.id}</span><span>${m.title}</span><span class='caption'>Consultar la actividad en papel</span></a>`).join('')}</div>${projectSynthesis()}${projectWork()}</details></section><section class="essay-workshop tone-card" data-tone="taller" aria-labelledby="essay-workshop-title">${toneHead('essay','Mesa de escritura',{id:'essay-workshop-title'})}<div class="tone-body">${field('ensayo','title','Título de mi ensayo final','Haz visible tu problema comparativo.',2)}${field('ensayo','question','Pregunta que organiza el proyecto','Delimita dos objetos y el alcance de la relación.',3)}${field('ensayo','corpus','Corpus y ediciones','Registra textos, versiones, traductores, fragmentos y razones de la selección.',4)}${field('ensayo','method','Esquema argumental y decisiones del método','Tesis provisional, orden del argumento y tres nudos de evidencia con su función. Explica el criterio comparativo y un límite.',5)}<div class="essay-writing" data-view="draft">${essayViewControls()}<div class="essay-writing-main" id="essay-draft">${field('ensayo','argument','Borrador del ensayo','1500–1800 palabras. Puedes insertar un pasaje desde el panel y desarrollar su interpretación. Para una cita sangrada al imprimir, comienza su párrafo con > y sepáralo con una línea en blanco.',20)}</div>${projectDesk(state)}</div></div></section>${relationsWorkshop()}<section class="essay-closing tone-card" data-tone="taller" aria-labelledby="essay-closing-title">${toneHead('workshop','Referencias, consigna y cierre',{id:'essay-closing-title'})}<div class="tone-body">${field('ensayo','mediation','Consigna didáctica del ensayo','Define público, objetivo, pregunta, dos pasajes, consigna, evidencia esperada y criterio de discusión.',8)}${field('ensayo','credits','Referencias y atribuciones','Identifica ediciones, traductores y materiales citados. Revisa los localizadores insertados.',4)}${field('ensayo','defense','Guion de defensa oral','Organiza 4 minutos de exposición: problema y tesis, dos evidencias decisivas, objeción, respuesta y límite. Después tendrás 1 minuto para responder una pregunta del docente.',5)}${field('ensayo','selfAssessment','Autoevaluación con la rúbrica','Para cada criterio del ensayo, identifica un pasaje de tu escrito que lo cumpla y una mejora pendiente. Puedes incluir esta autoevaluación en la entrega.',5)}${field('ensayo','reflection','Reflexión final','¿Qué cambió en tu manera de comparar? Identifica una revisión decisiva y una pregunta abierta.',4)}</div></section><section class="delivery-start tone-card" data-tone="taller" aria-labelledby="delivery-start-title">${toneHead('essay','Preparar mi entrega',{id:'delivery-start-title'})}<div class="tone-body"><p>Revisa ensayo, referencias y consigna. Elige qué anexos compartir antes de imprimir o guardar como PDF.</p>${field('ensayo','student','Nombre del estudiante','Dato de la portada del dossier.',1)}<div class="export-actions">${button('prepare-delivery','Preparar PDF de entrega '+icon,'button primary')}${button('export-json','Descargar respaldo JSON')}</div><p class="caption">Guarda el PDF y entrégalo por el canal indicado por el docente; la web no lo envía. Conserva el JSON para recuperar y continuar el trabajo en otro navegador o equipo.</p></div></section><details class="course-program"><summary>Consultar la evaluación del curso</summary>${evaluationView()}</details>`;}
-function essayRubric(){return `<details class="essay-rubric"><summary>Criterios del ensayo · consultar antes de escribir</summary><p>Estos porcentajes corresponden a los criterios del escrito.</p>${rubric.map(r=>`<div class="rubric-row"><div><h3>${r[0]}</h3><span class="number">${r[1]}</span></div><p>${r[2]}</p></div>`).join('')}<p>Una interpretación bien sustentada puede discrepar de la lectura docente.</p></details>`;}
+function essayRubric(){return `<details class="essay-rubric"><summary>Criterios del ensayo · consultar antes de escribir</summary><p>Estos porcentajes corresponden a los criterios del escrito.</p>${rubric.map(r=>`<div class="rubric-row"><div><h3>${r[0]}</h3><span class="number">${r[1]}</span></div><p>${r[2]}</p></div>`).join('')}<h3>Cómo se revisa una tesis</h3>
+ <p><strong>Primer borrador.</strong> «${escape(essayRevisionExample.draft)}»</p>
+ <p><strong>Objeción.</strong> ${escape(essayRevisionExample.objection)}</p>
+ <p><strong>Tesis revisada.</strong> «${escape(essayRevisionExample.thesis)}»</p>
+ <p>Una interpretación bien sustentada puede discrepar de la lectura docente.</p></details>`;}
 function relationsView(){return (state.relations.length?relationDiagram(state.relations)+state.relations.map((r,i)=>`<article class="relation-item" id="relation-${i}"><span class="smallcaps">${r.type==='documentada'?'Relación documentada':'Vínculo propuesto'} · ${String(i+1).padStart(2,'0')}</span><h3>${escape(r.from)} ${icon} ${escape(r.to)}</h3><p class="caption">${[r.mediator&&'Mediación: '+escape(r.mediator),r.date&&'Fecha: '+escape(r.date),r.medium&&'Medio: '+escape(r.medium)].filter(Boolean).join(' · ')}</p><p class="preserve">${escape(r.evidence)}</p><div class="export-actions">${button('edit-relation','Editar relación','text-button',`data-index="${i}" aria-label="Editar relación ${i+1}"`)}${button('delete-relation','Eliminar relación','text-button',`data-index="${i}" aria-label="Eliminar relación ${i+1}"`)}</div></article>`).join(''):'<p class="empty-caption">Todavía no has añadido relaciones. Empieza con dos elementos y un vínculo que puedas explicar.</p>');}
 function relationOptions(){return resources.filter(r=>r.kind!=='Teoría'&&['Lectura común','Para ampliar'].includes(r.audience)).map(r=>`<option value="${escape(r.title)}" label="${escape(r.author)}"></option>`).join('');}
 const promptInArgument=new Set(['3-hermeneutica']);
