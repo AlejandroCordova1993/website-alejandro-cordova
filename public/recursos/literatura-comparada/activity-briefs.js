@@ -1,6 +1,6 @@
 // Brief instructions for the remaining course. Existing note keys and products
 // stay in class-flow/session-learning; weeks 1 and 2 keep their current wording.
-import {paperSessionGuides} from './paper-activities.js?v=lc-d3bc36bca208';
+import {paperSessionGuides} from './paper-activities.js?v=lc-7e4a87bafac1';
 const briefs={
  "3/1":{...paperSessionGuides["3/1"],hint:"Formen el equipo e inicien sus dos selecciones."},
  "3/2":{...paperSessionGuides["3/2"],hint:"Distingue la disponibilidad del texto de las ayudas para aprender a interpretarlo."},
@@ -70,12 +70,12 @@ const briefs={
   steps:[
    'Recuperen los registros anteriores y lean la guía de iniciativa colectiva. Trabajen en una hoja común para conservar el mapa del grupo.',
    'Dibujen los vínculos documentados con una fuente y página. Si proponen uno por investigar, indiquen qué documento permitiría comprobarlo. Pueden dejar separados los casos independientes.',
-   'Escriban un comentario sobre la red o iniciativa documentada, sus temas y una asimetría apoyada en fuentes. Conserven este comentario en la preparación.',
-   'Comprueben los vínculos añadidos y anoten qué falta documentar. En la revisión, expliquen un ajuste.'
+   paperSessionGuides['7/2'].steps[1],
+   paperSessionGuides['7/2'].steps[2]
   ],
   result:'Primera versión grupal del mapa y su comentario. Se conservará para la revisión de la semana 13; todavía no se entrega otra cartografía independiente.',
   label:'Comentario de la primera cartografía',
-  hint:'Explica qué iniciativa conectan los vínculos, qué temas reúne y qué desigualdad documentan sus fuentes. Este comentario inicial se conserva como preparación.',
+  hint:'Guarden el comentario sobre la selección de Chikangana y la desigualdad que documentaron. Lo retomarán al revisar el mapa.',
   check:'¿Qué flechas están documentadas y cuáles expresan hipótesis? Marquen esa diferencia en el mapa.'
  },
  '8/1':{

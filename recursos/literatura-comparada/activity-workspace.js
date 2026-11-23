@@ -1,5 +1,5 @@
 // Presentación por pasos; conserva las claves y el contenido del cuaderno.
-import {resourceById} from './corpus.js?v=lc-d3bc36bca208';
+import {resourceById} from './corpus.js?v=lc-7e4a87bafac1';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 export function focusedComparison(key,route,{documents=route.texts.length,week=0}={},ctx){

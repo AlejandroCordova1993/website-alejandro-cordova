@@ -1,5 +1,9 @@
 // Orientaciones para el trabajo presencial en papel. No leen ni modifican el cuaderno digital.
 // Cada sesión continúa el mismo trabajo; el ensayo conserva su espacio digital propio.
+const oralituraReading = '¿Qué vínculo propone Chikangana entre los cantos de distintos pueblos en su artículo «La oralitura»? Explíquenlo con sus palabras y nombren a dos poetas de pueblos distintos de su selección (p. 81).';
+const oralituraAccess = 'En el mismo comentario, expliquen una desigualdad de acceso documentada. Pueden usar el caso de los dos poemarios de Chikangana (p. 84).';
+const oralituraComment = oralituraReading + ' ' + oralituraAccess;
+
 export const paperActivities={
  'intro':{
   purpose:'Pasar de una impresión sobre el relato a una observación que puedas compartir y discutir.',
@@ -30,7 +34,7 @@ export const paperActivities={
  '2-cartografia':{
   purpose:'Mostrar cómo circulan las obras mediante personas, instituciones y medios, distinguiendo relaciones documentadas y propuestas.',
   materials:['Martínez: introducción y primer y último bloques de Miriam Fredes; Ruiz Agila/Esparza, pp. 41–43.','Guía de iniciativa colectiva de oralitura y sus fuentes.','Para la revisión: selección de Goethe y caso América Latina–India de Ortiz Wallner, pp. 132–135.'],
-  steps:['En grupo, sigan por separado cómo llegaron a la página el relato de Miriam y la correspondencia de Esparza. La presentación de Martínez y la nota final en el libro de Ruiz Agila ayudan a identificar a quienes intervinieron.','Dibujen las flechas y escriban qué relación expresa cada una. Para un vínculo documentado, citen la página o el párrafo que lo acredita. Si quieren investigar otro vínculo, márquenlo «por investigar» e indiquen qué documento permitiría comprobarlo. Los recorridos pueden quedar separados.','En el comentario inicial, expliquen la iniciativa de oralitura, sus temas y una desigualdad que puedan apoyar en los materiales. La guía documenta el paso del taller a la prensa. El estudio ya leído (p. 84) permite comparar cómo se distribuyeron dos poemarios de Chikangana.','En la semana 13, revisen un vínculo documentado mediante dos criterios de escala, por ejemplo, lengua y edición. En el comentario final, expliquen qué cambió en el mapa, qué fuentes usaron y qué límite conserva su conclusión. Guarden la primera versión.'],
+  steps:['En grupo, sigan por separado cómo llegaron a la página el relato de Miriam y la correspondencia de Esparza. La presentación de Martínez y la nota final en el libro de Ruiz Agila ayudan a identificar a quienes intervinieron.','Dibujen las flechas y escriban qué relación expresa cada una. Para un vínculo documentado, citen la página o el párrafo que lo acredita. Si quieren investigar otro vínculo, márquenlo «por investigar» e indiquen qué documento permitiría comprobarlo. Los recorridos pueden quedar separados.',oralituraComment,'En la semana 13, revisen un vínculo documentado mediante dos criterios de escala, por ejemplo, lengua y edición. En el comentario final, expliquen qué cambió en el mapa, qué fuentes usaron y qué límite conserva su conclusión. Guarden la primera versión.'],
   product:'Una cartografía grupal con mapa, comentario final y fuentes. Se inicia en la semana 7 y se revisa en la 13; tiene una sola entrega y calificación.'
  },
  '2-sumativa':{
@@ -152,7 +156,7 @@ export const paperSessionGuides={
   result:'Conserven los registros para dibujar la primera cartografía en la sesión 2. Es un solo trabajo que se revisará en la semana 13.'
  },
  '7/2':{
-  steps:['Recuperen sus registros y la guía de oralitura. Rotulen las flechas documentadas con la acción y la fuente. Para una relación por investigar, indiquen qué documento permitiría comprobarla.','En el comentario inicial expliquen la iniciativa colectiva, sus temas y una desigualdad documentada. La p. 84 del estudio permite contrastar las condiciones de acceso a dos poemarios de Chikangana.'],
+  steps:['Recuperen sus registros y la guía de oralitura. Rotulen las flechas documentadas con la acción y la fuente. Para una relación por investigar, indiquen qué documento permitiría comprobarla.',oralituraReading,oralituraAccess],
   result:'Conserven mapa, comentario inicial y fuentes del grupo. Revisarán esta misma cartografía en la semana 13; no es otra entrega.'
  },
  '8/1':{
@@ -235,7 +239,7 @@ const sessionAdvances={
  '6/1':'Elige un detalle de «Takina/Poema» y uno de la crónica. Anota dónde aparece cada uno y compáralos bajo una misma pregunta sobre la voz o su destinatario. Explica una diferencia. Kowii apoya la discusión sobre la escucha.',
  '6/2':'Redacta a mano el borrador de la ficha 3 (250–350 palabras). Con un detalle localizado de cada obra, defiende, matiza o discute la lectura de clase. Explica una diferencia, responde a una objeción concreta y precisa el límite de tu argumento. Entrega una sola versión revisada antes de la semana 7.',
  '7/1':'En grupo, sigan cómo llegó a la página la historia de Miriam y cómo llegó la correspondencia de Esparza. Usen la presentación de Martínez y la nota final en el libro de Ruiz Agila. Anoten los vínculos y sus fuentes por separado. Servirán para el mapa de la sesión 2.',
- '7/2':'Dibujen los recorridos y la iniciativa de oralitura. En cada flecha documentada, indiquen qué ocurrió y dónde consta. Para un vínculo por investigar, nombren el documento que permitiría comprobarlo. Los casos pueden quedar separados. En el comentario, expliquen la iniciativa, sus temas y una desigualdad documentada. Guarden todo para la semana 13.',
+ '7/2':'Dibujen los recorridos y citen la fuente junto a cada flecha documentada. En el comentario del mapa, expliquen qué une a los poetas que Chikangana presenta en El Espectador (p. 81), nombren a dos de pueblos distintos y señalen una desigualdad de acceso documentada. Guarden todo para la semana 13.',
  '8/1':'Elige dos obras entre la lámina de Guamán Poma, «Takina/Poema», «Miriam Fredes» y la pieza de Esparza. Prepara una pregunta sobre cómo representan una voz, un pasaje de cada obra y una diferencia. Desde esa comparación, explica quién podría hacer llegar una obra a otros lectores, qué haría y con qué límite. Si la dificultad es hipotética, basta nombrar el documento que la comprobaría.',
  '8/2':'Con el esquema y tus lecturas, escribe y entrega en clase un análisis individual de 600–800 palabras en papel. Responde tu pregunta con un pasaje de cada obra, explica una diferencia y justifica tu propuesta de circulación a partir de la comparación. Distingue lo documentado de lo hipotético.',
  '9/1':'Anota tu primera interpretación de Carrington y Bierce. Localiza un pasaje de cada uno y explica qué confirma o dificulta esa lectura. Compara sus procedimientos y una diferencia entre los contextos representados, respaldada por pasajes; no requiere investigación externa. Conserva las notas en el cuaderno para revisar la interpretación; no preparas una nueva ficha evaluada.',

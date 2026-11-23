@@ -1,8 +1,8 @@
 // Orientaciones docentes para las mismas actividades y claves del cuaderno.
 // Definiciones de trabajo, no citas ni sustitutos de las fuentes del curso.
-import {paperSessionGuides} from './paper-activities.js?v=lc-d3bc36bca208';
-import {activityBriefFor} from './activity-briefs.js?v=lc-d3bc36bca208';
-import {weekTwoConcepts,weekTwoPrompts,weekTwoFieldHints} from './week-two-learning.js?v=lc-d3bc36bca208';
+import {paperSessionGuides} from './paper-activities.js?v=lc-7e4a87bafac1';
+import {activityBriefFor} from './activity-briefs.js?v=lc-7e4a87bafac1';
+import {weekTwoConcepts,weekTwoPrompts,weekTwoFieldHints} from './week-two-learning.js?v=lc-7e4a87bafac1';
 const concepts={
  procedimiento:['Procedimiento narrativo','Una manera concreta de construir el relato: ordenar hechos, repetir una expresión, ocultar información o presentar una suposición como certeza. Identificarlo exige describir qué hace la escritura en un pasaje.'],
  indicio:['Observación e indicio textual','Observar es señalar palabras, una disposición o un detalle verificable del texto. Ese detalle funciona como indicio cuando explicas qué interpretación permite fundamentar; una cita aislada todavía no constituye una explicación.'],
@@ -146,8 +146,8 @@ const sessions={
  delivery:'Hoy preparas la cartografía. La sesión 2 organiza la primera versión y la semana 13 revisa escalas; el proceso se califica una sola vez.',
  check:'Cada relación propuesta debe indicar qué une, qué fuente tiene o falta y cuál es su alcance.',fieldLabel:'Mis registros iniciales para la cartografía'},
  '7/2':{key:'2-cartografia',stage:'preparacion',concepts:['cartografia','red','circulacion','asimetria'],
- example:'El estudio de Brígido-Corachán y Domínguez (p. 81) vincula la participación de Chikangana en el taller de 1997 en Chile con su artículo posterior en El Espectador de Colombia. Del taller a la prensa cambia quién puede acceder a esas palabras. Para saber cómo leyeron el artículo sus lectores harían falta testimonios de recepción.',
- steps:['Recupera los registros de la sesión 1 y consulta la guía de iniciativa colectiva incluida en Lecturas.','Rotula las flechas. En las documentadas cita la fuente y el localizador. En las que queden por investigar, indica qué documento permitiría comprobarlas.','Junto al mapa escribe un comentario: explica la red o iniciativa documentada, sus temas y una asimetría sustentada. Conserva este comentario para contrastarlo con la versión final en la semana 13.','Comprueba las relaciones dibujadas y anota cuáles están documentadas y cuáles siguen siendo propuestas.'],
+ example:'Tras el taller de 1997 en Chile, Chikangana reúne en El Espectador poemas de varios pueblos, entre ellos uno del poeta kichwa Ariruma Kowii. El estudio (p. 81) cita la idea con que los presenta: encuentra una esperanza compartida en cantos que expresan distintas maneras de entender el mundo. Conocemos así la lectura que propone Chikangana. Para saber cómo la recibieron los lectores harían falta sus testimonios.',
+ steps:paperSessionGuides['7/2'].steps,
  result:'Primera versión de la cartografía con vínculos trazados y comentario de sus fuentes y límites.',
  delivery:'Conserva esta versión para revisarla en la semana 13. No se pide una segunda cartografía independiente ni una calificación adicional.',
  check:'Deben distinguirse relaciones documentadas y propuestas, y cada afirmación de poder debe apoyarse en una intervención reconocible.',fieldLabel:'Mi comentario de la primera versión de la cartografía'},

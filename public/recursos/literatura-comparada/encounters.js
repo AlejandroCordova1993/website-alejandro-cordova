@@ -89,7 +89,7 @@ export const encounters=[
  ['Delimita fuentes, fechas y mediadores de la cartografía.','Selecciona dos registros verificables para trabajar la segunda sesión.'])),
  meeting(7,'miercoles','Taller de cartografía de circulación','Documentar vínculos y explicar sus asimetrías.','Cartografía inicial grupal; se revisará en la semana 13 y tendrá una sola calificación.',regular(
  ['Recoge fuentes y dificultades de acceso.','Distingue un vínculo histórico documentado de una comparación entre dos casos.'],
- ['Explica el alcance de un registro y una iniciativa colectiva, con la guía de oralitura.','Identifica participantes, medio, fecha y tema sin inventar un movimiento.'],
+ ['Lee con el grupo cómo explica Chikangana su selección en El Espectador (estudio, p. 81).','Comenta qué vínculo propone entre los cantos de los pueblos representados en su selección.'],
  ['Acompaña el mapa de obras y mediadores.','Cita la página que acredita cada vínculo comprobado. Para una conexión por investigar, indica qué documento permitiría comprobarla. Los casos independientes pueden quedar separados.'],
  ['Contrasta mapas y pregunta por acceso, edición y traducción.','Explica una asimetría y qué información falta para afirmaciones de circulación global.'],
  ['Establece la continuidad hacia la sumativa.','Conserva la cartografía y una pregunta de representación para la semana 8.'])),

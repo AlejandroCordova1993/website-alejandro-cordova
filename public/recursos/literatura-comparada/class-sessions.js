@@ -1,8 +1,8 @@
-import {weeks} from './schedule.js?v=lc-d3bc36bca208';
-import {unitActivities} from './curriculum.js?v=lc-d3bc36bca208';
-import {translationRows} from './corpus.js?v=lc-d3bc36bca208';
-import {activityTitle} from './teaching.js?v=lc-d3bc36bca208';
-import {encounterById,dayLabel} from './encounters.js?v=lc-d3bc36bca208';
+import {weeks} from './schedule.js?v=lc-7e4a87bafac1';
+import {unitActivities} from './curriculum.js?v=lc-7e4a87bafac1';
+import {translationRows} from './corpus.js?v=lc-7e4a87bafac1';
+import {activityTitle} from './teaching.js?v=lc-7e4a87bafac1';
+import {encounterById,dayLabel} from './encounters.js?v=lc-7e4a87bafac1';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 // Teaching prompts are original syntheses. Texts and attributions are in Leer.
 const lessons={
@@ -40,7 +40,7 @@ const lessons={
  7:[
   ['Autor, voz y movimiento','Distingue autoría literaria, persona representada e iniciativa colectiva. Una red necesita participantes, prácticas o publicaciones documentadas.','Guía local de iniciativa colectiva y capítulo de oralitura.'],
   ['Globalización y medios','Compara Chikangana, Martínez y Ruiz Agila: lenguas, soportes, mediadores y accesos. En la pieza de Esparza distingue secuencia, voz y nota de correspondencia.','Registra dos circuitos de circulación y el alcance de cada fuente; disponibilidad digital no demuestra recepción mundial.'],
-  ['Temas y formas de una red','Identifica una iniciativa colectiva, sus temas y decisiones de edición o traducción. Delimita qué vincula sus participantes.','Cartografía grupal inicial; se revisa en la semana 13 y se califica una vez.']
+  ['Una selección de poemas en la prensa','Chikangana presenta en El Espectador cantos de distintos pueblos bajo el nombre de oralitura. El estudio recoge cómo explica esa elección (p. 81).','Cartografía grupal inicial; se revisa en la semana 13 y se califica una vez.']
  ],
  8:[
   ['Problemas de representación','Pon a prueba categorías como apropiación, homogeneización y visibilidad con casos concretos del curso.','¿Qué evidencia te obliga a matizar la categoría de literatura subalterna?'],
