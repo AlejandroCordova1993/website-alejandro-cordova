@@ -368,7 +368,7 @@ export const sessions=[
       [
         25,
         "Leer y señalar",
-        "Escribe en una frase la propuesta que entiendes. Señala tres pasajes para comentar: personas y responsabilidades; modo de presentar la posición; información o razones. Trabaja al margen o en «Mi lectura de la carta del compañero», copiando las palabras elegidas."
+        "Escribe en una frase la tesis que entiendes. Señala tres pasajes, uno por aspecto de la ficha 2. Busca quién habla y quién debe actuar, qué postura adopta quien firma ante la dirección y cómo una razón apoya la tesis. Marca las palabras en tu hoja o cópialas en «Mi lectura de la carta del compañero»."
       ],
       [
         10,
@@ -402,7 +402,7 @@ export const sessions=[
       [
         30,
         "Escribir tres comentarios",
-        "Comenta los mismos tres pasajes: explica cómo representan a las personas, presentan la posición y orientan al lector. Cita las palabras concretas. Señala un cambio útil o explica qué funciona. Firma los comentarios al margen o complétalos en «Mi lectura de la carta del compañero»."
+        "Retoma los mismos tres pasajes. Junto a cada cita, usa el concepto que corresponda para explicar qué entiendes al leer esas palabras. Por ejemplo, «debería» presenta una medida como recomendación a la dirección. Firma los comentarios al margen o en «Mi lectura de la carta del compañero» y compártelos con el autor."
       ],
       [
         20,

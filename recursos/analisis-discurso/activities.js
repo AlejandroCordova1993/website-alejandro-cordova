@@ -35,7 +35,7 @@ export const unitActivities={
      ],
      [
        "Leer al compañero · semana 5",
-       "Intercambia tu borrador. Lee primero sin que el autor te explique lo que quiso decir. Escribe en una frase la propuesta que entiendes y comenta tres pasajes con la guía de abajo. Comparte los comentarios y conserva una copia o una foto de tu análisis."
+       "Intercambien borradores y lean antes de conversar. En la primera clase, resume en una frase la tesis que entiendes y elige un pasaje de la carta para cada aspecto de abajo. En la segunda, comenta esos mismos pasajes. Cita las palabras, nombra el concepto que te ayuda a leerlas y explica qué te permiten entender. Entrega tus comentarios al autor y conserva una copia o una foto."
      ],
      [
        "Revisar · semanas 5 y 6",
@@ -45,14 +45,14 @@ export const unitActivities={
    "questionHelp": "Conserva aquí la pregunta que escribiste sobre el reglamento en el trabajo anterior.",
    "argumentHelp": "Conserva o consulta tu análisis anterior del reglamento.",
    "contextHelp": "Identifica el documento, su autor y versión. Para una carta, indica también a quién se dirige.",
+   "peerTopics": ["Quién habla y quién debe actuar", "Qué postura adopta quien firma", "Cómo se sostiene la tesis"],
    "argumentSteps": [
-     "Personas y responsabilidades: señala un pasaje que nombre un grupo o atribuya una acción. Explica quién habla, cómo presenta a esas personas y quién tendría que actuar.",
-     "Posición ante el destinatario: copia una expresión de obligación, posibilidad o certeza. Explica qué aporta a la demanda o propuesta; por ejemplo, el cambio entre «debe permitir» y «podría permitir».",
-     "Información y razones: comenta una razón o un dato que el lector necesite reconstruir. Explica qué entendiste, qué palabras te ayudaron y qué aclaración sería útil. Si se entiende bien, señala qué formulación lo hace comprensible."
+     "Observa la voz que construye la carta (enunciación) y a quién atribuye la acción (agencia). En «Como delegada, pido que la dirección publique los criterios», la autora habla como representante de su grupo. Le pide a la dirección que actúe.",
+     "Elige una expresión de modalidad o un acto de habla. En «La carrera debería permitir la revisión de borradores», «debería» presenta la medida como una recomendación. En «Me comprometo a explicar cómo usé la IA», quien firma asume personalmente una responsabilidad. Comenta la expresión que aparezca en tu pasaje.",
+     "Elige una razón y explica cómo apoya la tesis. Si el vínculo está implícito, señala qué palabras te permitieron inferirlo. En «Cada docente pide algo distinto. Acordemos una pauta común», el contraste entre «distinto» y «común» me lleva a entender que la pauta ayudaría a saber qué criterio se aplicará a mi trabajo."
    ],
-   "commentExample": "«Los estudiantes exigimos» construye una voz colectiva: presenta la demanda ante la dirección como compartida por un grupo. Conviene precisar a quiénes incluye. Si la carta expresa la postura individual del autor, «Como estudiante, propongo» sitúa esa voz con mayor claridad.",
    "reviewFocus": "Explica tres decisiones de revisión de tu carta. Una recoge la prueba de presentación con el compañero.",
-   "rubric": [["Análisis del compañero: tres pasajes y su función discursiva",4],["Carta situada: destinatario, tesis y dos razones que la sostienen",2],["Apoyo verificable, objeción y organización del sentido",2],["Tres decisiones justificadas con pasajes y conceptos. Una explica qué disposición probaste, qué identificó el lector y por qué la conservaste o la cambiaste.",2]],
+   "rubric": [["Lectura de la carta del compañero. Los tres comentarios explican, con citas y conceptos de la unidad, quién habla y actúa, qué postura adopta quien firma y cómo una razón apoya la tesis.",4],["Carta situada: destinatario, tesis y dos razones que la sostienen",2],["Apoyo verificable, objeción y organización del sentido",2],["Tres decisiones justificadas con pasajes y conceptos. Una explica qué disposición probaste, qué identificó el lector y por qué la conservaste o la cambiaste.",2]],
    "aiHelp": "Durante la revisión puedes pedir a una IA dos comentarios sobre pasajes de tu carta usando esta rúbrica. Contrástalos con la lectura del compañero. En tus tres decisiones indica qué aceptas, adaptas o rechazas y por qué; si la usaste, anota la herramienta."
  },
  3:{

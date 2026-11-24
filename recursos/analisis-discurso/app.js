@@ -88,7 +88,9 @@ function focusWorkSection(){
  if(unit===2){
   const field={borrador:'letterDraft',lectura:'letterPeer',revision:'letterFinal'}[section];
   const paper=section==='revision'?'paso-carta-final':'paso-2-'+section;
-  focusField(notebook.editable()&&Object.values(notebook.state.notes['ficha-2']||{}).some(value=>value.trim())?'ficha-2-'+field:paper,{start:true});
+  const digital=notebook.editable()&&Object.values(notebook.state.notes['ficha-2']||{}).some(value=>value.trim());
+  focusField(digital?'ficha-2-'+field:paper,{start:true});
+  if(digital&&section==='lectura')document.getElementById('ficha-2-letterPeer-help')?.scrollIntoView({block:'start',behavior:'auto'});
   return;
  }
  if(section==='lecturas'){focusField('lecturas-ficha-4',{start:true});return;}
