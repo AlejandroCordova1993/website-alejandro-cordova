@@ -31,7 +31,7 @@ export const unitActivities={
    "steps": [
      [
        "Escribir · semana 4",
-       "Define tu posición sobre el uso de IA y las condiciones que propones. Escribe tu carta con una tesis, dos razones, un apoyo verificable y una objeción con respuesta. Decide desde qué posición hablas, cómo nombras a las personas y qué acción propones. Conserva el primer borrador."
+       "Expón tu tesis sobre el uso de IA y las condiciones que propones. Da dos razones y explica cómo cada una apoya tu tesis. Incluye un apoyo verificable y responde a una objeción. Decide desde qué posición hablas, cómo nombras a las personas y qué acción propones. Conserva el primer borrador."
      ],
      [
        "Leer al compañero · semana 5",
@@ -39,7 +39,7 @@ export const unitActivities={
      ],
      [
        "Revisar · semanas 5 y 6",
-       "Revisa tu carta con los comentarios recibidos. Ajusta el título, los párrafos y la jerarquía visual en papel o en un editor como Word. Conserva la versión final y explica tres decisiones: qué cambiaste o mantuviste, qué comentario consideraste y qué efecto buscas en la lectura."
+       "Revisa tu carta con los comentarios recibidos. Explica tres decisiones con los pasajes y conceptos que te ayudaron a revisar. Una es de presentación. Prueba otra disposición en papel o en un editor, recoge lo que identificó el compañero y explica por qué conservaste o cambiaste la presentación. Guarda la versión final."
      ]
    ],
    "questionHelp": "Conserva aquí la pregunta que escribiste sobre el reglamento en el trabajo anterior.",
@@ -51,8 +51,8 @@ export const unitActivities={
      "Información y razones: comenta una razón o un dato que el lector necesite reconstruir. Explica qué entendiste, qué palabras te ayudaron y qué aclaración sería útil. Si se entiende bien, señala qué formulación lo hace comprensible."
    ],
    "commentExample": "«Los estudiantes exigimos» construye una voz colectiva: presenta la demanda ante la dirección como compartida por un grupo. Conviene precisar a quiénes incluye. Si la carta expresa la postura individual del autor, «Como estudiante, propongo» sitúa esa voz con mayor claridad.",
-   "reviewFocus": "Explica tres decisiones sobre la representación de personas, las razones, los conocimientos supuestos o la organización de tu carta.",
-   "rubric": [["Análisis del compañero: tres pasajes y su función discursiva",4],["Carta situada: destinatario, tesis y dos razones",2],["Apoyo verificable, objeción y organización del sentido",2],["Revisión: tres decisiones explicadas con los conceptos",2]],
+   "reviewFocus": "Explica tres decisiones de revisión de tu carta. Una recoge la prueba de presentación con el compañero.",
+   "rubric": [["Análisis del compañero: tres pasajes y su función discursiva",4],["Carta situada: destinatario, tesis y dos razones que la sostienen",2],["Apoyo verificable, objeción y organización del sentido",2],["Tres decisiones justificadas con pasajes y conceptos. Una explica qué disposición probaste, qué identificó el lector y por qué la conservaste o la cambiaste.",2]],
    "aiHelp": "Durante la revisión puedes pedir a una IA dos comentarios sobre pasajes de tu carta usando esta rúbrica. Contrástalos con la lectura del compañero. En tus tres decisiones indica qué aceptas, adaptas o rechazas y por qué; si la usaste, anota la herramienta."
  },
  3:{

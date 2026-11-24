@@ -10,7 +10,7 @@ export const manualPassages={
  transcription:'apéndice, §1.2 · páginas 358–361',
  writing:'§§3.1–3.2 · páginas 74–77',
  emissionRoles:'§5.1.5, papeles de emisor y receptor · páginas 147–149',
- modalityTypes:'§6.4.1, modalidades epistémica y deóntica · páginas 177–178',
+ modalityTypes:'§6.4, «La expresión de la subjetividad a través de la modalización», página impresa 164 (175 en el visor). §6.4.1, «La modalidad lógica», páginas impresas 166–167 (177–178 en el visor)',
  corpus:'apéndice, §4, establecimiento de un corpus · páginas 368–370',
  writtenLanguage:'§3.6, organización lingüístico-textual del escrito · páginas 91–98',
  processes:'§3.4 · páginas 80–85',
@@ -19,6 +19,7 @@ export const manualPassages={
  implicit:'cap. 7, interpretación mediante inferencias · páginas 184–187; §7.2.1 · páginas 191–192',
  implicatures:'§7.2.3, principio de cooperación e implicaturas conversacionales · páginas 201–204',
  speechActs:'§7.2.2 · páginas 196–201',
+ speechActTypes:'tipos de actos de habla según Searle, §7.2.2 · página impresa 187 (198 en el visor)',
  intentions:'cap. 7, intención e interpretación, metas y productos · páginas 184–190',
  materiality:'§3.5 · páginas 85–90',
  texture:'coherencia, §8.1 · páginas 222–230; cohesión: repeticiones, §8.2.1 · páginas 231–232; anáfora, §8.2.2 · páginas 237–238; conectores, §8.2.4 · página 246',
@@ -39,7 +40,7 @@ export const manualPassages={
 };
 export const lessonManualSources={
  1:[['oral','speechActs','intentions','linguistic'],['body','voice','linguistic','oralVariation'],['transcription'],['voices','context','argument','ethos'],['oral','transcription','linguistic'],['voice','voices','linguistic']],
- 2:[['writing','emissionRoles','modalityTypes','corpus'],['implicit'],['texture','writtenLanguage','argument'],['materiality'],['persons','modalityTypes'],['writing','processes','argument','persons']],
+ 2:[['writing','emissionRoles','modalityTypes'],['implicit','implicatures','corpus'],['texture','writtenLanguage','argument'],['materiality'],['persons','modalityTypes'],['writing','processes','argument','persons']],
  3:[['context','deixis'],[],[],['research'],['research']],
  4:[['persons'],['voices'],['voices'],[],['voices']],
  5:[['genres'],['sequences','narrative','description','explanation','argument','dialogue'],[],[],[]],
@@ -49,8 +50,8 @@ export const classManualSources={
  's1-e1':['foundations'],'s1-e2':['foundations','cotext'],
  's2-e1':['oral','deixis','transcription','speechActs','intentions','context','linguistic'],'s2-e2':['body','voice','linguistic','oral','oralVariation','argument'],
  's3-e1':['voice','voices','linguistic','transcription'],'s3-e2':['transcription','linguistic','voice'],
- 's4-e1':['writing','emissionRoles','modalityTypes','corpus','processes','argument'],'s4-e2':['persons','modality'],
- 's5-e1':['implicit','implicatures'],'s5-e2':['implicit','texture','writtenLanguage','argument'],'s6-e1':['materiality'],'s6-e2':['materiality','processes','intentions','persons'],
+ 's4-e1':['writing','emissionRoles','modalityTypes','processes','argument'],'s4-e2':['persons','modalityTypes','speechActs'],
+ 's5-e1':['implicit','implicatures','corpus'],'s5-e2':['implicit','texture','writtenLanguage','argument'],'s6-e1':['materiality'],'s6-e2':['materiality','processes','intentions','persons'],
  's7-e1':['context','deixis'],'s7-e2':['context','deixis'],'s8-e1':['research'],
  's9-e1':['persons'],'s9-e2':['voices'],'s10-e1':['voices'],'s10-e2':['voices'],
  's11-e1':['genres','sequences','narrative','description','explanation','argument','dialogue'],
@@ -59,14 +60,14 @@ export const classManualSources={
 };
 export const conceptManualSources={
  discurso:['foundations'],'analisis-discurso':['foundations'],enunciado:['foundations'],enunciacion:['foundations','deixis'],
- 'acto-habla':['speechActs'],deixis:['deixis'],cotexto:['cotext'],corpus:['corpus'],modalidad:['modalityTypes'],presuposicion:['implicit'],implicatura:['implicatures'],
+ 'acto-habla':['speechActs','speechActTypes'],deixis:['deixis'],cotexto:['cotext'],corpus:['corpus'],modalidad:['modalityTypes'],presuposicion:['implicit'],implicatura:['implicatures'],
  representacion:['persons','modality'],tesis:['argument'],'razon-argumentativa':['argument'],'apoyo-argumentativo':['argument'],objecion:['argument'],
  paraverbal:['voice'],inferencia:['processes','implicit'],macroestructura:['texture'],contexto:['context','deixis'],
  reflexividad:['position'],persona:['persons'],polifonia:['voices'],'discurso-referido':['voices'],
  ethos:['ethos'],genero:['genres'],secuencia:['sequences'],argumentacion:['argument'],dialogo:['dialogue']
 };
 export const manualSelection=keys=>[...new Set(keys||[])].map(key=>manualPassages[key]).filter(Boolean).join('; ');
-export const manualCitation=keys=>keys?.length?`Apoyo en Las cosas del decir, Calsamiglia y Tusón (2012): ${manualSelection(keys)}. La numeración de las páginas corresponde al archivo consultado. Síntesis y ejemplos propios del curso; consulta opcional del manual.`:'';
+export const manualCitation=keys=>keys?.length?`Apoyo en Las cosas del decir, Calsamiglia y Tusón (2012): ${manualSelection(keys)}. Las páginas sin indicación de edición impresa corresponden al archivo consultado. Síntesis y ejemplos propios del curso; consulta opcional del manual.`:'';
 export function referenceForClass(resource,session){
  if(resource?.id==='calsamiglia'&&classManualSources[session.id])return {...resource,selection:'Consulta opcional en el ejemplar consultado: '+manualSelection(classManualSources[session.id])};
  if(resource?.id==='caldiz'&&session.unit===4)return {...resource,startPage:3,url:resource.url.replace(/#page=\d+$/,'#page=3'),selection:'Consulta opcional para voces y negación: páginas 3 y 5 del archivo, presentación de la polifonía de Ducrot. La teoría de esta clase explica las definiciones necesarias; no se repite la lectura de oralidad.'};

@@ -298,7 +298,7 @@ export const sessions=[
         "Lee tu tesis a un compañero y comprueba que se entienda la propuesta. Conserva el plan en el mismo borrador para continuar la carta."
       ]
     ],
-    "preparation": "Lee «Escribir una posición y representar a otros» en «Teoría». Después consulta «La escritura organiza una acción»: el reglamento es el ejemplo explicado. En clase comenzarás tu propia carta."
+    "preparation": "Lee «Escribir una posición y representar a otros» en «Teoría». En clase prepararás el destinatario, la tesis y dos razones de tu carta. El artículo 3 es el ejemplo que comentaremos juntos."
   },
   {
     "id": "s4-e2",
@@ -314,7 +314,7 @@ export const sessions=[
       [
         10,
         "Retomar el plan",
-        "Recupera tu tesis, destinatario y dos razones. Decide la propuesta concreta que defenderás en la carta."
+        "Retoma el destinatario, la tesis y las dos razones de tu borrador. Al desarrollar cada razón, explica por qué cuenta a favor de tu propuesta."
       ],
       [
         20,
@@ -373,7 +373,7 @@ export const sessions=[
       [
         10,
         "Cierre y continuidad",
-        "Conserva los pasajes señalados y tu primera lectura. En la siguiente clase desarrollarás esos mismos comentarios."
+        "Conserva los tres pasajes señalados y tu primera lectura. En la siguiente clase desarrollarás esos mismos comentarios."
       ]
     ],
     "preparation": "Lee la explicación sobre conocimientos e inferencias en «Teoría». Trae tu carta completa para intercambiarla. Si trabajas en papel, lleva una copia o acuerda cómo conservar el borrador comentado."
@@ -446,12 +446,12 @@ export const sessions=[
       [
         25,
         "Trabajo y contraste",
-        "Sobre la misma carta, prueba un cambio de tamaño, posición o agrupación en papel o en un editor como Word. Conserva las palabras y muéstralo al compañero. Pídele señalar qué encuentra primero. Incorpora la disposición que ayude a leer tu propuesta."
+        "Sobre la misma carta, prueba un cambio de tamaño, posición o agrupación en papel o en un editor como Word. Conserva las palabras y muéstralo al compañero. Pídele señalar qué encuentra primero. Decide qué disposición conservar a partir de lo que leyó."
       ],
       [
         10,
         "Cierre y continuidad",
-        "Conserva la carta con su presentación. En tus hojas o en «Tres decisiones de revisión», describe el cambio visual y lo que observó tu lector. Cuenta como una de las tres decisiones finales."
+        "Conserva la carta con su presentación. En tus hojas o en «Tres decisiones de revisión», explica qué disposición probaste, qué identificó tu compañero y por qué la conservaste o la cambiaste. Es una de tus tres decisiones finales."
       ]
     ],
     "preparation": "Lee «La página también orienta» en «Teoría». Trae tu carta revisada y el borrador con los comentarios del compañero. Para probar la presentación, ten la misma carta en papel o en un editor como Word."
@@ -485,7 +485,7 @@ export const sessions=[
       [
         25,
         "Explicar tres decisiones",
-        "Retoma los comentarios recibidos que ya guardaste. En tus hojas o en «Tres decisiones de revisión», cita el pasaje inicial y el final y explica el cambio o la conservación con un concepto del curso. Para la decisión visual, describe ambas disposiciones. Si usaste IA, identifica la herramienta, su sugerencia y tu decisión."
+        "Retoma los comentarios recibidos que ya guardaste. En tus hojas o en «Tres decisiones de revisión», cita el pasaje inicial y el final y explica el cambio o la conservación con un concepto del curso. Retoma la decisión visual que ya explicaste y completa las otras dos. Si usaste IA, identifica la herramienta, su sugerencia y tu decisión."
       ],
       [
         20,

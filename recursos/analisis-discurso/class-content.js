@@ -125,39 +125,25 @@ export const classContent={
   }
 ],
  's4-e1':[
-  topic(1,'Escribir y representar una posición','Escribir una carta abierta permite intervenir en un asunto compartido. La carta se dirige a una instancia concreta y también prevé lectores de la comunidad. En esta unidad, la dirección de la carrera recibe una propuesta sobre el uso de IA; los compañeros pueden apoyarla, discutirla o plantear otras condiciones. El texto representa a esos participantes al nombrarlos, atribuirles responsabilidades y decidir desde qué voz se habla. El esquema relaciona planificación, textualización y revisión de esa intervención.',
+  topic(1,'Escribir y representar una posición','La enunciación escrita es el acto de dirigirse a otros por medio de un texto en una situación concreta. En tu carta abierta, tú firmas una propuesta sobre el uso de IA. La dirección puede decidir sobre ella y los compañeros también pueden leerla y discutirla. Al planificar, escribir y revisar la carta, eliges desde qué posición hablar y qué papel atribuir a cada grupo.',
    ['El tema es el asunto; la [[tesis|tesis]] es la posición que se defiende. Una [[razon-argumentativa|razón]] explica por qué sostenerla; un [[apoyo-argumentativo|apoyo]] aporta un dato, fuente o ejemplo pertinente. Una [[objecion|objeción]] plantea una dificultad a la que el autor responde.','La [[representacion|representación discursiva]] incluye cómo se presenta a personas, grupos y hechos. «Como estudiante» sitúa una voz individual; «los estudiantes exigimos» construye una voz colectiva que debe situarse en su relación con el grupo.'],
-   'Tesis: permitir IA para revisar borradores, con decisiones justificadas. Razón: explicar los cambios hace visible el criterio del autor. Apoyo: la orientación de UNESCO hacia un uso educativo centrado en las personas. Objeción: aceptar sugerencias sin comprenderlas. Respuesta: conservar el borrador y explicar tres decisiones.',
-   'El ejemplo conecta una propuesta con una razón y un criterio de una fuente. La respuesta a la objeción concreta cómo se preservaría la decisión del estudiante. La lectura previa contiene el párrafo completo y la referencia. El autor puede defender otra posición y fundamentarla.',
+   'La carta propone permitir la IA para revisar borradores si el autor justifica sus cambios. Da dos razones. Comparar formulaciones ayuda a elegir la más clara para el lector. Explicar la elección permite al docente valorar el criterio del estudiante. La UNESCO propone un uso educativo de la IA centrado en las personas. El autor retoma esa orientación para defender que sea el estudiante quien decida qué sugerencias acepta. Ante el riesgo de aceptarlas sin comprenderlas, propone conservar el borrador y explicar tres decisiones.',
+   'La primera razón explica qué se gana al revisar el borrador. La segunda explica por qué conviene pedir que el autor justifique los cambios. La lectura previa contiene el párrafo completo y la referencia. El autor puede defender otra posición y fundamentarla.',
    'Reconoce en el ejemplo la propuesta, sus razones y las responsabilidades que atribuye a cada participante.','calsamiglia',5),
   {
     "block": 1,
     "title": "Cómo el reglamento organiza el reparto",
-    "explanation": "En el ejemplar de becas, el encabezado «Honorable Consejo Universitario» y «RESUELVE» identifican al órgano que dicta la norma (página 1). El artículo 1 asigna la administración a la Dirección General de Bienestar Universitario y el programa a la Unidad de Becas; el artículo 2 identifica a los estudiantes que cumplen los requisitos (página 2). La certificación final permite reconocer el ejemplar con reforma de 2022 (página 4). Así distinguimos quién dicta, quién administra y quién puede recibir la ayuda.",
+    "explanation": "El Consejo Universitario dicta el reglamento. El artículo 1 identifica a las instancias que administran las becas y el artículo 3 les indica cómo repartirlas. La expresión «se deberá destinar» adquiere su fuerza obligatoria por aparecer en una norma de esa autoridad.",
     "points": [
-      "El artículo 3 fija un reparto entre excelencia académica y vulnerabilidad. Observa cómo la expresión de obligación y los porcentajes convierten esos criterios en una decisión que debe seguir quien administra las becas."
+      "La [[modalidad|modalidad]] se reconoce en palabras como «deberá» y «es posible». En el reglamento, «se deberá destinar» obliga. En una carta, «La dirección debería acordar criterios» recomienda. Ambas expresiones tienen valor deóntico. «Es posible que la dirección ya haya acordado criterios» expresa incertidumbre sobre un hecho y tiene valor epistémico."
     ],
     "example": "«Se deberá destinar el 65% de las becas para excelencia académica y el 35 % por vulnerabilidad».",
     "reading": "«Se deberá destinar» expresa una obligación: modalidad deóntica. El reparto reserva una proporción mayor para excelencia académica y otra para vulnerabilidad. La formulación establece cómo debe distribuir la institución las ayudas y clasifica a sus posibles beneficiarios mediante esos criterios. El encabezado y los artículos 1–2 permiten reconstruir la autoridad y los responsables de la disposición.",
     "prompt": "Relaciona la obligación, los porcentajes y los grupos de beneficiarios con la decisión institucional.",
     "source": "calsamiglia",
     "lesson": 0
-  },
-  {
-    "block": 1,
-    "title": "El corpus de esta actividad",
-    "explanation": "Un corpus es el conjunto de textos o registros seleccionados para estudiar un problema. En esta actividad está formado por las cartas, sus versiones y los comentarios de lectura. Permite observar cómo se representan personas y responsabilidades, y cómo otro lector interpreta esas elecciones. Cada pieza se identifica por autor, versión y procedencia.",
-    "points": [
-      "Documento y recorte: la carta completa conserva la propuesta y sus razones. Para comentar una elección, seleccionamos un pasaje y lo situamos en ese conjunto. Por ejemplo, «borrador de Ana, párrafo 2, desde “Los estudiantes…”».",
-      "Unidad de análisis: es la parte que examinamos para explicar una relación. Puede ser la frase que presenta al colectivo, el párrafo que le atribuye una responsabilidad o una expresión de obligación dentro de él.",
-      "En el modelo del reglamento, el documento completo aporta la referencia; los artículos 1–3 son el recorte, y la disposición del artículo 3 es la unidad que permite estudiar el reparto. Se localiza como «artículo 3, página 2 del archivo».",
-      "Fuente teórica: Calsamiglia y Tusón aportan conceptos, como modalidad. La carta y el reglamento aportan enunciados que podemos estudiar. La respuesta del compañero permite documentar una lectura concreta. Puedes abrir [[corpus|corpus]] para repasar estas distinciones."
-    ],
-    "prompt": "Distingue el texto que analizas, el pasaje elegido y el concepto con que lo explicas.",
-    "source": "calsamiglia",
-    "lesson": 0
   }
-],
+ ],
  's4-e2':[
   {
     "block": 1,
@@ -165,8 +151,8 @@ export const classContent={
     "explanation": "Una cláusula relaciona un proceso o estado con sus participantes. El sujeto es una función gramatical, normalmente identificable por la concordancia con el verbo; el agente realiza la acción. Las cláusulas distribuyen atención y responsabilidad al representar un acontecimiento. En «Las solicitudes fueron revisadas por la comisión», las solicitudes son sujeto y la comisión realiza la revisión. La nominalización «la revisión» convierte el proceso en un nombre y permite retomarlo como asunto. Estas elecciones permiten presentar quién interviene, qué se hizo y qué se toma como información ya conocida.",
     "points": [
       "El agente realiza la acción; la autoridad que la decide puede ser otra. Un actor social es una persona, colectivo u organización que participa en la práctica. La omisión se interpreta junto con los participantes identificados en el documento.",
-      "[[modalidad|Modalidad]]: «deben presentar» expresa obligación; «pueden presentar» puede expresar permiso. «Es posible que presenten» expresa posibilidad. En una norma, esas diferencias organizan deberes, facultades y expectativas."
-      ,"En una carta, «La dirección debería acordar criterios con docentes y estudiantes» asigna una iniciativa e incluye a otros grupos en la decisión. «Se deberían acordar criterios» centra la atención en el acuerdo. El resto de la carta puede aclarar quién debe impulsarlo.",
+      "La [[modalidad|modalidad]] permite distinguir la medida que el autor considera necesaria del grado de certeza con que presenta un hecho. Observa las palabras y quién escribe a quién.",
+      "«Solicito que la dirección publique los criterios de uso de IA» es una petición. Quien escribe pide que actúe la dirección. «Me comprometo a indicar cómo usé la IA en mi borrador» es un compromiso. Quien firma asume la acción. En ambos casos, las palabras realizan un [[acto-habla|acto de habla]].",
       "Nombrar a un colectivo también selecciona una perspectiva: «quienes usan IA» lo define por una práctica; «quienes necesitan orientación» lo presenta desde una necesidad de apoyo. Explica qué relación construye la denominación que realmente aparece en el texto."
     ],
     "example": "«La comisión revisó las solicitudes» / «Se revisaron las solicitudes».",
@@ -177,8 +163,8 @@ export const classContent={
   }
 ],
  's5-e1':[
-  topic(1,'El lector aporta conocimientos','Los escritos se dirigen a lectores a quienes atribuyen ciertos conocimientos. Un trámite puede dar por conocidos un certificado o un procedimiento y exigir que el destinatario complete esa información. Las inferencias permiten examinar esa relación entre lo expresado y lo que se espera que el lector sepa.',
-   ['La primera lectura del compañero permite observar qué propuesta entiende y qué información tuvo que completar. Su comentario se apoya en palabras concretas del borrador.','En la carta, «Mantengamos el permiso para revisar borradores con IA» presenta un permiso como existente. «Propongo permitir la revisión de borradores con IA» presenta una iniciativa. El cambio modifica cómo se representa la situación institucional.','La [[presuposicion|presuposición]] presenta un dato como compartido; la [[implicatura|implicatura]], en Grice según Escandell, se reconstruye en contexto y puede cancelarse. Las dos escenas permiten comparar estas formas de información implícita.'],
+  topic(1,'El lector aporta conocimientos','Al leer una carta, el compañero reconoce lo que el autor propone y también interpreta lo que este da por sabido o deja entrever. Su primera lectura permite ver qué palabras orientaron esa interpretación.',
+   ['En esta actividad, el [[corpus|corpus]] reúne los borradores, las versiones finales y los comentarios. Ahora tienes delante el borrador del compañero. Para situar uno de tus tres comentarios basta con indicar, por ejemplo, «carta de Ana, párrafo 2» y copiar la frase elegida.','«Mantengamos el permiso para revisar borradores con IA» da por existente el permiso. Es una [[presuposicion|presuposición]]. «Propongo permitir la revisión de borradores con IA» presenta esa autorización como una iniciativa.','«Algunos de los docentes consultados permiten revisar borradores con IA» puede sugerir que el permiso se limita a una parte del grupo. Si el autor añade «De hecho, todos los consultados lo permiten», aclara lo que ocurre. Esa primera lectura, «solo algunos», es una [[implicatura|implicatura]] que se reconstruye en contexto y puede cancelarse.'],
    '«Adjunte nuevamente el certificado».','«Nuevamente» presenta una acción anterior como información dada por supuesta: una presuposición, según Calsamiglia y Tusón y Brown y Yule. La petición sitúa al destinatario como alguien que ya participa en el trámite y puede reconocer el certificado. Un lector nuevo necesitaría recuperar esa información. El análisis explica qué conocimiento presupone el escrito; comprobar la entrega anterior exige consultar el expediente.',
    'Distingue las palabras del texto y el conocimiento que aportaste para interpretarlas.','escandell',1)
  ],
@@ -201,16 +187,16 @@ export const classContent={
   {
     "block": 1,
     "title": "Del significado local al tema global",
-    "explanation": "Una proposición es una unidad de contenido que afirma algo sobre un participante o situación. La macroestructura organiza el sentido global que reconstruimos desde las proposiciones del texto. Una síntesis ofrece al lector una representación del asunto. Seleccionar conserva información pertinente; generalizar reúne casos bajo una categoría; integrar reúne pasos en una acción global. En una norma, las condiciones conservadas determinan cómo se representa el acceso a la ayuda.",
+    "explanation": "Cada afirmación de la carta aporta una idea. Al leerlas juntas, el compañero reconstruye la propuesta, las razones que la sostienen y las condiciones que la delimitan. Esa organización del significado global se llama macroestructura.",
     "points": [
       "La cohesión enlaza segmentos mediante referencias, recurrencias y conectores. Una referencia puede recuperar una expresión anterior, su antecedente; la recurrencia léxica mantiene el asunto mediante palabras repetidas o relacionadas; un conector señala cómo se relacionan dos partes.",
-      "La segmentación distribuye temas en artículos y párrafos; la puntuación delimita unidades y relaciones dentro de ellos. Para resumir una norma, identifica a qué disposición pertenece cada condición y conserva ese vínculo.",
-      "Al generalizar una lista bajo una categoría, comprueba que el resumen conserve sus límites. El lector debe poder distinguir los casos admitidos de otros que pertenecen a la misma categoría."
-      ,"En la carta, la frase «Entiendo que propone… porque…» permite comparar la posición que reconstruye el compañero con la tesis del autor. Selecciona la propuesta y sus condiciones al sintetizarla.",
-      "La cohesión enlaza partes del texto; la coherencia permite reconstruir una unidad de sentido en la situación. La solidez del argumento depende de que las razones justifiquen la conclusión. En «La IA responde rápido; por tanto, su respuesta es correcta», entendemos la conclusión propuesta, pero falta justificar el salto entre rapidez y corrección."
+      "La segmentación en párrafos y la puntuación ayudan a reconocer dónde termina una razón y dónde empieza la siguiente. Un conector como «por eso» anuncia qué conclusión extrae el autor.",
+      "Generalizar consiste en reunir varios casos bajo una categoría. «Revisar ortografía y puntuación» puede resumirse como «revisar aspectos de la escritura». Si hace falta saber exactamente qué usos se permiten, conserva los dos términos.",
+      "La [[macroestructura|macroestructura]] se aprecia al comparar la carta completa con la propuesta que el compañero entendió.",
+      "En «La IA responde rápido. Por tanto, su respuesta es correcta», el conector enlaza las frases y el lector puede seguir la conclusión. Para sostenerla haría falta mostrar que la respuesta es correcta. La rapidez por sí sola aporta otra clase de información."
     ],
-    "example": "Texto: «La ayuda exige matrícula vigente y acreditación de ingresos». Síntesis: «La ayuda está condicionada a matrícula e ingresos».",
-    "reading": "La síntesis pierde «vigente» y «acreditación»: representa el acceso mediante dos datos generales y deja fuera su condición temporal y la obligación de justificarlos. Una versión como «Para acceder hay que acreditar ingresos y tener matrícula vigente» conserva esa relación. La comparación muestra cómo resumir puede cambiar la imagen del beneficiario y de lo que se le exige.",
+    "example": "Una carta dice «Propongo permitir IA para revisar borradores cuando podamos justificar los cambios». El compañero resume «Propone permitir la IA».",
+    "reading": "El resumen amplía la propuesta a cualquier uso de IA. «Propone permitir IA para revisar borradores, siempre que el autor justifique los cambios» conserva el uso permitido y su condición.",
     "prompt": "Conserva en la síntesis la propuesta, sus razones y las condiciones que delimitan su alcance.",
     "source": "van-dijk",
     "lesson": 2
@@ -225,7 +211,7 @@ export const classContent={
       "Prominencia es el grado en que un elemento atrae la atención: aumentar tamaño y grosor de «Requisitos» lo destaca. Encuadre es la separación o conexión visual: el recuadro agrupa las condiciones y las diferencia del resto.",
       "Valor informativo es el papel que adquiere un elemento por su posición en el conjunto. En este aviso, llevar los requisitos al inicio propone comprobarlos antes de continuar. Esa lectura se interpreta según las convenciones del documento.",
       "Para saber qué leen primero los destinatarios, compara las versiones con lectores."
-      ,"En la carta, título y párrafos pueden destacar la posición, agrupar razones y presentar la respuesta a una objeción. Destacar «Permitir la IA» y alejar «para revisar borradores» puede hacer menos visible el alcance de la propuesta."
+      ,"En la carta, prueba a resaltar «permitir la IA» y luego la frase completa «permitir la IA para revisar borradores». Las palabras siguen en el mismo sitio. Solo cambia qué parte destaca al leer."
     ],
     "example": "En un aviso, «Requisitos» aparece en letra pequeña; en otra disposición conserva las mismas palabras y gana tamaño y posición inicial.",
     "reading": "La segunda disposición destaca las condiciones como entrada a la lectura: propone que el destinatario compruebe si puede participar. Se conserva la información verbal y cambia su jerarquía. La respuesta del lector permitirá contrastar si ese recorrido propuesto coincide con su lectura.",
@@ -235,7 +221,7 @@ export const classContent={
   }
 ],
  's6-e2':[
-  topic(1,'Distinguir diseño propuesto y lectura observada','El autor propone una posición mediante palabras y una presentación. El compañero reconstruye esa posición al leer. Comparar ambas permite revisar cómo se representan las personas, qué acción se pide y qué condiciones se hacen visibles. La explicación de la revisión relaciona una elección concreta con esa lectura.',
+  topic(1,'Revisar la carta a partir de la lectura del compañero','El autor propone una posición mediante palabras y una presentación. El compañero reconstruye esa posición al leer. Comparar ambas permite revisar cómo se representan las personas, qué acción se pide y qué condiciones se hacen visibles. La explicación de la revisión relaciona una elección concreta con esa lectura.',
    ['Una decisión de revisión puede cambiar una denominación, precisar quién actúa, fundamentar una razón o acercar una condición a la propuesta. Describe la formulación inicial, la final y el motivo.','La respuesta del compañero documenta su lectura en este intercambio. Una formulación clara también puede conservarse: explica qué reconoció el lector y qué palabras lo ayudaron.','Si consultas IA, contrasta sus sugerencias con el texto y la lectura del compañero. La decisión de aceptar, adaptar o rechazar una sugerencia se justifica con el mismo criterio discursivo.'],
    'El título dice «Permitir la IA»; la condición «para revisar borradores» aparece al final. El compañero entiende una autorización para producir trabajos completos.','El autor reúne propuesta y condición en el título: «Permitir IA para revisar borradores». Explica que buscaba delimitar el uso permitido y que el comentario del lector mostró otra interpretación. En otra revisión, sustituye «los estudiantes exigimos» por «como estudiante, propongo» para asumir su posición individual. Una decisión atiende a la lectura de la propuesta; la otra, a la voz que representa al autor.',
    'Explica tres decisiones de tu revisión con el pasaje correspondiente y su motivo.','calsamiglia',3)

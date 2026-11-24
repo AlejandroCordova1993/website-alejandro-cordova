@@ -49,6 +49,16 @@ export const glossary={
   term:'Acto de habla',
   author:'Austin y Searle, según Calsamiglia y Tusón, §7.2.2',
   definition:'Acción que realizamos al usar el lenguaje en una situación, como pedir, prometer o agradecer. Austin distingue tres planos: el acto locutivo consiste en decir algo con un significado; el ilocutivo es la acción realizada al decirlo; el perlocutivo es el efecto producido en quien escucha o lee, en sus ideas, emociones o acciones.',
+  classification:{
+   title:'Los cinco tipos de actos ilocutivos según Searle',
+   items:[
+    ['Asertivos','Quien habla presenta algo como verdadero. «En el borrador cité la guía de la UNESCO».'],
+    ['Directivos','Se pide, recomienda u ordena que otra persona haga algo. «Solicito que la dirección publique los criterios de uso de IA».'],
+    ['Compromisorios','Quien habla se compromete a una acción futura. «Me comprometo a indicar cómo usé la IA en mi borrador».'],
+    ['Expresivos','Se manifiesta una actitud o un sentimiento. «Agradezco sus comentarios sobre la carta».'],
+    ['Declarativos','Una persona con la autoridad necesaria cambia una situación al pronunciar ciertas palabras en el contexto adecuado. Al abrir la reunión, quien la preside dice «Declaro abierta la sesión».']
+   ]
+  },
   operation:'Conserva las palabras, identifica qué acción realizan en ese intercambio y busca qué respuesta o efecto se puede observar.',
   limit:'La acción comunicativa se interpreta con la situación y las intervenciones próximas. Los efectos se investigan mediante las respuestas y actuaciones de los participantes.'
  },
@@ -172,7 +182,7 @@ export const examples={
  'unidad-tonal':'En una realización, «bueno» se oye como un grupo completo y «hasta el momento» empieza otro con un nuevo arranque melódico.',
  'marcador-discursivo':'En «Bueno, volvamos al primer punto», «bueno» anuncia que se retoma un asunto anterior.',
  agencia:'Contrasta «La dirección suspendió las becas» con «Se suspendieron las becas». El cambio observable es la expresión del agente; los motivos necesitan otras fuentes.',
- modalidad:'El reglamento de becas de la UCE dispone: «Se deberá destinar el 65% de las becas para excelencia académica y el 35 % por vulnerabilidad» (artículo 3, página 2). «Se deberá destinar» establece una obligación de reparto: modalidad deóntica. En cambio, «Es posible que entreguen el informe» presenta un hecho como posible: modalidad epistémica.',
+ modalidad:'En el artículo 3 del reglamento de becas de la UCE, «se deberá destinar» obliga a la institución a respetar el reparto indicado. En una carta estudiantil, «La dirección debería acordar criterios» recomienda una medida. Ambas formulaciones tienen valor deóntico. «Es posible que la dirección ya haya acordado criterios» tiene valor epistémico. Quien escribe expresa incertidumbre sobre lo ocurrido.',
  inferencia:'«Llegó tarde otra vez» presenta una llegada tardía anterior como dada por supuesta: una presuposición. Que el hablante esté molesto es otra inferencia que depende del contexto y puede no sostenerse.',
  presuposicion:'«Ana volvió a entregar el formulario» presupone una entrega anterior. «Ana no volvió a entregarlo» normalmente mantiene ese supuesto. En ambos casos, el hecho de la entrega anterior se presenta como información de fondo.',
  implicatura:'Al informar sobre las entregas del curso, «Algunos grupos entregaron» puede sugerir que otros faltan. La continuación «algunos; de hecho, todos» retira esa sugerencia. Se conserva la afirmación inicial y se cancela la implicatura «no todos».',

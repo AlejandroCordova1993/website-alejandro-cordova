@@ -133,7 +133,13 @@ export const agencyContextsHtml=()=>`<div class="agency-contexts"><h4>Contextos 
 function sessionMaterialHtml(s){const m=sessionMaterials(s);return `${m.corpus.length?`<h2>${s.week===1?'Material central de la clase':'Documento de análisis'}</h2>${m.corpus.map(id=>id==='agencia'?agencyHtml({nextClass:s.encounter===1}):resourceCard(resourceById[id],true)).join('')}`:`<h2>Documento de análisis</h2>`}${m.note?`<p class="caption">${esc(m.note)}</p>`:''}${m.readings.length?`<h2>Guía y lecturas de apoyo</h2><p class="caption">Ayudan a analizar el documento. No se añaden como otros corpus ni como otra entrega.</p>${m.readings.map(id=>resourceCard(resourceById[id],true)).join('')}`:''}`;}
 
 export function glossaryPage(){return `<div class="page-heading"><h1>Glosario</h1><p class="lead">Consulta los conceptos y sus aplicaciones al análisis.</p></div><div class="glossary-list">${Object.entries(glossary).map(([id,g])=>`<button type="button" data-concept="${id}"><strong>${esc(g.term)}</strong><span>${esc(g.author)}</span>${icon}</button>`).join('')}</div>`;}
-export function conceptHtml(id){const g=glossary[id];return `<div class="dialog-heading"><h2 id="concept-title">${esc(g.term)}</h2>${button('close-dialog','Cerrar','autofocus')}</div><p class="caption">${esc(g.author)}</p><h3>Formulación</h3><p>${esc(g.definition)}</p><h3>Operación de análisis</h3><p>${esc(g.operation)}</p><h3>Ejemplo</h3><p>${esc(examples[id])}</p><h3>Alcance</h3><p>${esc(g.limit)}</p>${conceptManualSources[id]?`<p class="caption manual-source">${esc(manualCitation(conceptManualSources[id]))}</p>`:''}${referenceNotes(conceptReferences[id])}`;}
+export function conceptHtml(id){
+ const g=glossary[id];
+ const classification=g.classification;
+ const types=classification
+  ? `<h3>${esc(classification.title)}</h3><ul>${classification.items.map(([label,explanation])=>`<li><strong>${esc(label)}.</strong> ${esc(explanation)}</li>`).join('')}</ul>`
+  : '';
+ return `<div class="dialog-heading"><h2 id="concept-title">${esc(g.term)}</h2>${button('close-dialog','Cerrar','autofocus')}</div><p class="caption">${esc(g.author)}</p><h3>Formulación</h3><p>${esc(g.definition)}</p><h3>Operación de análisis</h3><p>${esc(g.operation)}</p><h3>Ejemplo</h3><p>${esc(examples[id])}</p>${types}<h3>Alcance</h3><p>${esc(g.limit)}</p>${conceptManualSources[id]?`<p class="caption manual-source">${esc(manualCitation(conceptManualSources[id]))}</p>`:''}${referenceNotes(conceptReferences[id])}`;}
 const classroom=createClassroomRenderer({field,button,link,resourceCard,prose,referenceNotes,evidenceForm,evidenceList,agencyHtml,agencyContextsHtml,noticeHtml,perspectiveMap,relationForm,relationDiagram});
 export function renderPage(route,state,editable,origin=null){
  if(route.page==='ficha')return classroom.ficha(route.unit,state,editable,origin,route.section,route.returnPhase);

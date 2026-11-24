@@ -173,7 +173,7 @@ export const projectInputs={
 // Preparation remains in the class, with selected paragraphs of the existing guide.
 export const preparationLessons={
  's2-e1':[0,2,3],'s2-e2':[1,3],'s3-e1':[5],'s3-e2':[4],
- 's4-e1':[5,0],'s4-e2':[4],'s5-e1':[1],'s5-e2':[2],'s6-e1':[3],'s6-e2':[3],
+ 's4-e1':[5],'s4-e2':[4],'s5-e1':[1],'s5-e2':[2],'s6-e1':[3],'s6-e2':[3],
  's7-e1':[0,1],'s7-e2':[2],'s8-e1':[3,4],'s8-e2':[],
  's9-e1':[0,1],'s9-e2':[1,2],'s10-e1':[2,3],'s10-e2':[4],
  's11-e1':[0,1,2],'s11-e2':[3],'s12-e1':[3,4],'s12-e2':[4],
@@ -184,7 +184,7 @@ export const preparationLessons={
 // Assigned readings and requested reviews open independently of the preparation wording.
 // Other readings remain available for consultation through the same disclosure.
 export const preparationReadingOpen=new Set([
- 's2-e1','s2-e2','s3-e1','s3-e2','s4-e1','s5-e1','s5-e2','s6-e1',
+ 's2-e1','s2-e2','s3-e1','s3-e2','s4-e1','s4-e2','s5-e1','s5-e2','s6-e1',
  's7-e1','s7-e2','s8-e1','s9-e1','s9-e2','s10-e1','s11-e1','s12-e1',
  's13-e1','s13-e2','s14-e1','s14-e2'
 ]);

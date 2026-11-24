@@ -174,15 +174,15 @@ export const visualSchemas={
  'tema-global':{
   type:'tree',planned:'s5-e2',topic:'Del significado local al tema global',placed:true,replaces:'example',
   label:'De las proposiciones del texto a una síntesis, y lo que se pierde en el camino',
-  leaves:[{label:'Proposición',text:'La ayuda exige matrícula vigente.'},{label:'Proposición',text:'La ayuda exige acreditación de ingresos.'}],
-  operation:{label:'Condensar y comprobar qué se pierde',text:'Las dos exigencias construyen un acceso condicionado. «Vigente» delimita la matrícula válida y «acreditación» exige demostrar los ingresos: conservarlas permite explicar qué se pide al solicitante.'},
-  top:{label:'Síntesis que hay que revisar',text:'«La ayuda está condicionada a matrícula e ingresos».'},
-  loss:{label:'Qué se pierde',items:['«vigente»: no cualquier matrícula sirve.','«acreditación» exige presentar pruebas de los ingresos.'],question:'¿Cómo cambia lo que el lector entiende que necesita para acceder a la ayuda?'},
-  rejected:{label:'No la sostiene el texto',text:'«La ayuda se ofrece a todos».',note:'Añade una generalización que elimina las condiciones.'},
-  limit:'el tema global es una reconstrucción de quien interpreta. Una síntesis puede omitir detalles si justifica su selección; cambiar una condición altera el contenido.',
-  task:{label:'Al leer la carta del compañero',text:'Expresa en una frase la propuesta que entiendes y señala los pasajes que sostienen esa lectura.'},
+  leaves:[{label:'Uso propuesto',text:'«Propongo permitir IA para revisar borradores».'},{label:'Condición',text:'«Cuando podamos justificar los cambios».'}],
+  operation:{label:'Condensar y comprobar qué se pierde',text:'Una síntesis fiel sería «Propone permitir IA para revisar borradores si el autor justifica los cambios».'},
+  top:{label:'Síntesis que hay que revisar',text:'Un compañero escribe «Propone permitir la IA».'},
+  loss:{label:'Qué se pierde',items:['«Para revisar borradores» delimita el uso propuesto.','«Cuando podamos justificar los cambios» expresa la condición.'],question:'Al omitir ambas precisiones, el resumen parece abarcar cualquier uso de IA.'},
+  rejected:{label:'Una lectura más amplia que la carta',text:'«Propone que la IA escriba los trabajos completos».',note:'El autor se refiere a la revisión de un borrador.'},
+  limit:'el lector elige qué detalles conservar al resumir. La propuesta cambia si desaparece una condición que delimita su alcance.',
+  task:{label:'Al leer la carta del compañero',text:'Retoma tu frase sobre la propuesta y comprueba qué palabras de la carta la sostienen.'},
   source:'Ejemplo. Macroestructura y macrorreglas: Calsamiglia y Tusón (2012, §8.1.2 · páginas 225–226 del archivo). Generalización y operaciones selectivas y constructivas: van Dijk (1980: 216–217).',
-  anchors:['La ayuda exige matrícula vigente y acreditación de ingresos','La ayuda está condicionada a matrícula e ingresos','las condiciones conservadas determinan cómo se representa el acceso a la ayuda','generalizar reúne casos bajo una categoría','pierde «vigente»','Al generalizar una lista bajo una categoría, comprueba que el resumen conserve sus límites']
+  anchors:['Propongo permitir IA para revisar borradores cuando podamos justificar los cambios','Propone permitir la IA','conserva el uso permitido y su condición']
  },
  'regla-de-paso':{
   type:'argument',planned:'s14-e1',topic:'El argumento necesita una regla de paso',placed:true,replaces:'example',
@@ -328,8 +328,8 @@ export const visualSchemas={
    {words:'35 % por vulnerabilidad',label:'Segundo criterio y proporción',note:'reserva otra parte para vulnerabilidad. Las categorías indican cómo se agrupa a los posibles beneficiarios.'}
   ],
   verdict:'La disposición obliga a la institución a distribuir las ayudas en dos proporciones y da mayor peso a la excelencia académica. El análisis relaciona esa forma de escribir con una prioridad institucional y con las categorías de estudiantes que construye el reglamento.',
-  task:{label:'Del ejemplo a la carta',text:'El reglamento establece obligaciones desde una voz institucional. En tu carta, decide desde qué posición hablas y qué acción propones a la dirección de la carrera.'},
-  source:'UCE, Reglamento de Becas para Estudiantes de Tercer Nivel, ejemplar con reforma de 2022, artículo 3, página 2 del archivo. Interpretación del curso. Modalidad: Calsamiglia y Tusón (2012, §6.4.1, páginas 177–178 del archivo).',
+  task:{label:'Del ejemplo a la carta',text:'El Consejo dicta el reparto. Quien firma la carta recomienda una medida a la dirección de la carrera.'},
+  source:'UCE, Reglamento de Becas para Estudiantes de Tercer Nivel, ejemplar con reforma de 2022, artículo 3, página 2 del archivo. Interpretación del curso. Modalidad en Calsamiglia y Tusón (2012, §6.4.1 · páginas 166–167 impresas, 177–178 en el visor).',
   anchors:['Se deberá destinar','65%','35 %','excelencia académica','vulnerabilidad']
  },
  'presuposicion-certificado':{
@@ -351,7 +351,7 @@ export const visualSchemas={
   verdict:'«Adjunte nuevamente» pide repetir una entrega y trata la anterior como información compartida: sitúa al estudiante en un trámite ya iniciado. «Algunos grupos entregaron» puede sugerir «no todos»; «de hecho, todos» cancela esa implicatura. La entrega previa presupuesta por «nuevamente» no queda demostrada por la orden.',
   task:{label:'Al leer la carta del compañero',text:'Marca un pasaje que requiera aportar información. Explica qué entendiste y qué palabras o conocimientos te ayudaron.'},
   source:'Ejemplo. Presuposición: Calsamiglia y Tusón (2012, §7.2.1 · páginas 191–192 del archivo) y Brown y Yule (1983: 28–31). Implicatura y su cancelación: Grice, en Escandell (1996: 86–87).',
-  anchors:['Adjunte nuevamente el certificado','presenta una acción anterior como información dada por supuesta','comprobar la entrega anterior exige consultar el expediente','Un lector nuevo necesitaría recuperar esa información','se reconstruye en contexto y puede cancelarse','Las dos escenas permiten comparar estas formas de información implícita']
+  anchors:['Adjunte nuevamente el certificado','presenta una acción anterior como información dada por supuesta','comprobar la entrega anterior exige consultar el expediente','Un lector nuevo necesitaría recuperar esa información','se reconstruye en contexto y puede cancelarse','De hecho, todos los consultados lo permiten']
  },
  'composicion-aviso':{
   type:'composition',planned:'s6-e1',topic:'La composición orienta la lectura',placed:true,replaces:'example',
@@ -372,7 +372,7 @@ export const visualSchemas={
   anchors:['«Requisitos» aparece en letra pequeña','conserva las mismas palabras y gana tamaño y posición inicial','Tamaño, posición, agrupación y encuadre proponen jerarquías','Para saber qué leen primero los destinatarios, compara las versiones con lectores','Se conserva la información verbal y cambia su jerarquía']
  },
  'diseno-lectura':{
-  type:'contrast',planned:'s6-e2',topic:'Distinguir diseño propuesto y lectura observada',placed:true,replaces:'example',
+  type:'contrast',planned:'s6-e2',topic:'Revisar la carta a partir de la lectura del compañero',placed:true,replaces:'example',
   label:'Lo que el diseño propone y lo que el lector hizo',
   question:'La lectura del compañero ayuda a precisar la propuesta.',
   columns:[
@@ -533,7 +533,7 @@ export const visualSchemas={
   back:'No forman un circuito fijo: cada proceso puede activar los otros, y revisar puede llevar a cambiar el plan.',
   task:{label:'En tu carta',text:'Mientras escribes, vuelve a tu posición y a tus razones cuando necesites ajustarlas. Conserva el primer borrador para explicar después tus decisiones.'},
   source:'Modelo de Flower y Hayes (1980, 1981), en Calsamiglia y Tusón (2012, §3.4.1 · página 81 del archivo). En el modelo completo, un «monitor» coordina cuándo planificar, poner las ideas por escrito o revisar.',
-  anchors:['Escribir una carta abierta permite intervenir en un asunto compartido','El esquema relaciona planificación, textualización y revisión de esa intervención']
+  anchors:['En tu carta abierta, tú firmas una propuesta','Al planificar, escribir y revisar la carta']
  },
  'contexto-dimensiones':{
   "type": "facets",
