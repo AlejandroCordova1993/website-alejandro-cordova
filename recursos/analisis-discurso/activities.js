@@ -39,7 +39,7 @@ export const unitActivities={
      ],
      [
        "Revisar · semanas 5 y 6",
-       "Revisa tu carta con los comentarios recibidos. Explica tres decisiones con los pasajes y conceptos que te ayudaron a revisar. Una es de presentación. Prueba otra disposición en papel o en un editor, recoge lo que identificó el compañero y explica por qué conservaste o cambiaste la presentación. Guarda la versión final."
+       "Reúne tu borrador y los comentarios que recibiste sobre tu carta. Si «Versión final de mi carta» está vacía, copia allí el texto de «Borrador de mi carta». Si ya empezaste la versión final, continúa esa misma. En papel, trabaja sobre una copia. Lee cada comentario junto al pasaje que menciona y decide qué conservar o cambiar."
      ]
    ],
    "questionHelp": "Conserva aquí la pregunta que escribiste sobre el reglamento en el trabajo anterior.",

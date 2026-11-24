@@ -5,7 +5,7 @@ export const fichaPhaseLinks={
  's4-e2':['borrador','Continuar mi borrador'],
  's5-e1':['lectura','Comentar la carta del compañero'],
  's5-e2':['lectura','Completar mis comentarios'],
- 's6-e1':['revision','Revisar mi carta'],
+ 's6-e1':['decisiones','Abrir «Tres decisiones de revisión»'],
  's6-e2':['revision','Completar la versión final'],
  's7-e1':['pasajes','Localizar los dos pasajes'],
  's7-e2':['contexto','Explicar los pasajes con su contexto'],

@@ -4,7 +4,7 @@ export const projectSections={pregunta:'question',metodo:'method',analisis:'argu
 export function parseRoute(hash){
  const value=String(hash||'').replace(/^#/,'');
  if(['inicio','biblioteca','proyecto','cuaderno','glosario','galeria-visual'].includes(value))return {page:value};
- const letter=value.match(/^ficha\/2\/(borrador|lectura|revision|version-final)$/);
+ const letter=value.match(/^ficha\/2\/(borrador|lectura|revision|decisiones|version-final)$/);
  if(letter)return {page:'ficha',unit:2,section:letter[1]};
  const ficha3=value.match(/^ficha\/3\/(pasajes|contexto|revision)$/);
  if(ficha3)return {page:'ficha',unit:3,section:ficha3[1]};

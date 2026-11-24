@@ -412,7 +412,7 @@ export const sessions=[
       [
         30,
         "Revisar la propia carta",
-        "Empieza una versión revisada en otra hoja o en «Versión final de mi carta». Conserva el borrador comentado. Puedes contrastar dos sugerencias de IA con las del compañero usando la rúbrica; las decisiones siguen siendo tuyas."
+        "Trabaja sobre una copia de tu borrador en papel o en «Versión final de mi carta». Si ya empezaste la revisión, continúa esa versión. Localiza el pasaje que comentó tu compañero y decide qué conservar o cambiar. Si usas IA, puedes contrastar dos sugerencias con la devolución del compañero usando la rúbrica."
       ],
       [
         10,

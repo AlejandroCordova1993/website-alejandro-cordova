@@ -85,6 +85,13 @@ function focusWorkSection(){
   focusField(notebook.editable()&&notebook.state.notes['ficha-2']?.letterFinal?.trim()?'ficha-2-letterFinal':'paso-carta-final',{start:true});
   return;
  }
+ if(unit===2&&section==='decisiones'){
+  if(notebook.editable()){
+   focusField('ficha-2-letterDecisions',{start:true});
+   document.querySelector('label[for="ficha-2-letterDecisions"]')?.scrollIntoView({block:'start'});
+  }else focusField('paso-2-decisiones',{start:true});
+  return;
+ }
  if(unit===2){
   const field={borrador:'letterDraft',lectura:'letterPeer',revision:'letterFinal'}[section];
   const paper=section==='revision'?'paso-carta-final':'paso-2-'+section;

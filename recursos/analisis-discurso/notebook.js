@@ -33,7 +33,7 @@ export function createNotebook({storage,lock,onChange=()=>{}}){
    if(section)target='#proyecto/'+section;
   }
   if(r.page==='ficha'&&r.unit===2&&!r.returnPhase){
-   const section={letterDraft:'borrador',letterPeer:'lectura',letterFinal:'revision',letterDecisions:'revision'}[field];
+   const section={letterDraft:'borrador',letterPeer:'lectura',letterFinal:'revision',letterDecisions:'decisiones'}[field];
    if(section)target='#ficha/2/'+section;
   }
   const lastClass=r.page==='semana'?target:origin;
